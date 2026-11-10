@@ -13,7 +13,7 @@ stages:
     description: Turn a goal, population, or outcome into something specific enough to work on.
     crosswalk:
       bit_test: Target
-      busara_audas: Assess
+      busara_audas: Align
       taf_eval: "Level 0: theory of change"
   - id: diagnose
     label: Diagnose
@@ -55,7 +55,7 @@ stages:
     description: Roll out, adapt, or scale what worked, and report what was done.
     crosswalk:
       bit_test: Scale
-      busara_audas: Scale
+      busara_audas: Share
       taf_eval: "Level 4: scale and welfare"
   - id: other
     label: Other
@@ -74,19 +74,24 @@ statuses:
   - published
   - deprecated
 
-# How far the evidence base has been tested outside WEIRD (Western, Educated,
-# Industrialized, Rich, Democratic) samples. Required for atomic skills.
-weird_statuses:
-  - id: weird-only
-    label: WEIRD-only evidence
-  - id: mixed-evidence
-    label: Mixed evidence across contexts
-  - id: likely-generalizes
-    label: Likely generalizes
-  - id: untested-outside-weird
-    label: Untested outside WEIRD samples
+# Where the evidence behind a skill has been tested. Required for atomic
+# skills. The value follows from the evidence scan recorded in the skill's
+# references/evidence.md; `rule` says what earns each value. Researchers call
+# samples from wealthy Western countries WEIRD (Western, Educated,
+# Industrialized, Rich, Democratic); skills use the plain wording.
+tested_in:
+  - id: beyond-western-holds
+    label: Tested beyond wealthy Western countries; results hold
+    rule: A systematic review, or at least two field studies outside wealthy Western countries, point the same way as the original evidence.
+  - id: beyond-western-differs
+    label: Tested beyond wealthy Western countries; results differ
+    rule: Studies outside wealthy Western countries exist, and their results differ from the original evidence or from each other.
+  - id: mainly-western
+    label: Tested mainly in wealthy Western countries
+    rule: The scan found fewer than two field studies outside wealthy Western countries.
   - id: not-applicable
-    label: Not applicable (procedural or meta skill)
+    label: Not applicable
+    rule: The skill is a procedure that makes no claim about how people behave.
 
 # Contributing organizations. Free text is accepted; these are the known ids.
 orgs:

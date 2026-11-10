@@ -439,7 +439,7 @@ def parse_workflow_steps(body: str) -> List[dict]:
 
 
 def taxonomy_public(taxonomy: dict) -> dict:
-    keys = ["stages", "types", "statuses", "weird_statuses", "io_types", "orgs", "verbs", "suggested_tags"]
+    keys = ["stages", "types", "statuses", "tested_in", "io_types", "orgs", "verbs", "suggested_tags"]
     return {k: taxonomy.get(k, []) for k in keys}
 
 
@@ -1165,9 +1165,10 @@ TAB_INTROS = {
 # Purpose lines for reference files whose opening paragraph describes the case, not the file.
 KNOWN_FILES = {
     "worked-example.md": "A full run of the skill on a realistic case, showing the output it should produce.",
+    "evidence.md": "The sources behind the skill: what each supports, where the evidence has been tested, and what to check locally.",
     "evidence-notes.md": "The studies behind the method: what each found, how well it is verified, and how far it transfers.",
 }
-REFERENCE_ORDER = {"worked-example.md": 0, "evidence-notes.md": 2}  # everything else sorts between
+REFERENCE_ORDER = {"worked-example.md": 0, "evidence.md": 2, "evidence-notes.md": 2}  # everything else sorts between
 
 
 def panel_id(key: str) -> str:
@@ -1249,12 +1250,14 @@ def render_evals(s: dict):
         if checks:
             extra += ('<p class="case-label">Checks on the answer</p><ul class="case-list">'
                       + "".join(f"<li>{E(x)}</li>" for x in checks) + "</ul>")
+        role = str(c.get("name", "")).strip()
+        heading = f"Test case {cid}: {role}" if role else f"Test case {cid}"
         parts.append(
-            f'<article class="case" id="{E(aid)}"><h3>Test case {E(cid)}</h3>'
+            f'<article class="case" id="{E(aid)}"><h3>{E(heading)}</h3>'
             f'<p class="case-label">The request</p><blockquote class="case-prompt">{text_html(str(c.get("prompt", "")))}</blockquote>'
             f'<p class="case-label">What a good answer includes</p><div class="case-expected">{text_html(str(c.get("expected_output", "")))}</div>'
             f'{extra}</article>')
-        toc.append((aid, f"Test case {cid}"))
+        toc.append((aid, heading))
     if not parts:
         return '<p class="muted">This skill has no test cases yet.</p>', []
     return "".join(parts), toc
@@ -1331,7 +1334,7 @@ def toc_list(key: str, items, first: bool) -> str:
 
 def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
     stage_labels = label_map(taxonomy.get("stages"))
-    weird_labels = label_map(taxonomy.get("weird_statuses"))
+    tested_labels = label_map(taxonomy.get("tested_in"))
     io_labels = label_map(taxonomy.get("io_types"))
     producers: Dict[str, List[dict]] = {}
     consumers: Dict[str, List[dict]] = {}
@@ -1435,6 +1438,8 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         elif status == "deprecated":
             banner = '<div class="banner banner-deprecated"><span>Deprecated. This skill is retired; its version history says what replaced it.</span></div>'
 
+        adds_html = f'\n  <p class="skill-adds"><b>What this adds:</b> {E(s["what_this_adds"])}</p>' if s.get("what_this_adds") else ""
+
         skill_panel = f"""{tab_intro("skill", "Skill", s, "SKILL.md")}
   <aside class="callout" aria-labelledby="fires-h">
     <h2 id="fires-h" class="callout-title">When this skill runs</h2>
@@ -1478,7 +1483,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
   <p class="skill-name-row"><code>{E(name)}</code></p>
   <div class="badges">{pill(stage_labels.get(stage, stage) or 'no stage', 'stage', stage)}{pill('v' + s['version'], 'version')}{pill(s['type'] or 'atomic', 'meta' if s['type'] == 'meta' else 'type')}{pill(status, status)}{pill(org, 'org') if org else ''}</div>
   {banner}
-  <p class="skill-what">{E(s['what_it_does'])}</p>
+  <p class="skill-what">{E(s['what_it_does'])}</p>{adds_html}
   <div class="skill-actions">
     <button class="btn" type="button" data-panel-open="review" aria-controls="fb-panel">{ICONS['pencil']} Review this skill</button>
     <button class="btn-secondary" type="button" data-panel-open="rate" aria-controls="fb-panel">{ICONS['star']} Rate this skill</button>
@@ -1507,7 +1512,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
       <dt>Version</dt><dd>{E(s['version'])}</dd>
       <dt>Status</dt><dd>{E(status)}</dd>
       <dt>Stage</dt><dd><a href="/skills/?stage={E(stage)}">{E(stage_labels.get(stage, stage))}</a></dd>
-      <dt>WEIRD</dt><dd>{E(weird_labels.get(s['weird'], s['weird'])) or '<span class="muted">not stated</span>'}</dd>
+      <dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
       <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>
       <dt>License</dt><dd>{E(s['license'])}</dd>
       <dt>Source</dt><dd><a href="{E(s['source_url'])}" rel="noopener">skills/{E(name)}</a></dd>
@@ -1675,7 +1680,7 @@ def build_contribute() -> None:
 
 <section class="step">
   <h2>Review</h2>
-  <p>Every pull request needs green CI and one approving review from a maintainer, who checks the content against the spec: is it atomic, does the trigger rule name what it should not handle, is the evidence real and the WEIRD note honest, does the output template match what the skill promises, are the failure modes and the escalation point concrete, do the test cases read like real requests. On merge the skill is marked <code>published</code> and appears here. See <a href="{GITHUB}/blob/main/CONTRIBUTING.md" rel="noopener">CONTRIBUTING.md</a> for the reviewer checklist.</p>
+  <p>Every pull request needs green CI and one approving review from a maintainer, who checks the content against the spec: is it atomic, does the trigger rule name what it should not handle, is the evidence real and the note on where it has been tested honest, does the output template match what the skill promises, are the failure modes and the escalation point concrete, do the test cases read like real requests. On merge the skill is marked <code>published</code> and appears here. See <a href="{GITHUB}/blob/main/CONTRIBUTING.md" rel="noopener">CONTRIBUTING.md</a> for the reviewer checklist.</p>
   <p>You can also review and rate skills that are already in the library, right here on the site, and you don't need a GitHub account for it. Open any skill from the <a href="/skills/">catalog</a> and go to its Reviews tab. If you work at TAF or IL, sign in with your work Google account and click <em>Review this skill</em>: pick a verdict, mark the parts of the skill your review concerns, and say what should change. The site files it as a GitHub issue for the maintainers, and the skill page later shows which version answered it. Anyone with a Google account can rate a skill from one to five stars and leave a comment, under their name or anonymously.</p>
 </section>
 </div>
@@ -1885,7 +1890,7 @@ def build_about(skills: List[dict]) -> None:
   <div class="two-col">
     <div class="panel">
       <pre class="tree">skills/decompose-comb-barriers/
-├── <b>SKILL.md</b>          <span class="c">trigger rule, stage, version, WEIRD status,</span>
+├── <b>SKILL.md</b>          <span class="c">trigger rule, stage, version, where tested,</span>
 │                     <span class="c">then eight fixed sections, from "What it</span>
 │                     <span class="c">does" to "When to bring in a specialist"</span>
 ├── <b>evals/evals.json</b>  <span class="c">realistic prompts + expected output shape</span>

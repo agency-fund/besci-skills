@@ -53,6 +53,8 @@ Staff of either organization can file an expert review from any skill's page; it
 
 A skill is deprecated, not deleted. Set `metadata.status: deprecated`, add a changelog entry saying why and what replaces it, and merge. Deprecated skills leave the catalog and the plugin but stay in git history so that projects which cited a version can still find it.
 
+This rule applies from the v1 launch. Before launch, a draft that no project could have cited may be removed outright; `docs/plan/` records which drafts were removed and why.
+
 ## Meetings and reviews
 
 - **Monthly** maintainers' meeting: triage, review assignments, taxonomy questions.

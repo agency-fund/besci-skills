@@ -25,6 +25,10 @@ Tests to apply silently:
 
 **If it fails:** "That reads as two skills: A and B. B would take A's output as its input. Which one do we build now?"
 
+**Then ask the two questions that decide whether the skill earns a place** (`skill-spec.md` section 1):
+- "Which two sources in `docs/canonical-sources.md` name this task as a step or tool?" If the author can name only one, say so; the skill needs a maintainer's decision to carry the framework.
+- "What does this skill make the AI do that it would not do unprompted?" Push past "it's more rigorous" to a fixed output, a required check, a decision rule, verified sources, or a search or script call. The answer becomes the `**What this adds:**` line.
+
 ## Phase 2: Name and trigger rule
 
 **Ask for the name:** propose one. "I'd call it `decompose-comb-barriers`. Verb first, kebab-case, under 64 characters. OK?"
@@ -33,7 +37,7 @@ Tests to apply silently:
 
 **Ask for should-not-fire intents:** "What is the nearest thing someone might ask that this skill should NOT handle, and where should they go instead?" Get at least two.
 
-**Draft the description:** Use when + situation + phrasings + do not use when + nearest adjacent intent + not for + second adjacent intent. Under 1024 characters. Read it back and ask "would a model that only sees this sentence fire at the right moments?"
+**Draft the description:** Use when + situation + phrasings + do not use when + nearest adjacent intent + not for + second adjacent intent. Aim for about 500 characters and leave citations out; the navigator does the routing. Read it back and ask "would a model that only sees this sentence fire at the right moments?"
 
 Weak description: "This skill helps you decompose barriers using COM-B." (summary, no trigger, no exclusion)
 
@@ -43,7 +47,7 @@ Strong description: "Use when one behavior is already defined (who does what, wh
 
 **Ask:** "What must the skill know before it can give a good answer? And what should it assume if the user doesn't say?"
 
-Recommended pattern: two or three required questions that change the output, two optional ones that improve it, and an explicit assumption line.
+Recommended pattern: two or three required questions that change the output, two optional ones that improve it, and an explicit assumption line. Name each input by what it is ("a confirmed barrier, from interviews or any diagnosis"), not by which skill made it.
 
 **If the author says nothing is needed:** "What is the most common way a user gives too little context, and what goes wrong when the model guesses?" If the answer is still "nothing", accept "Not applicable: <reason>" and write the reason verbatim.
 
@@ -51,9 +55,11 @@ Recommended pattern: two or three required questions that change the output, two
 
 **Ask:** "What does this method rest on? Framework, paper, playbook, or your own practice."
 
-Get: authors, year, title, venue, link. Confirm each with the author or with a lookup if tools allow. Mark anything unconfirmed "unverified, author to confirm".
+Get: authors, year, title, venue, link, and one line on what each source supports in the skill. Check each one: resolve the DOI or open the page and confirm author, year, and title. Leave out anything that cannot be checked.
 
-**Ask the WEIRD question:** "Where does the evidence come from, and what should someone in a different context check before trusting it?"
+**Run the evidence scan** (`skill-spec.md` section 7): reviews and meta-analyses first, then the two or three strongest studies outside wealthy Western countries, then an explicit "none found" naming what was searched. About five searches. It sets `tested_in` and fills `references/evidence.md`.
+
+**Ask where the evidence comes from:** "Which countries and populations were studied, and what should someone working elsewhere check before trusting it?"
 
 **Ask the replication question:** "Has this replicated? Mixed? Contested? Single study?"
 
@@ -75,7 +81,7 @@ Draft the fenced block. Check: could a reviewer, seeing only this template and a
 
 **Ask:** "When have you seen this method go wrong in practice?" Then: "What would a model do here that an expert never would?"
 
-Patterns worth asking about explicitly: leading questions, confident output on thin input, mislabeling (the COM-B persistence test), too-long outputs, moralizing, recommending the fashionable technique regardless of fit.
+A failure mode that only repeats a step of the procedure does not count. Patterns worth asking about explicitly: leading questions, confident output on thin input, mislabeling (the COM-B persistence test), too-long outputs, moralizing, recommending the fashionable technique regardless of fit.
 
 ## Phase 8: Escalation point
 
@@ -85,19 +91,19 @@ Push on "never": "Imagine a high-stakes case: clinical, legal, children, large b
 
 ## Phase 9: Test cases
 
-**Ask:** "Here are three test prompts I'd use. Do they sound like your users?"
+**Ask:** "Here are four test prompts I'd use. Do they sound like your users?"
 
-Draft them first. Shapes:
-1. Complete request with realistic context: expects the full output.
-2. Thin request: expects the Before-you-start questions, no output.
-3. Request near the escalation point: expects partial output plus the escalation message.
-4. (If adjacent intents are confusable) A should-not-fire request: expects a redirect.
+Draft them first, named and in this order:
+1. `Full run`: a complete request with realistic context; expects the full output.
+2. `Missing context`: a thin request; expects the Before-you-start questions and nothing else.
+3. `Near the escalation point`: expects what the skill can safely do plus the escalation message.
+4. `Wrong skill`: a request that belongs to a neighboring skill; expects a redirect.
 
-`expected_output` describes shape and must-haves, never the answer text.
+`expected_output` is one sentence. `assertions` holds three to six short statements a reviewer can tick yes or no, never the answer text.
 
 ## Phase 10: Metadata
 
-Recommend a stage and say why. Suggest two or three tags from the taxonomy's suggested list. Ask whether the skill consumes or produces something another skill in the catalog produces or consumes; only fill `consumes`/`produces` when it does.
+Recommend a stage and say why. Suggest two or three tags from the taxonomy's suggested list. Set `produces` to the one thing the output template is, and `consumes` to the inputs the skill cannot run without, matching the required questions in "Before you start". Set `tested_in` from the evidence scan.
 
 ## Phases 11 to 14
 

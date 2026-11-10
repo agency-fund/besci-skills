@@ -16,11 +16,11 @@ metadata:
   title: Behavioral science navigator
   type: meta
   stage: other
-  version: "0.1.1"
+  version: "0.1.2"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: not-applicable
+  tested_in: not-applicable
   tags: "meta, navigation, workflow"
   consumes: "program-goal"
   produces: "workflow-draft"
@@ -71,7 +71,7 @@ Before either mode, read `references/catalog.md` and note its snapshot date. If 
 - The partnership's principles: ask before recommending; name the mechanism, not just the tactic; skills do not replace experts; tell the user when the question has outgrown the tool. Patricia Andrews Fearon's observation in the MOU comments that knowing which technique to use when is the hardest part of using a library without a scientist in the room is the reason this skill exists.
 - The workflow template, `references/workflow-template.md`, which is the shape of guide mode's output.
 
-**WEIRD skew:** Not applicable to the navigator itself. It must surface each recommended skill's WEIRD status from the catalog so the user sees it before running the skill.
+**Where the evidence comes from:** Not applicable to the navigator itself. It must show, from the catalog, where each recommended skill's evidence has been tested, so the user sees it before running the skill.
 
 **Replication status:** Not applicable; this is a routing procedure.
 
@@ -84,7 +84,7 @@ Before either mode, read `references/catalog.md` and note its snapshot date. If 
 3. **Route mode.**
    - Match the request against each skill's "use it when" and "do not use it when" phrasings and its stage. Prefer the skill whose exclusions do not fire.
    - If two skills tie, ask the one question that separates them.
-   - Recommend at most two skills. For each: why it fits, what to have ready (its "Before you start" questions, from the catalog), its WEIRD status, and what usually comes next.
+   - Recommend at most two skills. For each: why it fits, what to have ready (its "Before you start" questions, from the catalog), where its evidence has been tested, and what usually comes next.
    - If nothing fits, say so, suggest the nearest non-AI route (a method, a reading, a person), and point to the "Propose a skill" form.
 
 4. **Guide mode.**
@@ -105,7 +105,7 @@ Route mode:
 ```markdown
 **Mode:** route  (say "walk me through it" for a guided plan)
 
-**Recommended:** `<skill-name>` (<stage>, v<version>, WEIRD: <status>)
+**Recommended:** `<skill-name>` (<stage>, v<version>, tested in: <where its evidence has been tested>)
 Why: <one sentence tying the request to the skill's trigger rule>
 Have ready: <the skill's required Before-you-start answers, in one line>
 Then: <what usually follows, as a skill name or a non-AI step>

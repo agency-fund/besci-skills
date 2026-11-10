@@ -6,6 +6,7 @@ This is the Behavioral Science Skills Library: a content repository of AI skills
 
 - `CONTEXT.md`: the vocabulary. Use its terms (skill, atomic skill, meta-skill, workflow, trigger rule, escalation point, stage, evidence base, test case) and avoid the terms it lists under "Avoid".
 - `docs/skill-spec.md`: the contract every skill meets. `scripts/besci_validate.py` enforces it.
+- `docs/canonical-sources.md`: the sources a skill's task must appear in to earn a place, and the frameworks the library carries by choice.
 - `docs/adr/`: decisions already made. Do not relitigate them in a change; open an ADR if one needs to change.
 
 ## Commands
@@ -29,8 +30,8 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 2. **Never hand-edit generated files**: `skills/besci-navigator/references/catalog.md`, anything under `site/dist/` or `dist/`, or the bundled copies listed in `scripts/check_sync.py`.
 3. **Frontmatter is spec-compliant.** Only `name`, `description`, `license`, `compatibility`, `allowed-tools`, `metadata`. Everything under `metadata` is a plain string; lists are comma-separated. No nested objects.
 4. **Skill names are verb-first kebab-case** from the verb list in `taxonomy.yaml`; meta-skills use the `besci-` prefix. American spelling everywhere.
-5. **Eight sections, fixed order**, in every `SKILL.md`. "Before you start" and "When to bring in a specialist" may be "Not applicable: <real reason>". At least three evals. Changelog top entry matches `metadata.version`.
-6. **Never invent a citation.** Mark anything unverified as "unverified, author to confirm".
+5. **Eight sections, fixed order**, in every `SKILL.md`. "Before you start" and "When to bring in a specialist" may be "Not applicable: <real reason>". Four named test cases, each with assertions. Atomic skills carry `references/worked-example.md` and `references/evidence.md`. Changelog top entry matches `metadata.version`.
+6. **Never invent a citation.** Resolve the DOI or open the page before a source goes into a skill, and leave out anything that cannot be verified.
 7. **Skills do not get a README.** Instructions go in `SKILL.md` or `references/`.
 8. **`skills/` holds skills only.** Workflows go in `workflows/<name>.md`.
 9. **Evals cost money.** Do not run `skills/besci-eval/scripts/run_evals.py` without the user's go-ahead; use `--dry-run` to show the plan.
@@ -47,7 +48,7 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 | `skills/besci-*` | the three meta-skills; each bundles a copy of the validator or templates |
 | `workflows/` | workflow files and template |
 | `template/skill-template/` | the starting point for a new skill |
-| `taxonomy.yaml` | stages, types, statuses, WEIRD statuses, verbs, io types, suggested tags |
+| `taxonomy.yaml` | stages, types, statuses, where-tested values, verbs, io types, suggested tags |
 | `scripts/` | validator, sync check, site builder, snapshot, packager, zip safety, inbox unpacker, submit tests |
 | `site/src/` | site assets; the builder generates pages from skills |
 | `api/` | the site's server functions on Vercel: upload (`submit.py`), Google sign-in (`auth.py`), expert reviews (`review.py`, `reviews.py`), ratings (`ratings.py`), database check (`health.py`); `_common.py` and `_review_issue.py` are shared code; `schema.sql` is the Supabase schema |

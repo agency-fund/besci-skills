@@ -25,11 +25,19 @@ The condition under which a skill tells the user the question has outgrown the t
 _Avoid_: handoff, limit
 
 **Evidence base**:
-The frameworks, papers, or practice a skill draws on, with citations, WEIRD skew, and replication status.
+The frameworks, papers, or practice a skill draws on, with citations, where the evidence has been tested, and replication status.
 _Avoid_: references, sources, literature
 
+**Tested in**:
+Where the evidence behind a skill has been tested: beyond wealthy Western countries with results that hold, beyond them with results that differ, mainly in wealthy Western countries, or not applicable. Researchers call samples from wealthy Western countries WEIRD (Western, Educated, Industrialized, Rich, Democratic); skills use the plain wording.
+_Avoid_: WEIRD skew, WEIRD status, generalizability
+
+**What this adds**:
+The line in an atomic skill that states what the skill makes the AI do that it would not do unprompted.
+_Avoid_: value proposition, benefits
+
 **Test case**:
-A realistic user prompt paired with the expected shape of output, stored in the skill's `evals/evals.json`, used in review and re-run when the skill changes.
+A realistic user prompt paired with one sentence on what a good answer is and three to six assertions it must pass, stored in the skill's `evals/evals.json`, used in review and re-run when the skill changes. Every skill has four, named Full run, Missing context, Near the escalation point, and Wrong skill.
 _Avoid_: example, sample prompt
 
 **Version**:

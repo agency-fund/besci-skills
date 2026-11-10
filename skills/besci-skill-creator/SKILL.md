@@ -16,11 +16,11 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.1.1"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: not-applicable
+  tested_in: not-applicable
   tags: "meta, authoring"
   produces: "skill-draft"
 ---
@@ -65,7 +65,7 @@ Ask these first, one at a time, unless already answered.
 - The interview discipline of the grill-me pattern: one question at a time, a recommended answer with each, walk every branch, do not write until the branch is resolved.
 - The partnership's principles: skills are Socratic (they ask before they answer), they cite what they draw on, they say where they stop and a specialist starts, and their content may be processed by third-party AI systems when others use them, which the author must know before contributing.
 
-**WEIRD skew:** Not a concern for this skill itself. It does require every atomic skill it drafts to state its own WEIRD skew and replication status.
+**Where the evidence comes from:** Not a concern for this skill itself. It does require every atomic skill it drafts to say where its evidence has been tested and whether it has replicated.
 
 **Replication status:** Not applicable; this is a procedure, not an empirical claim.
 
@@ -79,7 +79,7 @@ Work through the phases in order. One question per turn. Offer a recommended ans
 
 **Phase 3: Before you start.** Ask what the skill must know before it can produce a good output, and what it should assume if an answer is missing. Three to six questions is typical. If the author says it needs nothing, push once: "What is the most common way a user gives too little context, and what goes wrong?" Accept "Not applicable" only with a real reason, which goes into the section verbatim.
 
-**Phase 4: Evidence base.** Ask what the method rests on: framework, paper, playbook, or the author's own practice. Get full citations. Then ask the two flags: where does the evidence come from (WEIRD skew), and has it replicated. If the author does not know, say so in the draft rather than guessing.
+**Phase 4: Evidence base.** Ask what the method rests on: framework, paper, playbook, or the author's own practice. Get full citations and check each one: resolve the DOI or open the page, and confirm author, year, and title. Leave out any source that cannot be checked. Then run the evidence scan in `references/skill-spec.md` section 7 (reviews first, then the strongest studies outside wealthy Western countries, then an explicit "none found") and ask whether the method has replicated. The scan sets `tested_in` and fills the new skill's evidence file. If the author does not know, say so in the draft rather than guessing.
 
 **Phase 5: Procedure.** Walk the method step by step. For each step ask why it matters and what the model is likely to get wrong. Decide what goes in `SKILL.md` and what moves to `references/` (question banks, long tables, worked examples).
 
@@ -89,9 +89,9 @@ Work through the phases in order. One question per turn. Offer a recommended ans
 
 **Phase 8: Escalation point.** Ask when a user should stop and bring in a specialist, what kind, and what to bring them. Push on "Not applicable" the same way as in Phase 3.
 
-**Phase 9: Test cases.** Draft at least three evals in the user's voice: one complete request that should produce the full output, one that is missing context so the skill should ask, one that approaches the escalation point. Add a fourth that should not fire if the adjacent intents are easy to confuse. Each has an `expected_output` describing the shape of a good answer, not the answer itself. Show them to the author and adjust.
+**Phase 9: Test cases.** Draft four evals in the user's voice, named and in this order: "Full run" (a complete request that should produce the full output), "Missing context" (the skill should ask and stop), "Near the escalation point", and "Wrong skill" (a request that belongs to a neighboring skill). Each has a one-sentence `expected_output` and three to six `assertions`, short statements a reviewer can tick yes or no. Show them to the author and adjust.
 
-**Phase 10: Metadata.** Confirm stage (recommend from the seven; `other` is allowed), tags, optional `consumes` and `produces` from the taxonomy's io types, authors, org, weird status, version `0.1.0`, status `draft`, license `CC-BY-4.0`.
+**Phase 10: Metadata.** Confirm stage (recommend from the seven; `other` is allowed), tags, `consumes` (only the inputs the skill cannot run without) and `produces` (exactly one, the thing the output template is) from the taxonomy's io types, authors, org, `tested_in` from the evidence scan, version `0.1.0`, status `draft`, license `CC-BY-4.0`.
 
 **Phase 11: Draft the folder.** Write `SKILL.md`, `evals/evals.json`, `CHANGELOG.md`, and any `references/` files, using `assets/skill-template/` as the skeleton. Keep `SKILL.md` under 500 lines.
 
@@ -109,7 +109,7 @@ The deliverable is the skill folder. Report it like this:
 # Skill drafted: <name> (v0.1.0, draft)
 
 **What it does:** <the one sentence>
-**Stage:** <stage>  **Evidence:** <frameworks, n citations, k unverified>
+**Stage:** <stage>  **Evidence:** <frameworks, n citations checked, k left out as uncheckable>
 
 ## Files
 skills/<name>/
@@ -127,7 +127,7 @@ skills/<name>/
 | 1 | yes / partly / no | <one line> |
 
 ## Open items for the author
-- <unverified citation, undecided split, a "Not applicable" to reconsider>
+- <a source left out because it could not be checked, undecided split, a "Not applicable" to reconsider>
 
 ## Submit
 <the path that fits this author, in two lines>
@@ -149,6 +149,6 @@ skills/<name>/
 Tell the author to bring in a domain expert before submitting when:
 - The method has no published evidence base and the author is not themselves a practitioner of it.
 - The skill touches clinical, safety, legal, or child-protection decisions, where a wrong procedure causes harm.
-- The author cannot answer the WEIRD-skew or replication questions and the skill will be used outside the evidence's context.
+- The author cannot say where the evidence has been tested or whether it has replicated, and the skill will be used outside the evidence's context.
 
 Bring them: the one-sentence description, the evidence list, and the "Where it goes wrong" draft. A maintainer from TAF or IL reviews every skill's content before merge regardless.

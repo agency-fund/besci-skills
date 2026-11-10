@@ -46,7 +46,7 @@ Pick the path that fits you. All three end in a pull request.
 
 ### 5. Review
 
-CI posts the validator's report on the pull request. A maintainer then reviews content: atomicity, the trigger rule, the "Before you start" questions, the evidence (real citations, honest WEIRD skew and replication notes), the output template, the failure modes, the escalation point, and whether the evals read like real users. Expect questions; answer in the thread or push changes.
+CI posts the validator's report on the pull request. A maintainer then reviews content: atomicity, the trigger rule, the "Before you start" questions, the evidence (real citations, honest notes on where the evidence has been tested and whether it has replicated), the output template, the failure modes, the escalation point, and whether the evals read like real users. Expect questions; answer in the thread or push changes.
 
 ### 6. Merge and tag
 
@@ -76,7 +76,7 @@ Copy `workflows/WORKFLOW-TEMPLATE.md` to `workflows/<name>.md`. A workflow is an
 
 - Write for someone who has never met a behavioral scientist. Define terms on first use.
 - Ask before producing. Name the mechanism, not just the tactic.
-- Cite what you draw on. Never invent a citation; mark anything unverified.
+- Cite what you draw on. Never invent a citation. Check each one, and leave out anything you cannot check.
 - Keep `SKILL.md` under 500 lines; move detail into `references/`.
 - No `README.md` inside a skill folder.
 
