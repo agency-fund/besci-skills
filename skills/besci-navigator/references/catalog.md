@@ -13,8 +13,8 @@ Skills in this snapshot: 57
 | adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Adapts a brief "abilities can grow" lesson to one local school context, with a plain statement of which students it should be expected to help. |
 | adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.1.0 | survey-items | survey-items | Converts a face-to-face survey instrument into a version that can be administered by voice, over a live call or an interactive voice response (IVR) system. |
 | analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.1.0 | analysis-plan, dataset-description | — | Estimates who benefited most from an intervention, keeping the moderator tests the pre-analysis plan named apart from exploratory machine-learning splits so that neither is mistaken for the other. |
-| assess-evidence-base | Check what research already exists | define | atomic | draft | 0.1.0 | program-goal | evidence-scan-brief | Reviews existing research on the behavior, audience, or setting named in a program goal, so later steps start from evidence rather than intuition. |
-| assess-evidence-transferability | Check whether a published finding transfers to your setting | define | atomic | draft | 0.1.0 | evidence-scan-brief | — | Judges whether one published finding is likely to hold for the user's population, by comparing the study with the user's case on five dimensions: units, treatment, outcome, setting, implementer. |
+| assess-evidence-base | Check what research already exists | define | atomic | draft | 0.2.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
+| assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.2.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
 | assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.1.0 | evaluation-design, intervention-description | scalability-assessment | Judges whether an effect measured in a pilot is likely to hold when the program is delivered at scale, by testing the pilot's claim against the named threats to scalability. |
 | audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.1.0 | intervention-draft | — | Reviews one drafted behavioral intervention against published ethical principles for behavioral public policy, returning go, revise, or stop with the reasons. |
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.1.0 | target-behavior-brief | barrier-diagnosis | Lists every step a person must get through between deciding to do something to finishing it, then marks which steps the program can remove. |
@@ -28,7 +28,7 @@ Skills in this snapshot: 57
 | choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.1.0 | experiment-intent, theory-of-change | evaluation-design | Chooses the randomization structure for one test from the program's constraints: individual, cluster, stepped-wedge, factorial, or encouragement. |
 | decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.1.0 | target-behavior-brief, bias-audit-report | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, grouped by the COM-B model, each with a question that would show whether it is the real barrier. |
 | define-agency-construct | Define what agency means for a tool's users | define | atomic | draft | 0.1.0 | ai-product-account, theory-of-change | agency-definition | Turns what a team means by its users' agency into a precise definition matched to established theory, ready to measure. |
-| define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.1.0 | program-goal, evidence-scan-brief, audience-context-brief | target-behavior-brief | Turns one vague program goal into a single observable, measurable behavior, stated as who does what, when. |
+| define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.2.0 | program-goal | target-behavior-brief | Turns a vague program goal into one observable behavior, stated as who does what, when. |
 | design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Specifies a voluntary option that restricts or penalizes a person's future self, with a stake they choose, so that a plan made today survives the moment of temptation. |
 | design-feedback-report | Design a performance feedback report | design | atomic | draft | 0.1.0 | intervention-levers, measurement-plan | intervention-draft | Specifies what a repeated feedback report tells one person about their own performance on a task: which metric, compared with what, how often. |
 | design-fidelity-monitoring | Monitor whether a program is delivered as designed | implement | atomic | draft | 0.1.0 | intervention-description | fidelity-plan | Designs how a team will check, during rollout, whether an intervention is being delivered the way it was designed. |
@@ -51,7 +51,7 @@ Skills in this snapshot: 57
 | estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.1.0 | analysis-plan, evaluation-design | — | Estimates what one program paid for each unit of behavior change or outcome it produced, in a form that can be set beside another program's number. |
 | estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.1.0 | evidence-scan-brief | effect-size-benchmark | Turns the published effect sizes a team is relying on into a discounted planning range for one test. |
 | estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.1.0 | effect-size-benchmark, evaluation-design | power-calculation | Estimates the sample a test needs to detect its planned effect, or the smallest effect a fixed sample can detect. |
-| identify-wise-intervention-target | Find the question a wise intervention must answer | diagnose | atomic | draft | 0.1.0 | comb-barrier-hypotheses, barrier-diagnosis | — | Names which meaning-making question a brief psychological intervention would have to answer for this audience before any such intervention is drafted. |
+| identify-wise-intervention-target | Find the question a wise intervention must answer | diagnose | atomic | draft | 0.2.0 | qualitative-data | wise-intervention-target | Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted. |
 | map-audience-context | Map your audience and their setting | define | atomic | draft | 0.1.0 | program-goal | audience-context-brief | Replaces a broad audience label with a specific, observable group of people at the moment they make the decision the program cares about. |
 | map-reference-network | Find out whose opinion really matters | diagnose | atomic | draft | 0.1.0 | social-norm-diagnosis | — | Identifies whose behavior or approval the people doing a practice actually track when they decide whether to follow it. |
 | plan-agency-measurement | Plan how to measure agency in a digital tool | measure | atomic | draft | 0.1.0 | agency-definition, ai-product-account | measurement-plan | Plans how to measure a defined agency construct for a digital or AI tool's users. |
@@ -59,7 +59,7 @@ Skills in this snapshot: 57
 | plan-scale-up-strategy | Plan how a tested program reaches routine delivery | implement | atomic | draft | 0.1.0 | scalability-assessment | — | Turns a tested intervention plus its scalability assessment into a strategy for moving it into a system that will deliver it routinely. |
 | plan-trials-of-improved-practices | Try candidate practices in real homes first | diagnose | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | — | Plans a round of household trials in which families try one or two candidate practices for about a week, then report what they kept, changed, or dropped. |
 | review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.1.0 | prior-intervention-record | intervention-post-mortem | Turns a team's account of a past intervention into a structured review that separates what was planned from what was actually done. |
-| select-default-option | Choose what people get by default | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Chooses the pre-set option people receive when they take no action at one decision point. |
+| select-default-option | Choose what people get by default | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the option people receive when they take no action at one decision point. |
 | select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.1.0 | barrier-diagnosis, comb-barrier-hypotheses | intervention-levers | Shortlists the types of intervention that can address one confirmed barrier, using the Behavior Change Wheel's published linkage table rather than open brainstorming. |
 | select-messenger | Choose who delivers the message | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | — | Picks who should deliver a message to a given audience, with the reasons on paper. |
 | specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.1.0 | intervention-description, intervention-draft | adaptation-record | Records each planned or unplanned modification to an intervention in a structured log, checking it against the core components that carry the intervention's mechanism. |
@@ -177,70 +177,64 @@ Bring them: the pre-analysis plan, the dataset description, the overall effect, 
 ### assess-evidence-base
 
 **Title:** Check what research already exists  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
-**Tags:** evidence-synthesis, rapid-evidence-assessment, grade  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Tags:** evidence-synthesis, rapid-evidence-assessment  
 **Consumes:** program-goal  
 **Produces:** evidence-scan-brief  
 
-**What it does:** Reviews existing research on the behavior, audience, or setting named in a program goal, so later steps start from evidence rather than intuition.
+**What it does:** Summarizes the existing research on the behavior, audience, or setting named in a program goal.
 
-**Description (trigger rule):** Use when a program goal is set but nobody has checked what research already exists on similar behaviors, audiences, or interventions. Also use when someone asks "has this been done before?" or "what does the evidence actually say works here?", or when a team is about to define a target behavior or generate barrier hypotheses from internal assumptions alone. Summarizes what has worked, what has not, how large the effects were, and where the evidence is thin or drawn mainly from wealthy Western populations. Run it early, before choosing a target behavior. Do not use it instead of define-key-behavior; this skill surveys what is known, it does not select a behavior, so run both on the same goal. Not for reviewing the team's own past attempt (review-prior-intervention) or the team's own beliefs about the population (audit-researcher-bias).
+**Description (trigger rule):** Use when a program goal is set and nobody has checked what research already exists, or when someone asks "has this been done before?" or "what does the evidence say works here?". Searches the literature, checks every citation, and reports what worked, what did not, how large the effects were, and where each study was run. Do not use when the question is whether one known study applies to your setting; use assess-evidence-transferability. Not for reviewing your own past program; use review-prior-intervention.
 
 **Use it when:**
-- A program goal has just been stated and no one has checked whether similar interventions have already been tried, anywhere, for this behavior or population
-- A team is about to define a target behavior or generate barrier hypotheses based purely on internal assumptions, with no reference to external evidence
+- A program goal has been stated and no one has checked whether similar interventions have been tried for this behavior or population
 - Someone asks "has this been done before?" or "what does the evidence actually say works here?"
-- A funder or reviewer asks what the program's design is based on and the team's current answer is a hunch
+- A team is about to choose a target behavior or an intervention from its own assumptions alone
 
 **Do not use it when:**
-- The team wants to select a target behavior; that is `define-key-behavior`. This skill surveys what is known, it does not choose. Run them on the same input, not one instead of the other
-- The "evidence" in question is the team's own prior attempt at this program; `review-prior-intervention` structures that record against the data it collected
-- The question is what the team itself believes about the population; `audit-researcher-bias` audits those priors, this skill surveys the literature
-- A full systematic review or meta-analysis is required, for a publication or a policy decision; this is a rapid, time-bounded scan and says so
+- The question is whether one known study applies to the user's setting; use `assess-evidence-transferability`
+- The "evidence" is the team's own earlier attempt at the program; use `review-prior-intervention`
+- A full systematic review is required, for a publication or a policy decision; this is a time-bounded scan
 
 **When to bring in a specialist:**
 
-Tell the user to consult a research librarian, an evidence-synthesis specialist, or a behavioral scientist with domain knowledge when:
-- The decision the scan informs is high-stakes or hard to reverse (a multi-year program design, a national policy recommendation, a publication), so a time-bounded scan is being asked to carry weight only a systematic review can carry
-- The located studies contradict each other and the team has to judge which to weight; that is a GRADE-style methods judgment the scan can flag but not settle
-- The relevant evidence is likely to sit in grey literature, program reports, or non-English sources the scan cannot reach, so "no evidence found" may only mean "not indexed where we looked"
+Tell the user to consult a research librarian, an evidence-synthesis specialist, or a behavioral scientist in the field when:
+- The decision is high-stakes or hard to reverse: a multi-year program, a national policy recommendation, a publication
+- The located studies contradict each other and the team must decide which to weight
+- The relevant evidence probably sits in program reports or non-English sources the scan could not reach
 
-Bring them: the brief with its confidence section, the search terms used, and the findings list with its confidence qualifiers.
+Bring them: the brief, the search terms, and the list of sources opened.
 
 ### assess-evidence-transferability
 
-**Title:** Check whether a published finding transfers to your setting  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** evidence-synthesis, heterogeneity, choice-architecture  
+**Title:** Check whether a study's finding applies in your setting  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** evidence-synthesis, generalizability  
 **Consumes:** evidence-scan-brief  
+**Produces:** transferability-assessment  
 
-**What it does:** Judges whether one published finding is likely to hold for the user's population, by comparing the study with the user's case on five dimensions: units, treatment, outcome, setting, implementer.
+**What it does:** Judges whether one published finding is likely to hold in a named setting.
 
-**Description (trigger rule):** Use when a team has one published finding in hand and asks "will this work here?", "does this study apply to our population?", "can we assume the effect from that paper?", or "they got 40 points in Afghanistan; what should we expect in Bangladesh?". Also use when a proposal quotes a study's effect as the expected effect of a program in a different country, population, or channel, or when an evidence scan brief flags a finding as WEIRD-skewed and someone must decide whether to rely on it. Compares the study's units, treatment, outcome, setting, and implementer with the user's and returns a transfer verdict, the assumptions to test locally, and a discounted expected effect (Szaszi et al. 2025; Henrich et al. 2010; DellaVigna and Linos 2022). Do not use to find what evidence exists; that is assess-evidence-base. Not for the planning number in a power calculation (estimate-expected-effect), and not for a general review of the population's culture or psychology; this skill judges one study's fit.
+**Description (trigger rule):** Use when a team has one study in hand and asks "will this work here?", "does this apply to our population?", or "can we expect the same effect?". Also use when a proposal quotes a study's result as what a program will achieve somewhere else. Reads the study, compares what its effect depended on with your setting, and gives a verdict with the assumptions to test locally. Do not use to find what evidence exists; use assess-evidence-base. Not for the effect size to plan a sample on; use estimate-expected-effect.
 
 **Use it when:**
-- Someone asks "will this work here?", "does this paper apply to us?", or "can we use this study's number?"
-- A proposal, deck, or theory of change quotes a single study's effect as the program's expected effect in a different country, population, or delivery channel
-- `assess-evidence-base` returned a WEIRD-skew flag on a finding and the team must decide whether to rely on it anyway
-- The team wants to adopt an intervention from another organization's trial and cannot say which of that trial's conditions it shares
-- A funder asks "what is the evidence this transfers?" about one cited study
+- A team has a study and asks "will this work here?", "does this apply to our population?", or "they got 40 points in Afghanistan; what about Bangladesh?"
+- A proposal or pitch quotes a study's effect as what the program will achieve in a different country, population, or channel
+- An evidence scan has turned up a promising finding from somewhere else
 
 **Do not use it when:**
-- Nobody has a specific study yet; `assess-evidence-base` finds what exists, then bring one finding here
-- The question is what effect size to put in a power calculation; `estimate-expected-effect` turns this skill's discount into a planning number
-- The question is how the target population's culture shapes its psychology in general (values, self-construal, norms); that is a separate lens, not a fit check on one study, and this skill does not do cultural theory
-- The finding is the team's own prior pilot in the same population; `review-prior-intervention`
-- The team needs the chain the finding would sit in; `draft-theory-of-change`
+- The question is what evidence exists on a topic; use `assess-evidence-base`
+- The team needs a number to plan a sample size on; use `estimate-expected-effect`
+- The team wants to adapt an intervention it has already decided to run; use `specify-intervention-adaptations`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist, and a local researcher who knows the population, when:
-- The decision is a scale-up or a policy and the verdict is anything other than "likely transfers"; the next step is a local test designed by someone who does this for a living
-- The finding concerns clinical, safety, or financial-risk behaviors (medication adherence, HIV testing, defaults that lock up money), where a wrong transfer harms people rather than wasting budget
-- The evidence scan brief flags the mechanism itself as contested, so the fit table has nothing stable to compare against
-- The team has no field contact with the population and cannot check the mechanism assumptions; a local researcher should run the checks before the discount range is used
+Tell the user to consult a researcher who knows the local setting, and an evaluator, when:
+- The decision is a scale-up or a large budget and the verdict is "cannot tell"
+- The condition in doubt is institutional or legal (who may deduct from pay, who may give consent), which a local expert can settle faster than a study
+- The study's own design is disputed, so the finding may not hold even where it was run
 
-Bring them: the fit table, the verdict with its mechanism reasoning, the discount range, and the list of assumptions to test.
+Bring them: the assessment, the study, and the list of unknowns.
 
 ### assess-scalability
 
@@ -695,35 +689,33 @@ Bring them: the definition document, the team's own words about agency, a descri
 ### define-key-behavior
 
 **Title:** Turn a vague goal into one clear behavior  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** behavior-change-wheel, apease, behavior-definition  
-**Consumes:** program-goal, evidence-scan-brief, audience-context-brief  
+**Consumes:** program-goal  
 **Produces:** target-behavior-brief  
 
-**What it does:** Turns one vague program goal into a single observable, measurable behavior, stated as who does what, when.
+**What it does:** Turns a vague program goal into one observable behavior, stated as who does what, when.
 
-**Description (trigger rule):** Use when a program goal is vague ("increase savings", "build trust in the vaccine", "improve engagement") and no specific behavior has been chosen. Also use when someone asks "what should we actually be trying to change?" or "which behavior are we targeting?", or when several candidate behaviors are floating around and the team must commit to one before diagnosis or design. Picks one observable behavior stated as who does what, when, scores it against the alternatives with APEASE, and keeps the runners-up. Most other skills in this library need this output, so run it first. Do not use when a specific, observable behavior with a named actor and time window is already on the table; take that straight to decompose-comb-barriers. Not for explaining why a behavior is not happening, and not for staging a digital product's user journey (build-user-funnel).
+**Description (trigger rule):** Use when a program goal is vague ("increase savings", "build trust in the vaccine", "improve engagement") and no specific behavior has been chosen, or when a team has a list of candidate behaviors and must commit to one. Scores the candidates, picks one, and states it as who does what, when. Do not use when a specific, observable behavior is already agreed; to find out why it is not happening, use decompose-comb-barriers. Not for finding what research exists on the goal; use assess-evidence-base.
 
 **Use it when:**
-- A program document, funder brief, or stakeholder states the goal as an outcome, attitude, or aspiration rather than a behavior: "increase financial resilience", "improve engagement", "reduce stigma"
-- Someone asks "what should we actually be trying to change here?" or "what behavior are we targeting?"
-- Several candidate behaviors are floating around informally and the team needs one to commit to before diagnosis or design starts
-- A team is about to run a barrier diagnosis or design an intervention on a goal that still has no named actor, action, or time window
+- A program document, funder brief, or stakeholder states the goal as an outcome, attitude, or aspiration: "increase financial resilience", "improve engagement", "reduce stigma"
+- Someone asks "what should we actually be trying to change?" or "which behavior are we targeting?"
+- A team has a list of candidate behaviors and must commit to one
+- A team is about to diagnose barriers or design an intervention for a goal with no named actor, action, or time window
 
 **Do not use it when:**
-- A specific, already-observable behavior with a named actor and timeframe is on the table; hand it directly to `decompose-comb-barriers`
-- The question is why a defined behavior is not happening; that is diagnosis, also `decompose-comb-barriers`
-- The "behavior" is a step in a digital product's journey from first contact to outcome; `build-user-funnel` stages that instead
-- The team wants to know what research already exists on the goal; run `assess-evidence-base` on the same goal, ideally before this skill
+- A specific, observable behavior with a named actor and time window is already agreed; to find out why it is not happening, use `decompose-comb-barriers`
+- The team wants to know what research exists on the goal; use `assess-evidence-base`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist or the program's M&E lead when:
-- The top two candidates are close and the tie-breaker rests on an Effectiveness or Impact judgment the team has no evidence for; a short evidence scan or a specialist's read should decide it, not a coin flip
-- Any candidate carries clinical, safety, or legal consequences (medication adherence, reporting violence, financial products with downside risk), so the Side-effects/safety column needs domain expertise the table cannot supply
-- Stakeholders disagree about what the goal means, so Impact scores differently for the funder and the implementer; selection is then a governance decision, not a scoring one
+Tell the user to consult a behavioral scientist or the program's monitoring and evaluation lead when:
+- The top two candidates are close and the tie-breaker is a team guess
+- A candidate carries clinical, safety, or legal consequences (medication, reporting violence, financial products with downside risk), so the side-effects line needs domain expertise
+- Stakeholders disagree about what the goal means, so impact scores differently for the funder and the implementer; selection is then a governance decision
 
-Bring them: the scoring table with its reasons, the ranked shortlist, and the open questions.
+Bring them: the candidate table with its bases, the ranked runners-up, and the list of what would change the choice.
 
 ### design-commitment-device
 
@@ -1483,34 +1475,32 @@ Bring them: the inputs table with sources, the script command and output, the se
 ### identify-wise-intervention-target
 
 **Title:** Find the question a wise intervention must answer  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** wise-interventions, belonging, growth-mindset, self-affirmation  
-**Consumes:** comb-barrier-hypotheses, barrier-diagnosis  
+**Consumes:** qualitative-data  
+**Produces:** wise-intervention-target  
 
-**What it does:** Names which meaning-making question a brief psychological intervention would have to answer for this audience before any such intervention is drafted.
+**What it does:** Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted.
 
-**Description (trigger rule):** Use when a team is drawn to a brief psychological intervention (a growth-mindset message, a belonging story, a values affirmation) and needs to know first which question the audience is asking themselves: "do people like me belong here?", "can I do this?", "am I a good person?", or "are these institutions on my side?". Also use when field data show people have the means to act but read the situation in a way that stops them ("is this a mindset problem or a real barrier?"). Names the one meaning-making question a wise intervention would have to answer, tests that the barrier is not structural, checks that the setting can deliver what the message promises, and states the replication record honestly. Do not use when the barrier is cost, access, time, or information; use select-intervention-levers. Not for drafting the exercise (draft-values-affirmation, draft-belonging-story, adapt-growth-mindset-message), and not for a Self-Determination Theory needs assessment, a different framework with its own skill.
+**Description (trigger rule):** Use when a team proposes a mindset message, a belonging story, or an affirmation exercise and nobody has said which question the audience is asking itself, or when someone asks "is this a mindset problem or a real barrier?". Names that question from the audience's own words and checks that the setting can deliver what a new answer would promise. Do not use when the barrier is cost, access, or a process; use select-intervention-levers. Not for writing the exercise itself.
 
 **Use it when:**
-- A team proposes a mindset message, a belonging story, or an affirmation and nobody has said which question the audience is asking themselves
-- `decompose-comb-barriers` returned a Motivation (reflective) hypothesis ("does not believe the benefit applies to people like them") that field answers support, and the next question is which kind of belief
-- Field data show people with the same resources behaving differently depending on how they read a setback ("math is not for people like me", "the clinic staff look down on us")
-- Someone asks "is this a mindset problem or a real barrier?" or "which of these psychological interventions fits our situation?"
+- A team proposes a mindset message, a belonging story, or an affirmation exercise and nobody has said which question the audience is asking itself
+- Interviews show people with the same resources acting differently according to how they read a setback: "math is not for people like me"
+- Someone asks "is this a mindset problem or a real barrier?"
 
 **Do not use it when:**
-- The barrier is cost, access, time, information, or a process, so that removing it would fix the behavior; that is `select-intervention-levers`
-- The question is already named and the team wants the exercise; that is `draft-values-affirmation` (self-integrity), `draft-belonging-story` (belonging), or `adapt-growth-mindset-message` (ability)
-- The team wants to assess whether people's needs for autonomy, competence, and relatedness are met (Self-Determination Theory); that is a different framework with its own separate skill, and this skill names a meaning-making question, not a need
-- No field data on how the audience reads the situation exist and none can be collected, so this skill would only guess; run `decompose-comb-barriers` and answer its diagnostic questions first
+- The barrier is cost, access, time, information, or a process, so that removing it would fix the behavior; use `select-intervention-levers`
+- The question is already named and the team wants the exercise; use `draft-values-affirmation` for self-integrity, `draft-belonging-story` for belonging, or `adapt-growth-mindset-message` for beliefs about ability
 
 **When to bring in a specialist:**
 
 Tell the user to consult a psychologist with intervention experience, together with a local qualitative researcher, when:
-- The audience includes people in clinical distress (depression, trauma, suicidality), because a self-integrity or belonging exercise can bring the threat to mind without resolving it
-- The identity threat involves stigma or a protected characteristic (HIV status, caste, ethnicity, disability), because the elicitation questions need local shaping and the affordance check is likely to fail if the institution itself discriminates
-- The decision is high-stakes or large-scale (a regional or national rollout, or a program substituting a message for a structural fix) on a family whose record is contested; bring an evaluator to pre-register the test before any scaling
+- The audience includes people in clinical distress, because an exercise about self-worth or belonging can raise a threat without resolving it
+- The threat involves stigma or a protected characteristic (HIV status, caste, ethnicity, disability), because the setting itself may be what excludes people
+- The decision is a regional or national rollout; an evaluator should pre-register a test before any scaling
 
-Bring them: the interpretation table with quotes, the structural test, the affordance check with its facts, and the stakes and scale of the decision.
+Bring them: the table of interpretations with quotes, the check of what the setting offers, and the scale of the decision.
 
 ### map-audience-context
 
@@ -1751,36 +1741,32 @@ Bring them: the record, every delivery log and outcome dataset, and this brief w
 ### select-default-option
 
 **Title:** Choose what people get by default  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** defaults, choice-architecture, behavior-change-techniques  
-**Consumes:** intervention-levers, barrier-diagnosis  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** choice-architecture, defaults  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Chooses the pre-set option people receive when they take no action at one decision point.
+**What it does:** Specifies the option people receive when they take no action at one decision point.
 
-**Description (trigger rule):** Use when people are not acting because doing nothing leaves them out ("nobody enrolls", "they never opt in") and the team wants to change what a person gets when they take no action. Also use when a team is about to flip a program from opt-in to opt-out and must decide the default, for whom, and how opting out works. Chooses the pre-set option and names the mechanism it relies on (endorsement, endowment, or effort), because the mechanism predicts both the effect size and whether the default is defensible; draws on the Jachimowicz et al. (2019) meta-analysis and the Afghanistan mobile-money default trial. Do not use when the problem is hassle inside the process rather than inaction at one decision point; run audit-process-friction instead. Not for restrictions a person places on their own future self (design-commitment-device), not for the enrollment notice wording (draft-lever-content), and not for deciding whether a default is the right technique (select-intervention-levers).
+**Description (trigger rule):** Use when people say they want something, it is available, and doing nothing leaves them without it: "nobody enrolls", "the form sits unsigned". Also use when a team wants to switch from opt-in to opt-out ("let's auto-enroll everyone"). Specifies the default, who it is for, how to opt out, and what to monitor. Do not use when the hassle is in the steps of a process; use audit-process-friction. Not for a restriction people choose for themselves; use design-commitment-device.
 
 **Use it when:**
-- A confirmed barrier is inertia at one decision point: people say they want the thing, the option is available, and the no-action path leaves them without it ("nobody enrolls", "the form sits unsigned", "they never switch")
-- A team is about to flip a program from opt-in to opt-out ("let's just auto-enroll everyone") and has not decided which option becomes the default, for whom, or how opting out works
-- An enrollment, contribution, or consent step already has a default (there always is one, usually "nothing") and the team wants to check whether it serves the people who receive it
-- The lever brief from `select-intervention-levers` names a default or pre-set option as the technique
+- A confirmed barrier is inaction at one decision point: people say they want the option, it is available, and doing nothing leaves them without it ("nobody enrolls", "the form sits unsigned")
+- A team is about to switch a program from opt-in to opt-out
+- A step already has a default, usually "nothing", and the team wants to check whether it serves the people who receive it
 
 **Do not use it when:**
-- The problem is friction inside the process (many fields, documents, trips) rather than inaction at one point; a default does not remove the steps after it. Run `audit-process-friction`
-- The person is meant to restrict their own future choices, such as a locked savings account they choose to open; that is an opt-in restriction, owned by `design-commitment-device`
-- The team needs the words of the enrollment notice or the opt-out message; that is `draft-lever-content`, run after this skill
-- No lever has been selected, or the barrier is motivation, cost, or supply rather than inertia; a default cannot create a want or supply a missing service. Go back to `select-intervention-levers`
+- The hassle is in the steps of a process (fields, documents, trips), which a default does not remove; use `audit-process-friction`
+- People are to restrict their own future choices, such as a locked account they choose to open; use `design-commitment-device`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist, and to run `audit-intervention-ethics`, when:
-- The default moves money (a wage or benefit deduction, a contribution rate, a fee, a loan feature); a financial-services compliance lead must check the opt-out and the disclosure against consumer-protection rules before a pilot
-- The default sets medical treatment or testing (a default test, a default prescription, a default referral); a clinician must confirm that the opt-out path is safe and that the default is appropriate for everyone who receives it
-- The default changes legal status or consent (data sharing, enrollment in a scheme with obligations, a signed agreement); a lawyer must confirm that consent by inaction is valid in that jurisdiction
-- The default sits in an environmental domain or the sponsor is distrusted; a behavioral scientist should judge whether a default is the right technique, given the weaker and sometimes negative results there
+Tell the user to consult the relevant specialist before any pilot when:
+- The default moves money (a deduction, a contribution rate, a fee): a financial-services compliance lead checks the opt-out and the disclosure
+- The default sets medical treatment or testing: a clinician confirms it is appropriate for everyone who receives it and that opting out is safe
+- The default changes legal status or consent (data sharing, enrollment with obligations): a lawyer confirms that consent by inaction is valid in that jurisdiction
 
-Bring them: the specification with its mechanism line, the opt-out design, the monitoring threshold, and the list of who could be worse off.
+Bring them: the specification, the list of who could be worse off, and the opt-out design.
 
 ### select-intervention-levers
 
@@ -2028,7 +2014,6 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - write-pre-analysis-plan → analyze-heterogeneous-effects (via `analysis-plan`: Analysis plan)
 - write-pre-analysis-plan → estimate-cost-effectiveness (via `analysis-plan`: Analysis plan)
 - map-audience-context → choose-delivery-moment (via `audience-context-brief`: Audience and context brief)
-- map-audience-context → define-key-behavior (via `audience-context-brief`: Audience and context brief)
 - map-audience-context → design-reminder-schedule (via `audience-context-brief`: Audience and context brief)
 - map-audience-context → draft-lever-content (via `audience-context-brief`: Audience and context brief)
 - map-audience-context → draft-values-affirmation (via `audience-context-brief`: Audience and context brief)
@@ -2037,7 +2022,6 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - audit-process-friction → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → draft-belonging-story (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- audit-process-friction → identify-wise-intervention-target (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
@@ -2045,13 +2029,11 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - synthesize-interview-findings → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → draft-belonging-story (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- synthesize-interview-findings → identify-wise-intervention-target (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-researcher-bias → decompose-comb-barriers (via `bias-audit-report`: Bias audit report)
 - decompose-comb-barriers → draft-tdf-interview-guide (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
-- decompose-comb-barriers → identify-wise-intervention-target (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → plan-evaluation-design (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → select-intervention-levers (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → synthesize-interview-findings (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
@@ -2069,7 +2051,6 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - plan-evaluation-design → estimate-sample-size (via `evaluation-design`: Evaluation design)
 - plan-evaluation-design → write-pre-analysis-plan (via `evaluation-design`: Evaluation design)
 - assess-evidence-base → assess-evidence-transferability (via `evidence-scan-brief`: Evidence scan brief)
-- assess-evidence-base → define-key-behavior (via `evidence-scan-brief`: Evidence scan brief)
 - assess-evidence-base → estimate-expected-effect (via `evidence-scan-brief`: Evidence scan brief)
 - design-fidelity-monitoring → draft-intervention-description (via `fidelity-plan`: Fidelity monitoring plan)
 - draft-intervention-description → assess-scalability (via `intervention-description`: Intervention description)
@@ -2146,7 +2127,6 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - select-intervention-levers → draft-lever-content (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → plan-evaluation-design (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → plan-trials-of-improved-practices (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → select-default-option (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → select-messenger (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → write-social-norm-message (via `intervention-levers`: Candidate intervention levers)
 - review-prior-intervention → audit-researcher-bias (via `intervention-post-mortem`: Intervention post-mortem brief)
@@ -2190,7 +2170,7 @@ Inputs no skill produces yet (the user supplies them, or a skill is missing):
 - `experiment-intent` (Experiment intent statement): consumed by choose-trial-design
 - `prior-intervention-record` (Prior intervention record): consumed by review-prior-intervention
 - `program-goal` (Program goal statement): consumed by assess-evidence-base, besci-navigator, define-key-behavior, draft-theory-of-change, map-audience-context
-- `qualitative-data` (Qualitative data): consumed by diagnose-social-norm, synthesize-interview-findings
+- `qualitative-data` (Qualitative data): consumed by diagnose-social-norm, identify-wise-intervention-target, synthesize-interview-findings
 - `researcher-assumptions` (Researcher assumption statement): consumed by audit-researcher-bias
 - `user-funnel-map` (User funnel map): consumed by choose-ai-eval-level
 

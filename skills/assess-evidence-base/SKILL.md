@@ -1,126 +1,120 @@
 ---
 name: assess-evidence-base
 description: >-
-  Use when a program goal is set but nobody has checked what research already
-  exists on similar behaviors, audiences, or interventions. Also use when
-  someone asks "has this been done before?" or "what does the evidence
-  actually say works here?", or when a team is about to define a target
-  behavior or generate barrier hypotheses from internal assumptions alone.
-  Summarizes what has worked, what has not, how large the effects were, and
-  where the evidence is thin or drawn mainly from wealthy Western
-  populations. Run it early, before choosing a target behavior. Do not use
-  it instead of define-key-behavior; this skill surveys what is known, it
-  does not select a behavior, so run both on the same goal. Not for
-  reviewing the team's own past attempt (review-prior-intervention) or the
-  team's own beliefs about the population (audit-researcher-bias).
+  Use when a program goal is set and nobody has checked what research already
+  exists, or when someone asks "has this been done before?" or "what does the
+  evidence say works here?". Searches the literature, checks every citation,
+  and reports what worked, what did not, how large the effects were, and where
+  each study was run. Do not use when the question is whether one known study
+  applies to your setting; use assess-evidence-transferability. Not for
+  reviewing your own past program; use review-prior-intervention.
 license: CC-BY-4.0
 metadata:
   title: Check what research already exists
   type: atomic
   stage: define
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
-  authors: "Joe Speed"
+  authors: "Joe Speed, Zezhen Wu"
   org: IL
-  weird: weird-only
-  tags: "evidence-synthesis, rapid-evidence-assessment, grade"
+  tested_in: not-applicable
+  tags: "evidence-synthesis, rapid-evidence-assessment"
   consumes: "program-goal"
   produces: "evidence-scan-brief"
 ---
 
 ## What it does
 
-Reviews existing research on the behavior, audience, or setting named in a program goal, so later steps start from evidence rather than intuition.
+Summarizes the existing research on the behavior, audience, or setting named in a program goal.
 
-It reports what is known to work, what is known not to work, and what is untested. The scan is a rapid evidence assessment: time-bounded and structured, meant to produce a usable brief in hours or days rather than exhaustive coverage over months. It always states its own coverage, so a thin scan cannot be mistaken for a null result.
+**What this adds:** runs a literature search and opens every source before citing it; always reports null and contradicting findings in their own section; states where each study was run next to your population; and says what the search covered, so a thin scan is not read as "nothing works".
 
 ## When to use it
 
 ### Use it when
-- A program goal has just been stated and no one has checked whether similar interventions have already been tried, anywhere, for this behavior or population
-- A team is about to define a target behavior or generate barrier hypotheses based purely on internal assumptions, with no reference to external evidence
+- A program goal has been stated and no one has checked whether similar interventions have been tried for this behavior or population
 - Someone asks "has this been done before?" or "what does the evidence actually say works here?"
-- A funder or reviewer asks what the program's design is based on and the team's current answer is a hunch
+- A team is about to choose a target behavior or an intervention from its own assumptions alone
 
 ### Do not use it when
-- The team wants to select a target behavior; that is `define-key-behavior`. This skill surveys what is known, it does not choose. Run them on the same input, not one instead of the other
-- The "evidence" in question is the team's own prior attempt at this program; `review-prior-intervention` structures that record against the data it collected
-- The question is what the team itself believes about the population; `audit-researcher-bias` audits those priors, this skill surveys the literature
-- A full systematic review or meta-analysis is required, for a publication or a policy decision; this is a rapid, time-bounded scan and says so
+- The question is whether one known study applies to the user's setting; use `assess-evidence-transferability`
+- The "evidence" is the team's own earlier attempt at the program; use `review-prior-intervention`
+- A full systematic review is required, for a publication or a policy decision; this is a time-bounded scan
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The program goal as stated, plus whatever is known about the target population, setting, and constraints. This is the same raw input `define-key-behavior` takes; this skill can run in parallel with it.
-2. Optional. How much time is available for the scan (a few hours, a day, a week) and which sources the user can reach (open web, specific databases, an organizational library). The "Confidence in this scan" section depends on this being honest.
-3. Optional. Any studies, reports, or organizations the team already knows about, so the scan builds on them rather than rediscovering them.
-4. Optional. Any specific intervention or approach the team is already considering, so the scan searches for evidence against it as well as for it.
+1. **Required.** The program goal, and what is known about the population and setting: who, where, reached through what channel.
+2. **Required, with a default.** Which search route to use:
+   - **Paperclip** reads the full text of papers in PubMed Central, bioRxiv, medRxiv, and arXiv, so numbers come from the results section. It is strongest on health, needs the `paperclip` command-line tool installed and signed in, and misses most economics journals, working papers, and program reports.
+   - **General web search** covers economics, education, working papers, and reports from J-PAL, IPA, 3ie, and the World Bank. It often reaches only the abstract.
+   - **Both**, for a health topic where program reports also matter.
+3. Optional. Studies, reports, or organizations the team already knows, and any intervention it is already considering.
 
-If 1 is missing, ask and stop. If 2 is missing, assume a rapid scan of a few hours using openly available sources and say so under "Confidence in this scan". If 3 and 4 are missing, proceed.
+If 1 is missing, ask and stop. If the user gives no route, use general web search, add Paperclip when it is installed and the topic is health, and say in one line which route you chose and what the other would add. If no search tool is available, say so in the first line and follow rule 6 in `references/citing-sources.md`.
 
 ## What it draws on
 
-- Grant, M. J., & Booth, A. (2009). A typology of reviews: an analysis of 14 review types and associated methodologies. *Health Information & Libraries Journal*, 26(2), 91–108.
-- Guyatt, G. H., Oxman, A. D., Vist, G. E., et al. (2008). GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. *BMJ*, 336(7650), 924–926.
-- Rothstein, H. R., Sutton, A. J., & Borenstein, M. (Eds.). (2005). *Publication Bias in Meta-Analysis: Prevention, Assessment and Adjustments*. John Wiley & Sons, Ch. 1.
+- Garritty, C., Gartlehner, G., Nussbaumer-Streit, B., et al. (2021). Cochrane Rapid Reviews Methods Group offers evidence-informed guidance to conduct rapid reviews. *Journal of Clinical Epidemiology*, 130, 13–22. https://doi.org/10.1016/j.jclinepi.2020.10.007 Supports: a time-bounded search that states its limits, in place of a full systematic review.
+- Guyatt, G. H., Oxman, A. D., Vist, G. E., et al. (2008). GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. *BMJ*, 336(7650), 924–926. https://doi.org/10.1136/bmj.39489.470347.AD Supports: reporting each finding with its study design. GRADE is a standard system for rating how certain a body of evidence is.
+- Thalmayer, A. G., Toscanelli, C., & Arnett, J. J. (2021). The neglected 95% revisited: Is American psychology becoming less American? *American Psychologist*, 76(1), 116–129. https://doi.org/10.1037/amp0000622 Supports: stating where each study was run.
 
-A Rapid Evidence Assessment (REA): a time-bounded, structured literature scan rather than a full systematic review. The goal is a usable brief in hours or days, not exhaustive coverage over months. GRADE-style thinking governs how each finding is reported: name the effect (if any), the population and setting it was measured in, and how confident that estimate should be treated. A single small pilot and a multi-site RCT are not equally trustworthy evidence, even if both point the same direction. The publication-bias literature is why the output template has a mandatory section for null and contradicting findings: a scan that only surfaces supporting evidence is not reporting the evidence base, it is building a case for a conclusion already reached.
+**Where the evidence comes from:** The search method makes no claim about how people behave, so the question applies to what it finds. In six leading psychology journals from 2014 to 2018, a little over 60% of samples and authors were American, and the countries where 89% of people live supplied 4 to 5% (Thalmayer et al., 2021). "No evidence found" therefore means none was published where the scan looked.
 
-**WEIRD skew:** This skill's entire purpose is surfacing what is in the indexed, published literature, and that literature is itself overwhelmingly WEIRD (Western, Educated, Industrialized, Rich, Democratic) in its samples (Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? *Behavioral and Brain Sciences*, 33(2-3), 61–83). A "no evidence found" result from this skill means "no published evidence was found", not "this does not work here". The output template forces this distinction into its own field rather than letting it stay implicit.
-
-**Replication status:** Not applicable in the effect sense: a rapid evidence assessment is a review method, not an intervention. Its known limitation is coverage. Two time-bounded scans of the same question can surface different studies, which is why the brief must state how much time and how many sources it covered rather than present itself as complete.
+**Replication status:** Not applicable; a rapid review is a method. Two scans of one question can turn up different studies, so the brief states what it searched.
 
 ## How to do it
 
-1. **Restate the goal** verbatim or lightly cleaned, so the reader can see what the evidence was scanned for.
-2. **Search for evidence on the behavior and population generally**, not only for the intervention the team already has in mind. Searching only for whether a named approach works produces a brief that confirms rather than informs. If every finding points the same direction, check whether the search terms themselves were leading.
-3. **Write each finding under "What has already been tried"** with four parts: the intervention or approach, the population and setting it was tried in, the effect reported with size and direction where available, and a confidence qualifier (single pilot, multiple studies, RCT, meta-analysis). Fewer, clearly characterized findings beat a long list of redundant ones that all report the same underlying result.
-4. **Fill the "Findings that don't support the goal" section.** Null results, contradicting results, and backfire effects, each with what it implies for this program. If genuinely none were found, write "none found in the time available" explicitly; never omit the section. An empty section on a well-studied behavior is more likely an incomplete search than a one-sided evidence base.
-5. **Flag WEIRD skew per finding**, not once for the whole brief: where the finding was actually measured versus the population and setting named in the goal, and what specifically should be validated locally before trusting it.
-6. **State the evidence gaps plainly.** What the goal asks that the available literature does not address. A real gap, named, is more useful than a stretched analogy to a loosely related study.
-7. **Write "Confidence in this scan":** how much time and how many sources it covered, and what a fuller review would need to check that this one could not.
-8. **Check before returning:** Does any finding cite a loosely related behavior or very different population as if it directly answers the goal, without naming the gap? Does anything in the brief read "no evidence found" as "does not work"? Fix both.
+1. **Restate the goal and name the search route.**
+2. **Search on the behavior and the population**, not only on an intervention the team already favors. Run at least one search for reviews and meta-analyses and one for studies in the user's country or region. A search for "does X work" returns the studies that say it does.
+3. **Open each source before using it**, following `references/citing-sources.md`: confirm authors, year, and title; take effect sizes from the results; write "abstract only" where that is all you read; drop any source whose link does not resolve.
+4. **Write one row per finding:** the intervention, where and with whom it was tested, the result with its size, unit, and study design, and how that population compares with the user's. Several papers on one trial are one row.
+5. **Fill "Findings that do not support the goal":** null results, contradicting results, and backfires, each with what it means for this program. If there are none, write "None found in this search."
+6. **State the gaps:** what the goal asks that no located study addresses.
+7. **Write "Search coverage":** what was searched, with which terms, how many sources were opened, and what was not reached.
+8. **Stop at the summary.** Do not choose a behavior or recommend a design.
 
-See `references/worked-example.md` for a complete run on a savings program for Nairobi market vendors.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
 # Evidence scan brief
 
-**Program goal (as given):** <verbatim or lightly cleaned goal statement>
+**Program goal (as given):** <the goal, verbatim or lightly cleaned>
+**Search route:** <Paperclip / general web search / both / no search tool available>
 
-## What has already been tried
-- <intervention/approach 1>: <population/setting it was tried in>; <effect reported, with size and direction if available>; <confidence: e.g. single pilot / multiple studies / RCT / meta-analysis>
-- <intervention/approach 2>: <...>
+## What has been tried
 
-## Findings that don't support the goal (mandatory; state "none found in the time available" explicitly if genuinely none, do not omit the section)
-- <null result, contradicting result, or backfire effect>: <population/setting>; <what this implies for the current program>
+| Intervention | Tested where and with whom | Result | Compared with your population | Source |
+|---|---|---|---|---|
+| <...> | <country, population, setting> | <size, unit, and direction; study design; "abstract only" if the full text was not read> | <same country and group / different in <what>> | <authors, year, link> |
 
-## WEIRD-skew flags (mandatory; per finding above, not once for the whole brief)
-- <finding>: <population/setting it was actually measured in, versus the target population/setting named in the program goal>; <what specifically should be validated locally before trusting it as-is>
+## Findings that do not support the goal
+- <null result, contradicting result, or backfire>: <where and with whom>; <what it means for this program>; <source>
 
-## Evidence gaps
-<what the program goal asks that the available literature simply does not address; a real gap, stated plainly, is more useful than a stretched analogy to a loosely related study>
+## Gaps
+<what the goal asks that no located study addresses>
 
-## Confidence in this scan
-<how much time and how many sources this scan covered, and what a fuller review would need to check that this one could not>
+## Search coverage
+- **Searched:** <tools or databases, and the search terms>
+- **Opened:** <n sources: n in full text, n abstract only>
+- **Not reached:** <languages, program reports, databases>
+- **A fuller review would add:** <...>
 ```
 
 ## Where it goes wrong
 
-- **One-sided search.** Searching only for evidence that the named intervention works, rather than for evidence on the behavior and population generally, produces a brief that confirms rather than informs. If every finding points the same direction, check whether the search terms themselves were leading.
-- **Analogy laundering.** Citing a study on a loosely related behavior or a very different population as if it directly answers the program goal, without naming the gap in the WEIRD-skew flags or Evidence gaps section. A study on urban US college students' savings behavior is not silently transferable to rural smallholder farmers; say so if that is the best evidence available.
-- **Confidence collapse.** Treating a single small pilot and a replicated RCT as equally strong evidence because both get reported as "a study found". The confidence qualifier in each bullet exists specifically to prevent this.
-- **Padding to look thorough.** Listing many superficially similar studies that all report the same underlying finding inflates the appearance of a rich evidence base without adding information. Fewer, more clearly characterized findings beat a long list of redundant ones.
-- **Treating "no evidence found" as "doesn't work".** An REA is time-bounded and WEIRD-skewed by construction. Absence of published evidence for this exact population is not evidence of absence. The Evidence gaps section exists to make that distinction explicit rather than letting a thin scan read as a null result.
+- **Citing from memory.** A recalled citation can carry the wrong authors, year, or link, and the reader cannot tell. Every row's source was opened in this run, or the row says "from memory, not checked".
+- **Stretching a loosely related study.** US students' saving is not evidence about rural farmers. If it is the nearest evidence, say so in the comparison column and under Gaps.
+- **Reading "no evidence found" as "does not work".** Absence from a time-bounded search is not a null result.
 
 ## When to bring in a specialist
 
-Tell the user to consult a research librarian, an evidence-synthesis specialist, or a behavioral scientist with domain knowledge when:
-- The decision the scan informs is high-stakes or hard to reverse (a multi-year program design, a national policy recommendation, a publication), so a time-bounded scan is being asked to carry weight only a systematic review can carry
-- The located studies contradict each other and the team has to judge which to weight; that is a GRADE-style methods judgment the scan can flag but not settle
-- The relevant evidence is likely to sit in grey literature, program reports, or non-English sources the scan cannot reach, so "no evidence found" may only mean "not indexed where we looked"
+Tell the user to consult a research librarian, an evidence-synthesis specialist, or a behavioral scientist in the field when:
+- The decision is high-stakes or hard to reverse: a multi-year program, a national policy recommendation, a publication
+- The located studies contradict each other and the team must decide which to weight
+- The relevant evidence probably sits in program reports or non-English sources the scan could not reach
 
-Bring them: the brief with its confidence section, the search terms used, and the findings list with its confidence qualifiers.
+Bring them: the brief, the search terms, and the list of sources opened.

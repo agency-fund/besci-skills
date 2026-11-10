@@ -1,27 +1,37 @@
 # Worked example: savings among Nairobi market vendors
 
-This example continues the running case used across the skills ported from Joe Speed's prototype: a savings program for informal-sector market vendors in Nairobi. It is illustrative, not a real scan.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Program goal (as given):** "Increase long-term savings among informal-sector market vendors in Nairobi so they have a buffer against income shocks."
+## The request
+
+"Our goal is to increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks. Most are women running produce stalls. They earn daily in cash and through mobile money, and most already belong to a savings group. Before we pick a behavior to target: has this been done before, and what does the evidence say? Use general web search."
+
+## The output
 
 ```markdown
 # Evidence scan brief
 
-**Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi so they have a buffer against income shocks.
+**Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks.
+**Search route:** General web search, as asked. Paperclip would add full-text reading for health papers; this topic sits mostly in economics journals, which it does not cover.
 
-## What has already been tried
-- Lockbox commitment savings devices: market women in Busia, Kenya; increased savings and business investment, especially among women who previously lacked a safe way to keep money at home; confidence: single randomized field experiment (Dupas & Robinson, 2013).
-- Rotating savings and credit associations (ROSCAs / *chama*): same study population; smaller and less consistent effect on measured savings than the lockbox device; confidence: same field experiment, secondary comparison arm.
+## What has been tried
 
-## Findings that don't support the goal
-- Formal bank savings accounts: same study population; low take-up and low sustained use, attributed to fees and branch distance; confidence: same field experiment. This directly cautions against assuming a bank-account-based design will work here without addressing access first.
+| Intervention | Tested where and with whom | Result | Compared with your population | Source |
+|---|---|---|---|---|
+| A safe place to keep money at home (a lockable box) | Rural western Kenya; members of savings groups | Health savings rose 66%; randomized field experiment; abstract only | Same country. Rural, and saving for health costs, not a general buffer | Dupas & Robinson (2013), https://doi.org/10.1257/aer.103.4.1138 |
+| Paying a weekly payment into a bank account by default instead of in cash | Rural India; villagers who had or opened an account | Account savings rose 131% within three months; randomized field experiment; abstract only | Different country. The payer chose the channel; vendors have no payer | Somville & Vandewalle (2018), https://doi.org/10.1257/app.20160547 |
+| Enrolling employees by default in a savings account fed from salary | Afghanistan; employees of one firm, paid by mobile money | Participation rose 40 percentage points, the same as a 50% match; randomized field experiment; abstract only | Different country. Salaried staff with an employer who can deduct; vendors are self-employed | Blumenstock, Callen & Ghani (2018), https://doi.org/10.1257/aer.20171676 |
 
-## WEIRD-skew flags
-- Dupas & Robinson (2013): measured in rural Busia, Kenya, not urban Nairobi markets. The underlying population is a rare non-WEIRD example in the savings-commitment literature, which is otherwise dominated by US and UK studies, but the rural-versus-urban market setting is still a gap to validate before assuming the effect transfers to Nairobi.
+## Findings that do not support the goal
+- The default did not outlast the payment channel: in the India study, once everyone was paid in cash again, savings patterns no longer differed. A program that changes how vendors are paid for a few months should not expect a lasting habit. Somville & Vandewalle (2018), abstract only.
+- Earmarking savings for one purpose helped only for emergencies, or for people often asked for money by friends and relatives. A label on a savings pot is not a general remedy. Dupas & Robinson (2013), abstract only.
 
-## Evidence gaps
-No located study measures mobile-money-based (as opposed to physical lockbox) commitment savings devices specifically among urban market vendors. The closest evidence is a physical-device study in a rural setting, not a mobile-money study in an urban one.
+## Gaps
+No located study tests a savings intervention with self-employed urban vendors who earn daily and have no employer or program paying them. All three positive results depend on either a safe physical place for cash or a payer who sets the channel. Whether a mobile-money wallet can play either role for vendors is untested in what this scan found.
 
-## Confidence in this scan
-Time-bounded scan of a small number of directly relevant field experiments in comparable Kenyan settings. A fuller review would need to search specifically for mobile-money savings-product evaluations in urban East African markets, which this pass did not locate.
+## Search coverage
+- **Searched:** general web search, with the terms "default savings field experiment", "savings market vendors Kenya randomized", "commitment savings low-income countries review"
+- **Opened:** 3 sources, all abstract only
+- **Not reached:** full texts; mobile-money operators' own evaluations; reports in Swahili; the 3ie and J-PAL evaluation databases
+- **A fuller review would add:** a search of those two databases, the full text of each study for sample sizes and take-up, and any systematic review of savings promotion in sub-Saharan Africa
 ```

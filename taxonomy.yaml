@@ -224,6 +224,14 @@ io_types:
     label: Evidence scan brief
     description: "What has been tried for a behavior, population, or context, with effect sizes where reported, null or contradicting findings, evidence gaps, and which findings are WEIRD-skewed."
     user_suppliable: false
+  - id: transferability-assessment
+    label: Transferability assessment
+    description: "Whether one published finding is likely to hold in a named setting: the study and the setting compared on what the effect depends on, a verdict, and the assumptions to test locally."
+    user_suppliable: false
+  - id: wise-intervention-target
+    label: Wise-intervention target
+    description: "The question about themselves or their situation that an audience is asking, shown in their own words, with a check that the setting can deliver what a new answer would promise."
+    user_suppliable: false
   - id: audience-context-brief
     label: Audience and context brief
     description: "The population operationalized as a specific subgroup, the decision moment where the behavior choice is made, the channels already reaching them, and unconfirmed WEIRD-default assumptions."

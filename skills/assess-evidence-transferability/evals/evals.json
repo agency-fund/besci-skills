@@ -3,31 +3,71 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Our evidence scan brief flagged this finding: Ferraro and Tracy 2022, a meta-analysis of loss-framed incentive contracts (you get the bonus up front and lose it if you miss the target), pooled effect 0.16 SD on productivity, but 0.33 SD in lab studies versus 0.02 SD in field studies, with publication bias among the lab studies; mostly WEIRD samples. We run a program with about 900 piece-rate workers in textile units in Odisha, India, paid weekly in cash by the unit owner; we want to offer a loss-framed weekly bonus to raise output, delivered by the owner. The decision is whether to put it in a proposal as the main intervention with an expected effect. Does this transfer?",
-      "expected_output": "A complete transferability assessment following the output template: the finding written as a row with its claimed mechanism (loss aversion, or 'not stated' if the user did not give one); the user's case on the same five dimensions; a fit table in which the units (lab participants versus cash-paid piece-rate workers), the treatment (lab task versus weekly bonus held by the owner), the outcome (lab output versus weekly piece counts), the setting (cash wages, owner-worker relationship), and the implementer (researcher versus unit owner) each get a 'touches the mechanism?' judgment with a reason; a verdict of 'cannot tell' or 'unlikely to transfer at the pooled size', explicitly using the 0.02 SD field figure rather than the 0.16 pooled or 0.33 lab figure; a provisional discounted range handed to estimate-expected-effect, not a planning number; a list of local assumptions to test (for example, that workers trust the owner to hold the bonus, that a weekly loss frame is not read as a wage cut) with the cheapest check for each; and a closing checklist. It does not search for other studies, does not review Odisha workers' culture in general, and does not re-ask the Before you start questions.",
+      "name": "Full run",
+      "prompt": "We run a savings program at three garment factories in Gazipur, Bangladesh, about 6,000 workers, mostly young women, paid monthly into a mobile-money wallet the factories brought in 18 months ago. We want to enroll workers by default in a savings pocket in the wallet, with opt-out at the HR desk, and judge it by the balance held after six months. Our proposal says to expect the 40-point effect from Blumenstock, Callen and Ghani (2018), https://doi.org/10.1257/aer.20171676. Does that apply to us? This is for a one-factory pilot.",
+      "expected_output": "A transferability assessment in the output template with one of the five verdicts.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "States how the study was read: full text, abstract only, or the user's summary.",
+        "Gives the study's effect with its unit (40 percentage points on participation).",
+        "Has a table comparing the study and the Bangladesh setting, with each row marked holds, does not hold, or unknown.",
+        "Notes that the study measured participation and the team's outcome is the balance held after six months.",
+        "Gives exactly one of the five verdicts.",
+        "Lists at least two assumptions to test locally, each with a check."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Does the savings default effect work in Bangladesh?",
-      "expected_output": "The skill does not produce an assessment. It asks for the one finding (citation, population and sample size, the treatment as delivered, the outcome, who delivered it, the effect with its unit, and the claimed mechanism), the user's case on the same dimensions (population, the version of the default they would deliver, the outcome they care about, the setting, who would implement), and the decision the verdict informs. It may ask, marked optional, about near-setting replications and what could be tested cheaply. It does not pick a default study from memory and assess it.",
+      "expected_output": "The skill asks for the study and the setting, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks which study or finding the user means.",
+        "Asks about the setting: who, what would be delivered, by whom, or which outcome.",
+        "Gives no verdict.",
+        "Does not cite a study the user did not name."
+      ]
     },
     {
       "id": 3,
-      "prompt": "We're a Lagos NGO. A South African trial we found (details pasted from our evidence scan brief: peer-delivered HIV self-test kits with phone follow-up raised testing among men by a large margin, mechanism given as reduced stigma at the clinic) is the basis for a Ministry request to drop counselor follow-up for our 12,000 male clients across Lagos and go to SMS-only follow-up, citing that trial. Decision: a city-wide change next quarter. Will it transfer?",
-      "expected_output": "The skill produces the fit table and a verdict, noting that the user's treatment (SMS-only follow-up) differs from the study's (peer delivery with phone follow-up) on the treatment and implementer rows in ways that touch the stated mechanism, so the verdict is 'unlikely to transfer as specified' or 'cannot tell', with a provisional discounted range and the assumptions to test (that men read SMS follow-up as equivalent to a phone call from a peer; that stigma, not follow-up, is the active ingredient). Because the decision is a city-wide policy change, the behavior is HIV testing with clinical follow-up, and the verdict is not 'likely transfers', it tells the user to consult a behavioral scientist and a local researcher before the change, and says to bring the fit table, the verdict, the range, and the assumptions list. It does not assess any study the user did not supply and does not redesign the follow-up.",
+      "name": "Near the escalation point",
+      "prompt": "We're a Lagos NGO about to ask a funder for $2 million to scale SMS appointment reminders to 400 clinics. Our case rests on one South African trial where reminders plus a follow-up phone call from a nurse cut missed HIV clinic visits. We'd send SMS only, through an aggregator, and we have no nurses for calls. I've pasted the trial's abstract below; we can't get the full paper. Will it hold?\n\n[abstract pasted]",
+      "expected_output": "The skill assesses what it can from the abstract, says what the abstract leaves unknown, and tells the user to bring in a specialist before a scale-up decision.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "States that the study was read from the abstract only.",
+        "Notes that the user's treatment drops the nurse's phone call.",
+        "Does not give 'Likely to hold' as the verdict.",
+        "Tells the user to consult a researcher who knows the setting, or an evaluator, before the scale-up decision.",
+        "Says what to bring to that specialist."
+      ]
     },
     {
       "id": 4,
-      "prompt": "We're planning a sample size for a pilot of default savings enrollment for mobile-money users in Dhaka. What effect size should we plug into the power calculation?",
-      "expected_output": "The skill recognizes that the request is for a planning number, not a fit judgment on one study. It does not produce a fit table. It says that turning a discount into the effect size for a power calculation is estimate-expected-effect's job, and that if the team wants a specific study assessed for fit first it should supply that study here so the discount range can feed estimate-expected-effect. It does not pick a number.",
+      "name": "Wrong skill",
+      "prompt": "We're planning a pilot of default savings enrollment for mobile-money users in Tanzania. What effect size should we plan the sample size on?",
+      "expected_output": "The skill says this is a planning number, not a fit judgment on one study, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the request is for a planning number.",
+        "Names estimate-expected-effect.",
+        "Does not produce a transferability assessment."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "From an expert review #14",
+      "prompt": "We work on anti-corruption in district land offices in Uganda. Will reducing petty corruption raise people's trust in government here? Our setting: rural districts, land offices staffed by district officials, and we'd measure trust with a household survey. I don't have a particular study, it's just what everyone says.",
+      "expected_output": "The skill says there is no finding to assess and gives no verdict.",
+      "files": [],
+      "assertions": [
+        "Says no study was supplied, or that no study tests the claim.",
+        "Writes 'No evidence to assess' or asks for the study; gives none of the other four verdicts.",
+        "Does not state that the effect is unlikely to transfer.",
+        "Any related study it lists is described by how it differs from the claim.",
+        "Points to assess-evidence-base for finding what evidence exists."
+      ]
     }
   ]
 }

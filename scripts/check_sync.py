@@ -11,6 +11,8 @@ so they work in Claude Desktop / claude.ai, where the repo is not available:
   template/skill-template/ (dir)    -> skills/besci-skill-creator/assets/skill-template/
   workflows/WORKFLOW-TEMPLATE.md    -> skills/besci-navigator/references/workflow-template.md
   skills/besci-skill-creator/references/checklist.md -> skills/besci-eval/references/checklist.md
+  template/shared/citing-sources.md -> references/citing-sources.md in each skill that searches
+                                       for studies or reads the studies it is given
 
 CI fails if a copy drifts. `--fix` overwrites the copies from the sources.
 A pair is skipped (exit 0) if the target's skill folder does not exist yet.
@@ -33,6 +35,8 @@ PAIRS = [
     ("template/skill-template", "skills/besci-skill-creator/assets/skill-template"),
     ("workflows/WORKFLOW-TEMPLATE.md", "skills/besci-navigator/references/workflow-template.md"),
     ("skills/besci-skill-creator/references/checklist.md", "skills/besci-eval/references/checklist.md"),
+    ("template/shared/citing-sources.md", "skills/assess-evidence-base/references/citing-sources.md"),
+    ("template/shared/citing-sources.md", "skills/assess-evidence-transferability/references/citing-sources.md"),
 ]
 
 
