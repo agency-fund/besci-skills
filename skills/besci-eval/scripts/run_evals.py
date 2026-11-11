@@ -330,7 +330,7 @@ def write_report(path: str, skill: bv.Skill, args, structure: Dict, trigger: Opt
                 lines.append(f"| {m}, with no skill | - | {fmt(d['median'])} | {share(d)} | {len(d['blocking'])} |")
             lines += ["", "The no-skill rows show what the model does on the same requests without the skill. The gap to the first rows is what the skill adds."]
         lines.append("")
-    lines += ["## Next actions for the author", ""]
+    lines += ["## What would raise the score", ""]
     acts = []
     if not structure["ok"]:
         acts.append("Fix the validator errors above with besci-skill-creator.")

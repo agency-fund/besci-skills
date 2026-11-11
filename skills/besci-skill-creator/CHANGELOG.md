@@ -1,7 +1,7 @@
 # Changelog
 
 ## 0.3.0 - 2026-11-11
-Follows the conversational-voice standard (ADR 0009) when drafting a skill: a plain lead-in, plain labels, and a "Where you could go from here" closing in every output template; asks what people do next so the closing lists candidate next moves with their conditions; copies the shared voice-block markers. Bundles the updated spec, template, and validator. Edited with Claude.
+Follows the conversational-voice standard (ADR 0009) when drafting a skill: a plain lead-in, plain labels, and a "Where you could go from here" closing in every output template; asks what people do next so the closing lists candidate next moves with their conditions; copies the shared voice-block markers. Its own report now opens with a few plain sentences, calls "Submit" "How to submit it", ends with next moves, and carries the shared voice block. Bundles the updated spec, template, and validator. Edited with Claude.
 
 ## 0.2.0 - 2026-11-10
 Follows the November 2026 skill standard: asks for the "what this adds" line, runs the evidence scan and sets `tested_in`, checks every citation and leaves out what cannot be checked, drafts four named test cases with assertions, and writes `references/worked-example.md` and `references/evidence.md`. Edited with Claude.

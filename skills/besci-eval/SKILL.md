@@ -87,11 +87,13 @@ If the skill lacks the four named test cases (Full run, Missing context, Near th
 
 **Script path.** `python scripts/run_evals.py <skill-folder> --models claude-opus-5-5 claude-sonnet-5-5 --runs 3` runs checks 2 and 3 through the Claude API, grades with the rubric using a judge model, and writes `<skill>-workspace/eval-<date>/report.md` and `results.json`. Add `--baseline <path-to-old-skill-folder>` to compare versions, or `--no-skill-baseline` to run the same cases with no skill loaded, which shows what the skill adds over the model alone. Each output is graded with the rubric and against the case's own `assertions`. The script needs `ANTHROPIC_API_KEY` or an `ant auth login` profile and the `anthropic` package. Estimate cost before running: cases × models × runs × roughly two calls, and the same again for each comparison; `--dry-run` prints the count.
 
-**Reporting.** Fill the output template. Lead with the verdict: ready to submit, fix first, or not gradable. Keep the author's next action to one line per finding.
+**Reporting.** Fill the output template. Lead with the verdict: ready to submit, fix first, or not gradable. Keep each suggested change to one line per finding, and leave the choice of what to fix first to the author.
 
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the author: the verdict, the one finding that decided it, and whether any finding blocks submission.>
+
 # Evaluation: <skill-name> v<version>  (<date>, <model(s)>, <n runs per case>)
 
 **Verdict:** <ready to submit / fix first / not gradable>
@@ -117,10 +119,29 @@ Representative excerpt: <the single most telling quote from an output>
 | Model | Trigger P/R | Quality median (range) | Notes |
 |---|---|---|---|
 
-## Next actions for the author
-1. <one line>
+## What would raise the score
+1. <one line: the change, and the criterion or test it would fix>
 2. <one line>
+
+## Where you could go from here
+<One line saying the evaluation is done.>
+<Two or three next moves that fit these results, each with why it would help and when it fits. Candidates:
+- `besci-skill-creator`, when a fix changes the method, the template, or a test case and the author wants help revising
+- rerun with `--baseline` on the old version, when the author has made a fix and wants to see whether it helped
+- rerun with `--no-skill-baseline`, when it is unclear what the skill adds over the model alone
+- ask an expert reviewer to read the outputs, when the scores are fine but the method itself is in question>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
