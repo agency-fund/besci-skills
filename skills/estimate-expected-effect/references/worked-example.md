@@ -19,7 +19,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Source | How read | Label | Delivered by | Reported effect | In the test's units |
 |---|---|---|---|---|---|
 | Kettle & Persian (2022), Mexico case study, https://www.bi.team/wp-content/uploads/2022/11/BIT-Handbook-How-to-run-simple-BI-projects.pdf | Full text of the guide; the trial's own paper not read | Published field trial, picked for the guide as an exception to its 2–3 point experience | Government: the Mexican tax authority, with BIT; 748,499 businesses | Deterrence SMS: on-time declarations 24% to 33%, +9 points (+37.5%) | +9 points, kept as points because the meta-analysis below works in points at a similar baseline. At 30%, 1 SD = √(0.30 × 0.70) = 0.458, so 9 points = 0.20 SD |
-| Antinyan & Asatryan (2025), https://doi.org/10.1093/ej/ueae088 | Full text of the authors' July 2024 discussion-paper version | Meta-analysis of 73 studies, not corrected for publication bias | Tax authorities, usually working with academics or nudge units | From a baseline of about 25%: reminders +2.7 points; deterrence messages +3.2 more, so +5.9 | +5.9 points = 0.13 SD at 30% |
+| Antinyan & Asatryan (2025), https://doi.org/10.1093/ej/ueae088 | Full text of the authors' July 2024 discussion-paper version | Meta-analysis of tax-nudge experiments, not corrected for publication bias | Tax authorities, usually working with academics or nudge units | From a baseline of about 25%: reminders +2.7 points; deterrence messages +3.2 more, so +5.9 | +5.9 points = 0.13 SD at 30% |
 
 ## Corrections
 1. Lab or online study: not applied; none was supplied.

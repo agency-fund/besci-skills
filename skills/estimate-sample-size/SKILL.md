@@ -59,7 +59,7 @@ If 1, 2, or 3 is missing, ask and stop. If 4 is missing, mark the verdict "not a
 - Kettle, S., & Persian, R. (2022). *Target, Explore, Solution, Trial, Scale: An introduction to running simple behavioural insights projects*. The Behavioural Insights Team. https://www.bi.team/wp-content/uploads/2022/11/BIT-Handbook-How-to-run-simple-BI-projects.pdf Supports: running the calculation both ways, and strengthening the intervention, enlarging the sample, or accepting less power when the detectable effect is unrealistic.
 - Gelman, A., & Carlin, J. (2014). Beyond power calculations. *Perspectives on Psychological Science*, 9(6), 641–651. https://doi.org/10.1177/1745691614551642 Supports: the Type S and Type M report.
 
-**Where the evidence comes from:** The arithmetic makes no claim about how people behave; its inputs are local. One ICC compilation uses national samples of US schools; others, for school achievement in 15 sub-Saharan African countries and perinatal outcomes in India, Bangladesh, and Malawi, find the ICC varies by country and outcome. The script's default ICC range, 0.01 to 0.20, comes from no compilation.
+**Where the evidence comes from:** The arithmetic makes no claim about how people behave; its inputs are local. One ICC compilation uses national samples of US schools; others, for school achievement in 15 sub-Saharan African countries and perinatal outcomes in India, Bangladesh, and Malawi, find the ICC varies with the outcome, its prevalence, and cluster size. The script's default ICC range, 0.01 to 0.20, comes from no compilation.
 
 **Replication status:** Not applicable; the formulas are standard approximations, and the script's normal approximation understates the sample when groups are few.
 
