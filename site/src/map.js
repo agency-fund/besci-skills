@@ -1,6 +1,6 @@
 /* Behavioral Science Skills: the skill map (/map/). No dependencies.
    Columns are the meta-skills, then the seven stages. An arrow from A to B means
-   A produces something B takes in, as the skills declare in produces/consumes.
+   A's output can feed B (A produces what B consumes). Links are suggestions.
    Hover previews a skill's links. Click pins it: the highlight stays put, a panel
    lists what it feeds and what feeds it, and ?skill=<name> makes it linkable.
    Esc, a click on empty map, or "Show full map" unpins. */
@@ -217,8 +217,7 @@
       var outs = outOf[name] || [], ins = inTo[name] || [];
       var produced = {};
       ins.forEach(function (e) { e.via.forEach(function (t) { produced[t] = true; }); });
-      var supply = s.consumes.filter(function (t) { return !produced[t] && io[t] && io[t].user_suppliable; });
-      var missing = s.consumes.filter(function (t) { return !produced[t] && !(io[t] && io[t].user_suppliable); });
+      var supply = s.consumes.filter(function (t) { return !produced[t]; });
       var html =
         '<div class="mp-top"><span class="mp-stage" data-stage="' + esc(st) + '">' + ic("st-" + st, "stage-ic") + esc(st === "other" ? "Meta-skill" : stageLabel[st] || st) + "</span>" +
         '<button class="mp-close" type="button">' + ic("x") + "Show full map</button></div>" +
@@ -229,13 +228,12 @@
       if (!outs.length && !ins.length && !supply.length) {
         html += '<section class="mp-sec"><p class="mp-none">This skill has no declared links yet.</p></section>';
       }
-      if (outs.length) html += '<section class="mp-sec"><h3>Its output goes to</h3>' + groups(outs, "to") + "</section>";
-      if (ins.length || missing.length) {
-        html += '<section class="mp-sec"><h3>It takes input from</h3>' + groups(ins, "from") +
-          missing.map(function (t) { return '<div class="mp-group"><p class="mp-io"><b>' + esc(ioLabel(t)) + '</b></p><p class="mp-none">No skill in the library produces this yet.</p></div>'; }).join("") + "</section>";
+      if (outs.length) html += '<section class="mp-sec"><h3>Its output can feed</h3>' + groups(outs, "to") + "</section>";
+      if (ins.length) {
+        html += '<section class="mp-sec"><h3>It can take input from</h3>' + groups(ins, "from") + "</section>";
       }
       if (supply.length) {
-        html += '<section class="mp-sec"><h3>You can supply</h3><p class="mp-supply">' + esc(supply.map(ioLabel).join(", ")) + "</p></section>";
+        html += '<section class="mp-sec"><h3>You bring</h3><p class="mp-supply">' + esc(supply.map(ioLabel).join(", ")) + "</p></section>";
       }
       panel.innerHTML = html;
       panel.setAttribute("aria-labelledby", "mp-title");

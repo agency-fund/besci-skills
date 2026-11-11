@@ -1130,7 +1130,7 @@ def build_map() -> None:
     body = f"""
 <div class="page-head map-head">
   <h1>Skill map</h1>
-  <p class="lede">An arrow from one skill to another means the first one produces something the second one uses, as the skills' authors declared it. Follow the arrows to find skills that can run in sequence. They aren't the only order that works.</p>
+  <p class="lede">An arrow from one skill to another means the first one's output can feed the second. The links are suggestions for putting skills together into a workflow, not rules: you can bring any input from your own work, and use any skill on its own.</p>
   <div class="map-tools">
     <label class="search map-search"><span class="sr-only">Find a skill on the map</span>{ICONS['search']}
       <input type="search" id="map-q" placeholder="Find a skill" autocomplete="off" spellcheck="false"></label>
@@ -1985,7 +1985,7 @@ def build_data(skills: List[dict], workflows: List[dict], taxonomy: dict) -> Non
     lite = {
         "stages": [{"id": str(x.get("id")), "label": str(x.get("label")), "description": str(x.get("description") or "")}
                    for x in taxonomy.get("stages", []) if isinstance(x, dict)],
-        "io_types": [{"id": str(x.get("id")), "label": str(x.get("label") or x.get("id")), "user_suppliable": bool(x.get("user_suppliable"))}
+        "io_types": [{"id": str(x.get("id")), "label": str(x.get("label") or x.get("id"))}
                      for x in taxonomy.get("io_types", []) if isinstance(x, dict)],
         "skills": [{k: s[k] for k in ("name", "title", "stage", "type", "what_it_does", "url", "download_url", "consumes", "produces", "version")}
                    for s in skills],
