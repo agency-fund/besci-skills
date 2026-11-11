@@ -315,4 +315,4 @@ uv run scripts/besci_validate.py --json             # for tools
 
 Exit 0 means the structure is right. Content review by a maintainer is still required before merge.
 
-The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) report as warnings W040 to W049 while the existing skills are being revised. They become errors when that revision lands.
+The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.

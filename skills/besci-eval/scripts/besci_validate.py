@@ -68,10 +68,10 @@ KNOWN_METADATA = set(REQUIRED_METADATA) | {
 MIN_EVALS = 3
 
 # --- The November 2026 standard ---------------------------------------------
-# These rules apply to atomic skills. While STRICT_V2 is False a breach is a
-# warning, so skills written to the first standard still pass; the change that
-# finishes rewriting them sets it to True, and the same breaches become errors.
-STRICT_V2 = False
+# These rules apply to atomic skills. They were warnings while the library was
+# revised to the standard and are errors now. Set STRICT_V2 to False only to
+# check a skill written to the earlier standard.
+STRICT_V2 = True
 
 TESTED_IN_IDS = ["beyond-western-holds", "beyond-western-differs", "mainly-western", "not-applicable"]
 # metadata.weird was the earlier name of metadata.tested_in. Old values map to new ones.
