@@ -30,11 +30,11 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ### (B) Difficulty of putting money aside: how hard the farmer finds it to hold harvest money for fertilizer
 **B1.** After the harvest, how hard is it for you to put money aside for the next season's fertilizer?
-- Options: not hard / a little hard / very hard
+- Options: not hard at all / a little hard / somewhat hard / very hard / extremely hard
 - A correct reading is: her own judgment of the difficulty, whatever the reason, and whether the money is kept as cash, mobile money, or grain
-- Notes: rating of the thing itself; replaces "I find it hard to save for fertilizer: agree or disagree"; three options
+- Notes: rating of the thing itself; replaces "I find it hard to save for fertilizer: agree or disagree"; five options, because these respondents have primary schooling
 
-**B2.** (If a little hard or very hard) What is the biggest reason it is hard?
+**B2.** (If any answer but "not hard at all") What is the biggest reason it is hard?
 - Options: the money goes to school fees / the money goes to food / other people ask me for the money / another reason (write it down)
 - A correct reading is: the one main competing use of harvest money
 - Notes: options from the team's earlier interviews; "another reason" recorded word for word
@@ -71,8 +71,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 "Now I will ask about the fertilizer you used for the long rains this year. There are no right or wrong answers."
 A1. "When did you buy the fertilizer you used at planting? Was it before the previous harvest, between the harvest and planting, at planting time, or did you not buy fertilizer for the long rains?"
 A2. [Ask only if she bought.] "Did you buy all of it at one time, or in parts?"
-B1. "After the harvest, how hard is it for you to put money aside for the next season's fertilizer? Not hard, a little hard, or very hard?"
-B2. [Ask only if a little hard or very hard.] "What is the biggest reason it is hard? The money goes to school fees, the money goes to food, other people ask you for the money, or another reason?" [If another reason, write her words.]
+B1. "After the harvest, how hard is it for you to put money aside for the next season's fertilizer? Not hard at all, a little hard, somewhat hard, very hard, or extremely hard?"
+B2. [Ask only if the answer was not "not hard at all".] "What is the biggest reason it is hard? The money goes to school fees, the money goes to food, other people ask you for the money, or another reason?" [If another reason, write her words.]
 D1. "For the next long rains, do you plan to buy your fertilizer before planting time? No, not sure, or yes?"
 D2. [Ask only if yes.] "When do you plan to buy it? Right after this harvest, or between the harvest and planting?"
 C1. "Now think of ten farmers like you in this village. How many of the ten do you think buy their fertilizer before planting time? Give me a number from zero to ten."
@@ -82,7 +82,7 @@ C1. "Now think of ten farmers like you in this village. How many of the ten do y
 |---|---|---|
 | One idea per question | yes | A2 and B2 split from A1 and B1 |
 | Asks about the thing itself, not agreement with a statement | yes | B1 rewritten from an agree/disagree statement |
-| Every option in words; three when read aloud to respondents with little schooling | yes | B1 and D1 have three; A1 and B2 are lists of answers, not ratings |
+| Every option in words; five for a rating, plus a three-option version where respondents cannot read | yes | B1 has five; D1 is a plan, not a rating; A1 and B2 are lists of answers |
 | No "not" and no reversed question | yes | none; "did you not buy" in A1 is an answer option, not a negated question |
 | Time period named | yes | A1 and D1 name the season |
 | Plain, neutral words that do not push toward an answer | yes | none |
@@ -96,5 +96,5 @@ None.
 These are draft questions. No respondent has yet been asked what they mean.
 - B1: "put money aside" may be heard as saving in a bank or on a phone only, so a farmer who keeps cash or grain back would answer "very hard".
 - C1: a count out of ten of other people is an unfamiliar task for many respondents, and some will answer about what farmers should do.
-- A1 has four spoken options, the most a listener is asked to hold in this block.
+- B1 has five spoken options, the most a listener is asked to hold in this block; the pretest should check that farmers can tell "a little hard" from "somewhat hard".
 ```

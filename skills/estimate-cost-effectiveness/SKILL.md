@@ -44,7 +44,7 @@ Estimates what a program paid for each unit of behavior change it caused.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing anything; skip what the user has answered.
 
 1. **Required.** The effect: outcome and units, estimate and confidence interval, the people it applies to, the period, and its source (this program's evaluation, or a planning estimate).
 2. **Required.** The costs: an ingredients list with prices, or the budget plus inputs used but not paid for (volunteers, donated space, government staff), and which costs were research.

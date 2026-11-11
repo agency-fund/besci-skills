@@ -18,7 +18,7 @@ metadata:
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  tested_in: beyond-western-holds
+  tested_in: beyond-western-differs
   tags: "measurement, survey-design, quantitative"
   consumes: "survey-items"
   produces: "survey-items"
@@ -57,14 +57,14 @@ If 1 to 4 are missing, ask and stop. If 5 is missing, treat items on health, vio
 
 ## What it draws on
 
-- Dabalen, A., Etang, A., Hoogeveen, J., Mushi, E., Schipper, Y., & von Engelhardt, J. (2016). *Mobile Phone Panel Surveys in Developing Countries: A Practical Guide for Microdata Collection*. World Bank. https://doi.org/10.1596/978-1-4648-0904-0 Supports: short questions with few answer categories; the 15 to 30 minute call, which it calls common practice, not evidence.
+- Dabalen, A., Etang, A., Hoogeveen, J., Mushi, E., Schipper, Y., & von Engelhardt, J. (2016). *Mobile Phone Panel Surveys in Developing Countries: A Practical Guide for Microdata Collection*. World Bank. https://doi.org/10.1596/978-1-4648-0904-0 Supports: short questions with few answer categories; the 15 to 30 minute call, as common practice, not evidence.
 - Gibson, M., & Kopper, S. (2021). *Resources for conducting remote surveys*. Abdul Latif Jameel Poverty Action Lab (J-PAL). https://www.povertyactionlab.org/resource/resources-conducting-remote-surveys Supports: the 30-minute ceiling; logging every call attempt.
 - Krosnick, J. A., & Presser, S. (2010). Question and questionnaire design. In P. V. Marsden & J. D. Wright (Eds.), *Handbook of Survey Research* (2nd ed., pp. 263–313). Emerald. https://web.stanford.edu/dept/communication/faculty/krosnick/docs/2010/2010%20Handbook%20of%20Survey%20Research.pdf Supports: asking a scale as two questions when read aloud.
 - Greenleaf, A. R., Diakabana, H., & Lau, C. (2026). Computer-assisted mobile phone interviews in low- and middle-income countries through a total survey error framework. *Public Opinion Quarterly*, 90(3), 878–910. https://doi.org/10.1093/poq/nfag023 Supports: steps 5 and 7.
 
-**Where the evidence comes from:** Almost all from low- and middle-income countries. A review of 36 studies in 21 of them found live-call samples under-represent women and older, rural, poorer, and less educated people. Simple yes-or-no questions were answered well, but a consumption module in Ethiopia returned 23% lower spending by phone; check locally who owns each phone.
+**Where the evidence comes from:** Almost all from low- and middle-income countries. A review of 36 studies in 21 of them found phone samples most often miss less educated and poorer people, and often women; which ages and places are missed differs by country. Simple yes-or-no questions were answered well, but a consumption module in Ethiopia returned 23% lower spending by phone; check locally who owns each phone.
 
-**Replication status:** Replicated for who is missed; mixed for whether answers differ by phone.
+**Replication status:** Replicated that less educated and poorer people are missed; mixed for whether answers differ by phone.
 
 ## How to do it
 

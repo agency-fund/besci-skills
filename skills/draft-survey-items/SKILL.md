@@ -18,7 +18,7 @@ metadata:
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  tested_in: beyond-western-holds
+  tested_in: beyond-western-differs
   tags: "measurement, survey-design, quantitative"
   consumes: "measurement-plan"
   produces: "survey-items"
@@ -54,25 +54,26 @@ Ask these before producing anything. Do not ask anything the user has already an
 4. Optional. Any question that must match an earlier round or a published scale.
 5. Optional. Tested questions on these constructs from earlier local surveys.
 
-If 1 or 2 is missing, ask and stop. If 3 is missing, assume three questions per construct at most. If 4 is missing, assume nothing is fixed. If 5 is missing, write new questions and tell the user to look for tested ones first.
+If 1 or 2 is missing, ask and stop. Otherwise assume at most three questions per construct and nothing fixed; without tested questions, write new ones and tell the user to look for tested ones first.
 
 ## What it draws on
 
 - Krosnick, J. A., & Presser, S. (2010). Question and questionnaire design. In P. V. Marsden & J. D. Wright (Eds.), *Handbook of Survey Research* (2nd ed., pp. 263–313). Emerald. https://web.stanford.edu/dept/communication/faculty/krosnick/docs/2010/2010%20Handbook%20of%20Survey%20Research.pdf Supports: the wording rules, words on every scale point, and direct questions in place of agree/disagree statements.
 - Kopper, S., & Parry, K. (2023). *Survey design*. J-PAL Research Resources. https://www.povertyactionlab.org/resource/survey-design Supports: time-bound questions; reusing tested surveys; facts before attitudes; indirect methods for sensitive topics.
-- Laajaj, R., & Macours, K. (2021). Measuring skills in developing countries. *Journal of Human Resources*, 56(4), 1254–1295. https://doi.org/10.3368/jhr.56.4.1018-9805R1 Supports: the caution about yea-saying (agreeing whatever the statement says) among respondents with little schooling; keeping reversed items in a scale that cannot be changed.
+- Laajaj, R., & Macours, K. (2021). Measuring skills in developing countries. *Journal of Human Resources*, 56(4), 1254–1295. https://doi.org/10.3368/jhr.56.4.1018-9805R1 Supports: the caution about yea-saying (agreeing whatever the statement says) among respondents with little schooling; keeping reversed items in a fixed scale.
+- Clingain, C., Donald, A., & Hernandez-de-Benito, M. (2026). *Measuring agency through psychological constructs in lower-income settings* (Policy Research Working Paper No. 11401). World Bank. https://documents.worldbank.org/curated/en/099218506012639611/pdf/IDU-7ec4d5d3-ea71-4e8f-b9e1-71c807cfd354.pdf Supports: five answer options by default.
 
-**Where the evidence comes from:** The wording rules and the experiments on agree/disagree statements come from the United States and Europe. Studies in Kenya, Colombia, and India, and one of non-readers by a team in Brazil, found the same problems: yea-saying that rises as schooling falls, and five-point scales used as three points or not understood. Check locally which answer options respondents can tell apart.
+**Where the evidence comes from:** The wording rules and the experiments on agree/disagree statements come from the United States and Europe; a study in Kenya found yea-saying rises as schooling falls. On answer options studies split: five were too many for non-readers studied by a team in Brazil and rural women in India, but beat three when randomized in six African countries. Check locally which options respondents can tell apart.
 
-**Replication status:** Yea-saying is replicated. The gain from replacing agree/disagree statements with direct questions is mixed: more experiments find one than not, and a United States national election study found none.
+**Replication status:** Yea-saying is replicated. The gain from direct questions over agree/disagree statements is mixed, and the number of options non-readers can use is contested.
 
 ## How to do it
 
 1. **Write the intended reading first.** Beside each question write "a correct reading is ...", because a comprehension test scores answers against that line.
 2. **Reuse before writing.** Adapt tested questions the user supplied. Leave any that must match another survey unchanged, marked fixed.
 3. **Choose the question type from the construct:** a count over a named period ("in the last 7 days, on how many days ..."), a rating of the thing itself, or a count out of ten for a belief about other people.
-4. **Ask about the thing itself.** Write "How hard is it to put money aside each week: not hard, a little hard, or very hard?", not "I find it hard to save: agree or disagree?", because people agree with statements they have not followed.
-5. **Put every option in words:** three options when read aloud to respondents with little schooling, five to seven only when respondents read them.
+4. **Ask about the thing itself.** Write "How hard is it to put money aside each week?", not "I find it hard to save: agree or disagree?", because people agree with statements they have not followed.
+5. **Put every option in words,** five for a rating. Where respondents cannot read, add a three-option version for the pretest to choose between.
 6. **Keep one idea per question, with no "not" and no reversed wording** (where "yes" means less of the construct). In a fixed agree/disagree scale, keep the reversed items: they are the only way to see yea-saying in the data.
 7. **Name the time:** a recent period or local event ("since the last market day"), never "usually".
 8. **Leave stigmatized or illegal behavior unwritten.** Better wording does not remove the pressure to give the acceptable answer; say it needs a private or indirect method.
@@ -111,7 +112,7 @@ See `references/worked-example.md` for a complete run.
 |---|---|---|
 | One idea per question | <yes/no> | <...> |
 | Asks about the thing itself, not agreement with a statement | <yes/no> | <...> |
-| Every option in words; three when read aloud to respondents with little schooling | <yes/no> | <...> |
+| Every option in words; five for a rating, plus a three-option version where respondents cannot read | <yes/no> | <...> |
 | No "not" and no reversed question | <yes/no> | <...> |
 | Time period named | <yes/no> | <...> |
 | Plain, neutral words that do not push toward an answer | <yes/no> | <...> |
@@ -137,7 +138,7 @@ These are draft questions. No respondent has yet been asked what they mean.
 ## When to bring in a specialist
 
 Tell the user to consult a survey methodologist (a clinician for a clinical construct) when:
-- A construct is clinical (depression, anxiety, disability): program-written questions do not replace a validated screener
+- A construct is clinical (depression, anxiety, disability) and needs a validated screener
 - Several questions are to be added into one score that drives a decision
 - Scores must be compared across rounds, languages, or with a published scale
 - A stigmatized or illegal behavior is a main outcome

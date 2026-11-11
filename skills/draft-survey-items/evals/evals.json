@@ -9,7 +9,7 @@
       "files": [],
       "assertions": [
         "No question asks the respondent to agree or disagree with a statement.",
-        "Every rating question has at most three answer options, each in words.",
+        "Every rating question has its options in words and comes with a three-option version for mothers who cannot read.",
         "Time, distance, and permission are asked in three separate questions.",
         "Each question states what a correct reading is.",
         "The attendance question names last month's camp, not what the mother usually does.",

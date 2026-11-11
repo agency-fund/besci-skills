@@ -136,7 +136,7 @@ See `references/worked-example.md` for a complete run.
 
 - **A lower list estimate read as honesty.** In Kenya a list showed less support for political violence than the direct question did. An estimate below the direct one, or below zero, means the list failed.
 - **Individual answers inferred.** The design gives a share for a group. Refuse to score, target, or follow up individuals from it.
-- **Under-reporting borrowed from elsewhere.** Across 19 vote-buying studies the gap ran from 24 points to none. A prior is a guess that the direct question tests.
+- **Under-reporting borrowed from elsewhere.** Across 19 vote-buying studies the gap ran from 24 points of under-reporting to 5 points of over-reporting. A prior is a guess that the direct question tests.
 
 ## When to bring in a specialist
 

@@ -58,22 +58,22 @@ If 1, 2, or 3 is missing, ask and stop. If 4 is missing, flag every question wit
 
 - Willis, G. B., & Artino, A. R. (2013). What do our respondents think we're asking? Using cognitive interviewing to improve medical education surveys. *Journal of Graduate Medical Education*, 5(3), 353–356. https://doi.org/10.4300/JGME-D-13-00154.1 Supports: scripted probes asked after each question; the four things a respondent must do (understand, recall, judge, fit the answer to the options); small repeated rounds.
 - Scott, K., Ummer, O., & LeFevre, A. E. (2021). The devil is in the detail: reflections on the value and application of cognitive interviewing to strengthen quantitative surveys in global health. *Health Policy and Planning*, 36(6), 982–995. https://doi.org/10.1093/heapol/czab048 Supports: probing over thinking aloud, pairs, recruiting those most likely to struggle, three minutes per question.
-- Conrad, F. G., & Blair, J. (2009). Sources of error in cognitive interviews. *Public Opinion Quarterly*, 73(1), 32–55. https://doi.org/10.1093/poq/nfp013 Supports: probing only on what the respondent said or did; counting a problem only when it recurs.
+- Conrad, F. G., & Blair, J. (2009). Sources of error in cognitive interviews. *Public Opinion Quarterly*, 73(1), 32–55. https://doi.org/10.1093/poq/nfp013 Supports: probing only on what the respondent said or did.
 
 **Where the evidence comes from:** Field studies in India, Bangladesh, Ethiopia, Kenya, and Uganda found that the interviews exposed misread questions, including ones respondents had answered without hesitation. In Ethiopia and Kenya the first round was stopped because the probes distressed participants; a revised script worked. Check locally whether respondents are at ease explaining an answer to a stranger.
 
-**Replication status:** Mixed. Judges agree fairly well on which questions most need repair and poorly on which single answers show a problem; in one experiment a reworded question did not clearly give better data than the draft.
+**Replication status:** That the interviews expose misread questions is replicated. Which problems they find is mixed: judges agree fairly well on which questions most need repair, poorly on which single answers show a problem, and in one experiment a reworded question gave no clearly better data than the draft.
 
 ## How to do it
 
 1. **Write the yardstick.** For each question: "meant to measure X; a correct reading is Y." Probes and notes are judged against it.
 2. **Script probes; do not ask for thinking aloud,** which confuses many respondents with little schooling. Ask the probes straight after each question, or after the whole questionnaire when respondents will fill it in alone.
-3. **Budget three minutes per question.** If they do not fit, test the flagged ones and say which are left untested.
+3. **Budget three minutes per question.** If they do not fit, test the flagged ones and list the rest as untested.
 4. **Choose two or three probes per question** from `references/probe-bank.md` by where it can fail: a word, a time period, a rating scale, a sensitive topic. Flagged questions get two more.
 5. **Keep every probe open.** Write "What time period were you thinking about?", never "Did you think of the last seven days?"
 6. **Add cue probes,** asked only on a pause, a request to repeat, a changed answer, or an answer that fits no option; probing on a hunch finds problems that are not there.
 7. **Write the stop rule:** when a respondent is upset or cannot answer, the interviewer drops the probe, notes it, and moves on.
-8. **Set the plan and the fix rule before fieldwork.** Recruit from the survey's population, outside its sample, those with the least schooling first. Try the script on two people. Fix a question when one problem appears in two interviews of a round, or once if the respondent could not answer; retest every reworded question.
+8. **Set the plan and the fix rule before fieldwork.** Recruit from the survey's population, outside its sample, those with the least schooling first. Try the script on two people. Fix a question when one problem appears in two interviews of a round, or once if the respondent could not answer (this skill's own rule); retest every reworded question.
 
 See `references/worked-example.md` for a complete run.
 

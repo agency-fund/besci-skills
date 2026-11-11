@@ -14,7 +14,7 @@ Rules for an in-app check:
 
 - Three items or fewer, asked inside the chat right after the user finishes a task, not as a pop-up (Wu et al., 2025).
 - Keep it short. Among 163 students in an experience-sampling study, longer questionnaires raised burden and lowered data quality; more frequent prompts did not (Eisele et al., 2022).
-- A chat can be a sound survey channel. Chatbot surveys drew less satisficing (answering with minimal effort) than web forms in one experiment (Kim, Lee & Gweon, 2019), and among teachers in the Philippines chatbot answers matched phone interviews on several measures of quality (Beam, 2022).
+- A chat can be a sound survey channel. Chatbot surveys drew less satisficing (answering with minimal effort) than web forms in one experiment (Kim, Lee & Gweon, 2019), and among teachers in the Philippines randomly assigned to a chatbot or a web form, the chatbot had a higher completion rate and less straightlining (the same answer to every item in a set); its straightlining matched that of phone interviews with a separate, non-randomized sample (Beam, 2023).
 - Check a one-item pulse against a multi-item version run off the platform. In one intensive longitudinal study, single items correlated .24 to .61 with multi-item measures and kept predictive validity in 27 of 29 models (Song et al., 2023).
 
 ## Candidates by cell
