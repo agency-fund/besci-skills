@@ -22,7 +22,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 | Subgroup (verbatim from the plan) | Expected direction | Effect in each group (points, 95% CI) | Difference (points, 95% CI) | Uncorrected p | Corrected p (Benjamini-Hochberg, 2 tests) |
 |---|---|---|---|---|---|
-| Baseline math tercile | Larger for the bottom tercile | Bottom 3.1 (0.8 to 5.4); middle 1.6 (-0.4 to 3.6); top 0.6 (-1.5 to 2.7) | Bottom minus top 2.5 (0.5 to 4.5) | 0.01 | 0.03 |
+| Baseline math tercile | Larger for the bottom tercile | Bottom 3.1 (0.8 to 5.4); middle 1.6 (-0.4 to 3.6); top 0.6 (-1.5 to 2.7) | Bottom minus top 2.5 (0.5 to 4.5) | 0.014 | 0.03 |
 | School poverty index above or below the median | Larger in poorer schools | Poorer 2.4 (0.3 to 4.5); less poor 1.1 (-0.9 to 3.1) | 1.3 (-1.6 to 4.2) | 0.38 | 0.38 |
 
 The baseline-tercile difference holds after correction, in the expected direction: the effect is concentrated among students who started in the bottom tercile. The poverty difference is not detectable at this sample; its interval runs from below zero to more than twice the overall effect.

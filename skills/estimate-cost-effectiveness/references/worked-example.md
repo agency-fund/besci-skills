@@ -4,7 +4,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ## The request
 
-"We ran a cluster randomized trial of community health worker home-visit reminders for antenatal iron-folate adherence in 24 health centers in Mchinji and Dedza, Malawi (12 per arm): 1,600 women enrolled at treatment centers over 10 months in 2025. Effect from our pre-specified model: adherence (pill count of 80% or more at 32 weeks) was 43% against 31%, +12 percentage points (95% CI 5 to 19). Costs: 48 health workers spent about 4 hours a week for 40 weeks; they are government-stipended, so we did not pay them, and the local wage is about $0.75 an hour. Four supervisors worked 8 hours a month for 10 months at $2.50 an hour. A 2-day training for 52 people cost $2,600. We bought 48 bicycles at $90 each, with a 3-year life. Printed adherence cards cost $0.20 each; phone credit was $2 per health worker per month. Monthly meetings used clinic rooms for free (about $5 a meeting, at 24 centers). Data entry cost $600, and the endline survey and pill counts for the trial cost $9,000. No cash or in-kind transfers. The ministry wants to compare us with an SMS-only reminder program in another district, per additional adherent woman. Program perspective; USD 2025 at the average market rate. Each woman had about 10 visits of 20 minutes; value her time at $0.50 an hour if you need it."
+"We ran a cluster randomized trial of community health worker home-visit reminders for antenatal iron-folate adherence in 24 health centers in Mchinji and Dedza, Malawi (12 per arm): 1,600 women enrolled at treatment centers over 10 months in 2025. Effect from our pre-specified model: adherence (pill count of 80% or more at 32 weeks) was 43% against 31%, +12 percentage points (95% CI 5 to 19). Costs: 48 health workers spent about 4 hours a week for 40 weeks; they are government-stipended, so we did not pay them, and the local wage is about $0.75 an hour. Four supervisors worked 8 hours a month for 10 months at $2.50 an hour. A 2-day training for 52 people cost $2,600. We bought 48 bicycles at $90 each, with a 3-year life. Printed adherence cards cost $0.20 each; phone credit was $2 per health worker per month. Monthly meetings used clinic rooms for free (about $10 a meeting, at the 12 treatment centers). Data entry cost $600, and the endline survey and pill counts for the trial cost $9,000. No cash or in-kind transfers. The ministry wants to compare us with an SMS-only reminder program in another district, per additional adherent woman. Program perspective; USD 2025 at the average market rate. Each woman had about 10 visits of 20 minutes; value her time at $0.50 an hour if you need it."
 
 ## The output
 
@@ -27,7 +27,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Equipment | Bicycles, 48 × $90 over a 3-year life, 10 months of use | 48 | $25 | $1,200 | Paid |
 | Materials | Printed adherence cards | 1,600 | $0.20 | $320 | Paid |
 | Transport and communication | Phone credit, 48 workers × 10 months | 480 | $2 | $960 | Paid |
-| Space | Clinic rooms for monthly meetings, 24 centers × 10 | 240 | $5 | $1,200 | Donated |
+| Space | Clinic rooms for monthly meetings, 12 treatment centers × 10 | 120 | $10 | $1,200 | Donated |
 | Monitoring | Data entry | 1 | $600 | $600 | Paid |
 | Participants' time (society perspective only) | 1,600 women × 10 visits × 20 minutes | 5,333 h | $0.50 an hour | $2,667 | Not in the delivery total |
 | **Delivery total** | | | | **$13,440** | |

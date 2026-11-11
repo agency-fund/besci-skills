@@ -51,21 +51,21 @@ Ask these before producing anything. Do not ask anything the user has already an
 3. Optional. The comparator program.
 4. Optional. Whose costs count (the implementer's, the government's, or society's, which adds participants' time), and the funder's conventions.
 
-If 1 is missing, ask and stop. If 2 is missing, ask once; with only a budget, list every unpriced input as a gap. If 3 is missing, report this program alone. If 4 is missing, use the implementer's perspective, final-year prices and market exchange rate, and 10% a year for later costs, as J-PAL does.
+If 1 is missing, ask and stop. If 2 is missing, ask once; with only a budget, list every unpriced input as a gap. If 3 is missing, report this program alone. If 4 is missing, use the implementer's perspective at market exchange rates, discount later costs 10% a year, and add a second ratio with participants' time the program requires, which J-PAL counts.
 
 ## What it draws on
 
 - Dhaliwal, I., Duflo, E., Glennerster, R., & Tulloch, C. (2013). Comparative cost-effectiveness analysis to inform policy in developing countries. In *Education Policy in Developing Countries* (pp. 285–338). University of Chicago Press. https://doi.org/10.7208/chicago/9780226078854.003.0008 Supports: listing every ingredient, pricing donated inputs at market cost, treating transfers both ways, and reporting "no significant impact" instead of a ratio.
 - Bhula, R., Mahoney, M., & Murphy, K. (2020). *Conducting cost-effectiveness analysis (CEA)*. J-PAL Research Resources. https://www.povertyactionlab.org/resource/conducting-cost-effectiveness-analysis-cea Supports: the default conventions, counting only the costs a program adds, and results per $100 spent.
-- Banerjee, A. V., Duflo, E., Glennerster, R., & Kothari, D. (2010). Improving immunisation coverage in rural India: clustered randomised controlled evaluation of immunisation campaigns with and without incentives. *BMJ*, 340, c2220. https://doi.org/10.1136/bmj.c2220 Supports: the fixed-cost check. Small incentives at immunization camps cut the cost per fully immunized child from $55.83 to $27.94, because the nurse's daily pay was spread over more children.
+- Banerjee, A. V., Duflo, E., Glennerster, R., & Kothari, D. (2010). Improving immunisation coverage in rural India: clustered randomised controlled evaluation of immunisation campaigns with and without incentives. *BMJ*, 340, c2220. https://doi.org/10.1136/bmj.c2220 Supports: the fixed-cost check. Small incentives at immunization camps cut the cost per fully immunized child from $55.83 to $27.94, because the daily fixed cost, mainly the nurse's and assistant's pay, was spread over more children.
 
-**Where the evidence comes from:** The procedure makes no claim about how people behave. It was built to compare development programs; its worked case is from rural Rajasthan, India. What is local is prices: wages for volunteer and participant time, the exchange rate, and whether donated inputs stay free at scale.
+**Where the evidence comes from:** The procedure makes no claim about how people behave. It was built to compare development programs; its sources' examples are education programs in six countries and immunization in rural India. What is local is prices: wages for volunteer and participant time, the exchange rate, and whether donated inputs stay free at scale.
 
 **Replication status:** Not applicable: this is a costing method. Its sources differ on whether transfers are a cost, so the output shows both.
 
 ## How to do it
 
-1. **Fix the effect first.** If its interval includes zero, report "no significant impact" instead of a ratio, and say whether the estimate was precise or wide. If it is a planning estimate, label every ratio "projected".
+1. **Fix the effect first.** If its interval includes zero, give no ratio: write "no significant impact" if the estimate is precise, or "too imprecise to cost" if the interval is wide. If it is a planning estimate, label every ratio "projected".
 2. **State the perspective** and why it fits the decision.
 3. **List the ingredients:** staff time (hours times a local wage, volunteers and government staff included), materials, transport, equipment (spread over its useful life), space, training, monitoring, and, for society, participants' time. Price each at market value, paid or not, and mark it paid, donated, or borrowed. Count only costs the program added. Keep transfers on their own line and research costs out of the delivery total.
 4. **Fix the conventions:** currency year, exchange rate, and discount rate for costs after the first year. Convert everything.
@@ -128,9 +128,9 @@ See `references/worked-example.md` for a complete run.
 
 ## Where it goes wrong
 
-- **People reached counted as people changed.** Many of those reached would have done the behavior anyway; only additional outcomes, from a comparison, go under the line.
+- **People reached counted as people changed.** Only additional outcomes, from a comparison, go under the line.
 - **Pilot costs presented as scale costs.** Training and set-up fall per person as a program grows, while free inputs may stop being free.
-- **A projected ratio quoted as a result.** A ratio built on a planning estimate travels into a proposal as if measured.
+- **A projected ratio quoted as a result.** A ratio built on a planning estimate reaches a proposal as if measured.
 - **Two ratios that only look comparable.** If one program priced volunteer time and the other did not, the cheaper-looking one may simply have counted less.
 
 ## When to bring in a specialist

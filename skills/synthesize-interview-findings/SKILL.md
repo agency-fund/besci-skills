@@ -71,7 +71,7 @@ If 1 or 2 is missing, ask and stop. If 3 is missing, take what was asked from th
 2. **Read every interview once before charting**, and code the first two or three openly; fixed columns find only what the team expected.
 3. **Chart each interview into its row:** one to three sentences in the respondent's terms, a quote reference (respondent, page or minute), and a status. Mark cells that rest on notes or translation. Leave no cell empty; an empty cell looks like an unread one. A second reader, if available, charts the first few too; settle differences before going on.
 4. **Read down each column.** Count interviews by status, find conflicting accounts and strongly held beliefs, and compare groups. A real barrier usually shows as people who do not do the behavior reporting it, while those who do it did not face it or got round it.
-5. **Give each hypothesis a verdict:** supported, not supported, mixed, or not tested (most interviews did not ask). Weigh all three tests (frequency, conflict, strength), not the count alone, and name every interview that goes against it.
+5. **Give each hypothesis a verdict:** supported, not supported, mixed, or not tested (most interviews did not ask). Weigh all three tests (frequency, conflict, strength; frequency does not apply to focus groups), not the count alone, and name every interview that goes against it.
 6. **List what no hypothesis predicted**, and the outliers, such as someone who does the behavior despite the barrier.
 7. **Set each verdict beside the other evidence** the user has, and say whether it agrees.
 8. **Name the confirmed barriers** and the open hypotheses, with what would settle each. Propose no interventions.
