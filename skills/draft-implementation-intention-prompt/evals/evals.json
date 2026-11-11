@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We distribute HIV self-test kits through 40 community pharmacies in Lagos. Each kit comes with a referral card asking the user to report their result by dialing a free USSD code within 7 days; the code works any day, any hour, from any phone. Our exit survey of 320 kit recipients found 82% say they will report, but USSD logs show about 19% do. The lever brief from select-intervention-levers picked action planning. The pharmacist already spends about a minute with each buyer explaining the kit. Most buyers have their own phone; literacy in English or Yoruba is high enough to fill a short card. Draft the plan prompt.",
-      "expected_output": "A full implementation intention prompt following the output template: the target behavior carried over; the intention check citing the 82% exit-survey figure as the evidence and the 19% log figure as the gap; action type one-off with the window (7 days, any hour, USSD from any phone) stated; a literal prompt with blanks for the date and time the person will test and where, with reporting tied to that moment ('right after, from this phone'); a why-each-element section that says date-only was not significant; delivery riding on the pharmacist's minute at the counter, written on the referral card the buyer keeps; boundary checks confirming one-off, noting whether buyers plan with a partner, and no numeric goal; an expected-effect section quoting d = 0.65, the 4.2 and 4.1 field points, and a planning range of a few points with the reasons, noting that the South Africa self-test trial exists but its result is not quoted; a pre-test with n and pass criterion. It does not write the final Yoruba copy or a sender line, does not design program-sent reminders, and does not re-ask questions the prompt answered.",
+      "name": "Full run",
+      "prompt": "We work with 2,400 smallholder farmers in Chipata district, Zambia. Each gets a seed-and-fertilizer voucher card, fully paid, to redeem at any of three agro-dealers between 1 and 21 November. In our survey of 300 farmers 88% said they would redeem; dealer records show 54% did. In interviews, those who did not said they meant to go on a market day and the window closed; nobody mentioned cost or distrust, and stock records show no shortages. The dealers are in Chipata town, on the Katete road, and at Chiparamba, open Monday to Saturday, 8am to 5pm; the farmer brings the voucher card and a national registration card. Extension officers hand out the cards at village meetings in the last week of October and spend a few minutes with each farmer, in Chinyanja. Draft the plan prompt.",
+      "expected_output": "An implementation intention prompt in the output template, written as an if-then sentence whose blanks take only the dates, hours, and dealers the user gave.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "The prompt is an if-then sentence with blanks for a day, a time, and a place.",
+        "The real options listed are the user's: 1 to 21 November, Monday to Saturday, 8am to 5pm, three dealers.",
+        "Has the farmer say the plan back once.",
+        "Says who else sees or hears the plan.",
+        "Specifies a pretest with the number of people and what counts as a pass.",
+        "Promises no effect size for this program."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Attendance at our vaccination camp is low. Add a planning question to the SMS.",
-      "expected_output": "The skill does not produce the prompt. It asks the Required questions: the target behavior and the evidence that people intend to come (or whether the barrier might be something else); whether the camp is a one-off or fixed date rather than a repeated behavior; the window (the camp dates, hours, places, what to bring); and which existing SMS the question would ride on and who sends it. It may ask whether households plan together, marked optional.",
+      "expected_output": "The skill asks for the evidence that people intend to come, the real options, and the message the question would ride on, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks what shows that people intend to come and are not stopped by cost, access, or trust.",
+        "Asks for the dates, hours, and places of the camp, or whether it happens once.",
+        "Asks which message the question would be added to or who sends it.",
+        "Does not produce a prompt."
+      ]
     },
     {
       "id": 3,
-      "prompt": "At our four antenatal clinics in Malawi, women who test HIV-positive are counseled to tell their partner. Counselors say most women agree they should, but at the next visit few have. We want a card where the woman writes when and where she will tell him. Draft the prompt.",
-      "expected_output": "The skill produces what it safely can: it confirms the action is one-off, states that the intention evidence is the counselor's impression and names what would confirm it, and drafts the structure of the prompt (date, time, place, with whom) as working copy. It then says that because the planned action is HIV status disclosure, which carries a safety risk for the woman at the planned moment, the prompt must not be deployed before a clinician or safeguarding lead reviews whether asking for a written plan can expose her, who will see the card, and what support follows; it names what to bring them. It flags that the date and place may not be the woman's to choose and recommends a local qualitative researcher check this before any pre-test. It does not present the prompt as ready to print.",
+      "name": "Near the escalation point",
+      "prompt": "At our four antenatal clinics in Malawi, women who test HIV-positive are counseled to tell their partner. Counselors say most women agree they should, but at the next visit few have. We want a card where the woman writes when and where she will tell him, filled in with the counselor at the end of the session. She can tell him any day before her next visit, four weeks later. Draft the prompt.",
+      "expected_output": "The skill drafts no more than a working copy and says a clinician or safeguarding lead must review who sees the plan and what support follows before any use.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Names a clinician or safeguarding lead who must review it before any use.",
+        "Says a written card naming when and where she will tell her partner could expose her, or asks who would see it.",
+        "Says the counselors' impression that women agree is weak evidence that they intend to tell their partner.",
+        "Says what to bring to the specialist.",
+        "Does not present a prompt as ready to print or use."
+      ]
     },
     {
       "id": 4,
-      "prompt": "Our TB patients forget their daily pills. Can you write a prompt where each patient plans when and where they will take them every day?",
-      "expected_output": "The skill does not run. It says the behavior is repeated and daily, that the one field trial of plan prompts for a repeated behavior found a null, and that a one-off plan prompt is the wrong technique here. It points the user to design-habit-anchor for tying the daily dose to a stable existing cue, and notes that if the program wants to send messages itself, that is design-reminder-schedule. It does not draft a prompt.",
+      "name": "Wrong skill",
+      "prompt": "Our TB patients forget their daily pills. We want the clinic to text each patient every evening. How many messages should we send, at what time, and for how long?",
+      "expected_output": "The skill says this is a schedule of messages the program sends, not a plan the patient states, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says a message the program sends is different from a plan the person states.",
+        "Names design-reminder-schedule.",
+        "Does not produce a prompt."
+      ]
     }
   ]
 }

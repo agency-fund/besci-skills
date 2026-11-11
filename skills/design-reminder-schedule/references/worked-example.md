@@ -1,48 +1,53 @@
-# Worked example: reminders for monthly immunization camps in Udaipur district, Rajasthan
+# Worked example: reminders for monthly immunization camps in Udaipur district, India
 
-Illustrative. The program, the villages, and every number below are invented to show a complete run of the skill; none is a finding. The target behavior came from `define-key-behavior`, the barrier from `decompose-comb-barriers` confirmed by exit interviews and a household survey, the audience brief from `map-audience-context`, and the lever brief from `select-intervention-levers`.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Inputs supplied by the user:** 48 villages; a camp on a fixed day each month, 9am to 2pm, at the anganwadi center; the register holds each child's next due dose and the camp date; exit interviews at 12 camps and a 600-mother survey found most missed doses were explained by not knowing which day the camp fell on (illustrative); vaccine stock reliable for two years; no fees or distrust reported; about 60% of households have a phone, usually held by the husband; many mothers cannot read Hindi SMS; the ASHA visits each hamlet weekly; Mewari voice calls are feasible from the program's call center.
+## The request
+
+"We support monthly immunization camps in 48 villages in Udaipur district, Rajasthan. Each village's camp runs on a fixed day each month, 9am to 2pm, at the anganwadi center. Our register holds every enrolled child's next due dose and the camp date. We ran exit interviews at 12 camps and surveyed 600 mothers: 64% of mothers whose child missed a dose said they did not know the camp was that day or that week. Vaccine stock has been reliable for two years, the vaccines are free, and nobody mentioned distrust of the nurse. About 60% of households have a phone, usually held by the husband. Many mothers cannot read a Hindi text. The ASHA, the village health worker, visits each hamlet once a week. Our call center can place voice calls in Mewari. Some mothers told us at enrollment that they want all doses done by the first birthday. Design the reminder schedule."
+
+## The output
 
 ```markdown
 # Reminder schedule
 
-**Target behavior:** Mothers of enrolled children under two in the 48 program villages bring the child to the monthly camp at the anganwadi center on the month the next dose is due.
-**Barrier check:** Forgetting the camp day. In exit interviews at 12 camps and the 600-mother survey, 64% of mothers of children with a missed dose said they did not know the camp was that day or that week (illustrative). Stock has been reliable for two years; no fees; no distrust of the ANM or ASHA reported. Supply, cost, and trust ruled out.
-**Due-date structure:** Recurring monthly, fixed day per village, known from the register. Window: the camp day itself, 9am to 2pm; a missed camp means a one-month delay.
+**Behavior:** Mothers of enrolled children under two in the 48 villages bring the child to the monthly camp at the anganwadi center in the month the next dose is due.
+**Confirmed barrier:** Forgetting the camp day. 64% of mothers whose child missed a dose said they did not know the camp was that day or that week (exit interviews at 12 camps, survey of 600 mothers). Supply, cost, and trust are ruled out: stock has been reliable for two years, vaccines are free, and no distrust was reported.
+**Due dates:** Recurring, one fixed camp day a month per village, 9am to 2pm. The action counts only on that day; a missed camp means a month's delay. The register holds each child's due dose and the camp date.
 
-## Schedule
-| # | Sent when (relative to the window) | Channel | Names | Stops when |
+## Sends
+| # | When, relative to the due date | Channel | Must name | Stops when |
 |---|---|---|---|---|
-| 1 | 2 days before the camp | Voice call in Mewari to the household phone, asking for the mother | Child's name, the dose due, the camp day and date, the anganwadi center, the hours | Dose recorded at the camp; household opts out; after 3 monthly cycles with no attendance (then ASHA follow-up instead) |
-| 2 | Morning of the camp, during the weekly hamlet round moved to camp day | ASHA in person | The same, plus an offer to walk together | Dose recorded; mother declines |
-| 3 | 1 day after a missed camp | Voice call | That the dose is still due and the next camp date | Dose recorded; opt-out |
+| 1 | 3 days before the camp | Voice call in Mewari to the household phone, asking for the mother | The child's name, the dose due, the camp day and date, the anganwadi center, the hours; "all doses by the first birthday" where the mother said so at enrollment | Dose recorded; household opts out; ceiling reached |
+| 2 | On the ASHA's hamlet round in the week of the camp | ASHA in person, to the mother | The same | Dose recorded; mother declines |
+| 3 | The day after a missed camp | Voice call in Mewari | That the dose is still due, and the date of the next camp | Dose recorded; household opts out |
 
-## Frequency and ceiling
-- **Per window:** Two before, one after a miss; three contacts per monthly cycle at most.
-- **Ceiling:** Three consecutive cycles of calls with no attendance; after that the household moves to ASHA-only follow-up, because the problem is no longer forgetting. The cadence is a design choice; the weekly-versus-daily claim from Kenya is unverified and is not the reason for it.
-- **Opt-out:** Say "stop calls" on any call, or tell the ASHA; takes effect the same month.
+## Limits
+- **Ceiling:** Two contacts before each camp and one after a miss, three a month at most. After three missed camps in a row the calls stop and the ASHA asks the mother why, because forgetting is then unlikely to be the reason.
+- **After a missed date:** One call naming the next camp date.
+- **Opt-out:** Say "stop the calls" on any call, or tell the ASHA. It takes effect that month and costs nothing.
 
-## Content requirements (input to draft-lever-content)
-- **Names:** The child by name, the specific dose, the day and date, the anganwadi center, the hours; where the mother stated a goal at enrollment ("all doses by the first birthday"), that goal.
-- **Does not:** Mention more than one child's dose per call; spend wording on loss or gain framing (no difference in the Karlan trials); disclose anything beyond a routine immunization, since the phone is usually the husband's.
+## Channel
+- **Why this channel:** Many mothers cannot read a Hindi text, so the call is spoken, in Mewari. The phone is usually the husband's, so the call asks for the mother and otherwise leaves the date with whoever answers.
+- **Who it does not reach:** The roughly 40% of households with no phone. The ASHA's visit is their only reminder, so she visits those households first.
 
-## Channel choice
-Voice in Mewari, not Hindi SMS, because many mothers cannot read Hindi and the household phone is held by the husband; the call asks for the mother and leaves the date with whoever answers, since a routine vaccine date is not sensitive. The ASHA covers the 40% of households without a phone and is the morning-of contact for everyone.
+## Privacy
+- **What a message reveals to someone else:** That a named child has a routine vaccine due on a given day.
+- **How that is handled:** The call names the child, the dose, the day, and the place, and nothing else about the family's health. No privacy review is needed for a routine childhood vaccine.
 
-## Reminders alone, or bundled?
-The Haryana test: in Haryana, SMS alone had no impact and SMS plus local ambassadors was the most cost-effective bundle. Here the barrier is forgetting and the ASHA already reaches every hamlet, so the schedule bundles the call with the ASHA as messenger; run `select-messenger` to confirm the ASHA is the right person rather than assumed. Incentives are not added: stock is reliable and no cost barrier was found, but if the decay check shows attendance falling among phone-less households, run `design-incentive-scheme` before adding more calls.
+## Are reminders enough alone?
+No. A call reaches about 60% of households, often through the husband. The ASHA's visit sits beside the calls so that every mother hears the date from someone she knows. No incentive is added, because no cost barrier was found.
 
-## Decay check
-- **Measure:** Attendance among due children in reminded versus not-yet-reminded villages (a staggered start across the 48 villages), call delivery rate, and opt-outs, at cycles 1, 3, and 6.
-- **Trigger:** A fall of more than a third from the cycle-1 effect by cycle 6 (illustrative threshold) sends the schedule back for redesign, with the ASHA-only arm as the comparison.
+## Monitoring
+- **Measures:** Each month, from the call log and the register: calls answered and by whom, opt-outs, and the share of due children vaccinated at the camp.
+- **Review if:** Fewer than half of calls are answered, opt-outs pass 10% of households, or the share of due children vaccinated falls for two months running. The program lead and the ASHA supervisor review.
 
-## Expected effect
-Thakkar et al. (2016): OR 2.11 across 16 RCTs, 1.68 after bias correction, in medication adherence, mostly high-income countries. Kenya ART (Pop-Eleches et al., 2011): about 13 to 16 points on reaching 90% adherence with weekly SMS. Kenya immunization (Gibson et al., 2017): positive with incentives attached, size unverified. Haryana (Banerjee et al., 2025): SMS alone no impact. Academic trials average 8.7 points against 1.4 in nudge-unit trials (DellaVigna & Linos, 2022). This program has a confirmed forgetting barrier, reliable stock, and a messenger in the loop, which is closer to the bundles that worked than to the Haryana SMS-only arm. Plan for 5 to 10 percentage points of additional on-time attendance (illustrative planning range), with the Haryana null as the floor if the ASHA contact is not delivered.
+## What the evidence supports
+That reminders before a due date raise timely childhood immunization. A review of 18 studies in 11 low- and middle-income countries found higher coverage and timeliness, more so with more than two reminders. In Haryana, India, text reminders taken separately disappointed, and reminders paired with local ambassadors were the most cost-effective combination, which is why the ASHA stays in this schedule. No effect size is promised for Udaipur.
 
 ## What to check before relying on this
-- Whether the 64% "did not know the day" answer holds up when a mother is asked on the camp day itself, or whether it is a polite explanation for a cost or distance problem.
-- Whether the household phone is answered during the day and the message reaches the mother, not only the husband.
-- Whether the ASHA can move her weekly round to camp day in every hamlet; if not, row 2 is not delivered and the plan is reminders alone.
+- Whether "I did not know the day" is the real reason or a polite one for distance or a lost day's wage. Ask 15 mothers on a camp day.
+- Whether the call reaches the mother or stops with the husband. Test it with 20 households before the first full month.
 - Whether the register's due-dose data is current; a call about the wrong dose costs more trust than no call.
+- Whether the ASHA's round falls before the camp in every hamlet.
 ```

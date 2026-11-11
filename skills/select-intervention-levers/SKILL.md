@@ -1,139 +1,128 @@
 ---
 name: select-intervention-levers
 description: >-
-  Use when field research has confirmed the main reason a behavior is not
-  happening and the team needs to decide what to do about it. Also use when
-  someone asks "given that this is the barrier, what could we actually do?"
-  or is about to jump to an intervention idea ("let's send a text") without
-  grounding it in the barrier's COM-B component. Uses the Behavior Change
-  Wheel, a published framework that links each type of barrier to the
-  intervention functions that can address it, to shortlist interventions,
-  score them for practicality with APEASE, and break the best one into a
-  specific behavior change technique. Do not use when the barrier is still
-  an untested hypothesis; confirm it in the field first using the diagnostic
-  questions from decompose-comb-barriers. Not for writing the actual message
-  or script (draft-lever-content), and not for values-affirmation exercises
-  (draft-values-affirmation).
+  Use when field evidence has confirmed why a behavior is not happening and
+  the team must decide what kind of intervention to try: "given this barrier,
+  what could we do?", or a team about to "just send a text". Lists the kinds
+  of intervention a published table links to that kind of barrier, scores
+  each for feasibility, and names one technique with ranked fallbacks. Do not
+  use when the barrier is still a guess; use decompose-comb-barriers. Not for
+  writing the content; use draft-lever-content.
 license: CC-BY-4.0
 metadata:
   title: Choose interventions for a confirmed barrier
   type: atomic
   stage: design
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
-  authors: "Joe Speed"
+  authors: "Joe Speed, Zezhen Wu"
   org: IL
-  weird: mixed-evidence
+  tested_in: not-applicable
   tags: "behavior-change-wheel, behavior-change-techniques, apease"
-  consumes: "barrier-diagnosis, comb-barrier-hypotheses"
+  consumes: "barrier-diagnosis"
   produces: "intervention-levers"
 ---
 
 ## What it does
 
-Shortlists the types of intervention that can address one confirmed barrier, using the Behavior Change Wheel's published linkage table rather than open brainstorming.
+Chooses the kind of intervention that fits one confirmed barrier.
 
-It scores each eligible intervention function for feasibility with APEASE, selects one, and breaks it down into a specific behavior change technique, because a function name ("Environmental restructuring") is a category of mechanism, not something a team can implement. The functions that lose on feasibility are kept as the next thing to try if the selected one fails a pilot.
+**What this adds:** reads the eligible kinds of intervention from the Behaviour Change Wheel's published table, bundled with the skill, instead of brainstorming; says whether the team's own idea is on that list; scores each kind on six feasibility criteria, with practicability judged against what the implementer controls; names one technique, not a category; and ranks the kinds that lost as fallbacks.
 
 ## When to use it
 
 ### Use it when
-- Field diagnostic questions from `decompose-comb-barriers` have been answered and one hypothesis is confirmed as the actual barrier
-- Someone asks "given that this is the barrier, what could we actually do about it?"
-- A team is about to jump straight to an intervention idea ("let's send a text") without grounding it in the barrier's COM-B component
-- A pilot of one lever has failed and the team wants the next lever to try for the same confirmed barrier
+- Field evidence has confirmed why a behavior is not happening, and someone asks "given this barrier, what could we do?"
+- A team is about to commit to an idea ("let's send a text") without checking that it can change this kind of barrier
+- A pilot aimed at this barrier failed and the team wants the next thing to try
 
 ### Do not use it when
-- The barrier list is still unconfirmed hypotheses; a lever selected for the wrong barrier is a wasted pilot. Confirm the barrier in the field first, using the diagnostic questions from `decompose-comb-barriers`
-- The lever is chosen and the team needs the actual words, script, or signage; that is `draft-lever-content`
-- The intended intervention is a values-affirmation exercise; `draft-values-affirmation` owns that protocol end to end
-- No barrier has been diagnosed at all and the question is why the behavior is not happening; run `decompose-comb-barriers`
+- The barrier is a guess nobody has checked; use `decompose-comb-barriers`
+- The kind of intervention is chosen and has its own skill: `select-default-option`, `design-reminder-schedule`, `choose-delivery-moment`, `choose-message-frame`, `design-commitment-device`, `design-incentive-scheme`, `write-social-norm-message`, `design-feedback-report`, `draft-implementation-intention-prompt`, or `select-messenger`
+- The intervention is chosen and the team needs the words, script, or sign; use `draft-lever-content`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The one confirmed barrier, stated verbatim, with its COM-B sub-component (e.g. Opportunity/social) and the field evidence that confirmed it: which diagnostic question was asked and what the answers were. If the user offers the whole hypothesis list with none confirmed, say so and stop; this skill runs on one confirmed barrier.
-2. **Required.** The target behavior and population the barrier belongs to (who, what, when), so the technique can be made concrete.
-3. **Required.** What the implementer controls: budget range, channels, staff, partners, and anything that needs a third party's permission. This drives the Affordability and Practicability scoring.
-4. Optional. The full COM-B hypothesis set from `decompose-comb-barriers`, so rejected functions can be positioned against the other hypotheses if the pilot fails.
-5. Optional. Whether the source table (Michie, van Stralen & West, 2011, Table 2) is at hand to check cell by cell, which sets the confidence markers.
+1. **Required.** The one confirmed barrier, with the evidence: who was asked or observed, and what they said or did.
+2. **Required.** The behavior the barrier blocks: who does what, when.
+3. **Required.** What the implementer controls: budget, channels, staff, partners, and what needs someone else's permission.
+4. Optional. An intervention idea the team already favors.
 
-If 1 is missing or the barrier is unconfirmed, ask and stop. If 2 or 3 is missing, ask once; if still missing, proceed and mark every Practicability cell as "assumed, implementer constraints unknown". If 4 and 5 are missing, assume the table is not at hand and mark linkage confidence accordingly.
+If 1 or 2 is missing, or the barrier is one of several untested guesses, ask and stop. If 3 is missing, ask once; then mark every practicability score "?" and put the constraints first in the list to confirm.
 
 ## What it draws on
 
-- Michie, S., van Stralen, M. M., & West, R. (2011). The behaviour change wheel: A new method for characterising and designing behaviour change interventions. *Implementation Science*, 6, 42 (see Table 2). https://doi.org/10.1186/1748-5908-6-42
-- Michie, S., Richardson, M., Johnston, M., et al. (2013). The Behavior Change Technique Taxonomy (v1) of 93 hierarchically clustered techniques. *Annals of Behavioral Medicine*, 46(1), 81–95.
-- Michie, S., Atkins, L., & West, R. (2014). *The Behaviour Change Wheel: A Guide to Designing Interventions*. Silverback Publishing, pp. 46–48 (APEASE criteria).
+- Michie, S., van Stralen, M. M., & West, R. (2011). The behaviour change wheel: A new method for characterising and designing behaviour change interventions. *Implementation Science*, 6, 42. https://doi.org/10.1186/1748-5908-6-42 Supports: the six kinds of barrier, the nine kinds of intervention ("intervention functions"), and the table linking them, reproduced in `references/function-matrix.md`.
+- Michie, S., Atkins, L., & West, R. (2014). *The Behaviour Change Wheel: A Guide to Designing Interventions*. Silverback Publishing. Supports: choosing the kind before the technique, and the six APEASE criteria.
+- Michie, S., Richardson, M., Johnston, M., et al. (2013). The behavior change technique taxonomy (v1) of 93 hierarchically clustered techniques: Building an international consensus for the reporting of behavior change interventions. *Annals of Behavioral Medicine*, 46(1), 81–95. https://doi.org/10.1007/s12160-013-9486-6 Supports: naming one technique, the smallest part of an intervention that can be described and repeated.
 
-The Behavior Change Wheel names nine intervention functions (Education, Persuasion, Incentivization, Coercion, Training, Restriction, Environmental restructuring, Modeling, Enablement) and publishes a matrix (Michie, van Stralen & West, 2011, Table 2) linking each COM-B sub-component to the functions theoretically capable of changing it. That matrix must be consulted directly for the confirmed barrier's specific sub-component. Reconstructing it from general impression or memory is exactly the kind of plausible-but-wrong shortcut this skill exists to prevent: a barrier's sub-component (e.g. Opportunity/social) determines which functions are even eligible before feasibility is considered at all. APEASE scoring (the same criteria `define-key-behavior` uses) narrows the eligible functions to one selection. The Behavior Change Technique Taxonomy (BCTTv1) exists because a selected function is not yet implementable: it names a category of mechanism, not an action. The output must name a specific BCT, or it has not specified a lever yet.
+**Where the evidence comes from:** This is a selection procedure, not a finding about how people behave. Its table is its authors' judgment and comes from UK health psychology; a search found no study testing whether choosing this way leads to better interventions. Every feasibility score is local: cost, who must agree, what the audience accepts.
 
-One judgment call this skill adds to the source: where the published table is not at hand to check cell by cell, each function listed must carry an explicit confidence marker (high, applied with strong recall of the actual table; lower, applied from general impression), rather than presenting every function with the same unearned certainty. Low-confidence entries are to be verified against the source before the brief is treated as final.
-
-**WEIRD skew:** The COM-B-to-function linkage matrix is presented as a mechanistic, theory-driven mapping rather than a cultural claim: which function could plausibly work follows from which COM-B component the barrier sits in, not from a population's cultural background. What is WEIRD-skewed is the Behavior Change Technique Taxonomy's validation base and worked examples, drawn overwhelmingly from UK and US health-behavior interventions. Treat a selected function as portable and a specific BCT's assumed delivery mechanism (a clinic visit, a printed leaflet) as needing local adaptation.
-
-**Replication status:** The linkage matrix and the taxonomy are frameworks, not effects, so there is no effect to replicate. The BCTTv1 was built through an international consensus exercise and is widely used to code interventions; whether a given technique works for a given barrier in a given setting is an empirical question each pilot answers for itself, which is why the output keeps the rejected functions as the next thing to try.
+**Replication status:** Not applicable. Coders classifying existing strategies with the wheel agreed on 79% to 88% of items, which tests the labels, not the choice.
 
 ## How to do it
 
-1. **Carry the confirmed barrier over verbatim**, including its COM-B sub-component and the field evidence that confirmed it. If the sub-component was never named, name it now using the persistence test from `decompose-comb-barriers`; eligibility depends on it.
-2. **Read the eligible functions off the published matrix** (Michie, van Stralen & West, 2011, Table 2) for that exact sub-component. Do not brainstorm. For each function, state in one clause why its mechanism matches this sub-component per the matrix.
-3. **Mark confidence on every linkage.** If the table is at hand, check cell by cell and say so. If not, mark each function high confidence or lower confidence, and tell the user to verify low-confidence entries against the source before treating the brief as final.
-4. **Score each eligible function on APEASE** (Affordability, Practicability, Effectiveness, Acceptability, Side-effects/safety, Equity), each cell `+`, `-`, or `0` with a one-clause reason. Score Practicability against what the implementer actually controls: a function that needs infrastructure, authority, or a partner's cooperation the implementer does not have gets a negative, not a hopeful zero.
-5. **Select the top function** and state the tie-breaker reasoning by pointing at specific cells.
-6. **Break the selected function into one concrete BCTTv1 technique**, by number and name, and describe how it would apply to this barrier and population. "Environmental restructuring" is a category; "12.1 Restructuring the physical environment: install a partition at the kiosk" is a lever.
-7. **Keep the rejected functions** with why each scored poorly; they are the next lever to try if the selected one fails a pilot, not discards.
-8. **List open questions** that need field or pilot confirmation before the technique is finalized (permissions, partner cooperation, cost).
+1. **Restate the barrier with its evidence.** If nothing confirmed it, stop: an intervention chosen for the wrong barrier wastes a pilot.
+2. **Classify the barrier as one of six kinds**, defined in `references/function-matrix.md`, and quote the evidence that puts it there. A barrier that fits two kinds is two barriers; run each separately.
+3. **Read that row of the table.** List only the kinds of intervention it links to this kind of barrier, marking any that only the authors' later table links. Add none from intuition. Name the kind of the team's own idea and say whether it is in the row.
+4. **Give each eligible kind a form for this setting:** what would change, and who would change it.
+5. **Score each kind on APEASE:** affordability, practicability, effectiveness, acceptability, side-effects and safety, equity. Use +, 0, −, or ? (not known), with a reason in every cell. Score practicability against what the implementer controls: a kind needing a permission, partner, or system they lack gets −, not a hopeful 0.
+6. **Select one kind**, pointing to the cells that decided it. Do not select a kind with a − unless you state the change that removes it.
+7. **Name the technique:** the specific thing that changes, who does it, where, and when. Add its taxonomy number and name; mark a label given from memory "label to check".
+8. **Rank the kinds that lost**, each with why it lost and what would make it worth trying.
+9. **List what to confirm before design starts:** permissions, costs, and every "?".
 
-See `references/worked-example.md` for a complete run on the Nairobi market-vendor savings barrier.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
 # Intervention lever brief
 
-**Confirmed barrier:** <the one hypothesis that fieldwork confirmed, carried over verbatim, including which COM-B sub-component it belongs to and the evidence that confirmed it>
+**Behavior:** <who does what, when>
+**Confirmed barrier:** <the barrier, as the team stated it>
+**Evidence that confirmed it:** <who was asked or observed; what they said or did>
+**Kind of barrier:** <one of the six>, because <the evidence that puts it there>
 
-## Applicable intervention functions
-<per the BCW's COM-B-to-function linkage matrix (Michie, van Stralen & West, 2011, Table 2) for this specific sub-component>
-- <function 1>: <why this function's mechanism matches this sub-component, per the matrix>. **Confidence this linkage is correct:** <high: applied directly from the published table / lower: applied from general recall, verify against the source before finalizing>
-- <function 2>: <...>. **Confidence:** <...>
+## Kinds of intervention the table links to this barrier
 
-## Feasibility scoring (APEASE)
-| Function | A | P | E | A | S | E |
+| Kind | Form it would take here |
+|---|---|
+| <kind from the row> | <what would change, and who would change it> |
+
+**The team's own idea:** <the idea, its kind, and whether that kind is in the row; or "none given">
+
+## Feasibility (APEASE)
+
+| Kind | Affordability | Practicability | Effectiveness | Acceptability | Side-effects and safety | Equity |
 |---|---|---|---|---|---|---|
-| <function 1> | <+/-/0: reason> | | | | | |
-| <function 2> | ... | | | | | |
-
-(Columns: Affordability, Practicability, Effectiveness, Acceptability, Side-effects/safety, Equity.)
+| <kind> | <+ / 0 / − / ?: reason> | <...> | <...> | <...> | <...> | <...> |
 
 ## Selected lever
-**Function:** <top-scoring function>. <tie-breaker reasoning, pointing at specific table cells>
-**Concrete technique (BCTTv1):** <a specific, numbered, named technique, not a restated function>. <how it would concretely apply to this barrier and population>
+- **Kind:** <one kind>, because <the cells that decided it>
+- **Technique:** <the specific thing that changes; who does it; where and when>
+- **Taxonomy label:** <number and name; or "label to check: <label>">
 
-## Rejected functions
-<functions the matrix linked to this sub-component but that scored poorly on feasibility, with why; kept as the next lever to try if the selected one fails a pilot, not discarded>
+## If it fails: the other kinds, ranked
+1. <kind>: <why it lost; what would make it worth trying>
 
-## Open questions
-<what needs field or pilot confirmation before the selected technique is finalized>
+## To confirm before design
+- <a permission, a cost, or a "?" that could change the selection>
 ```
 
 ## Where it goes wrong
 
-- **Free-brainstormed levers.** Generating candidate levers from intuition instead of the published COM-B-to-function matrix defeats the point. The matrix exists because not every function is theoretically capable of changing every kind of barrier, and skipping it risks selecting one that cannot work by construction.
-- **Function without technique.** Stopping at a function name ("Environmental restructuring") without naming a specific BCT is not yet a lever; it is a category. Someone still has to decide what changes.
-- **Feasibility blind spots.** Selecting a function that requires infrastructure, authority, or a partner's cooperation the implementer does not have, without that showing up as a negative Practicability score, produces a lever that looks selected but cannot be piloted.
-- **Running on an unconfirmed hypothesis.** Selecting levers for a barrier that diagnostic questions have not confirmed risks designing for the wrong problem; the confirmed-barrier input exists specifically to prevent this.
-- **Function/technique conflation.** Treating "Environmental restructuring" and "install a partition" as interchangeable labels for the same thing loses the distinction the BCTTv1 exists to enforce: one is a category covering many possible techniques, the other is one specific instance.
-- **Unearned certainty.** Listing every applicable function with the same confident tone regardless of how well the specific matrix cell is actually recalled misrepresents a guess as a sourced fact. The mandatory confidence marker exists so a reader knows which functions need checking against Table 2 before the brief is final.
+- **Eligible read as effective.** The table says a kind of intervention could change this kind of barrier, not that it will here. The effectiveness score is usually a guess; say so in the cell.
+- **Education as the reflex.** Information is the cheapest thing to produce, so it gets proposed for every barrier. The table links education to two kinds only: psychological capability and reflective motivation.
+- **A table filled in to crown the favorite.** If the team's idea wins every column, rescore from the stated constraints, or say the table did not drive the choice.
 
 ## When to bring in a specialist
 
-Tell the user to consult a behavioral scientist, and where relevant the program's legal or safeguarding lead, when:
-- The eligible functions include Coercion or Restriction, or the Incentivization candidate involves payments or penalties; these carry ethical, legal, and backfire risks that an APEASE row cannot settle alone
-- The confirmed barrier sits outside the program's authority (a policy, a provider's process, a market rule), so every feasible function needs a partner's cooperation; a specialist can judge whether advocacy or partnership is the real lever rather than a behavior change technique
-- The barrier was confirmed on thin evidence (one interview round, a single site) and the pilot will be costly; a specialist can say whether another diagnostic round is cheaper than a wrong pilot
-- Low-confidence matrix linkages decide the selection and no one on the team can check Table 2
+Tell the user to consult a behavioral scientist, and the program's legal or safeguarding lead where noted, when:
+- The selected kind or the first fallback is coercion, restriction, or a payment or penalty, which can backfire or be unlawful (legal or safeguarding lead)
+- The barrier sits in a policy or another organization's process, so every eligible kind needs someone else's cooperation; the first move may be partnership, not a technique
+- The barrier was confirmed once, at one site, and the pilot is costly; more diagnosis may be cheaper
 
-Bring them: the confirmed barrier with its evidence, the applicable-functions list with confidence markers, the APEASE table, and the open questions.
+Bring them: the barrier with its evidence, the feasibility table, and the list to confirm.

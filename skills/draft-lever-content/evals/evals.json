@@ -3,31 +3,58 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Our lever brief selected BCT 12.1 Restructuring the physical environment: a privacy partition and a marked 'quick deposit' position at the M-Pesa agent kiosk inside Gikomba and Toi markets, so deposits aren't visible to neighboring stalls. The confirmed barrier is Opportunity/social: visible cash-handling at closing invites borrowing requests. The target behavior is women stall vendors depositing the day's net cash surplus into an M-Pesa savings wallet before leaving the market. Our context brief says the kiosk at closing time is the decision moment and that vendors are Swahili speakers with mixed literacy; our field coordinator is a native Swahili speaker. We don't have any data on what share of vendors currently deposit. Write the sign and what the agent should say.",
-      "expected_output": "A full intervention content draft following the output template: the technique with its BCTTv1 definition; channel stated as kiosk signage plus a one-line agent script, grounded in the context brief, with no SMS; a language note saying the English is working copy and final copy must be drafted natively in Swahili; short draft copy requesting one action; a fidelity trace mapping each element to a clause of the definition; delivery notes with sender, timing, and frequency ceiling; an EAST check in which the Social line makes no norm claim and says why; a pre-test with n and a pass criterion run on the Swahili version; and a 'what this draft does not do' section saying the copy supports the partition and does not replace it. It does not re-ask the Before you start questions.",
+      "name": "Full run",
+      "prompt": "We've chosen the intervention: a privacy screen and a marked 'quick deposit' position at the mobile-money agent kiosk inside Gikomba and Toi markets, so deposits aren't visible to neighboring stalls. The confirmed barrier is that visible cash-handling at closing invites borrowing requests. The target behavior is women stall vendors depositing the day's surplus cash into their mobile-money savings wallet before leaving the market. We watched vendors on six evenings: they decide at the kiosk at closing time. They are Swahili speakers with mixed literacy; our field coordinator is a native Swahili speaker. We don't have any data on what share of vendors currently deposit. Write the sign and what the agent should say.",
+      "expected_output": "An intervention content draft in the output template, with a short sign and one agent line traced to what a change to the physical setting must contain.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "States what the technique must contain before the draft, marked as a paraphrase or as copied from a definition.",
+        "The channel is a sign and a spoken line at the kiosk, not a text message.",
+        "Says the English is working copy and that a native Swahili speaker writes the final version.",
+        "Every element of the draft has a row in the trace.",
+        "Makes no claim about how many vendors deposit, and says why.",
+        "Sets a test with a number of people and a pass mark, run on the Swahili version."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Can you write the SMS for our intervention?",
-      "expected_output": "The skill does not draft copy. It asks which behavior change technique (BCTTv1 number and name) the message is meant to deliver and for the confirmed barrier and target behavior, whether SMS is a confirmed channel for this population and when the decision moment is, and what language and reading level the final copy needs with a native speaker on the team. It explains briefly that without a named technique it cannot trace whether the copy delivers the intervention that was selected.",
+      "expected_output": "The skill asks what intervention was chosen, whether the audience uses text messages, and what language the copy must be in, and drafts nothing.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks which technique was chosen, with the barrier and the behavior.",
+        "Asks how the team knows the audience uses text messages.",
+        "Asks for the language or reading level of the final copy.",
+        "Does not draft a message."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Technique: BCT 5.1 Information about health consequences. We want a waiting-room poster for our four rural clinics in Malawi telling pregnant women that taking one iron-folate tablet every day prevents anemia and low birth weight, and that taking it with food reduces nausea. Channel is confirmed: all antenatal clients sit in the waiting room. Language Chichewa, many women have little schooling; our nurse-midwife is a native Chichewa speaker. Draft it.",
-      "expected_output": "The skill produces the content draft: technique and definition, channel and language note (English working copy, Chichewa drafted natively by the nurse-midwife), short low-literacy copy, a fidelity trace tying the consequence statements to the BCT 5.1 definition, delivery notes, an EAST check, a pre-test with n and pass criterion run on the Chichewa version, and limits. Because the copy makes health claims about pregnancy, supplementation, and side effects, it also tells the user that a clinician or the ministry's antenatal guidance must verify every claim before the pre-test, since a comprehension check does not check truth, and names what to bring them.",
+      "name": "Near the escalation point",
+      "prompt": "Technique: information about health consequences. We want a waiting-room poster for our four rural clinics in Malawi telling pregnant women that taking one iron-folate tablet every day prevents anemia and low birth weight, and that taking it with food reduces nausea. Barrier, from exit interviews: women stop after a week because of nausea and don't know the tablet protects the baby. Behavior: women attending antenatal care take one tablet daily through pregnancy. Channel is confirmed: all antenatal clients sit in the waiting room. Language Chichewa, many women have little schooling; our nurse-midwife is a native Chichewa speaker. Draft it.",
+      "expected_output": "The skill drafts the poster in the template and says a clinician must check every health claim before the comprehension test.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Produces draft copy with a trace.",
+        "Says the English is working copy and that the nurse-midwife or another native speaker writes the Chichewa version.",
+        "Tells the user a clinician must check the health claims before the test.",
+        "Says a comprehension test does not check whether a claim is true.",
+        "Says what to bring to the clinician."
+      ]
     },
     {
       "id": 4,
-      "prompt": "Our lever brief landed on Environmental restructuring for the cash-visibility barrier at the kiosk. Can you write the copy for it?",
-      "expected_output": "The skill recognizes that the lever brief stops at a function name with no named BCTTv1 technique, says that a function is a category rather than a lever and that it cannot trace copy to an unnamed technique, and sends the user back to select-intervention-levers to name the concrete technique (for example 12.1 Restructuring the physical environment) before any copy is drafted. It does not guess which technique was meant or draft copy anyway.",
+      "name": "Wrong skill",
+      "prompt": "We know the barrier is that vendors are seen with cash at the kiosk, and we've landed on 'environmental restructuring' as the approach. Can you write the copy for it?",
+      "expected_output": "The skill says a category is not yet a chosen intervention, so there is nothing to write copy for, and points to the skill that chooses one.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says 'environmental restructuring' is a category, not a specific technique.",
+        "Names select-intervention-levers.",
+        "Does not guess which technique was meant.",
+        "Does not draft copy."
+      ]
     }
   ]
 }

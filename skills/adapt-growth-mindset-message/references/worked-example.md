@@ -1,52 +1,50 @@
-# Worked example: after-school math reinforcement in the Peruvian highlands
+# Worked example: after-school math sessions in public secondary schools in Peru
 
-Continues the running case from `identify-wise-intervention-target`: a regional education office in the Peruvian highlands runs after-school math reinforcement in 40 public secondary schools (illustrative). The wise-intervention target named ability as the primary question, with two affordance conditions: a teacher briefing and individual feedback in sessions. Both have since been agreed (illustrative). Nothing below is a finding.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Input (condensed):** Behavior: second-year secondary students who fail the first bimester math quiz attend the after-school reinforcement session twice a week for six weeks. Barrier: 21 of 36 interviewed students said "math is for people with a head for numbers; I don't have one". Delivery: one 90-minute class period in the week between quiz results and the first session, on paper, run by the program's field facilitators, in Spanish, with Quechua oral support in two districts. Outcomes available: the week-six retake score and session attendance; 20 of the 40 schools can serve as a comparison group this bimester.
+## The request
+
+"Behavior: first-year students in 12 public secondary schools in Cusco attend the free after-school math sessions twice a week. Attendance falls from 70% to 30% after the first graded quiz in week 4. We interviewed 24 students who stopped coming: 15 said some version of 'I got a bad mark, so math is not for me', and four said they have to help at home on those afternoons. Cost, place, and transport are not the problem. Students can retake each quiz once, and tutors go over every wrong answer the next session; we have now announced the retake in every class. We have not asked what classroom teachers say when they hand quizzes back, or what friends say about going to the sessions. We want a growth-mindset lesson for the students who scored below 11 out of 20 on the quiz: one class period of 45 minutes in week 4, on paper, in Spanish, run by the session tutors. Some students read slowly. Six schools get it this term and six next term, so we can compare retake scores and attendance."
+
+## The output
 
 ```markdown
 # Growth-mindset lesson, adapted
 
-**Target behavior:** Second-year secondary students who fail the first bimester math quiz attend the after-school reinforcement session twice a week for the following six weeks.
-**Barrier evidence carried over:** 21 of 36 students: "Math is for people with a head for numbers. I don't have one." Failure read as a fixed verdict (from identify-wise-intervention-target).
-**Who receives it:** Students who failed the first bimester quiz; the lower-achieving group by construction. Delivered to them, not to whole classes.
-**What this lesson does not fix:** Harvest-season labor in two districts (time; routed to select-intervention-levers) and the absence of individual feedback in sessions (a session design matter, now agreed as a condition).
+**Behavior:** First-year students in 12 public secondary schools in Cusco attend the free after-school math sessions twice a week.
+**The question students are asking:** "I got a bad mark, so math is not for me" (15 of 24 students who stopped attending; interviews after week 4)
+**Who receives it:** First-year students who scored below 11 out of 20 on the week-4 quiz.
 
-## Norms check
-- **Teachers:** 12 of 36 students said the teacher "already decided who is clever" (interviews). A one-hour teacher briefing before the lesson has been agreed, in which the teacher commits to the week-six retake and to marking one worked problem per student per session (program fact).
-- **Peers:** Unknown at the time of the target; a question is added to the pre-test below.
-- **Verdict:** Afforded on condition: the briefing and the feedback change happen before the lesson. Peer norms unverified.
+## What the school offers (gate)
+- **After a poor result:** One retake of each quiz, announced in every class; tutors go over every wrong answer the next session (program rules, as described by the team).
+- **Teachers:** Not known. Nobody has asked what classroom teachers say when they hand quizzes back.
+- **Peers:** Not known.
+- **Verdict:** Delivers on feedback and a second attempt. Teachers and peers are not verified; the pre-test below asks both questions, and the lesson is not for delivery until it has.
 
-## Core lesson (working copy; final copy drafted natively in Spanish; Quechua oral version in two districts)
-1. Ability grows with practice. When you learn something new, the part of your brain that handles it gets stronger with use, the way a weaver's hands get faster over years at the loom. Nobody is born able to solve equations; the people who are good at them got them wrong first, many times.
-2. Struggle is information, not a verdict. A wrong answer on the quiz says "this method is not yet yours", not "you are not a math person". The students who improve most are the ones who get things wrong and then look at why.
-3. Strategies and help are part of effort. Trying harder the same way rarely works; trying differently does. Redo the problem a second way, ask the tutor to show one worked step, explain the problem to a classmate. Your session tutor will mark one problem of yours each session so you can see where the method broke.
+## The lesson (working copy; a native speaker redrafts it)
+1. **Ability grows with practice.** Nobody is born able to solve equations. A weaver's hands are slow in the first year at the loom and fast in the fifth, and the part of you that does math gets stronger the same way, by being used.
+2. **Struggle is part of learning.** A wrong answer on the quiz says "this method is not mine yet". It does not say "math is not for me". The students who are good at math now got these same problems wrong first.
+3. **A new strategy or help builds ability.** Doing the same problem the same way again rarely works. Solve it a second way, ask the tutor to show the one step where it went wrong, or explain the problem to a classmate. The retake is there so that you can use what you find.
 
-## Saying-is-believing task
-"Next year a first-year student will fail this same quiz and think they are not made for math. Write them a letter. Tell them what you now know about how ability grows, what a wrong answer means, and two things they should do in the sessions. We will give your letter, without your name, to a first-year student next year." (Oral version: the student dictates to a facilitator in Spanish or Quechua.)
+## Advice task
+"Next year a first-year student will get a low mark on this same quiz and think math is not for them. Write that student a letter. Tell them what a low mark means and does not mean, and two things you would do before the retake. We will give your letter, without your name, to a first-year student next year." Students who prefer to speak tell their letter to a tutor, who writes it down.
 
 ## Delivery
-- **Format and length:** One 90-minute class period, on paper, with the letter task in the last 25 minutes.
-- **Timing:** In the week between quiz results and the first reinforcement session.
-- **Delivered by:** Program field facilitators, after a half-day training on the three claims and on not adding "just try harder".
-- **Frequency:** Once.
+- **Sessions:** One class period of 45 minutes, on paper; the letter takes the last 15 minutes.
+- **When:** Week 4, after the quiz is returned and before the retake.
+- **Run by:** Session tutors, briefed for an hour to keep the three claims and the letter, and to leave out "you just need to try harder".
 
-## Measurement plan
-- **Primary outcome:** Week-six retake score (standardized within school) and session attendance over six weeks.
-- **Primary subgroup:** All recipients failed the quiz, so the treated group is the lower-achieving group; a secondary split by quiz-score tercile.
-- **Comparison:** 20 of the 40 schools receive the lesson this bimester, 20 the next, assigned at random by school.
-- **Pre-registration:** Outcomes, the tercile split, the timing, and the belief item as a delivery check only, filed before the first session.
-- **Expected effect:** A few hundredths of a standard deviation on the retake; a null is a live outcome. With 40 schools the test may be underpowered for an effect of that size; estimate-sample-size should say so before the decision to run.
+## How you will know
+- **Outcome:** Retake score, and attendance over the six weeks after the quiz.
+- **Judged on:** Students who scored below 11; the six schools that receive the lesson this term against the six that receive it next term.
+- **Check on delivery only:** One item, "you can get better at math if you practice", asked before the retake.
 
-## Evidence statement (mandatory)
-The growth-mindset record is contested. A meta-analysis of 43 studies (N = 57,155) found d = 0.08, about 0.19 for high-risk and 0.34 for low-SES students on limited evidence; a 2023 review found 94% of interventions confounded. Peru's own trial (90 minutes, more than 50,000 students, about $0.20 per pupil) reported math gains of 0.14 SD, 0.05 to 0.25 depending on estimator, larger outside Lima; Argentina's trial at scale (202 schools) was null. The lesson is cheap and may help this group a little; it will not replace feedback in the sessions or change a teacher who sorts students.
+## The record
+Across 63 studies, growth-mindset lessons raised achievement by d = 0.05, a twentieth of a standard deviation, and not significantly once publication bias was corrected for (Macnamara & Burgoyne, 2023). In a US national study, grades rose 0.10 points among lower-achieving students, more where peers favored challenge (Yeager et al., 2019). In urban public schools in Peru a 90-minute session gave a small improvement in math scores, larger outside the capital (Outes-León, Sánchez & Vakis, 2020); in 202 schools in Argentina a similar exercise had no effect (Ganimian, 2020). No effect size is promised for Cusco.
 
-## Required pre-test before launch
-8 students who failed the quiz, in two schools, read the Spanish draft and restate the three claims and the letter task in their own words; 3 math teachers read it and say whether anything in it contradicts what happens in their sessions. Pass: all 8 name "ability grows with practice" and no teacher names a contradiction. Add one question for students: "What do your friends say about students who go to the sessions?"
+## Pre-test before use
+Eight students who scored below 11, in two schools, read the Spanish draft and restate the three claims and the letter task in their own words. Three math teachers read it and say whether anything in it contradicts what happens in their class. Ask the students what their friends say about going to the sessions, and the teachers what they say when they hand a quiz back. Pass: all eight students can state that ability grows with practice, and no teacher names a contradiction.
 
 ## What to check before relying on this
-- Peer norms about attending sessions are unknown; if friends mock attendance, the lesson works against the grain.
-- The teacher briefing is a promise, not yet a fact; confirm it happened before the lesson runs.
-```
-
-Next step: `plan-evaluation-design` and `estimate-sample-size` for the 40-school test; native Spanish and Quechua drafting; then the pre-test.
+- What classroom teachers say when they return a quiz. If they sort students into those who "have a head for numbers" and the rest, brief them before the lesson runs.
+- The lesson does not touch the time barrier: the four students who help at home on those afternoons need a different day, not a message.

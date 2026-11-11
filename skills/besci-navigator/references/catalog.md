@@ -10,20 +10,20 @@ Skills in this snapshot: 57
 
 | Name | Title | Stage | Type | Status | Version | Consumes | Produces | What it does |
 |---|---|---|---|---|---|---|---|---|
-| adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Adapts a brief "abilities can grow" lesson to one local school context, with a plain statement of which students it should be expected to help. |
+| adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Adapts a short lesson teaching that ability grows with practice to one school setting. |
 | adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.1.0 | survey-items | survey-items | Converts a face-to-face survey instrument into a version that can be administered by voice, over a live call or an interactive voice response (IVR) system. |
 | analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.1.0 | analysis-plan, dataset-description | — | Estimates who benefited most from an intervention, keeping the moderator tests the pre-analysis plan named apart from exploratory machine-learning splits so that neither is mistaken for the other. |
 | assess-evidence-base | Check what research already exists | define | atomic | draft | 0.2.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
 | assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.2.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
 | assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.1.0 | evaluation-design, intervention-description | scalability-assessment | Judges whether an effect measured in a pilot is likely to hold when the program is delivered at scale, by testing the pilot's claim against the named threats to scalability. |
-| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.1.0 | intervention-draft | — | Reviews one drafted behavioral intervention against published ethical principles for behavioral public policy, returning go, revise, or stop with the reasons. |
+| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.2.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.2.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.2.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
 | besci-navigator | Behavioral science navigator | other | meta | draft | 0.1.2 | program-goal | workflow-draft | Recommends which library skills to run, in what order, for the problem a user describes. |
 | besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.2.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.1.0 | ai-product-account, user-funnel-map | ai-eval-level-recommendation | Recommends which evaluations an AI product is ready for, based on what it has already shown. |
-| choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | — | Chooses the moment to deliver one ask: the point in the audience's calendar where cash is present, attention is free, the behavior naturally falls due. |
+| choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
 | choose-message-frame | Pick gain or loss framing for a message or incentive | design | atomic | draft | 0.1.0 | intervention-draft, intervention-levers | intervention-draft | Decides whether one message or one incentive contract should be worded as a gain or as a loss, from the type of behavior it targets. |
 | choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.1.0 | experiment-intent, theory-of-change | evaluation-design | Chooses the randomization structure for one test from the program's constraints: individual, cluster, stepped-wedge, factorial, or encouragement. |
 | decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
@@ -35,19 +35,19 @@ Skills in this snapshot: 57
 | design-incentive-scheme | Design a reward for one verifiable behavior | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Specifies the terms of a reward for one verifiable behavior, from its size to what happens when it stops. |
 | design-list-experiment | Measure a sensitive behavior without asking directly | measure | atomic | draft | 0.1.0 | measurement-plan | survey-items | Designs an item-count question that estimates how common a sensitive behavior is in a population without asking any respondent to admit it. |
 | design-pilot-feasibility-study | Design a pilot that tests feasibility, not effect | test | atomic | draft | 0.1.0 | intervention-draft | evaluation-design | Designs a pilot whose job is to test feasibility (recruitment, retention, fidelity, acceptability, data completeness) against thresholds fixed before fieldwork, not to estimate the intervention's effect. |
-| design-reminder-schedule | Plan when and how often to remind | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | intervention-draft | Specifies the schedule for reminding people about one pending action they already intend to take. |
+| design-reminder-schedule | Plan when and how often to remind | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the reminders a program sends about one action people already intend to take. |
 | diagnose-social-norm | Find out whether a practice is a social norm | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, qualitative-data | social-norm-diagnosis | Decides whether people follow one practice because of what they expect of each other. |
-| draft-belonging-story | Peer stories that make early struggle feel normal | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Drafts a set of stories from older peers that present early difficulty in a new setting as something most people go through before it passes. |
+| draft-belonging-story | Peer stories that make early struggle feel normal | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through. |
 | draft-cognitive-interview-script | Cognitive interview script drafter | measure | atomic | draft | 0.1.0 | survey-items | interview-guide | Turns a set of draft survey items into a cognitive interview script that tests whether respondents interpret each item the way its author intended. |
-| draft-implementation-intention-prompt | Ask people to plan when and where | design | atomic | draft | 0.1.0 | intervention-levers | intervention-draft | Writes a prompt that asks a person to name the moment they will carry out one action they already intend to do. |
+| draft-implementation-intention-prompt | Ask people to plan when and where | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take. |
 | draft-intervention-description | Describe an intervention so others can replicate it | implement | atomic | draft | 0.1.0 | intervention-draft, fidelity-plan | intervention-description | Writes down what an intervention actually was, item by item, in enough detail for another team to rebuild it. |
-| draft-lever-content | Write an intervention's messages and scripts | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | intervention-draft | Drafts what a field team will deliver, such as text messages, script lines, signs, or app wording, from one chosen behavior change technique. |
+| draft-lever-content | Write an intervention's messages and scripts | design | atomic | draft | 0.2.0 | intervention-levers | intervention-draft | Drafts the words for an intervention that has already been chosen. |
 | draft-norms-vignette | Write scenarios that measure what others do and approve | measure | atomic | draft | 0.1.0 | social-norm-diagnosis | survey-items | Writes short scenarios, in versions that differ only in what other people are said to do or to approve of, so a survey can show whether a practice follows those expectations. |
 | draft-sifa-declaration | Write an AI-use disclosure statement | implement | atomic | draft | 0.1.0 | ai-use-account | sifa-declaration | Turns a team's account of who did what into a SIFA declaration of where AI tools were involved in producing a piece of work. |
 | draft-survey-items | Write survey questions people can answer | measure | atomic | draft | 0.1.0 | measurement-plan | survey-items | Writes closed-ended survey items that respondents with little schooling can answer accurately when an enumerator reads them aloud. |
 | draft-tdf-interview-guide | Write an interview guide that tests barrier hypotheses | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, comb-barrier-hypotheses | interview-guide | Writes an interview guide of open questions that tests a team's hypotheses about why one behavior is not happening. |
 | draft-theory-of-change | Write the causal chain from activities to outcome | define | atomic | draft | 0.2.0 | program-goal | theory-of-change | Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links. |
-| draft-values-affirmation | Write an exercise to help people feel less judged | design | atomic | draft | 0.1.0 | affirmation-context, audience-context-brief | intervention-draft | Drafts a values-affirmation exercise, a short writing task about a personally important value, tailored to one audience facing one specific evaluative threat. |
+| draft-values-affirmation | Write an exercise to help people feel less judged | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment. |
 | estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.1.0 | analysis-plan, evaluation-design | — | Estimates what one program paid for each unit of behavior change or outcome it produced, in a form that can be set beside another program's number. |
 | estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.1.0 | evidence-scan-brief | effect-size-benchmark | Turns the published effect sizes a team is relying on into a discounted planning range for one test. |
 | estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.1.0 | effect-size-benchmark, evaluation-design | power-calculation | Estimates the sample a test needs to detect its planned effect, or the smallest effect a fixed sample can detect. |
@@ -60,7 +60,7 @@ Skills in this snapshot: 57
 | plan-trials-of-improved-practices | Try candidate practices in real homes first | diagnose | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | — | Plans a round of household trials in which families try one or two candidate practices for about a week, then report what they kept, changed, or dropped. |
 | review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.1.0 | prior-intervention-record | intervention-post-mortem | Turns a team's account of a past intervention into a structured review that separates what was planned from what was actually done. |
 | select-default-option | Choose what people get by default | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the option people receive when they take no action at one decision point. |
-| select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.1.0 | barrier-diagnosis, comb-barrier-hypotheses | intervention-levers | Shortlists the types of intervention that can address one confirmed barrier, using the Behavior Change Wheel's published linkage table rather than open brainstorming. |
+| select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-levers | Chooses the kind of intervention that fits one confirmed barrier. |
 | select-messenger | Choose who delivers the message | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | — | Picks who should deliver a message to a given audience, with the reasons on paper. |
 | specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.1.0 | intervention-description, intervention-draft | adaptation-record | Records each planned or unplanned modification to an intervention in a structured log, checking it against the core components that carry the intervention's mechanism. |
 | synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.1.0 | qualitative-data, comb-barrier-hypotheses, interview-guide | barrier-diagnosis | Summarizes a set of interviews into a framework matrix coded to COM-B or TDF domains so the team can say which barrier hypotheses the interviews support. |
@@ -73,37 +73,34 @@ Skills in this snapshot: 57
 ### adapt-growth-mindset-message
 
 **Title:** Adapt a growth-mindset lesson to a local school  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** growth-mindset, wise-interventions, behavior-change-techniques  
-**Consumes:** intervention-levers, barrier-diagnosis  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** growth-mindset, wise-interventions  
+**Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
 
-**What it does:** Adapts a brief "abilities can grow" lesson to one local school context, with a plain statement of which students it should be expected to help.
+**What it does:** Adapts a short lesson teaching that ability grows with practice to one school setting.
 
-**Description (trigger rule):** Use when a team wants to tell students that ability grows with practice and asks for "a growth mindset lesson", "a mindset session for our schools", or "the Peru Expande tu Mente program for us", and needs it adapted to a local school. Also use when a mindset script is about to be copied from a US or World Bank program without deciding which students it is for, whether teachers and peers will back it, and how it will be measured. Produces a one-session lesson with local examples, the saying-is-believing writing task, a delivery and measurement plan, and a plain statement of the contested evidence (meta-analytic d = 0.08; Peru 0.05 to 0.25 SD; Argentina null). Do not use when it is not yet known whether students read setbacks as a verdict on fixed ability; run identify-wise-intervention-target first. Not for belonging stories (draft-belonging-story), values affirmation (draft-values-affirmation), or generic drafting from a chosen technique (draft-lever-content).
+**Description (trigger rule):** Use when students read a poor result as proof that they lack ability, the school gives them a way to improve, and a team wants a growth-mindset lesson for that setting: "a mindset session for our schools". Writes the lesson with local examples, the task in which students advise a younger student, and the check on what teachers and peers do. Do not use when nobody has established which question students are asking; use identify-wise-intervention-target. Not for doubts about belonging; use draft-belonging-story.
 
 **Use it when:**
-- `identify-wise-intervention-target` named ability ("can I get better at this?") as the primary question and the affordance check passed or named what must change first
-- Someone asks for "a growth mindset lesson", "a mindset session for our students", or "the Peru program adapted for our schools"
-- A lever brief from `select-intervention-levers` selects a message about the growth of ability for a confirmed Motivation (reflective) barrier
-- A team is about to translate a US or World Bank mindset script word for word, with its examples, into a school it has not checked
+- Students' own words name the question "can I get better at this?", and what the school offers after a poor result is known
+- Someone asks for "a growth mindset lesson" or "a mindset session for our students"
+- A team is about to translate a US mindset script word for word
 
 **Do not use it when:**
-- It is not yet known whether students read setbacks as a verdict on fixed ability rather than as a belonging or trust problem; run `identify-wise-intervention-target`
-- The question students ask is "do people like me belong here?"; that is `draft-belonging-story`
-- The threat is to self-integrity, feeling judged in a stigmatized domain; that is `draft-values-affirmation`
-- The barrier is teaching quality, absent teachers, no materials, or school fees; a lesson cannot substitute, so route to `select-intervention-levers`
-- The team needs other copy (a reminder, a poster, a parent message) for a chosen technique; that is `draft-lever-content`
+- Nobody has established which question students are asking, or that a belief is the barrier; use `identify-wise-intervention-target`
+- Students' words are about whether people like them belong; use `draft-belonging-story`
+- People feel judged for who they are or what they lack; use `draft-values-affirmation`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an education economist or evaluator, and a psychologist with school-intervention experience, when:
-- The program would replace, rather than add to, instructional improvements (teacher recruitment, materials, remedial teaching); the record cannot carry that decision, and the evidence statement must reach whoever is making it
-- The lesson is pitched as a fix for structural disadvantage (poverty, discrimination, language of instruction, early streaming); a lesson that tells disadvantaged students the problem is their mindset can do harm, and `audit-intervention-ethics` should review it
-- The rollout is regional or national with no pre-registered test; an evaluator should design a test before scaling, since the at-scale record includes a null
-- Students in the target group face high-stakes examination failure with known distress or dropout consequences; a school counselor should review the session and what follows a poor result
+Tell the user to consult an education evaluator, and a psychologist with experience of school interventions, when:
+- The lesson would replace teaching, remedial classes, or materials
+- It is pitched as the answer to poverty or discrimination, which tells disadvantaged students the problem is their mindset
+- The rollout is regional or national; an evaluator should pre-register a test first
+- Students face a high-stakes exam with known distress
 
-Bring them: the target and the students' words, the norms check with its facts, the lesson draft, the measurement plan, and the evidence statement.
+Bring them: the students' words, the check of the school, the lesson, and the record.
 
 ### adapt-survey-for-phone-mode
 
@@ -275,36 +272,33 @@ Bring them: the one-line claim, the threats table with its tests, the domain sco
 ### audit-intervention-ethics
 
 **Title:** Check an intervention is ethical before launch  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** ethics, choice-architecture, behavior-change-techniques  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** ethics, choice-architecture  
 **Consumes:** intervention-draft  
+**Produces:** ethics-review  
 
-**What it does:** Reviews one drafted behavioral intervention against published ethical principles for behavioral public policy, returning go, revise, or stop with the reasons.
+**What it does:** Reviews one drafted intervention against published ethics guidance before launch.
 
-**Description (trigger rule):** Use when a behavioral intervention has been drafted (a default, a norm message, a public pledge, an incentive, a recognition scheme, a reminder) and someone asks "is this ok to do?", "is this manipulative?", "will people feel shamed?", "do we need to tell them?", or a funder wants an ethics check before launch. Also use when a draft relies on shame, fear, deception, money offered to people who cannot refuse it, or anything aimed at children. Reviews the draft against the OECD (2022) good-practice principles and Sunstein's (2015) autonomy, welfare, and dignity tests, rates six tests, and returns go, revise, or stop with the required changes. Do not use when no draft exists and the team is still choosing the lever; select-intervention-levers flags Coercion and Restriction at that step. Not for research ethics or IRB review of a study (your organization's ethics board), or for rewriting the draft (the skill that produced it, or draft-lever-content).
+**Description (trigger rule):** Use when a behavioral intervention has been drafted (a default, a pledge, an incentive, a message, a reminder) and someone asks "is this ok to do?", "is this manipulative?", or "do we need to tell them?", or a funder wants an ethics check before launch. Classifies the draft by whether people can see it and avoid it, rates six checks, and returns go, revise, or stop. Do not use when no draft exists yet; use select-intervention-levers. Not for the research ethics of a study, which belong to an ethics board.
 
 **Use it when:**
-- A draft intervention exists (from `select-default-option`, `write-social-norm-message`, `plan-collective-pledge`, `design-incentive-scheme`, `design-social-recognition`, `draft-lever-content`, or another technique skill) and the team, a funder, or a partner asks whether it is acceptable to run
-- Someone asks "is this manipulative?", "is this shaming people?", "do we have to tell them?", "can they opt out?", or "is it ok to pay poor people for this?"
-- The draft relies on shame, fear, scarcity cues, deception, a default people will not notice, money offered to people who cannot refuse it, or anything aimed at children
-- A pledge, declaration, public list, or recognition scheme will make visible who did and who did not do the behavior
+- A draft intervention exists and a team, funder, or partner asks whether it is acceptable to run
+- Someone asks "is this manipulative?", "will people feel shamed?", "do we have to tell them?", or "is it ok to pay poor people for this?"
+- The draft shows who did and who did not do the behavior, or reaches children or people who depend on the deliverer
 
 **Do not use it when:**
-- No draft exists and the team is still choosing the lever; `select-intervention-levers` already flags Coercion and Restriction at that step, and this skill needs a named mechanism to review
-- The question is the ethics of a study (consent to be researched, randomization, risks to participants as subjects); that belongs to the organization's ethics board or institutional review board, and this skill says so rather than answering
-- The verdict is "revise" and the team wants the rewritten draft; go back to the skill that produced it (`write-social-norm-message`, `select-default-option`, `plan-collective-pledge`, `design-incentive-scheme`, `design-social-recognition`) or to `draft-lever-content`
-- The team wants to check its own assumptions about the population; that is `audit-researcher-bias`
+- No draft exists yet; use `select-intervention-levers`
+- The question is the ethics of a study (consent to research, random assignment); take it to the organization's ethics board
 
 **When to bring in a specialist:**
 
-Tell the user to consult the organization's ethics board or an ethicist with behavioral-policy experience, and where noted a safeguarding lead, a data-protection officer, or a local qualitative researcher, when:
-- Any test rates "fail" and the team wants to proceed anyway, or the verdict is "stop" and the team disputes it
-- The audience includes children, people in crisis, or people dependent on the deliverer (workers, borrowers, tenants, pupils); a safeguarding lead reviews before any launch
-- The consent and data row raises identification risk (HIV status, debt, pregnancy, who complied), where a data-protection officer or counsel checks what may be collected and shown
-- The intervention is part of a trial, where consent to be researched, randomization, and risk to participants are the board's questions, not this skill's
-- A public-visibility mechanism (pledge, list, token) is planned where sanctions against non-doers can be violent or economic; a local qualitative researcher checks what visibility costs here before the pledge is planned further
+Tell the user to take the draft to the organization's ethics board, with the specialist noted, when:
+- A check fails and the team wants to proceed, or disputes a "stop"
+- The audience includes children, people in crisis, or people who depend on the deliverer: a safeguarding lead reviews before launch
+- It could reveal a person's health, debt, or legal status: a data-protection officer checks what may be collected and shown
+- People seen not to comply could face violence or lose income: a local qualitative researcher checks what being seen costs here
 
-Bring them: the one-paragraph description with the mechanism named, the test table, the flags, the verdict, and the required changes.
+Bring them: the draft and the full review.
 
 ### audit-process-friction
 
@@ -515,36 +509,33 @@ Bring them: the product account, the level table with its evidence column, and t
 ### choose-delivery-moment
 
 **Title:** Pick the moment to deliver an ask  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** scarcity, choice-architecture, behavior-change-techniques  
-**Consumes:** intervention-levers, audience-context-brief  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** choice-architecture, behavior-change-techniques, timing  
+**Consumes:** barrier-diagnosis  
+**Produces:** intervention-draft  
 
-**What it does:** Chooses the moment to deliver one ask: the point in the audience's calendar where cash is present, attention is free, the behavior naturally falls due.
+**What it does:** Picks the moment at which one ask or offer reaches people.
 
-**Description (trigger rule):** Use when the intervention is chosen and the question is when to deliver it: "when should we make the offer", "before or after harvest or payday", "is new year or Ramadan a good time to launch". Also use when a team is about to schedule an ask by its own calendar (a quarter start, a staff visit) without checking when the audience has cash, attention, and a natural window. Produces a timing plan: the income and expense calendar, local temporal landmarks with their cash position, the chosen moment with its mechanism (liquidity, salience, or slack attention), a deadline rule, an equity check, and what to test, drawing on harvest-timed offers in Kenya (Duflo, Kremer and Robinson), the fresh-start effect, and EAST. Do not use when the question is how many messages and how often; use design-reminder-schedule instead. Not for writing the message (draft-lever-content), locking money until a date (design-commitment-device), or diagnosing when financial stress peaks (assess-scarcity-load).
+**Description (trigger rule):** Use when an ask or offer is already chosen and the question is when to make it: "before or after harvest", "payday or mid-month", "is the new year a good time to launch". Also use when a team is about to schedule an offer by its own calendar. Picks one moment from when people have the money, the attention, and the chance to act, and names who that moment leaves out. Do not use when deciding how many reminders to send and how often; use design-reminder-schedule. Not for a plan the person makes; use draft-implementation-intention-prompt.
 
 **Use it when:**
-- A lever has been chosen and someone asks "when should we make the offer?", "which month should this run?", or "before or after harvest (or payday, or the transfer)?"
-- A team is about to schedule an ask by its own calendar (the quarter start, the next staff visit, when the budget lands) without checking when the audience has cash and attention
-- Someone proposes a launch date because it feels meaningful ("start at new year", "right after Ramadan") and the team needs to know whether that moment has cash and evidence behind it
-- An offer worked once and failed when repeated later in the season, and the team suspects the moment, not the offer, carried the effect
+- A confirmed barrier is a bad moment: people want what is offered and are asked when they have no cash, time, or way to act
+- Someone asks "before or after harvest?", "payday or mid-month?", or "is the new year a good time to launch?"
+- A team is about to schedule an ask by its own calendar (the quarter start, a staff visit)
 
 **Do not use it when:**
-- The question is how many messages to send, how often, and when to stop; that is `design-reminder-schedule`, which takes the moment chosen here as its anchor
-- The team wants to lock money or a decision until a date; that is `design-commitment-device`. This skill may recommend a short deadline, never a penalty or a lock
-- The question is when financial stress peaks for this population and what it does to their decisions; that is `assess-scarcity-load` (diagnose stage), whose load map this skill consumes
-- The team needs the words of the message or script; that is `draft-lever-content`, which takes the timing line from this plan
-- No lever has been chosen yet; run `select-intervention-levers` first, because the moment depends on what is being asked and what it costs
+- The question is how many reminders to send and how often; use `design-reminder-schedule`
+- The person is to state when and where they will act; use `draft-implementation-intention-prompt`
+- People are to lock money or a choice until a later date; use `design-commitment-device`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- The behavior's window is clinically fixed (immunization due dates, antenatal visits, a medication course); a clinician sets the window, and this skill only places the ask inside it
-- The chosen moment uses a religious landmark or a fasting period as its frame; local faith or community leaders and a local researcher should confirm the frame is welcome and the ask is appropriate in that period
-- The ask is a financial product (a loan, input credit, an insurance premium) timed to the moment of greatest liquidity for poor households; the moment that maximizes take-up also maximizes over-commitment, so a consumer-protection or financial-inclusion specialist reviews it, alongside `audit-intervention-ethics`
-- The calendar cannot be built with confidence (several crops, migration, irregular casual pay); the field team or a local economist builds it from data before a moment is chosen
+Tell the user to consult a specialist before any pilot when:
+- The ask is a loan, insurance, or another paid financial product timed to when people hold the most cash: a consumer-protection specialist checks affordability and disclosure
+- The dates are set by clinical need (vaccine due dates, antenatal visits): a clinician sets them
+- The moment is a religious period, a birth, or a bereavement: a local faith or community leader confirms the ask is welcome
 
-Bring them: the calendar table with its sources, the landmark table, the chosen moment with its mechanism, the deadline rule, and the equity check.
+Bring them: the money calendar, the candidate table, and who is left out.
 
 ### choose-message-frame
 
@@ -919,37 +910,34 @@ Bring them: the progression-criteria table with its derivations, the pilot size 
 ### design-reminder-schedule
 
 **Title:** Plan when and how often to remind  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** reminders, behavior-change-techniques, sms  
-**Consumes:** intervention-levers, audience-context-brief  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Specifies the schedule for reminding people about one pending action they already intend to take.
+**What it does:** Specifies the reminders a program sends about one action people already intend to take.
 
-**Description (trigger rule):** Use when people intend to do something with a due date (the next vaccine dose, a clinic review, a loan installment, a savings deposit) and miss it because it slips their mind, and the team wants to send reminders. Also use when a team is about to "text everyone" and has not decided the timing, frequency, channel, or what the message names, or whether reminders alone can work. Specifies when each reminder goes, how often, through which channel, and what it names, drawing on the Thakkar et al. (2016) adherence meta-analysis, the Kenya ART and Haryana immunization trials, and Karlan et al. (2016) savings reminders. Do not use when the person should make their own plan once for a one-off action; use draft-implementation-intention-prompt. Not for picking the calendar moment to deliver an offer (choose-delivery-moment), who sends it (select-messenger), whether to pay (design-incentive-scheme), or the message text itself (draft-lever-content).
+**Description (trigger rule):** Use when people mean to do something with a due date (a vaccine dose, a clinic visit, a loan installment, a deposit) and miss it because it slips their mind, or when a team is about to "text everyone" without deciding how many messages, when, by what channel, and when they stop. Specifies each send, the ceiling, the stop rule, and what to monitor. Do not use when choosing the moment for one ask or offer; use choose-delivery-moment. Not for a plan the person makes; use draft-implementation-intention-prompt.
 
 **Use it when:**
-- People intend to do something with a due date (the next vaccine dose, a clinic review, a loan installment, a deposit toward a savings goal) and miss it because it slipped their mind
-- A team is about to send SMS ("let's text everyone") and has not decided the timing, frequency, channel, or what the message names
-- Reminders already go out and the effect seems to be fading, or nobody knows whether the cadence is right
-- The lever brief from `select-intervention-levers` names prompts or cues as the technique
+- A confirmed barrier is forgetting: people intend to do something with a due date (a vaccine dose, a loan installment) and say it slipped their mind
+- A team is about to "text everyone" and has not decided how many messages, when, or by which channel
+- Reminders already go out and nobody knows whether their number and timing are right
 
 **Do not use it when:**
-- The person should make their own plan once for a one-off action; a plan is made by the person, a reminder is sent by the program. Use `draft-implementation-intention-prompt`
-- The question is which moment in the calendar to deliver an offer at (after harvest, at payday); that is `choose-delivery-moment`. This skill sets the cadence around a known due date
-- The question is who should send the message, or whether to pay people; those are `select-messenger` and `design-incentive-scheme`, and this skill says when to bring them in
-- The team needs the message text in the local language with a fidelity trace; `draft-lever-content` takes this schedule as its input
-- The barrier is supply (stock-outs, closed clinics), cost, or distrust rather than forgetting; a reminder for an action people cannot or will not take is noise. Go back to `select-intervention-levers`
+- The question is when to make one ask or offer; use `choose-delivery-moment`
+- The person is to state their own plan for acting; use `draft-implementation-intention-prompt`
+- The barrier is cost, supply, or distrust; use `select-intervention-levers`
+- The team needs the wording of the message; use `draft-lever-content`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- The reminder concerns medication dosing (what to take, how much, when); a clinician or pharmacist must sign off the content requirements, and the schedule must not stand in for clinical follow-up
-- The barrier evidence points to supply or trust rather than forgetting (stock-outs, fees, a distrusted sender); the program or supply-chain lead must fix that first, because no schedule will, and the skill should say so rather than design around it
-- The population shares phones and the message could disclose a condition (HIV, family planning, debt); a privacy or safeguarding review must happen before the first send
-- The program plans to scale on a reminder effect that is decaying; a behavioral scientist should design the decay measurement and say whether a messenger or incentive bundle is the real intervention
+Tell the user to consult a specialist before the first send when:
+- The message concerns medication: a clinician or pharmacist approves what it names
+- The message could reveal a health condition or a debt on a phone others use: a privacy or safeguarding lead reviews the wording and the channel
+- People have not agreed to be contacted: a data-protection lead confirms the consent required
 
-Bring them: the schedule table, the barrier evidence, the phone-access data, and the content requirements.
+Bring them: the sends table, the privacy line, and the phone-access facts.
 
 ### diagnose-social-norm
 
@@ -986,37 +974,34 @@ Bring them: the practice, the questions in local wording, the sampling plan, and
 ### draft-belonging-story
 
 **Title:** Peer stories that make early struggle feel normal  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** belonging, wise-interventions, behavior-change-techniques  
-**Consumes:** intervention-levers, barrier-diagnosis  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** belonging, wise-interventions  
+**Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
 
-**What it does:** Drafts a set of stories from older peers that present early difficulty in a new setting as something most people go through before it passes.
+**What it does:** Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through.
 
-**Description (trigger rule):** Use when people entering a new setting (first-year students, new trainees, new recruits) read early difficulty as proof that people like them do not belong there, and the team wants stories from older peers saying the difficulty is common and passes. Also use when someone asks for "a belonging intervention" or "testimonials from past students for orientation", or is about to write the stories itself rather than collect real ones. Produces stories collected from older peers of the same group, the saying-is-believing task in which recipients write advice to future peers, an affordance check, and a measurement plan; the evidence is US college only, replicated with conditions, with no LMIC trial found. Do not use when it is not yet known whether belonging is the question people are asking; run identify-wise-intervention-target first. Not for a lesson that ability grows (adapt-growth-mindset-message), values affirmation against feeling judged (draft-values-affirmation), or generic drafting (draft-lever-content).
+**Description (trigger rule):** Use when newcomers (first-year students, new trainees) read early difficulty as proof that people like them do not belong, the setting does include them, and a team wants stories from older peers: "a belonging intervention", "testimonials for orientation". Plans the collection of real stories, edits them, and writes the task in which newcomers advise the next intake. Do not use when nobody has named the question newcomers are asking; use identify-wise-intervention-target. Not for beliefs about ability; use adapt-growth-mindset-message.
 
 **Use it when:**
-- `identify-wise-intervention-target` named belonging ("do people like me belong here?") as the primary question and the affordance check passed
-- Someone asks for "a belonging intervention", "testimonials from older students for orientation week", or "a way to tell new trainees the first weeks are hard for everyone"
-- Early dropout at a transition is concentrated in one group (rural students, women in a male trade, first-generation entrants, a language minority) and the exits follow a first setback rather than a cost or a timetable
-- A team is about to write the stories itself, or reuse a glossy success story, instead of collecting real accounts of early difficulty from peers of the group
+- Newcomers' own words name the question "do people like me belong here?", and what the setting offers them is known
+- Someone asks for "a belonging intervention" or "testimonials from older students"
+- A team is about to write the stories itself
 
 **Do not use it when:**
-- It is not yet known whether the question is belonging, ability, self-integrity, or trust; run `identify-wise-intervention-target`
-- People read setbacks as proof of fixed ability ("I am not a math person"); that is `adapt-growth-mindset-message`
-- The threat is to self-integrity, feeling judged in a stigmatized domain; that is `draft-values-affirmation`
-- The group faces active hostility or exclusion in the setting (harassment, discrimination, staff who sort them out); the barrier is structural, a story would ask them to trust a setting that will not include them, and the route is `select-intervention-levers` plus the specialist section below
-- The team needs other copy for a chosen technique (a welcome message, a reminder); that is `draft-lever-content`
+- Nobody has established which question newcomers are asking; use `identify-wise-intervention-target`
+- Their words are about ability ("I am not a math person"); use `adapt-growth-mindset-message`
+- They feel judged for who they are or what they lack; use `draft-values-affirmation`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a safeguarding lead or the institution's leadership, and a local qualitative researcher, when:
-- The group reports active hostility, harassment, or discrimination in the setting; the barrier is structural, a story would gaslight, and the fix is institutional, not psychological
-- The group is defined by a stigmatized or protected status (ethnicity, caste, religion, HIV status, disability); collecting and sharing stories can expose the tellers, and the interview guide needs local shaping and ethics review
-- The recipients are minors or the transition follows displacement or loss; a counselor should review the stories and what asking "what did it mean about you" can bring up
-- The rollout is institution-wide or national with no test; an evaluator should pre-register a test first, since the technique has no record outside US colleges
+Tell the user to consult a safeguarding lead or the institution's leadership, with a local qualitative researcher, when:
+- The group reports harassment or discrimination; the fix is institutional
+- The group is defined by a stigmatized status (ethnicity, caste, religion, disability); a published story can expose its teller
+- Newcomers are minors or recently displaced; a counselor should review the stories
+- The rollout is institution-wide or national; an evaluator should pre-register a test first
 
-Bring them: the quotes, the affordance check with its facts, the collection guide, the candidate stories, and the measurement plan.
+Bring them: the newcomers' words, the check of the setting, and the stories.
 
 ### draft-cognitive-interview-script
 
@@ -1056,35 +1041,32 @@ Bring them: the items with intended meanings, the tabulated problem codes, and t
 ### draft-implementation-intention-prompt
 
 **Title:** Ask people to plan when and where  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** implementation-intentions, behavior-change-techniques, planning-prompts  
-**Consumes:** intervention-levers  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Writes a prompt that asks a person to name the moment they will carry out one action they already intend to do.
+**What it does:** Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take.
 
-**Description (trigger rule):** Use when people say they will do a one-off action (get a vaccine, attend a scheduled visit, report a self-test result, register, collect a document) and the share who follow through is low. Also use when a team wants to add a "when and where will you do it?" question to a message, home visit, or form that already reaches people. Writes an if-then plan prompt that asks the person to name the date, time, and place they will act, drawing on the Gollwitzer and Sheeran (2006) meta-analysis and the Milkman et al. (2011) flu-shot trial, and states the small effect to expect. Do not use when the behavior is repeated or daily (taking a pill, saving every week, exercising); the field trial of plan prompts for repeated behavior found a null, so use design-habit-anchor instead. Not for reminders the program sends on a schedule (design-reminder-schedule), and not for the final message wording with sender and fidelity trace (draft-lever-content).
+**Description (trigger rule):** Use when people say they will do a dated, one-off action (get a vaccine, attend a visit, collect a document, redeem a voucher) and many do not follow through, or when a team wants to add "when and where will you do it?" to a contact that already happens. Writes an if-then prompt in which the person names the time and place they will act, limited to options that exist. Do not use when the program wants to send messages on a schedule; use design-reminder-schedule. Not for choosing when to make an offer; use choose-delivery-moment.
 
 **Use it when:**
-- People say they will do a one-off action (get a vaccine, attend a scheduled visit, report a self-test result, register, collect a document) and the share who follow through is low
-- A team wants to add a "when and where will you do it?" question to a contact that already happens: a message, a home visit, a form, a counseling session
-- An appointment or deadline is fixed and the team wants to raise attendance without adding incentives or a new channel
-- The lever brief from `select-intervention-levers` names action planning as the technique
+- A confirmed barrier is an intention not acted on: people say they will do a one-off, dated action (get a vaccine, collect a document) and many do not
+- A team wants to add "when and where will you do it?" to a message, visit, or form
+- A date is fixed and many who said they would come do not
 
 **Do not use it when:**
-- The behavior is repeated or daily (taking a pill every day, saving every week, exercising); the one field trial of plan prompts for a repeated behavior found a tight null. Use `design-habit-anchor`
-- The program wants to send the person reminders on a schedule; a reminder is sent by the program, a plan is made by the person. Use `design-reminder-schedule`
-- People do not yet intend to act (they do not want the thing, do not trust it, or cannot reach it); a plan prompt cannot create motivation. Go back to `select-intervention-levers`
-- The team needs the final wording in the local language, with sender and timing notes and a fidelity trace; `draft-lever-content` takes this skill's prompt as its input
+- The program is to send messages on dates it chooses, as for a daily action people forget; use `design-reminder-schedule`
+- The question is when to make an offer; use `choose-delivery-moment`
+- People want to bind themselves with a penalty or a lock; use `design-commitment-device`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- The action carries clinical or safety risk at the planned moment (disclosing an HIV status, leaving home for care where that needs permission, attending somewhere unsafe at certain hours); a clinician or safeguarding lead must review whether asking for a written plan can expose the person, and who will see the plan
-- The population includes people whose dates and places are set by someone else (minors, women who need a spouse's permission, workers on shifts); a local qualitative researcher should check whether asking for a plan is realistic or shaming before the pre-test
-- The program intends to put the prompt in front of a large population on the strength of evidence untested outside WEIRD samples; a behavioral scientist should design a pilot with a control arm before scale, since the honest planning number is a few points
+Tell the user to consult a specialist before use when:
+- Others learning of the planned action could put the person at risk (an HIV test, telling a partner): a clinician or safeguarding lead reviews who sees the plan and what support follows
+- Someone else sets the person's time and place (a husband's permission, an employer's shifts): a local qualitative researcher checks whether asking for a plan is realistic or shaming
 
-Bring them: the prompt, the intention evidence, the window map, and a note on who sees the written plan.
+Bring them: the prompt, the evidence of intention, the real options, and who sees the plan.
 
 ### draft-intervention-description
 
@@ -1123,36 +1105,32 @@ Bring them: the draft description with its sources line and rebuild check, the f
 ### draft-lever-content
 
 **Title:** Write an intervention's messages and scripts  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** behavior-change-techniques, east, message-design  
-**Consumes:** intervention-levers, audience-context-brief  
+**Consumes:** intervention-levers  
 **Produces:** intervention-draft  
 
-**What it does:** Drafts what a field team will deliver, such as text messages, script lines, signs, or app wording, from one chosen behavior change technique.
+**What it does:** Drafts the words for an intervention that has already been chosen.
 
-**Description (trigger rule):** Use when a specific behavior change technique has been chosen and the team needs the actual words: the text message, agent script, poster, sign, or app wording. Also use when a field team is about to write intervention copy ad hoc without checking that it delivers the technique the lever was selected for. Drafts the content, links each element to the part of the technique it delivers, adds delivery notes and an EAST check, and sets out the comprehension pre-test the draft must pass before launch. Do not use when the lever brief stops at a function name ("Environmental restructuring") with no named technique; finish select-intervention-levers first. Not for values-affirmation exercises (draft-values-affirmation), and not for choosing between levers or techniques.
+**Description (trigger rule):** Use when an intervention has been chosen and the team needs the words: a text message, a script, a poster, a sign, app wording. Also use to check existing copy against the technique it is meant to deliver. Drafts the content, ties every line to what the technique requires, and sets the comprehension test it must pass before launch. Do not use when the intervention is not yet chosen; use select-intervention-levers. Not for a technique with its own skill, such as write-social-norm-message.
 
 **Use it when:**
-- `select-intervention-levers` has produced a brief whose Selected lever names a concrete BCTTv1 technique, and the next question is "what do we actually say, show, or print?"
-- A field team is about to write intervention copy ad hoc (an SMS, a poster, an agent script) without checking that the copy delivers the technique the lever was selected for
-- Someone asks for "the message", "the script", "the sign", or "the app copy" for an intervention whose mechanism has already been chosen
-- Draft copy already exists and the team wants to check whether it delivers the technique or is just well written
+- An intervention is chosen and someone asks for "the message", "the script", "the sign", or "the app wording"
+- A field team is about to write the copy on the spot
+- Draft copy exists and the team wants to know whether it delivers the technique or only reads well
 
 **Do not use it when:**
-- The lever brief stops at a function name with no named BCT; that brief is not finished. Route back to `select-intervention-levers`, whose output template requires one
-- The exercise to draft is a values affirmation; `draft-values-affirmation` owns that protocol end to end, including its value-list adaptation and delivery cautions
-- The team still needs to choose between levers or techniques; that decision happened upstream, and this skill takes exactly one named technique
-- The team wants to pretest survey items rather than intervention copy; that is `draft-cognitive-interview-script`
+- The intervention is not chosen, or is named only as a category ("change the environment", "educate people"); use `select-intervention-levers`
+- The technique has its own skill: `write-social-norm-message`, `choose-message-frame`, `design-reminder-schedule`, `draft-implementation-intention-prompt`, `draft-values-affirmation`, `draft-belonging-story`, or `adapt-growth-mindset-message`
 
 **When to bring in a specialist:**
 
 Tell the user to consult the relevant specialist when:
-- The copy makes a health, financial, or legal claim (a dosage, an interest rate, an entitlement); a clinician, a financial-services compliance lead, or a lawyer must check the claim before any pre-test, because a comprehension test does not check truth
-- Final copy must be in a language no one on the team speaks natively; a local writer drafts it rather than a translator, and the pre-test runs on that version with a bilingual reviewer who can separate translation problems from comprehension problems
-- The content will reach children, people in crisis, or a stigmatized group, where accurate and well-targeted copy can still cause harm; a safeguarding or community advisory review comes before the pre-test
-- The pre-test fails twice; a communications specialist or qualitative researcher should look at whether the technique, the channel, or the copy is the problem before a third redraft
+- The copy states a health, financial, or legal fact: a clinician, compliance lead, or lawyer checks it first, because a comprehension test does not check truth
+- The audience includes children, people in crisis, or a stigmatized group: a safeguarding or community review comes before the test
+- The test fails twice: a qualitative researcher judges whether the technique, the channel, or the wording is at fault
 
-Bring them: the technique definition, the draft with its fidelity trace, the delivery notes, and the pre-test results so far.
+Bring them: what the technique must contain, the draft with its trace, and the test results so far.
 
 ### draft-norms-vignette
 
@@ -1318,36 +1296,33 @@ Bring them: the chain table, the evidence supplied for each link, and the weakes
 ### draft-values-affirmation
 
 **Title:** Write an exercise to help people feel less judged  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** self-affirmation, wise-interventions  
-**Consumes:** affirmation-context, audience-context-brief  
+**Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
 
-**What it does:** Drafts a values-affirmation exercise, a short writing task about a personally important value, tailored to one audience facing one specific evaluative threat.
+**What it does:** Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment.
 
-**Description (trigger rule):** Use when people are likely to feel judged at a key moment, for example about money, school results, or a health condition, and the program wants to reduce that stress before asking them to engage. Also use when someone asks for "something to help people feel less judged or defensive about X before we ask them to do Y". Drafts a values-affirmation exercise: a short writing task where people pick a value that matters to them and write about it, which has eased defensiveness in some studies. Includes a locally adapted value list, the two-part writing prompt, timing and frequency guidance, and two mandatory cautions. Do not use when the real barrier is practical or structural (cost, access, time, a process that exposes people by design); an affirmation buffers the feeling, it does not change the fact. Route those to select-intervention-levers. Not for other kinds of message or script (draft-lever-content).
+**Description (trigger rule):** Use when people feel judged at a known moment, about money, school results, or a health condition, and a team wants a short exercise beforehand: "something to help people feel less judged before we ask them to do Y". Drafts a values-affirmation exercise: a local list of values, the choice, the writing prompt, the delivery rules. Do not use when the barrier is cost, access, or a process that exposes people; use select-intervention-levers. Not when nobody has named what people feel judged about; use identify-wise-intervention-target.
 
 **Use it when:**
-- A population is about to face, or repeatedly faces, a specific moment where a stigmatized or evaluative concern (financial shame, academic underperformance, a health stigma) could trigger defensiveness that works against the program's goal
-- Someone asks for "something to help people feel less judged or defensive about X before we ask them to do Y"
-- A program has fixed what it can structurally and wants to reduce the psychological threat that remains at the moment of engagement
-- A team is about to copy a published affirmation exercise's US value list straight into a different population
+- People feel judged at a known moment (about money, school results, a health condition), and defensiveness keeps them from what the program offers
+- Someone asks for "something to help people feel less judged about X before we ask them to do Y"
+- A team is about to copy a published US value list
 
 **Do not use it when:**
-- The actual problem is that a service is unaffordable, inaccessible, unavailable, or exposes people by its design (a visible location, a public list, a conspicuous process); an affirmation buffers the response to that fact, it does not change the fact. Route the structural or design problem to `select-intervention-levers`
-- The team needs other intervention copy (messages, scripts, signage) for a chosen technique; that is `draft-lever-content`
-- The team does not yet know whether people feel judged or why they disengage; diagnose first with `decompose-comb-barriers`
-- The population is in acute distress or the stigma is clinical; see "When to bring in a specialist" before drafting anything
+- The barrier is cost, access, or a process that exposes people (a visible queue, a public list); use `select-intervention-levers`
+- Nobody has established what people feel judged about; use `identify-wise-intervention-target`
 
 **When to bring in a specialist:**
 
 Tell the user to consult a clinical psychologist, a counselor, or a safeguarding lead when:
-- The stigmatized domain is clinical or carries acute risk (mental illness, HIV status, suicidality, experience of violence); the writing prompt can surface distress, and the exercise needs clinical review and a referral path before use
-- The participants are minors and the exercise will be delivered by school or program staff; consent, supervision, and what happens to the written responses need a child-protection review
-- The population has recent collective trauma (displacement, conflict, disaster), where asking people to recall "a specific time this value mattered" can land on traumatic memory
-- A pilot shows a negative or reversed effect; a specialist should read the moderators in the replication literature before any redeployment
+- The stigma is clinical or carries acute risk (mental illness, HIV status, violence): the writing can surface distress, so clinical review and a referral path come first
+- Participants are minors: consent and what happens to the writing need a child-protection review
+- The group has lived through recent conflict or disaster; "a specific time" can land on a traumatic memory
+- A pilot shows a negative effect
 
-Bring them: the condensed population and threat statement, the value list with its adaptation reasoning, the writing prompt, the delivery notes, and any pilot data.
+Bring them: the value list, the prompts, and the delivery notes.
 
 ### estimate-cost-effectiveness
 
@@ -1753,36 +1728,33 @@ Bring them: the specification, the list of who could be worse off, and the opt-o
 ### select-intervention-levers
 
 **Title:** Choose interventions for a confirmed barrier  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** behavior-change-wheel, behavior-change-techniques, apease  
-**Consumes:** barrier-diagnosis, comb-barrier-hypotheses  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-levers  
 
-**What it does:** Shortlists the types of intervention that can address one confirmed barrier, using the Behavior Change Wheel's published linkage table rather than open brainstorming.
+**What it does:** Chooses the kind of intervention that fits one confirmed barrier.
 
-**Description (trigger rule):** Use when field research has confirmed the main reason a behavior is not happening and the team needs to decide what to do about it. Also use when someone asks "given that this is the barrier, what could we actually do?" or is about to jump to an intervention idea ("let's send a text") without grounding it in the barrier's COM-B component. Uses the Behavior Change Wheel, a published framework that links each type of barrier to the intervention functions that can address it, to shortlist interventions, score them for practicality with APEASE, and break the best one into a specific behavior change technique. Do not use when the barrier is still an untested hypothesis; confirm it in the field first using the diagnostic questions from decompose-comb-barriers. Not for writing the actual message or script (draft-lever-content), and not for values-affirmation exercises (draft-values-affirmation).
+**Description (trigger rule):** Use when field evidence has confirmed why a behavior is not happening and the team must decide what kind of intervention to try: "given this barrier, what could we do?", or a team about to "just send a text". Lists the kinds of intervention a published table links to that kind of barrier, scores each for feasibility, and names one technique with ranked fallbacks. Do not use when the barrier is still a guess; use decompose-comb-barriers. Not for writing the content; use draft-lever-content.
 
 **Use it when:**
-- Field diagnostic questions from `decompose-comb-barriers` have been answered and one hypothesis is confirmed as the actual barrier
-- Someone asks "given that this is the barrier, what could we actually do about it?"
-- A team is about to jump straight to an intervention idea ("let's send a text") without grounding it in the barrier's COM-B component
-- A pilot of one lever has failed and the team wants the next lever to try for the same confirmed barrier
+- Field evidence has confirmed why a behavior is not happening, and someone asks "given this barrier, what could we do?"
+- A team is about to commit to an idea ("let's send a text") without checking that it can change this kind of barrier
+- A pilot aimed at this barrier failed and the team wants the next thing to try
 
 **Do not use it when:**
-- The barrier list is still unconfirmed hypotheses; a lever selected for the wrong barrier is a wasted pilot. Confirm the barrier in the field first, using the diagnostic questions from `decompose-comb-barriers`
-- The lever is chosen and the team needs the actual words, script, or signage; that is `draft-lever-content`
-- The intended intervention is a values-affirmation exercise; `draft-values-affirmation` owns that protocol end to end
-- No barrier has been diagnosed at all and the question is why the behavior is not happening; run `decompose-comb-barriers`
+- The barrier is a guess nobody has checked; use `decompose-comb-barriers`
+- The kind of intervention is chosen and has its own skill: `select-default-option`, `design-reminder-schedule`, `choose-delivery-moment`, `choose-message-frame`, `design-commitment-device`, `design-incentive-scheme`, `write-social-norm-message`, `design-feedback-report`, `draft-implementation-intention-prompt`, or `select-messenger`
+- The intervention is chosen and the team needs the words, script, or sign; use `draft-lever-content`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist, and where relevant the program's legal or safeguarding lead, when:
-- The eligible functions include Coercion or Restriction, or the Incentivization candidate involves payments or penalties; these carry ethical, legal, and backfire risks that an APEASE row cannot settle alone
-- The confirmed barrier sits outside the program's authority (a policy, a provider's process, a market rule), so every feasible function needs a partner's cooperation; a specialist can judge whether advocacy or partnership is the real lever rather than a behavior change technique
-- The barrier was confirmed on thin evidence (one interview round, a single site) and the pilot will be costly; a specialist can say whether another diagnostic round is cheaper than a wrong pilot
-- Low-confidence matrix linkages decide the selection and no one on the team can check Table 2
+Tell the user to consult a behavioral scientist, and the program's legal or safeguarding lead where noted, when:
+- The selected kind or the first fallback is coercion, restriction, or a payment or penalty, which can backfire or be unlawful (legal or safeguarding lead)
+- The barrier sits in a policy or another organization's process, so every eligible kind needs someone else's cooperation; the first move may be partnership, not a technique
+- The barrier was confirmed once, at one site, and the pilot is costly; more diagnosis may be cheaper
 
-Bring them: the confirmed barrier with its evidence, the applicable-functions list with confidence markers, the APEASE table, and the open questions.
+Bring them: the barrier with its evidence, the feasibility table, and the list to confirm.
 
 ### select-messenger
 
@@ -1995,28 +1967,25 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - define-agency-construct → plan-agency-measurement (via `agency-definition`: Agency definition)
 - write-pre-analysis-plan → analyze-heterogeneous-effects (via `analysis-plan`: Analysis plan)
 - write-pre-analysis-plan → estimate-cost-effectiveness (via `analysis-plan`: Analysis plan)
-- map-audience-context → choose-delivery-moment (via `audience-context-brief`: Audience and context brief)
-- map-audience-context → design-reminder-schedule (via `audience-context-brief`: Audience and context brief)
-- map-audience-context → draft-lever-content (via `audience-context-brief`: Audience and context brief)
-- map-audience-context → draft-values-affirmation (via `audience-context-brief`: Audience and context brief)
 - map-audience-context → select-messenger (via `audience-context-brief`: Audience and context brief)
-- audit-process-friction → adapt-growth-mindset-message (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- audit-process-friction → choose-delivery-moment (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- audit-process-friction → draft-belonging-story (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- audit-process-friction → design-reminder-schedule (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- audit-process-friction → draft-implementation-intention-prompt (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- synthesize-interview-findings → adapt-growth-mindset-message (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- synthesize-interview-findings → choose-delivery-moment (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- synthesize-interview-findings → draft-belonging-story (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- synthesize-interview-findings → design-reminder-schedule (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- synthesize-interview-findings → draft-implementation-intention-prompt (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - decompose-comb-barriers → draft-tdf-interview-guide (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → plan-evaluation-design (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
-- decompose-comb-barriers → select-intervention-levers (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → synthesize-interview-findings (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - estimate-expected-effect → estimate-sample-size (via `effect-size-benchmark`: Effect-size benchmark)
 - choose-trial-design → assess-scalability (via `evaluation-design`: Evaluation design)
@@ -2042,6 +2011,11 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - adapt-growth-mindset-message → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - adapt-growth-mindset-message → draft-intervention-description (via `intervention-draft`: Intervention draft)
 - adapt-growth-mindset-message → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → choose-message-frame (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → draft-intervention-description (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
 - choose-message-frame → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - choose-message-frame → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - choose-message-frame → draft-intervention-description (via `intervention-draft`: Intervention draft)
@@ -2096,15 +2070,10 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - write-social-norm-message → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → draft-intervention-description (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
-- select-intervention-levers → adapt-growth-mindset-message (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → choose-delivery-moment (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → choose-message-frame (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → design-commitment-device (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → design-feedback-report (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → design-incentive-scheme (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → design-reminder-schedule (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → draft-belonging-story (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → draft-implementation-intention-prompt (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → draft-lever-content (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → plan-evaluation-design (via `intervention-levers`: Candidate intervention levers)
 - select-intervention-levers → plan-trials-of-improved-practices (via `intervention-levers`: Candidate intervention levers)
@@ -2140,9 +2109,11 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - define-key-behavior → draft-tdf-interview-guide (via `target-behavior-brief`: Target behavior brief)
 - define-key-behavior → plan-evaluation-design (via `target-behavior-brief`: Target behavior brief)
 - draft-theory-of-change → choose-trial-design (via `theory-of-change`: Theory of change)
+- identify-wise-intervention-target → adapt-growth-mindset-message (via `wise-intervention-target`: Wise-intervention target)
+- identify-wise-intervention-target → draft-belonging-story (via `wise-intervention-target`: Wise-intervention target)
+- identify-wise-intervention-target → draft-values-affirmation (via `wise-intervention-target`: Wise-intervention target)
 
 Inputs no skill produces yet (the user supplies them, or a skill is missing):
-- `affirmation-context` (Affirmation context statement): consumed by draft-values-affirmation
 - `ai-product-account` (AI product account): consumed by choose-ai-eval-level, define-agency-construct, plan-agency-measurement
 - `ai-use-account` (AI use account): consumed by draft-sifa-declaration
 - `dataset-description` (Dataset description): consumed by analyze-heterogeneous-effects

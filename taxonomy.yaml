@@ -232,6 +232,14 @@ io_types:
     label: Reference network map
     description: "Whose behavior and approval an audience tracks for one practice: the people named, by role, and who among them carries most weight."
     user_suppliable: false
+  - id: ethics-review
+    label: Ethics review
+    description: "A check of a drafted intervention before launch: who it serves, whether people are told and can decline, who could be harmed, and a verdict of go, revise, or stop."
+    user_suppliable: false
+  - id: prototype-test-plan
+    label: Prototype test plan
+    description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."
+    user_suppliable: false
   - id: wise-intervention-target
     label: Wise-intervention target
     description: "The question about themselves or their situation that an audience is asking, shown in their own words, with a check that the setting can deliver what a new answer would promise."
