@@ -1,0 +1,59 @@
+{
+  "skill_name": "plan-prototype-test",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Full run",
+      "prompt": "We work with two health centers outside Tamale, Ghana. Behavior: pregnant women who come for a first antenatal visit come back on the date the midwife gives them; about half miss it. From 30 interviews, the barrier is that women leave without knowing the date: it is written in English in the record book, most of the women did not go to school, and the husband or mother-in-law who pays for transport never hears it. We drafted a return-date card the midwife fills in and the woman takes home, in two printed versions: A, a one-month calendar with the date circled; B, a row of market stalls with the market days to wait crossed off. Our designer made them and wants to run the sessions. We can reach about ten women per clinic day, the family members who come with them, and all four midwives. Our field officer speaks Dagbani and did not work on the design. The pilot starts in six weeks. Plan how we test the card first.",
+      "expected_output": "A prototype test plan in the output template that has people use the card while a tester who did not design it watches, with a keep, change, or drop rule fixed in advance.",
+      "files": [],
+      "assertions": [
+        "Every learning question names the barrier or step of use it is tied to and what will be observed.",
+        "Participants are asked to read or use the card, or to say back what it asks; no question is only 'do you understand?' or 'do you like it?'.",
+        "Gives a number of people per group and plans at least two rounds.",
+        "The designer does not run the sessions, and participants are not told who made the card.",
+        "Gives a keep, change, or drop rule in counts for each learning question, set before the first session.",
+        "Says the test cannot show whether return visits rise, and reports no percentage for the audience."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Missing context",
+      "prompt": "We've built a new onboarding flow for our savings app and want to do some user testing before the pilot next month. Can you put the test plan together?",
+      "expected_output": "The skill asks what the draft is meant to change and who the audience is, and produces nothing else.",
+      "files": [],
+      "assertions": [
+        "Asks what behavior the onboarding flow should change or which barrier it should remove.",
+        "Asks who the audience is, or how many people the team can reach and who can run sessions.",
+        "Does not produce learning questions or a session guide.",
+        "Does not state a number of participants."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Near the escalation point",
+      "prompt": "Pregnant women at four rural clinics in Malawi are not taking their daily iron-folate tablet. Confirmed barriers: nausea, and husbands who disapprove of 'hospital medicine'. We want households to try at home for a week: (a) taking the tablet at night with the evening meal, (b) taking it with ginger tea, (c) splitting the tablet across morning and evening, (d) the husband hands her the tablet each evening. We have 16 households, two community health workers who speak Chichewa, and three weeks. Plan the household trials.",
+      "expected_output": "The skill plans a home trial with two visits and says a clinician must approve every option before any household tries it, because the options change how a medication is taken in pregnancy.",
+      "files": [],
+      "assertions": [
+        "Plans a home trial with a first visit, a trial period, and a follow-up visit.",
+        "Says no household tries an option until a clinician or pharmacist has approved it.",
+        "Names the clinician or pharmacist and says what to bring to them.",
+        "The recording sheet or the stop rule covers a safety concern.",
+        "Makes no claim that the trial will show better adherence or health."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wrong skill",
+      "prompt": "We ran household trials in Zambia and the doorway handwashing station with soap on a rope was kept by most families. Now we want a 300-household pilot across two districts with go/no-go thresholds on recruitment, retention, and whether the community health workers deliver it as designed, before we scale. Can you plan that?",
+      "expected_output": "The skill says the draft has already been tested with households and the request is a pilot with thresholds, and points to the skill for that.",
+      "files": [],
+      "assertions": [
+        "Says the request is about delivering the program at small scale against thresholds, not about testing a draft with a few people.",
+        "Names design-pilot-feasibility-study.",
+        "Does not produce a prototype test plan."
+      ]
+    }
+  ]
+}

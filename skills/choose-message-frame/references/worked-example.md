@@ -1,40 +1,55 @@
-# Worked example: antenatal iron-folate reminder SMS, Malawi
+# Worked example: an iron tablet reminder for pregnant women in Malawi
 
-A maternal-health NGO working with four rural clinics in Dedza district, Malawi, sends a weekly SMS to pregnant women enrolled in antenatal care, reminding them to take their daily iron-folate tablet. The lever brief from `select-intervention-levers` chose prompts and cues for a confirmed barrier (forgetting on busy days), and `draft-lever-content` produced a gain-framed working draft. The program manager asked whether the message "would hit harder" as a loss. All numbers are illustrative; this is not a real result.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-Inputs the user gave: the behavior (pregnant women enrolled at the four clinics take one iron-folate tablet every day from the first antenatal visit to delivery); the vehicle (a weekly SMS in Chichewa from the clinic's number); the existing draft; about 1,200 women enrolled per quarter across the clinics, SMS sent per phone number so randomization by person is feasible; nothing known yet about reactions to loss language.
+## The request
+
+"We send a weekly SMS in Chichewa, from the clinic's number, to pregnant women enrolled in antenatal care at four rural clinics in Dedza district, reminding them to take their daily iron-folate tablet. Interviews found the barrier is forgetting on busy days; the tablets are free and women have them at home. The current draft, in English before translation: 'Taking your iron tablet every day keeps your blood strong for you and your baby. Take today's tablet after your evening meal.' Our program manager wants it to hit harder as a loss: 'If you skip your tablets your baby could be born too small or die.' No money is involved. About 1,200 women enroll each quarter and messages go per phone number, so we could randomize. We have not asked women how they react to wording like that."
+
+## The output
 
 ```markdown
 # Message frame decision
 
 **Behavior:** Pregnant women enrolled at the four Dedza clinics take one iron-folate tablet every day from their first antenatal visit until delivery.
-**Behavior type:** Prevention, because taking the tablet reduces the risk of anemia; it does not reveal whether anemia is present.
-**Vehicle:** Message; weekly SMS in Chichewa from the clinic's number.
-**Source draft:** From draft-lever-content (gain-framed working copy; Chichewa final copy pending).
+**Draft received:** "Taking your iron tablet every day keeps your blood strong for you and your baby. Take today's tablet after your evening meal." Weekly SMS from the clinic's number; English working copy, to be sent in Chichewa.
+**Kind of behavior:** Lowers a risk, because the tablet reduces the chance of anemia; it does not show whether a woman has it.
+**Vehicle:** Words only.
 
-## Default frame
-Gain, because for prevention messages the meta-analytic evidence favors gain frames by a small margin (r = 0.083; Gallagher & Updegraff, 2012) and nothing in the evidence favors loss frames for this kind of behavior.
+## Decision
+- **Frame to use:** Gain.
+- **Why:** The default. The behavior lowers a risk, and nothing is known locally that favors loss wording, so the loss version is not a candidate for sending.
+- **Reason set aside:** "It would hit harder as a loss."
 
-## Paired variants
-| | Gain frame | Loss frame |
+## The two versions
+| | Gain | Loss |
 |---|---|---|
-| Text | "Taking your iron tablet every day keeps your blood strong for you and your baby. Take today's tablet after your evening meal." | "Missing your iron tablet leaves your blood weak for you and your baby. Take today's tablet after your evening meal." |
-| Held constant | Same fact (iron and blood), one action (take today's tablet), same cue (after the evening meal), same sender, 23 words | Same, 22 words |
+| Text | "Taking your iron tablet every day keeps your blood strong for you and your baby. Take today's tablet after your evening meal." | "Missing your iron tablet leaves your blood weaker for you and your baby. Take today's tablet after your evening meal." |
+| Held constant | The fact (iron and strong blood), the action (take today's tablet), the cue (after the evening meal), the sender, 23 words | Same, 21 words |
+| States more than the benefit forgone | not applicable | Removed: "your baby could be born too small or die". The gain version makes no claim about birth weight or death, so this is a new and larger claim, not the other side of the same fact |
 
-## A/B test plan
-- **Unit of randomization:** Person (phone number), stratified by clinic.
-- **Primary outcome:** Tablets taken, from pill counts at the next antenatal visit; not "do you intend to take it".
-- **Expected difference:** At most r = 0.083 in favor of gain, possibly zero. The difference between frames is expected to be far smaller than the difference between sending the SMS and not sending it.
-- **Sample:** About 1,200 women per quarter is unlikely to detect a difference this small; run `estimate-sample-size` before committing, and decide whether a frame test is worth running at all.
-- **Decision rule:** If no difference is detected, keep the gain frame as final copy.
+## Who the loss version could frighten or shame
+- Women who have already missed tablets, who would read it as blame for a harm they cannot undo.
+- Women who have lost a pregnancy or a child.
+- Women whose tablets ran out between visits, who would hear the threat with no way to act on it.
 
-## Before launch
-- Show both variants cold to 8 women at two clinics; pass = all restate the action as "take the tablet after the evening meal"; record any reaction to "weak blood" as alarming, shaming, or inappropriate to say by SMS.
-- Escalation: none. No money is involved and the behavior is not detection of a stigmatized condition.
+## Pre-test
+- **Who and how many:** Eight enrolled women, two from each clinic, with the message read aloud in Chichewa by a nurse aide they do not know.
+- **Asked:** "What is this message asking you to do?" and "How did it make you feel?", for the gain version first.
+- **Loss version is dropped if:** It is not being sent. If the team later wants it tested, it is read to the same eight women and dropped if any of them is distressed or says the clinic should not speak that way.
+
+## If both versions are sent
+- **Assigned at random by:** Not applicable: only the gain version is sent.
+- **Outcome:** Not applicable.
+- **Rule written down beforehand:** Not applicable.
+
+## Specialist review
+Not needed for the gain version. If the team returns to a loss version that names harm to the baby, a midwife and a local researcher review it before any woman hears it.
+
+## What the evidence supports
+That the choice between gain and loss wording makes little or no difference to behavior, with a slight edge for gain wording where the behavior prevents illness. Gain and loss wording made no difference to savings reminders sent by banks in Bolivia, Peru, and the Philippines. No trial of framed reminders for antenatal supplements was found, and no difference between the versions is promised for Dedza.
 
 ## What to check before relying on this
-- Whether women experience the tablet as preventing anemia (prevention) or as treatment for a condition they believe they already have; if the latter, the classification is less clear and the gain default rests on weaker ground.
-- Whether "weak blood" carries a local meaning the team has not checked that makes the loss variant unacceptable regardless of the test.
+- Whether "keeps your blood strong" carries the intended meaning in Chichewa. Ask the eight women what they think the tablet does.
+- Whether forgetting is still the barrier once the reminder arrives; if women report nausea, wording will not help.
 ```
-
-What the skill did not do: write the final Chichewa copy (`draft-lever-content`), decide whether the SMS should be weekly or daily (`design-reminder-schedule`), or recommend running the frame test as the program's main evaluation.

@@ -240,6 +240,10 @@ io_types:
     label: Prototype test plan
     description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."
     user_suppliable: false
+  - id: messenger-choice
+    label: Messenger choice
+    description: "Who should deliver a message or offer to an audience, chosen from named candidates, with the reason and how the choice will be checked."
+    user_suppliable: false
   - id: wise-intervention-target
     label: Wise-intervention target
     description: "The question about themselves or their situation that an audience is asking, shown in their own words, with a check that the setting can deliver what a new answer would promise."
