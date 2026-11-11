@@ -1,49 +1,52 @@
-# Worked example: open defecation in a village in East Nusa Tenggara, Indonesia
+# Worked example: returning for the third vaccine dose in rural Rajasthan
 
-An illustrative run. The program is a district health office's community-led total sanitation (CLTS) effort in a rural village of about 300 households (name withheld; illustrative). All counts below are illustrative, not findings.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Practice (from `define-key-behavior`):** "Adults in Desa Oe (illustrative) defecate in the open at the river bank or in the gardens rather than in a household latrine, daily." The program wants less of it.
+## The request
 
-**Evidence:** 24 individual household interviews (12 women, 12 men) across two of the village's five hamlets, plus 2 focus groups (one with hamlet heads and elders, one with young mothers), conducted over one week. Not sensitive.
+"Practice: mothers of infants in six villages of Udaipur district, Rajasthan, bring the child to the monthly immunization camp for the third DPT dose in the month it is due. We want more of it. Our ASHAs say 'nobody here goes back after the first shots', but the camp register shows 46% of infants due got the third dose. Last month we interviewed 22 mothers alone at home, picked from the register (11 whose child got the third dose, 11 whose child did not), and held 2 group discussions with mothers-in-law. What we heard: 17 of 22 mothers said the later shots are good for the child. Asked how many of ten mothers in their lane go back, most said 'three or four'. 14 said their mother-in-law or the older women in the lane think the shots bring fever, and that a child with fever after a shot shows a careless mother. Four mothers who went back said they were told 'you want to show you are better than us'. Asked whether they would go if most mothers in the lane went, 15 said yes, 4 said they go anyway, 3 said no because of the fever. In the groups the mothers-in-law said the shots are 'fine, the nurse says so'. The practice is not sensitive. Is this a social norm?"
+
+## The output
 
 ```markdown
 # Social norm diagnosis
 
-**Practice:** Adults in Desa Oe defecate in the open at the river bank or in the gardens rather than in a household latrine, daily. Program wants less of it.
-**Evidence used:** 24 individual interviews (12 women, 12 men) in 2 of 5 hamlets, chosen by walking every third house; 2 focus groups (hamlet heads and elders; young mothers). One week, dry season. Counts are illustrative.
-**Sensitivity:** none stated; questions asked as written.
+**Practice:** Mothers of infants in six villages of Udaipur district bring the child to the monthly immunization camp for the third DPT dose in the month it is due. The program wants more of it.
+**Answers used:** 22 mothers interviewed alone at home last month, picked from the camp register (11 whose child got the third dose, 11 whose child did not); 2 group discussions with mothers-in-law. The ASHAs' statement that "nobody here goes back" is a staff account and was not used. The register figure of 46% is context.
+**Sensitivity:** None stated; questions taken as asked.
 
-## Answers to the four diagnostic questions
+## What respondents said
 
-| Question | What respondents said (counts or quotes) | What it indicates |
+| Question | Answers, with counts or quotes | What it indicates |
 |---|---|---|
-| 1. Personal belief | 15 of 24 said a household should have and use a latrine ("it is cleaner for the children"); 6 said the river is fine or cleaner ("water carries it away"); 3 unsure | Mostly for latrines, privately |
-| 2. Empirical expectation | Most estimated 7 or 8 of 10 households go to the river or gardens; the hamlet-head group said "nearly everyone" | Believed prevalence high |
-| 3. Normative expectation | 14 of 24: "nobody expects you to have a latrine"; 9 of 24: neighbors think a latrine is "showing off" or "for town people"; young mothers' group: "the older ones laugh at you" | Believed disapproval of latrine building, from neighbors and elders |
-| 4. Deviation and conditionality | Nothing happens to those who go to the river. Those who built latrines (3 households named) were teased, called "showing off". If most households stopped going to the river: 17 of 24 said they would build or use a latrine ("I would be ashamed to be the only one at the river"); 5 said they would carry on; 2 unsure | Sanction on deviation is teasing; preference is conditional for most |
+| 1. Personal belief | 17 of 22 mothers said the later shots are good for the child | Mostly for returning |
+| 2. Empirical expectation | Asked how many of ten mothers in their lane go back, most said "three or four" | Mothers believe returning is the minority practice. The register puts it at 46%, a little higher than they think |
+| 3. Normative expectation | 14 of 22 said their mother-in-law or the older women in the lane think the shots bring fever, and that a child with fever after a shot shows a careless mother. In the groups, mothers-in-law said the shots are "fine, the nurse says so" | Mothers believe older women disapprove of returning. What the older women said in groups does not match |
+| 4. Consequences | 4 mothers who returned were told "you want to show you are better than us". Asked whether they would go if most mothers in the lane went: 15 yes, 4 "I go anyway", 3 no, "because of the fever" | A sanction falls on returning: teasing, and being called careless. Would act differently if others did: 15 of 22 |
 
 ## Classification
 
-**Call:** social norm (holding open defecation in place), with a weak sanction and a belief-expectation gap.
+**Call (provisional):** Social norm, working against returning for the third dose.
 
-- Interdependent (would stop if others stopped)? Yes for 17 of 24; 5 unconditional ("the river is fine whatever others do", likely a custom for them); 2 unsure.
-- Depends on empirical expectations? Yes: respondents believe nearly everyone goes to the river and cite that as the reason to keep doing so.
-- Depends on normative expectations, with sanctions? Yes, but the sanction runs the other way: deviating by building a latrine draws teasing; continuing draws nothing. Normative pressure is against latrines, from neighbors and elders.
+- Would people keep the practice whatever others did? No, for most: 15 of 22 would return if most mothers in the lane did. Four return whatever others do. Three would stay away whatever others do, and their reason is the fever.
+- Is what others do enough to move them? Cannot tell. The 15 were asked about other mothers going, not about the older women's approval, so the two were never separated.
+- Does what others expect also matter, with sanctions? Yes, on what mothers report: 14 of 22 name the older women's disapproval, and mothers who returned describe the teasing.
 
-**Belief-expectation gap:** 15 of 24 privately favor latrines, while 9 of 24 believe neighbors disapprove of them and 14 believe nobody expects one. Private belief and perceived expectation diverge: a misperception a design skill could correct, provided the true majority is confirmed with a wider sample.
+**Gap between private belief and perceived expectation:** Cannot tell. 17 of 22 mothers privately favor the shots, and 14 believe the older women disapprove. If the mothers-in-law meant what they said in the groups, mothers misjudge them. If they gave the nurse's answer because a program was asking, the disapproval is real.
 
-## Reference group (provisional)
-Neighbors in the same hamlet (named by 19 of 24), the hamlet head, and older men. Young wives also named their mother-in-law (6 of 12 women). The program's assumed audience is "household heads"; the reference group is the hamlet, including people the program does not currently meet.
+## Who respondents named
+The respondent's own mother-in-law and "the older women in the lane", named by 14 of 22. Nobody named a husband, an ASHA, or the nurse.
 
 ## Sanctions
-Teasing and being called "showing off", by neighbors and older men; no exclusion, no material loss. The three latrine-owning households were not shunned. Households with a government job appear exempt from the teasing.
+A mother is called careless if the child has fever after a shot, and mothers who return are told "you want to show you are better than us". Older women in the lane do this. Nothing worse was reported, and nothing happens to mothers who do not return.
 
-## Confidence and what would raise it
-Medium. Two of five hamlets; the elders' focus group gave the official line ("nearly everyone"). Interviews in the remaining three hamlets, especially the one furthest from the river, and a vignette round (`draft-norms-vignette`) varying what neighbors do and think would raise it.
+## What else holds the practice in place
+The belief that fever after a shot means the child was harmed. Three mothers would not return because of it, and the fever is also what triggers the sanction. Nobody raised distance, cost, or the camp's hours.
+
+## What would confirm the call
+A short story told to mothers about a mother in a village like theirs, varied so that the older women in her lane approve or disapprove, and most mothers in her lane return or do not. Interviews with mothers-in-law one at a time, away from the group.
 
 ## What to check before relying on this
-- The elders' focus group answers may be the official norm; cross-check with individual interviews of older men.
-- The conditionality branch rests on a hypothetical; the five unconditional respondents may be a distinct group (river-side households) rather than noise.
+- The mothers-in-law spoke in groups, in front of each other and the program. Theirs is the answer most likely to be the official one.
+- The branch between a descriptive norm and a social norm rests on what mothers report about older women, not on a question that separated the two.
 ```
-
-Next step: `map-reference-network` to confirm the hamlet-level reference group and find who must be present at any declaration; `plan-collective-pledge` only after that.

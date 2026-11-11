@@ -228,6 +228,10 @@ io_types:
     label: Transferability assessment
     description: "Whether one published finding is likely to hold in a named setting: the study and the setting compared on what the effect depends on, a verdict, and the assumptions to test locally."
     user_suppliable: false
+  - id: reference-network-map
+    label: Reference network map
+    description: "Whose behavior and approval an audience tracks for one practice: the people named, by role, and who among them carries most weight."
+    user_suppliable: false
   - id: wise-intervention-target
     label: Wise-intervention target
     description: "The question about themselves or their situation that an audience is asking, shown in their own words, with a check that the setting can deliver what a new answer would promise."
