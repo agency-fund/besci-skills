@@ -30,11 +30,11 @@ Two or three sentences on the task and the situation it fits.
 
 | Step | Skill | Version | Relationship | What carries forward | Human decision point |
 |---|---|---|---|---|---|
-| 1 | `define-key-behavior` | 0.1.0 | start | target behavior brief | Confirm the behavior is the one the program can influence |
-| 2 | `decompose-comb-barriers` | 0.1.0 | after 1 | barrier hypotheses | Choose which hypotheses to test in the field |
-| 3a | `draft-cognitive-interview-script` | 0.1.0 | after 2, parallel with 3b | interview guide | Pick respondents |
-| 3b | `map-behavioral-journey` | 0.1.0 | after 2, parallel with 3a | journey map | None |
-| 4 | `select-intervention-levers` | 0.1.0 | after 3a and 3b | candidate levers | Field evidence must confirm at least one barrier before this step |
+| 1 | `define-key-behavior` | 0.2.0 | start | target behavior brief | Confirm the behavior is the one the program can influence |
+| 2 | `decompose-comb-barriers` | 0.2.0 | after 1 | barrier hypotheses | Choose which hypotheses to test in the field |
+| 3a | `draft-tdf-interview-guide` | 0.2.0 | after 2, parallel with 3b | interview guide | Pick respondents |
+| 3b | `audit-process-friction` | 0.2.0 | after 2, parallel with 3a | barrier diagnosis | None |
+| 4 | `select-intervention-levers` | 0.2.0 | after 3a and 3b | candidate levers | Field evidence must confirm at least one barrier before this step |
 
 Relationship values: `start`, `after N`, `parallel with N`, `independent`, `optional`.
 

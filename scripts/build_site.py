@@ -112,7 +112,7 @@ STAGE_ICON_NAMES = {
 SPRITE_ICONS = ["plus", "check", "x", "star", "star-fill", "caret-up", "caret-down", "dots-six-vertical", "arrow-right", "link-simple", "copy", "download-simple"]
 
 
-# The chain drawn on the home page's map teaser: the first five skills of diagnose-to-pilot.
+# The chain drawn on the home page's map teaser: the first five skills of from-a-goal-to-a-tested-intervention.
 TEASER_CHAIN = ["define-key-behavior", "decompose-comb-barriers", "draft-tdf-interview-guide", "synthesize-interview-findings", "select-intervention-levers"]
 
 # Skills shown on the home page's stage chart; any that no longer exist are
@@ -795,10 +795,10 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     wf_panel = f"""
   <div class="demo-screen" role="tabpanel" id="demo-p-workflow" aria-labelledby="demo-t-workflow" data-demo-panel="workflow" hidden>
     <ol class="wf-rail" aria-label="Workflow steps">{rail}</ol>
-    <div class="demo-body" tabindex="0" aria-label="Illustrative conversation running the diagnose-to-pilot workflow">
+    <div class="demo-body" tabindex="0" aria-label="Illustrative conversation running the from-a-goal-to-a-tested-intervention workflow">
       <div class="t-user" data-step="type"><span class="t-text">Rural women in India learn about kangaroo mother care in a hospital health education session, but few report practicing it at home. Why? I want to study this qualitatively with a small sample, then design the most promising intervention.</span></div>
-      {tool_line("besci-navigator", "Matched workflow: diagnose-to-pilot", by_name)}
-      <div class="t-ai" data-step="say"><p>This fits <a href="/workflows/diagnose-to-pilot/">From a vague goal to a piloted intervention</a>. I will run its first five skills, from the behavior to a chosen lever, and stop wherever you need to decide.</p></div>
+      {tool_line("besci-navigator", "Matched workflow: from-a-goal-to-a-tested-intervention", by_name)}
+      <div class="t-ai" data-step="say"><p>This fits <a href="/workflows/from-a-goal-to-a-tested-intervention/">From a goal to a tested intervention</a>. I will run its first five skills, from the behavior to a chosen lever, and stop wherever you need to decide.</p></div>
       {tool_line("define-key-behavior", "Step 1 of 5", by_name, 0)}
       <div class="t-ai" data-step="say"><p><b>Target behavior:</b> after discharge, mothers of low-birthweight babies hold the baby skin-to-skin at home every day, for the hours the nurses advised, through the first four weeks. Observable on the ASHA's home visits and a daily tick-sheet.</p></div>
       {tool_line("decompose-comb-barriers", "Step 2 of 5", by_name, 1)}
@@ -845,7 +845,7 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     <span class="demo-foot-actions">
       <a href="/skills/besci-navigator/" data-demo-for="meta">Open this skill {ICONS['arrow']}</a>
       <a href="/skills/plan-agency-measurement/" data-demo-for="skill" hidden>Open this skill {ICONS['arrow']}</a>
-      <a href="/workflows/diagnose-to-pilot/" data-demo-for="workflow" hidden>Open this workflow {ICONS['arrow']}</a>
+      <a href="/workflows/from-a-goal-to-a-tested-intervention/" data-demo-for="workflow" hidden>Open this workflow {ICONS['arrow']}</a>
       <button class="demo-replay" type="button" hidden>{ICONS['replay']} Replay</button>
     </span>
   </div>

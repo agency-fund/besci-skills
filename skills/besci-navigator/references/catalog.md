@@ -11,62 +11,62 @@ Skills in this snapshot: 57
 | Name | Title | Stage | Type | Status | Version | Consumes | Produces | What it does |
 |---|---|---|---|---|---|---|---|---|
 | adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Adapts a short lesson teaching that ability grows with practice to one school setting. |
-| adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.1.0 | survey-items | survey-items | Converts a face-to-face survey instrument into a version that can be administered by voice, over a live call or an interactive voice response (IVR) system. |
-| analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.1.0 | analysis-plan, dataset-description | — | Estimates who benefited most from an intervention, keeping the moderator tests the pre-analysis plan named apart from exploratory machine-learning splits so that neither is mistaken for the other. |
+| adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.2.0 | survey-items | survey-items | Converts a face-to-face questionnaire into a version that can be asked by voice call. |
+| analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.2.0 | analysis-plan, dataset-description | heterogeneity-report | Estimates how a program's effect differed across the people it reached. |
 | assess-evidence-base | Check what research already exists | define | atomic | draft | 0.2.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
 | assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.2.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
-| assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.1.0 | evaluation-design, intervention-description | scalability-assessment | Judges whether an effect measured in a pilot is likely to hold when the program is delivered at scale, by testing the pilot's claim against the named threats to scalability. |
+| assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.2.0 | intervention-description | scalability-assessment | Judges whether an effect found in a pilot is likely to survive delivery at scale. |
 | audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.2.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.2.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.2.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
 | besci-navigator | Behavioral science navigator | other | meta | draft | 0.1.2 | program-goal | workflow-draft | Recommends which library skills to run, in what order, for the problem a user describes. |
 | besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.2.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
-| choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.1.0 | ai-product-account, user-funnel-map | ai-eval-level-recommendation | Recommends which evaluations an AI product is ready for, based on what it has already shown. |
+| choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.2.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
-| choose-message-frame | Pick gain or loss framing for a message or incentive | design | atomic | draft | 0.1.0 | intervention-draft, intervention-levers | intervention-draft | Decides whether one message or one incentive contract should be worded as a gain or as a loss, from the type of behavior it targets. |
-| choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.1.0 | experiment-intent, theory-of-change | evaluation-design | Chooses the randomization structure for one test from the program's constraints: individual, cluster, stepped-wedge, factorial, or encouragement. |
+| choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.2.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
+| choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.2.0 | experiment-intent | evaluation-design | Chooses the comparison for one test: which randomized design, at which unit. |
 | decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
 | define-agency-construct | Define what agency means for a tool's users | define | atomic | draft | 0.2.0 | ai-product-account | agency-definition | Turns what a team means by its users' agency into named constructs (defined, measurable ideas such as self-efficacy) placed on The Agency Fund's 2x2 agency framework. |
 | define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.2.0 | program-goal | target-behavior-brief | Turns a vague program goal into one observable behavior, stated as who does what, when. |
-| design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Specifies a voluntary option that restricts or penalizes a person's future self, with a stake they choose, so that a plan made today survives the moment of temptation. |
-| design-feedback-report | Design a performance feedback report | design | atomic | draft | 0.1.0 | intervention-levers, measurement-plan | intervention-draft | Specifies what a repeated feedback report tells one person about their own performance on a task: which metric, compared with what, how often. |
-| design-fidelity-monitoring | Monitor whether a program is delivered as designed | implement | atomic | draft | 0.1.0 | intervention-description | fidelity-plan | Designs how a team will check, during rollout, whether an intervention is being delivered the way it was designed. |
-| design-incentive-scheme | Design a reward for one verifiable behavior | design | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | intervention-draft | Specifies the terms of a reward for one verifiable behavior, from its size to what happens when it stops. |
-| design-list-experiment | Measure a sensitive behavior without asking directly | measure | atomic | draft | 0.1.0 | measurement-plan | survey-items | Designs an item-count question that estimates how common a sensitive behavior is in a population without asking any respondent to admit it. |
-| design-pilot-feasibility-study | Design a pilot that tests feasibility, not effect | test | atomic | draft | 0.1.0 | intervention-draft | evaluation-design | Designs a pilot whose job is to test feasibility (recruitment, retention, fidelity, acceptability, data completeness) against thresholds fixed before fieldwork, not to estimate the intervention's effect. |
+| design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies a restriction on future choices that a person opts into to keep a plan they have made. |
+| design-feedback-report | Design a performance feedback report | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies what a repeated report tells one person about their own performance on a task. |
+| design-fidelity-monitoring | Monitor whether a program is delivered as designed | implement | atomic | draft | 0.2.0 | intervention-description | fidelity-plan | Plans how a team will check fidelity, the degree to which a running program is delivered as designed. |
+| design-incentive-scheme | Design a reward for one verifiable behavior | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the terms of a reward or penalty that a program attaches to one verifiable behavior. |
+| design-list-experiment | Measure a sensitive behavior without asking directly | measure | atomic | draft | 0.2.0 | measurement-plan | survey-items | Designs a survey question that estimates how common a hidden behavior is without any respondent admitting to it. |
+| design-pilot-feasibility-study | Design a pilot that tests feasibility, not effect | test | atomic | draft | 0.2.0 | intervention-draft | pilot-plan | Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works. |
 | design-reminder-schedule | Plan when and how often to remind | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the reminders a program sends about one action people already intend to take. |
 | diagnose-social-norm | Find out whether a practice is a social norm | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, qualitative-data | social-norm-diagnosis | Decides whether people follow one practice because of what they expect of each other. |
 | draft-belonging-story | Peer stories that make early struggle feel normal | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through. |
-| draft-cognitive-interview-script | Cognitive interview script drafter | measure | atomic | draft | 0.1.0 | survey-items | interview-guide | Turns a set of draft survey items into a cognitive interview script that tests whether respondents interpret each item the way its author intended. |
+| draft-cognitive-interview-script | Test whether people understand your survey questions | measure | atomic | draft | 0.2.0 | survey-items | interview-guide | Writes the script for cognitive interviews, in which a few respondents answer draft survey questions one at a time while an interviewer asks how they understood each one. |
 | draft-implementation-intention-prompt | Ask people to plan when and where | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take. |
-| draft-intervention-description | Describe an intervention so others can replicate it | implement | atomic | draft | 0.1.0 | intervention-draft, fidelity-plan | intervention-description | Writes down what an intervention actually was, item by item, in enough detail for another team to rebuild it. |
+| draft-intervention-description | Describe an intervention so others can replicate it | implement | atomic | draft | 0.2.0 | intervention-draft | intervention-description | Writes down what an intervention is, item by item, in enough detail for a team elsewhere to deliver it again. |
 | draft-lever-content | Write an intervention's messages and scripts | design | atomic | draft | 0.2.0 | intervention-levers | intervention-draft | Drafts the words for an intervention that has already been chosen. |
-| draft-norms-vignette | Write scenarios that measure what others do and approve | measure | atomic | draft | 0.1.0 | social-norm-diagnosis | survey-items | Writes short scenarios, in versions that differ only in what other people are said to do or to approve of, so a survey can show whether a practice follows those expectations. |
-| draft-sifa-declaration | Write an AI-use disclosure statement | implement | atomic | draft | 0.1.0 | ai-use-account | sifa-declaration | Turns a team's account of who did what into a SIFA declaration of where AI tools were involved in producing a piece of work. |
-| draft-survey-items | Write survey questions people can answer | measure | atomic | draft | 0.1.0 | measurement-plan | survey-items | Writes closed-ended survey items that respondents with little schooling can answer accurately when an enumerator reads them aloud. |
+| draft-norms-vignette | Write scenarios that measure what others do and approve | measure | atomic | draft | 0.2.0 | social-norm-diagnosis | survey-items | Writes a short survey story in versions that differ only in what other people are said to do or approve of. |
+| draft-sifa-declaration | Write an AI-use disclosure statement | implement | atomic | draft | 0.2.0 | ai-use-account | sifa-declaration | Turns a team's account of how a piece of work was made into a sIfA, Busara's role-by-role statement of where AI tools took part. |
+| draft-survey-items | Write survey questions people can answer | measure | atomic | draft | 0.2.0 | measurement-plan | survey-items | Writes survey questions with fixed answer options for defined constructs (a construct is the one thing a question is meant to measure). |
 | draft-tdf-interview-guide | Write an interview guide that tests barrier hypotheses | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, comb-barrier-hypotheses | interview-guide | Writes an interview guide of open questions that tests a team's hypotheses about why one behavior is not happening. |
 | draft-theory-of-change | Write the causal chain from activities to outcome | define | atomic | draft | 0.2.0 | program-goal | theory-of-change | Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links. |
 | draft-values-affirmation | Write an exercise to help people feel less judged | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment. |
-| estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.1.0 | analysis-plan, evaluation-design | — | Estimates what one program paid for each unit of behavior change or outcome it produced, in a form that can be set beside another program's number. |
-| estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.1.0 | evidence-scan-brief | effect-size-benchmark | Turns the published effect sizes a team is relying on into a discounted planning range for one test. |
-| estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.1.0 | effect-size-benchmark, evaluation-design | power-calculation | Estimates the sample a test needs to detect its planned effect, or the smallest effect a fixed sample can detect. |
+| estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.2.0 | effect-estimate | cost-effectiveness-estimate | Estimates what a program paid for each unit of behavior change it caused. |
+| estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.2.0 | evidence-scan-brief | effect-size-benchmark | Sets the effect size a test should plan on from the published estimates a team supplies. |
+| estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.2.0 | effect-size-benchmark, evaluation-design | power-calculation | Computes the sample a test needs to detect a planned effect, or the smallest effect a fixed sample can detect. |
 | identify-wise-intervention-target | Find the question a wise intervention must answer | diagnose | atomic | draft | 0.2.0 | qualitative-data | wise-intervention-target | Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted. |
 | map-audience-context | Map your audience and their setting | define | atomic | draft | 0.2.0 | program-goal | audience-context-brief | Replaces a broad audience label with a specific group of people at the moment they make the decision the program cares about. |
 | map-reference-network | Find out whose opinion really matters | diagnose | atomic | draft | 0.2.0 | social-norm-diagnosis | reference-network-map | Finds whose behavior or approval people track when they decide whether to follow one practice. |
-| plan-agency-measurement | Plan how to measure agency in a digital tool | measure | atomic | draft | 0.1.0 | agency-definition, ai-product-account | measurement-plan | Plans how to measure a defined agency construct for a digital or AI tool's users. |
-| plan-evaluation-design | Plan how you will measure success | test | atomic | draft | 0.1.0 | target-behavior-brief, comb-barrier-hypotheses, intervention-levers | evaluation-design | Produces a pre-registration-style measurement plan for one defined behavior, locked in before launch. |
-| plan-scale-up-strategy | Plan how a tested program reaches routine delivery | implement | atomic | draft | 0.1.0 | scalability-assessment | — | Turns a tested intervention plus its scalability assessment into a strategy for moving it into a system that will deliver it routinely. |
-| plan-trials-of-improved-practices | Try candidate practices in real homes first | diagnose | atomic | draft | 0.1.0 | intervention-levers, barrier-diagnosis | — | Plans a round of household trials in which families try one or two candidate practices for about a week, then report what they kept, changed, or dropped. |
-| review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.1.0 | prior-intervention-record | intervention-post-mortem | Turns a team's account of a past intervention into a structured review that separates what was planned from what was actually done. |
+| plan-agency-measurement | Plan how to measure agency in a digital tool | measure | atomic | draft | 0.2.0 | agency-definition | measurement-plan | Plans how to measure a defined agency construct for the users of a digital or AI tool. |
+| plan-evaluation-design | Plan how you will measure success | test | atomic | draft | 0.2.0 | target-behavior-brief | measurement-plan | Chooses the one outcome that will show whether a defined behavior changed, with the data source behind it. |
+| plan-prototype-test | Test a draft with a few people before the pilot | design | atomic | draft | 0.1.0 | intervention-draft | prototype-test-plan | Plans a test of a draft intervention with a few people from the audience, before any pilot. |
+| plan-scale-up-strategy | Plan how a tested program reaches routine delivery | implement | atomic | draft | 0.2.0 | scalability-assessment | scale-up-strategy | Plans how a tested program moves into a system that will deliver it routinely. |
+| review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.2.0 | prior-intervention-record | intervention-post-mortem | Judges whether a past program failed because of its idea or because of its delivery. |
 | select-default-option | Choose what people get by default | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the option people receive when they take no action at one decision point. |
 | select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-levers | Chooses the kind of intervention that fits one confirmed barrier. |
-| select-messenger | Choose who delivers the message | design | atomic | draft | 0.1.0 | intervention-levers, audience-context-brief | — | Picks who should deliver a message to a given audience, with the reasons on paper. |
-| specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.1.0 | intervention-description, intervention-draft | adaptation-record | Records each planned or unplanned modification to an intervention in a structured log, checking it against the core components that carry the intervention's mechanism. |
-| synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.1.0 | qualitative-data, comb-barrier-hypotheses, interview-guide | barrier-diagnosis | Summarizes a set of interviews into a framework matrix coded to COM-B or TDF domains so the team can say which barrier hypotheses the interviews support. |
-| translate-survey-instrument | Translate a survey into another language | measure | atomic | draft | 0.1.0 | survey-items | survey-items | Produces a target-language version of a survey instrument in which every wording choice is recorded item by item: what changed, why, what was kept non-literal on purpose. |
-| write-pre-analysis-plan | Write the analysis plan before the data arrive | test | atomic | draft | 0.1.0 | evaluation-design, measurement-plan | analysis-plan | Writes the analysis side of a pre-registration: one primary outcome, the estimator, the families of secondary outcomes, the subgroups with a reason each, the decision rules, all fixed before any outcome data are seen. |
-| write-social-norm-message | Tell people what most of their peers already do | design | atomic | draft | 0.1.0 | social-norm-diagnosis, intervention-levers | intervention-draft | Writes one message that tells a person what most comparable people already do, or approve of, so that people behind the norm move toward it without people already ahead of it sliding back. |
+| select-messenger | Choose who delivers the message | design | atomic | draft | 0.2.0 | barrier-diagnosis | messenger-choice | Chooses who delivers one message to one audience. |
+| specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.2.0 | intervention-description | adaptation-record | Records each planned or unplanned change to a tested intervention against the parts that make it work. |
+| synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.2.0 | qualitative-data, comb-barrier-hypotheses | barrier-diagnosis | Gives each barrier hypothesis a verdict from a set of interviews. |
+| translate-survey-instrument | Translate a survey into another language | measure | atomic | draft | 0.2.0 | survey-items | survey-items | Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents. |
+| write-pre-analysis-plan | Write the analysis plan before the data arrive | test | atomic | draft | 0.2.0 | evaluation-design, measurement-plan | analysis-plan | Writes down how a trial's results will be analyzed before anyone sees the outcome data. |
+| write-social-norm-message | Tell people what most of their peers already do | design | atomic | draft | 0.2.0 | social-norm-diagnosis | intervention-draft | Writes one message that tells people what most of their peers do or approve of. |
 
 ## Skill details
 
@@ -105,71 +105,67 @@ Bring them: the students' words, the check of the school, the lesson, and the re
 ### adapt-survey-for-phone-mode
 
 **Title:** Move a face-to-face survey to the phone  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** measurement, survey-design, quantitative  
 **Consumes:** survey-items  
 **Produces:** survey-items  
 
-**What it does:** Converts a face-to-face survey instrument into a version that can be administered by voice, over a live call or an interactive voice response (IVR) system.
+**What it does:** Converts a face-to-face questionnaire into a version that can be asked by voice call.
 
-**Description (trigger rule):** Use when a survey built for face-to-face interviews has to run over the phone ("we can't travel, can we do the endline by phone?", "convert our questionnaire for a call", "set up an IVR survey"), or when a team asks how long a phone survey can be, what to do about showcards, or how to reach people who share a phone. Produces a phone-ready instrument cut to a target call length, visual scales replaced by verbal unfolding scales, audio instructions, a call protocol (attempts, call-backs, airtime incentives, consent), a phone-ownership check on the sampling frame, and a mode-effect comparison plan. Do not use when the items do not exist yet; use draft-survey-items. Not for translation (translate-survey-instrument), pretesting the phone version (draft-cognitive-interview-script), how many numbers to call under attrition (estimate-sample-size), choosing an existing validated measure, or developing or validating a scale; those last two are separate skills.
+**Description (trigger rule):** Use when a questionnaire written for face-to-face interviews has to be asked by voice call: "can we do the endline by phone?", "how do we ask the showcard questions on a call?", "how long can a phone survey be?". Cuts the instrument to a call length, rewrites what respondents had to see, and sets the call rules, who the calls will miss, and a check on whether answers differ by phone. Do not use when the questions are not written yet; use draft-survey-items. Not for testing the phone version with respondents; use draft-cognitive-interview-script.
 
 **Use it when:**
-- A team says "we can't go to the field; can we do the survey by phone?" and has a face-to-face questionnaire in hand
-- A questionnaire uses showcards, ladders, visual analog scales, or pictures, and the team asks how to ask those items over a call
-- A team is planning computer-assisted telephone interviewing (CATI, a live enumerator calling) or IVR (recorded prompts with keypad or voice answers) in a low-income setting and asks how long the call can be, what incentive to pay, or how many times to try a number
-- Someone worries that a phone survey will miss women, poorer households, or people in areas with weak coverage, and wants that checked before fielding
+- A face-to-face questionnaire must be fielded by phone ("can we do the endline by phone?")
+- A questionnaire uses showcards, ladders, or pictures that cannot be shown on a call
+- Someone asks how long a phone survey can be, or whom the calls will miss
 
 **Do not use it when:**
-- The items do not exist yet; write them with `draft-survey-items`, then convert
-- The items need to be in another language; `translate-survey-instrument` does that, before or after the mode change
-- The phone version exists and the question is whether respondents understand it over a call; run `draft-cognitive-interview-script` by phone, which this skill hands its output to
-- The question is how many numbers to call so that enough complete interviews survive non-response and attrition; that is `estimate-sample-size`
-- The team wants to pick an existing validated measure or build and validate a scale; choosing an existing measure and developing or validating a new scale are separate skills
+- The questions are not written yet; use `draft-survey-items`
+- The questionnaire has to go into another language; use `translate-survey-instrument`
+- The phone version exists and needs testing with respondents; use `draft-cognitive-interview-script`
+- The question is how many numbers to call; use `estimate-sample-size`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a survey methodologist with remote data collection experience, and the ethics board, when:
-- The survey collects sensitive information (HIV status, intimate partner violence, illegal or hidden income, political views) and respondents may share phones or be overheard; the question is whether the item can be asked by phone at all, not how to word it
-- Phone-ownership gaps would exclude the population the program is for (women without their own phone, the poorest households, uncovered areas); a sampling statistician should say whether a phone survey can answer the question or whether a mixed-mode design is needed
-- The plan is IVR with a low-literacy, multilingual population and no pilot has run; someone who has fielded IVR in that setting should review the prompt design before any number is called
+Tell the user to consult, before fielding:
+- An ethics reviewer and a survey methodologist with phone experience, when the survey asks about HIV status, partner violence, or illegal income and phones are shared: they decide whether to ask by phone at all
+- A sampling statistician, when the people the program is for are those least likely to have a phone
+- Someone who has fielded IVR there, when IVR is planned for respondents with little schooling and no pilot has run
 
-Bring them: the sampling frame with what is known about ownership and sharing, the list of sensitive items, the draft call protocol, and the mode-effect plan.
+Bring them: the source of the numbers, who owns the phones, the sensitive items, the call rules, and the mode check.
 
 ### analyze-heterogeneous-effects
 
 **Title:** Find out who benefited most from a program  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** heterogeneity, quantitative, experimental-design  
 **Consumes:** analysis-plan, dataset-description  
+**Produces:** heterogeneity-report  
 
-**What it does:** Estimates who benefited most from an intervention, keeping the moderator tests the pre-analysis plan named apart from exploratory machine-learning splits so that neither is mistaken for the other.
+**What it does:** Estimates how a program's effect differed across the people it reached.
 
-**Description (trigger rule):** Use when a trial or evaluation has its main result and someone asks "who did it work for", "did it work better for women, poorer households, or low performers", or "which subgroups benefited". Also use when a team is about to report a subgroup difference it never planned to test as if it were a finding, or wants to use machine learning to find who responds. Separates the moderators the pre-analysis plan named from exploratory splits, runs both with sample splitting, reports effects in the outcome's own units, and says what to pre-register next time (Bryan, Tipton and Yeager; Wager and Athey; Chernozhukov et al.). Do not use to correct the p-values across the subgroup tests; use adjust-for-multiple-comparisons instead. Not for judging whether a published effect transfers to your setting before you test (assess-evidence-transferability) or whether a pilot effect survives scale-up (assess-scalability).
+**Description (trigger rule):** Use when a trial or evaluation has its main result and someone asks "who did it work for?" or "did it work better for women or poorer households?", or wants machine learning to find who responds. Also use when a team is about to report a subgroup difference it never planned to test. Tests the subgroups the analysis plan named, labels every other split a hypothesis, and says what to pre-register next. Do not use before the trial, to choose subgroups; use write-pre-analysis-plan. Not for whether an effect will hold at scale; use assess-scalability.
 
 **Use it when:**
-- A trial or evaluation has an overall effect estimate and the team, a funder, or a reviewer asks "who did it work for?" or "did it work better for some people than others?"
-- The pre-analysis plan named moderators (sex, baseline level, distance to the clinic, phone ownership) and they now need to be tested as the plan said
-- Someone proposes "let's see if it worked for women" or "the main effect was null, let's check the subgroups" after seeing the results, and the finding needs its exploratory label attached before it travels
-- The team wants to use a causal forest or another machine-learning method to find who responds, and needs the version with sample splitting and the three standard outputs
-- The next trial is being planned and the question is which moderators to pre-register
+- A trial has an overall effect and someone asks "who did it work for?"
+- The analysis plan named subgroups, and they now need testing
+- Someone proposes "the main effect was null, let's check the subgroups" after seeing the results
+- The team wants a causal forest or another machine-learning method to find who responds
 
 **Do not use it when:**
-- The question is whether a published effect from somewhere else applies to your population before you have tested it; that is `assess-evidence-transferability`
-- The question is whether an effect found in a pilot will hold when a different population or implementer runs it at scale; `assess-scalability`
-- The moderators are still being chosen before the trial; `write-pre-analysis-plan` is where they get named
-- The subgroup tests exist and the task is to correct their p-values as a family; `adjust-for-multiple-comparisons`, which this skill hands them to
-- The team wants posterior distributions for subgroup effects or hierarchical shrinkage across subgroups; that is a Bayesian analysis, a different procedure from the frequentist one here, so ask for one directly
+- The subgroups are still being chosen before the trial; use `write-pre-analysis-plan`
+- The question is the sample needed to detect a subgroup difference; use `estimate-sample-size`
+- The question is whether the effect will hold at scale; use `assess-scalability`
 
 **When to bring in a specialist:**
 
 Tell the user to consult a statistician or econometrician with trial experience when:
-- A subgroup result would be used to target the program to some people or exclude others; that decision needs a confirmatory test in a sample powered for it, a fairness review of who is excluded, and often a legal one
-- The randomization unit is a cluster and there are few clusters, since interaction estimates with clustered errors become unreliable well before the main effect does
-- The pre-analysis plan is missing or names no moderators and the heterogeneity result will feed a funding decision
-- The machine-learning outputs disagree across splits, or the BLP heterogeneity coefficient is far from both 0 and 1, and the team wants to act on them anyway
+- A subgroup result would decide who gets or loses the program: that needs a confirmatory test in a sample sized for it, and a review of who would be excluded
+- There are few clusters, since subgroup differences become unreliable well before the overall effect does
+- The machine-learning results disagree across splits and the team wants to act on them
+- There is no plan and the result will feed a funding decision
 
-Bring them: the pre-analysis plan, the dataset description, the overall effect, the moderator table with adjusted and unadjusted p-values, and the three machine-learning outputs with the number of splits.
+Bring them: the plan, the data description, and this report.
 
 ### assess-evidence-base
 
@@ -236,38 +232,36 @@ Bring them: the assessment, the study, and the list of unknowns.
 ### assess-scalability
 
 **Title:** Check whether a pilot effect will survive scale-up  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** scaling, implementation-science, heterogeneity  
-**Consumes:** evaluation-design, intervention-description  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** scaling, implementation-science, implementation  
+**Consumes:** intervention-description  
 **Produces:** scalability-assessment  
 
-**What it does:** Judges whether an effect measured in a pilot is likely to hold when the program is delivered at scale, by testing the pilot's claim against the named threats to scalability.
+**What it does:** Judges whether an effect found in a pilot is likely to survive delivery at scale.
 
-**Description (trigger rule):** Use when a pilot or trial showed an effect and someone asks "will this work at scale?", "can we take this national?", "should we hand this to the government?", or "what breaks when we go from 20 sites to 2,000?". Also use when a proposal carries a pilot effect size straight into a scale-up budget, or when the implementer, the population, or the cost per person will change on the way to scale. Tests the pilot's claim against the named threats to scalability (false positive, population, situation and implementer, spillovers, cost at scale; Al-Ubaydli, List and Suskind 2020; DellaVigna and Linos 2022), scores scalability domains after Milat et al. 2020, and returns a verdict with what must be tested before scaling. Do not use to plan how the scale-up happens; that is plan-scale-up-strategy. Not for cost per outcome at scale (estimate-cost-effectiveness), and not for judging whether someone else's published finding fits your setting before any test (assess-evidence-transferability).
+**Description (trigger rule):** Use when a pilot or trial showed an effect and someone asks "will this work at scale?", "can the ministry run it?", or "what breaks when we go from 20 clinics to 2,000?", or when a proposal carries a pilot result straight into a scale-up budget. Compares the pilot as it was run with the delivery planned at scale, gives a verdict, and names what to test first. Do not use when the decision to scale is made and the question is how to get there; use plan-scale-up-strategy. Not for a study run elsewhere; use assess-evidence-transferability.
 
 **Use it when:**
-- Someone asks "will this work at scale?", "can we take this national?", or "what breaks when we go from 20 clinics to 2,000?"
-- A funding proposal or policy brief carries the pilot's effect size straight into a scale-up budget or an impact projection
-- The implementer will change on the way to scale: from an NGO or research team to a ministry, a county, or a contractor
-- The population at scale will differ from the pilot's (the pilot recruited volunteers, one region, or one language group)
-- A government partner has asked to adopt a program on the strength of one evaluation
+- A pilot showed an effect and someone asks "will this work at scale?" or "can the ministry run it?"
+- A government or larger partner wants to adopt a program on the strength of one evaluation
+- A proposal carries the pilot's result straight into a scale-up budget
+- Who delivers, how, or to whom will change on the way to scale
 
 **Do not use it when:**
-- The question is how to run the scale-up (who delivers, in what sequence, with what budget); that is `plan-scale-up-strategy`, which consumes this skill's output
-- The question is cost per outcome at scale; `estimate-cost-effectiveness` owns that number, and this skill only asks whether cost will change
-- No pilot or trial has been run yet and the question is whether a published finding fits your setting; `assess-evidence-transferability`
-- The question is who benefited within the pilot; `analyze-heterogeneous-effects`, whose output feeds the population threat here
-- A past scale-up failed and the team wants to know why; `review-prior-intervention`
+- The decision to scale is made and the question is how to get there; use `plan-scale-up-strategy`
+- The question is which changes to the intervention are allowed; use `specify-intervention-adaptations`
+- The finding is from a study elsewhere and nothing has been piloted here; use `assess-evidence-transferability`
+- The question is cost per outcome; use `estimate-cost-effectiveness`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an economist or implementation scientist with scale-up experience, together with the government partner's own planning staff, when:
-- Delivery moves from an NGO or research team to a government or a large contractor, or the implementer changes in any other way; the test that settles the implementer threat is usually a trial under the new implementer, which needs designing
-- The decision is irreversible (a national policy, a law, a procurement, or a handover the organization cannot take back), because the cost of a wrong "scale" verdict is then borne by people who were not in the pilot
-- Spillovers could move prices, wages, or queues for untreated people; those effects need a design that treats whole areas, which is a specialist's job
-- The population at scale includes groups the pilot excluded (younger, poorer, a different language), and the pilot's subgroup results are too thin to say anything
+Tell the user to consult an evaluator or implementation researcher with scale-up experience, and planners from the organization that would deliver it, when:
+- Delivery moves from an NGO to government and the decision will not wait for a test under the new implementer
+- The decision cannot be reversed: a national policy, a law, a procurement
+- Treating whole areas could move prices, queues, or shared supplies, which a few pilot sites cannot show
+- The program carries clinical or safety content
 
-Bring them: the one-line claim, the threats table with its tests, the domain scores with their evidence, and the pilot's evaluation design and intervention description.
+Bring them: the two lines, the marked table, and the pilot's evaluation design.
 
 ### audit-intervention-ethics
 
@@ -476,35 +470,33 @@ Bring them: the one-sentence description, the evidence list, and the "Where it g
 ### choose-ai-eval-level
 
 **Title:** Choose which AI evaluations to run next  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** ai-eval, evaluation-framework  
-**Consumes:** ai-product-account, user-funnel-map  
+**Consumes:** ai-product-account  
 **Produces:** ai-eval-level-recommendation  
 
-**What it does:** Recommends which evaluations an AI product is ready for, based on what it has already shown.
+**What it does:** Recommends which stage of evaluation an AI tool, product, or program should run next.
 
-**Description (trigger rule):** Use when a team with an AI product for a social cause must decide which evaluation to run next, especially when a funder wants proof of impact or someone proposes jumping straight to a randomized controlled trial. Also use when the candidate evaluations span very different costs (another benchmark run, an A/B test, a psychometric survey, a full RCT) or when someone asks "are we ready for an RCT?" Recommends which of The Agency Fund's four evaluation levels (the AI model, the product, user behavior, real-world impact) the product has earned now, which are premature and why, and what to set up now so later evaluation stays possible. Do not use to design the recommended evaluation itself; hand a Level 2 or 3 experiment to design-evidential-experiment and an outcome measurement plan to plan-evaluation-design. Not for programs with no AI model in the loop; start those at plan-evaluation-design.
+**Description (trigger rule):** Use when a team with an AI tool, product, or program for a social cause must decide what to evaluate next: "are we ready for an RCT?", "our funder wants proof of impact", "what evidence can we honestly show?". Gives one recommendation on which stage of evaluation to run now and which is premature, with the evidence behind each judgment and what to build now so later evaluation stays possible. Do not use when the evaluation is chosen and needs designing; use plan-evaluation-design. Not for programs with no AI model in them.
 
 **Use it when:**
-- A team is deciding where the next unit of evaluation effort goes and the candidates span very different costs: another benchmark run, an A/B test, a psychometric survey, a full RCT
-- A funder or board is requesting impact evidence and the team needs a defensible, framework-grounded account of what evidence the product's stage can support; the playbook's own recommendation is that funders "match evaluation requirements to the product's development stage, avoiding premature requests for impact evaluations"
-- An AI product has strong engagement numbers and someone proposes jumping straight to an RCT with no Level 3 evidence that usage shifts what users think, feel, or do
-- Someone asks "are we ready for an RCT?", "what should we evaluate next?", or "what evidence can we honestly show the funder?"
+- A team asks "are we ready for an RCT?" (a randomized controlled trial) or "what should we evaluate next?"
+- A funder or board asks for proof of impact from a product that is still changing
+- Strong usage numbers lead someone to propose an impact evaluation
 
 **Do not use it when:**
-- The question is how to design the recommended evaluation; hand a Level 2 or 3 experiment to `design-evidential-experiment` and a Level 3 or 4 measurement plan to `plan-evaluation-design`
-- The program has no AI model in the loop; the four levels assume a model whose behavior needs evaluating separately from the product around it. Start a non-AI intervention at `plan-evaluation-design`
-- The team wants a Level 1 test set built; that is `design-golden-dataset`
-- The decision is whether the product should scale; this skill sequences evidence, it does not make the scale decision
+- The evaluation is chosen and the question is its outcome, comparison group, or sample; use `plan-evaluation-design`
+- The program has no AI model in it; use `plan-evaluation-design`
+- A trial has shown an effect and the question is whether it holds at scale; use `assess-scalability`
 
 **When to bring in a specialist:**
 
-Tell the user to involve an independent evaluator or research partner (a university team, an evaluation firm, a J-PAL or IPA-affiliated researcher) when:
-- The recommendation lands on Level 4 run now; an impact evaluation of a product the team built should be designed and analyzed by people without a stake in the result, and the account alone cannot establish that the "confident priors" gate is met
-- The product operates in a safety-critical domain (health advice, financial decisions, child protection, mental health), where "desired responses" at Level 1 needs a domain expert's definition, not the team's, before any higher level is read
-- A funder and the team still disagree about readiness after seeing the level table; the disagreement is then about what counts as evidence, which a neutral methodologist should arbitrate
+Tell the user to bring in:
+- When the recommendation is an impact evaluation: an independent evaluator (a university partner or an evaluation firm), so that people with no stake in the result design it
+- When the product gives health, legal, financial, or child-protection advice: a domain expert, to define a correct and safe answer before any stage 1 result is read
+- When the funder and the team still disagree after seeing the table: an evaluation methodologist neither side employs
 
-Bring them: the product account, the level table with its evidence column, and the user funnel map if one exists.
+Bring them: the product description, the table of stages, and the list of what is built for later evaluation.
 
 ### choose-delivery-moment
 
@@ -539,73 +531,66 @@ Bring them: the money calendar, the candidate table, and who is left out.
 
 ### choose-message-frame
 
-**Title:** Pick gain or loss framing for a message or incentive  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** framing, incentives, message-design, behavior-change-techniques  
-**Consumes:** intervention-draft, intervention-levers  
+**Title:** Choose gain or loss wording for a message  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** framing, message-design  
+**Consumes:** intervention-draft  
 **Produces:** intervention-draft  
 
-**What it does:** Decides whether one message or one incentive contract should be worded as a gain or as a loss, from the type of behavior it targets.
+**What it does:** Decides whether one message or offer states what people gain by acting or what they lose by not acting.
 
-**Description (trigger rule):** Use when a team is deciding whether to word a message or an incentive as a gain ("protect your child") or a loss ("put your child at risk"), or is about to assume that loss aversion makes the loss frame stronger. Also use when someone asks whether a bonus should be paid up front and taken back on failure (a loss contract) instead of paid on completion. Classifies the behavior as prevention or detection and the vehicle as message or money, picks the frame the evidence supports (gain for prevention; no reliable loss advantage in the field), writes both variants, and plans the A/B test with an honest statement of the small expected difference, drawing on Gallagher and Updegraff (2012) and Ferraro and Tracy (2022). Do not use when the frame is settled and the team needs the message written; use draft-lever-content instead. Not for setting an incentive's amount, timing, or conditions (design-incentive-scheme), and not for "most people like you do X" messages (write-social-norm-message).
+**Description (trigger rule):** Use when a team is choosing whether a message or offer should say what people gain by acting or what they lose by not acting, or assumes that "losses hit harder". Makes the gain version the default, writes both versions with only the frame changed, names who the loss version could frighten, and sets a pre-test. Do not use when no draft exists yet; use draft-lever-content. Not for the amount, condition, or timing of a payment; use design-incentive-scheme.
 
 **Use it when:**
-- A team says "loss aversion means we should tell them what they will lose" before any test has been run
-- Someone asks "should the SMS say 'you will protect your baby' or 'you will put your baby at risk'?"
-- A program is considering paying a bonus or incentive up front and taking it back if the person does not deliver (a clawback or loss contract)
-- A message draft exists in one frame and the team wants to know whether to flip it, or wants to A/B test the frame
+- A team says "loss aversion means we should tell them what they will lose"
+- Someone asks whether a text should say "protect your baby" or "you are putting your baby at risk"
+- A program wants to pay a bonus up front and take it back if a target is missed
 
 **Do not use it when:**
-- The frame is chosen and the team needs the full message, script, or poster written; that is `draft-lever-content`
-- The question is how much to pay, when, to whom, or under what conditions; that is `design-incentive-scheme`, which owns the contract itself
-- The persuasive content is "most people like you already do this"; that is `write-social-norm-message`, and a norm claim is not a frame choice
-- No barrier has been confirmed or no technique chosen; framing is a wording decision on top of a chosen lever, so run `select-intervention-levers` first
+- No draft exists; use `draft-lever-content`
+- The question is how much to pay, to whom, or on what condition; use `design-incentive-scheme`
+- The question is how to run a trial comparing versions; use `choose-trial-design`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- Loss framing would be applied to wages, stipends, or benefits, by paying up front and clawing back or by withholding; a labor-law or ethics reviewer must look at it, and the Uganda finding that most workers prefer gain contracts and that the loss contract carried a welfare cost belongs in that conversation
-- The behavior is detection of a stigmatized or frightening condition (HIV, TB, cancer); a loss frame can deter testing or cause distress, so a clinician or counselor and a local researcher should review both variants before the pre-test
-- The frame test is meant to be the program's main evaluation; an evaluator or statistician should confirm the sample can detect a difference this small before the team commits to the test
+Tell the user to consult a specialist before any pilot when:
+- A loss version would take back or withhold wages, stipends, or benefits: a labor-law or ethics reviewer
+- The behavior reveals a feared or stigmatized condition (HIV, tuberculosis, cancer): a clinician or counselor and a local researcher review both versions before the pre-test
 
-Bring them: the classification with its reason, the paired variants, the test plan with the expected difference, and any pre-test results.
+Bring them: both versions, the reason a loss version is wanted, and any pre-test results.
 
 ### choose-trial-design
 
 **Title:** Pick how to randomize the test  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** experimental-design, quantitative  
-**Consumes:** experiment-intent, theory-of-change  
+**Consumes:** experiment-intent  
 **Produces:** evaluation-design  
 
-**What it does:** Chooses the randomization structure for one test from the program's constraints: individual, cluster, stepped-wedge, factorial, or encouragement.
+**What it does:** Chooses the comparison for one test: which randomized design, at which unit.
 
-**Description (trigger rule):** Use when a team knows what it wants to test but not how to randomize it: "should we randomize people or villages?", "we cannot withhold the program from anyone", "the rollout is phased anyway", "which of our components matter?". Also use when spillovers, rollout logistics, or the ethics of withholding make an individual lottery wrong, or a plan says "RCT" with no unit of randomization named. Chooses among individual, cluster, stepped-wedge, factorial, and encouragement designs from the program's constraints, states each design's power cost and analysis demands (Hemming et al. 2015; Hayes and Moulton 2009; Collins 2018), and names a runner-up. Do not use for the full measurement plan (outcome, comparison, data feasibility); that is plan-evaluation-design, which consumes this choice. Not for the sample size (estimate-sample-size), an Evidential setup (design-evidential-experiment), an adaptive many-arm test (design-adaptive-message-experiment), or a feasibility pilot (design-pilot-feasibility-study).
+**Description (trigger rule):** Use when a team knows what it wants to test but not how to compare: "should we randomize people or villages?", "everyone has to get it eventually", "which of our components matter?", or a plan says "RCT" with no unit named. Chooses the design and unit of randomization from the program's constraints, names a runner-up, and says when no randomized design fits. Do not use for choosing the outcome or its data source (plan-evaluation-design), the analysis (write-pre-analysis-plan), or the sample size (estimate-sample-size).
 
 **Use it when:**
-- Someone asks "should we randomize individuals or villages?", "how do we run an RCT when everyone has to get it eventually?", or "can we test this when we only control who is invited?"
-- An experiment intent or theory of change exists and the plan says "RCT" or "A/B test" with no unit of randomization, timing, or arms named
-- The intervention reaches people through a shared channel (one health worker, one classroom, one WhatsApp group), so treated and untreated people would mix
-- The program is being rolled out in phases for logistical reasons and the team wants the rollout to double as the test
-- The intervention has two or more separable components and the team needs to know which ones matter, not only whether the bundle works
+- Someone asks "individuals or villages?" or "how do we test this when everyone must get it eventually?"
+- People reached through one channel (a health worker, a WhatsApp group) would mix with others
+- The intervention has separable components or versions, and the decision needs to know which matter
 
 **Do not use it when:**
-- The question is what to measure, against what, and whether the data exist; `plan-evaluation-design` writes that plan and takes this skill's design as an input
-- The question is how many people or clusters; `estimate-sample-size` computes that for the design chosen here
-- The test runs as a product experiment in Evidential and the tool's fields are the question; `design-evidential-experiment`
-- The team wants to find the best of many message variants cheaply with adaptive allocation; `design-adaptive-message-experiment`
-- The purpose is to learn whether the program can be delivered at all (recruitment, retention, acceptability) rather than to estimate its effect; `design-pilot-feasibility-study`
+- The outcome or its data source is still open; use `plan-evaluation-design`
+- The design is chosen and the team needs the estimator or a registry entry; use `write-pre-analysis-plan`
+- The design is set and the question is how many units; use `estimate-sample-size`
+- The team must first learn whether the program can be delivered at all; use `design-pilot-feasibility-study`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an evaluation methodologist or statistician, and where relevant an ethics board and the implementing authority, when:
-- Randomization itself is contested ethically or politically (a ministry, community leaders, or a funder objects to withholding or to lotteries); the design question becomes a negotiation about waitlists, phased rollouts, and what counts as genuine uncertainty
-- The unit of randomization is a government administrative unit (district, local government area, block); the number of units is small, assignment is politically visible, and the analysis needs small-sample cluster methods
-- A stepped-wedge is chosen; the time-trend model and the measurement schedule need a statistician before the first step
-- The design is a factorial with more than two components, or an encouragement design with expected take-up below about a third
-- Spillovers are themselves the thing to measure (the decision depends on whether effects spread), which needs a design that randomizes the share treated within groups, beyond this skill's scope
+Tell the user to consult an evaluation methodologist, with an ethics board and the implementing authority where relevant, when:
+- No randomized design fits: a quasi-experimental design (a comparison built from data, such as a matched group or an eligibility cutoff) is needed, and a specialist should choose it
+- The unit is an administrative area and there are few of them
+- A stepped-wedge is chosen; its time model needs a statistician before the first step
+- A ministry, community leaders, or a funder contest the randomization
 
-Bring them: the constraints table, the chosen design and runner-up, the counts of units at each level, the rollout calendar, and the theory of change.
+Bring them: the constraints and designs tables, unit counts, and the rollout calendar.
 
 ### decompose-comb-barriers
 
@@ -702,210 +687,187 @@ Bring them: the candidate table with its bases, the ranked runners-up, and the l
 ### design-commitment-device
 
 **Title:** Help people tie their own hands against temptation  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** commitment-devices, present-bias, savings  
-**Consumes:** intervention-levers, barrier-diagnosis  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Specifies a voluntary option that restricts or penalizes a person's future self, with a stake they choose, so that a plan made today survives the moment of temptation.
+**What it does:** Specifies a restriction on future choices that a person opts into to keep a plan they have made.
 
-**Description (trigger rule):** Use when people say they want to save, quit, or stick to a plan but keep failing because the moment of temptation wins, and you want to offer them a way to tie their own hands: a locked savings account, a deposit they forfeit, a contract with a penalty they chose. Also use when a team proposes a "lock box", "savings commitment", or "quit contract" and needs the stake, the verifiable goal, the opt-in rule, and the plan for people who commit and fail worked out before launch. Produces a specification for a voluntary device built on Bryan, Karlan and Nelson (2010) and the SEED and CARES trials in the Philippines. Do not use when the problem is inertia rather than temptation (people never get round to enrolling); use select-default-option instead. Not for a label on money with no lock (specify-earmark-label), not for rewards the program pays (design-incentive-scheme), and not for generic drafting of the offer script (draft-lever-content).
+**Description (trigger rule):** Use when people intend a behavior, have the means, and give way at the moment of action ("I meant to save it but it was gone by evening"), and a team wants to offer a restriction people choose for themselves: a locked account, a deposit lost on failure, a public promise. Specifies the device, the cap on what anyone can lose, the offer, and the plan for people who commit and fail. Do not use when people get the option without choosing it; use select-default-option. Not for a reward or penalty the program sets; use design-incentive-scheme.
 
 **Use it when:**
-- A barrier diagnosis says people intend the behavior, have the means, and fail at the moment of action: "I meant to save it but it was gone by evening", "I always say I'll quit after this pack"
-- Someone proposes a lock box, a savings account with a date lock, a deposit contract for quitting, or "a penalty if I don't do it", and needs the terms worked out
-- Demand for self-restriction already shows up informally (people hand cash to a neighbor to hold, join a rotating savings group for the discipline) and the team wants to offer a formal version
-- A lever brief from `select-intervention-levers` names a commitment or self-restriction technique and the next question is "what exactly do we offer?"
+- A confirmed barrier is giving way at the moment of action: people intend the behavior, have the means, and say "I meant to save it but it was gone by evening"
+- A team proposes a lock box, a locked savings account, a quit contract, or "a deposit they lose if they don't"
+- People already hand cash to a treasurer to hold, and the team wants a formal version
 
 **Do not use it when:**
-- The barrier is inertia (people never enroll, never switch) rather than temptation; a default acts on inertia, and `select-default-option` owns that choice
-- The team wants to earmark money for school fees or health without locking it; a label with no lock is `specify-earmark-label`, and it does not cost the person anything on failure
-- The stake would be paid by the program (a reward for passing, a bonus for saving) rather than put up by the person; that is `design-incentive-scheme`, a different mechanism with different backfires
-- The device is chosen and the team needs the enrollment script, SMS, or form wording; `draft-lever-content` writes that from this skill's specification
+- People would get the option without choosing it, as in automatic enrollment; use `select-default-option`
+- The program sets or pays the stake (a reward, a fine); use `design-incentive-scheme`
+- The plan is "when X happens, I will do Y" with nothing restricted; use `draft-implementation-intention-prompt`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a financial-inclusion or consumer-protection specialist, and where noted a clinician, when:
-- The stake could cause financial harm to poor households: the lean season overlaps the lock period, the population carries debt, or the ceiling cannot be set below what would hurt; the specialist sets the cap and `audit-intervention-ethics` reviews it before any offer
-- The behavior is clinical (smoking cessation, medication adherence, alcohol) and the verification is a test; a clinician decides the test, the interval, and what a failed committer is told about relapse
-- The institution that would hold the stake is unregulated or not trusted to return the money; a forfeit that is really a loss to an untrustworthy holder is a fraud risk, not a device
-- The device would be bundled with credit or offered by a lender, where "commitment" can shade into collateral; a consumer-protection review is needed before the offer is drafted
+Tell the user to consult the relevant specialist before any pilot when:
+- The device holds, locks, or forfeits money: a financial consumer-protection specialist sets the cap, confirms the holder is regulated, and checks the disclosure
+- The behavior is clinical (smoking, alcohol, medication): a clinician chooses the test and what a person who fails is told
+- A lender or employer would offer it: a lawyer checks that it cannot work as collateral or a wage deduction
 
-Bring them: the barrier evidence, the device specification with the stake range and failure plan, what is known about the population's income pattern, and the partner's terms for holding the stake.
+Bring them: the specification, the cap with the income pattern behind it, and the plan for people who fail.
 
 ### design-feedback-report
 
 **Title:** Design a performance feedback report  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** feedback, social-norms, message-design, behavior-change-techniques  
-**Consumes:** intervention-levers, measurement-plan  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** feedback, social-comparison, audit-and-feedback  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Specifies what a repeated feedback report tells one person about their own performance on a task: which metric, compared with what, how often.
+**What it does:** Specifies what a repeated report tells one person about their own performance on a task.
 
-**Description (trigger rule):** Use when a program wants to send people a regular report on how they are doing: health workers' visit counts, teachers' session or attendance records, households' water or energy use, savings-group deposits. Also use when a team already sends performance data and wants to know why it is not working or why some people got worse after seeing it. Specifies the task-level metric, the comparison (own past, peers, or a standard) with an injunctive cue, the cadence, and the protections for top and bottom performers, drawing on Kluger and DeNisi (1996) and Allcott and Rogers (2014). Do not use when the team needs a one-off "most people do X" message rather than repeated personal feedback; use write-social-norm-message instead. Not for public rewards or certificates (design-social-recognition), not for monitoring delivery for the program's own management (design-fidelity-monitoring), and not for writing the final report wording (draft-lever-content).
+**Description (trigger rule):** Use when a program wants to tell people regularly how they are doing: health workers' visit counts, teachers' session records, households' water or energy use. Also use when a report is already sent and some people did worse after seeing it. Specifies the metric, the comparison, what people at the top and bottom see, who else sees it, and what to monitor. Do not use when the message only says what most others do; use write-social-norm-message. Not for data the program keeps to check delivery; use design-fidelity-monitoring.
 
 **Use it when:**
 - "We want to text each community health worker every month with how many home visits they completed"
-- "Teachers will get their class's assessment results each term; how should we present them?"
-- "Our household water-use report is not moving anyone, and some households used more after getting it"
-- The lever brief from `select-intervention-levers` names one of the BCTTv1 feedback techniques (feedback on behavior, or feedback on the outcomes of behavior) and the next question is what the report should contain
+- "Teachers will get their class's results each term; how should we present them?"
+- A report is already sent and moves nobody, or some people did worse after getting it
 
 **Do not use it when:**
-- The team wants a single message saying what most people do, with no personal data in it; that is `write-social-norm-message`
-- The plan is to reward good performers publicly with a certificate, badge, or ceremony; that is `design-social-recognition`, which trades on visibility rather than private information
-- The data are collected so the program can check it is being delivered as designed, and are not returned to the person; that is `design-fidelity-monitoring` (implement stage)
-- The report's design is settled and the team needs the actual wording; that is `draft-lever-content`
-- No barrier has been confirmed; a report that lands on a supply, pay, or trust barrier moves nothing, so run `select-intervention-levers` first
+- The message only tells people what most others do, with no figure about the person; use `write-social-norm-message`
+- The data are kept by the program to check delivery and are not returned to the person; use `design-fidelity-monitoring`
+- A payment or prize is to be tied to the number; use `design-incentive-scheme`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- Supervisors could use the report punitively, in appraisal, pay, or discipline; an HR, labor, or ethics reviewer and the program's own management should agree the rules of use before any design is piloted
-- The metric is a clinical quality measure (doses given, cases referred, protocol steps completed); a clinician must confirm the metric is safe to optimize on its own
-- Individual-level data are so thin or unreliable that a wrong number is likely; an M&E lead should fix the measurement before anyone is told how they are doing
-- The pilot shows a fall among people who were already doing well; a behavioral scientist should look at the comparison and cue design before scaling
+Tell the user to consult the relevant specialist before any pilot when:
+- Supervisors could use the report in appraisal, pay, or discipline: a human-resources or labor specialist and program management agree written rules of use
+- The metric is a clinical quality measure: a clinician confirms it is safe to pursue on its own
+- Each person's data are thin or disputed: a monitoring and evaluation specialist fixes the measurement first
 
-Bring them: the metric and comparison with their reasons, the report skeleton, the data-quality notes, and the pilot results split by top and bottom groups.
+Bring them: the specification, the notes on data quality, and the list of who sees the report.
 
 ### design-fidelity-monitoring
 
 **Title:** Monitor whether a program is delivered as designed  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** implementation-science, process-evaluation, implementation  
 **Consumes:** intervention-description  
 **Produces:** fidelity-plan  
 
-**What it does:** Designs how a team will check, during rollout, whether an intervention is being delivered the way it was designed.
+**What it does:** Plans how a team will check fidelity, the degree to which a running program is delivered as designed.
 
-**Description (trigger rule):** Use when an intervention is about to roll out, or already has, and the team needs to know whether it is being delivered as designed: which parts to watch, what counts as delivered, who checks, how often, and what happens when delivery slips. Also use when the only monitoring is the implementer's own activity log, or when a funder asks for a fidelity or process-monitoring plan. Produces a fidelity monitoring plan: the essential components, one observable indicator per component with adherence, dose, and quality kept separate, data sources, sampling, action thresholds, and a non-punitive feedback loop to implementers, following Carroll et al. (2007) and the MRC process-evaluation guidance. Do not use when the program is finished and the question is whether it failed in delivery or in idea; that is review-prior-intervention. Not for designing feedback as the intervention itself (design-feedback-report), and not for documenting what was delivered item by item (draft-intervention-description).
+**Description (trigger rule):** Use when a program is about to roll out, or is rolling out, and the team needs to know whether it is being delivered as designed: which parts to watch, what counts as delivered, who checks, how often, and what happens when delivery slips. Plans the indicators, data sources, thresholds, and feedback to the people delivering it. Do not use when the program is over and the question is why it failed; use review-prior-intervention. Not for writing down what the intervention is; use draft-intervention-description.
 
 **Use it when:**
-- A rollout is starting or under way and "are they actually doing it?" is answered only by the implementer's own activity log
-- A funder or evaluation partner asks for a fidelity, implementation-monitoring, or process-monitoring plan before launch
-- A pilot showed an effect and the team wants delivery at scale to stay close to what was piloted
-- An evaluation is planned and the team wants a null result to read as "delivered and did not work" rather than "never really delivered"
-- Someone asks "how do we know the health workers are saying the right thing?" or "what should supervisors be checking each month?"
+- A rollout is starting or under way and the only check on delivery is the deliverers' own log
+- A funder or evaluator asks for a fidelity or implementation-monitoring plan
+- Someone asks "how do we know the health workers are saying the right thing?"
 
 **Do not use it when:**
-- The program is finished and the question is whether it failed in delivery or in idea; `review-prior-intervention` reads the record after the fact, where this skill creates the record
-- The feedback is the intervention (a report to teachers or farmers meant to change their own behavior); `design-feedback-report` owns that design, including its backfire risks
-- The need is to document the intervention item by item so another team can replicate it; `draft-intervention-description`, which this plan's data feed
-- The question is whether the intervention is feasible or acceptable at all before a trial; `design-pilot-feasibility-study` sets those progression criteria
-- Changes to the intervention are already known and need classifying as fidelity-consistent or not; `specify-intervention-adaptations`
+- The program is over and the question is whether the idea or its delivery failed; use `review-prior-intervention`
+- The team needs an item-by-item account of what the intervention is; use `draft-intervention-description`
+- Known changes need judging against what makes the program work; use `specify-intervention-adaptations`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- The implementing organization intends to use the monitoring data for staff appraisal, pay, or discipline; an implementation researcher and the organization's human-resources or labor lead should redesign the loop before launch, because the plan above assumes a non-punitive use it cannot enforce
-- The implementer is a government partner and no written data-sharing or monitoring agreement exists; the partner's data-governance office and the team's counsel settle who may observe whom and who owns the records before any spot check is scheduled
-- Monitoring involves observing clinical encounters, children, or stigmatized services (HIV, family planning, mental health), or any mystery-client work; an ethics reviewer and, for mystery clients, `design-mystery-client-protocol` with its deception and detection checks
-- The plan is meant to double as the evaluation's process evaluation; an implementation researcher working from the MRC guidance (Moore et al., 2015) designs the mechanisms-of-impact and context strands, which this skill does not cover
+Tell the user to consult a specialist when:
+- The data will feed appraisal, pay, or discipline: an implementation researcher and the human-resources lead, to redesign the feedback before launch
+- A government partner delivers and nothing written says who may observe whom: the partner's data-governance office and counsel
+- Monitoring observes clinical care, children, or stigmatized services, or uses mystery clients (people posing as clients): an ethics reviewer
+- The plan must double as a process evaluation: an implementation researcher, for mechanisms and context
 
-Bring them: the intervention description or draft with its fidelity trace, the essential-components table, the indicator table, and the data-use answer from Before you start.
+Bring them: the essential-parts and indicator tables, and the data-use answer.
 
 ### design-incentive-scheme
 
 **Title:** Design a reward for one verifiable behavior  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** incentives, behavior-change-techniques, cost-effectiveness  
-**Consumes:** intervention-levers, barrier-diagnosis  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** incentives, conditional-cash-transfers  
+**Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Specifies the terms of a reward for one verifiable behavior, from its size to what happens when it stops.
+**What it does:** Specifies the terms of a reward or penalty that a program attaches to one verifiable behavior.
 
-**Description (trigger rule):** Use when the team has decided to pay or reward people for a behavior and needs the terms: "how much should we pay", "conditional or unconditional", "should we run a lottery", "what happens when the money stops". Also use when a reward is about to be set by budget or guesswork, or a conditional transfer has no plan to verify the condition. Specifies the size, form, timing, condition, removal plan, crowding-out check, ethics, and cost of a reward for one verifiable behavior, drawing on the cash-transfer and health- incentive reviews (Baird et al.; Mantzari et al.), Rajasthan's immunization camps, and the crowding-out literature (Gneezy, Meier and Rey-Biel). Do not use when the reward is non-financial and visible (a bracelet, public recognition); use design-social-recognition instead. Not for a transfer merely labeled for a purpose with no condition (specify-earmark-label), a stake the person puts up (design-commitment-device), or writing the voucher or message (draft-lever-content).
+**Description (trigger rule):** Use when a team has decided to reward people for one behavior and needs the terms: "how much should we pay", "cash or food", "conditional or not", "what happens when the money stops". Specifies the verification, the size against the cost of acting, the condition, the end date, and what to monitor. Do not use when the stake is the person's own money, put up by choice; use design-commitment-device. Not for removing the steps that make the behavior costly; use audit-process-friction.
 
 **Use it when:**
-- `select-intervention-levers` has selected Incentivization and someone asks "how much should we pay?", "cash, lentils, or airtime?", "conditional or unconditional?", "should we run a lottery?", or "what happens when the money runs out?"
-- A reward amount is about to be set by what the budget allows or by guesswork, with no reference to what the behavior costs the person
-- A conditional cash transfer is proposed and nobody has said who verifies the condition, what it costs to verify, or who is excluded by it
-- An incentive has been running and the team wants to end it, taper it, or has noticed the effect fading
+- A confirmed barrier is a cost of acting now (a fare, lost wages, a queue) for a later benefit, and the team asks "how much should we pay?" or "conditional or not?"
+- A reward amount is about to be set by what the budget allows
+- An incentive is running and the team wants to end it, or sees its effect fading
 
 **Do not use it when:**
-- The reward is non-financial and visible (a bracelet, a certificate, a name read out at a meeting); that is `design-social-recognition`, whose mechanism is signaling to others, not payoff
-- The transfer is simply labeled for a purpose, with no condition and no verification; that is `specify-earmark-label`
-- The stake is the person's own money or reputation, forfeited if they fail; that is `design-commitment-device`
-- The team needs the words of the voucher, the SMS, or the agent script; that is `draft-lever-content`, which takes this specification as its input
-- The barrier is supply (no vaccines, no teacher, no stock); an incentive cannot fix it. Go back to `select-intervention-levers`
+- The stake is the person's own money, put up by choice; use `design-commitment-device`
+- The cost of acting comes from steps that could be removed (forms, trips, queues); use `audit-process-friction`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- Payments go to poor households, in cash or in food, at any amount that is a meaningful share of daily income; an ethics review through `audit-intervention-ethics` and, where the work is research, an ethics committee, because the reward may not be refusable
-- Payments go to public servants, health workers, teachers, or volunteers; legal, human-resources, and fairness review, because paid and unpaid colleagues doing the same work is a documented route to resentment and crowding out
-- The rewarded behavior is clinical (medication, testing, delivery, immunization); a clinician reviews the verification method and the harms an incentive can induce, such as over-testing or pill dumping
-- The reward would come from a government budget or be attached to an existing transfer program; policy review, since the condition changes who is entitled to the transfer
-- The budget cannot carry the scheme to its end date; stop, because an incentive withdrawn early produces the decay without the benefit
+Tell the user to consult the relevant specialist before any pilot when:
+- The reward exceeds a day's income for poor households: an ethics committee judges whether people can freely refuse
+- The behavior is clinical (testing, medication, immunization): a clinician checks the verification and the harms a payment can induce, such as repeat testing
+- Recipients are public servants, health workers, teachers, or volunteers: a human-resources and legal review covers what the law allows and what unrewarded colleagues are told
 
-Bring them: the scheme table, the sizing arithmetic with daily income and hassle cost, the monitoring decision, the removal plan, and the ethics section.
+Bring them: the specification, the sizing arithmetic, and the plan for the end.
 
 ### design-list-experiment
 
 **Title:** Measure a sensitive behavior without asking directly  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** list-experiment, survey-design, measurement, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
 
-**What it does:** Designs an item-count question that estimates how common a sensitive behavior is in a population without asking any respondent to admit it.
+**What it does:** Designs a survey question that estimates how common a hidden behavior is without any respondent admitting to it.
 
-**Description (trigger rule):** Use when a program needs to know how common a sensitive behavior is (unprotected sex, missed doses, bribes, resold inputs) and expects respondents to deny it if asked directly. Also use when someone says "people won't admit that on a survey", "our self-report numbers look too good", or asks for an "item count", "unmatched count", or "list experiment" question. Produces a list experiment design: a control list of innocuous items, a treatment list that adds the sensitive item, the randomization, a counting comprehension check, sample size inputs, a direct comparison question, and the analysis plan, following Blair and Imai's design rules and the pooled evidence that the method buys a modest bias correction at a high cost in variance. Do not use when the behavior is not sensitive or a well-worded direct question would be answered honestly; use draft-survey-items. Not for measuring what people think others do or approve of (draft-norms-vignette), and not for computing the sample size (estimate-sample-size).
+**Description (trigger rule):** Use when a program needs the share of a group that does something people hide (missed doses, bribes, sex without a condom) and expects denial if asked directly: "nobody will admit that", "our self-reports look too good". Decides whether a list experiment is worth its cost in sample, then writes the two lists, the counting script, the direct question, and the checks. Do not use when a direct question would be answered honestly or the sample is a few hundred; use draft-survey-items. Not for what people think others do or approve of; use draft-norms-vignette.
 
 **Use it when:**
-- A program needs a prevalence estimate for a behavior people hide (unprotected sex, missed medication doses, bribes, reselling subsidized inputs, selling a vote) and the direct-question numbers look implausibly low or high
-- Someone says "nobody will admit that on a survey", "our self-report looks too good", or asks for an "item count", "unmatched count", or "list experiment" question
-- A measurement plan names a sensitive outcome and the team wants a second estimate beside the direct question to see how much respondents under-report
-- The survey is already anonymous but an interviewer is present, so the worry is social desirability rather than data security
+- A program needs the share of a group that does something people hide, and direct questions look too good
+- Someone says "nobody will admit that on a survey" or asks for an "item count" or "list experiment" question
+- A team wants to know how much people under-report a sensitive outcome
 
 **Do not use it when:**
-- The behavior is not sensitive, or a well-worded direct question would be answered honestly; `draft-survey-items` writes that question
-- The question is what respondents think others do or approve of, not what they themselves do; `draft-norms-vignette` measures expectations
-- The team needs the sample size number; this skill produces the inputs, `estimate-sample-size` produces the N
-- The team needs a measure per person (to target, follow up, or score individuals); a list experiment estimates a group share and cannot classify anyone
+- A plainly worded direct question would be answered honestly; use `draft-survey-items`
+- The sample is a few hundred, or the estimate is needed for small subgroups: ask directly, in private; use `draft-survey-items`
+- The question is what people think others do or approve of; use `draft-norms-vignette`
+- The question is how many respondents are needed; use `estimate-sample-size`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a survey statistician, and the organization's ethics board, when:
-- The behavior is illegal or dangerous to disclose even in aggregate (drug use, same-sex behavior, political activity in a repressive setting): a prevalence estimate for a named village or group can be used against that group, so the question is whether to measure it at all, not how
-- The affordable sample is not a multiple of what the direct question would need, or the estimate must hold for subgroups; the design-effect and power questions need someone who runs these calculations routinely
-- The list estimate is the primary outcome of an evaluation, where power, pre-registration, and the choice between estimators need a statistician's sign-off
+Tell the user to consult, before fielding:
+- An ethics reviewer, when the behavior is illegal or dangerous to disclose even for a group (drug use, same-sex relations, opposition politics), or results will be reported for small areas: a group figure can be used against the group
+- A survey statistician, when the list estimate is the main outcome of an evaluation or must be compared across arms or subgroups
 
-Bring them: the sensitive and control items with expected prevalences, the prior on under-reporting, the affordable sample, the mode, and the draft analysis plan.
+Bring them: the statements, the plausible under-reporting, the sample, the mode, and the checks.
 
 ### design-pilot-feasibility-study
 
 **Title:** Design a pilot that tests feasibility, not effect  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** experimental-design, process-evaluation, implementation-science  
 **Consumes:** intervention-draft  
-**Produces:** evaluation-design  
+**Produces:** pilot-plan  
 
-**What it does:** Designs a pilot whose job is to test feasibility (recruitment, retention, fidelity, acceptability, data completeness) against thresholds fixed before fieldwork, not to estimate the intervention's effect.
+**What it does:** Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works.
 
-**Description (trigger rule):** Use when a team is about to run a small first version of an intervention "to see if it works" and needs to decide what the pilot must answer: can we recruit, do people stay, is it delivered as designed, do people accept it, does the outcome data come back usable. Also use when someone says "let's pilot it with 50 people first", asks what a feasibility study is, or is about to size the main trial from a pilot's effect estimate. Produces a pilot design with go, amend, or stop thresholds set before fieldwork, a size chosen for estimating rates rather than for significance, a qualitative component, and a report skeleton, following the CONSORT extension for pilot and feasibility trials (Eldridge et al. 2016). Do not use when the question is whether the intervention works and how success will be measured; use plan-evaluation-design instead. Not for household negotiation of practice changes (plan-trials-of-improved-practices) or for monitoring delivery during rollout (design-fidelity-monitoring).
+**Description (trigger rule):** Use when a team plans a small first run of a program before a larger trial or a scale-up ("let's pilot it with 50 people first") and must decide what the pilot has to show: whether people can be recruited and kept, the program delivered, and the data collected. Sets go, amend, and stop thresholds before fieldwork. Do not use when a few people from the audience should first react to a draft; use plan-prototype-test. Not for whether the program works; use plan-evaluation-design.
 
 **Use it when:**
-- Someone says "let's pilot it with 50 people first" or "we'll do a small test run" with no statement of what the pilot has to show before the main trial goes ahead
-- An intervention draft exists, the main trial is being planned, and the team asks "what should the pilot tell us?" or "what are progression criteria?"
-- A pilot has already run and the team is about to take its effect estimate as the main trial's power input, or to read a promising-looking number as proof of concept
-- A funder or ethics board asks for a feasibility study, progression criteria, or a go/no-go gate before funding the trial
+- Someone says "let's pilot it with 50 people first" without saying what the pilot must show
+- A funder or ethics board asks for a feasibility study or progression criteria
+- A team is about to size a main trial from a pilot's effect
 
 **Do not use it when:**
-- The question is whether the intervention works and how success will be measured; that is `plan-evaluation-design`, and the trial's structure is `choose-trial-design`
-- The team wants households to try a new practice for a week and negotiate what they would keep; that is formative, household-level work in `plan-trials-of-improved-practices`
-- The program is already rolling out and the question is whether it is being delivered as designed; `design-fidelity-monitoring`
-- The question is how many people the main trial needs; `estimate-sample-size`, with a benchmark from `estimate-expected-effect`, never from the pilot
+- The team wants a few people from the audience to react to or try a draft before any pilot; use `plan-prototype-test`
+- The question is whether the program works and how the outcome is measured; use `plan-evaluation-design`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a statistician or evaluation methodologist, and an ethics reviewer where relevant, when:
-- The team intends to use the pilot's effect estimate as the main trial's power input; bring the pilot design and route the sizing to `estimate-expected-effect` and `estimate-sample-size` with a statistician
-- The intervention touches clinical risk, medication, or vulnerable participants, so even the pilot needs ethics review and a stopping rule for harm
-- Recruitment or acceptability thresholds are failing in a way that points to coercion, stigma, or community refusal rather than logistics; a local qualitative researcher should read the interviews before any amend decision
-- The main design is clustered or stepped-wedge and the pilot has to test the rollout mechanics themselves
+Tell the user to consult a specialist when:
+- The team wants to size the main trial from the pilot's effect, or persuade a funder with it: an evaluation methodologist
+- The pilot involves medication, clinical care, children, or people who depend on the organization: an ethics reviewer, before the pilot, with a stopping rule for harm
+- Refusals or dropout point to stigma, coercion, or community objection rather than logistics: a local qualitative researcher, before any amend decision
 
-Bring them: the progression-criteria table with its derivations, the pilot size reasoning, the main design, and the interview notes.
+Bring them: the progression criteria, the sizing arithmetic, the main study's design, and interview notes.
 
 ### design-reminder-schedule
 
@@ -1005,38 +967,34 @@ Bring them: the newcomers' words, the check of the setting, and the stories.
 
 ### draft-cognitive-interview-script
 
-**Title:** Cognitive interview script drafter  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** measurement, qualitative, survey-design, psychometrics  
+**Title:** Test whether people understand your survey questions  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** measurement, qualitative, survey-design  
 **Consumes:** survey-items  
 **Produces:** interview-guide  
 
-**What it does:** Turns a set of draft survey items into a cognitive interview script that tests whether respondents interpret each item the way its author intended.
+**What it does:** Writes the script for cognitive interviews, in which a few respondents answer draft survey questions one at a time while an interviewer asks how they understood each one.
 
-**Description (trigger rule):** Use when a team has draft survey or questionnaire items and wants to check whether respondents understand them as intended before fielding them. Also use when someone says "pretest our survey", "cognitive testing", "do these questions make sense to respondents", or "think-aloud interviews for our questionnaire". Produces a full cognitive interview script with probes per item and a note-taking sheet. Do not use when the goal is to explore a topic or understand lived experience; that is a qualitative interview guide, not item pretesting. Not for psychometric validation with numbers (reliability, factor structure); run a measurement skill after the items survive this one.
+**Description (trigger rule):** Use when draft survey questions exist and a team wants to check, before fielding, that respondents understand them as intended ("pretest our survey", "cognitive testing", "do these questions make sense to people"). Writes the interview script: open follow-up questions for each survey question, a note sheet, and a rule for which questions to fix. Do not use when the questions are not written yet; use draft-survey-items. Not for interviews about why people do or do not do something; use draft-tdf-interview-guide.
 
 **Use it when:**
-- A user has draft survey items (a scale, an intake form, an M&E questionnaire) and asks "will people understand these?" or "can you pretest this?"
-- A user asks for "cognitive testing", "cognitive interviews", "think-aloud testing", or "verbal probing" for a questionnaire
-- A measure is being adapted to a new language, literacy level, or population and the team wants to check it still means the same thing
-- A team is about to translate a validated scale and field it without checking comprehension locally
-- Field staff report that respondents "don't get" certain questions and the team wants a structured way to find out why
+- A team has draft survey questions and asks "will people understand these?"
+- Someone asks for cognitive testing, cognitive interviews, or think-aloud testing of a questionnaire
+- A questionnaire translated or borrowed from another country is about to be fielded untested
 
 **Do not use it when:**
-- The user wants to explore experiences, motivations, or barriers in depth; that is a semi-structured qualitative interview guide, and the questions there are open, not item probes
-- The user wants to know whether the items measure the construct reliably (Cronbach's alpha, factor analysis, item response theory); that is quantitative validation and comes after cognitive testing
-- The user has no items yet and wants help writing them; draft the items first, then come back
-- The "items" are behavioral tasks or games rather than questions; usability testing is the closer method
+- The questions are not written yet; use `draft-survey-items`
+- The questions are not yet in the interview language; use `translate-survey-instrument`
+- The interviews are to learn why people do or do not do something; use `draft-tdf-interview-guide`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a survey methodologist or a psychometrician when:
-- The items are part of a validated scale whose scoring depends on the exact wording, and cognitive testing suggests changing wording; a specialist can judge what changes break comparability.
-- The instrument will be used for high-stakes decisions (eligibility, diagnosis, program exit) and the team cannot run a quantitative validation afterward.
-- Problems cluster on sensitive items (violence, mental health, income) in a way that suggests the survey mode itself, not the wording, is the issue.
-- The interviews are cross-language and the team has no bilingual reviewer to judge whether a problem is translation or comprehension.
+Tell the user to consult a psychometrician (who tests whether scores mean what they claim) or a survey methodologist when:
+- The questions belong to a validated scale and the interviews point to rewording, which can break comparison with its other uses
+- Answers will decide something for a person (eligibility, referral, diagnosis); testing comprehension does not validate a score or a cut-off
+- Problems cluster on sensitive questions, which points to the way of asking, not the wording
 
-Bring them: the items with intended meanings, the tabulated problem codes, and three verbatim quotes per problematic item.
+Bring them: the questions with their intended meanings, the tabulated problem codes, and quotes for each problem question.
 
 ### draft-implementation-intention-prompt
 
@@ -1071,36 +1029,34 @@ Bring them: the prompt, the evidence of intention, the real options, and who see
 ### draft-intervention-description
 
 **Title:** Describe an intervention so others can replicate it  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** implementation-science, behavior-change-techniques, research-transparency, implementation  
-**Consumes:** intervention-draft, fidelity-plan  
+**Consumes:** intervention-draft  
 **Produces:** intervention-description  
 
-**What it does:** Writes down what an intervention actually was, item by item, in enough detail for another team to rebuild it.
+**What it does:** Writes down what an intervention is, item by item, in enough detail for a team elsewhere to deliver it again.
 
-**Description (trigger rule):** Use when a team must write down exactly what an intervention was, item by item, so another team could rebuild it or a reader could tell what changed: for a funder, a new implementer, a scale-up partner, a trial registry, or a paper. Also use when the only record is a slide deck or a program name, or when "we ran the SMS program" has to become something a stranger could replicate. Produces an intervention description on the twelve TIDieR items (Hoffmann et al., 2014): each active ingredient named as a behavior change technique in plain words with its mechanism, materials and where to get them, and how well it was planned kept separate from how well it was delivered, using the fidelity plan's data. Do not use when the messages or scripts still need writing; that is draft-lever-content. Not for designing how delivery is monitored (design-fidelity-monitoring), classifying changes made during delivery (specify-intervention-adaptations), or judging whether it will scale (assess-scalability).
+**Description (trigger rule):** Use when a team must write down exactly what an intervention was, item by item, so another team could deliver it again or a reader could tell what was delivered: for a funder, a new implementer, a scale-up partner, a registry, or a paper. Also use when the only record is a slide deck or a program name. Do not use when the messages or scripts still need writing; use draft-lever-content. Not for planning how delivery will be checked; use design-fidelity-monitoring.
 
 **Use it when:**
-- A pilot or program is ending or scaling and the record of what was delivered is a slide deck, a proposal, or the memory of the person who ran it
-- A funder, scale-up partner, or new implementing organization asks "what exactly did you do?" and needs to rebuild it without the original team
-- A trial registry entry, a pre-analysis plan, or a paper needs its intervention section written to a reporting standard
-- Someone says "we ran the SMS program" or "the health workers did counseling" as if that were a description
+- A pilot or program is ending or scaling, and the record of what was delivered is a slide deck or one person's memory
+- A funder, scale-up partner, or new implementer asks "what exactly did you do?"
+- A registry entry, pre-analysis plan, or paper needs its intervention section
 
 **Do not use it when:**
-- The messages, scripts, or materials still need writing; `draft-lever-content` produces them, and this skill documents what was then delivered
-- The question is how delivery will be checked during rollout; `design-fidelity-monitoring`, whose data fill this skill's "how well: actual" item
-- The task is to classify the changes made during delivery as fidelity-consistent or not; `specify-intervention-adaptations` produces the adaptation record this skill carries into item 10
-- The question is whether the intervention will survive scale-up; `assess-scalability` consumes this description
+- The messages, scripts, or materials still need writing; use `draft-lever-content`
+- The question is how delivery will be checked during rollout; use `design-fidelity-monitoring`
+- Changes made during delivery need judging against the program's essential parts; use `specify-intervention-adaptations`
 
 **When to bring in a specialist:**
 
-Tell the user to consult the relevant specialist when:
-- The description will go into a trial registry, a pre-analysis plan, or a publication; a methodologist or trial statistician checks it against CONSORT-SPI 2018 and the venue's reporting requirements, which go beyond the twelve items
-- The intervention includes a clinical component (a medication, a dosage, a referral rule); a clinician checks that items 4 and 8 describe it accurately, because a faithful replication of a wrong dose is a harm
-- The materials or the description contain partner-confidential content or details that could identify participants or implementers; counsel or a data-protection officer decides what can be shared before item 3 points anywhere
-- The delivery data and the team's account disagree on an essential component; an implementation evaluator reads the fidelity data before item 12 is written, rather than the team splitting the difference
+Tell the user to consult a specialist when:
+- It goes into a registry, a pre-analysis plan, or a publication: a methodologist, against the venue's reporting guideline, such as CONSORT-SPI 2018 for social and psychological intervention trials
+- It includes a clinical part (a medicine, a dose, a referral rule): a clinician checks items 4 and 8
+- Materials are confidential or could identify people: counsel or a data-protection officer, before anything is shared
+- Monitoring data and the team's account disagree on an essential part: an evaluator, before item 12 is written
 
-Bring them: the draft description with its sources line and rebuild check, the fidelity plan and its data, the adaptation record, and the materials in their final languages.
+Bring them: the draft with its rebuild check, the monitoring data, and the materials.
 
 ### draft-lever-content
 
@@ -1135,101 +1091,97 @@ Bring them: what the technique must contain, the draft with its trace, and the t
 ### draft-norms-vignette
 
 **Title:** Write scenarios that measure what others do and approve  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** social-norms, survey-design, measurement, experimental-design  
 **Consumes:** social-norm-diagnosis  
 **Produces:** survey-items  
 
-**What it does:** Writes short scenarios, in versions that differ only in what other people are said to do or to approve of, so a survey can show whether a practice follows those expectations.
+**What it does:** Writes a short survey story in versions that differ only in what other people are said to do or approve of.
 
-**Description (trigger rule):** Use when a team wants survey questions that show whether what others do, or what others approve of, drives a practice (latrine use, tablets in pregnancy, girls' schooling) instead of asking people why they do it. Also use when someone says "write a vignette", "scenario questions for our norms survey", "how do we measure empirical and normative expectations", or a social norm diagnosis ended "pending the vignette round". Produces short scenario versions about a named person that vary what others do and what others approve of factorially, the questions asked after each version, the randomization, and the analysis plan, following Bicchieri's measurement chapter and the experimental vignette literature. Do not use when the question is the respondent's own sensitive behavior; use design-list-experiment. Not for deciding whether the practice is a norm (diagnose-social-norm), not for ordinary attitude items (draft-survey-items), and not for pretesting the scenes with respondents (draft-cognitive-interview-script).
+**Description (trigger rule):** Use when a team wants survey questions that test whether a practice (latrine use, tablets in pregnancy, girls' schooling) follows what others do or approve of: "write a vignette", "scenario questions for our norms survey". Writes one short story about a fictional person in versions that differ only in what others do and approve of, with the questions and how to read the answers. Do not use when nobody has yet asked whether others' expectations matter; use diagnose-social-norm. Not for the respondent's own hidden behavior; use design-list-experiment.
 
 **Use it when:**
-- `diagnose-social-norm` returned "cannot tell" or "pending field answers" on whether the practice is conditional on expectations, and the team wants a survey instrument that varies the expectations instead of asking about them
-- Someone asks to "write a vignette", for "scenario questions for the norms survey", or "how do we measure empirical and normative expectations"
-- A team wants to ask about a practice without asking respondents to report their own behavior or judge their neighbors to an interviewer's face, because the topic is awkward in this setting
-- A program needs a baseline expectations measure it can repeat after a norms intervention, such as one built with `write-social-norm-message` or `plan-collective-pledge`
+- Interviews or a diagnosis suggest a practice depends on what others do or approve of, and the team wants a survey test
+- Someone asks to "write a vignette" or for "scenario questions for the norms survey"
+- A program wants a measure of expectations to repeat after a norms activity
 
 **Do not use it when:**
-- The question is how common the respondent's own sensitive behavior is; `design-list-experiment` estimates that without asking anyone to admit it
-- The practice, the reference group, and the direction of interest are not yet established; run `diagnose-social-norm` first, since its diagnosis supplies the cues this skill varies
-- The team wants ordinary attitude, belief, or knowledge items with no variation; `draft-survey-items`
-- The scenes are written and need testing with a handful of respondents before fielding; `draft-cognitive-interview-script`
+- Nobody has yet asked the people concerned whether others' expectations matter; use `diagnose-social-norm`
+- Whose behavior and approval people track is a guess; use `map-reference-network`
+- The question is how common the respondent's own hidden behavior is; use `design-list-experiment`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a local qualitative researcher with experience of the practice, and an ethics reviewer, when:
-- The practice is harmful, illegal, or stigmatized (female genital cutting, child marriage, intimate partner violence, HIV disclosure), because the scenario itself can distress a respondent, a version in which the reference group approves can be read as endorsement, and the questions need review before any wording is fixed
-- Respondents are minors, or the reference group is the household's authority (a husband, a mother-in-law) and interviews cannot be held in private
-- The two-by-two design plus the subgroups the program wants push the sample per version below what a statistician would accept; a survey statistician should set the cells before fielding
+Tell the user to consult, before any wording is fixed:
+- A local qualitative researcher who knows the practice and an ethics reviewer, when the practice is harmful, illegal, or stigmatized (child marriage, partner violence), respondents are minors, or the people the cues name could overhear: a story can distress, and a version in which others approve can read as endorsement
+- A survey statistician, when four versions and the subgroups wanted leave few respondents per version
 
-Bring them: the base scene, the cue sentences, the three questions and the personal belief question, the sampling plan, and the social norm diagnosis the vignette serves.
+Bring them: the base story, the cues, the questions, and the sampling plan.
 
 ### draft-sifa-declaration
 
 **Title:** Write an AI-use disclosure statement  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
 **Tags:** research-transparency, credit, ai-disclosure  
 **Consumes:** ai-use-account  
 **Produces:** sifa-declaration  
 
-**What it does:** Turns a team's account of who did what into a SIFA declaration of where AI tools were involved in producing a piece of work.
+**What it does:** Turns a team's account of how a piece of work was made into a sIfA, Busara's role-by-role statement of where AI tools took part.
 
-**Description (trigger rule):** Use when writing up a report, paper, intervention design, or other deliverable and the team must disclose how people and AI tools each contributed. Also use when a journal, funder, or organizational policy asks for an AI-use disclosure and the current answer is "we used ChatGPT a bit for drafting", or when a team wants its human-AI division of labor inspectable before anyone asks. Produces a SIFA declaration (Statement of Intellectual Fellowship and Accountability): for each CRediT contributor role, who did the work, which AI tool helped, how much on a none/some/extensive scale, and the audit note behind that rating. It records what happened; it does not judge whether the AI use was acceptable. Do not use to examine the team's prior beliefs about the target population; that is audit-researcher-bias, which runs before the work. Not for ruling on whether a level of AI use passes a journal's or funder's policy, and not for evaluating an AI product (choose-ai-eval-level).
+**Description (trigger rule):** Use when a report, paper, design, or other piece of work is being finished and the team must say how people and AI tools each contributed, or when a journal, funder, or policy asks for an AI-use disclosure and the current answer is "we used ChatGPT a bit". Writes a sIfA statement: for each contributor role, who did the work, which AI tool helped, how, and how much. Do not use to examine the team's beliefs about its audience; use audit-researcher-bias. Not for ruling on whether the AI use is allowed.
 
 **Use it when:**
-- A report, paper, intervention design, or other deliverable is being finalized and the team needs a standardized statement of where AI tools were involved in producing it
-- A journal, funder, or organizational policy asks for an AI-use disclosure and the team's current answer is an unstructured paragraph ("we used ChatGPT a bit for drafting")
-- A team wants to make its human-AI division of labor inspectable before someone else asks; SIFA's framing is a deliberate, voluntary disclosure, not a compliance response
-- Someone asks "how do we say which parts the AI did?" or "do we have to disclose that it fixed our grammar?"
+- A report, paper, or design is being finished and the team must disclose where AI tools were involved
+- A journal, funder, or policy asks for an AI-use disclosure and the current answer is one vague paragraph
+- A project is starting and the team wants to record AI use as the work goes
 
 **Do not use it when:**
-- The team wants to examine its prior beliefs about the target population; that is `audit-researcher-bias`, which runs before the work, where this skill runs after it
-- The request is for a ruling on whether a level of AI involvement is acceptable or "will pass the journal's policy"; the declaration records what happened, and the ruling belongs to the journal, funder, or organization
-- The subject is an AI product's quality or impact rather than AI tools used in producing a piece of work; `choose-ai-eval-level` and `design-golden-dataset` cover that
+- The team wants to examine its beliefs about its audience before research; use `audit-researcher-bias`
+- The question is whether the AI use is allowed under a policy; the venue rules on that
+- The subject is an AI product the team built; use `choose-ai-eval-level`
 
 **When to bring in a specialist:**
 
-Tell the user to take the question to the venue's editor, their organization's research integrity officer, or legal counsel when:
-- The question is whether a given level of AI involvement is acceptable under a journal's, funder's, or organization's policy; the declaration is the input to that ruling, not the ruling itself
-- Contributors disagree about who performed a role, or about whether someone qualifies as an author at all; CRediT roles do not settle authorship disputes, and an integrity officer or the venue's authorship policy does
-- AI tools processed confidential, participant, or third-party material, raising questions of consent, data protection, or copyright that go beyond disclosure; those belong with counsel or a data protection officer
+Tell the user to take the question to the venue's editor, the organization's research-integrity officer, or counsel when:
+- The question is whether the AI use is acceptable under a policy; the statement is the input to that ruling
+- Contributors disagree about who performed a role or who is an author; CRediT does not settle authorship
+- AI tools processed confidential, participant, or third-party material; consent, data protection, and copyright go beyond disclosure, to counsel or a data-protection officer
 
-Bring them: the completed declaration, the raw AI-use account, and the text of the policy in question.
+Bring them: the statement, the team's raw account, and the policy text.
 
 ### draft-survey-items
 
 **Title:** Write survey questions people can answer  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** measurement, survey-design, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
 
-**What it does:** Writes closed-ended survey items that respondents with little schooling can answer accurately when an enumerator reads them aloud.
+**What it does:** Writes survey questions with fixed answer options for defined constructs (a construct is the one thing a question is meant to measure).
 
-**Description (trigger rule):** Use when a team needs to write survey questions ("write items for our baseline", "we need questions that measure X", "turn our measurement plan into a questionnaire") for respondents with little schooling or who answer orally through an enumerator. Also use when a draft questionnaire leans on agree/disagree statements, unlabeled 1-to-10 scales, or reverse-worded items and someone asks whether that will work in the field. Produces closed-ended items, one idea each, every option labeled in words, an enumerator read-aloud version, and a pretest hand-off. Do not use when the items exist and the question is whether respondents understand them; use draft-cognitive-interview-script. Not for translating items (translate-survey-instrument), phone delivery (adapt-survey-for-phone-mode), sensitive behaviors that need an indirect design (design-list-experiment), choosing an existing validated measure, or developing or validating a scale; those last two are separate skills.
+**Description (trigger rule):** Use when a team knows what it wants to measure and needs the survey questions written ("write items for our baseline"), or when a draft leans on agree/disagree statements or number-only scales. Writes one-idea questions with every answer option in words, the script an interviewer reads, and a check against fixed wording rules. Do not use when the questions exist and you need to know whether respondents understand them; use draft-cognitive-interview-script. Not for putting questions into another language; use translate-survey-instrument.
 
 **Use it when:**
-- A measurement plan names the constructs ("intention to buy fertilizer early", "perceived household support") and someone asks "can you write the questions?" or "we need items for the baseline"
-- A draft questionnaire uses agree/disagree batteries, numbered scales with labels only at the ends, or reverse-worded items, and the team asks whether that will work with their respondents
-- Enumerators report respondents saying yes to everything, choosing the first option every time, or asking what a question means, and the team wants to rewrite the items rather than retrain
-- A team wants the exact words an enumerator should read aloud, including the response options, so every interview asks the same thing
+- A team has named what it wants to measure and asks for the questions
+- A draft uses agree/disagree statements, number-only scales, or reverse-worded items
+- Interviewers report respondents saying yes to everything
 
 **Do not use it when:**
-- The items exist and the question is whether respondents understand them; run `draft-cognitive-interview-script`, which this skill hands its output to
-- The items exist in one language and are needed in another; that is `translate-survey-instrument`
-- The survey is moving to phone or IVR delivery; `adapt-survey-for-phone-mode` converts the items
-- The behavior is sensitive or stigmatized (sexual behavior, violence, bribes, drug use) and the team wants a better direct question; a better direct question does not remove the social-desirability pressure, and `design-list-experiment` builds the indirect design that does
-- The team wants to pick an existing validated measure for a construct, or to build and validate a new scale (item pool, factor structure, reliability); choosing an existing measure and developing or validating a new scale are separate skills, and this one writes draft items only
+- The questions exist and the need is to check that respondents understand them; use `draft-cognitive-interview-script`
+- The questions are needed in another language; use `translate-survey-instrument`
+- The questionnaire is moving to phone; use `adapt-survey-for-phone-mode`
+- The team needs the rate of a stigmatized or illegal behavior; use `design-list-experiment`
+- The team has not decided what to measure; use `plan-evaluation-design`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a survey methodologist, and for clinical constructs a clinician or psychometrician, when:
-- Any construct is a sensitive or stigmatized behavior (sexual behavior, violence, substance use, illegal income); the indirect design in `design-list-experiment` is the first stop, and a methodologist should review whatever direct items remain
-- Any construct is clinical (depression, anxiety, disability, cognitive impairment); program-written items are not a substitute for a screener, and a wrong item misclassifies people who then get or miss a referral
-- Items must produce scores comparable across rounds, sites, or languages; wording changes made for comprehension can break the comparison, and a psychometrician can say which
+Tell the user to consult a survey methodologist (a clinician for a clinical construct) when:
+- A construct is clinical (depression, anxiety, disability) and needs a validated screener
+- Several questions are to be added into one score that drives a decision
+- Scores must be compared across rounds, languages, or with a published scale
+- A stigmatized or illegal behavior is a main outcome
 
-Bring them: the construct definitions, the items with intended meanings, the respondent description, and the design check table.
+Bring them: the construct definitions, the questions with their intended readings, and the design check.
 
 ### draft-tdf-interview-guide
 
@@ -1327,110 +1279,95 @@ Bring them: the value list, the prompts, and the delivery notes.
 ### estimate-cost-effectiveness
 
 **Title:** Estimate the cost per unit of behavior change  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** cost-effectiveness, quantitative, scaling  
-**Consumes:** analysis-plan, evaluation-design  
+**Consumes:** effect-estimate  
+**Produces:** cost-effectiveness-estimate  
 
-**What it does:** Estimates what one program paid for each unit of behavior change or outcome it produced, in a form that can be set beside another program's number.
+**What it does:** Estimates what a program paid for each unit of behavior change it caused.
 
-**Description (trigger rule):** Use when a program has an effect estimate and someone asks "what did it cost per child immunized", "how does this compare per dollar with the other program", "is this worth scaling at this price", or a funder wants cost-effectiveness in the report. Also use when a team is about to divide its budget by its headline number and call that the cost per outcome. Produces a cost per unit of behavior change or outcome from ingredients-based costing, a stated perspective, a stated currency year and discount rate, the J-PAL impact-per-$100 convention, and a sensitivity table, so programs can be compared (Dhaliwal, Duflo, Glennerster and Tulloch; J-PAL; Kraft). Do not use when the effect is not yet known and the question is what size to expect; use estimate-expected-effect instead. Not for whether cost and effect hold at scale (assess-scalability), setting the size of a reward (design-incentive-scheme), or comparing programs with different outcomes, which needs a benefit-cost analysis.
+**Description (trigger rule):** Use when a program has an effect estimate and someone asks what it cost per additional child immunized or student enrolled, or how it compares per dollar with another program, or when a team is about to divide its budget by its headline number. Prices every input the program used, paid or not, and reports cost per unit of effect with the choices behind it and how far the number moves. Do not use when the effect is not yet known; use estimate-expected-effect. Not for whether the cost will hold at scale; use assess-scalability.
 
 **Use it when:**
-- A trial or evaluation has an effect estimate and the team, a funder, or a ministry asks "what did it cost per additional child immunized, per percentage point, per outcome?"
-- Two or more programs with the same outcome need to be compared per dollar, or one program needs its number in a funder's comparison table
-- A team is about to divide the total budget by the number of people reached, or by the headline effect, and call that the cost per outcome
-- The effect comes from a published study elsewhere and the team wants a cost-effectiveness number for its own setting before running a trial
-- A scale-up or renewal decision will be argued on cost, and the only costing so far is the accounting budget
+- An evaluation has an effect and a funder asks "what did it cost per additional child immunized?"
+- Two programs with the same outcome must be compared per dollar
+- A team is about to divide its budget by the number of people reached and call that the cost per outcome
 
 **Do not use it when:**
-- The effect is not known yet and the question is what size to plan for; `estimate-expected-effect` produces the discounted effect this skill then consumes
-- The question is whether cost and effect will hold when the program grows, changes implementer, or moves region; `assess-scalability`
-- The task is to set the size, form, or timing of a reward; `design-incentive-scheme`; this skill costs the scheme once it exists
-- The programs being compared have different outcomes (immunization versus school attendance) and the decision needs their value weighed; that is a benefit-cost analysis or a decision-maker's weights, the escalation case below
-- The team wants a probability distribution over the cost-effectiveness ratio or the expected value of collecting more information; that is a Bayesian analysis, a different procedure from the deterministic sensitivity ranges here, so ask for one directly
+- The effect is not known and the question is what size to plan for; use `estimate-expected-effect`
+- The question is whether the cost will hold at scale; use `assess-scalability`
+- The task is to set the size or form of a reward; use `design-incentive-scheme`
 
 **When to bring in a specialist:**
 
 Tell the user to consult a health or development economist with costing experience when:
-- The comparison will move budget between programs with different outcomes, which needs a benefit-cost analysis or an explicit statement of the decision-maker's weights, not a cost-effectiveness ratio
-- The effect is a health outcome to be expressed in life-years or disability-adjusted life-years, which carries conventions this skill does not implement
-- Costs run over several years with uncertain prices or exchange rates, or the funder's conventions conflict with the J-PAL defaults used here
-- The result will be published beside other programs' ratios and the comparator costing cannot be checked
+- The decision will move money between programs with different outcomes, which needs a cost-benefit analysis or the decision-maker's explicit weights
+- The outcome is to be expressed in life-years or disability-adjusted life-years
+- Costs run over several years with uncertain prices, or the funder's conventions conflict with the defaults here
+- The ratio will be published beside others whose costing cannot be checked
 
-Bring them: the ingredients table with its paid, donated, and borrowed marks, the effect with its source and interval, the perspective and conventions chosen, and the sensitivity table.
+Bring them: this estimate, with its ingredients table and sensitivity rows.
 
 ### estimate-expected-effect
 
 **Title:** Set a realistic effect size to plan for  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** evidence-synthesis, experimental-design, quantitative  
 **Consumes:** evidence-scan-brief  
 **Produces:** effect-size-benchmark  
 
-**What it does:** Turns the published effect sizes a team is relying on into a discounted planning range for one test.
+**What it does:** Sets the effect size a test should plan on from the published estimates a team supplies.
 
-**Description (trigger rule):** Use when a team needs the effect size to plan a test around and the numbers in hand come from published studies: "the paper found 12 points, what should we expect?", "what effect size goes in the power calculation?", "is d = 0.45 realistic for our SMS program?". Also use when a proposal or power calculation carries a published or meta-analytic effect unchanged, or when a team needs the smallest effect its decision would act on. Discounts published estimates for publication bias, lab-to-field shrinkage, and the academic-versus-practitioner gap (Maier et al. 2022; Ferraro and Tracy 2022; DellaVigna and Linos 2022), keeps the expected effect separate from the smallest effect worth detecting, and returns a planning range in the outcome's units and in standard deviations. Do not use to judge whether one study fits your setting; run assess-evidence-transferability first and bring its verdict here. Not for the sample size (estimate-sample-size), and not for finding what evidence exists (assess-evidence-base).
+**Description (trigger rule):** Use when a team needs the effect size to plan a test on and has published estimates in hand: "the paper found 12 points, what should we plan for?", "what effect goes in the power calculation?", "is d = 0.45 realistic for us?". Reads the studies, puts each estimate in the test's units, corrects for selective publication and delivery at scale, and returns a range and one number to plan on. Do not use to judge whether one study applies to your setting; use assess-evidence-transferability. Not for the sample size; use estimate-sample-size.
 
 **Use it when:**
-- Someone asks "what effect size should we plan for?", "what goes in the power calculation?", or "is the number from that paper realistic for us?"
-- A proposal, theory of change, or power calculation carries a published or meta-analytic effect size unchanged (Mertens et al.'s d = 0.45, or "the trial found 12 points") as the program's expected effect
-- `assess-evidence-transferability` has returned a verdict and a provisional discount range, and the team needs a planning number from it
-- An evidence scan brief from `assess-evidence-base` lists several effect sizes and the team must pick one number to design around
-- A funder or reviewer asks "what is the smallest effect that would justify this program?" and nobody has separated that from the effect the team hopes for
+- Someone asks "what effect should we plan for?" or "is that paper's number realistic for us?"
+- A proposal or power calculation treats a published effect as the program's expected effect
+- A scan of the evidence turned up several estimates and the team needs one number
 
 **Do not use it when:**
-- The question is whether one specific study applies to the user's population; `assess-evidence-transferability` judges fit on five dimensions, and this skill consumes its verdict
-- The team needs the sample size or the minimum detectable effect for a fixed sample; `estimate-sample-size` turns this skill's benchmark into those
-- Nobody has looked for evidence yet; `assess-evidence-base` finds what exists, with effect sizes where reported
-- The team needs the full cost-per-outcome comparison that sets a program's threshold; `estimate-cost-effectiveness` does that arithmetic, and this skill only names the cost inputs it needs
-- The primary outcome, comparison condition, and locked threshold are the question; `plan-evaluation-design` writes that plan and consumes this benchmark
+- The question is whether one study's finding applies to the user's setting; use `assess-evidence-transferability`
+- The team has an effect to plan on and needs the sample size; use `estimate-sample-size`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist or an evaluation methodologist when:
-- The decision is a scale-up or a policy and no field evidence exists in a comparable setting; the discounts then rest on high-income benchmarks alone, and a local pilot sized by `estimate-sample-size` is the honest next step
-- The low end of the range is at or near zero while the test's budget or the program's exposure is large; whether to run the test at all is a judgment call about the decision, not about the arithmetic
-- The outcome is clinical or carries financial risk (medication adherence, HIV testing, money locked in savings), so the smallest effect worth detecting has a harm side that cost arithmetic does not capture
-- The meta-analytic evidence the team relies on is itself contested (the Mertens versus Maier dispute is the live example) and the choice of corrected figure changes the verdict
+Tell the user to consult an evaluation methodologist, or a behavioral scientist who knows the setting, when:
+- The decision is a scale-up, a policy, or a large budget, and no estimate comes from delivery like the user's
+- The low end is near zero and the test is expensive
+- The outcome carries clinical or financial risk, so the smallest effect worth acting on has a harm side
 
-Bring them: the source table with conversions, the discount arithmetic, the range, the smallest effect worth detecting with its rationale, and the decision the test informs.
+Bring them: the estimates table, the corrections, the range, and the decision.
 
 ### estimate-sample-size
 
 **Title:** Work out how big the sample must be  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** experimental-design, quantitative  
 **Consumes:** effect-size-benchmark, evaluation-design  
 **Produces:** power-calculation  
 
-**What it does:** Estimates the sample a test needs to detect its planned effect, or the smallest effect a fixed sample can detect.
+**What it does:** Computes the sample a test needs to detect a planned effect, or the smallest effect a fixed sample can detect.
 
-**Description (trigger rule):** Use when someone asks "how many people do we need?", "how many villages, schools, or clinics?", "is 400 enough?", or "what is the smallest effect we could detect with the sample we have?", or when a funder wants a power calculation. Also use when a trial will randomize groups rather than individuals, or when take-up or attrition will be well below 100 percent, since each changes the answer by multiples. Computes the sample or clusters per arm from a planned effect, alpha, power, variance, intracluster correlation, take-up, attrition, and covariates; reports the minimum detectable effect for a fixed sample; runs a sensitivity table; flags Type S and Type M risk (Bloom 1995; McConnell and Vera-Hernández 2025; Gelman and Carlin 2014). Ships a script. Do not use to decide what effect to plan for; run estimate-expected-effect first. Not for the randomization structure (choose-trial-design), the measurement plan (plan-evaluation-design), or an Evidential setup (design-evidential-experiment).
+**Description (trigger rule):** Use when someone asks "how many people, villages, or clinics do we need?", "is 400 enough?", or "what could we detect with the sample we have?", or when a funder wants a power calculation. Runs a script for the sample size or the smallest detectable effect, adjusting for group randomization, take-up, attrition, and covariates, and says whether the feasible sample can detect the planned effect. Do not use to decide what effect to plan on; use estimate-expected-effect. Not for choosing the unit of randomization; use choose-trial-design.
 
 **Use it when:**
-- Someone asks "how many people do we need?", "how many clinics or villages?", "is our sample big enough?", or "what could we detect with 2,000 households?"
-- A funder, ethics board, or pre-registration form asks for a power calculation or a minimum detectable effect
-- `choose-trial-design` has set a cluster, stepped-wedge, factorial, or encouragement design and the team needs to know what that design costs in sample
-- `estimate-expected-effect` has produced a benchmark and the next question is whether the program can afford to test it
-- A proposal states a sample size with no stated effect, variance, or intracluster correlation behind it
+- Someone asks "how many people do we need?", "how many clinics or villages?", or "is our sample big enough?"
+- A funder, ethics board, or registry asks for a power calculation
+- The sample is fixed by budget and the team asks what it could detect
 
 **Do not use it when:**
-- Nobody has decided what effect to plan for, or the only number is a published headline; `estimate-expected-effect` discounts it into a benchmark first
-- The unit of randomization is still open ("people or villages?"); `choose-trial-design` picks it, and the sample depends on it
-- The team needs the primary outcome, comparison condition, and data feasibility written down; `plan-evaluation-design` does that and consumes this calculation
-- The test will run in Evidential and the question is what to enter in its power fields; `design-evidential-experiment` takes this calculation's inputs
-- The outcome will be measured with a list experiment; `design-list-experiment` carries the extra variance that method costs
+- Nobody has decided what effect to plan on, or the only number is a published headline; use `estimate-expected-effect`
+- The unit of randomization is still open ("people or villages?"); use `choose-trial-design`
 
 **When to bring in a specialist:**
 
 Tell the user to consult a statistician or an evaluation methodologist when:
-- Fewer than about 30 clusters are feasible in total; small-sample cluster inference needs methods this script does not implement, and the design may need to change
-- The outcome is rare (a baseline rate of a few percent or less), a count, or a time-to-event, where the two-proportion and SD formulas do not apply
-- The design is a stepped-wedge, a factorial with more than two components, or unequal allocation across arms, or cluster sizes vary widely; the design effect above is the equal-cluster, two-arm case
-- Take-up is expected to be low or two-sided (control units get the treatment too), so the effect on compliers needs an instrumental-variables power calculation
-- The calculation will be used for an ethics submission or a pre-registration, where the method must be defended
+- Fewer than 30 groups are feasible; with 10, the script understates the sample by about 30%
+- The outcome is rare (baseline below 5% or above 95%), a count, or a time until an event
+- The design is stepped-wedge, factorial, or has unequal arms or group sizes; the script assumes two equal arms of equal groups
+- An ethics board or registry will review the calculation
 
-Bring them: the inputs table with sources, the script command and output, the sensitivity table, the feasible sample, and the design from `choose-trial-design`.
+Bring them: the inputs table, the script output, the sensitivity table, and the design.
 
 ### identify-wise-intervention-target
 
@@ -1527,173 +1464,161 @@ Bring them: the practice, the design, the questions, and the role table.
 ### plan-agency-measurement
 
 **Title:** Plan how to measure agency in a digital tool  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** agency, measurement, psychometrics, survey-design, ai-eval, llm-assisted-analysis  
-**Consumes:** agency-definition, ai-product-account  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** agency, measurement, psychometrics, survey-design, ai-eval  
+**Consumes:** agency-definition  
 **Produces:** measurement-plan  
 
-**What it does:** Plans how to measure a defined agency construct for a digital or AI tool's users.
+**What it does:** Plans how to measure a defined agency construct for the users of a digital or AI tool.
 
-**Description (trigger rule):** Use when agency has been defined for a digital or AI tool's users, usually by define-agency-construct, and the team must decide how to measure it: "what do we ask in-app versus in our phone survey?", "here is our agency definition; build the measurement plan", "which published scales and items could we use?", "can an LLM score agency in our chat logs?". Also use when a team proposes a specific agency measure (an in-chat check, a scale, a log signal) and asks whether it will hold up. Produces a plan on the 2x2 agency framework: on- and off-platform measures per focus cell, candidate instruments with items (found by literature search, or drafted examples labeled as such), their source and evidence base, and next steps for research, adaptation, testing, and interpretation. Do not use when nobody has said what agency means here; run define-agency-construct first. Not for drafting a full questionnaire (draft-survey-items) or auditing LLM-coded transcripts (audit-llm-qualitative-coding).
+**Description (trigger rule):** Use when a team building or evaluating a digital or AI tool has said what agency means for its users and must decide how to measure it: "what do we ask in the app and what in the phone survey?", "which scales could we use?", "can a model score agency in our chat logs?". Gives each chosen cell of The Agency Fund's 2x2 agency framework a measure on the platform and one off it, with the checks each needs. Do not use when nobody has said what agency means here; use define-agency-construct. Not for writing the questionnaire; use draft-survey-items.
 
 **Use it when:**
-- A team has an agency definition (from `define-agency-construct` or its own) and asks "what do we measure, in the app and off it?"
-- A team asks "which published scales could we use for this, and what are the items?"
-- A team plans to score agency in conversation logs with a language model and wants to know what that score can show and what else to measure beside it
-- A team proposes a specific measure (a one-item in-chat check, a scale from another study, a log signal such as "messages without asking the bot") and asks whether it will hold up for a funder claim or a comparison
-- A team plans to translate an agency scale built elsewhere and use it with its own users
+- A team has named its agency constructs and asks what to measure, in the app and off it
+- A team asks which published scales fit, and what their items are
+- A team proposes a measure (an in-chat question, a borrowed scale, a model scoring chats) and asks whether it will hold up
 
 **Do not use it when:**
-- Nobody has said what agency means for these users; run `define-agency-construct` first
-- The team wants the full questionnaire written, with read-aloud and enumerator versions; use `draft-survey-items`, which takes this plan as input
-- An LLM has already coded transcripts and the question is whether the codes can be trusted; use `audit-llm-qualitative-coding`
-- The team needs the A/B comparison between two versions set up; use `design-evidential-experiment`
-- The team needs a primary outcome, comparison condition, and smallest effect for an impact evaluation; use `plan-evaluation-design`, with this plan supplying the agency measures
+- Nobody has said what agency means for these users; use `define-agency-construct`
+- The team wants the questionnaire written; use `draft-survey-items`
+- The question is an impact evaluation's outcome, comparison, or sample; use `plan-evaluation-design`
 
 **When to bring in a specialist:**
 
-Tell the user to bring in a specialist when:
-- The plan needs psychometric or survey-design support: choosing and adapting instruments, building new scales, testing reliability, structure, or invariance, or backing a funder-facing or published claim; bring in a psychometrician or survey methodologist.
-- The plan relies on more comprehensive LLM-based analysis or labeling of naturalistic data (conversation logs, voice notes, open-ended answers); bring in a researcher experienced in validating LLM-based measurement against human coding.
-- Measures ask about decision-making power at home with women, girls, or minors; asking can put people at risk, so bring in an ethics review board and a researcher experienced in women's safety research before fielding anything.
-- Conversation logs or voice notes will be analyzed, especially from minors or about health; bring in a data protection lead and the ethics review board on consent, de-identification, and retention.
+Tell the user to bring in:
+- A psychometrician or survey methodologist, when the claim goes to a funder or a journal, or scores will be compared across groups or languages
+- A researcher who has checked model coding against human coders, when a model will code conversations
+- An ethics board and a researcher in women's safety, before asking women, girls, or minors who decides at home; asking can put them at risk
+- A data protection lead, before analyzing conversations of minors or about health
 
-Bring them: the definition document, this plan, the population description, and what users consented to.
+Bring them the definition, this plan, and a description of the users and their consent.
 
 ### plan-evaluation-design
 
 **Title:** Plan how you will measure success  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
-**Tags:** experimental-design, pre-registration, measurement  
-**Consumes:** target-behavior-brief, comb-barrier-hypotheses, intervention-levers  
-**Produces:** evaluation-design  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Tags:** measurement, experimental-design  
+**Consumes:** target-behavior-brief  
+**Produces:** measurement-plan  
 
-**What it does:** Produces a pre-registration-style measurement plan for one defined behavior, locked in before launch.
+**What it does:** Chooses the one outcome that will show whether a defined behavior changed, with the data source behind it.
 
-**Description (trigger rule):** Use when a target behavior is defined but nobody has agreed how to measure success: the primary outcome, the comparison condition, and the smallest effect worth detecting. Also use when someone asks "how will we actually know if this worked?" or "what counts as success here?", or when an intervention is about to launch with no named primary outcome. Produces a pre-registration-style measurement plan fixed before launch, so nobody can redefine success after seeing the results. Do not use on a vague program goal; run define-key-behavior first, since there is no single behavior to measure yet. Not for configuring a rapid product experiment in an experimentation tool (design-evidential-experiment), and not for deciding which level of AI evaluation a product is ready for (choose-ai-eval-level).
+**Description (trigger rule):** Use when a target behavior is defined but nobody has agreed what will be measured to show it changed, or someone asks "how will we know if this worked?" or "what are our indicators?". Names one primary outcome, where its data will come from, when it is measured, and the smallest change worth detecting, fixed before launch. Do not use when the goal is still vague; use define-key-behavior. Not for choosing the comparison or how to randomize (choose-trial-design), or for fixing the analysis (write-pre-analysis-plan).
 
 **Use it when:**
-- A target behavior brief exists and someone is about to design or launch an intervention with no named primary outcome, no comparison condition, and no agreement on what effect size would actually matter
-- `decompose-comb-barriers` has produced barrier hypotheses and the team needs to know what mediating measure would let those specific hypotheses be evaluated, not just whether the headline outcome moved
-- Someone asks "how will we actually know if this worked?" or "what counts as success here?"
-- A funder or partner asks for "the M&E plan" or "the evaluation design" for a behavior the program has already defined
+- A target behavior is defined and an intervention is about to launch with no named primary outcome
+- Someone asks "how will we know if this worked?", or a funder asks for "the indicators" for a behavior already chosen
+- A team has several candidate measures (logins, deposits, a survey score) and must pick one
 
 **Do not use it when:**
-- The input is a vague program goal; run `define-key-behavior` first. There is no single behavior yet to measure
-- The team wants a launch-ready configuration for a rapid experiment in Evidential (arms, randomization unit, power inputs, delivery mapping); `design-evidential-experiment` does that, and consumes this skill's brief
-- The question is which level of AI evaluation an AI product is ready for; `choose-ai-eval-level`
-- The team wants to build or pretest the survey instrument itself; instrument skills such as `draft-cognitive-interview-script` come after the outcome is chosen
+- The goal is still vague, with no single behavior to measure; use `define-key-behavior`
+- The question is what the outcome is compared against, or what to randomize; use `choose-trial-design`
+- The outcome is chosen and the team needs the analysis or a registry entry; use `write-pre-analysis-plan`
+- The question is how many people the test needs; use `estimate-sample-size`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an evaluation methodologist or statistician, and where relevant a research ethics board, when:
-- The team needs an actual power calculation (sample size from baseline variance, intra-cluster correlation, expected attrition); this brief supplies the program-value input to that calculation, not the calculation itself
-- The rollout forces a clustered, stepped-wedge, or phased design, or randomization is not possible and a quasi-experimental comparison is being considered; choosing among these is a methodologist's call, not a template's
-- The primary outcome is high-stakes (health, safety, eligibility for benefits) or data collection involves vulnerable participants, so the plan needs ethics review before it is locked
-- A funder requires formal pre-registration (a trial registry, OSF) or a full pre-analysis plan with specified models; this brief is the input to that document, not a substitute for it
+Tell the user to consult:
+- **A research ethics board**, when the outcome concerns health, safety, or benefits eligibility, or the data come from children or other vulnerable people
+- **A survey methodologist**, when the only feasible measure is a self-report of a sensitive behavior, or a state of mind that needs a tested scale
+- **An evaluation methodologist**, when the result will decide a national rollout, or the only source is an untested proxy
 
-Bring them: this brief with its open questions, any baseline data on the primary outcome, and the rollout plan.
+Bring them: this plan with its open questions, any baseline figures, and who holds the data.
+
+### plan-prototype-test
+
+**Title:** Test a draft with a few people before the pilot  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Tags:** qualitative, prototyping, user-testing  
+**Consumes:** intervention-draft  
+**Produces:** prototype-test-plan  
+
+**What it does:** Plans a test of a draft intervention with a few people from the audience, before any pilot.
+
+**Description (trigger rule):** Use when a draft of an intervention exists (a message, form, script, product change, or a practice to try at home) and the team wants to try it with a few people from the audience before any pilot: "show it to some users first", "pretest the materials". Plans what to learn, with whom, how, and the rule for what is kept, changed, or dropped. Do not use when the question is whether the program can be delivered at small scale; use design-pilot-feasibility-study. Not for pretesting survey questions; use draft-cognitive-interview-script.
+
+**Use it when:**
+- A draft exists and someone asks to "show it to a few people first", "user test it", or "pretest the materials"
+- A draft is about to enter a pilot that nobody from the audience has seen
+- A team has only a sketch and asks whether the idea is worth building
+- A program wants households to try a new practice at home before promoting it
+
+**Do not use it when:**
+- The draft is not written yet; use `draft-lever-content`
+- The draft is a set of survey questions; use `draft-cognitive-interview-script`
+- The question is whether the program can recruit, keep, and serve people at small scale; use `design-pilot-feasibility-study`
+
+**When to bring in a specialist:**
+
+Tell the user to consult a specialist before the first session when:
+- The draft changes how people take medication, feed an infant, or handle money: a clinician, nutritionist, or financial compliance lead approves what participants will be asked to try
+- Participants are children, patients, or people who depend on the organization for a service: an ethics reviewer or safeguarding lead decides what consent is needed
+
+Bring them: the plan, the session guide, and the decision rule.
 
 ### plan-scale-up-strategy
 
 **Title:** Plan how a tested program reaches routine delivery  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** scaling, implementation-science, implementation  
 **Consumes:** scalability-assessment  
+**Produces:** scale-up-strategy  
 
-**What it does:** Turns a tested intervention plus its scalability assessment into a strategy for moving it into a system that will deliver it routinely.
+**What it does:** Plans how a tested program moves into a system that will deliver it routinely.
 
-**Description (trigger rule):** Use when a tested intervention must move from a pilot into a system that will deliver it routinely and someone asks "how do we scale this?", "how do we hand this to the ministry?", or "who owns this after the project ends?". Also use when a scalability assessment returned "scale" or "scale after these tests" and the next document is the strategy, or when a partner has agreed in principle and nobody has written down the sequence, owners, or financing. Produces a scale-up strategy after the WHO/ExpandNet guide (2010): the innovation package, the user organization, the resource team, the environment, the strategic choices (vertical or horizontal scaling, pace, financing, monitoring), and an action plan with owners and dates. Do not use before the effect has been judged likely to survive scale; run assess-scalability first. Not for recording changes to the intervention itself (specify-intervention-adaptations), and not for the fidelity indicators the roll-out will track (design-fidelity-monitoring).
+**Description (trigger rule):** Use when a tested program must move into a system that will run it routinely and someone asks "how do we scale this?", "how do we hand this to the ministry?", or "who runs this when our grant ends?". Walks nine planning steps, from the program's parts to the organization that will own it, and ends in prioritized actions, each with an owner and a date. Do not use when nobody has judged whether the effect will survive scale; use assess-scalability. Not for deciding which changes to the program are allowed; use specify-intervention-adaptations.
 
 **Use it when:**
-- Someone asks "how do we scale this?", "how do we get the ministry to take this over?", or "what happens to this when our grant ends?"
-- `assess-scalability` returned "scale" or "scale after these tests" and the next document is the plan
-- A government, district, or large delivery partner has agreed in principle and the sequence, owners, financing, and monitoring are not written down anywhere
-- A donor asks for a sustainability or exit plan for a program that currently runs on project staff
-- The team is about to expand to more sites "the same way as the pilot" without deciding who will run it routinely
+- Someone asks "how do we scale this?", "how do we hand this to the ministry?", or "what happens when our grant ends?"
+- A government or large partner has agreed in principle, and nobody has written down the sequence, owners, or financing
+- A funder asks for a sustainability or exit plan for a program run by project staff
 
 **Do not use it when:**
-- Nobody has judged whether the effect will survive scale; run `assess-scalability` first, because a strategy for an effect that will not survive is a plan to spend money
-- The question is which parts of the intervention can change for the new sites and which cannot; `specify-intervention-adaptations`, whose core-component list is this skill's input
-- The question is what indicators the roll-out will track to catch drift; `design-fidelity-monitoring`
-- The causal chain the scale-up must preserve is not written down; `draft-theory-of-change` first
-- A past roll-out failed and the team wants to know why before planning again; `review-prior-intervention`
+- Nobody has judged whether the effect will survive scale; use `assess-scalability` first
+- The question is which parts of the program may change for new sites; use `specify-intervention-adaptations`
+- The question is which indicators will show whether delivery drifts; use `design-fidelity-monitoring`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a health-systems or public-policy specialist with scale-up experience, the partner government's own planning and legal staff, and where relevant a public-finance specialist, when:
-- The scale-up requires a change in policy, regulation, or law (a cadre allowed to dispense, a guideline rewritten, a procurement rule), because the strategy then depends on a process the team does not control and whose timeline it cannot set
-- The government or delivery partner has not asked for the program; building demand for adoption is political work, and a strategy that assumes adoption will mislead the donor
-- Financing after the project depends on a line in a national or subnational budget; when that line can enter, and what it displaces, is a public-finance question
-- Others are already copying the program uninvited and the copies drop core components; whether to support or distance from them has reputational and safety consequences
+Tell the user to consult a health-systems or public-policy specialist with scale-up experience, with the government's planning and legal staff, when:
+- The scale-up needs a change in law or regulation, such as who may dispense a product, so the timeline is not the team's to set
+- The organization expected to run the program has not asked for it
+- Financing after the project depends on a public budget line; add a public-finance specialist
+- Uninvited copies drop essential parts, with safety consequences
 
-Bring them: the scalability assessment, the innovation package with its core components, the environment table, and the draft action plan with its unowned lines marked.
-
-### plan-trials-of-improved-practices
-
-**Title:** Try candidate practices in real homes first  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** qualitative, barrier-analysis  
-**Consumes:** intervention-levers, barrier-diagnosis  
-
-**What it does:** Plans a round of household trials in which families try one or two candidate practices for about a week, then report what they kept, changed, or dropped.
-
-**Description (trigger rule):** Use when you have one or more candidate practices (a new feeding routine, a handwashing step, a way of storing tablets) and want to know whether real households will keep doing them before you build counseling or a program around them. Also use when a team is about to pick a "recommended practice" from a guideline without asking families whether it fits their homes, or when positive-deviant practices need to be tried by ordinary households. Produces a plan for Trials of Improved Practices (TIPs, the Manoff Group method): a practice menu tied to barriers, two household-visit protocols, a recording sheet, and the decision rule for keeping a practice. Do not use when you need a formal pilot with recruitment, retention, and go/no-go thresholds; use design-pilot-feasibility-study instead. Not for finding candidate practices in the first place (identify-positive-deviants) or for writing the counseling script once practices are chosen (draft-lever-content).
-
-**Use it when:**
-- A team has candidate practices (from a guideline, from positive deviants, or from its own levers) and asks "will families actually do this?" before building counseling content around them
-- Someone says "let's test the recommended practices with a few households first" or "we want mothers to try it before we roll it out"
-- A practice is being chosen on expert judgment alone, the program has household access, and nobody has watched a family try it at home
-- Positive-deviant practices have been identified and need to be tried by ordinary households to see whether they transfer
-
-**Do not use it when:**
-- No candidate practices exist yet, or the barrier they address is unknown; run `identify-positive-deviants` or `decompose-comb-barriers` first
-- The question is whether a program can recruit, retain, and deliver with fidelity, judged against go/no-go thresholds; that is `design-pilot-feasibility-study`
-- The practices are already chosen and the task is the counseling card or message; that is `draft-lever-content`
-- The team wants to know whether a practice changes an outcome (growth, adherence rates); TIPs reports acceptability, not effect; go to `plan-evaluation-design`
-
-**When to bring in a specialist:**
-
-Tell the user to consult a clinician, a nutritionist, or the program's safeguarding lead when:
-- A practice involves medication dosing or timing, feeding of infants under six months, or anything else with clinical risk; a clinician must approve every option on the menu, and every allowed modification, before a household tries it
-- A practice adds a food or a cost in a season when households are short, so the trial could displace something the family needs; a nutritionist or program specialist should check the menu and the reduced versions
-- Households modify a practice in a way the team cannot judge safe at visit 2; stop the tally for that practice until someone qualified has looked
-
-Bring them: the practice menu with its barrier links, the list of allowed modifications, and the recording sheet.
+Bring them: the scalability judgment, the parts table, the system-changes table, and the operational plan.
 
 ### review-prior-intervention
 
 **Title:** Review a past program: bad idea or bad delivery?  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** IL  
-**Tags:** process-evaluation, implementation, pre-mortem  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Tags:** process-evaluation, implementation, post-mortem  
 **Consumes:** prior-intervention-record  
 **Produces:** intervention-post-mortem  
 
-**What it does:** Turns a team's account of a past intervention into a structured review that separates what was planned from what was actually done.
+**What it does:** Judges whether a past program failed because of its idea or because of its delivery.
 
-**Description (trigger rule):** Use when a team has a written record of a program it already tried and must decide whether to retry it, change it, or drop the idea. Also use when someone says "we tried this before and it didn't work" as if that settles whether the idea is bad, or before re-running define-key-behavior or assess-evidence-base on a goal the team has a history with. Compares what was planned with what happened, judges whether the idea or its delivery failed (or whether the data cannot tell), and checks the team's explanation against the data it actually collected. A written record is required; memory alone is not enough. Do not use to design the next attempt; that is intervention design (select-intervention-levers). Not for scanning the external literature on what others have tried (assess-evidence-base), and not for auditing the team's beliefs about the population before any attempt (audit-researcher-bias).
+**Description (trigger rule):** Use when a team has a record of a program it already ran and must decide whether to retry it, change it, or drop the idea, or when someone says "we tried that and it didn't work" as if that settles it. Compares what was planned with what was delivered, checks the team's explanation against the data it collected, and judges whether the idea or its delivery failed, or whether the record cannot tell. Do not use to design the next attempt; use select-intervention-levers. Not for what others have tried elsewhere; use assess-evidence-base.
 
 **Use it when:**
-- A team has a documented account of a prior attempt and is about to decide to retry, adapt, or abandon the underlying idea based on that account alone
-- Before `assess-evidence-base` or `define-key-behavior` re-run on the same program goal, so the team's own history is checked rather than silently repeated (retrying an approach that failed for implementation reasons) or silently ignored (abandoning an idea that was never actually tested)
-- Someone says "we tried this before and it didn't work" as if that settles whether the idea itself is bad
-- A funder or board asks why a previous pilot failed and the team's answer is a story rather than a reading of the data
+- A team has a record of a program it ran and must decide whether to retry it, change it, or drop the idea
+- Someone says "we tried this before and it didn't work" as if that settles whether the idea is bad
+- A funder asks why a pilot failed, and the answer so far is a story, not a reading of the data
 
 **Do not use it when:**
-- There is no actual record of what happened; vague recollection with no documented fidelity, dose, reach, or outcome data gives this skill nothing to structure. Ask the team to write down what they remember first, even informally, then come back
-- The team wants to design the next attempt; that is intervention design (`select-intervention-levers` for a confirmed barrier, `draft-lever-content` for the content)
-- The question is what the external literature says about this kind of intervention; `assess-evidence-base`
-- The team wants to check its beliefs about the population before any attempt; `audit-researcher-bias`, which can consume this skill's brief
+- The team wants to design the next attempt; use `select-intervention-levers`
+- The question is what others have tried elsewhere; use `assess-evidence-base`
+- The team wants a plan for tracking delivery next time; use `design-fidelity-monitoring`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a process or implementation evaluator, and where relevant an independent evaluator or statistician, when:
-- The record is thin on fidelity, dose, or reach and the retry would be expensive or large-scale; a specialist can design the process-evaluation measures the retry needs so that the next null result is interpretable
-- The outcome involved harm or a serious adverse event (health, safety, financial loss), where attributing the result to the idea or to delivery has consequences for participants and the review needs an independent reader
-- The team's causal story is contested within the organization or with a funder; an independent evaluator reading the same data is more credible than this brief
-- The prior attempt was a formal evaluation (an RCT or quasi-experiment) and the question is whether the analysis itself was sound; that is a statistician's review, not a process read
+Tell the user to consult an implementation or process evaluator, and where relevant an independent evaluator or a statistician, when:
+- The record is thin on delivery and the retry would be large or costly
+- The program involved harm (health, safety, financial loss), so attribution matters to participants
+- The team's explanation is contested inside the organization or with a funder
+- The past attempt was a formal evaluation and the question is whether its analysis was sound
 
-Bring them: the record, every delivery log and outcome dataset, and this brief with its Basis markers.
+Bring them: the record, the delivery logs and outcome data, and this brief.
 
 ### select-default-option
 
@@ -1759,250 +1684,221 @@ Bring them: the barrier with its evidence, the feasibility table, and the list t
 ### select-messenger
 
 **Title:** Choose who delivers the message  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** message-design, social-norms, network  
-**Consumes:** intervention-levers, audience-context-brief  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** message-design, network  
+**Consumes:** barrier-diagnosis  
+**Produces:** messenger-choice  
 
-**What it does:** Picks who should deliver a message to a given audience, with the reasons on paper.
+**What it does:** Chooses who delivers one message to one audience.
 
-**Description (trigger rule):** Use when the open question is who should deliver a message: "should the nurse say this or the village elder?", "who do people here actually listen to?", "would a peer land better than our staff?". Also use when a team has defaulted to its own staff as the messenger without checking whether the audience trusts them, or wants to recruit community "ambassadors" and needs a way to pick them. Scores candidates on reach, similarity, authority, trust, and cost, picks one by barrier type, and plans a comparison against a random messenger, drawing on the MINDSPACE Messenger lever and the Haryana immunization trial, where community-nominated information hubs plus SMS were the most cost-effective arm. Do not use when the question is whose opinion the audience weighs for a norm; that is map-reference-network, which this skill takes as input. Not for when or how often to send (design-reminder-schedule), the norm message (write-social-norm-message), or the message text (draft-lever-content).
+**Description (trigger rule):** Use when the question is who should deliver a message: "should the nurse say this or the village elder?", "would a peer land better than our staff?". Also use when a program has made its own staff the sender without checking, or wants to pick community ambassadors. Rates candidates on what the audience has said, checks whether the leading one has power over the audience, and writes the messenger's brief. Do not use when the question is whose opinion the audience weighs for a practice; use map-reference-network. Not for the words; use draft-lever-content.
 
 **Use it when:**
-- A message, script, or outreach is planned and someone asks "who should say this?", "should it come from the clinic or from someone in the village?", or "would a peer be more convincing than our staff?"
-- A program has defaulted to its own staff (the program officer, the community health worker, the SMS sender name) as the messenger without checking whether the audience hears from them or trusts them
-- A program wants to recruit community "ambassadors", "champions", or "mobilizers" and needs a defensible way to pick them rather than taking volunteers or the chief's nominees
-- A lever brief from `select-intervention-levers` names modeling, a credible source, or social support as the technique, where the deliverer is the active ingredient
+- Someone asks "who should say this?" or "would a peer be more convincing than our staff?"
+- A program has made its own staff the sender without checking whether the audience trusts them
+- A program wants community "ambassadors" and needs a way to pick them
 
 **Do not use it when:**
-- The question is whose opinion the audience weighs when deciding whether to follow a norm; that is `map-reference-network` (diagnose stage), and its influencers and gatekeepers are candidates here
-- The question is when and how often a reminder goes, or through which channel; `design-reminder-schedule` sets that, and this skill only says who the reminder appears to come from
-- The team needs the norm message or the message text; `write-social-norm-message` and `draft-lever-content` write the words once the messenger is chosen
-- The barrier is supply, cost, or distance rather than information, norms, or trust; no messenger fixes a stock-out. Go back to `select-intervention-levers`
+- The question is whose behavior or approval the audience tracks for a practice; use `map-reference-network`
+- The team needs the words; use `draft-lever-content`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist, and where noted a safeguarding lead or a local qualitative researcher, when:
-- The leading messenger holds power over the audience (employer, lender, landlord, official, teacher), because trust under power is hard to tell from compliance and the audience may not be free to ignore the message; a safeguarding lead reviews the choice before anything is delivered
-- The topic is stigmatized (HIV, contraception, debt, mental health) or the audience includes children; a central messenger spreads who was asked along with what was said, and a local qualitative researcher should check whether being approached is itself a cost
-- Religious or traditional leaders are the leading candidates in a setting the team does not know well, where an endorsement can arrive with conditions the program did not agree to
-- The comparison will be the program's main evidence claim, where the unit of randomization and the outcome need an evaluation specialist (`plan-evaluation-design`) before the first messenger is briefed
+Tell the user to consult a specialist before anything is delivered when:
+- The only workable messenger has power over the audience (employer, lender, official, teacher): a safeguarding lead reviews whether people can decline
+- The topic is stigmatized (HIV, contraception, debt) or the audience includes children: a local qualitative researcher checks whether being approached by this person exposes anyone
+- A religious or traditional leader leads in a setting the team does not know: someone with local standing advises on what the endorsement commits the program to
 
-Bring them: the candidate table with its basis column, the nomination question and any results, the power test, and the comparison plan.
+Bring them: the candidate table, the questions and answers, and the brief.
 
 ### specify-intervention-adaptations
 
 **Title:** Track changes to a tested intervention  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** implementation-science, implementation, process-evaluation  
-**Consumes:** intervention-description, intervention-draft  
+**Consumes:** intervention-description  
 **Produces:** adaptation-record  
 
-**What it does:** Records each planned or unplanned modification to an intervention in a structured log, checking it against the core components that carry the intervention's mechanism.
+**What it does:** Records each planned or unplanned change to a tested intervention against the parts that make it work.
 
-**Description (trigger rule):** Use when an intervention is being changed, on purpose or by the people delivering it, and someone asks "is this still the same program?", "the field team dropped the follow-up call, does that matter?", or "we're taking this to a new district, what do we need to change?". Also use when a scale-up, a cost cut, or a new delivery partner is altering what was tested, or when fidelity monitoring shows delivery drifting from the design. Logs each modification using the FRAME (Wiltsey Stirman, Baumann and Miller 2019) and checks it against the intervention's core components, the parts that carry the mechanism; for a planned transfer to a new context it follows the ADAPT guidance (Moore et al. 2021). Do not use to write the baseline description of the intervention as tested; that is draft-intervention-description. Not for the indicators that detect drift (design-fidelity-monitoring), and not for judging whether a published finding fits your setting before any test (assess-evidence-transferability).
+**Description (trigger rule):** Use when a tested intervention is being changed, on purpose or by the people delivering it, and someone asks "is this still the same program?", "the field team dropped the follow-up call, does that matter?", or "what may we change for the new district?". Records each change and checks it against the parts that make the intervention work. Do not use when there is no written description of the intervention as tested; use draft-intervention-description. Not for whether the effect will survive scale-up; use assess-scalability.
 
 **Use it when:**
-- Someone asks "is this still the same program?", "can we cut this part?", or "does it matter that the field team changed that?"
-- A scale-up, a cost cut, or a new delivery partner is changing what was tested, and the team wants to know which changes are safe
-- A fidelity monitoring round shows delivery differing from the design and nobody has written down how
-- The intervention is moving to a new population, setting, language, or delivery system and the team is planning what to change before it goes
-- An evaluation is about to report and the team cannot say which version of the intervention the data describes
+- Someone asks "is this still the same program?" or "does it matter that the field team changed that?"
+- A scale-up, a cost cut, or a new delivery partner is changing what was tested
+- Monitoring shows delivery differing from the design
+- The intervention is moving to a new population, setting, or language
 
 **Do not use it when:**
-- There is no written description of the intervention as tested; `draft-intervention-description` writes the baseline this skill measures changes against
-- The question is what indicators and sampling would detect drift during delivery; `design-fidelity-monitoring`, which feeds its findings back here as unplanned modifications
-- The question is whether a published finding from elsewhere fits your setting before any test; `assess-evidence-transferability`
-- A past program failed and the team wants to know whether delivery or the idea failed; `review-prior-intervention`, which can read this skill's log
-- The team wants to design a new intervention rather than modify a tested one; `select-intervention-levers`
+- There is no written description of the intervention as tested; use `draft-intervention-description` first
+- The question is whether the effect will survive scale-up; use `assess-scalability`
+- The question is how to reach routine delivery; use `plan-scale-up-strategy`
+- The question is which indicators would catch drift during delivery; use `design-fidelity-monitoring`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an implementation scientist, and where possible the people who designed and evaluated the original intervention, when:
-- A core component is being removed for cost or workload reasons at scale-up, because the scaled program is then a different intervention from the one tested and the evaluation evidence no longer applies to it; the decision to proceed needs someone who can say whether a cheaper form of the mechanism exists
-- A modification touches clinical, safety, or legal content (dosing instructions, test-result counseling, referral thresholds), where a "fidelity-consistent" judgment by a program team is not enough
-- The transfer is to a population in which the theory of change may not hold at all (a different reference group for a norm message, a different payment system for a default), where the question is transferability rather than adaptation
-- Delivery staff and the designers disagree about what is core, which usually means the theory of change is incomplete
+Tell the user to consult an implementation researcher, and where possible the original's designers and evaluators, when:
+- A core component is being cut for cost or workload, and someone must judge whether a cheaper way to do its job exists
+- A change touches clinical, safety, or legal content, such as dosing, test-result counseling, or referral; add a clinician or lawyer
+- Delivery staff and designers disagree about what is core, which usually means the reason the intervention works was never written down
 
-Bring them: the core-component table with its mechanisms, the modification log, the flags, and the theory of change or intervention description the components came from.
+Bring them: the record and the description it started from.
 
 ### synthesize-interview-findings
 
 **Title:** Turn interview transcripts into a barrier diagnosis  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** qualitative, tdf, com-b, diagnosis  
-**Consumes:** qualitative-data, comb-barrier-hypotheses, interview-guide  
+**Consumes:** qualitative-data, comb-barrier-hypotheses  
 **Produces:** barrier-diagnosis  
 
-**What it does:** Summarizes a set of interviews into a framework matrix coded to COM-B or TDF domains so the team can say which barrier hypotheses the interviews support.
+**What it does:** Gives each barrier hypothesis a verdict from a set of interviews.
 
-**Description (trigger rule):** Use when interviews are done and the team needs to know within days which barrier hypotheses they support before a design decision. Also use when someone says "we have 15 transcripts, what did we learn?" or "code these against COM-B or the TDF". Produces a framework matrix (Framework Method, Gale et al. 2013, run rapidly after Vindrola-Padros and Johnson 2020): one row per respondent, one column per hypothesis with its COM-B or TDF domain, each cell a summary with a verbatim anchor; then a supported, not supported, or mixed verdict per hypothesis with counts, quotes, and disconfirming cases, the confirmed barriers, and what a fuller analysis would add. Do not use when the data are Doer/Non-Doer tallies from a Barrier Analysis; use analyze-doer-nondoer-differences instead. Not for writing the interview guide (draft-tdf-interview-guide), checking codes a language model assigned (audit-llm-qualitative-coding), or choosing what to do about a confirmed barrier (select-intervention-levers).
+**Description (trigger rule):** Use when interviews or field notes are in and the team needs to know which of its barrier hypotheses they support, or when someone asks "we have 15 transcripts, what did we learn?" or wants interviews coded against COM-B or the TDF. Charts every interview against every hypothesis and gives each a verdict, with quotes and the interviews that go against it. Do not use before the interviews, to decide what to ask; use draft-tdf-interview-guide. Not for choosing what to do about a confirmed barrier; use select-intervention-levers.
 
 **Use it when:**
-- Interviews run from a `draft-tdf-interview-guide` guide (or any guide with hypotheses behind it) are finished and the team asks "what did we learn?", "which barriers came up?", or "do the interviews back our hypotheses?"
-- A design decision is days away and the transcripts, recordings, or notes have not been read systematically by anyone
-- A team is about to quote the two most vivid interviews as "what people told us" without checking the rest
-- Someone asks to "code the transcripts against COM-B" or "against the TDF domains"
+- Interviews, focus groups, or field notes are done and the team asks "what did we learn?" or "do the interviews back our hypotheses?"
+- Someone asks to code transcripts against COM-B or the TDF domains
+- A team is about to quote the two most vivid interviews as "what people told us" without reading the rest
 
 **Do not use it when:**
-- The data are Doer/Non-Doer answers from a Barrier Analysis with counts per determinant; that is `analyze-doer-nondoer-differences`
-- The interviews have not happened and the question is what to ask; that is `draft-tdf-interview-guide`
-- A language model produced the codes or summaries and nobody has checked them against hand coding; run `audit-llm-qualitative-coding` first, then bring the accepted codes here
-- The barrier is confirmed and the question is what to do about it; that is `select-intervention-levers`
-- The team wants its own assumptions examined before reading the data; `audit-researcher-bias` runs first, and its flagged priors become things to look for among the disconfirming cases
+- The interviews have not happened and the question is what to ask; use `draft-tdf-interview-guide`
+- There are no hypotheses yet; to list them, use `decompose-comb-barriers`
+- The barrier is confirmed and the question is what to do about it; use `select-intervention-levers`
 
 **When to bring in a specialist:**
 
-Tell the user to consult an experienced qualitative researcher who reads the language, and where relevant the organization's safeguarding lead, when:
-- The transcripts or recordings are in a language the analyst does not read, because a matrix built from someone else's summaries cannot be checked against the words, and the verdicts then rest on the translator's reading
-- Any interview touched harm: violence, abuse, coercion, self-harm, a child at risk, or an illegal act disclosed to the interviewer, because the safeguarding response comes before analysis and the material needs handling rules the matrix does not provide
-- The verdict on the hypothesis the design most depends on is mixed, or rests on two or three interviews, and the decision is costly to reverse; the researcher can say whether a few more interviews or a different method would settle it
+Tell the user to consult an experienced qualitative researcher who reads the interview language, and where relevant the organization's safeguarding lead, when:
+- Nobody on the team reads the interview language, so no cell can be checked against the words
+- An interview disclosed harm (violence, abuse, a child at risk, a crime): the safeguarding response comes before analysis
+- The verdict the decision rests on is mixed or rests on a few interviews, and the decision is costly to reverse
 
-Bring them: the hypotheses, the interview guide, the matrix with its anchors, the list of disconfirming cases, and the trade-off section.
+Bring them: the hypotheses, the guide, and the matrix with its quote references.
 
 ### translate-survey-instrument
 
 **Title:** Translate a survey into another language  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** measurement, survey-design  
 **Consumes:** survey-items  
 **Produces:** survey-items  
 
-**What it does:** Produces a target-language version of a survey instrument in which every wording choice is recorded item by item: what changed, why, what was kept non-literal on purpose.
+**What it does:** Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents.
 
-**Description (trigger rule):** Use when a team has survey items or a questionnaire in one language and needs it in another ("translate our survey into Chichewa", "we need the Swahili version of this scale", "our enumerators translate on the fly"). Also use when a translation exists but nobody can say how it was made or why items were changed. Produces a target-language instrument through two or more independent forward translations, committee reconciliation, a documented decision on back-translation, and an item-by-item decision log, following the ITC guidelines, Beaton et al., and the TRAPD approach, with the pretest handed to draft-cognitive-interview-script. Do not use when the items do not exist yet; use draft-survey-items. Not for pretesting items with respondents (draft-cognitive-interview-script), for moving an instrument to phone delivery (adapt-survey-for-phone-mode), for choosing an existing validated measure, or for developing or validating a new scale; those last two are separate skills.
+**Description (trigger rule):** Use when survey questions exist in one language and are needed in another ("translate our survey into Chichewa", "should we back-translate?"), or when a translation exists with no record of how it was made. Sets up two independent translations, a review by people who know the respondents, a recorded decision on back-translation, and an item-by-item log. Do not use when the questions are not written yet; use draft-survey-items. Not for checking that respondents understand a finished translation; use draft-cognitive-interview-script.
 
 **Use it when:**
-- A team has items in English, French, Hindi, or another source language and the survey will run in a language the respondents actually speak; someone asks "can you translate this?" or "we need the Chichewa version"
-- A translation was done by one person (a field coordinator, an enumerator, a consultant) with no record of the choices made, and the team wants to redo it so a reviewer can see why each item reads the way it does
-- Enumerators have been translating orally at the point of interview and the team wants one fixed version that everyone reads the same way
-- Someone asks "should we back-translate?", "is one translator enough?", or "which dialect should we use?"
+- A team has questions in one language and will survey in another: "we need the Chichewa version"
+- A translation exists with no record of how it was made
+- Interviewers translate aloud during interviews
+- Someone asks "should we back-translate?"
 
 **Do not use it when:**
-- The items do not exist yet; write them with `draft-survey-items`, then come back
-- The translation exists and the question is whether respondents understand it; that is `draft-cognitive-interview-script`, which this skill hands its output to as the pretest step
-- The instrument is moving from face-to-face to phone or IVR delivery; `adapt-survey-for-phone-mode` handles the mode change, before or after translation
-- The team wants to pick an existing validated measure for a construct, or to build and validate a new scale (item pools, factor structure, reliability); choosing an existing measure and developing or validating a new scale are separate skills, and translation is neither
+- The questions are not written yet; use `draft-survey-items`
+- The translation is done and the need is to check that respondents understand it; use `draft-cognitive-interview-script`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a psychometrician or a cross-cultural survey methodologist when:
-- The committee cannot find a target-language equivalent for a construct, or the pretest shows respondents paraphrasing an item as something else; the question has become whether the construct exists or means the same thing here, which is a validation question, not a translation question
-- The instrument is a clinical screener (PHQ-9 and similar) whose cut-offs will be used for referral or eligibility; cut-offs need local validation before any decision rests on a translated score
-- Scores will be compared across languages or countries, or against a published norm; wording changes made for comprehension can break that comparison
+Tell the user to consult a psychometrician (who tests whether scores mean what they claim) or a specialist in cross-cultural surveys when:
+- The instrument is a clinical screener whose cut-off decides referral or eligibility; a cut-off does not carry over to a translation
+- Scores will be compared across languages or countries, or against a published norm
+- The reviewers cannot find words for a concept, which may not exist here in the same form
 
-Bring them: the decision log with the divergent items marked, the scope decisions, and the pretest tabulation if the pretest has run.
+Bring them: the decision log, the items the translators disagreed on, and notes from any testing with respondents.
 
 ### write-pre-analysis-plan
 
 **Title:** Write the analysis plan before the data arrive  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** research-transparency, experimental-design, multiple-comparisons  
 **Consumes:** evaluation-design, measurement-plan  
 **Produces:** analysis-plan  
 
-**What it does:** Writes the analysis side of a pre-registration: one primary outcome, the estimator, the families of secondary outcomes, the subgroups with a reason each, the decision rules, all fixed before any outcome data are seen.
+**What it does:** Writes down how a trial's results will be analyzed before anyone sees the outcome data.
 
-**Description (trigger rule):** Use when an evaluation design or measurement plan exists and the team needs to write down, before any outcome data exist, exactly how the results will be analyzed: one primary outcome, the estimator, the families of secondary outcomes, the subgroups, and the decision rules. Also use when someone says "pre-analysis plan", "PAP", "pre-register the analysis", "the AEA registry wants our analysis plan", or asks how much to pre-specify. Produces an analysis plan at the AEA RCT Registry's level of detail, following Olken (2015), Coffman and Niederle (2015), and Banerjee et al. (2020) on how much to fix in advance. Do not use when the primary outcome, comparison condition, and smallest effect worth detecting have not been chosen; run plan-evaluation-design first. Not for configuring the experiment itself (design-evidential-experiment), for the mechanics of the multiple-testing correction (adjust-for-multiple-comparisons), or for running the subgroup analysis (analyze-heterogeneous-effects).
+**Description (trigger rule):** Use when a trial's design and primary outcome are set and the team must fix, before any outcome data arrive, how results will be analyzed: "write our pre-analysis plan", "PAP", "what do we put in the AEA registry?", "how much do we pre-specify?". Writes the hypotheses, estimator, outcome families, subgroups, decision rules, and registration. Do not use when the primary outcome or smallest change worth detecting is open (plan-evaluation-design) or the comparison is open (choose-trial-design).
 
 **Use it when:**
-- A measurement plan or evaluation design brief exists, the trial is about to launch, and nobody has written down how the results will be analyzed
-- Someone asks "what goes in a pre-analysis plan?", "how much do we need to pre-specify?", or "the AEA registry wants an analysis plan, what do we upload?"
-- A team is proposing subgroups before the data exist ("we should also look at women", "the poorest quintile") and wants to commit now rather than argue later
-- The implementer, funder, or a ministry has a stake in the result and the analysis needs to be fixed where that stake is strongest
+- A trial is about to launch and nobody has written down how its results will be analyzed
+- Someone asks "what goes in a pre-analysis plan?" or "what do we put in the AEA registry?"
+- A team proposes subgroups ("look at women too") and wants to commit before the data exist
 
 **Do not use it when:**
-- The primary outcome, comparison condition, or smallest effect worth detecting is still open; run `plan-evaluation-design` first, or `choose-trial-design` if the trial's structure is the question
-- The team is configuring a rapid experiment in Evidential; `design-evidential-experiment` carries its own analysis-plan field, and this skill's output feeds it
-- The data are in and the question is which correction to apply or how to estimate subgroup effects; `adjust-for-multiple-comparisons` and `analyze-heterogeneous-effects` execute what the plan says
-- Outcome data by arm have already been seen; see the specialist section, because a plan written now is not a pre-analysis plan
+- The primary outcome or the smallest change worth detecting is still open; use `plan-evaluation-design`
+- The comparison or the unit of randomization is still open; use `choose-trial-design`
+- The data are in and the question is how effects differ by subgroup; use `analyze-heterogeneous-effects`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a statistician or evaluation methodologist, and where relevant an independent evaluator, when:
-- Any outcome data by arm have been seen; the honest options (an exploratory label, a dated populated plan, a plan for only the outcomes not yet seen) need a methodologist's judgment, and the registry entry must say what was seen
-- The design is clustered, stepped-wedge, or adaptive, so the estimator and standard errors are not the textbook ITT case
-- A party with a stake in the result wants to change the plan before registration; an independent evaluator should hold the plan
-- The primary outcome is high-stakes (eligibility for benefits, health) and a wrong decision rule would be acted on
+Tell the user to consult a statistician or evaluation methodologist, with an independent evaluator to hold the plan where a party has a stake, when:
+- Outcome data by arm have been seen: what can still be pre-specified needs judgment, and the registry entry must say what was seen and when
+- The design is clustered, stepped-wedge, or adaptive, so the estimator is not the standard case
+- The primary outcome decides eligibility for benefits or health care
 
-Bring them: the design brief, the draft plan with its decision rules, and the description of the data structure.
+Bring them: the design, the draft plan, and a description of the data.
 
 ### write-social-norm-message
 
 **Title:** Tell people what most of their peers already do  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
-**Tags:** social-norms, message-design, behavior-change-techniques  
-**Consumes:** social-norm-diagnosis, intervention-levers  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Tags:** social-norms, message-design  
+**Consumes:** social-norm-diagnosis  
 **Produces:** intervention-draft  
 
-**What it does:** Writes one message that tells a person what most comparable people already do, or approve of, so that people behind the norm move toward it without people already ahead of it sliding back.
+**What it does:** Writes one message that tells people what most of their peers do or approve of.
 
-**Description (trigger rule):** Use when you want to tell people that most others like them already do the behavior (paid the tax, vaccinated, deposited) and need the message written so it moves the people who are behind without pulling back those already doing well. Also use when a draft already carries a social-proof line ("9 out of 10 farmers...") and you need to check that the number is true, the reference group is close enough, and the message will not backfire. Produces one descriptive or injunctive norm message with the approval cue that prevents the boomerang, drawing on Schultz et al. (2007), Allcott (2011), and the UK and Guatemala tax-letter trials. Do not use when the practice is held in place by a whole community's expectations and no message will shift it alone; use plan-collective-pledge instead. Not for generic copywriting from a chosen technique (draft-lever-content), not for finding out whether a norm problem exists (diagnose-social-norm), and not for measuring what people believe others do (draft-norms-vignette).
+**Description (trigger rule):** Use when a team wants to tell people what most of their peers do or approve of ("9 out of 10 parents here vaccinate"), or has a draft with such a line and wants it checked. Writes the message from a dated figure for a named group, adds a line for people who already do the behavior, and sets a check for backfire. Do not use when it is not yet known whether what others do matters for the behavior; use diagnose-social-norm. Not for a report that compares each person with their peers; use design-feedback-report.
 
 **Use it when:**
-- A social norm diagnosis says the behavior is held back by a mistaken belief about what others do (people think few pay, few deposit, few vaccinate, when most do), and the team wants to correct that belief
-- Someone asks "can we just tell them most people already do this?" or wants a line like "8 out of 10 parents in your block..." in a letter, SMS, poster, or agent script
-- A draft already contains a social-proof claim and the team wants it checked: is the number true, is the reference group close enough, will the people already doing well read it as permission to stop
-- Administrative data show the desired behavior is already the majority (taxes paid, children immunized, deposits made) and the team wants to put that fact to work
+- A diagnosis or survey shows people underestimate how many peers do or approve of a behavior
+- Someone asks "can we just say most people already do this?"
+- A draft makes a claim about what others do and the team wants it checked
 
 **Do not use it when:**
-- No one has checked whether a norm problem exists; a norm message aimed at a cost, access, or skill barrier wastes the channel exposure. Run `diagnose-social-norm` first
-- The practice is held in place by the whole reference group's expectations and will only change if people see each other abandon it together; that is a coordinated event, `plan-collective-pledge`, not a message
-- The technique chosen upstream is not social comparison and the team needs copy for it; `draft-lever-content` is the generic writer
-- The question is how to measure what people believe others do or approve of; `draft-norms-vignette` (measure stage) builds that instrument
+- Nobody has checked whether what others do or expect matters for this behavior; use `diagnose-social-norm`
+- It is not known whose behavior and approval the audience tracks; use `map-reference-network`
+- Each person is to be shown their own record against their peers'; use `design-feedback-report`
 
 **When to bring in a specialist:**
 
-Tell the user to consult a behavioral scientist, and where noted a local qualitative researcher or safeguarding lead, when:
-- The true norm is unfavorable (under half) and the team still wants to use social information; a specialist can judge whether a trend, an injunctive-only message, or a different reference group is defensible, and whether the problem is really a collective one for `plan-collective-pledge`
-- The behavior is stigmatized, illegal, or household-sensitive (HIV testing, contraception, informal income), where stating prevalence can expose people, the belief data may be distorted by under-reporting, and the sender's approval may not be welcome; a local qualitative researcher and a safeguarding lead review the message and who delivers it
-- The message will go to everyone at once with no comparison group, because the boomerang is invisible without one; an evaluation specialist should see the plan before anything is sent
-- The sender is a government or regulator and the number is a legal claim; counsel checks the figure and its date
+Tell the user to consult a specialist before anything is sent when:
+- Most of the group does the unwanted thing and the team wants to cite a rising trend: a behavioral scientist, because trials of trend messages disagree
+- The behavior is illegal, stigmatized, or private (HIV testing, contraception, debt): a local qualitative researcher and a safeguarding lead, because a figure about a small group can expose its members
+- The practice is enforced by punishment (child marriage, cutting): a specialist in community norm change, because a message can single out the first people to act
 
-Bring them: the share with its source and date, the norm diagnosis, the draft with its checks filled in, and the proposed baseline split.
+Bring them: the figures with source and date, what the audience believes, and the draft.
 
 ## Chains
 
-Edges where one skill produces what another consumes. A user-suppliable input can also come straight from the person.
+Edges where one skill produces what another consumes. They are suggestions: any input can also come straight from the person.
 
 - define-agency-construct → plan-agency-measurement (via `agency-definition`: Agency definition)
 - write-pre-analysis-plan → analyze-heterogeneous-effects (via `analysis-plan`: Analysis plan)
-- write-pre-analysis-plan → estimate-cost-effectiveness (via `analysis-plan`: Analysis plan)
-- map-audience-context → select-messenger (via `audience-context-brief`: Audience and context brief)
 - audit-process-friction → choose-delivery-moment (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- audit-process-friction → design-feedback-report (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → design-reminder-schedule (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → draft-implementation-intention-prompt (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- audit-process-friction → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - audit-process-friction → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- audit-process-friction → select-messenger (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → choose-delivery-moment (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-commitment-device (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- synthesize-interview-findings → design-feedback-report (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-incentive-scheme (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → design-reminder-schedule (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → draft-implementation-intention-prompt (via `barrier-diagnosis`: Confirmed barrier diagnosis)
-- synthesize-interview-findings → plan-trials-of-improved-practices (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-default-option (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - synthesize-interview-findings → select-intervention-levers (via `barrier-diagnosis`: Confirmed barrier diagnosis)
+- synthesize-interview-findings → select-messenger (via `barrier-diagnosis`: Confirmed barrier diagnosis)
 - decompose-comb-barriers → draft-tdf-interview-guide (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
-- decompose-comb-barriers → plan-evaluation-design (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - decompose-comb-barriers → synthesize-interview-findings (via `comb-barrier-hypotheses`: COM-B barrier hypotheses)
 - estimate-expected-effect → estimate-sample-size (via `effect-size-benchmark`: Effect-size benchmark)
-- choose-trial-design → assess-scalability (via `evaluation-design`: Evaluation design)
-- choose-trial-design → estimate-cost-effectiveness (via `evaluation-design`: Evaluation design)
 - choose-trial-design → estimate-sample-size (via `evaluation-design`: Evaluation design)
 - choose-trial-design → write-pre-analysis-plan (via `evaluation-design`: Evaluation design)
-- design-pilot-feasibility-study → assess-scalability (via `evaluation-design`: Evaluation design)
-- design-pilot-feasibility-study → estimate-cost-effectiveness (via `evaluation-design`: Evaluation design)
-- design-pilot-feasibility-study → estimate-sample-size (via `evaluation-design`: Evaluation design)
-- design-pilot-feasibility-study → write-pre-analysis-plan (via `evaluation-design`: Evaluation design)
-- plan-evaluation-design → assess-scalability (via `evaluation-design`: Evaluation design)
-- plan-evaluation-design → estimate-cost-effectiveness (via `evaluation-design`: Evaluation design)
-- plan-evaluation-design → estimate-sample-size (via `evaluation-design`: Evaluation design)
-- plan-evaluation-design → write-pre-analysis-plan (via `evaluation-design`: Evaluation design)
 - assess-evidence-base → assess-evidence-transferability (via `evidence-scan-brief`: Evidence scan brief)
 - assess-evidence-base → estimate-expected-effect (via `evidence-scan-brief`: Evidence scan brief)
-- design-fidelity-monitoring → draft-intervention-description (via `fidelity-plan`: Fidelity monitoring plan)
 - draft-intervention-description → assess-scalability (via `intervention-description`: Intervention description)
 - draft-intervention-description → design-fidelity-monitoring (via `intervention-description`: Intervention description)
 - draft-intervention-description → specify-intervention-adaptations (via `intervention-description`: Intervention description)
@@ -2010,81 +1906,73 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - adapt-growth-mindset-message → choose-message-frame (via `intervention-draft`: Intervention draft)
 - adapt-growth-mindset-message → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - adapt-growth-mindset-message → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- adapt-growth-mindset-message → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- adapt-growth-mindset-message → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - choose-delivery-moment → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - choose-delivery-moment → choose-message-frame (via `intervention-draft`: Intervention draft)
 - choose-delivery-moment → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - choose-delivery-moment → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- choose-delivery-moment → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- choose-delivery-moment → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - choose-message-frame → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - choose-message-frame → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - choose-message-frame → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- choose-message-frame → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- choose-message-frame → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - design-commitment-device → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - design-commitment-device → choose-message-frame (via `intervention-draft`: Intervention draft)
 - design-commitment-device → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - design-commitment-device → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- design-commitment-device → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- design-commitment-device → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - design-feedback-report → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - design-feedback-report → choose-message-frame (via `intervention-draft`: Intervention draft)
 - design-feedback-report → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - design-feedback-report → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- design-feedback-report → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- design-feedback-report → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - design-incentive-scheme → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - design-incentive-scheme → choose-message-frame (via `intervention-draft`: Intervention draft)
 - design-incentive-scheme → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - design-incentive-scheme → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- design-incentive-scheme → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- design-incentive-scheme → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - design-reminder-schedule → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - design-reminder-schedule → choose-message-frame (via `intervention-draft`: Intervention draft)
 - design-reminder-schedule → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - design-reminder-schedule → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- design-reminder-schedule → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- design-reminder-schedule → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - draft-belonging-story → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - draft-belonging-story → choose-message-frame (via `intervention-draft`: Intervention draft)
 - draft-belonging-story → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - draft-belonging-story → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- draft-belonging-story → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- draft-belonging-story → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - draft-implementation-intention-prompt → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - draft-implementation-intention-prompt → choose-message-frame (via `intervention-draft`: Intervention draft)
 - draft-implementation-intention-prompt → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - draft-implementation-intention-prompt → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- draft-implementation-intention-prompt → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- draft-implementation-intention-prompt → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - draft-lever-content → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - draft-lever-content → choose-message-frame (via `intervention-draft`: Intervention draft)
 - draft-lever-content → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - draft-lever-content → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- draft-lever-content → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- draft-lever-content → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - draft-values-affirmation → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - draft-values-affirmation → choose-message-frame (via `intervention-draft`: Intervention draft)
 - draft-values-affirmation → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - draft-values-affirmation → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- draft-values-affirmation → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- draft-values-affirmation → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - select-default-option → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - select-default-option → choose-message-frame (via `intervention-draft`: Intervention draft)
 - select-default-option → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - select-default-option → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- select-default-option → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
+- select-default-option → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → audit-intervention-ethics (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → choose-message-frame (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → design-pilot-feasibility-study (via `intervention-draft`: Intervention draft)
 - write-social-norm-message → draft-intervention-description (via `intervention-draft`: Intervention draft)
-- write-social-norm-message → specify-intervention-adaptations (via `intervention-draft`: Intervention draft)
-- select-intervention-levers → choose-message-frame (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → design-commitment-device (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → design-feedback-report (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → design-incentive-scheme (via `intervention-levers`: Candidate intervention levers)
+- write-social-norm-message → plan-prototype-test (via `intervention-draft`: Intervention draft)
 - select-intervention-levers → draft-lever-content (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → plan-evaluation-design (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → plan-trials-of-improved-practices (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → select-messenger (via `intervention-levers`: Candidate intervention levers)
-- select-intervention-levers → write-social-norm-message (via `intervention-levers`: Candidate intervention levers)
-- draft-cognitive-interview-script → synthesize-interview-findings (via `interview-guide`: Interview or survey guide)
-- draft-tdf-interview-guide → synthesize-interview-findings (via `interview-guide`: Interview or survey guide)
-- plan-agency-measurement → design-feedback-report (via `measurement-plan`: Measurement plan)
 - plan-agency-measurement → design-list-experiment (via `measurement-plan`: Measurement plan)
 - plan-agency-measurement → draft-survey-items (via `measurement-plan`: Measurement plan)
 - plan-agency-measurement → write-pre-analysis-plan (via `measurement-plan`: Measurement plan)
+- plan-evaluation-design → design-list-experiment (via `measurement-plan`: Measurement plan)
+- plan-evaluation-design → draft-survey-items (via `measurement-plan`: Measurement plan)
+- plan-evaluation-design → write-pre-analysis-plan (via `measurement-plan`: Measurement plan)
 - assess-scalability → plan-scale-up-strategy (via `scalability-assessment`: Scalability assessment)
 - besci-skill-creator → besci-eval (via `skill-draft`: Skill draft)
 - diagnose-social-norm → draft-norms-vignette (via `social-norm-diagnosis`: Social norm diagnosis)
@@ -2108,21 +1996,20 @@ Edges where one skill produces what another consumes. A user-suppliable input ca
 - define-key-behavior → diagnose-social-norm (via `target-behavior-brief`: Target behavior brief)
 - define-key-behavior → draft-tdf-interview-guide (via `target-behavior-brief`: Target behavior brief)
 - define-key-behavior → plan-evaluation-design (via `target-behavior-brief`: Target behavior brief)
-- draft-theory-of-change → choose-trial-design (via `theory-of-change`: Theory of change)
 - identify-wise-intervention-target → adapt-growth-mindset-message (via `wise-intervention-target`: Wise-intervention target)
 - identify-wise-intervention-target → draft-belonging-story (via `wise-intervention-target`: Wise-intervention target)
 - identify-wise-intervention-target → draft-values-affirmation (via `wise-intervention-target`: Wise-intervention target)
 
 Inputs no skill produces yet (the user supplies them, or a skill is missing):
-- `ai-product-account` (AI product account): consumed by choose-ai-eval-level, define-agency-construct, plan-agency-measurement
+- `ai-product-account` (AI product account): consumed by choose-ai-eval-level, define-agency-construct
 - `ai-use-account` (AI use account): consumed by draft-sifa-declaration
 - `dataset-description` (Dataset description): consumed by analyze-heterogeneous-effects
+- `effect-estimate` (Effect estimate): consumed by estimate-cost-effectiveness
 - `experiment-intent` (Experiment intent statement): consumed by choose-trial-design
 - `prior-intervention-record` (Prior intervention record): consumed by review-prior-intervention
 - `program-goal` (Program goal statement): consumed by assess-evidence-base, besci-navigator, define-key-behavior, draft-theory-of-change, map-audience-context
 - `qualitative-data` (Qualitative data): consumed by diagnose-social-norm, identify-wise-intervention-target, synthesize-interview-findings
 - `researcher-assumptions` (Researcher assumption statement): consumed by audit-researcher-bias
-- `user-funnel-map` (User funnel map): consumed by choose-ai-eval-level
 
 ## Stages
 

@@ -140,14 +140,14 @@ Some skills produce something another skill takes in. A barrier diagnosis, for e
 
 ## Workflows
 
-A workflow runs several skills in order for a bigger job and marks where your team has to decide.
+A workflow suggests an order of skills for a bigger job and marks where your team has to decide. They run from short to long; you can start at any step with your own inputs.
 
 | Workflow | Who it is for |
 |---|---|
-| [From a vague goal to a piloted intervention](https://besci-skills.vercel.app/workflows/diagnose-to-pilot/) | A program team that has a goal ("more mothers complete antenatal care") and no behavioral diagnosis yet. |
-| [Design, size, and test a reminder or message program](https://besci-skills.vercel.app/workflows/design-and-test-an-sms-program/) | A team that reaches people by SMS, voice, or WhatsApp and wants messages that move a behavior with a due date. |
-| [Diagnose and shift a social norm](https://besci-skills.vercel.app/workflows/change-a-social-norm/) | A team working on a practice that a community keeps because each household expects the others to. |
-| [Bring a survey instrument into a new language and mode](https://besci-skills.vercel.app/workflows/adapt-a-survey-instrument/) | A team that has a questionnaire in one language and setting and needs it to work in another. |
+| [Check the evidence](https://besci-skills.vercel.app/workflows/check-the-evidence/) | A team about to choose a behavior or an intervention that wants to know what research already says, and whether a promising finding applies where it works. |
+| [Define and measure agency](https://besci-skills.vercel.app/workflows/define-and-measure-agency/) | A team building or evaluating a digital or AI tool that wants to say whether the tool builds its users' agency. |
+| [Design a wise intervention](https://besci-skills.vercel.app/workflows/design-a-wise-intervention/) | A team that thinks people are held back by how they read a setback or a setting, and wants a short exercise that answers that question. |
+| [From a goal to a tested intervention](https://besci-skills.vercel.app/workflows/from-a-goal-to-a-tested-intervention/) | A program team that has a goal ("more children complete their vaccinations") and no behavioral diagnosis yet. |
 
 Pick skills on the site to [build your own workflow](https://besci-skills.vercel.app/workflows/build/). It gives you the install command for just those skills. Workflow files live in [`workflows/`](workflows/).
 
