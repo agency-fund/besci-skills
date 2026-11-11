@@ -3,31 +3,58 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We support monthly immunization camps in 48 villages in Udaipur district, Rajasthan. Each camp runs on a fixed day each month, 9am to 2pm, at the anganwadi center. Our register knows every enrolled child's next due dose and the camp date. Barrier work (exit interviews at 12 camps plus a household survey of 600 mothers) found that mothers of children who missed a dose mostly said they forgot which day the camp was or that it was that week; vaccine stock has been reliable for two years and nobody mentioned fees or distrust. The lever brief picked prompts and cues. Audience brief: about 60% of households have a phone, usually held by the husband; many mothers cannot read Hindi SMS; the ASHA visits each hamlet weekly; voice calls in Mewari are feasible through our call center. Design the reminder schedule.",
-      "expected_output": "A full reminder schedule following the output template: the target behavior and the forgetting barrier carried over with the exit-interview and survey evidence and the note that stock, fees, and distrust were ruled out; the due-date structure as recurring monthly with a fixed camp day known from the register; a schedule table with at least two rows (for example a voice call two days before the camp and a morning-of call or ASHA visit), each with a channel, what it names (the child's name, the dose, the camp day, the anganwadi), and a stop condition (dose recorded, opt-out, ceiling); a frequency ceiling without claiming weekly beats daily as a finding; content requirements that name the action, date, and place and drop loss/gain framing; a channel choice that picks voice in Mewari and the ASHA over Hindi SMS because of literacy and phones held by husbands; a reminders-alone-or-bundled section that applies the Haryana test, notes SMS alone had no impact there, and recommends pairing with the ASHA as messenger (pointing to select-messenger) while leaving incentives as a question for design-incentive-scheme; a decay check with intervals and a trigger; an expected effect that quotes the corrected Thakkar odds ratio, the Kenya 13 to 16 points, the Haryana null, and gives a modest planning range. It does not write the Mewari script, does not re-ask the answered questions, and does not quote a 53% Kenya figure.",
+      "name": "Full run",
+      "prompt": "We support monthly immunization camps in 48 villages in Udaipur district, Rajasthan. Each village's camp runs on a fixed day each month, 9am to 2pm, at the anganwadi center. Our register holds every enrolled child's next due dose and the camp date. In exit interviews at 12 camps and a survey of 600 mothers, 64% of mothers whose child missed a dose said they did not know the camp was that day or that week; vaccine stock has been reliable for two years, the vaccines are free, and nobody mentioned distrust. About 60% of households have a phone, usually held by the husband; many mothers cannot read a Hindi text; the ASHA visits each hamlet weekly; our call center can place voice calls in Mewari. Design the reminder schedule.",
+      "expected_output": "A reminder schedule in the output template that uses voice calls and the ASHA rather than Hindi text messages, with a ceiling and a stop rule for every send.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Every send in the table has a channel, what the message must name, and a condition that stops it.",
+        "Chooses a voice call or a visit over a Hindi text, citing who holds the phone or who can read.",
+        "States the most contacts per month and how a household opts out.",
+        "Says who the calls do not reach and what those households get instead.",
+        "Gives the levels of opt-out or response at which the schedule is reviewed.",
+        "Promises no effect size for this program."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Patients keep missing their follow-up appointments. Set up SMS reminders.",
-      "expected_output": "The skill does not produce a schedule. It asks the Required questions: the target behavior and the evidence that forgetting, rather than cost, distance, stock, or distrust, is why appointments are missed; how appointments are dated and how the program knows each patient's date; and who holds the phone, whether it is shared, literacy, language, and network. It may ask whether a messenger or incentive is already in the program and whether any reminder data exists, marked optional.",
+      "expected_output": "The skill asks for the evidence that forgetting is the barrier, how the program knows each patient's date, and who holds the phone, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks what shows that patients intend to come and forget, rather than being stopped by cost, distance, or distrust.",
+        "Asks how appointments are dated and how the program knows each patient's date.",
+        "Asks who holds the phone, whether it is shared, or whether the patient reads.",
+        "Does not produce a reminder schedule."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Patients at our ART clinic in Kisumu, Kenya miss doses. We want to send a daily SMS at 8pm saying 'Take your two tablets now'. The clinic has had three ARV stock-outs this year and some patients share a phone with family. Design the schedule.",
-      "expected_output": "The skill produces what it safely can: a schedule built on the Kenyan weekly-SMS evidence rather than the requested daily cadence, with a ceiling, an opt-out, and a stop rule, and content requirements that name the patient's own goal or clinic visit rather than a dose instruction. It then states three escalations: because the message concerns medication dosing, a clinician or pharmacist must sign off the content before any send; because the clinic has had stock-outs, reminders cannot work in those months and the supply problem must be raised with the clinic lead first; and because some patients share phones, a privacy review is needed before any message that could disclose HIV status. It names what to bring them. It does not claim weekly beats daily as a finding and does not quote a 53% figure for the Kenyan trial.",
+      "name": "Near the escalation point",
+      "prompt": "Patients at our HIV treatment clinic in Kisumu, Kenya miss doses. In interviews most say they simply forget on busy days; drugs are free and in stock. We want to send a daily SMS at 8pm saying 'Take your two tablets now'. The clinic's register has every patient's phone number and refill date. Some patients share a phone with family. Design the schedule.",
+      "expected_output": "The skill designs a schedule of no more than one message a week that names no drug, dose, or condition, and says a clinician or pharmacist and a privacy lead must review it before the first send.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Sets a ceiling of no more than one message a week rather than the daily message requested.",
+        "The message content does not name tablets, a dose, HIV, or the clinic's purpose.",
+        "Names a clinician or pharmacist to approve what a message about medication names.",
+        "Names a privacy or safeguarding review because some patients share a phone.",
+        "Says what to bring to those specialists.",
+        "Does not present the schedule as ready to send without those reviews."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "At the camp we want each mother to tell the ASHA when and where she will bring the child for the next dose, and write it on the immunization card. Can you design that?",
-      "expected_output": "The skill does not run. It says the request is for a plan the mother makes once about a specific upcoming action, not a message the program sends on a schedule, and that this is draft-implementation-intention-prompt's job. It may note that a reminder schedule could later be built around the date the mother wrote down, but it does not produce a schedule here.",
+      "expected_output": "The skill says this is a plan the mother makes, not a message the program sends, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says a plan the person states is different from a reminder the program sends.",
+        "Names draft-implementation-intention-prompt.",
+        "Does not produce a reminder schedule."
+      ]
     }
   ]
 }

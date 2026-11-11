@@ -1,48 +1,46 @@
 # Probe bank
 
-Organized by the four stages of the survey response model (Tourangeau, Rips, and Rasinski, 2000). Pick one or two per stage per item. Every probe is open; none contains the intended answer.
+Probes to choose from when writing a cognitive interview script, grouped by the four things a respondent must do to answer a survey question: understand it, recall what it asks about, judge an answer, and fit that answer to the options. Every probe is open; none contains the intended answer.
 
-## Comprehension
-- What does the phrase "___" mean to you?
-- Can you say this question in your own words?
+## Meaning (did the respondent understand the question as intended?)
+- What does "___" mean to you?
+- Can you tell me this question in your own words?
 - When you hear "___", what comes to mind?
-- Is there anything in this question that was confusing or that you had to read twice?
-- Who did you think this question was asking about: you, your household, or someone else?
+- Was there any part of the question you wanted to hear again?
+- Who were you thinking about when you answered: yourself, your household, or someone else?
 
-## Retrieval
-- How did you arrive at that answer?
+## Recall (could the respondent bring the needed facts to mind?)
 - What did you think back to when you answered?
 - What time period were you thinking about?
 - Was it easy or hard to remember? What made it hard?
-- Did you count something, estimate, or just have a feeling?
+- Did you count, estimate, or go by a feeling?
 
-## Judgement
+## Judgment (how did the respondent settle on an answer?)
+- How did you decide on that answer?
 - How sure are you of that answer?
-- Was there anything you weighed up before answering?
-- How comfortable did you feel answering this?
-- If a neighbor or a program officer were asking instead of me, would you answer the same way?
+- How comfortable was that question to answer?
+- If a neighbor were asking and not me, would your answer be the same?
 
-## Response
-- Did any of the answer options fit better than the others?
-- Was there an answer you wanted to give that wasn't there?
-- What is the difference, to you, between "<option A>" and "<option B>"?
+## Options (could the respondent fit the answer to the choices offered?)
+- Which of the answers was closest to what you wanted to say?
+- Was there an answer you wanted to give that was not offered?
+- What is the difference, for you, between "<option A>" and "<option B>"?
 - Did you want to say "it depends"? On what?
 
-## Conditional probes (use on a cue)
+## Cue probes (ask only when the cue occurs)
 | Cue | Probe |
 |---|---|
 | Long pause before answering | What were you thinking about just then? |
-| Asks to repeat the question | Which part of the question was unclear? |
-| Changes answer | What made you change your mind? |
-| Laughs or looks uncomfortable | Was there something about that question that felt odd? |
-| Answer does not match options | Tell me more about your answer; which option is closest? |
-| Answers very fast | How did you decide so quickly? |
+| Asks to hear the question again | Which part of the question was unclear? |
+| Changes the answer | What made you change your answer? |
+| Laughs or looks uneasy | Was there something about that question that felt odd? |
+| Gives an answer that is not among the options | Tell me more about your answer. Which of the options is closest? |
+| Answers at once | How did you decide so quickly? |
 
-## Think-aloud practice question
-"How many windows are there in the home you live in now? Please think out loud as you work it out." Use a question with no right answer the interviewer could judge.
+## Practice question
+Use a harmless question with a probe, so the respondent learns what will be asked of them: "How many people ate in your home last night?" and then "Who did you count?"
 
-## Cross-cultural notes
-- Replace open think-aloud with scripted probes when respondents are unlikely to narrate to a stranger.
-- Avoid probes that imply a wrong answer ("Why did you say that?"); use "How did you decide?"
-- When interviewing through an interpreter, probe the interpreter's rendering too: "How did you translate '___'?"
-- Pilot the script itself with two respondents before the real round.
+## Wording notes
+- Use "How did you decide?" in place of "Why did you say that?", which sounds like a challenge.
+- Put the respondent's own answer into the probe ("You said 'a little hard'. What ...") and never the intended meaning.
+- When working through an interpreter, probe the interpreter as well: "How did you put '___' into the other language?"

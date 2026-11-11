@@ -1,155 +1,148 @@
 ---
 name: decompose-comb-barriers
 description: >-
-  Use when one behavior is already defined (who does what, when) and the
-  question is why people are not doing it. Also use when a team is about to
-  jump to an intervention ("let's send a reminder text") without naming the
-  barrier it addresses, or when several explanations are being asserted
-  informally ("maybe they forgot", "maybe it's too expensive") and need to
-  become testable hypotheses. Lists competing Capability, Opportunity, and
-  Motivation barrier hypotheses (the COM-B model), each with a diagnostic
-  question that would confirm or rule it out. Do not use on a goal or
-  outcome statement ("improve maternal health"); run define-key-behavior
-  first. Not for choosing what to do about a confirmed barrier
-  (select-intervention-levers), and not for drop-off between stages of a
-  digital product funnel (diagnose-funnel-weak-link).
+  Use when one behavior is defined (who does what, when) and the question is
+  why people are not doing it, or when a team is about to pick an
+  intervention ("let's send a reminder") without naming the barrier it
+  addresses. Lists competing capability, opportunity, and motivation
+  hypotheses, each with a question that could rule it out, and ranks them.
+  Do not use when the goal is still vague; use define-key-behavior. Not for
+  choosing what to do about a confirmed barrier; use
+  select-intervention-levers.
 license: CC-BY-4.0
 metadata:
   title: Find out why people are not doing a behavior
   type: atomic
   stage: diagnose
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
-  authors: "Nikhil Ravichandar, Joe Speed"
+  authors: "Nikhil Ravichandar, Joe Speed, Zezhen Wu"
   org: IL
-  weird: mixed-evidence
+  tested_in: beyond-western-differs
   tags: "com-b, behavior-change-wheel, diagnosis"
-  consumes: "target-behavior-brief, bias-audit-report"
+  consumes: "target-behavior-brief"
   produces: "comb-barrier-hypotheses"
 ---
 
 ## What it does
 
-Lists competing reasons why one defined behavior is not happening, grouped by the COM-B model, each with a question that would show whether it is the real barrier.
+Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out.
 
-COM-B says a behavior occurs when a person has sufficient Capability (can they do it?), Opportunity (does their situation allow it?), and Motivation (do they want to?) at the moment it needs to happen. This skill produces hypotheses and the questions that discriminate between them. It does not produce a diagnosis; that comes from answering the questions in the field.
+**What this adds:** writes at least one hypothesis under each of the six COM-B sub-components; makes every capability hypothesis pass a persistence test or moves it to opportunity; states, for each question, the answer this hypothesis predicts against the answer a rival predicts; ranks the hypotheses on evidence so far and cost of checking; and labels the ranking provisional until field answers exist.
+
+COM-B is Michie, van Stralen and West's model: a behavior happens when a person has the capability, opportunity, and motivation for it.
 
 ## When to use it
 
 ### Use it when
-- A target behavior brief exists (who, what, when) and the next question is "why isn't this happening already?"
-- A team is about to jump straight to intervention ideas ("let's send a reminder text") without having named a barrier the intervention is meant to address
-- Several plausible explanations for non-behavior are being asserted informally ("maybe they forgot", "maybe it's too expensive", "maybe they don't think it matters") and need organizing into testable, mutually exclusive hypotheses
-- Someone asks "what's stopping them?" or "what are the barriers?" about one specific behavior
+- A behavior is stated as who does what, when, and someone asks "why isn't this happening?" or "what are the barriers?"
+- A team is about to choose an intervention ("let's send a reminder text") without naming the barrier it addresses
+- Several explanations are in the air ("maybe they forgot", "maybe it costs too much") with no way to tell them apart
 
 ### Do not use it when
-- The input is a goal or outcome statement ("improve maternal health"); a barrier decomposition has nothing concrete to attach to. Run `define-key-behavior` first
-- The barrier is already confirmed by field evidence and the question is what to do about it; that is `select-intervention-levers`
-- The behavior is a stage transition in a digital product's funnel with observed drop-off numbers; `diagnose-funnel-weak-link` handles that framing
-- The team wants to check its own assumptions about the population before diagnosing; run `audit-researcher-bias` first and feed its report in here
+- The goal is still an outcome or an aspiration ("improve maternal health"); use `define-key-behavior`
+- The team wants its own beliefs about the audience checked before diagnosing; use `audit-researcher-bias`
+- Hypotheses exist and the team needs the interview questions that test them; use `draft-tdf-interview-guide`
+- Field evidence has confirmed the barrier and the question is what to do; use `select-intervention-levers`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The target behavior as who, what, when. Paste the target behavior brief from `define-key-behavior` if one exists, or state the behavior at that level of specificity. If the statement contains "and" or lacks an actor or time window, say so and send it back for splitting or definition before continuing.
-2. **Required.** What is already known about the context: the setting, the delivery channel, and anything the team has observed or heard from the population so far, even informally. This feeds the "context support" column of the ranking.
-3. Optional. A bias audit report from `audit-researcher-bias`. Its flagged assumptions become hypotheses to test, not barriers to assume.
-4. Optional. What field access the team has (interviews, observation, administrative data, nothing yet), which sets the "field cost" column.
+1. **Required.** The behavior as who does what, when. If it contains "and" or lacks an actor or a time window, ask for one behavior.
+2. **Required.** What is known about the setting: where the behavior happens, and anything the team has observed or heard from the audience.
+3. Optional. What the team already believes is the cause.
+4. Optional. How the team can check: interviews, observation, records, or nothing yet.
 
-If 1 is missing, ask and stop. If 2 is missing, ask once; if the answer is still thin, proceed and mark every "context support" cell as "no context available". If 3 and 4 are missing, assume no audit was run and that a short round of interviews is feasible.
+If 1 is missing, ask and stop. If 2 is missing, ask once; if the answer is still thin, proceed and write "none" in every evidence cell. If 4 is missing, assume one short round of interviews.
 
 ## What it draws on
 
-- Michie, S., van Stralen, M. M., & West, R. (2011). The behaviour change wheel: A new method for characterising and designing behaviour change interventions. *Implementation Science*, 6, 42. https://doi.org/10.1186/1748-5908-6-42
-- Michie, S., Atkins, L., & West, R. (2014). *The Behaviour Change Wheel: A Guide to Designing Interventions*. Silverback Publishing. Chapter 2 (COM-B and its diagnostic questions).
+- Michie, S., van Stralen, M. M., & West, R. (2011). The behaviour change wheel: A new method for characterising and designing behaviour change interventions. *Implementation Science*, 6, 42. https://doi.org/10.1186/1748-5908-6-42 Supports: the three components, their six sub-components, and opportunity defined as everything outside the person that makes the behavior possible.
+- Schmidtke, K. A., & Drinkwater, K. G. (2021). A cross-sectional survey assessing the influence of theoretically informed behavioural factors on hand hygiene across seven countries during the COVID-19 pandemic. *BMC Public Health*, 21, 1432. https://doi.org/10.1186/s12889-021-11491-4 Supports: ranking from local evidence only.
 
-The COM-B model: behavior (B) occurs when a person has sufficient Capability (psychological: knowledge, skills, ability to self-regulate; physical: strength, stamina, dexterity), Opportunity (physical: time, resources, location; social: norms, sanction, support from others), and Motivation (reflective: beliefs, intentions, evaluations; automatic: habit, emotion, impulse) at the moment the behavior needs to occur. Because the three components are constructed to be jointly exhaustive, a rigorous decomposition should be able to state at least one hypothesis per sub-component even if some are quickly ruled out. The discipline is in naming what would distinguish a real barrier from a plausible-sounding one, not in generating the longest list. One hypothesis per sub-component is a floor, not a ceiling: if two genuinely distinct, non-trivial hypotheses compete for the same sub-component, list both rather than merging or dropping one to fit a one-bullet shape.
+**Where the evidence comes from:** COM-B was built from 19 earlier frameworks and first applied to English tobacco and obesity policy. A review of 79 nutrition studies in sub-Saharan Africa sorted interventions with it, and the seven-country survey found that the components predicting children's handwashing differed by country (capability alone in Australia, Indonesia, and South Africa; capability and opportunity in India). Never carry a diagnosis over from another place.
 
-Every candidate Capability hypothesis must pass the persistence test before it is placed: would this barrier persist even if the environment fully supported the person (full information, full access, no social cost)? If yes, it is Capability. If no, if the person would be fine once the environment changed, it is Opportunity, not Capability, however much it resembles "doesn't know how" or "doesn't understand". This is the most common mislabel in COM-B application, which is why the output template makes showing the check mandatory.
-
-If a bias audit report is available (from `audit-researcher-bias`), cross-check its flagged assumptions against the hypothesis list: a flagged prior that quietly reappears as a hypothesis needs its own diagnostic question like any other, not a pass on the strength of already having been named. A flagged prior becoming a hypothesis without independent field evidence relocates the bias rather than checking it.
-
-**WEIRD skew:** COM-B is presented as a universal model of behavior (its three components are meant to be exhaustive by construction, not culturally contingent), but the diagnostic question bank and worked examples in the source literature skew toward UK health-behavior contexts. The Opportunity (social) sub-component in particular tends to need the most local adaptation: what counts as socially sanctioned or normal varies more than the framework's examples suggest.
-
-**Replication status:** COM-B is a classification framework rather than an effect, so there is no effect to replicate. It is widely used, and its components are constructed to be jointly exhaustive. The persistence test this skill makes mandatory is a practitioner rule from this skill's authors, not a published criterion; it targets the Capability versus Opportunity mislabeling the authors see most often in practice.
+**Replication status:** COM-B is a way of sorting, so there is no effect to replicate. Two coders in the original paper agreed on 88% and 79% of classifications; no study was found that tests whether a COM-B diagnosis leads to a better intervention.
 
 ## How to do it
 
-1. **Carry the target behavior over verbatim** at the top of the output, so the hypotheses are visibly attached to one who, what, when.
-2. **Write at least one hypothesis per sub-component** (Capability physical and psychological, Opportunity physical and social, Motivation reflective and automatic). Each must be specific enough to produce a question that could rule it out; "lack of motivation" is not a hypothesis yet. Where two genuinely distinct hypotheses compete for one sub-component, list both.
-3. **Run the persistence test on every Capability hypothesis** and write the answer on its line: would it persist with full information, access, and no social cost? If the honest answer is no, move the hypothesis to Opportunity. A Capability hypothesis without a persistence-test line is incomplete.
-4. **Write a diagnostic question for each hypothesis**, then a "discriminates because" line stating the different answer each hypothesis predicts. If the question would get the same answer whichever hypothesis is true, it is a survey item, not a diagnostic; change the question, not the write-up.
-5. **If a bias audit report is present, cross-check it.** Any flagged prior that reappears as a hypothesis gets its own diagnostic question; mark it as a flagged prior so the reader knows it entered on assumption, not evidence.
-6. **Score every hypothesis** on two criteria in the ranking table: context support (does existing context make this more or less likely, and why) and field cost (how cheap and fast is its diagnostic question to run). A ranking with no visible scoring is indistinguishable from an unexamined first guess.
-7. **Name the top one or two provisional barriers** from that table, in one to three sentences, flagged clearly as provisional until the diagnostic questions are answered in the field.
-8. **Stop there.** Do not choose levers or interventions; the confirmed barrier is the input to `select-intervention-levers`, and the confirmation happens in the field, not in this output.
+1. **Restate the behavior** as given.
+2. **Write at least one hypothesis under each sub-component**, specific enough that an answer could rule it out. List two where two distinct ones compete.
+   - **Capability:** physical (bodily skill) and psychological (knowledge, understanding, memory, planning).
+   - **Opportunity:** physical (time, money, distance, materials) and social (what the people around the person do, expect, and allow).
+   - **Motivation:** reflective (evaluations and plans) and automatic (emotion, impulse, habit).
+3. **Run the persistence test on every capability hypothesis** and write the answer: would the barrier remain if the setting gave full information, full access, and no social cost? If not, move it to opportunity. "Was never told" is opportunity; "was told and still cannot do it" is capability. One is fixed by training, the other by changing the environment.
+4. **Write one question for each hypothesis, then a "discriminates because" line:** the answer this hypothesis predicts and the different answer a named rival predicts. A question that gets the same answer whichever is true tests nothing; change it. Ask what the person did last time, or observe, before asking why.
+5. **Mark team beliefs.** Label a hypothesis that restates what the team already believes "team belief"; a belief is not evidence, however it is reworded.
+6. **Rank every hypothesis in one table** on evidence so far, with its source, and cost of checking.
+7. **Name the one or two to check first**, labeled provisional, and stop. Propose no interventions; the diagnosis is made in the field.
 
-See `references/worked-example.md` for a complete run on the Nairobi market-vendor savings behavior.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
 # COM-B barrier hypotheses
 
-**Target behavior:** <who + what + when, carried over verbatim>
+**Behavior:** <who does what, when; as given>
+**Evidence used:** <what is known about the setting, and where it comes from; or "none yet">
 
 ## Capability
 ### Physical
-- **Hypothesis:** <specific barrier, e.g. "lacks the physical skill to complete the form unassisted">
-  **Persistence test:** <would this persist with full information, access, and social support? state the answer and why>
-  **Diagnostic question:** <question whose answer would confirm or rule this out>
-  **Discriminates because:** <the different answer this hypothesis predicts versus the other hypotheses in this document>
+- **Hypothesis:** <a specific barrier>
+  **Persistence test:** <would it remain with full information, full access, and no social cost? yes, because ...>
+  **Question:** <what to ask or observe>
+  **Discriminates because:** <the answer this hypothesis predicts; the different answer a named rival predicts>
 ### Psychological
-- **Hypothesis:** <e.g. "can't translate general awareness into a plan that fits their specific, variable schedule">
+- **Hypothesis:** <...>
   **Persistence test:** <...>
-  **Diagnostic question:** <...>
+  **Question:** <...>
   **Discriminates because:** <...>
 
 ## Opportunity
 ### Physical
-- **Hypothesis:** <e.g. "the clinic is only open during work hours">
-  **Diagnostic question:** <...>
+- **Hypothesis:** <...>
+  **Question:** <...>
   **Discriminates because:** <...>
 ### Social
-- **Hypothesis:** <e.g. "attending would signal something the person wants to avoid signaling">
-  **Diagnostic question:** <...>
+- **Hypothesis:** <...>
+  **Question:** <...>
   **Discriminates because:** <...>
 
 ## Motivation
 ### Reflective
-- **Hypothesis:** <e.g. "doesn't believe the behavior will produce the promised benefit">
-  **Diagnostic question:** <...>
+- **Hypothesis:** <...>
+  **Question:** <...>
   **Discriminates because:** <...>
 ### Automatic
-- **Hypothesis:** <e.g. "a competing habitual behavior crowds out the window to act">
-  **Diagnostic question:** <...>
+- **Hypothesis:** <...>
+  **Question:** <...>
   **Discriminates because:** <...>
 
-## Most likely barrier(s), pending diagnostic answers
+## Ranking, pending field answers
 
-| Hypothesis | Context support (does existing context make this more or less likely, and why) | Field cost (how cheap and fast is its diagnostic question to run) |
+| Hypothesis | Evidence so far | Cost of checking |
 |---|---|---|
-| <hypothesis 1> | <...> | <...> |
-| <hypothesis 2> | <...> | <...> |
+| <sub-component: hypothesis> | <high / medium / low / none: what supports it, and its source; "team belief" if that is all> | <low / medium / high: what it takes> |
 
-<1 to 3 sentences naming the top 1 or 2 hypotheses by that table, flagged as provisional until the diagnostic questions are answered in the field; not a restatement of an intuition the table was not used to reach>
+**Check first:** <the one or two hypotheses the table puts first, and why>. Provisional until the questions above are answered in the field.
+
+## What to check before relying on this
+- <the hypothesis that rests on the weakest evidence, and the cheapest way to check it>
 ```
 
 ## Where it goes wrong
 
-- **Motivation as a dumping ground.** It is easy to label every unexplained non-behavior "lack of motivation" because it requires no further evidence. If a hypothesis cannot be stated specifically enough to produce a diagnostic question that could rule it out, it is not a real hypothesis yet.
-- **Capability/Opportunity confusion.** "Doesn't know how" (Capability) and "was never told" (Opportunity, if the information was never made available) get mislabeled constantly, including by careful attempts, which is why the persistence-test line is mandatory rather than left as background judgment. A Capability hypothesis whose persistence-test answer is "no, they'd be fine if the environment changed" is a mislabeled Opportunity hypothesis, however the sentence is worded.
-- **Non-discriminating questions.** A diagnostic question that would get the same answer regardless of which hypothesis is true is just a survey item. If the "discriminates because" line cannot name a different predicted answer per hypothesis, the question needs to change.
-- **Running on a compound or vague behavior.** If the input still contains "and" or lacks a clear who, what, when, the barriers produced will quietly diagnose whichever half of the behavior was easiest to picture, not the behavior as specified.
-- **Treating the ranked barriers as confirmed.** This skill produces hypotheses and the questions to test them, not a diagnosis. Passing the "most likely barrier" straight to intervention design without answering the diagnostic questions in the field skips the step the questions exist for.
-- **Relocating a flagged prior.** A bias audit flagged "it's a discipline problem"; the decomposition lists "lacks self-regulation" under Capability with no question that could rule it out. The prior has moved, not been tested.
+- **Motivation as the default.** "They are not motivated" needs no evidence, so it fills every gap. A motivation hypothesis names the belief, the feeling, or the habit.
+- **The ranking read as a diagnosis.** The table orders guesses; sending its first row to intervention design skips the fieldwork.
+- **A diagnosis imported from elsewhere.** What limits a behavior in one district is only a hypothesis in the next.
 
 ## When to bring in a specialist
 
 Tell the user to consult a behavioral scientist or an experienced qualitative researcher when:
-- The behavior involves clinical, safety, or legal risk (medication, violence, child protection, sexual health), because some diagnostic questions cannot be asked directly and the question set itself needs ethical review before fieldwork
-- The hypotheses cluster under Opportunity (social) in a context the team does not know well; norms and sanction vary most across settings, and a local researcher should shape the questions and who asks them
-- The field round comes back with two hypotheses both supported; the next step is a sharper discriminating study designed by someone who does this for a living, not a judgment call from the table
+- The behavior carries clinical, safety, or legal risk (medication, violence, child protection, sexual health): some questions cannot be asked directly, and the set needs ethical review before fieldwork
+- The hypotheses cluster under social opportunity in a setting the team does not know; a local researcher should shape the questions and say who asks them
+- Field answers support two hypotheses equally; a study designed to separate them comes next
 
-Bring them: the hypothesis list with its discrimination lines, the ranking table, and whatever field answers already exist.
+Bring them: the hypotheses, the ranking table, and any field answers so far.

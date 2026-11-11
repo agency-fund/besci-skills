@@ -6,7 +6,7 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] Folder name is kebab-case, 1 to 64 characters, no leading, trailing, or double hyphens, and equals `name` in the frontmatter. [E003, E004]
 - [ ] For atomic skills, the name starts with a verb from the taxonomy's list (define, decompose, draft, design, measure, map, score, select, adjust, analyze, assess, audit, build, choose, cluster, compare, diagnose, estimate, evaluate, find, generate, identify, plan, prioritize, propose, review, simulate, specify, summarize, synthesize, test, translate, validate, write). [E005]
 - [ ] `SKILL.md`, `evals/evals.json`, and `CHANGELOG.md` exist. No `README.md` in the folder. [E001, E029, E030, W033]
-- [ ] Atomic skills have `references/worked-example.md` (headings: The request; The output) and `references/evidence.md` (headings: Sources; Where it has been tested; Replication; What to check locally). [W045, W046]
+- [ ] Atomic skills have `references/worked-example.md` (headings: The request; The output) and `references/evidence.md` (headings: Sources; Where it has been tested; Replication; What to check locally). [E045, W046]
 - [ ] Neither `SKILL.md` nor a reference file says how the skill was drafted or checked; that goes in `CHANGELOG.md`. [W050]
 - [ ] Only allowed file types; nothing over 2 MB; folder under 10 MB. [E034]
 - [ ] Every `references/`, `scripts/`, or `assets/` path mentioned in SKILL.md exists. [E032]
@@ -18,23 +18,23 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] `license` is CC-BY-4.0 (or MIT for code-only skills). [E009]
 - [ ] `metadata` has type, stage, version, status, authors, org, all as plain strings. [E010]
 - [ ] type is atomic or meta; stage is one of the seven or other; version is quoted semver; status is draft, published, or deprecated. [E011, E012, E014, E015]
-- [ ] Atomic skills have `tested_in` set to one of: beyond-western-holds, beyond-western-differs, mainly-western, not-applicable. [E018, W040]
-- [ ] `consumes` and `produces` use ids from the taxonomy's io types. Atomic skills name exactly one `produces`; `consumes` lists only the inputs the skill cannot run without. [W019, W049]
+- [ ] Atomic skills have `tested_in` set to one of: beyond-western-holds, beyond-western-differs, mainly-western, not-applicable. [E018, E040]
+- [ ] `consumes` and `produces` use ids from the taxonomy's io types. Atomic skills name exactly one `produces`; `consumes` lists only the inputs the skill cannot run without. [W019, E049]
 
 ## Body
 - [ ] Exactly these level-2 headings, in this order: What it does; When to use it; Before you start; What it draws on; How to do it; Output template; Where it goes wrong; When to bring in a specialist. [E020, E021]
 - [ ] No section is empty. [E022]
 - [ ] Only "Before you start" and "When to bring in a specialist" may read "Not applicable: <reason>", and the reason is a real sentence. [E023]
-- [ ] First sentence of "What it does" has no "and", and the section has a line starting `**What this adds:**`. [W024, W041]
+- [ ] First sentence of "What it does" has no "and", and the section has a line starting `**What this adds:**`. [W024, E041]
 - [ ] "When to use it" has `### Use it when` with at least three bullets and `### Do not use it when` with at least two. [E025, E026]
-- [ ] "What it draws on" has at least one real citation (year, DOI, or URL), a note starting `**Where the evidence comes from:**`, and a note starting `**Replication status:**`. [W027, W042]
+- [ ] "What it draws on" has at least one real citation (year, DOI, or URL), a note starting `**Where the evidence comes from:**`, and a note starting `**Replication status:**`. [W027, E042]
 - [ ] Another skill is named only under "Do not use it when". [W051]
 - [ ] "Output template" contains a fenced code block. [W028]
 
-Codes W040 to W049 are warnings while the existing skills are being revised to the November 2026 standard, and become errors (E040 to E049) after that.
+Codes E040 to E049 are errors, except the warnings W043, W044, and W046; W050 to W052 are warnings too.
 
 ## Evals and changelog
 - [ ] `evals.json` has `skill_name` equal to the name, and each case has id, prompt, expected_output. [E029]
-- [ ] Atomic skills have four cases named, in order, Full run, Missing context, Near the escalation point, Wrong skill; any later case is named "From an expert review #<issue>". [W047]
-- [ ] Each case has three to six assertions and a one-sentence expected_output. [W048, W052]
+- [ ] Atomic skills have four cases named, in order, Full run, Missing context, Near the escalation point, Wrong skill; any later case is named "From an expert review #<issue>". [E047]
+- [ ] Each case has three to six assertions and a one-sentence expected_output. [E048, W052]
 - [ ] `CHANGELOG.md` top entry is `## <version> - <date>` matching `metadata.version`. [E030]

@@ -1,49 +1,51 @@
-# Worked example: a plan prompt for reporting HIV self-test results in Lagos, Nigeria
+# Worked example: a plan prompt for redeeming input vouchers in Chipata, Zambia
 
-Illustrative. The program, the pharmacies, and every number below are invented to show a complete run of the skill; none is a finding. The target behavior came from `define-key-behavior`, the barrier from `decompose-comb-barriers` confirmed by an exit survey, and the lever brief from `select-intervention-levers`.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Inputs supplied by the user:** 40 community pharmacies distribute HIV self-test kits; each kit carries a referral card asking the user to report the result by a free USSD code within 7 days, any day, any hour, from any phone; an exit survey of 320 buyers found 82% say they will report, USSD logs show about 19% do (illustrative); the lever brief selected action planning; the pharmacist spends about a minute with each buyer; most buyers own a phone; literacy in English or Yoruba is sufficient for a short card.
+## The request
+
+"We work with 2,400 smallholder farmers in Chipata district, Zambia. Each registered farmer gets a seed-and-fertilizer voucher card, fully paid, to redeem at any of three agro-dealers between 1 and 21 November. After last season's registration we surveyed 300 farmers: 88% said they would redeem, and dealer records show 54% did. We interviewed 30 who did not. Most said they meant to go on a market day and the window closed; nobody mentioned cost or distrust of the dealers, and stock records show no shortages. The dealers are in Chipata town, on the Katete road, and at Chiparamba, all places farmers already go to market. They open Monday to Saturday, 8am to 5pm. The farmer must bring the voucher card and a national registration card. Camp extension officers hand out the cards at village meetings in the last week of October and spend a few minutes with each farmer. Meetings are held in Chinyanja. Draft the plan prompt."
+
+## The output
 
 ```markdown
 # Implementation intention prompt
 
-**Target behavior:** Buyers of an HIV self-test kit at the 40 partner pharmacies in Lagos report their result through the free USSD code within 7 days of buying the kit.
-**Intention check:** 82% of 320 buyers in the exit survey said they will report; 19% of kits sold in the same period have a USSD report (illustrative). The gap is between intending and doing, not a missing intention. Cost and access were ruled out: the code is free and works from any phone at any hour.
-**Action type:** One-off. Window: 7 days from purchase, any hour; the test is done wherever the buyer chooses (most say at home, alone or with a partner); reporting takes one USSD session from the buyer's own phone; nothing to bring.
+**Behavior:** Registered farmers in Chipata district redeem their seed-and-fertilizer voucher at an agro-dealer between 1 and 21 November.
+**Confirmed barrier:** An intention not acted on. 88% of 300 surveyed farmers said they would redeem; 54% did. In 30 interviews, farmers who did not redeem said they meant to go on a market day and the window closed. Cost, access, and trust are ruled out: the voucher is fully paid, the dealers are where farmers already go to market, stock records show no shortages, and nobody mentioned distrust.
+**Action:** One dated occasion.
+**Real options:** Any day from 1 to 21 November except Sundays, 8am to 5pm, at the agro-dealer in Chipata town, on the Katete road, or at Chiparamba. Bring the voucher card and the national registration card.
 
-## The prompt (working copy)
-Printed on the referral card the buyer keeps, filled in with the pharmacist:
+## The prompt
+Asked aloud in Chinyanja by the extension officer as the card is handed over. Working copy in English:
 
-"I will do my test on ______ (day and date) at ______ (time) at ______ (place).
-Right after I read the result, I will dial *XXX*XX# from this phone to report it.
-If I am not alone, the person with me will be ______."
+"Which day between 1 and 21 November will you collect your inputs, and at what time? Where will you be just before you go? Which dealer will you go to?
 
-## Why each element is there
-- **Date:** Fixes the occasion within the 7-day window; "this week" is not accepted on the card.
-- **Time:** The flu-shot trial's date-only prompt added 1.5 points (not significant) against 4.2 for date plus time; the time blank is what makes the plan a cue.
-- **Place:** Testing is private; the place blank lets the buyer pick somewhere they can read the result and dial at once, which is also where the card should be kept.
-- **How / with whom:** Used because some buyers test with a partner; naming that person settles whether the result is reported in private or together, and avoids the plan stalling on a conversation.
+Now say it in your own words: 'If it is ______ (day) at ______ (time) and I am ______ (where I will be just before), then I will take my voucher card and my registration card to ______ (dealer) and collect my inputs.'"
+
+## Why each part is there
+- **If (time and cue):** A day and an hour inside the window, tied to somewhere the farmer will already be, such as leaving the market. Farmers who missed the window had left the trip to "a market day" and never fixed which one.
+- **Then (action and place):** One named dealer and the two cards, so the action is complete when the cue arrives.
+- **Anything added:** Nothing. No obstacle is planned for, because the interviews point to none beyond not fixing a day.
 
 ## Delivery
-- **Rides on:** The pharmacist's minute at the counter when the kit is handed over.
-- **Asked by:** The pharmacist, who fills the blanks with the buyer and reads the plan back once.
-- **When:** At purchase, which is the start of the 7-day window; the plan is concrete because the buyer is holding the kit, and all dates in the window are still open.
-- **What the person keeps:** The referral card with the filled-in plan, inside the kit box.
+- **Rides on:** The village meeting where voucher cards are handed out, in the last week of October.
+- **Asked by:** The camp extension officer, one farmer at a time.
+- **When:** As the farmer first holds the card, one to three weeks before the chosen day, while every day in the window is still open.
+- **Said back:** The farmer says the whole sentence aloud once. The officer checks only that the day, hour, and dealer are real options and does not choose for the farmer.
+- **What the person keeps:** Nothing is required. A farmer who wants to can mark the day on the back of their own voucher card.
 
-## Boundary checks
-- **One-off:** Confirmed; one kit, one result, one report.
-- **Organic planning:** Buyers who test with a partner may already have agreed when; the voting trial found half the effect where people planned together. The exit survey did not ask this; see open questions.
-- **Numeric goal:** None used. The action is not a number.
+## Who else sees or hears the plan
+Neighbors at the meeting hear it. Collecting farm inputs is not sensitive, so no specialist review is needed. Nobody records or collects the plans.
 
-## Expected effect
-Gollwitzer and Sheeran (2006): d = 0.65 across 94 tests, probably inflated relative to field trials. Milkman et al. (2011): +4.2 points on a 33.1% base for date plus time. Nickerson and Rogers (2010): +4.1 points overall, +9.1 in single-voter households. The South Africa self-test reporting trial (Buttenheim et al., 2022) exists but its result is not available to this skill, so no number is borrowed from it. Academic trials average 8.7 points against 1.4 in nudge-unit trials (DellaVigna & Linos, 2022). Plan for 2 to 5 percentage points of additional reporting on the 19% base (illustrative planning range), lower if most buyers test with a partner. This is a cheap add-on to an existing contact, not a program on its own.
+## Pretest
+Eight farmers from two villages, half of them women, answer the prompt cold in Chinyanja. It passes if all eight name a day from 1 to 21 November that is not a Sunday, an hour between 8am and 5pm, and one of the three dealers, and can say the sentence without help.
 
-## Required pre-test
-10 buyers across 3 pharmacies fill in the card cold with the pharmacist, in the buyer's preferred language. Pass = all 10 cards hold a day and date inside the 7-day window, a clock time, and a named place; and when asked a day later, at least 8 of 10 can say their plan without looking at the card.
+## What the evidence supports
+That asking people to name a time and a place raises follow-through on a one-off, dated action they already intend to take. The clearest field trial is from the United States, where a prompt for the date and time of a flu vaccination raised the rate among a firm's employees. Elsewhere results differ: a job-search plan helped unemployed youth in South Africa, and plan prompts made little or no difference to HIV testing in Uganda or to reporting HIV self-test results in South Africa. Nothing found tests the prompt with farmers. No effect size is promised.
 
 ## What to check before relying on this
-- Whether the 82% intention figure holds when the question names a day ("will you report this week?") rather than "will you report".
-- The share of buyers who test with a partner, which sets the organic-planning discount.
-- Whether the pharmacist's minute survives a busy counter; if the card is handed over unfilled, the technique was not delivered.
-- Who sees the card: it names a test date and place for an HIV test, so the box, not a wallet, is where it stays.
+- Whether "I will redeem" holds when the question names a day. Ask 20 farmers "which day?" before the meetings.
+- Whether women farmers choose the day and the dealer themselves, or the trip depends on a husband's agreement or on transport money.
+- Whether officers have time to do this one farmer at a time. If they fill in the day for people, the prompt has not been delivered.
 ```

@@ -1,44 +1,48 @@
-# Worked example: moving the Afghanistan default-contribution finding to garment workers in Bangladesh
+# Worked example: a savings default from Afghanistan, for garment workers in Bangladesh
 
-The program, the team's answers, and the discounted range are illustrative. The study facts are the ones recorded in the dossier for Blumenstock, Callen and Ghani (2018); nothing else about the study is asserted here.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**User's answers to Before you start.** Finding: Blumenstock, Callen & Ghani (2018), *American Economic Review*; 949 employees of one Afghan mobile-money firm (Roshan), salaries paid by mobile money; a 5% default contribution to a savings account versus a 0% default raised participation by 40 percentage points, equivalent to a 50% employer match; mechanism per the authors: present bias and the cognitive cost of deciding, not endorsement or inattention. User's case: a savings program at three garment factories in Gazipur, Bangladesh, about 6,000 workers (mostly young women, many first-generation wage earners, lower literacy) paid monthly into a mobile-money wallet introduced 18 months ago; the program would default a 5% salary deduction into a locked savings wallet, opt-out at the factory HR desk; outcome the team cares about: savings balance retained at 6 months. Implementer: factory HR with the wallet provider. Decision: a pilot in one factory, then scale to three; the current proposal quotes "a 40-point increase". Near-setting replications: none supplied. Cheap tests feasible: a short survey, interviews, and an A/B arm in the pilot.
+## The request
+
+"We run a savings program at three garment factories in Gazipur, Bangladesh: about 6,000 workers, mostly young women, paid monthly into a mobile-money wallet the factories introduced 18 months ago. We want to enroll workers by default in a savings pocket inside the wallet, with opt-out at the HR desk, and judge it by the balance still held after six months. Our proposal says to expect the 40-point effect from Blumenstock, Callen and Ghani (2018), https://doi.org/10.1257/aer.20171676. Does that apply to us? This is for a one-factory pilot."
+
+## The output
 
 ```markdown
-# Transferability assessment: Afghanistan 5% savings default (Blumenstock et al. 2018)
+# Transferability assessment: default enrollment in a salary-linked savings account (Afghanistan)
 
-**Decision this informs:** a one-factory pilot, then scale to three factories; a proposal number is also at stake
-**Finding:** Blumenstock, Callen & Ghani (2018), AER 108(10); 949 employees of one firm; a 5% default versus 0% raised participation by 40 points (equivalent to a 50% employer match); claimed mechanism: present bias plus the cognitive cost of deciding, not endorsement or inattention
-**Near-setting replications supplied:** none supplied; treated as single-setting
+**Decision this informs:** a one-factory pilot, and a number quoted in a proposal
+**Finding:** Blumenstock, Callen & Ghani (2018), https://doi.org/10.1257/aer.20171676; default enrollment raised participation by 40 percentage points, the same as a 50% matching incentive; employees of a firm in Afghanistan with a salary-linked savings account
+**How the study was read:** abstract only. The sample size, the default contribution rate, how employees opted out, and how long balances were held could not be read.
 
-## Fit, dimension by dimension
+## 1. Why the effect happened
+The authors conclude the effect is "driven largely by present-biased preferences and the cognitive cost of thinking through different savings scenarios". People who would save put off the decision, and the default removes the need to decide. Default assignment also changed attitudes toward saving and made employees more likely to choose to save after the study.
 
-| Dimension | The study | Your case | Difference | Touches the mechanism? |
-|---|---|---|---|---|
-| Units (who, how many) | 949 salaried employees of one telecom firm, Afghanistan | About 6,000 garment workers, mostly young women, lower literacy, newer to formal wages | Gender, literacy, income level, familiarity with the wallet | unknown: present bias and decision cost are plausibly present in both; a lower wage makes a 5% deduction pinch more, which could raise opt-outs for reasons unrelated to the mechanism |
-| Treatment (what, as delivered) | Automatic 5% contribution with opt-out through the wallet | Automatic 5% deduction with opt-out at the HR desk | Opt-out is costlier and socially visible | yes: the mechanism is decision cost; raising opt-out cost changes both the effect and whether participation reflects preference |
-| Outcome (what was measured, when) | Participation (any contribution) | Balance retained at 6 months | A different construct; the study does not report retention | yes: the finding says nothing about whether money stays in the account |
-| Setting (institutions, infrastructure, channel, literacy) | Payroll by mobile money already established; one employer | Wallet introduced 18 months ago; trust in it uncertain; strong remittance pressure on payday | If workers withdraw the full salary on payday to send home, a lock changes household cash flow, and opt-outs may be driven by family claims rather than present bias | yes |
-| Implementer (who delivered, with what trust and capacity) | The employer, with a research team | Factory HR with the wallet provider; worker trust in HR is low in this sector | A default announced by HR may be read as a wage cut | yes: endorsement was not the study's mechanism, but distrust can drive opt-outs that the study did not face |
+## 2. Do the conditions hold in your setting?
+
+| What the effect depended on | In the study | In your setting | Holds? |
+|---|---|---|---|
+| People put off a savings decision they would otherwise make | Concluded by the authors from added experiments | Not measured | Unknown: ask 20 workers whether they intend to save from wages and what stops them |
+| Savings come out of a salary before it is spent | Salary-linked account | Wages paid monthly into a wallet | Holds, if workers do not withdraw the whole wage on payday |
+| Opting out is a choice the employee can make freely | Not readable from the abstract | Opt-out at the HR desk, in person | Unknown, and likely does not hold: a visible, costly opt-out keeps people enrolled who would prefer not to be |
+| The outcome is participation | Participation | Balance held after six months | Does not hold: the study's headline result says nothing about whether money stays |
+| The payer is trusted to handle wages | Not readable from the abstract | Wallet is 18 months old; trust in factory HR not known | Unknown: a default announced by HR can be read as a wage cut |
+
+## 3. Has the same response been seen elsewhere?
+None supplied or found in this run: a single-setting finding.
+
+## 4. Can it be delivered as it was?
+In the study the employer ran the default with a research team. Here factory HR and the wallet provider would run it. Whether HR can process opt-outs promptly and without pressure is not known.
 
 ## Verdict
-Transfers with modifications, because the decision-cost mechanism plausibly exists here but three rows (treatment, setting, implementer) change the conditions it ran under, and the outcome the team cares about was not measured in the study. The 40-point figure cannot be carried into the proposal.
-
-## Discounted expected effect (provisional)
-- Published effect: 40 percentage points on participation
-- Published-to-field discount: the finding is a single-firm academic study; academic journal effects average several times the effect seen when units run the same kinds of interventions (8.7 against 1.4 points, DellaVigna and Linos 2022)
-- Further discount for untested differences: HR-desk opt-out may inflate participation without reflecting preference (treatment row), so the planning range should refer to voluntary participation measured with a wallet-menu opt-out; remittance pressure (setting row) and HR distrust (implementer row) both push opt-outs up
-- Range to hand to estimate-expected-effect: for participation, roughly 10 to 25 points with a wallet-menu opt-out, an illustrative judgment, not derived from a source; for balance retained at 6 months, no range from this study; provisional, not a planning number
+Cannot tell, because two conditions are unknown, one probably does not hold as designed (the opt-out), and the outcome you care about was not the one measured. The direction is plausible. The 40-point figure should come out of the proposal.
 
 ## Assumptions to test locally
-1. Workers do not withdraw the full salary on payday for remittances: one month of wallet transaction data with consent, or a five-item survey; would change the verdict if it failed? yes
-2. Workers read the default as savings, not as a wage cut by HR: ten interviews before launch; yes
-3. A wallet-menu opt-out keeps participation well above the 0% default arm: the pilot's A/B arm (HR-desk opt-out versus wallet-menu opt-out); no, but it changes the range
-4. Participation persists as retained balance at 6 months: the pilot's own outcome, which the study cannot supply; yes, for the outcome the team cares about
+1. Workers who say they want to save are held back by putting the decision off, not by needing every taka on payday: 20 short interviews before the pilot.
+2. Workers can opt out without cost or embarrassment: move the opt-out into the wallet menu, then compare opt-out rates between the menu and the HR desk in the pilot.
+3. Money defaulted into the pocket stays there: report the six-month balance, not enrollment, as the pilot's outcome.
+4. Workers read the default as a service, not a deduction: test the announcement with 10 workers and ask them to say back what will happen to their wage.
 
 ## What to check before relying on this
-- The setting row: payday remittance behavior is the assumption most likely to be wrong and the cheapest to check.
-- Whether the decision-cost mechanism is present at all: if workers already make an active choice about every payday transfer, there is no passive default to exploit.
+- The full text of the study, for how opt-out worked and whether balances were tracked. Either could change the verdict.
 ```
-
-**What happened next (illustrative).** The team replaced "a 40-point increase" in the proposal with the provisional range and handed it to `estimate-expected-effect` for the planning number; assumptions 1 and 2 went into a two-week pre-pilot check before the A/B arm was designed.

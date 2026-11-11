@@ -1,34 +1,41 @@
-# Worked example: MaizeMate, a WhatsApp agronomy assistant
+# Worked example: a WhatsApp agronomy assistant asked for an RCT
 
-This example continues the MaizeMate running case used across the AI-product skills ported from Joe Speed's prototype. It is illustrative, not a real program. The run below had only the AI product account; no user funnel map was available.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**AI product account (user-supplied, condensed):** "MaizeMate is our WhatsApp AI assistant answering agronomy questions for smallholder maize farmers in western Kenya; the goal is better yields through timely top-dressing. Piloted with about 1,400 farmers via two cooperatives. We benchmarked answers against an agronomist-written test set last quarter (88% rated acceptable); usage is spiky, many farmers ask one question and never return. Our funder wants to discuss an RCT at the October board meeting."
+## The request
+
+"MaizeMate is our WhatsApp AI assistant that answers agronomy questions for smallholder maize farmers in western Kenya. The goal is better yields through timely top-dressing. We've piloted with about 1,400 farmers through two cooperatives. Last quarter we benchmarked answers against an agronomist-written test set and 88% were rated acceptable. Usage is spiky: a lot of farmers ask one question and never come back. Our funder wants to discuss an RCT at the October board meeting and we need to decide what to propose. Which evaluation should we run next?"
+
+## The output
 
 ```markdown
-# AI evaluation level recommendation
+# What to evaluate next: MaizeMate
 
-**Product:** MaizeMate, a WhatsApp AI agronomy assistant for smallholder maize farmers in western Kenya
-**Development outcome targeted:** improved maize yields via timely top-dressing fertilizer application
-**Decision this recommendation informs:** whether to propose an RCT at the October board meeting or a staged alternative
+**Product:** A WhatsApp AI assistant that answers agronomy questions for smallholder maize farmers in western Kenya. In pilot with about 1,400 farmers through two cooperatives.
+**Outcome it is meant to improve:** Maize yields, through top-dressing fertilizer applied on time.
+**Decision this informs:** What to propose to the funder at the October board meeting: an RCT, or something else first.
 
-## Level verdicts
-| Level | Question | Verdict | Evidence the verdict rests on |
+## Recommendation
+Run a stage 2 evaluation now: an A/B test of ways to bring farmers back after their first question, judged by the share who return within four weeks. Do not propose the RCT yet. Many farmers ask one question and never return, so a yield trial today would test a product that most of its users have barely used.
+
+## The four stages
+| Stage | Question, in the playbook's words | Evidence you have | Verdict |
 |---|---|---|---|
-| 1: Model | Desired responses? | continue/monitor | 88% acceptable on an agronomist-written test set last quarter; no stress-test bucket reported, so safety behavior is unknown |
-| 2: Product | Meaningful interactions? | run now | the account's own description: "many farmers ask one question and never return"; engagement is the weak link |
-| 3: User | Thoughts, feelings, actions? | premature | no evidence that usage shifts fertilizer knowledge or intent, and it cannot be read until Level 2 stabilizes |
-| 4: Impact | Yield improvement? | premature | fails all three of the playbook's gates: Levels 2 and 3 not strong, not preparing to scale, no confident effect priors |
+| 1. Model | "Does the AI system perform as intended?" | 88% of answers rated acceptable against an agronomist-written test set last quarter. Nothing on unsafe or out-of-scope questions. | Keep monitoring: add test questions on pesticide misuse and on questions outside agronomy before any wider rollout |
+| 2. Product | "Does the overall product engage and retain users?" | Your account: "a lot of farmers ask one question and never come back". No retention figure supplied. | Run now: this is the weakest stage, and the later ones depend on it |
+| 3. User | "Does the product change users' thoughts, feelings, knowledge and behaviour towards the development outcome?" | None supplied. | Premature: a farmer who asks one question has had too little contact for a change in what they know or do to be detected |
+| 4. Impact | "Do users with access to the product improve development outcomes?" | None supplied. | Premature: stages 2 and 3 have no strong evidence, and no partner is yet considering wider adoption |
 
-## What to run now
-Level 2: an engagement experiment on the one-question drop-off (for example, proactive check-in variants), designed via design-evidential-experiment.
-Level 1, continuing: extend the test set with a stress-test bucket (pesticide misuse, out-of-scope medical questions) before any scale-up.
+## Why the later stages are premature
+- **Stage 4 (the RCT):** Evidence at stages 2 and 3 is not strong, and no partner is yet considering wider adoption. If a yield trial run now found no effect, nobody could say whether advice by chat does not raise yields or whether farmers did not use it. The staged route answers the funder's question with less risk: fix return use, then show that farmers who use MaizeMate change when they top-dress, then test yields.
+- **Stage 3:** Worth preparing, not yet worth running. Choose one or two measures now, such as whether a farmer can say when to top-dress, so they are ready once farmers come back.
 
-## Why the premature levels are premature
-Level 4: an RCT on yields now would measure the impact of a product most enrolled farmers use once. A null would be uninterpretable (product failure versus idea failure), which is exactly the premature-RCT case the framework warns funders against. Level 3: user-outcome measures are worth building (see below) but cannot carry weight while retention is this weak.
-
-## Evaluability-early steps
-Hold out one cooperative's next enrollment cohort from proactive-messaging features; tag model and knowledge-base versions in every logged conversation; randomize enrollment timing across the waitlist now so a future Level 4 comparison group exists by design.
+## Build now so later evaluation is possible
+- Tag every logged conversation with the model, prompt, and knowledge-base version that produced it.
+- Bring new cooperatives on in a random order, so that those enrolled later can serve as a comparison group.
+- When a new feature launches, keep a randomly chosen group of farmers on the current version.
 
 ## What would change this recommendation
-Level 3 → run now: 4-week retention stabilizing after the engagement experiments. Level 4 → run now: strong Level 3 evidence that usage shifts top-dressing knowledge and intent, plus a scale decision actually on the table.
+- Stage 3 becomes "run now" when a steady share of farmers return within four weeks of their first question.
+- Stage 4 becomes "run now" when stage 3 shows that users change when they top-dress, a government or funder is considering wider adoption, and the team has the capacity to work with independent researchers.
 ```

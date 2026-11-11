@@ -1,137 +1,124 @@
 ---
 name: choose-ai-eval-level
 description: >-
-  Use when a team with an AI product for a social cause must decide which
-  evaluation to run next, especially when a funder wants proof of impact or
-  someone proposes jumping straight to a randomized controlled trial. Also
-  use when the candidate evaluations span very different costs (another
-  benchmark run, an A/B test, a psychometric survey, a full RCT) or when
-  someone asks "are we ready for an RCT?" Recommends which of The Agency
-  Fund's four evaluation levels (the AI model, the product, user behavior,
-  real-world impact) the product has earned now, which are premature and
-  why, and what to set up now so later evaluation stays possible. Do not use
-  to design the recommended evaluation itself; hand a Level 2 or 3
-  experiment to design-evidential-experiment and an outcome measurement
-  plan to plan-evaluation-design. Not for programs with no AI model in the
-  loop; start those at plan-evaluation-design.
+  Use when a team with an AI tool, product, or program for a social cause
+  must decide what to evaluate next: "are we ready for an RCT?", "our funder
+  wants proof of impact", "what evidence can we honestly show?". Gives one
+  recommendation on which stage of evaluation to run now and which is
+  premature, with the evidence behind each judgment and what to build now so
+  later evaluation stays possible. Do not use when the evaluation is chosen
+  and needs designing; use plan-evaluation-design. Not for programs with no
+  AI model in them.
 license: CC-BY-4.0
 metadata:
   title: Choose which AI evaluations to run next
   type: atomic
   stage: test
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
-  authors: "Joe Speed"
+  authors: "Joe Speed, Zezhen Wu"
   org: IL
-  weird: likely-generalizes
+  tested_in: not-applicable
   tags: "ai-eval, evaluation-framework"
-  consumes: "ai-product-account, user-funnel-map"
+  consumes: "ai-product-account"
   produces: "ai-eval-level-recommendation"
 ---
 
 ## What it does
 
-Recommends which evaluations an AI product is ready for, based on what it has already shown.
+Recommends which stage of evaluation an AI tool, product, or program should run next.
 
-It uses The Agency Fund's four evaluation levels: the AI model, the product, user behavior, and real-world impact. For each level it says whether to run it now or why it is too early, citing the evidence the verdict rests on, and it lists what to set up now so later evaluation stays possible.
+**What this adds:** gives each of four stages a verdict tied to a named piece of evidence or to "none supplied"; makes one recommendation; says why each later stage is premature, in words a team can give a funder; refuses adjectives or a funder's request as evidence; and always lists what to build now so that an impact evaluation is possible later.
+
+The idea is from The Agency Fund's AI evaluation playbook: evaluation is staged, from the model's answers to people's lives, and a result at a later stage means little until the earlier ones hold.
 
 ## When to use it
 
 ### Use it when
-- A team is deciding where the next unit of evaluation effort goes and the candidates span very different costs: another benchmark run, an A/B test, a psychometric survey, a full RCT
-- A funder or board is requesting impact evidence and the team needs a defensible, framework-grounded account of what evidence the product's stage can support; the playbook's own recommendation is that funders "match evaluation requirements to the product's development stage, avoiding premature requests for impact evaluations"
-- An AI product has strong engagement numbers and someone proposes jumping straight to an RCT with no Level 3 evidence that usage shifts what users think, feel, or do
-- Someone asks "are we ready for an RCT?", "what should we evaluate next?", or "what evidence can we honestly show the funder?"
+- A team asks "are we ready for an RCT?" (a randomized controlled trial) or "what should we evaluate next?"
+- A funder or board asks for proof of impact from a product that is still changing
+- Strong usage numbers lead someone to propose an impact evaluation
 
 ### Do not use it when
-- The question is how to design the recommended evaluation; hand a Level 2 or 3 experiment to `design-evidential-experiment` and a Level 3 or 4 measurement plan to `plan-evaluation-design`
-- The program has no AI model in the loop; the four levels assume a model whose behavior needs evaluating separately from the product around it. Start a non-AI intervention at `plan-evaluation-design`
-- The team wants a Level 1 test set built; that is `design-golden-dataset`
-- The decision is whether the product should scale; this skill sequences evidence, it does not make the scale decision
+- The evaluation is chosen and the question is its outcome, comparison group, or sample; use `plan-evaluation-design`
+- The program has no AI model in it; use `plan-evaluation-design`
+- A trial has shown an effect and the question is whether it holds at scale; use `assess-scalability`
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask only what the user has not answered.
 
-1. **Required.** The AI product account: what the product does and for whom, the development outcome it ultimately targets, its current maturity (prototype, piloted, deployed, scaling), and what evaluation evidence already exists at each level. Honest gaps in, useful recommendation out; a flattering account produces a premature one.
-2. **Required.** The decision this recommendation informs: what the team will do differently depending on the answer (propose an RCT at a board meeting, choose between two evaluation budgets). Often it is in the account already.
-3. Optional. A user funnel map from `build-user-funnel`. With it, Level 2 evidence ("engaging users as intended") becomes checkable against named stages instead of taken on the team's word.
-4. Optional. Any external pressure on the choice (a funder's request, a deadline), so the "why premature" section can answer it directly.
+1. **Required.** The product: what it does, for whom, the outcome in people's lives it is meant to improve, and how far along it is (prototype, pilot, deployed, scaling).
+2. **Required.** The evidence so far: what has been tested or measured about the model's answers, use, users, and outcomes.
+3. **Required.** The decision this informs: what the team will do differently depending on the answer.
+4. Optional. Outside pressure: a funder's request, a deadline.
 
-If 1 or 2 is missing, ask and stop. If 3 is missing, proceed, and in the Level 2 row say plainly what the verdict rests on; "founder's impression" is a legitimate, flag-raising thing to write. If 4 is missing, assume none.
+If 1, 2, or 3 is missing, ask and stop. No evidence at a stage is an answer, not a missing input: record "none supplied".
 
 ## What it draws on
 
-- Wu, Z., On, R., Walsh, J., Korley, E., Madon, T., & Wong, L. (2025). AI Evaluation in the Social Sector: A Living Playbook. The Agency Fund. Living document, Apache-2.0. https://eval.playbook.org.ai/
-- Chia, H. S., Carter, S., Abrol, F., Madon, T., On, R., Walsh, J., & Wu, Z. (2025). An AI Evaluation Framework for the Development Sector. The Agency Fund, Center for Global Development, and J-PAL. https://www.cgdev.org/blog/ai-evaluation-framework-for-the-development-sector
+- Wu, Z., On, R., Walsh, J., Korley, E., Madon, T., & Wong, L. (2025). *AI Evaluation in the Social Sector: A Living Playbook*. The Agency Fund. Current edition: *AI Evaluation Playbook* (2026), maintained by the Center for Global Development, IDinsight, and The Agency Fund. https://eval.playbook.org.ai/ Supports: the four stages and their questions, and steps 4 and 7.
+- Chia, H. S., Carter, S., Abrol, F., Madon, T., On, R., Walsh, J., & Wu, Z. (2025, April 16). *An AI evaluation framework for the development sector*. Center for Global Development. https://www.cgdev.org/blog/ai-evaluation-framework-for-the-development-sector Supports: step 6. Funders should "match evaluation requirements to the product's development stage".
 
-The Agency Fund's playbook (Wu et al., 2025; announced jointly with CGD and J-PAL in Chia et al., 2025) defines four incremental evaluation levels, each with broadening scope: **Level 1, model evaluation** ("Does the AI model produce the desired responses?"), **Level 2, product evaluation** ("Does the product facilitate meaningful interactions?"), **Level 3, user evaluation** ("Does the product positively support users' thoughts, feelings, and actions?"), and **Level 4, impact evaluation** ("Does the product improve development outcomes?"). The framework's central discipline, which this skill operationalizes, is stage-matching: Level 1 is cheap and continuous from day one; Level 2 requires a deployed product with real users; Level 3 requires Levels 1 and 2 to be working; Level 4 is warranted only when Levels 1 to 3 are strong, the team is preparing to scale, and priors about the treatment effect are confident. The playbook is explicit that a product still in early design, with inconsistent usage or untested mechanism hypotheses, should run Level 3 evaluations instead of an RCT.
+**Where the evidence comes from:** This is a procedure for ordering evaluations and makes no claim about how people behave. The playbook was written for generative AI products in low- and middle-income countries. What counts as a good answer, real use, and a better outcome must be set for each product and place.
 
-Two further playbook commitments are carried into the output. First, *evaluability early*: holdout groups, staged rollouts, version tagging, and embedded randomization belong in the product's architecture before a Level 4 evaluation is justified, so the option is not foreclosed. Second, *the social-sector bar*: in the tech sector evaluation typically stops at Levels 1 and 2; here Levels 1 to 3 are necessary but not sufficient, so "no level recommended" is never a valid output. The recommendation names what to run now at whatever level fits.
-
-Judgment call the source does not fully specify: the playbook gives gates in qualitative terms ("Levels 1 to 3 are strong"). This skill requires each gate judgment to cite the specific evidence in the AI product account (or the user funnel map) it rests on, so a disagreement about readiness is a disagreement about named evidence, not adjectives.
-
-**WEIRD skew:** The framework was built for the development sector: its worked cases are education, health, and agriculture deployments in low- and middle-income countries, so its evidence base is unusually non-WEIRD for this library. The caveats run the other way. The playbook is a 2025 draft and living document, not a validated instrument, and a 2026 practitioner review by IDinsight is reported to have found that implementers treat the levels as an initial lens rather than a procedure (unverified, author to confirm). Expect to exercise judgment at the boundaries, not to read decisions off a chart.
-
-**Replication status:** Not applicable in the effect sense: the four-level framework sequences evaluations, it is not an intervention, so there is no effect to replicate. It is a 2025 living document, and whether independent teams applying it to the same product reach the same level verdicts has not, to the authors' knowledge, been tested. Treat verdicts as structured judgment anchored to named evidence rather than as measurement.
+**Replication status:** Not applicable. No study tests whether teams that order evaluation this way decide better, or whether two teams reach the same verdicts.
 
 ## How to do it
 
-1. **Carry over the product, the development outcome, and the decision** from the account at the top of the output, so every verdict is visibly tied to one decision.
-2. **Give every level a verdict**: run now, continue/monitor, premature, or satisfied for this stage. Include levels already satisfied and levels far out of reach; a skipped row reads as an oversight downstream.
-3. **Cite the evidence each verdict rests on**, naming the specific item in the account (or the user funnel map) or writing "none supplied". A disagreement about readiness should be a disagreement about named evidence, not adjectives.
-4. **Apply the stage-matching gates.** Level 1 is cheap and continuous from day one. Level 2 needs a deployed product with real users. Level 3 needs Levels 1 and 2 working. Level 4 needs Levels 1 to 3 strong, a scale decision on the table, and confident priors about the treatment effect. A product with inconsistent usage or untested mechanism hypotheses gets Level 2 or 3 work, not an RCT.
-5. **Write "what to run now"** for each run-now level: the concrete evaluation, the method family the playbook prescribes at that level, and the evidence it will produce. Point Level 2 and 3 experiments at `design-evidential-experiment` and outcome-measurement planning at `plan-evaluation-design`.
-6. **Explain why each premature level is premature**, citing which gate fails and the account evidence behind it. This section is what the team hands a funder asking for the skipped level.
-7. **List evaluability-early steps** whatever the verdicts: holdout groups, staged rollouts, version tagging, embedded randomization. This section is mandatory even when Level 4 is far off; it exists precisely for those products.
-8. **State what would change the recommendation**: the specific evidence that would move each "premature" to "run now".
-9. **Never return "no level recommended".** Levels 1 to 3 are necessary but not sufficient in the social sector, so the output always names something to run now at whatever level fits.
+1. **State the product, the outcome, and the decision.**
+2. **Sort the team's evidence under the four questions.** For each, name the item (a test-set pass rate, a retention figure, a survey result) or write "none supplied". "Engagement is strong" and a funder's request are not evidence.
+3. **Give each stage a verdict:** run now, keep monitoring, or premature. A stage is premature when a weakness at an earlier one would make its result unreadable: people stop using a product whose answers are poor, and one-time use cannot change what they do. The first three stages can run side by side.
+4. **Recommend an impact evaluation only when the playbook's three conditions hold:** evidence at the first three stages is strong; funders or policymakers are considering wider adoption; the team has capacity to work with independent researchers. Where use is too inconsistent to expect an effect, recommend stage 3.
+5. **Make one recommendation:** the evaluation to run now and what it will show. Name the kind of study, not its design. Some stage always has a question worth answering, so never recommend nothing.
+6. **Explain each premature stage:** what a result there would and would not mean today.
+7. **List what to build now**, whatever the verdicts: a holdout group (users kept on the old version), a staged rollout or built-in random assignment, and a version tag on every release. These decide whether an impact evaluation is possible later without rebuilding the product.
+8. **Say what would change the recommendation.**
 
-See `references/worked-example.md` for a complete run on MaizeMate, a WhatsApp agronomy assistant.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# AI evaluation level recommendation
+# What to evaluate next: <product>
 
-**Product:** <name + one-line description, carried from the account>
-**Development outcome targeted:** <the Level 4 outcome>
-**Decision this recommendation informs:** <what the team will do differently depending on the answer>
+**Product:** <what it does, for whom, and how far along it is>
+**Outcome it is meant to improve:** <the change in people's lives>
+**Decision this informs:** <what the team will do differently depending on the answer>
 
-## Level verdicts
-| Level | Question | Verdict | Evidence the verdict rests on |
+## Recommendation
+<one to three sentences: the evaluation to run now, what it will show, and why not a later stage>
+
+## The four stages
+| Stage | Question, in the playbook's words | Evidence you have | Verdict |
 |---|---|---|---|
-| 1: Model | Does the model produce the desired responses? | <verdict> | <named evidence from the account, or "none supplied"> |
-| 2: Product | Does the product facilitate meaningful interactions? | <verdict> | <...> |
-| 3: User | Does it positively support users' thoughts, feelings, actions? | <verdict> | <...> |
-| 4: Impact | Does it improve the development outcome? | <verdict> | <...> |
+| 1. Model | "Does the AI system perform as intended?" | <named evidence, or "none supplied"> | <run now / keep monitoring / premature: one line why> |
+| 2. Product | "Does the overall product engage and retain users?" | <...> | <...> |
+| 3. User | "Does the product change users' thoughts, feelings, knowledge and behaviour towards the development outcome?" | <...> | <...> |
+| 4. Impact | "Do users with access to the product improve development outcomes?" | <...> | <...> |
 
-## What to run now
-<for each "run now" level: the concrete evaluation, the method family the playbook prescribes at that level, and the evidence it will produce. Point Level 2 and 3 experiments at design-evidential-experiment and outcome-measurement planning at plan-evaluation-design.>
+## Why the later stages are premature
+- **<stage>:** <what a result would and would not mean today, in words the team can give a funder; or "No stage is premature.">
 
-## Why the premature levels are premature
-<per premature level: which gate fails, citing the account. This section is what the team hands a funder asking for the skipped level.>
-
-## Evaluability-early steps
-<holdouts, staged rollout, version tagging, embedded randomization: the steps to take now so higher levels stay possible later. Mandatory even when Level 4 is far off.>
+## Build now so later evaluation is possible
+- <a holdout group, a staged rollout or random assignment, version tags: the specific step for this product>
 
 ## What would change this recommendation
-<the specific evidence that would move each "premature" to "run now">
+- <the evidence that would move each premature stage to "run now">
 ```
 
 ## Where it goes wrong
 
-- **Rubber-stamping the pressure.** The account says the funder wants an RCT, and the recommendation obligingly finds Level 4 "earned". The gate evidence column is the tell: if the Level 4 row cites the funder's interest rather than Level 1 to 3 evidence, the skill has answered the politics, not the framework.
-- **Reading Level 2 off the team's adjectives.** "Engagement is strong" is a claim, not evidence. Without a user funnel map or named metrics in the account, the verdict must say what it is resting on, and "founder's impression" is a legitimate, flag-raising thing to write.
-- **Treating levels as a ladder to climb once.** The playbook's levels are iterative: Level 1 monitoring continues at every later stage, and a product change resets Level 2 questions. A recommendation that reads "Level 1: done" has misread the framework.
-- **Skipping evaluability-early because Level 4 is far off.** That section exists precisely for products far from an RCT; omitting it forecloses the option this framework is designed to keep open.
-- **Out of scope: non-AI products.** For a program with no model in the loop, the level distinctions collapse and this skill's output is noise; use `plan-evaluation-design`. Also out of scope: ruling on whether the product should scale. This skill sequences evidence; it does not make the scale decision.
+- **Answering the pressure.** The funder wants a trial, so stage 4 is found ready. A stage 4 row that cites the funder's interest and no earlier evidence has answered the politics.
+- **A ladder climbed once.** "Stage 1: done" misreads the idea. A new model, prompt, or knowledge base reopens stage 1; a redesign reopens stage 2.
+- **The order read as a rule about where to start.** Teams begin with their biggest risk: safety for a health tool, whether anyone will use a new service. The stages say what a result can mean, not which question to ask first.
+- **Usage read as stage 3.** Return visits show that people come back, not that they know or do anything differently.
 
 ## When to bring in a specialist
 
-Tell the user to involve an independent evaluator or research partner (a university team, an evaluation firm, a J-PAL or IPA-affiliated researcher) when:
-- The recommendation lands on Level 4 run now; an impact evaluation of a product the team built should be designed and analyzed by people without a stake in the result, and the account alone cannot establish that the "confident priors" gate is met
-- The product operates in a safety-critical domain (health advice, financial decisions, child protection, mental health), where "desired responses" at Level 1 needs a domain expert's definition, not the team's, before any higher level is read
-- A funder and the team still disagree about readiness after seeing the level table; the disagreement is then about what counts as evidence, which a neutral methodologist should arbitrate
+Tell the user to bring in:
+- When the recommendation is an impact evaluation: an independent evaluator (a university partner or an evaluation firm), so that people with no stake in the result design it
+- When the product gives health, legal, financial, or child-protection advice: a domain expert, to define a correct and safe answer before any stage 1 result is read
+- When the funder and the team still disagree after seeing the table: an evaluation methodologist neither side employs
 
-Bring them: the product account, the level table with its evidence column, and the user funnel map if one exists.
+Bring them: the product description, the table of stages, and the list of what is built for later evaluation.

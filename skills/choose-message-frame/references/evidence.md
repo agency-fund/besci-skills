@@ -1,0 +1,44 @@
+# Evidence: Choose gain or loss wording for a message
+
+## Sources
+
+- Gallagher, K. M., & Updegraff, J. A. (2012). Health message framing effects on attitudes, intentions, and behavior: A meta-analytic review. *Annals of Behavioral Medicine*, 43(1), 101–116. https://doi.org/10.1007/s12160-011-9308-7 Supports: recording whether the behavior prevents or detects, and measuring behavior, not intention. Across 189 effect sizes from 94 studies, gain-framed messages were more likely than loss-framed ones to encourage prevention behaviors (r = 0.083, p = 0.002), a correlation where 0 means no difference. No effect of framing was found on attitudes or intentions, or among studies encouraging detection. Abstract only.
+- Akl, E. A., Oxman, A. D., Herrin, J., Vist, G. E., Terrenato, I., Sperati, F., Costiniuk, C., Blank, D., & Schünemann, H. (2011). Framing of health information messages. *Cochrane Database of Systematic Reviews*, 2011(12), CD006777. https://doi.org/10.1002/14651858.CD006777.pub2 Supports: the gain default and promising no difference. For messages worded as a gain or a loss, there was little or no difference in behavior (16 studies; standardized mean difference −0.06, 95% CI −0.15 to 0.03; low-quality evidence). The authors conclude that framing "may have little if any consistent effect on health consumers' behaviour". Abstract only.
+- Dorison, C. A., Lerner, J. S., Heller, B. H., Rothman, A. J., Kawachi, I. I., Wang, K., et al. (2022). In COVID-19 health messaging, loss framing increases anxiety with little-to-no concomitant benefits: Experimental evidence from 84 countries. *Affective Science*, 3(3), 577–602. https://doi.org/10.1007/s42761-022-00128-3 Supports: naming who the loss version could frighten, and the pre-test. Abstract only.
+- Ferraro, P. J., & Tracy, J. D. (2022). A reassessment of the potential for loss-framed incentive contracts to increase productivity: a meta-analysis and a real-effort experiment. *Experimental Economics*, 25(5), 1441–1466. https://doi.org/10.1007/s10683-022-09754-x Supports: not designing a payment that is given and then taken back. Loss-framed pay raised productivity by 0.16 standard deviations across all studies: 0.33 in laboratory experiments and 0.02 in field experiments, with signs of publication bias among the laboratory ones. In the authors' own experiment most workers preferred the gain-framed contract, and the gain in output was detectable only among the roughly 20% who preferred the loss-framed one. Abstract only.
+- Rothman, A. J., & Salovey, P. (1997). Shaping perceptions to motivate healthy behavior: The role of message framing. *Psychological Bulletin*, 121(1), 3–19. https://doi.org/10.1037/0033-2909.121.1.3 Supports: the question in step 2. The article proposes that which frame works better depends in part on whether a behavior detects illness or affirms health. Abstract only.
+- The Behavioural Insights Team (2024). *EAST: Four simple ways to apply behavioural insights* (revised and updated edition). https://bi.team/wp-content/uploads/2014/04/BIT-EAST.pdf Supports: treating a frame as a choice of which aspect of an offer to make prominent. Section 2.1 and box 2.1 read in full.
+
+The rule that the gain version is the default is this skill's own. The sources show the difference between frames is small and that loss wording raises anxiety; none of them states a default.
+
+## Where it has been tested
+
+Searched November 2026.
+
+| Source | Type | Countries | Finding |
+|---|---|---|---|
+| [Gallagher & Updegraff (2012)](https://doi.org/10.1007/s12160-011-9308-7) | Meta-analysis, 94 studies; abstract only | Not stated in the abstract | Gain wording slightly better for prevention behaviors (r = 0.083); no difference for detection, attitudes, or intentions |
+| [O'Keefe & Jensen (2007)](https://doi.org/10.1080/10810730701615198) | Meta-analysis, 93 studies, 21,656 participants; abstract only | Not stated in the abstract | Gain wording slightly more persuasive for disease prevention (r = .03), a difference that appears to come from dental hygiene messages. No significant difference for safer sex, skin cancer prevention, or diet |
+| [O'Keefe & Jensen (2009)](https://doi.org/10.1111/j.1460-2466.2009.01417.x) | Meta-analysis, 53 studies, 9,145 participants; abstract only | Not stated in the abstract | Loss wording slightly more persuasive for disease detection (r = −.04), significant only for breast cancer detection |
+| [Akl et al. (2011)](https://doi.org/10.1002/14651858.CD006777.pub2) | Cochrane review, 35 studies, 16,342 participants; abstract only | Not stated in the abstract | Little or no difference in behavior between gain and loss wording |
+| [Dorison et al. (2022)](https://doi.org/10.1007/s42761-022-00128-3) | Survey experiment, 15,929 participants in 48 languages; abstract only | 84 countries | Loss-framed COVID-19 messages raised self-reported anxiety, with little to no effect on policy attitudes, intentions, or information seeking. The results were consistent across the 84 countries |
+| [Karlan, McConnell, Mullainathan & Zinman (2016)](https://doi.org/10.1287/mnsc.2015.2296) | Field experiments with three banks; abstract, and the working-paper version for the countries | Bolivia, Peru, Philippines | Reminders raised the share of clients who met their savings commitment. Gain or loss wording of the reminder made no significant difference |
+| [Bahety, Bauhoff, Patel & Potter (2021)](https://doi.org/10.1016/j.jdeveco.2021.102747) | Randomized trial with nearly 4,000 households and ten message arms; abstract only | India (rural Bihar) | Text messages worded as gains or as losses, for one's family or one's community, showed no evidence of an effect on knowledge of, or adoption of, distancing and handwashing |
+| [Bulte, List & van Soest (2020)](https://doi.org/10.1093/ej/ueaa054) | Field experiment with 1,000 workers; abstract only | Uganda | Pay framed as a loss raised output compared with the same pay framed as a gain. The authors estimate the welfare cost to workers as modest |
+| [Hossain & List (2012)](https://doi.org/10.1287/mnsc.1120.1544) | Natural field experiment in a high-tech manufacturing facility; abstract only | China | Bonuses framed as losses and as gains both raised productivity. Teams responded more to the loss framing, by about 1% of team productivity, and the effect lasted through the study |
+| [Hallsworth, List, Metcalfe & Vlaev (2017)](https://doi.org/10.1016/j.jpubeco.2017.02.003) | Natural field experiments with tax reminder letters; working-paper version read | United Kingdom | A sentence on public services worded as a gain and the same sentence worded as a loss each raised payment by about 1.3%. Loss wording did no better than gain wording |
+| [Fryer, Levitt, List & Sadoff (2022)](https://doi.org/10.1257/pol.20190287) | Field experiment with teachers; abstract only | United States | Bonuses paid up front and returned if students did not improve raised math scores by 0.124 standard deviations over two waves, with large effects in the first wave and none in the second |
+
+No review of gain and loss wording restricted to low- and middle-income countries was found. For messages, the field trials outside wealthy Western countries agree with the reviews: the frame made little or no difference. For pay, two trials outside wealthy Western countries found that loss framing raised output, which is more than the pooled field estimate suggests. What depends on the place is whether a bad outcome may be named aloud at all, and how a warning reads when it comes from someone with power over the reader.
+
+## Replication
+
+Contested. Four reviews of health messages agree that any difference between frames is small. They disagree on detection behaviors, where one finds a slight advantage for loss wording limited to breast cancer and another finds none. For pay, the laboratory effect is much larger than the field effect, and the best-known field trial found its effect in one year and not the next. The widely repeated claim that losses weigh more than gains comes from studies of choices between risky options ([Tversky & Kahneman, 1981](https://doi.org/10.1126/science.7455683), abstract only), not from trials of messages.
+
+## What to check locally
+
+1. Whether the audience will accept a bad outcome for a child, a pregnancy, or a diagnosis being named at all.
+2. Whether people experience the behavior as lowering a risk or as finding one out, which may differ from the program's view.
+3. Whether anyone who receives the message cannot act on it, and so would be left with the warning alone.
+4. Whether the sender holds power over the recipients, such as an employer, a lender, or a clinic that controls a service.
+5. After any use of a loss version: complaints, opt-outs, and distress, whatever the behavior result.

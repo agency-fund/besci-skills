@@ -1,58 +1,65 @@
-# Worked example: Malawi antenatal iron-folate adherence questionnaire, English to Chichewa
+# Worked example: iron tablet questions from English into Chichewa
 
-An illustrative run. The program, the clinics, and the team are invented. The Chichewa phrases are glosses that show the kind of divergence a committee resolves; the team's translators own the final text. Nothing here is a finding.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Input (from the program's M&E lead):** five program-written items (not a published scale) for pregnant women enrolled at four rural clinics in Mchinji District, read aloud in Chichewa by community health workers (CHWs) on home visits. Intended meanings: adherence in the last week (1), perceived difficulty (2), the main reason for missing (3), confidence in continuing (4), household opposition (5). Team: two bilingual program officers, both native Chichewa speakers (PO-A trained the CHWs and knows the constructs; PO-B was raised in Mchinji); a CHW supervisor from Mchinji; the M&E lead, who reads Chichewa with effort. No donor requirement for back-translation.
+## The request
+
+"We need four adherence questions in Chichewa for pregnant women enrolled at four rural clinics in Mchinji District, Malawi. Most have primary schooling or less, and community health workers read the questions aloud on home visits. These are our own questions, not a published scale. (1) 'In the last 7 days, on how many days did you take your iron tablet?' A number from 0 to 7; it measures adherence in the past week. (2) 'How hard is it for you to take the tablet every day?' Not hard / a little hard / very hard; perceived difficulty. (3) 'How sure are you that you can take the tablet every day until the baby is born?' Not sure / somewhat sure / very sure; confidence. (4) 'Does anyone in your home disagree with you taking the tablets?' Yes / no; opposition at home. Two program officers, both native Chichewa speakers, have each translated them without seeing the other's version. Officer A grew up in Lilongwe and trained the health workers; officer B grew up in Mchinji. Neither is a trained translator. A health-worker supervisor from Mchinji can review. I am the M&E lead: I know what the questions measure and read Chichewa slowly. Nobody requires back-translation. I cannot type Chichewa reliably, so these are word-for-word English glosses. A: (1) 'in the seven days that have passed', with 'iron' borrowed from English; (2) 'how much does it trouble you', with three graded answers; (3) 'what certainty do you have that'; (4) 'does anyone in your home disagree'. B: (1) 'last week', and 'the blood tablets'; (2) 'is it difficult', answered yes or no; (3) 'do you see that you can manage to'; (4) 'is there anyone in your home who does not want you to take these'."
+
+## The output
 
 ```markdown
-# Translated instrument: Antenatal iron-folate adherence items, English to Chichewa (Mchinji, central dialect)
+# Translation record: iron tablet adherence questions, English to Chichewa (as spoken in Mchinji)
 
-**Respondents:** pregnant women enrolled at four rural clinics in Mchinji District; most with primary schooling or less; items read aloud by CHWs during home visits
-**Team:** forward translators PO-A (knows the constructs, native Chichewa, Lilongwe-raised) and PO-B (native Chichewa, Mchinji-raised, briefed on the constructs only after translating); committee: both translators, the CHW supervisor (works with the respondents daily), the M&E lead; no back-translator
-**Published scale:** no; program-written items, no comparability requirement
+**Respondents:** pregnant women enrolled at four rural clinics in Mchinji District; primary schooling or less; read aloud by community health workers on home visits
+**Published scale:** no; the program's own questions
+**Team:** translator A (program officer, first language Chichewa, raised in Lilongwe, trained the health workers); translator B (program officer, first language Chichewa, raised in Mchinji); reviewer: health-worker supervisor from Mchinji; adjudicator: M&E lead, who reads Chichewa slowly. Nobody on the team is a trained translator.
+**Status:** translations in, review pending
 
-## 1. Scope decisions
-| Item | Literal / adapt / flag concept | Reason |
-|---|---|---|
-| 1 | adapt | "iron tablet" is not what women or clinics call it |
-| 2 | literal | a difficulty rating; plain spoken words exist |
-| 3 | adapt | the option "ran out" covers two different events here (clinic stock-out, finished the supply) |
-| 4 | flag concept | "how sure are you that you can" may be heard as a promise to the CHW, not a self-assessment |
-| 5 | adapt | "disagree" is formal; who counts as "in your home" needs care |
+## 1. Brief for the translators
+| Item | Source text | Meant to measure | Approach | Watch for |
+|---|---|---|---|---|
+| 1 | In the last 7 days, on how many days did you take your iron tablet? (0 to 7) | Adherence in the past week | Adapt | The name women and clinics use for the tablet; "the last 7 days" against "last week" |
+| 2 | How hard is it for you to take the tablet every day? (not hard / a little hard / very hard) | Perceived difficulty | Close | Keeping three graded answers |
+| 3 | How sure are you that you can take the tablet every day until the baby is born? (not sure / somewhat sure / very sure) | Confidence | Concept in doubt | Asked by a health worker, it may be heard as a request for a promise |
+| 4 | Does anyone in your home disagree with you taking the tablets? (yes / no) | Opposition at home | Adapt | "Disagree" is formal; who counts as "in your home" |
 
-## 2. Forward translations and reconciliation
-| Item | Source text | Translation A (PO-A, gloss) | Translation B (PO-B, gloss) | Reconciled version | Why this version |
-|---|---|---|---|---|---|
-| 1 | In the last 7 days, on how many days did you take your iron tablet? | counts "the seven days that have passed" (masiku asanu ndi awiri apitawa); "iron tablet" borrowed as "ayironi" | "last week" (sabata yatha); "the blood tablets" (mapiritsi a magazi) | A's seven-day count with B's "mapiritsi a magazi" | women and clinics say "blood tablets"; "last week" would be heard as the calendar week |
-| 2 | How hard is it for you to take the tablet every day? | "how much does it trouble you" (zimakuvutani bwanji) with three graded options | "is it difficult" (zovuta) as a yes/no | A's wording | B's yes/no framing lost the rating |
-| 3 | When you miss a tablet, what is the most common reason? | options rendered one for one | "ran out" split into "the clinic had none" and "I finished them" | B's split | the supervisor confirmed stock-outs and early finishing are different events the program needs to tell apart |
-| 4 | How sure are you that you can take the tablet every day until the baby is born? | "what certainty do you have" (chitsimikizo) | "do you see that you can manage" (mukuona kuti mungathe) | B's wording, with three graded options | A's noun is formal and unused in speech; B reads as self-assessment; flagged for extra pretest probes |
-| 5 | Does anyone in your home disagree with you taking the tablets? | "disagree" rendered literally | "is there anyone in your home who does not want you to take these" | B's wording | plain spoken form; "home" kept broad so a husband or a mother-in-law is covered |
+**Also translate:** the consent text and the sentence that introduces these questions. Neither was supplied; A and B should each translate them as they did the items.
+**Register:** everyday spoken Chichewa of Mchinji. "Iron" stays in English only if the reviewer says women use the English word.
 
-## 3. Back-translation decision
-Not done. No funder, ethics board, or scale owner requires it; the committee had three fluent readers of both languages and reconciled every item in session; the items are program-written, so there is no source scoring to protect. The M&E lead reviewed the decision log instead. If a donor later asks, item 4 is the one to back-translate first, since it carries the only concept flag.
+## 2. Translations and reconciliation
+Shown as English glosses supplied by the team. The Chichewa text stays with the translators.
 
-## 4. Final instrument (enumerator version)
-Transition: "Now I will ask about the blood tablets the clinic gave you. There are no right or wrong answers; we want to know what is true for you."
-1. In the seven days that have passed, on how many days did you take the blood tablets? (0 to 7; CHW records the number)
-2. How much does it trouble you to take the tablet every day? Not at all / a little / very much (read all three)
-3. When you miss a tablet, what is the most common reason? I forgot / I felt sick from it / the clinic had none / I finished them / someone told me not to take them / another reason (read all; record one)
-4. Do you see that you can manage to take the tablet every day until the baby is born? No / somewhat / yes, fully (read all three)
-5. Is there anyone in your home who does not want you to take these tablets? Yes / no
+| Item | Translation A | Translation B | Proposed or agreed version | Decided by, and why |
+|---|---|---|---|---|
+| 1 | "in the seven days that have passed"; "iron" borrowed from English | "last week"; "the blood tablets" | A's seven days with B's name for the tablet | Proposal, for the reviewers. "Last week" can mean the calendar week, which changes the count. B's name is right only if the supervisor confirms that women and clinics use it. |
+| 2 | "how much does it trouble you", three graded answers | "is it difficult", yes or no | A's version | Proposal, for the reviewers. B's yes or no loses the three levels the source asks for. |
+| 3 | "what certainty do you have that" | "do you see that you can manage to" | B's wording, with three graded answers | Proposal, for the reviewers. The two differ most here, which fits the doubt in the brief. The supervisor should say whether A's noun is used in speech. |
+| 4 | "does anyone in your home disagree" | "is there anyone in your home who does not want you to take these" | B's version | Proposal, for the reviewers. It uses plain spoken words for the same idea. |
+
+## 3. Back-translation
+**Decision:** not done, because nobody requires it and the supervisor reads both languages. If the M&E lead cannot follow an item when the reviewers meet, have a colleague who has not seen the English back-translate that item only, and treat any mismatch as a question for the meeting.
+
+## 4. Agreed instrument, as read aloud
+Pending. After the review, the team enters here the Chichewa consent text, the introducing sentence, and each item with its answer options, in the words the health worker will say.
 
 ## 5. Decision log
-| Item | Changed from literal? | Why | Kept non-literal on purpose? |
-|---|---|---|---|
-| 1 | yes: "iron" to "blood tablets" | the recognized name | yes: a literal "iron" would not be recognized |
-| 2 | no | plain words exist | no |
-| 3 | yes: "ran out" split into two options | two distinct program-relevant events | yes: do not merge back |
-| 4 | yes: "sure that you can" to "see that you can manage" | avoids the promise reading | yes, provisional; the pretest decides |
-| 5 | yes: "disagree" to "does not want you to" | spoken register | yes |
+Proposed entries; the reviewers confirm or change them.
 
-## 6. Pretest plan
-Item 4 (concept flag) and item 1 (count over seven days) get extra probes; eight cognitive interviews with enrolled women at two of the four clinics, run by PO-B with the CHW supervisor observing; handed to draft-cognitive-interview-script with the intended meanings above.
+| Item | Departs from a close translation? | Why | Leave as is in later rounds? |
+|---|---|---|---|
+| 1 | Yes: "iron tablet" becomes "blood tablets" | The name respondents know, if confirmed | Yes: a literal "iron" would not be recognized |
+| 2 | No | Plain words exist | No |
+| 3 | Yes: "how sure are you that you can" becomes "do you see that you can manage to" | Avoids being heard as a promise to the health worker | Yes for now; testing with respondents decides |
+| 4 | Yes: "disagree" becomes "does not want you to" | Spoken form | Yes |
+
+## 6. To test with respondents
+This translation is untested until respondents have been asked what the items mean.
+- Item 3: whether women hear a question about their own confidence or a request to promise the health worker.
+- Item 1: whether women count back seven days or answer for a usual week.
+- Item 4: whom women include in "your home".
 
 ## Open questions
-- Whether "do you see that you can manage" is heard as self-assessment or as a commitment to the CHW; the retrieval and judgment probes on item 4 answer this
-- Whether "in your home" is read to include a mother-in-law living nearby but not in the house; if not, item 5 under-counts the opposition the program cares about
+- Whether "in your home" covers a mother-in-law who lives nearby but not in the house. If it does not, item 4 misses opposition the program cares about; that is a question about the English item as much as the Chichewa one.
+- The team has no trained translator. The reviewer from Mchinji is the main safeguard, so her review should cover every item, not only the four differences above.
 ```

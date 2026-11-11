@@ -1,48 +1,55 @@
-# Worked example: monthly feedback to teachers running reading sessions, Bihar
+# Worked example: a monthly report on record completeness for health facilities in Nigeria
 
-A state education program in Bihar, India, supports government primary teachers to run a daily 45-minute reading session grouped by children's current level. Monitors visit each school twice a month and record whether the session ran. The lever brief from `select-intervention-levers` chose feedback on behavior for a confirmed barrier: teachers do not know how their own session count compares with what the program expects, and assume "most schools skipped this month too". The measurement plan supplies each teacher's monthly session count from monitor visits. All numbers are illustrative; this is not a real result.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-Inputs the user gave: the behavior (teachers in 240 program schools in two blocks of Gaya district run the reading session every school day); data (monitor records, twice monthly, with a known gap when a monitor misses a visit); who sees it (the teacher; the block officer receives a school-level aggregate, not per-teacher numbers, under a written agreement that it is not used in appraisal); distribution (about a third of teachers run fewer than half the expected sessions, a third near the expectation, a third above); channel (SMS in Hindi to the teacher's phone, plus a paper version shown by the monitor at the next visit).
+## The request
+
+"We support 85 primary health facilities in Ekiti State, Nigeria, to keep complete patient records. Behavior: each facility's record officer completes every outpatient record (date, diagnosis, treatment, age, sex) on the day of the visit. We interviewed 30 officers: 24 could not say how complete their own registers were, and most guessed 'about the same as everyone'. Registers and pens are in stock, and officers say time is not the problem. The state health information system gives us, for each facility and month, the share of outpatient visits with a complete record; the data are good except at three facilities with intermittent power. About 20 facilities are above 90%, 30 are between 60 and 75%, and the rest are below 50%. We want to send a monthly text to each record officer. The local government monitoring officer would also like to see the numbers. Design the report."
+
+## The output
 
 ```markdown
 # Feedback report specification
 
-**Behavior:** Teachers in the 240 program schools in two blocks of Gaya district run the 45-minute reading session every school day.
-**What the person does not currently know:** How many sessions the monitor recorded for them last month, and how that compares with what the program expects.
-**Data source:** Monitor visit records, two visits per school per month, extrapolated to the month; known problem: a missed visit leaves one observation, which the report labels "based on one visit".
+**Behavior:** The record officer at each of 85 primary health facilities in Ekiti State completes every outpatient record on the day of the visit.
+**Confirmed barrier:** Officers do not know how complete their registers are: 24 of 30 interviewed could not say, and most guessed "about the same as everyone", while completeness runs from under 50% to over 90%. Supplies and time are ruled out by the officers' own account, and completing a record is in the officer's hands.
+**Data:** The state health information system: share of outpatient visits with a complete record, by facility and month. Reliable except at three facilities with intermittent power, which get no report until their data are fixed.
 
 ## Metric
-- **Headline (task-level):** Reading sessions run last month, as recorded by the monitor, against 22 expected school days.
-- **Secondary (outcome, optional):** None in the monthly report. Children's reading levels go in the termly summary, labeled as an outcome, because a teacher cannot move them in one month.
+- **Headline:** The share of last month's outpatient visits at the officer's facility with a complete record.
+- **Not shown:** Disease counts and patient numbers, which the officer cannot change.
 
 ## Comparison
-- **Type:** Standard (22 school days), with own past as a second line, because the program's expectation is defensible and most teachers are below it. A peer comparison is not used in the first version: teachers in a block know each other, and "the average teacher in your block" would read as named colleagues.
-- **Reference group or standard:** The school calendar: 22 teaching days in the month.
-- **Injunctive cue:** The words "On track" for any teacher at 18 or more sessions, so teachers above the expectation are not told to relax.
+- **Type:** A standard of 90%, with the officer's own previous month as a second line, because about a quarter of facilities (20 of 85) already meet 90%, so it is within reach. No peer average is shown: officers meet at review meetings, and "the average facility in your area" would be read as named colleagues.
+- **Reference:** "90% complete", the level the state already uses at review meetings.
 
-## Report content (one period)
-"Reading session, [month]: the monitor recorded [n] sessions out of 22 school days (last month: [m]). [On track. | Next step: run the session on the two days after the monitor's visit, the days most often missed.] Next visit: [date]."
+## What each group sees
+- **At or above the comparison:** This month's share, last month's share, and the words "On target". No other figure.
+- **Below it:** This month's share, last month's share, the 90% standard, and the field most often left blank at that facility.
+- **Far below:** For facilities under 50%, a next step of 60% in place of the 90% standard, and one action: fill the most-missed field before the patient leaves the desk.
 
-## Cadence and duration
-- **Frequency:** Monthly, after the second monitor visit, not sooner, because one visit is not a reliable count.
-- **Duration:** Every month the program runs; budgeted as a recurring SMS and monitor cost, not a campaign.
-- **If it stops:** From the field evidence on repeated reports, expect the effect to decay by something like 10–20% per year after the last report; do not plan a three-month burst.
-
-## Top performers
-Teachers at 18 or more sessions see "On track" and the own-past line; no peer line, so there is nothing to drift down toward.
-
-## Bottom performers
-Teachers below 11 sessions see the gap to the next step ("reach 11 next month"), not the gap to 22, and one action: run the session on the days most often missed.
+## Report content
+"Records, [month]: [n]% of outpatient visits had a complete record (last month: [m]%). [On target. | Target: [90% or next step]. Most often blank: [field]. Fill it before the patient leaves the desk.] Next report: [date]."
 
 ## Who sees it
-The teacher, by SMS and on paper at the next visit. The block officer sees a school-level aggregate only; the written agreement says it is not used in appraisal or transfer decisions.
+- **The person:** The record officer, by text message.
+- **Anyone else:** The local government monitoring officer sees how many facilities are on target, below, and far below, with no facility named. Facility figures are not shared.
 
-## Pilot before scaling
-Two months in 60 of the 240 schools, chosen by lottery; the outcome is the monitor-recorded session count; the result is read separately for teachers above 18 at baseline and those below 11, to catch a fall among the top group and discouragement at the bottom.
+## Frequency and end
+- **Sent:** Monthly, in the week after the information system closes the month.
+- **When reports stop:** Expect completeness to slide back over time. Check it three and six months after the last report.
+
+## Monitoring
+- **Read separately:** The 20 facilities that started above 90%, and the roughly 35 that started below 50%.
+- **Review if:** Average completeness in either group falls by 5 points over two months; the program lead and the state records lead review the comparison and the wording.
+
+## Specialist review
+A monitoring and evaluation specialist, for the three facilities with intermittent power, before they receive any report. If the monitoring officer asks for facility figures, a human-resources specialist and program management must first agree in writing what the figures may be used for.
+
+## What the evidence supports
+That feedback to health workers on their own practice improves it on average, more where the starting level is low and where the report gives a benchmark and an action; this comes from 292 trials, 26 of them in low- or middle-income countries (Ivers et al., 2025). Comparison with peers lowered the performance of weaker health worker trainees in Zambia (Ashraf, Bandiera & Lee, 2014), which is why no peer figure is shown. No effect size is promised for Ekiti.
 
 ## What to check before relying on this
-- Whether a two-visit count is believable to teachers; if they dispute the number, the report loses trust before it can work.
-- Whether "On track" reads as approval or as sarcasm in the local register; test the phrase with the Hindi draft.
+- Whether officers believe the system's figure. Show five of them their number and their register side by side before the first report.
+- Whether "On target" reads as approval in a text from the program.
 ```
-
-What the skill did not do: write the final Hindi SMS (`draft-lever-content`), design the monitoring system itself (`design-fidelity-monitoring`), or design a reward for the top teachers (`design-social-recognition`).

@@ -1,0 +1,46 @@
+# Evidence: Plan when and how often to remind
+
+## Sources
+
+- Eze, P., Lawani, L. O., & Acharya, Y. (2021). Short message service (SMS) reminders for childhood immunisation in low-income and middle-income countries: a systematic review and meta-analysis. *BMJ Global Health*, 6(7), e005035. https://doi.org/10.1136/bmjgh-2021-005035 Supports: the direction, and two or three sends before a dated action. Across 18 studies (13 randomized) with 32,712 infants in 11 countries, reminders raised immunization coverage (risk ratio 1.16, 95% CI 1.10 to 1.21) and timely vaccination (risk ratio 1.21, 95% CI 1.12 to 1.30), with large differences between studies (I² = 90%). More than two reminders improved timeliness more than one or two. Abstract only.
+- Horvath, T., Azman, H., Kennedy, G. E., & Rutherford, G. W. (2012). Mobile phone text messaging for promoting adherence to antiretroviral therapy in patients with HIV infection. *Cochrane Database of Systematic Reviews*, 2012, CD009756. https://doi.org/10.1002/14651858.CD009756 Supports: the weekly ceiling for a recurring action. In the two Kenyan trials it includes, weekly messages lowered the risk of non-adherence at 48 to 52 weeks (risk ratio 0.78, 95% CI 0.68 to 0.89); people sent weekly messages did better than people sent daily ones (risk ratio 0.79, 95% CI 0.64 to 0.99), and daily messages did no better than standard care. Abstract only.
+- Banerjee, A., Chandrasekhar, A. G., Dalpath, S., Duflo, E., Floretta, J., Jackson, M. O., Kannan, H., Loza, F., Sankar, A., Schrimpf, A., & Shrestha, M. (2025). Selecting the most effective nudge: Evidence from a large-scale experiment on immunization. *Econometrica*, 93(4), 1183–1223. https://doi.org/10.3982/ECTA19739 Supports: step 1 and the question of whether reminders are enough alone. The most cost-effective of 75 combinations paired SMS reminders with local ambassadors and no incentive. Abstract of the article; the working-paper version (https://doi.org/10.3386/w28726) was read for the authors' remark that the SMS reminders, taken separately, "seem disappointing".
+- Karlan, D., McConnell, M., Mullainathan, S., & Zinman, J. (2016). Getting to the top of mind: How reminders increase saving. *Management Science*, 62(12), 3393–3411. https://doi.org/10.1287/mnsc.2015.2296 Supports: naming the person's own goal in the message, and sending one reminder at most after a missed date. Messages that mentioned both the savings goal and the financial incentive worked best, wording as a gain or a loss made no difference, and additional late reminders added nothing. Abstract only.
+- Thakkar, J., Kurup, R., Laba, T.-L., Santo, K., Thiagalingam, A., Rodgers, A., Woodward, M., Redfern, J., & Chow, C. K. (2016). Mobile telephone text messaging for medication adherence in chronic disease: A meta-analysis. *JAMA Internal Medicine*, 176(3), 340. https://doi.org/10.1001/jamainternmed.2015.7667 Supports: the warning against quoting a pooled figure. Across 16 trials with 2,742 patients the odds of adherence roughly doubled (odds ratio 2.11, 95% CI 1.52 to 2.93), falling to 1.68 after adjustment for publication bias; the trials were short (median 12 weeks) and mostly relied on self-report. Abstract only.
+- Gurol-Urganci, I., de Jongh, T., Vodopivec-Jamsek, V., Atun, R., & Car, J. (2013). Mobile phone messaging reminders for attendance at healthcare appointments. *Cochrane Database of Systematic Reviews*, 2013, CD007458. https://doi.org/10.1002/14651858.CD007458.pub3 Supports: the channel choice and the privacy line. Text reminders raised attendance (risk ratio 1.14, 95% CI 1.03 to 1.26, seven trials) and did about as well as phone calls. No trial reported in detail on harms such as loss of privacy. Abstract only.
+- Damgaard, M. T., & Gravert, C. (2018). The hidden costs of nudging: Experimental evidence from reminders in fundraising. *Journal of Public Economics*, 157, 15–26. https://doi.org/10.1016/j.jpubeco.2017.11.005 Supports: watching the opt-out rate. Reminders from a charity raised donations and also raised unsubscriptions from its mailing list. Abstract only.
+- Datta, S., & Mullainathan, S. (2012). *Behavioral Design: A New Approach to Development Policy*. CGD Policy Paper 016. https://www.cgdev.org/sites/default/files/Datta_Mullainathan_Behavioral_Design.pdf Supports: the mechanism. Its fifth design principle, "Reduce inattention: reminders and implementation intentions", treats a reminder as a fix for an intended step that slips from attention.
+
+## Where it has been tested
+
+Searched November 2026.
+
+| Source | Type | Countries | Finding |
+|---|---|---|---|
+| [Eze, Lawani & Acharya (2021)](https://doi.org/10.1136/bmjgh-2021-005035) | Meta-analysis, 18 studies; abstract only | 11 low- and middle-income countries | Reminders raised childhood immunization coverage and timeliness. The effect on coverage was larger in low- and lower-middle-income countries than in upper-middle-income ones |
+| [Horvath et al. (2012)](https://doi.org/10.1002/14651858.CD009756) | Cochrane review, 2 trials; abstract only | Kenya | Weekly texts improved adherence to HIV treatment; daily texts did not |
+| [Pop-Eleches et al. (2011)](https://doi.org/10.1097/QAD.0b013e32834380c1) | Randomized trial, 431 patients; abstract only | Kenya | 53% of patients sent weekly reminders reached 90% adherence over 48 weeks, against 40% of the control group |
+| [Ødegård et al. (2022)](https://doi.org/10.1371/journal.pone.0266717) | Meta-analysis of two-way text messages, 10 trials pooled; abstract only | Sub-Saharan Africa | Improved medicine adherence (risk ratio 1.14). Did not improve appointment attendance (risk ratio 1.03, 95% CI 0.95 to 1.12) |
+| [Banerjee et al. (2025)](https://doi.org/10.3982/ECTA19739) | Randomized field experiment, 75 policy combinations; abstract, and the working paper in part | India | SMS reminders taken separately disappointed. Reminders with local ambassadors and no incentive raised immunizations per dollar by 9.1% |
+| [Gibson et al. (2017)](https://doi.org/10.1016/S2214-109X(17)30072-4) | Cluster randomized trial, 2,018 caregivers; abstract only | Kenya | Full immunization at 12 months was 82% in the control group, 86% with SMS alone, and 90% with SMS and the larger incentive. The abstract reports a significant difference from control only for the last |
+| [Cadena & Schoar (2011)](https://doi.org/10.3386/w17020) | Randomized field experiment, working paper; abstract only | Uganda | A monthly text before a loan payment fell due raised on-time payment by about as much as a 25% cut in the interest rate |
+| [Mbuagbaw et al. (2012)](https://doi.org/10.1371/journal.pone.0046909) | Randomized trial, 200 adults; abstract only | Cameroon | A weekly motivational text had no significant effect on adherence to HIV treatment at six months. One participant reported a possible disclosure of HIV status |
+| [Linnemayr et al. (2017)](https://doi.org/10.2105/AJPH.2017.304089) | Randomized trial, 332 patients aged 15 to 22; abstract only | Uganda | Weekly texts, one-way or two-way, did not improve adherence over a year |
+| [Shet et al. (2014)](https://doi.org/10.1136/bmj.g5978) | Randomized trial, 631 adults; abstract only | India | Weekly automated voice calls and picture messages made no difference to treatment failure or adherence over two years |
+| [Thakkar et al. (2016)](https://doi.org/10.1001/jamainternmed.2015.7667) | Meta-analysis, 16 trials; abstract only | Not listed in the abstract | Text messages roughly doubled the odds of medication adherence. The effect did not vary with daily frequency, personalization, or two-way messaging |
+
+None found: a trial outside wealthy Western countries that measured annoyance, lost trust, or loss of privacy as an outcome, or one that compared stop rules. Searches covered reviews of text reminders for appointments, adherence, and immunization; trials with no effect; and reminders for savings and loan repayment.
+
+What depends on local conditions is whether the message reaches the person who must act: who holds the phone, whether they read, and whether the program's record of the due date is right. Where the barrier is supply, cost, or trust, the nulls above are the likely result.
+
+## Replication
+
+The direction replicates across reviews of immunization, appointments, and adherence. The size does not: the reviews report large differences between studies, the pooled adherence estimate shrinks after adjustment for publication bias, and trials in Cameroon, Uganda, and India found no effect on adherence to HIV treatment. More messages are not reliably better: in Kenya weekly texts beat daily ones, while for childhood immunization more than two reminders improved timeliness.
+
+## What to check locally
+
+1. Whether forgetting is the barrier: people act when someone prompts them in person, and no stock, fee, distance, or trust problem came up.
+2. Who holds the phone, whether it is shared, and what a message reveals to whoever reads or hears it.
+3. Whether a text will be read, or a voice call or a visit is needed.
+4. Whether the program's record of each person's due date is current.
+5. Whether people have agreed to be contacted, and how easily they can stop the messages.

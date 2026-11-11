@@ -1,52 +1,59 @@
-# Worked example: HIV self-test kit collection, Lagos, Nigeria
+# Worked example: collecting an HIV self-test kit in Lagos
 
-An illustrative run, not a real audit. The program, counts, prices, and times are invented to show the shape of the output. The target behavior came from `define-key-behavior`; the Opportunity (physical) hypothesis came from `decompose-comb-barriers`.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Input summary (illustrative):** a Lagos HIV self-testing program sends an SMS with a collection code to men aged 18 to 30 who registered at outreach events. About 3,000 codes a month go out; partner pharmacies log about 400 kits collected; about 90 results come back by USSD. A field officer will walk the process at three pharmacies; until then, times are estimates from staff.
+## The request
+
+"Behavior: men aged 18 to 30 in Lagos who receive our SMS collect a free HIV self-test kit from a partner pharmacy within two weeks and report the result by USSD. Last quarter: about 3,000 SMS a month, roughly 400 kits logged as collected, about 90 results reported. The process as staff describe it: an SMS with a code and a second SMS listing 25 pharmacies; the man picks one and travels there; shows the code and a photo ID; fills a one-page form (phone number, age, address); the pharmacist explains the kit; he takes it home and uses it; then dials a USSD code, enters the result and the 12-digit kit serial number. Nobody on the team has gone through it as a user; a field officer can do that at three pharmacies next week. The program runs the SMS, the form, and the USSD line; the pharmacies run their counters. Where are we losing people?"
+
+## The output
 
 ```markdown
 # Process friction audit
 
 **Behavior:** Men aged 18 to 30 in Lagos who receive the program's SMS collect a free HIV self-test kit from a partner pharmacy within two weeks and report the result by USSD.
-**Process:** From the first SMS (the collection code) to a result recorded by the USSD system.
-**How this was audited:** Reconstructed from staff and documents; a field officer walks it at three pharmacies next week, after which the time cells become observations.
+**Process audited:** From the first SMS (the collection code) to a result recorded on the USSD line.
+**How the steps were learned:** Described by staff. Nobody has gone through it as a user, so every time below is an estimate until the field officer's visits next week.
 
 ## Step log
-| # | Step | Where | Time incl. waiting | Money | Documents | Decision demanded | Who controls | Tag | Why this tag | Completion loss |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Read SMS with code; read second SMS listing 25 pharmacies | Phone | 2 min (estimate) | 0 | None | Which pharmacy is nearest and open (no map, no hours) | Program | movable | The program can pick the nearest pharmacy from the registration area, or let him reply with his area | 3,000 in; no data |
-| 2 | Travel to the pharmacy | Street | 35 min each way (estimate) | NGN 400 transport (illustrative) plus lost earnings | None | When to go, given work hours | Program (choice of partners) | movable | Could be a community distributor or delivery; biggest change, needs partners | no data |
-| 3 | Queue at the pharmacy counter | Pharmacy | 10 to 25 min (estimate) | 0 | None | None | Pharmacy | movable | A dedicated counter or pre-announced slot removes the wait | no data |
-| 4 | Show the code and a photo ID | Pharmacy | 2 min | 0 | Photo ID | None | Program | removable | The ID exists to prevent duplicate collection; the code plus phone number already does that; the ID screens out men without one and signals surveillance | no data |
-| 5 | Fill the form: phone, age, address | Pharmacy | 5 min | 0 | None | Supply an address he may not want to give | Program | removable (address), movable (phone, age pre-filled from registration) | Address is not used downstream; phone and age are already held | about 400 collected |
-| 6 | Pharmacist explains the kit | Pharmacy | 5 min | 0 | None | None | Pharmacy | necessary | Correct use and what to do with a positive result are safety content | no data |
-| 7 | Take the kit home; find 20 private minutes; use it | Home | 20 min plus finding privacy | 0 | Instructions (English only) | When and where he can be alone | Program (instructions), user | necessary (use), movable (language) | The test itself cannot go; a Yoruba or Pidgin leaflet moves the reading burden | no data |
-| 8 | Dial USSD; enter result; enter 12-digit kit serial | Phone | 5 min; retries if the session times out | 0 | The kit box (for the serial) | Find and type a 12-digit number | Program | removable (serial), movable (reporting) | The pharmacist can link the serial to the code at collection; a one-key SMS reply replaces the USSD chain | about 90 reported |
 
-**Totals for one person:** 1 trip (2 legs), about 2 hours, NGN 400 plus lost earnings, 1 document, 4 decisions.
+| # | Step, from the user's side | Time, with waiting | Money | Documents | Decision or fact demanded | Controlled by | Tag | Reason for the tag | In → out |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Read the SMS with the code, then a second SMS listing 25 pharmacies | 2 min (estimate) | None | None | Which pharmacy is nearest and open; the SMS gives no hours | Program | move | The program can name the nearest pharmacy from the area he registered in | 3,000 in; no data out |
+| 2 | Travel to the pharmacy and back | Not known | Transport fare and lost earnings; amounts not known | None | When to go, around working hours | Program, through its choice of partners | move | A distributor nearer to where he lives or works would shorten it; needs new partners | No data |
+| 3 | Wait at the counter | Not known | None | None | None | Pharmacy | move | A set collection hour would remove the wait | No data |
+| 4 | Show the code and a photo ID | 2 min (estimate) | None | Photo ID | None | Program, with the pharmacies | check | Staff say the ID prevents double collection, which the code already does. Nobody could say whether a rule requires it; ask the program's compliance lead | No data |
+| 5 | Fill the form: phone number, age, address | 5 min (estimate) | None | None | Give a home address | Program | remove (address); move (phone, age) | Nothing uses the address. Phone and age are already held from registration and can be pre-filled | No data in; about 400 out |
+| 6 | Hear the pharmacist explain the kit | 5 min (estimate) | None | None | None | Pharmacy | keep | Safety: how to use the kit and what to do after a positive result | No data |
+| 7 | Take the kit home, find a private moment, use it | 20 min for the test (estimate); the wait for privacy is not known | None | The kit leaflet | When and where he can be alone | The user | keep | It is the behavior | No data |
+| 8 | Dial the USSD code, enter the result, enter the 12-digit serial number | 5 min (estimate); longer if the session times out | None | The kit box, for the serial number | Find and type 12 digits | Program | remove (serial number); keep (result) | The pharmacist can record the serial number against the code at collection | No data in; about 90 out |
 
-## Removable list, smallest first
-1. Drop the address field; pre-fill phone and age from registration (program; this week); targets the form step; evidence: EAST "Make it easy".
-2. Drop the 12-digit serial from USSD; the pharmacist records serial against code at collection (program; this month); targets the 400 to 90 loss; evidence: FAFSA, removing the burdensome part of a form is the assistance that worked.
-3. Drop the photo ID; rely on the code and the registered phone number (program, with partner pharmacies' agreement); targets collection; evidence: Sunstein on sludge that screens selectively.
-4. Replace "choose a pharmacy" with the nearest pharmacy named in the SMS, with opening hours (program); targets the SMS-to-collection loss.
-5. Replace USSD with a one-key SMS reply (program plus telecom partner).
-6. Dedicated counter or slot at pharmacies (pharmacy); targets the queue.
-7. Community distributors or delivery (program plus new partners); biggest, last.
-8. A clearer SMS (program); listed last because information alone did not move completion in the FAFSA experiment.
+**Total for one person:** 1 round trip, 1 document, 4 decisions; about 40 minutes of handling plus travel, queue, and the wait for privacy, none of them measured; money not known.
+**Who is lost, where known:** Not known. Men without a photo ID cannot pass step 4.
 
-## Steps kept, and why
-- Step 6, the pharmacist's explanation: safety content, including what to do after a positive result.
-- Step 7, the test itself: it is the behavior.
+## Changes, in order
+1. Step 5, the address field: delete; controlled by the program; aimed at the loss between the SMS and collection.
+2. Step 5, phone and age: pre-fill from registration; controlled by the program; same loss.
+3. Step 8, the serial number: delete from the USSD entry, and the pharmacist records it at collection; controlled by the program, with the pharmacies' agreement; aimed at the loss between collection and reporting (about 400 to about 90).
+4. Step 1, the choice among 25 pharmacies: name the nearest pharmacy and its hours in the SMS; controlled by the program; aimed at the loss between the SMS and collection.
+5. Step 4, the photo ID: delete if the compliance lead confirms no rule requires it; controlled by the program with the pharmacies.
+6. Step 3, the queue: a set collection hour; controlled by the pharmacies.
+7. Step 2, the trip: distributors nearer to where men live or work; needs new partners.
+8. A clearer SMS: information; last, and not expected to change either loss by itself.
 
-## Expected effect, stated cautiously
-Removals 1 to 4 target the collection step (3,000 to about 400) and removal 2 the reporting step (about 400 to 90). The nearest evidence is United States assistance-versus-information (FAFSA: 28% to 36% with help, nothing from information alone) and two LMIC experiments that removed one hassle each (Kenya fertilizer, Rajasthan camps). Applying the DellaVigna and Linos discount (academic 8.7 points versus unit 1.4), the honest statement is that program-controlled removals should raise collection and reporting, that reporting is the more likely to move because the serial entry is the single heaviest step, and that no number can be promised until the field walk and a two-week tally exist. A clearer SMS alone is not expected to move either loss.
+## Steps kept
+- Step 6, the pharmacist's explanation: safety. Not yet confirmed whether the kit's distribution rules require it; the program's clinical lead can say.
+- Step 7, the test: it is the behavior.
+- Step 8, entering the result: it is the completion point.
 
-## Barrier diagnosis (input to select-intervention-levers)
-- Opportunity, physical: collection requires a trip, a queue, an ID, and an address, and reporting requires typing a 12-digit serial into a USSD session; walk-through evidence pending, staff reconstruction attached; removable list above.
+## Diagnosis
+Two losses are measured: about 3,000 to about 400 between the SMS and collection, and about 400 to about 90 between collection and the reported result. The first spans five steps, and no count says which one loses people. The second spans the test at home and a USSD entry that asks for a 12-digit number. This rests on staff description and three counts; nothing has been observed.
+
+## What the evidence supports
+That removing steps, or doing them for people, raises completion more than explaining the process does. In the United States, help filling in a student-aid form raised college attendance where information alone did not (Bettinger et al., 2012). In Morocco, households that were told about a water connection on credit and had the paperwork handled at home signed up far more often than households left to apply by themselves (Devoto et al., 2012). No completion rate is promised for Lagos.
 
 ## What to check before relying on this
-- Every time cell is a staff estimate until the field officer's walk at three pharmacies.
-- Partner pharmacies must agree to drop the ID check and to record serials; the telecom partner must agree to SMS reporting.
-- Whether men who do not collect differ from those who do (no ID, working hours, distance); a two-week tally at the pharmacies would show it.
+- Every time is an estimate. Have the field officer time each step at the three pharmacies, and count how many men arrive, are turned away at the ID check, and leave with a kit.
+- Whether the loss after collection is the USSD entry or the test itself. Ask 15 men who collected a kit and did not report.
+- The pharmacies must agree to record serial numbers and to drop the ID check.
 ```

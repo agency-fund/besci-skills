@@ -270,6 +270,8 @@ The result sets `metadata.tested_in`:
 | `mainly-western` | Tested mainly in wealthy Western countries | The scan found fewer than two field studies outside wealthy Western countries. |
 | `not-applicable` | Not applicable | The skill is a procedure that makes no claim about how people behave. |
 
+When a review pools studies from outside wealthy Western countries, its overall result decides between "holds" and "differs"; record single trials that went the other way in the table.
+
 **Verify every source.** Resolve the DOI or open the page, and confirm author, year, and title, before the source goes into a skill. Leave out anything that cannot be verified; do not flag it and keep it. Never write a citation from memory.
 
 ## 8. Skills that search for or read studies
@@ -313,4 +315,4 @@ uv run scripts/besci_validate.py --json             # for tools
 
 Exit 0 means the structure is right. Content review by a maintainer is still required before merge.
 
-The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) report as warnings W040 to W049 while the existing skills are being revised. They become errors when that revision lands.
+The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.

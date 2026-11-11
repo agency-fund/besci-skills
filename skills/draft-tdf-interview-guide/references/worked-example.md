@@ -1,87 +1,101 @@
-# Worked example: fertilizer top-dressing timing in Western Kenya
+# Worked example: top-dressing maize on time in western Kenya
 
-Illustrative only. The program, numbers, and hypotheses are invented to show one complete run; none of it is a finding.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Setting (illustrative):** a farmer-support program in Bungoma and Kakamega counties supplies subsidized top-dressing fertilizer to smallholder maize farmers. Monitoring suggests many farmers apply it late or not at all. The target behavior came from `define-key-behavior`; the hypotheses came from `decompose-comb-barriers`.
+## The request
 
-**Inputs supplied by the user:** behavior as below; hypotheses H1 to H4; respondents are 16 farmers who planted maize this long-rains season (8 who applied on time, 8 who did not, per program records); interviewer is a program field officer trained in interviewing, not the farmer's own extension agent; 50 minutes; Kiswahili with Luhya where preferred.
+"We support smallholder maize farmers in Bungoma and Kakamega counties and supply subsidized top-dressing fertilizer. The behavior we want: enrolled farmers apply top-dressing fertilizer to their maize, on their own plot, when the plants reach knee height in the long rains. Our records suggest many apply it late or not at all. Our diagnosis gave three hypotheses. H1: cash is short at that point, because it falls between planting costs and harvest. H2: farmers go by the calendar and not by the plant, so the right moment passes unnoticed. H3: farmers do not believe top-dressing pays back its cost. One of our own guesses, H4: it clashes with weeding and gets forgotten. We will interview 16 enrolled farmers who planted this season, 8 who applied on time and 8 who did not. The interviewers are program field officers trained in interviewing, each working outside their own area. 50 minutes, in Kiswahili, or Luhya where the farmer prefers. Write the interview guide."
+
+## The output
 
 ```markdown
-# TDF interview guide: top-dressing maize on time
+# Interview guide: top-dressing maize on time
 
-**Target behavior (AACTT):** Action: apply top-dressing fertilizer to the maize crop; Actor: smallholder maize farmers enrolled in the program; Context: on their own plot, during the long rains; Target: the maize crop at knee height; Time: when the plants reach knee height, about four to six weeks after planting (illustrative window; confirm with the agronomist)
-**Respondents:** 16 enrolled farmers | **Interviewer:** program field officer | **Length:** 50 minutes | **Language:** Kiswahili, Luhya where preferred
-**Hypotheses under test (from decompose-comb-barriers):** H1 (Opportunity, physical) cash is short at top-dressing time because it falls between planting outlays and harvest; H2 (Capability, psychological) farmers time by the calendar rather than by plant stage, so the window passes unrecognized; H3 (Motivation, reflective) farmers do not believe top-dressing pays back its cost; H4 (Capability, psychological) the window coincides with weeding and the task is forgotten
+**Behavior:** Enrolled smallholder farmers in Bungoma and Kakamega apply top-dressing fertilizer to their maize, on their own plot, when the plants reach knee height in the long rains [timing to confirm with the agronomist].
+**Respondents:** 16 enrolled farmers who planted this season, 8 who applied on time and 8 who did not | **Interviewer:** program field officers, outside their own area | **Length:** 50 minutes | **Language:** Kiswahili, or Luhya where preferred
+**Hypotheses under test:** H1 cash is short when top-dressing is due (from a diagnosis); H2 farmers go by the calendar, not the plant (from a diagnosis); H3 farmers do not believe top-dressing pays back its cost (from a diagnosis); H4 it clashes with weeding and is forgotten (team guess)
 
-## Opening (about 5 minutes)
-- Purpose, in plain words: "We want to understand what happens on farms around the time the maize is knee-high, so the program fits how people actually farm. There are no right answers."
-- [CONSENT: insert the program's approved consent script here; do not start without it]
-- Reconstruction: "Think about this season's maize. Walk me through what happened from planting until the plants were about knee-high. What did you do, week by week?"
+## Opening (about 8 minutes)
+- **Purpose, in plain words:** "We want to understand what happens on farms in the weeks after planting, so the program fits how people farm. There are no right or wrong answers."
+- [CONSENT: insert the team's approved consent script here; do not start without it]
+- **Warm-up:** "Tell me about your farm. What did you plant this season?"
+- **Reconstruction:** "Think about this season's maize, from planting until the plants were about [knee-high]. Tell me what you did, week by week."
 
 ## Questions, in running order
-### The season so far
-1. "When the maize was at knee height this season, what was going on for you that week?" [Environmental context and resources; Opportunity, physical; tests H1, H4]
-   - Probe: "What else needed doing on the farm or at home that week?"
-   - Probe: "What did you spend money on that week?"
-2. "How do you know when it is time to top-dress?" [Knowledge; Capability, psychological; tests H2]
-   - Probe: "Is it something you see on the plant, or a date, or something else?"
-3. "Tell me about the last time you top-dressed. How did it go?" [Skills; Capability, psychological or physical; discovery]
-   - Probe: "Was any part of it hard to do?"
-### Paying for it
-4. "Where does the money for top-dressing usually come from at that point in the season?" [Environmental context and resources; Opportunity, physical; tests H1]
-   - Probe: "What happens if it is not there that week?"
-5. "What do you expect to happen to the harvest if you top-dress, compared with if you do not?" [Beliefs about consequences; Motivation, reflective; tests H3]
-   - Probe: "Where does that expectation come from: your own fields, a neighbor's, a demonstration plot?"
-6. "The last time you top-dressed, did it pay off?" [Reinforcement; Motivation, automatic; tests H3]
-   - Probe: "What did you see at harvest that made you think so?"
-### Remembering and deciding
-7. "In the weeks when the maize is knee-high, how does top-dressing come to mind, if it does?" [Memory, attention and decision processes; Capability, psychological; tests H4]
-   - Probe: "Is there anything that reminds you?"
-8. "Do you have a way of planning the top-dressing in advance, or does it happen when it happens?" [Behavioral regulation; Capability, psychological; tests H4]
+### The weeks after planting
+1. "When the maize was about [knee-high] this season, what was going on for you that week?" [Environmental context and resources; tests H1, H4]
+   - Probe: "What else needed doing, on the farm or at home?"
+   - Probe: "Can you tell me about one day that week?"
+2. "How do you tell that it is time to [top-dress]?" [Knowledge; tests H2]
+   - Probe: "What do you look at or go by?"
+3. "Tell me about the last time you top-dressed. How did it go?" [Skills; discovery]
+   - Probe: "Which part was hardest to do?"
+4. "In the weeks after planting, how does top-dressing come to mind?" [Memory, attention and decision processes; tests H4]
+   - Probe: "What were you doing when you thought of it?"
+5. "How did the timing of your top-dressing this season compare with what you had meant to do?" [Memory, attention and decision processes; tests H2, H4]
+   - Probe: "What happened in between?"
+
+### Getting the fertilizer and using it
+6. "How did you get the fertilizer for top-dressing this season?" [Environmental context and resources; tests H1]
+   - Probe: "When did it reach your farm? What had to happen first?"
+7. "What do you expect from the harvest on a plot that is top-dressed, and on one that is not?" [Beliefs about consequences; tests H3]
+   - Probe: "What have you seen that tells you so?"
+8. "After the last harvest from a plot you top-dressed, what did you notice?" [Reinforcement; Beliefs about consequences; tests H3]
+   - Probe: "What happened with that harvest?"
+
+### Planning the season
+9. "At the start of this season, what had you decided about top-dressing?" [Intentions; discovery]
+10. "Among everything the farm needs this season, where does top-dressing come?" [Goals; discovery]
+11. "What do you do to keep track of the jobs the maize needs?" [Behavioral regulation; tests H4]
    - Probe: "Can you give me an example from this season?"
-9. "At the start of the season, had you decided whether you would top-dress this year?" [Intentions; Motivation, reflective; discovery]
-10. "Compared with the other things you want to do on the farm this season, where does top-dressing come?" [Goals; Motivation, reflective; discovery]
+
 ### Other people
-11. "Who around you top-dresses, and who does not?" [Social influences; Opportunity, social; discovery]
-   - Probe: "What do [people whose opinion matters: spouse, neighbors, group members, agent] say about it?"
-12. "Is top-dressing something a farmer like you is expected to do?" [Social/professional role and identity; Motivation, reflective; discovery]
+12. "Who around you top-dresses, and who does not?" [Social influences; discovery]
+   - Probe: "What do [people whose opinion matters] say about it?"
+13. "In a household like yours, whose job is top-dressing?" [Social or professional role and identity; discovery]
+
 ### Confidence and feelings
-13. "If you had the fertilizer in hand at knee height, how sure are you that you could get it on in time?" [Beliefs about capabilities; Motivation, reflective; discovery]
+14. "With the fertilizer in hand when the maize is [knee-high], how sure are you that you could get it on in time?" [Beliefs about capabilities; discovery]
    - Probe: "What would make you less sure?"
-14. "When you think about this season's harvest, how do you feel it will go?" [Optimism; Motivation, reflective; discovery]
-15. "Is there any feeling that comes up when top-dressing is mentioned, such as worry about money or about getting it wrong?" [Emotion; Motivation, automatic; tests H1]
+15. "How do you expect this season's harvest to turn out?" [Optimism; discovery]
+16. "What do you feel when the time for top-dressing comes near?" [Emotion; discovery]
+
+### Anything we missed
+17. "What else gets in the way of top-dressing, or helps, that we have not asked about?" [no domain; discovery]
 
 ## Closing (about 5 minutes)
-- "Is there anything about top-dressing we have not talked about that you think matters?"
 - "If one thing changed to make this easier, what would it be?"
 - Thanks; explain that what farmers say will shape how the program supplies fertilizer next season.
 
-## Domains-to-hypotheses map
-| TDF domain | COM-B component | Hypothesis tested | Question numbers |
+## Map of hypotheses to questions
+
+| Domain | COM-B component | Tests | Questions |
 |---|---|---|---|
 | Knowledge | Capability, psychological | H2 | 2 |
 | Skills | Capability, psychological or physical | discovery | 3 |
-| Social/professional role and identity | Motivation, reflective | discovery | 12 |
-| Beliefs about capabilities | Motivation, reflective | discovery | 13 |
-| Optimism | Motivation, reflective | discovery | 14 |
-| Beliefs about consequences | Motivation, reflective | H3 | 5 |
-| Reinforcement | Motivation, automatic | H3 | 6 |
+| Memory, attention and decision processes | Capability, psychological | H2, H4 | 4, 5 |
+| Behavioral regulation | Capability, psychological | H4 | 11 |
+| Environmental context and resources | Opportunity, physical | H1, H4 | 1, 6 |
+| Social influences | Opportunity, social | discovery | 12 |
+| Social or professional role and identity | Motivation, reflective or automatic | discovery | 13 |
+| Beliefs about capabilities | Motivation, reflective | discovery | 14 |
+| Optimism | Motivation, reflective or automatic | discovery | 15 |
+| Beliefs about consequences | Motivation, reflective | H3 | 7, 8 |
 | Intentions | Motivation, reflective | discovery | 9 |
 | Goals | Motivation, reflective | discovery | 10 |
-| Memory, attention and decision processes | Capability, psychological | H4 | 7 |
-| Environmental context and resources | Opportunity, physical | H1, H4 | 1, 4 |
-| Social influences | Opportunity, social | discovery | 11 |
-| Emotion | Motivation, automatic | H1 | 15 |
-| Behavioral regulation | Capability, psychological | H4 | 8 |
+| Reinforcement | Motivation, automatic | H3 | 8 |
+| Emotion | Motivation, automatic | discovery | 16 |
 
-## Local adaptation notes
-- [people whose opinion matters] in Q11: the local team names them (spouse, farmer group, village elder, extension agent).
-- "Knee height" and "top-dress": confirm the Kiswahili and Luhya terms farmers use, not the agronomy terms.
-- "Planning" (Q8) and "decided" (Q9): check that the translation does not imply a written plan or a formal commitment.
-- Interviewer is not the farmer's own agent; if that changes, Q5 and Q6 will draw answers meant to please the agent.
+Outside the framework: question 17.
+
+## Local terms to fill in
+- [knee-high] and [top-dress]: the words farmers use in Kiswahili and Luhya, not the agronomist's terms; the field officers supply them.
+- [people whose opinion matters]: spouse, farmer group, elders, or extension agent; the local team names them.
+- "decided" (question 9) and "keep track" (question 11): check that the translation does not imply a written plan.
 
 ## What to check before relying on this
-- Pilot with two farmers; drop any question that gets the same answer whichever hypothesis is true (Q5 and Q6 are the likeliest to merge).
-- The 50-minute length assumes 15 questions with probes; if the pilot runs long, cut Q9, Q10, and Q14 first (discovery questions in overlapping domains).
-- The knee-height window is illustrative; the agronomist confirms it before the AACTT line is final.
+- Pilot with two respondents; drop any question that draws the same answer whichever hypothesis is true. Questions 7 and 8 are the likeliest to merge.
+- No field officer interviews farmers from the area where he or she delivers fertilizer; answers to questions 6 to 8 would be shaped to please.
+- Seventeen questions is a full 50 minutes. If the pilot runs long, cut questions 9, 10, and 15 first.
+- H4 is a team guess. If it finds no support, do not design for it.
 ```

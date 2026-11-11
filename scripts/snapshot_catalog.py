@@ -120,7 +120,7 @@ def build(date: str) -> str:
     # Chains
     lines.append("## Chains")
     lines.append("")
-    lines.append("Edges where one skill produces what another consumes. A user-suppliable input can also come straight from the person.")
+    lines.append("Edges where one skill produces what another consumes. They are suggestions: any input can also come straight from the person.")
     lines.append("")
     producers: Dict[str, List[str]] = {}
     consumers: Dict[str, List[str]] = {}

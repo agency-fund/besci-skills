@@ -1,37 +1,43 @@
 # Worked example: savings among Nairobi market vendors
 
-This example continues the running case used across the skills ported from Joe Speed's prototype: a savings program for informal-sector market vendors in Nairobi. It is illustrative, not a real program. This run had an evidence scan brief (from `assess-evidence-base`) and an audience and context brief (from `map-audience-context`) available.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Program goal (as given):** "Increase long-term savings among informal-sector market vendors in Nairobi so they have a buffer against income shocks."
+## The request
+
+"Our funder's goal is to increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks. We reach about 2,000 women with produce stalls in Gikomba and Toi markets through weekly visits by field officers. They earn daily in cash and mobile money, and most belong to a savings group. We have a savings feature in a mobile-money wallet already built. Our monitoring data say 15% of vendors used the wallet's savings feature last month. What behavior should we target?"
+
+## The output
 
 ```markdown
 # Target behavior brief
 
-**Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi so they have a buffer against income shocks.
+**Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks.
 
-## Candidate scoring
+## Candidates
 
-| Candidate behavior | A | P | E | A | S | E | Impact | Spillover |
-|---|---|---|---|---|---|---|---|---|
-| Deposit the day's cash surplus into an M-Pesa savings wallet before leaving the market | +: no new product, uses existing agent access | +: fits the decision moment mapped (cash in hand, pre-departure) | +: evidence brief shows commitment-device saving raised deposits in a comparable Kenyan market study | 0: acceptable, but visible cash-counting is flagged as a social-cost risk in the context brief | 0: no safety issue once cash is off-person sooner | +: reduces the after-dark cash-carrying risk already named as a constraint | +: directly targets the buffer-against-shocks goal | +: could reduce informal borrowing-request pressure by moving cash out of sight sooner |
-| Open a formal bank savings account | -: nearest branch about 40 minutes away per the context brief | -: incompatible with the same-day decision moment | 0: evidence brief has no local finding either way for formal accounts | -: low take-up risk given distance and fees | 0 | 0 | -: unlikely to be used at the moment saving actually happens | 0 |
-| Join or increase contribution to an existing *chama* savings group (outside the named product and channel infrastructure) | +: already-trusted existing channel per the context brief | +: weekly meeting cadence already attended | 0: evidence brief flags mixed effect sizes for rotating savings versus lockbox commitment devices | +: high social acceptability, already normed | 0 | 0 | 0: helps the goal, but with a slower, less individually attributable effect | +: reinforces an existing social structure rather than competing with it |
-
-(Columns, in APEASE order: Affordability, Practicability, Effectiveness, Acceptability, Side-effects/safety, Equity.)
+| Candidate behavior | Impact (1–5) | Already doing it | Likelihood of change (1–5) | Spillover | Measurable by |
+|---|---|---|---|---|---|
+| Vendors move part of the day's takings into the wallet's savings feature before leaving the market | 4: small, frequent deposits add up to a buffer (team guess) | 15% used the feature last month (data: program monitoring) | 3: the moment exists every day, but cash is counted in public (team guess) | +: a visible balance may prompt further deposits | Wallet records |
+| Vendors raise their weekly contribution to the savings group they already belong to | 3: adds savings, but group payouts rotate and are often spent on arrival (team guess) | Most belong; contribution levels not known (team guess) | 4: a trusted routine they already keep (team guess) | 0 | Group ledgers, where groups allow |
+| Vendors open a bank savings account | 3: a safe store, if used (team guess) | Not known | 1: a trip to a branch during trading hours (team guess) | 0 | Bank statements, with consent |
 
 ## Selected target behavior
-- **Who:** Female stall vendors in Nairobi's Gikomba and Toi markets (per the audience and context brief, not "informal-sector vendors" generally)
-- **What:** Deposit that day's net cash surplus into an M-Pesa savings wallet
+- **Who:** Women with produce stalls in Gikomba and Toi markets who are enrolled in the program
+- **What:** Move part of the day's takings into the wallet's savings feature
 - **When:** Before leaving the market, each trading day
-- **One-sentence behavior statement:** Female stall vendors in Gikomba and Toi markets deposit that day's net cash surplus into an M-Pesa savings wallet before leaving the market, each trading day.
+- **In one sentence:** Enrolled produce vendors in Gikomba and Toi markets move part of the day's takings into the wallet's savings feature before leaving the market each trading day.
 
 ## Why this one
-The M-Pesa deposit candidate is the only one whose Practicability score lines up with the actual decision moment named in the context brief (cash in hand, pre-departure) rather than a moment the behavior would have to be relocated to. The evidence brief's Kenyan lockbox finding gave it the only positive Effectiveness score among the three; the *chama* candidate scored just as well on Acceptability but loses on Impact because its effect is diffused across a group rather than attributable to this program's rollout.
+It has the highest impact score and the most room to grow: 85% of vendors did not use the feature last month, and that figure is the one score here that rests on data. The savings-group candidate scored higher on likelihood, but both likelihood scores are team guesses, so the gap between them should not be trusted yet.
 
-## Candidate shortlist (ranked, not discarded)
-1. Join or increase *chama* contribution: kept as the fallback if M-Pesa agent access turns out to be less reliable than the context brief assumed.
-2. Open a formal bank account: ranked last; the Practicability and Acceptability scores would need the context (branch distance) to change first, not just the messaging.
+## APEASE concerns
+Acceptability: counting and setting aside cash in view of other vendors may invite requests for money. Equity: vendors without their own phone are left out.
 
-## Open questions / assumptions to check
-Whether "net cash surplus" is calculable by vendors without formal bookkeeping. Flagged as an open question in the audience and context brief's "still needs field confirmation" section and not yet resolved here.
+## Runners-up, ranked
+1. Raise the weekly savings-group contribution: ranked second because rotating payouts make a lasting buffer less likely. It is the fallback if vendors will not use the wallet.
+2. Open a bank savings account: ranked last on likelihood. It came from outside what the program has built and would need the bank to come to the market.
+
+## What would change this choice
+- The two likelihood scores are guesses. Ask 20 vendors which of the three they would do next week, and why not the others.
+- Contribution levels in savings groups are unknown. Field officers can record them at one weekly visit.
 ```

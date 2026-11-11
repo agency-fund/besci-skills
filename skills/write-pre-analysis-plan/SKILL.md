@@ -1,31 +1,23 @@
 ---
 name: write-pre-analysis-plan
 description: >-
-  Use when an evaluation design or measurement plan exists and the team
-  needs to write down, before any outcome data exist, exactly how the
-  results will be analyzed: one primary outcome, the estimator, the
-  families of secondary outcomes, the subgroups, and the decision rules.
-  Also use when someone says "pre-analysis plan", "PAP", "pre-register
-  the analysis", "the AEA registry wants our analysis plan", or asks how
-  much to pre-specify. Produces an analysis plan at the AEA RCT
-  Registry's level of detail, following Olken (2015), Coffman and
-  Niederle (2015), and Banerjee et al. (2020) on how much to fix in
-  advance. Do not use when the primary outcome, comparison condition,
-  and smallest effect worth detecting have not been chosen; run
-  plan-evaluation-design first. Not for configuring the experiment
-  itself (design-evidential-experiment), for the mechanics of the
-  multiple-testing correction (adjust-for-multiple-comparisons), or for
-  running the subgroup analysis (analyze-heterogeneous-effects).
+  Use when a trial's design and primary outcome are set and the team must
+  fix, before any outcome data arrive, how results will be analyzed: "write
+  our pre-analysis plan", "PAP", "what do we put in the AEA registry?", "how
+  much do we pre-specify?". Writes the hypotheses, estimator, outcome
+  families, subgroups, decision rules, and registration. Do not use when the
+  primary outcome or smallest change worth detecting is open
+  (plan-evaluation-design) or the comparison is open (choose-trial-design).
 license: CC-BY-4.0
 metadata:
   title: Write the analysis plan before the data arrive
   type: atomic
   stage: test
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: not-applicable
+  tested_in: not-applicable
   tags: "research-transparency, experimental-design, multiple-comparisons"
   consumes: "evaluation-design, measurement-plan"
   produces: "analysis-plan"
@@ -33,129 +25,123 @@ metadata:
 
 ## What it does
 
-Writes the analysis side of a pre-registration: one primary outcome, the estimator, the families of secondary outcomes, the subgroups with a reason each, the decision rules, all fixed before any outcome data are seen.
+Writes down how a trial's results will be analyzed before anyone sees the outcome data.
 
-A pre-analysis plan (PAP) is a dated document that says how a trial's data will be analyzed before the outcome data exist, so the analysis cannot be chosen after seeing which number moved. This skill takes a design that already exists and writes the plan at the level of detail the AEA RCT Registry asks for, concentrating detail where it matters (subgroups, parties with a stake in the result) and leaving the rest flexible with a commitment to report deviations.
+**What this adds:** asks first whether anyone has seen outcome data by arm; carries the design and primary outcome over unchanged; gives every secondary outcome a family and a named way of handling multiple tests; requires a reason and a status for each subgroup; writes a decision for each range of the primary result; and checks which registry applies.
 
 ## When to use it
 
 ### Use it when
-- A measurement plan or evaluation design brief exists, the trial is about to launch, and nobody has written down how the results will be analyzed
-- Someone asks "what goes in a pre-analysis plan?", "how much do we need to pre-specify?", or "the AEA registry wants an analysis plan, what do we upload?"
-- A team is proposing subgroups before the data exist ("we should also look at women", "the poorest quintile") and wants to commit now rather than argue later
-- The implementer, funder, or a ministry has a stake in the result and the analysis needs to be fixed where that stake is strongest
+- A trial is about to launch and nobody has written down how its results will be analyzed
+- Someone asks "what goes in a pre-analysis plan?" or "what do we put in the AEA registry?"
+- A team proposes subgroups ("look at women too") and wants to commit before the data exist
 
 ### Do not use it when
-- The primary outcome, comparison condition, or smallest effect worth detecting is still open; run `plan-evaluation-design` first, or `choose-trial-design` if the trial's structure is the question
-- The team is configuring a rapid experiment in Evidential; `design-evidential-experiment` carries its own analysis-plan field, and this skill's output feeds it
-- The data are in and the question is which correction to apply or how to estimate subgroup effects; `adjust-for-multiple-comparisons` and `analyze-heterogeneous-effects` execute what the plan says
-- Outcome data by arm have already been seen; see the specialist section, because a plan written now is not a pre-analysis plan
+- The primary outcome or the smallest change worth detecting is still open; use `plan-evaluation-design`
+- The comparison or the unit of randomization is still open; use `choose-trial-design`
+- The data are in and the question is how effects differ by subgroup; use `analyze-heterogeneous-effects`
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask only what the user has not answered.
 
-1. **Required.** The design: the evaluation design brief from `plan-evaluation-design` or the trial design from `choose-trial-design`, with the primary outcome, comparison condition, unit of randomization, strata, smallest effect worth detecting, and timing. If any of these is missing, send it back; this skill does not choose them.
-2. **Required.** Whether anyone has seen outcome data by arm: endline, midline, or an interim dashboard. Baseline data are fine. If the answer is yes, stop and go to the specialist section.
-3. **Required.** The secondary outcomes the team cares about, and every subgroup anyone has proposed, each with the reason it was proposed.
-4. **Required.** Who has a stake in the result (implementer, funder, ministry, the team's own prior) and what each would want it to show. This decides where the plan is detailed.
-5. Optional. The registry (AEA RCT Registry, OSF, a trial registry) and its deadline.
-6. Optional. A description of the baseline data: the variables available for covariate adjustment and stratification, and the cluster identifiers.
+1. **Required.** The design: comparison, unit of randomization, arms, strata, timing.
+2. **Required.** The primary outcome, with its source, window, and smallest change worth detecting.
+3. **Required.** Whether anyone has seen outcome data by arm, even on a dashboard. Baseline data are fine.
+4. Optional. Secondary outcomes, and each proposed subgroup with its reason.
+5. Optional. Who has a stake in the result; the registry, deadline, and baseline variables.
 
-If 1 or 2 is missing, ask and stop. If 3 is missing, write a primary-only plan and say the secondary families are empty. If 4 is missing, assume the implementer has the strongest stake and say so. If 5 or 6 is missing, default to the AEA registry's fields and to intention-to-treat with strata only.
+If 1, 2, or 3 is missing, ask and stop; if outcome data by arm have been seen, go to the specialist note. Without 4, write a primary-only plan. Without 5, assume the implementer and funder have a stake.
 
 ## What it draws on
 
-- Olken, B. A. (2015). Promises and perils of pre-analysis plans. *Journal of Economic Perspectives*, 29(3), 61–80. https://doi.org/10.1257/jep.29.3.61
-- Coffman, L. C., & Niederle, M. (2015). Pre-analysis plans have limited upside, especially where replications are feasible. *Journal of Economic Perspectives*, 29(3), 81–98. https://doi.org/10.1257/jep.29.3.81
-- Banerjee, A., et al. (2020). In praise of moderation: Suggestions for the scope and use of pre-analysis plans for RCTs in economics. NBER Working Paper 26993. https://doi.org/10.3386/w26993
-- AEA RCT Registry. https://www.socialscienceregistry.org/
-- Office of Evaluation Sciences (2021). *Analysis plan* template, July 2021. https://oes.gsa.gov/assets/files/AnalysisPlan.pdf
-- J-PAL. *Pre-analysis plans*. https://www.povertyactionlab.org/resource/pre-analysis-plans
-- EGAP. *10 things to know about pre-analysis plans*. https://egap.org/resource/10-things-to-know-about-pre-analysis-plans/
+- Duru, M., Sautmann, A., Turitto, J., & Welch, K. (2023). *Pre-analysis plans* and *Trial registration*. J-PAL Research Resources. https://www.povertyactionlab.org/resource/pre-analysis-plans and https://www.povertyactionlab.org/resource/trial-registration Supports: when to file, a "concise and focused" plan, edits, and the populated plan; the registry rules in step 8.
+- Banerjee, A., Duflo, E., Finkelstein, A., Katz, L., Olken, B., & Sautmann, A. (2020). *In praise of moderation: Suggestions for the scope and use of pre-analysis plans for RCTs in economics* (NBER Working Paper 26993). https://doi.org/10.3386/w26993 Supports: step 6, where detail is worth adding.
+- Brodeur, A., Cook, N. M., Hartley, J. S., & Heyes, A. (2024). Do preregistration and preanalysis plans reduce p-hacking and publication bias? Evidence from 15,992 test statistics and suggestions for improvement. *Journal of Political Economy Microeconomics*, 2(3), 527–561. https://doi.org/10.1086/730455 Supports: writing the plan, not only the registry entry.
 
-Olken sets out the promise of pre-analysis plans (an analysis that cannot be chosen after seeing the data, which matters most where someone has a stake in the result) and the perils (rigidity, cost, lost learning from the data). Coffman and Niederle argue the upside is limited, especially where replications are feasible. Banerjee et al. argue for moderation: pre-specify what matters, keep the rest flexible, and report deviations. J-PAL's guidance says a PAP "should be concise and focused, rather than attempt to be exhaustive" and treats the populated PAP, the plan filled in afterward with results and deviations, as a separate document. The OES template, in contrast, pre-specifies a full plan (hypotheses, data structure, outcomes, transformations, exclusions, missing data, models and tests) "finalized and date-stamped before we take possession of outcome data". This skill takes the moderate position as the default and the OES position where stakes are high: detail goes where there are vested interests or subgroups, the rest is flexible and declared so, and a populated PAP follows. One judgment call is this skill's own: the plan carries written decision rules (what the team will do with each result), which none of the sources require but which make the plan usable by a program, not only by a journal.
+**Where the evidence comes from:** This is a procedure and makes no claim about how program participants behave. Its sources are economists' guidance and papers on trials in many countries, and a study of trials in leading economics journals. What is local is which registry the funder or journal requires, and whether ethics approval comes first.
 
-**WEIRD skew:** Not applicable to the method, which is procedural. The practice comes out of development-economics RCTs (Olken; Banerjee et al.) and a US government evaluation office (OES). What a user elsewhere should check locally: whether the registry is reachable and its timing fits local ethics approval, whether the data structure the plan assumes (cluster identifiers, baseline variables, consistent ids across rounds) actually exists, and who controls the outcome data before registration. **Non-WEIRD evidence:** none found in the sources this skill draws on as a study of pre-analysis plans; the practice's origin in LMIC field trials is a provenance note, not evidence of effect.
-
-**Replication status:** Contested on the level of detail (Coffman and Niederle: limited upside; Banerjee et al.: moderation; OES: full pre-specification, date-stamped); uncontested that whatever is pre-specified must be written before outcome data are seen.
+**Replication status:** Contested on detail. Banerjee and colleagues argue the registry's fields usually suffice; Brodeur and colleagues found no sign that registration alone reduced p-hacking (trying analyses until one is significant), but signs that registration with a plan did.
 
 ## How to do it
 
-1. **Carry over the design verbatim**: primary outcome, comparison, unit of randomization, strata, smallest effect worth detecting, timing. Do not re-decide any of them; if one is missing, send the user back to `plan-evaluation-design`.
-2. **Write the primary hypothesis in one sentence**, with its direction, then the one primary outcome with its exact construction: variable, transformation, measurement window, missing-data rule. One primary outcome, because several primaries re-import the which-number-moved problem.
-3. **Group the secondary outcomes into families** by construct (for example savings behavior; health visits; knowledge). Name per family whether an index will be built or a correction applied, and hand the mechanics to `adjust-for-multiple-comparisons`. Everything outside the families is exploratory and labeled so.
-4. **Specify the estimator.** Intention-to-treat (ITT: compare people by the arm they were assigned, whether or not they took it up), with covariates named now (baseline outcome, strata), and inference that matches the unit of randomization (cluster-robust standard errors, which allow outcomes within a randomized cluster to be correlated, when clusters were randomized). State the attrition rule and the check for differential attrition between arms.
-5. **Pre-specify subgroups**, each with a theory-based reason the effect should differ, the variable and cut defined now, and its status (confirmatory or exploratory). Keep the list short; hand execution to `analyze-heterogeneous-effects`.
-6. **Write the decision rules**: for the primary outcome above the threshold, around it, and null or negative, what the team will do, who decides, and which guardrail results would override a positive primary.
-7. **Calibrate the detail.** Moderate by default (Banerjee et al.). Add detail where a party has a stake in the result or where a subgroup invites fishing. Say what is left flexible and commit to a populated PAP that lists deviations.
-8. **Register it.** Fill the registry fields, date-stamp the plan, attach it, record the registry id, and name who holds the outcome data until registration is confirmed.
-9. **Stop here.** The plan goes to the registry; `adjust-for-multiple-comparisons` and `analyze-heterogeneous-effects` execute it when the data arrive.
+1. **Carry the design and primary outcome over** word for word.
+2. **Write the hypotheses**: the primary one with direction, outcome, and comparison arm; then one per secondary family.
+3. **Fix the primary outcome for analysis**: any transformation, and the rule for missing values. Two primaries become a family with a correction, so "one of two moved" is not reported as success.
+4. **Group secondary outcomes into families** by what they measure, and name how each handles multiple tests: a summary index, or a false discovery rate correction (Benjamini–Hochberg). Outcomes outside a family are exploratory.
+5. **Specify the estimator**: the effect of assignment, whether or not people took part (intention to treat); covariates, including strata, named now; standard errors clustered at the unit randomized, if groups were; exclusions by one rule for every arm; and a test of whether drop-out differs by arm.
+6. **List subgroups** with the variable and cut, the reason the effect should differ, and a status, confirmatory or exploratory; drop any with no reason. Add detail where the outcome could be built several ways, a subgroup matters, or a party has a stake; keep the rest short. Commit to a populated plan: a later report of every pre-specified test and deviation.
+7. **Write the decision rules**: what the team will do, and who decides, if the primary result is at or above the smallest change worth detecting, positive but below it, or null or negative; and which harm would stop adoption regardless.
+8. **Plan the registration** in the registry the funder or journal requires; health and medical journals that follow ICMJE rules require an approved clinical trial registry, even for a social science trial. Register before the intervention starts, attach this plan, and name who holds the outcome data until then.
 
-See `references/worked-example.md` for a complete run on tax-compliance letters in Guatemala, and `references/evidence-notes.md` for the sources with their verification state.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Pre-analysis plan
+# Pre-analysis plan: <trial>
 
-**Trial:** <name>
-**Registry:** <AEA RCT Registry / OSF / other; id when available>
-**Date-stamped:** <date>, before any outcome data by arm were seen
-**Design carried over from:** <plan-evaluation-design brief or choose-trial-design output, dated>
+**Date fixed:** <date>
+**Outcome data by arm seen before this date:** <none / what, by whom, when>
+**Registry:** <name; id when issued>
 
-## 1. Hypothesis
-<primary hypothesis in one sentence, direction stated>
+## 1. Design (carried over)
+<comparison; unit of randomization; arms and allocation; strata; timing; sample>
 
-## 2. Design (carried over, not re-decided)
-<unit of randomization; arms; strata; comparison condition; sample; timing of outcome collection>
+## 2. Hypotheses
+- **H1 (primary):** <the change, its direction, on which outcome, against which arm>
+- **H2 to Hn:** <one per secondary family>
 
 ## 3. Primary outcome
-<variable, construction, measurement window, missing-data rule; the smallest effect worth detecting, carried over with its source>
+<carried over: measure, source, window; for analysis: transformation, missing-value rule; smallest change worth detecting and who set it>
 
 ## 4. Secondary outcome families
-| Family | Outcomes | Index or correction (mechanics in adjust-for-multiple-comparisons) | Why this family |
+| Family | Outcomes | How multiple tests are handled | Why grouped |
 |---|---|---|---|
+| <...> | <...> | <summary index / false discovery rate correction / reported without a test> | <...> |
 
-## 5. Estimator and inference
-<ITT by assigned arm; covariates named now; cluster-robust or individual standard errors matching the randomization unit; attrition rule and differential-attrition check; exclusion rules>
+## 5. Estimator
+- **Effect estimated:** <intention to treat, by assigned arm>
+- **Model:** <outcome on arm indicators, strata, named baseline covariates>
+- **Standard errors:** <robust / clustered at <unit>, the unit randomized>
+- **Exclusions:** <rule, applied to every arm>
+- **Drop-out:** <test for differences between arms>
 
-## 6. Pre-specified subgroups
-| Subgroup | Variable and cut | Theory-based reason | Status (confirmatory / exploratory) |
+## 6. Subgroups
+| Subgroup | Variable and cut | Why the effect should differ | Status |
 |---|---|---|---|
+| <...> | <...> | <...> | <confirmatory / exploratory> |
 
 ## 7. Decision rules
-| Primary result | What the team will do | Who decides | Guardrail results that would override |
-|---|---|---|---|
-| Above threshold | | | |
-| Around threshold | | | |
-| Null or negative | | | |
+| Primary result | What the team will do | Who decides |
+|---|---|---|
+| At or above <smallest change worth detecting> | <...> | <...> |
+| Positive but below it | <...> | <...> |
+| Null or negative | <...> | <...> |
+
+**Would stop adoption whatever the primary shows:** <a harm, and its threshold>
 
 ## 8. Where this plan is detailed, where it is flexible
-<the vested interests and subgroup risks that drove extra detail; what is left open and why; commitment to a populated PAP listing deviations>
+<detail added for which stake, subgroup, or outcome, and why; what is left flexible; the commitment to a populated plan>
 
 ## 9. Registration
-<registry fields filled; date; attachment; who holds the outcome data until registration is confirmed>
+<registry and why; plan attached and dated; hidden until completion: yes / no; who holds the outcome data until registration is confirmed>
 
 ## Open questions
-- <the assumption most likely to be wrong>
+- <...>
 ```
 
 ## Where it goes wrong
 
-- **Writing it after a peek.** A plan drafted after anyone has seen outcomes by arm, even a dashboard glance, is not a pre-analysis plan. Ask question 2 directly; if the answer is yes, stop and escalate rather than date-stamping a document the data already shaped.
-- **Several primary outcomes.** Listing three "primary" outcomes so one is bound to move. One primary; the rest in families.
-- **Subgroups without a reason.** A subgroup listed because the variable exists, not because theory says the effect should differ there, is a fishing license. Each subgroup carries its reason or is dropped.
-- **Re-deciding the design.** Drifting into choosing the primary outcome or the smallest effect worth detecting. That is `plan-evaluation-design`'s job; this skill carries its answers over.
-- **Over-specifying everything.** A plan that fixes every transformation of every outcome is the rigidity Olken and Banerjee et al. warn about; detail goes where the stakes are, and the rest is declared flexible.
-- **No decision rule.** A plan that says how the number will be computed but not what anyone will do with it leaves the program's decision to be made after the result, which is where the pressure is.
+- **Writing it after a peek.** A midline table or a dashboard glance by arm shapes what gets pre-specified, however honest the team.
+- **The registry entry as the plan.** A few registry fields leave the estimator, families, and subgroups open until the data arrive.
+- **A deviation shown as the result.** A new specification reported without the pre-specified one beside it, each labeled, reads as the plan's answer.
 
 ## When to bring in a specialist
 
-Tell the user to consult a statistician or evaluation methodologist, and where relevant an independent evaluator, when:
-- Any outcome data by arm have been seen; the honest options (an exploratory label, a dated populated plan, a plan for only the outcomes not yet seen) need a methodologist's judgment, and the registry entry must say what was seen
-- The design is clustered, stepped-wedge, or adaptive, so the estimator and standard errors are not the textbook ITT case
-- A party with a stake in the result wants to change the plan before registration; an independent evaluator should hold the plan
-- The primary outcome is high-stakes (eligibility for benefits, health) and a wrong decision rule would be acted on
+Tell the user to consult a statistician or evaluation methodologist, with an independent evaluator to hold the plan where a party has a stake, when:
+- Outcome data by arm have been seen: what can still be pre-specified needs judgment, and the registry entry must say what was seen and when
+- The design is clustered, stepped-wedge, or adaptive, so the estimator is not the standard case
+- The primary outcome decides eligibility for benefits or health care
 
-Bring them: the design brief, the draft plan with its decision rules, and the description of the data structure.
+Bring them: the design, the draft plan, and a description of the data.

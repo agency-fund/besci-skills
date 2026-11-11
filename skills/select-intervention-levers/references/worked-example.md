@@ -1,35 +1,54 @@
-# Worked example: a confirmed Opportunity/social barrier at the M-Pesa kiosk
+# Worked example: cash seen at the kiosk in two Nairobi markets
 
-This example continues the running case used across the skills ported from Joe Speed's prototype. The barrier came from `decompose-comb-barriers` and was confirmed in the field as the top-ranked hypothesis. It is illustrative, not a real design.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Confirmed barrier (from `decompose-comb-barriers`, confirmed in vendor interviews):** "Opportunity/social: visible cash-counting and depositing at closing invites informal borrowing requests from neighboring vendors."
+## The request
+
+"Our interviews in Gikomba and Toi markets confirmed the barrier: women vendors do not deposit at the mobile-money agent's kiosk at closing time because neighboring stallholders see them counting cash and then ask to borrow. In 14 of 20 interviews, vendors said they change when and where they count cash to avoid being seen. The behavior we want: women with produce stalls deposit the day's surplus cash into their mobile-money savings wallet before leaving the market each trading day. We have a small pilot budget and good relations with both markets' vendor associations, but none with the mobile-money provider. The agents' kiosks are inside the markets. Our idea so far is a short talk at the weekly field-officer visit on why saving matters. What should we do about this barrier?"
+
+## The output
 
 ```markdown
 # Intervention lever brief
 
-**Confirmed barrier:** Opportunity/social: visible cash-counting and depositing at closing invites informal borrowing requests from neighboring vendors. Confirmed in one round of vendor interviews in both markets: vendors reported changing timing and location specifically to avoid being seen with cash.
+**Behavior:** Women with produce stalls in Gikomba and Toi markets deposit the day's surplus cash into their mobile-money savings wallet before leaving the market each trading day.
+**Confirmed barrier:** Counting and depositing cash at the agent's kiosk at closing time is seen by neighboring vendors, who then ask to borrow.
+**Evidence that confirmed it:** 20 vendor interviews across both markets; 14 vendors said they change when and where they count cash to avoid being seen.
+**Kind of barrier:** Social opportunity, because what stops the deposit is how the people around the vendor respond to visible cash, not her skill, her wish to save, or the kiosk's hours.
 
-## Applicable intervention functions
-Per the BCW's Opportunity/social linkage (Michie, van Stralen & West, 2011, Table 2): Environmental restructuring, Modeling, and Enablement.
-- Environmental restructuring: changing the physical or social environment so the deposit act itself is not visible to neighboring vendors. **Confidence:** High. Opportunity/social's link to Environmental restructuring is a central, well-recalled cell of the published matrix.
-- Modeling: a respected peer vendor visibly normalizing discreet deposit as routine, reducing the social salience of any one vendor doing it. **Confidence:** High.
-- Enablement: reducing the practical friction of depositing before others notice (e.g. a faster transaction path). **Confidence:** Lower. Enablement is applied here from general recall of the matrix's broad reach across most Opportunity and Motivation cells rather than a specific memory of this exact cell; verify against Table 2 before finalizing.
+## Kinds of intervention the table links to this barrier
 
-## Feasibility scoring (APEASE)
-| Function | A | P | E | A | S | E |
+| Kind | Form it would take here |
+|---|---|
+| Restriction | The vendor associations adopt a rule against asking for loans at the kiosk at closing |
+| Environmental restructuring | The program and the agents put a screen and a marked deposit position at each kiosk, so a deposit cannot be seen from the stalls |
+| Enablement | The mobile-money provider shortens the deposit transaction at closing, so vendors spend less time in view |
+| Modeling (later table) | Respected vendors deposit in the open and say they turn down loan requests made at the kiosk |
+
+**The team's own idea:** A short talk on why saving matters. Its kind is education, which is not in the row: a talk does not change who sees the cash.
+
+## Feasibility (APEASE)
+
+| Kind | Affordability | Practicability | Effectiveness | Acceptability | Side-effects and safety | Equity |
 |---|---|---|---|---|---|---|
-| Environmental restructuring | +: low cost, a screen or partition at the existing agent kiosk | +: no new behavior to teach, works within the current routine | +: directly removes the visibility mechanism named in the barrier | +: no reason vendors would object | 0 | 0 |
-| Modeling | 0: no direct cost | -: requires sustained peer-influencer engagement to stand up | 0: plausible but slower and less directly tied to the mechanism | +: socially low-risk | 0 | 0 |
-| Enablement (faster transaction path) | -: would require the mobile money provider to change its queue or process | -: outside the program's control in the pilot window | 0 | 0 | 0 | 0 |
+| Restriction | +: costs nothing to adopt | −: the associations can adopt a rule, but nobody can enforce it at closing | ?: a rule does not stop a neighbor from seeing the cash | −: vendors are unlikely to accept a rule about who may ask whom for help | −: could sour relations between neighbors | 0: applies to everyone |
+| Environmental restructuring | +: a screen and a floor marking at kiosks that already exist, within the pilot budget | −: a fixture needs each market management's permission, not yet asked | +: removes the visibility the interviews named (team guess until piloted) | +: vendors already seek privacy for their cash; agents not yet asked | 0: a screened spot could mark its users as people with cash | 0: open to every vendor who uses the kiosk |
+| Enablement | ?: the cost falls on the provider | −: needs the provider, with whom the program has no relationship | 0: less time in view is still in view (team guess) | +: no reason to object | 0: none identified | 0: none identified |
+| Modeling (later table) | +: no direct cost | 0: the associations can name respected vendors; nobody has asked them | ?: shows that depositing is normal, but the requests continue (team guess) | 0: asks a few vendors to take the requests themselves | −: the models may face more borrowing requests | 0: none identified |
 
 ## Selected lever
-**Function:** Environmental restructuring. Wins on Practicability and Effectiveness; it is the only function that acts on the visibility mechanism directly rather than around it, and it needs no external party's cooperation to pilot.
-**Concrete technique (BCTTv1):** 12.1 Restructuring the physical environment: install a small privacy partition or a marked "quick deposit" position at the existing M-Pesa agent kiosk inside each market, so the deposit transaction is not directly visible to neighboring stalls.
+- **Kind:** Environmental restructuring, because it is the only kind with a + on effectiveness, and its one − is a permission the vendor associations are well placed to request. The change that removes the −: written permission from each market's management before design starts.
+- **Technique:** A waist-high screen and a marked deposit position at the agent's kiosk in each market, installed by the program with the agent, so that a vendor handing over cash at closing cannot be seen from the neighboring stalls.
+- **Taxonomy label:** label to check: 12.1 Restructuring the physical environment
 
-## Rejected functions
-- Modeling: kept as the next lever to try if the partition pilot does not move the primary outcome; slower to stand up, but it does not require agent cooperation either.
-- Enablement via a faster transaction path: rejected for this pilot since it requires a change from the mobile money provider outside the program's control; worth revisiting if a provider partnership develops.
+## If it fails: the other kinds, ranked
+1. Modeling (later table): lost on side-effects and on an unknown effect. Worth trying if vendors avoid the screened position because using it draws attention.
+2. Enablement: lost on practicability. Worth trying if a partnership with the provider develops.
+3. Restriction: lost on practicability, acceptability, and side-effects. Worth trying only if the associations propose it themselves.
 
-## Open questions
-Whether market management will permit a physical partition at the agent kiosk. Not yet confirmed with either market's vendor association.
+## To confirm before design
+- Whether each market's management will permit a fixture at the kiosk. Without it, the selection falls to modeling.
+- Whether agents accept the screen. They were not interviewed.
+- Whether a screened position marks its users as carrying cash. Ask five vendors before building anything.
+- The effectiveness scores are team guesses until a pilot.
 ```

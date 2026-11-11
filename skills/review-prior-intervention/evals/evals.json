@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
+      "name": "Full run",
       "prompt": "We ran a 3-month SMS reminder program to improve adherence to a daily medication for our enrolled patients. One reminder text per day at 8am. Adherence, measured by pharmacy refill records, barely moved. Our take is that patients just don't care enough about their health to act on a reminder. We're deciding whether to drop reminders altogether. I pulled the SMS gateway's delivery logs for you: about 30% of messages failed silently on two carriers, with no resend. No other changes at the clinics during the period. Can you review it?",
-      "expected_output": "A full post-mortem brief following the output template: the account condensed; what was planned; fidelity, dose, reach, and context each with a Basis marker (fidelity and dose confirmed from the delivery logs, which patients were affected marked inferred); the outcome from refill records with a confidence qualifier; a causal claim check that says the data does not support the motivation story and names non-delivery as the alternative; a classification of 'cannot yet tell' on the idea with a confirmed implementation failure; and factors to address before any retry (per-message delivery confirmation). It does not propose a redesigned program. It does not re-ask the Before you start questions.",
+      "expected_output": "A post-mortem brief in the output template that finds a confirmed delivery failure and classifies the reminder idea as not yet fairly tested.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Labels each of fidelity, dose, reach, context, and response as confirmed by the record or inferred.",
+        "Says the collected data does not support the team's explanation about motivation.",
+        "Names failed delivery as an alternative explanation.",
+        "Gives 'cannot yet tell' as the classification, or 'implementation failure', and not 'idea failure'.",
+        "Does not recommend dropping reminders.",
+        "Does not propose a redesigned program."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "We tried SMS reminders a couple of years ago and it didn't work. Should we try again or not?",
-      "expected_output": "The skill does not classify or advise. It asks for a written record: what was planned (behavior, mechanism, delivery), what the team believes happened and why, and what data was collected (delivery logs, outcome measures) and whether each was tracked systematically. If the team has only memory, it asks them to write down what they remember first, even informally, and explains that without fidelity, dose, reach, or outcome data the honest answer would be 'cannot yet tell'.",
+      "expected_output": "The skill asks for a written record of the program and the data collected, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks for a written record of what was planned and what happened.",
+        "Asks what data was collected.",
+        "Gives no classification.",
+        "Does not advise retrying or dropping reminders."
+      ]
     },
     {
       "id": 3,
+      "name": "Near the escalation point",
       "prompt": "Last year we piloted a combined cash transfer plus monthly nutrition counseling for 300 households in two districts. Our records show 280 households received at least 4 of the 6 transfers; counseling attendance logs exist for one district only, showing about 40% attended three or more sessions. Child weight-for-age improved slightly on average, but in 12 households it worsened and two children were hospitalized for malnutrition during the pilot. The team believes the idea works and counseling was the weak part. Our funder is deciding whether to scale to 3,000 households. Review it.",
-      "expected_output": "The skill produces the brief with Basis markers (transfer dose confirmed; counseling reach confirmed for one district and inferred for the other; context unknown), a causal claim check that says the data partially supports the team's story but cannot separate counseling from transfer effects, and a classification that is 'cannot yet tell' for the idea with a documented implementation gap in counseling. Because the pilot involved child hospitalizations and the funder's decision is a tenfold scale-up on thin counseling data, it tells the user to bring in an independent evaluator or implementation specialist before the scale decision, and lists what to bring them. It does not redesign the program.",
+      "expected_output": "The skill produces the brief without settling the idea on thin counseling data, and names an independent evaluator because of the hospitalizations and the scale-up.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Marks counseling reach as confirmed for one district and inferred or unknown for the other.",
+        "Says the data cannot separate the effect of the counseling from that of the transfers.",
+        "Does not classify the result as idea failure.",
+        "Tells the user to consult an independent evaluator or process evaluator before the scale-up decision.",
+        "Says what to bring to that specialist."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "Our post-mortem is done: the reminders failed because a third of the texts never got delivered. Now design the next version of the program for us.",
-      "expected_output": "The skill recognizes the request as intervention design, not a post-mortem, and declines to design the next version. It says the brief's 'factors to address before any retry' section is the input for whoever designs it, notes that fixing message delivery is an implementation task rather than a new idea, and points to decompose-comb-barriers if the team wants to re-check the barrier before choosing a lever, or select-intervention-levers if a barrier is already confirmed.",
+      "expected_output": "The skill says designing the next attempt is not its job, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the request is to design the next attempt.",
+        "Names select-intervention-levers.",
+        "Does not produce a redesigned program or a new post-mortem brief."
+      ]
     }
   ]
 }

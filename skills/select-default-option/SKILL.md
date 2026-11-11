@@ -1,155 +1,132 @@
 ---
 name: select-default-option
 description: >-
-  Use when people are not acting because doing nothing leaves them out
-  ("nobody enrolls", "they never opt in") and the team wants to change what
-  a person gets when they take no action. Also use when a team is about to
-  flip a program from opt-in to opt-out and must decide the default, for
-  whom, and how opting out works. Chooses the pre-set option and names the
-  mechanism it relies on (endorsement, endowment, or effort), because the
-  mechanism predicts both the effect size and whether the default is
-  defensible; draws on the Jachimowicz et al. (2019) meta-analysis and the
-  Afghanistan mobile-money default trial. Do not use when the problem is
-  hassle inside the process rather than inaction at one decision point; run
-  audit-process-friction instead. Not for restrictions a person places on
-  their own future self (design-commitment-device), not for the enrollment
-  notice wording (draft-lever-content), and not for deciding whether a
-  default is the right technique (select-intervention-levers).
+  Use when people say they want something, it is available, and doing nothing
+  leaves them without it: "nobody enrolls", "the form sits unsigned". Also use
+  when a team wants to switch from opt-in to opt-out ("let's auto-enroll
+  everyone"). Specifies the default, who it is for, how to opt out, and what
+  to monitor. Do not use when the hassle is in the steps of a process; use
+  audit-process-friction. Not for a restriction people choose for themselves;
+  use design-commitment-device.
 license: CC-BY-4.0
 metadata:
   title: Choose what people get by default
   type: atomic
   stage: design
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: likely-generalizes
-  tags: "defaults, choice-architecture, behavior-change-techniques"
-  consumes: "intervention-levers, barrier-diagnosis"
+  tested_in: beyond-western-holds
+  tags: "choice-architecture, defaults"
+  consumes: "barrier-diagnosis"
   produces: "intervention-draft"
 ---
 
 ## What it does
 
-Chooses the pre-set option people receive when they take no action at one decision point.
+Specifies the option people receive when they take no action at one decision point.
 
-It names the mechanism the default relies on (endorsement, endowment, or effort), because the mechanism predicts both how large the effect will be and whether the default is defensible. It also specifies how a person opts out and the opt-out rate above which the team should assume the default is wrong for the people receiving it. A default is a structural change to the choice, not a message; the notice that announces it is drafted afterwards by `draft-lever-content`.
+**What this adds:** stops if the barrier is not inaction at a decision point; requires the default to serve the person who receives it and names who could be worse off; makes the designer say which mechanism the default relies on; fixes the opt-out as one free, visible step; and sets an opt-out rate at which the default is reviewed.
 
 ## When to use it
 
 ### Use it when
-- A confirmed barrier is inertia at one decision point: people say they want the thing, the option is available, and the no-action path leaves them without it ("nobody enrolls", "the form sits unsigned", "they never switch")
-- A team is about to flip a program from opt-in to opt-out ("let's just auto-enroll everyone") and has not decided which option becomes the default, for whom, or how opting out works
-- An enrollment, contribution, or consent step already has a default (there always is one, usually "nothing") and the team wants to check whether it serves the people who receive it
-- The lever brief from `select-intervention-levers` names a default or pre-set option as the technique
+- A confirmed barrier is inaction at one decision point: people say they want the option, it is available, and doing nothing leaves them without it ("nobody enrolls", "the form sits unsigned")
+- A team is about to switch a program from opt-in to opt-out
+- A step already has a default, usually "nothing", and the team wants to check whether it serves the people who receive it
 
 ### Do not use it when
-- The problem is friction inside the process (many fields, documents, trips) rather than inaction at one point; a default does not remove the steps after it. Run `audit-process-friction`
-- The person is meant to restrict their own future choices, such as a locked savings account they choose to open; that is an opt-in restriction, owned by `design-commitment-device`
-- The team needs the words of the enrollment notice or the opt-out message; that is `draft-lever-content`, run after this skill
-- No lever has been selected, or the barrier is motivation, cost, or supply rather than inertia; a default cannot create a want or supply a missing service. Go back to `select-intervention-levers`
+- The hassle is in the steps of a process (fields, documents, trips), which a default does not remove; use `audit-process-friction`
+- People are to restrict their own future choices, such as a locked account they choose to open; use `design-commitment-device`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The target behavior (who, what, when) and the confirmed barrier with its evidence, from `select-intervention-levers` or `decompose-comb-barriers`. The barrier must be inertia at a decision point: people intend to act, the option exists, and inaction is what stops them. If the barrier is friction, motivation, or supply, say so and stop.
-2. **Required.** The decision point: where the no-action path lands a person today, what the current default is, and who controls that setting (the program, an employer, a bank, a clinic).
-3. **Required.** Whether the default would move money, medical treatment, or legal status (a wage deduction, a test, a consent). This decides whether the ethics check can be closed here or needs a specialist.
-4. Optional. What the team knows about who would be worse off under the proposed default (people with debts, people who need the cash at once, people for whom a treatment is contraindicated), because the default must serve the chooser, not the program.
-5. Optional. Whether a trusted source stands behind the default, which decides whether the endorsement mechanism is available.
+1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that people want the option and are stopped by not acting.
+2. **Required.** The decision point: what happens today to a person who does nothing, and who controls that setting.
+3. **Required.** Whether the default would move money, medical treatment, or legal status.
+4. Optional. Who could be worse off under the proposed default.
+5. Optional. Whether a party the audience trusts stands behind the default.
 
-If 1 or 2 is missing, ask and stop. If 3 is missing, ask once; if still unclear, proceed and treat the default as one that moves money. If 4 is missing, proceed and list "who may be worse off" as the first open question. If 5 is missing, assume no trusted source and do not rely on endorsement.
+If 1 or 2 is missing, ask and stop. If 3 is unclear, treat the default as one that moves money. If 4 is missing, list "who could be worse off" as the first open question. If 5 is missing, assume no trusted party.
 
 ## What it draws on
 
-- Jachimowicz, J. M., Duncan, S., Weber, E. U., Hardisty, D. J., & Johnson, E. J. (2019). When and why defaults influence decisions: A meta-analysis of default effects. *Behavioural Public Policy*, 3(2), 159–186. https://doi.org/10.1017/bpp.2018.43
-- Mertens, S., Herberz, M., Hahnel, U. J. J., & Brosch, T. (2022). The effectiveness of nudging: A meta-analysis of choice architecture interventions across behavioral domains. *Proceedings of the National Academy of Sciences*, 119(1). https://doi.org/10.1073/pnas.2107346118
-- Maier, M., Bartoš, F., Stanley, T. D., Shanks, D. R., Harris, A. J. L., & Wagenmakers, E.-J. (2022). No evidence for nudging after adjusting for publication bias. *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2200300119
-- Blumenstock, J., Callen, M., & Ghani, T. (2018). Why Do Defaults Affect Behavior? Experimental Evidence from Afghanistan *American Economic Review*, 108(10), 2868–2901. https://doi.org/10.1257/aer.20171676
-- Münscher, R., Vetter, M., & Scheuerle, T. (2016). A review and taxonomy of choice architecture techniques. *Journal of Behavioral Decision Making*, 29(5), 511–524. https://doi.org/10.1002/bdm.1897
-- DellaVigna, S., & Linos, E. (2022). RCTs to scale: Comprehensive evidence from two nudge units. *Econometrica*, 90(1), 81–116. https://doi.org/10.3982/ECTA18709
-- Ferraro, P. J., & Tracy, J. D. (2022). A reassessment of the potential for loss-framed incentive contracts to increase productivity: A meta-analysis and a real-effort experiment. *Experimental Economics*, 25(5), 1441–1466. https://doi.org/10.1007/s10683-022-09754-x
-- Behavioural Insights Team (2014; revised and updated edition, c. 2024). *EAST: Four simple ways to apply behavioural insights*, "Make it easy". London: BIT. https://bi.team/wp-content/uploads/2014/04/BIT-EAST.pdf
+- Jachimowicz, J. M., Duncan, S., Weber, E. U., & Johnson, E. J. (2019). When and why defaults influence decisions: a meta-analysis of default effects. *Behavioural Public Policy*, 3(2), 159–186. https://doi.org/10.1017/bpp.2018.43 Supports: the mechanism line. The authors name three channels: endorsement (the default is read as a recommendation), endowment (it is seen as the status quo), and ease (staying with it takes less effort than switching).
+- Blumenstock, J., Callen, M., & Ghani, T. (2018). Why do defaults affect behavior? Experimental evidence from Afghanistan. *American Economic Review*, 108(10), 2868–2901. https://doi.org/10.1257/aer.20171676 Supports: checking that the barrier is a decision people put off.
+- Somville, V., & Vandewalle, L. (2018). Saving by default: Evidence from a field experiment in rural India. *American Economic Journal: Applied Economics*, 10(3), 39–66. https://doi.org/10.1257/app.20160547 Supports: monitoring after the default ends.
 
-A default is the option a person gets by taking no action. Jachimowicz et al. (2019) pool 58 studies (N = 73,675) and find d = 0.68 (95% CI 0.53–0.83) with I² ≈ 98% (nearly all the variation between studies is real difference, not sampling noise) and two studies where the default pushed people the wrong way. They distinguish three mechanisms, which this skill makes the user choose between; the labels are theirs and the one-line glosses are this skill's: endorsement (the default is read as what a trusted party recommends), endowment (people treat the pre-set option as already theirs and dislike giving it up), and effort (switching needs a decision and an action that people put off). Münscher, Vetter & Scheuerle (2016) place defaults among the "decision structure" techniques, and Mertens et al. (2022) find structure interventions the strongest class of nudge (overall d = 0.45, 95% CI 0.39–0.52, more than 200 studies, N ≈ 2.15 million, moderate publication bias). Discount for a field program: Maier et al. (2022) put the bias-corrected nudge average at about d = 0.04; DellaVigna & Linos (2022) find academic trials average 8.7 percentage points where nudge-unit trials average 1.4, with about 70% of the gap explained by selective publication and low power; the loss-framing literature shrinks from 0.33 SD in the lab to 0.02 SD in the field (Ferraro & Tracy, 2022). Plan for a fraction of the published effect. The judgment calls this skill adds are the mandatory mechanism line, the opt-out monitoring threshold, and the rule that a default which would leave an identifiable minority worse off is replaced by an active choice for that group.
+**Where the evidence comes from:** The meta-analysis records only whether each of its 58 data sets was run in the United States, which made no difference. Field trials in Afghanistan, India, and Malawi, all on savings, each found that a default raised participation or balances; in India the gain ended when the default did. Check locally who may set the default, whether that party is trusted, and whether people need the money or service at once.
 
-**WEIRD skew:** The dossier does not break the 58 pooled studies down by country, and the nudge meta-analyses it sits beside record moderate publication bias and large heterogeneity, so treat the pooled numbers as untested in your setting until checked locally: who is allowed to set defaults there, whether the sponsor is trusted (endorsement is unavailable otherwise), whether people need the cash or service at once, and whether a default from an institution reads as that institution taking something. **Non-WEIRD evidence:** Afghanistan (Blumenstock, Callen & Ghani, 2018): 949 employees paid through mobile money; a 5% default contribution versus a 0% default raised participation by 40 percentage points, equivalent to a 50% employer match; the authors trace the effect to present bias and the cognitive cost of deciding, not to endorsement or inattention, and savings attitudes persisted after the trial.
-
-**Replication status:** replicated; the direction is robust across 58 studies, but the size varies widely (I² ≈ 98%), two studies found negative effects, effects are weaker in environmental domains, and the planning number for a field program is well below d = 0.68.
+**Replication status:** Replicated in direction, with very uneven size: nearly all the variation across the 58 data sets is real difference between studies, and two found the opposite effect.
 
 ## How to do it
 
-1. **Carry the target behavior and confirmed barrier over verbatim**, and check that the barrier is inertia at a decision point. If people do not want the thing, cannot reach it, or are stuck in the steps after the decision, a default is the wrong technique; say so and route back.
-2. **Locate the decision point and name the current default.** Write what happens today to a person who does nothing, and who controls that setting. There is always a default; the question is whether the current one serves people.
-3. **Decide the welfare-maximizing option and for whom.** State who gains under the proposed default and who could be worse off (needs the cash now, treatment contraindicated, already covered elsewhere). If an identifiable group would be worse off, specify an active choice (the person must pick; nothing is pre-set) or a different default for that group. The default must serve the chooser, not the program's enrollment target.
-4. **Name the mechanism** the default relies on: endorsement, endowment, or effort. Give the evidence from the setting that supports it (a trusted sponsor for endorsement; a visible balance or entitlement for endowment; a decision people postpone for effort) and what would show a different mechanism is at work. The Afghanistan result ran on effort and present bias, not endorsement; do not assume endorsement where no trusted source stands behind the default.
-5. **Design the opt-out so it is easy, visible, and free.** One step, no penalty, no waiting period, stated in the same place the default is announced. A default with a hidden or costly opt-out is coercion dressed as a nudge.
-6. **Set the opt-out monitoring threshold.** State the opt-out rate above which the team will treat the default as wrong for this population and review it, and how the team will learn whether people who stayed in are worse off (complaints, reversals, hardship withdrawals).
-7. **Run the ethics check.** Does the default serve the chooser; is it transparent; could it be read as the organization taking something (the bad-intent signal behind the negative studies)? If the default moves money, medical treatment, or legal status, send the specification to `audit-intervention-ethics` and the specialist named below before any pilot.
-8. **State the expected effect, discounted.** Quote the meta-analytic numbers with their corrections, then say what the team should plan for in a field program and why it is smaller. Never give d = 0.68 or the Afghanistan 40 points as the planning number.
-9. **Stop here.** The notice that announces the default and the opt-out wording are drafted by `draft-lever-content`; the test is designed by `plan-evaluation-design`.
+1. **Check that the barrier is inaction at one decision point.** If it is cost, access, distrust, or the steps after the decision, say a default is the wrong tool and stop.
+2. **Name the current default:** what happens today to a person who does nothing, and who controls it.
+3. **Choose the default that serves the person receiving it**, and say who could be worse off. For an identifiable group that would be worse off, specify an active choice (the person must pick; nothing is pre-set) or a different default.
+4. **Name the mechanism relied on**, endorsement, endowment, or ease, and the local fact that supports it. Do not rely on endorsement when no trusted party stands behind the default.
+5. **Design the opt-out:** one step, no cost, no waiting period, shown in the same place the default is announced.
+6. **Set the monitoring:** the opt-out rate above which the default is reviewed, how the team will learn whether people who stayed in are worse off, and what is checked when the default ends.
+7. **Run the ethics check:** does it serve the chooser, are people told before it applies, and could it be read as the organization taking something? If it moves money, treatment, or legal status, name the specialist who must review it.
+8. **State what the evidence supports:** the direction. Do not promise an effect size.
 
-See `references/evidence-notes.md` for the annotated sources and `references/worked-example.md` for a complete run on a Bangladesh payroll savings default.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
 # Default option specification
 
-**Target behavior:** <who + what + when, carried over verbatim>
-**Confirmed barrier:** <the inertia barrier and the evidence that confirmed it>
-**Decision point:** <where the no-action path lands a person today, what the current default is, who controls it>
+**Behavior:** <who, what, when>
+**Confirmed barrier:** <the evidence that people want the option and are stopped by not acting>
+**Decision point:** <what happens today to a person who does nothing; who controls it>
 
 ## The default
 - **Proposed default:** <the option a person gets by doing nothing>
-- **Who receives it:** <the population, or the segment, it applies to>
-- **Who it is not for:** <people who could be worse off, and the active choice or different default they get; or "none identified, see open questions">
+- **Who receives it:** <the population or segment>
+- **Who it is not for:** <who could be worse off, and the active choice or other default they get; or "none identified, see open questions">
 
 ## Mechanism
-- **Relied on:** <endorsement / endowment / effort>
-- **Why this setting supports it:** <the local evidence>
-- **What would show a different mechanism:** <an observable sign>
+- **Relied on:** <endorsement / endowment / ease>
+- **Why this setting supports it:** <the local fact>
 
 ## Opt-out
 - **How:** <the one step>
-- **Where it is shown:** <same place as the default announcement>
-- **Cost to the person:** <none, or state it and justify>
+- **Where it is shown:** <the same place as the default is announced>
+- **Cost to the person:** <none; or state it and justify it>
 
 ## Monitoring
-- **Opt-out threshold:** <rate above which the default is reviewed, and who reviews>
+- **Review if opt-outs exceed:** <rate, and who reviews>
 - **Harm check:** <how the team learns whether those who stayed in are worse off>
+- **When the default ends:** <what is checked>
 
 ## Ethics check
 - **Serves the chooser because:** <...>
-- **Bad-intent signal:** <could the default read as the organization taking something; how that is avoided>
-- **Transparency:** <how the person is told, before the default applies>
-- **Escalation:** <none needed / sent to audit-intervention-ethics and <specialist> because it moves money, treatment, or legal status>
+- **Told before it applies:** <how>
+- **Could it read as taking something:** <how that is avoided>
+- **Specialist review:** <not needed / <who>, because it moves money, treatment, or legal status>
 
-## Expected effect
-<the published numbers with their corrections, then the discounted planning range for this program and why>
+## What the evidence supports
+<the direction, and the nearest field evidence with where it was run; no effect size promised>
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
-- <open questions for the pilot>
 ```
 
 ## Where it goes wrong
 
-- **A default that serves the program.** Auto-enrolling people in a fee-bearing product, a data-sharing consent, or a contribution rate set to hit a target is the program using inertia against the chooser. If the honest answer to "who is this default for?" is the organization, refuse and say why.
-- **Opt-out in name only.** An opt-out that needs a visit, a form, a waiting period, or a conversation with a supervisor is not an opt-out. The opt-out lines in the template are a hard requirement, not a formality.
-- **Assuming endorsement.** Writing "people will trust the recommendation" when no trusted party stands behind the default. The Afghanistan effect ran on effort and present bias; a default from an unknown or distrusted sponsor can read as a grab, which is the documented route to a negative effect.
-- **Planning on the meta-analytic number.** d = 0.68 is the pooled published effect with I² ≈ 98%; the bias-corrected nudge average is near zero and nudge-unit trials run far below academic ones. A pilot powered on d = 0.68 will be underpowered.
-- **Running on the wrong barrier.** Defaults act on inertia at one point. Where people lack intention, access, or trust, or where the hassle sits in the steps after the decision, the default changes who is enrolled on paper and nothing else.
-- **One default for everyone.** Keeping a single default where a known group is worse off under it (needs the cash, cannot take the treatment) because segmenting is harder. Harder is not a reason; specify an active choice for that group.
+- **A default that serves the program.** Default enrollment in a fee-bearing product or a data-sharing consent uses people's inaction against them. If the honest answer to "who is this default for?" is the organization, refuse and say why.
+- **Opt-out in name only.** An opt-out that needs a visit, a form, or a word with a supervisor keeps in people who would leave, and the participation figure then means nothing.
+- **Quoting the pooled effect as a forecast.** The average hides studies with no effect and two with the opposite effect.
 
 ## When to bring in a specialist
 
-Tell the user to consult the relevant specialist, and to run `audit-intervention-ethics`, when:
-- The default moves money (a wage or benefit deduction, a contribution rate, a fee, a loan feature); a financial-services compliance lead must check the opt-out and the disclosure against consumer-protection rules before a pilot
-- The default sets medical treatment or testing (a default test, a default prescription, a default referral); a clinician must confirm that the opt-out path is safe and that the default is appropriate for everyone who receives it
-- The default changes legal status or consent (data sharing, enrollment in a scheme with obligations, a signed agreement); a lawyer must confirm that consent by inaction is valid in that jurisdiction
-- The default sits in an environmental domain or the sponsor is distrusted; a behavioral scientist should judge whether a default is the right technique, given the weaker and sometimes negative results there
+Tell the user to consult the relevant specialist before any pilot when:
+- The default moves money (a deduction, a contribution rate, a fee): a financial-services compliance lead checks the opt-out and the disclosure
+- The default sets medical treatment or testing: a clinician confirms it is appropriate for everyone who receives it and that opting out is safe
+- The default changes legal status or consent (data sharing, enrollment with obligations): a lawyer confirms that consent by inaction is valid in that jurisdiction
 
-Bring them: the specification with its mechanism line, the opt-out design, the monitoring threshold, and the list of who could be worse off.
+Bring them: the specification, the list of who could be worse off, and the opt-out design.

@@ -139,192 +139,154 @@ verbs:
   - validate
   - write
 
-# Optional vocabulary for `consumes` and `produces`. Two skills chain when
-# one produces what the other consumes. `user_suppliable: true` means a
-# person can hand it over directly. Unknown ids are a warning, not an error.
+# Vocabulary for `consumes` and `produces`. `consumes` lists the inputs a
+# skill cannot run without; `produces` names the one thing its output
+# template is. The site draws an arrow where one skill produces what another
+# consumes. An arrow suggests that two skills fit together; people can bring
+# any input from anywhere, so no input is tied to the skill that makes it.
+# Unknown ids are a warning: add the type here in the same pull request.
 io_types:
   - id: program-goal
     label: Program goal statement
     description: A plain-language statement of what a program is trying to achieve, with whatever context exists.
-    user_suppliable: true
   - id: target-behavior-brief
     label: Target behavior brief
     description: One observable target behavior stated as who, what, and when, with runner-up candidates.
-    user_suppliable: false
   - id: comb-barrier-hypotheses
     label: COM-B barrier hypotheses
     description: Competing capability, opportunity, and motivation hypotheses with diagnostic questions.
-    user_suppliable: false
   - id: barrier-diagnosis
     label: Confirmed barrier diagnosis
     description: The barrier(s) field evidence supports, with the evidence.
-    user_suppliable: true
   - id: intervention-levers
     label: Candidate intervention levers
     description: Two to four candidate levers per barrier, each tied to a mechanism.
-    user_suppliable: false
   - id: intervention-draft
     label: Intervention draft
     description: A draft message, exercise, script, or product change ready for review.
-    user_suppliable: false
   - id: interview-guide
     label: Interview or survey guide
     description: A script or protocol a researcher can run with participants.
-    user_suppliable: false
   - id: measurement-plan
     label: Measurement plan
     description: Constructs, instruments, timing, and analysis for measuring outcomes.
-    user_suppliable: false
   - id: survey-items
     label: Survey items
     description: Draft or existing questionnaire items for a construct.
-    user_suppliable: true
   - id: evaluation-design
     label: Evaluation design
     description: Outcomes, comparison, sample size, and timeline for a test.
-    user_suppliable: false
   - id: dataset-description
     label: Dataset description
     description: Column names, sample rows, and collection context for a dataset.
-    user_suppliable: true
   - id: analysis-plan
     label: Analysis plan
     description: Pre-specified models, decision rules, and robustness checks.
-    user_suppliable: true
   - id: qualitative-data
     label: Qualitative data
     description: Interview transcripts, field notes, or open-ended responses.
-    user_suppliable: true
-  - id: personas
-    label: Personas or segments
-    description: Behaviorally meaningful groups with defining features.
-    user_suppliable: false
-  - id: journey-map
-    label: Behavioral journey map
-    description: Who does what at each phase, where barriers sit, where touchpoints are.
-    user_suppliable: false
-  - id: risk-register
-    label: Risk or pre-mortem register
-    description: Anticipated failure points and backfire effects with mitigations.
-    user_suppliable: false
   - id: skill-draft
     label: Skill draft
     description: A skill folder drafted for this library.
-    user_suppliable: true
   - id: eval-report
     label: Skill evaluation report
     description: Structure, triggering, and output-quality results for a skill.
-    user_suppliable: false
   - id: workflow-draft
     label: Workflow draft
     description: An ordered set of recommended skills with their relationships.
-    user_suppliable: false
-
   - id: evidence-scan-brief
     label: Evidence scan brief
     description: "What has been tried for a behavior, population, or context, with effect sizes where reported, null or contradicting findings, evidence gaps, and which findings are WEIRD-skewed."
-    user_suppliable: false
+  - id: transferability-assessment
+    label: Transferability assessment
+    description: "Whether one published finding is likely to hold in a named setting: the study and the setting compared on what the effect depends on, a verdict, and the assumptions to test locally."
+  - id: reference-network-map
+    label: Reference network map
+    description: "Whose behavior and approval an audience tracks for one practice: the people named, by role, and who among them carries most weight."
+  - id: ethics-review
+    label: Ethics review
+    description: "A check of a drafted intervention before launch: who it serves, whether people are told and can decline, who could be harmed, and a verdict of go, revise, or stop."
+  - id: pilot-plan
+    label: Pilot plan
+    description: "A plan for a small-scale run of a program that tests whether it can be delivered and evaluated: the questions, the progression criteria fixed in advance, the sites and size, and what changes in the main design."
+  - id: scale-up-strategy
+    label: Scale-up strategy
+    description: "How a tested program reaches routine delivery: the user organization, the environment, the resource team, the strategic choices, and prioritized actions with an owner and a date."
+  - id: effect-estimate
+    label: Effect estimate
+    description: "The estimated effect of a program on its outcome, from an evaluation, with its unit, uncertainty, and the sample it came from."
+  - id: heterogeneity-report
+    label: Heterogeneity report
+    description: "Who benefited more or less from a program: pre-specified subgroup results with their correction for testing many groups, kept apart from exploratory findings."
+  - id: cost-effectiveness-estimate
+    label: Cost-effectiveness estimate
+    description: "The cost per unit of change in the outcome, with the costs counted, the effect used, and how far the ratio moves when the inputs change."
+  - id: prototype-test-plan
+    label: Prototype test plan
+    description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."
+  - id: messenger-choice
+    label: Messenger choice
+    description: "Who should deliver a message or offer to an audience, chosen from named candidates, with the reason and how the choice will be checked."
+  - id: wise-intervention-target
+    label: Wise-intervention target
+    description: "The question about themselves or their situation that an audience is asking, shown in their own words, with a check that the setting can deliver what a new answer would promise."
   - id: audience-context-brief
     label: Audience and context brief
     description: "The population operationalized as a specific subgroup, the decision moment where the behavior choice is made, the channels already reaching them, and unconfirmed WEIRD-default assumptions."
-    user_suppliable: false
   - id: researcher-assumptions
     label: Researcher assumption statement
     description: "A research team's own short, honest answers about what they already believe causes the behavior gap, which population they have worked with most, and what would change their mind, given before looking at diagnostic data."
-    user_suppliable: true
   - id: bias-audit-report
     label: Bias audit report
     description: "A flag list of which stated researcher assumptions are unfalsifiable as written, default to a WEIRD population as the norm, or lack a named disconfirming observation. Not a score and not a debiasing plan."
-    user_suppliable: false
   - id: prior-intervention-record
     label: Prior intervention record
     description: "A team's own written account of an intervention it already tried: what was planned, what it believes happened, and why it believes it succeeded or failed."
-    user_suppliable: true
   - id: intervention-post-mortem
     label: Intervention post-mortem brief
     description: "A retrospective separating what was planned from what was implemented, classifying the result as implementation failure, idea failure, or cannot yet tell, and checking the team's causal story against the data collected."
-    user_suppliable: false
-  - id: affirmation-context
-    label: Affirmation context statement
-    description: "The population and the specific evaluative or stigmatized domain a values-affirmation exercise needs to buffer against, plus what is known about which values matter to this population."
-    user_suppliable: true
   - id: ai-use-account
     label: AI use account
     description: "A team's raw account of how a piece of work was produced: who did which parts, which AI tools were used where and how heavily, and anything they are unsure whether to disclose."
-    user_suppliable: true
   - id: sifa-declaration
     label: SIFA declaration
     description: "A Statement of Intellectual Fellowship and Accountability: per CRediT contributor role, the human contributors, any AI tool, the extent of AI involvement on a none/some/extensive scale, and an audit note."
-    user_suppliable: false
   - id: ai-product-account
     label: AI product account
     description: "A team's plain-language account of an AI product: what it does and for whom, the development outcome it targets, its maturity, the evaluation evidence that exists, and the decision the team wants to inform next."
-    user_suppliable: true
   - id: ai-eval-level-recommendation
     label: AI evaluation level recommendation
     description: "Per level of The Agency Fund's four-level AI evaluation framework, which evaluations the product has earned now, which are premature and why, and the evaluability-early steps to take regardless."
-    user_suppliable: false
-  - id: user-funnel-map
-    label: User funnel map
-    description: "A staged user funnel worked backward from one development outcome, with the user action, confirming metric, target, and owner for each stage."
-    user_suppliable: false
-  - id: funnel-metric-readout
-    label: Funnel metric readout
-    description: "A team's observed numbers for an existing funnel: the value or transition rate per stage over a stated window, plus known data-quality caveats."
-    user_suppliable: true
-  - id: funnel-weak-link-hypotheses
-    label: Funnel weak-link hypotheses
-    description: "For a funnel's largest unexplained drop-off, competing testable mechanism hypotheses, each paired with the measurement or experiment that would discriminate it. Not a redesign."
-    user_suppliable: false
-  - id: golden-dataset-spec
-    label: Golden dataset specification
-    description: "A build specification for an AI product's golden evaluation dataset: coverage buckets, query sourcing rules, ideal-response authoring rules, and the scoring plan."
-    user_suppliable: false
   - id: experiment-intent
     label: Experiment intent statement
     description: "A team's plain-language statement of the change it wants to test, who it applies to, what it expects to move, and the decision the result will inform."
-    user_suppliable: true
-  - id: experiment-configuration
-    label: Experiment configuration brief
-    description: "A launch-ready experiment configuration: hypothesis, experiment type, randomization unit and arms, primary and guardrail metrics, power inputs, stopping rule, delivery mapping, and analysis plan."
-    user_suppliable: false
-
   - id: agency-definition
     label: Agency definition
     description: "What a team means by its users' agency, stated precisely, matched to established constructs and theories, and placed on the 2x2 agency framework (forms: the end goal or the digital tool; manifestations: thoughts and feelings, or choices and actions), with the cells the team chose to focus on."
-    user_suppliable: true
   - id: theory-of-change
     label: Theory of change
     description: "The causal chain from activities to the target behavior to the outcome, with the assumption and evidence behind each link."
-    user_suppliable: true
   - id: social-norm-diagnosis
     label: Social norm diagnosis
     description: "Whether a practice is held in place by empirical and normative expectations, with the reference group and the evidence behind the call."
-    user_suppliable: false
   - id: effect-size-benchmark
     label: Effect-size benchmark
     description: "The effect size a test should plan for, discounted for publication bias and lab-to-field shrinkage, with the sources behind it."
-    user_suppliable: false
   - id: power-calculation
     label: Power calculation
     description: "Sample size, minimum detectable effect, and the assumptions behind them: variance, intracluster correlation, take-up, attrition."
-    user_suppliable: false
   - id: scalability-assessment
     label: Scalability assessment
     description: "Whether a piloted effect is likely to survive scale-up, with the named threats and what to test before scaling."
-    user_suppliable: false
   - id: adaptation-record
     label: Adaptation record
     description: "Planned and unplanned modifications to an intervention, each classified and checked against the intervention's core components."
-    user_suppliable: false
   - id: fidelity-plan
     label: Fidelity monitoring plan
     description: "Indicators, sampling frequency, and feedback loop for monitoring adherence, dose, and quality of delivery."
-    user_suppliable: false
   - id: intervention-description
     label: Intervention description
     description: "An item-by-item description of an intervention as delivered, complete enough for another team to replicate it."
-    user_suppliable: false
 
 # Suggested free-form tags. Any tag is allowed; these keep spelling consistent.
 suggested_tags:

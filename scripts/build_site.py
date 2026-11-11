@@ -112,18 +112,18 @@ STAGE_ICON_NAMES = {
 SPRITE_ICONS = ["plus", "check", "x", "star", "star-fill", "caret-up", "caret-down", "dots-six-vertical", "arrow-right", "link-simple", "copy", "download-simple"]
 
 
-# The chain drawn on the home page's map teaser: the first five skills of diagnose-to-pilot.
+# The chain drawn on the home page's map teaser: the first five skills of from-a-goal-to-a-tested-intervention.
 TEASER_CHAIN = ["define-key-behavior", "decompose-comb-barriers", "draft-tdf-interview-guide", "synthesize-interview-findings", "select-intervention-levers"]
 
 # Skills shown on the home page's stage chart; any that no longer exist are
 # skipped and the stage's other skills fill in.
 FEATURED = {
-    "define": ["define-key-behavior", "build-user-funnel", "draft-theory-of-change", "assess-evidence-base"],
-    "diagnose": ["decompose-comb-barriers", "diagnose-funnel-weak-link", "identify-positive-deviants", "diagnose-social-norm"],
+    "define": ["define-key-behavior", "assess-evidence-base", "draft-theory-of-change", "map-audience-context"],
+    "diagnose": ["decompose-comb-barriers", "draft-tdf-interview-guide", "audit-process-friction", "diagnose-social-norm"],
     "design": ["select-intervention-levers", "design-reminder-schedule", "select-default-option", "write-social-norm-message"],
     "measure": ["draft-survey-items", "plan-agency-measurement", "design-list-experiment", "translate-survey-instrument"],
-    "test": ["design-pilot-feasibility-study", "estimate-sample-size", "choose-trial-design", "write-pre-analysis-plan"],
-    "analyze": ["synthesize-interview-findings", "analyze-heterogeneous-effects", "adjust-for-multiple-comparisons", "estimate-cost-effectiveness"],
+    "test": ["design-pilot-feasibility-study", "estimate-sample-size", "choose-trial-design", "choose-ai-eval-level"],
+    "analyze": ["synthesize-interview-findings", "analyze-heterogeneous-effects", "review-prior-intervention", "estimate-cost-effectiveness"],
     "implement": ["plan-scale-up-strategy", "design-fidelity-monitoring", "draft-intervention-description", "assess-scalability"],
 }
 
@@ -773,9 +773,9 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
         <ol class="t-list">
           <li data-row><b>Research:</b> a validated entrepreneurial self-efficacy scale for secondary-school students, with a paste-ready search query</li>
           <li data-row><b>Adapt</b> #2 with {sk("translate-survey-instrument")}; build #1, #3, #5 and #6 from the drafted examples</li>
-          <li data-row><b>Test:</b> cognitive interviews with 8 students ({sk("draft-cognitive-interview-script")}); model codes against two human coders on 150 chat segments ({sk("audit-llm-qualitative-coding")})</li>
+          <li data-row><b>Test:</b> cognitive interviews with 8 students ({sk("draft-cognitive-interview-script")}); check model-coded chat segments against two human coders</li>
           <li data-row><b>Interpret:</b> drop #1 as a proxy if it does not track #2</li>
-          <li data-row><b>Later:</b> {sk("design-evidential-experiment")} for the direct versus questions-first comparison</li>
+          <li data-row><b>Later:</b> {sk("choose-trial-design")} for the direct versus questions-first comparison</li>
         </ol>
       </div>
       <div class="t-ai" data-step="say"><p class="t-ask">Want me to search for published entrepreneurial self-efficacy scales for #2 now? I will quote only items I can open.<small>Suggested: yes, limited to scales tested with secondary-school students.</small></p></div>
@@ -795,10 +795,10 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     wf_panel = f"""
   <div class="demo-screen" role="tabpanel" id="demo-p-workflow" aria-labelledby="demo-t-workflow" data-demo-panel="workflow" hidden>
     <ol class="wf-rail" aria-label="Workflow steps">{rail}</ol>
-    <div class="demo-body" tabindex="0" aria-label="Illustrative conversation running the diagnose-to-pilot workflow">
+    <div class="demo-body" tabindex="0" aria-label="Illustrative conversation running the from-a-goal-to-a-tested-intervention workflow">
       <div class="t-user" data-step="type"><span class="t-text">Rural women in India learn about kangaroo mother care in a hospital health education session, but few report practicing it at home. Why? I want to study this qualitatively with a small sample, then design the most promising intervention.</span></div>
-      {tool_line("besci-navigator", "Matched workflow: diagnose-to-pilot", by_name)}
-      <div class="t-ai" data-step="say"><p>This fits <a href="/workflows/diagnose-to-pilot/">From a vague goal to a piloted intervention</a>. I will run its first five skills, from the behavior to a chosen lever, and stop wherever you need to decide.</p></div>
+      {tool_line("besci-navigator", "Matched workflow: from-a-goal-to-a-tested-intervention", by_name)}
+      <div class="t-ai" data-step="say"><p>This fits <a href="/workflows/from-a-goal-to-a-tested-intervention/">From a goal to a tested intervention</a>. I will run its first five skills, from the behavior to a chosen lever, and stop wherever you need to decide.</p></div>
       {tool_line("define-key-behavior", "Step 1 of 5", by_name, 0)}
       <div class="t-ai" data-step="say"><p><b>Target behavior:</b> after discharge, mothers of low-birthweight babies hold the baby skin-to-skin at home every day, for the hours the nurses advised, through the first four weeks. Observable on the ASHA's home visits and a daily tick-sheet.</p></div>
       {tool_line("decompose-comb-barriers", "Step 2 of 5", by_name, 1)}
@@ -845,7 +845,7 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     <span class="demo-foot-actions">
       <a href="/skills/besci-navigator/" data-demo-for="meta">Open this skill {ICONS['arrow']}</a>
       <a href="/skills/plan-agency-measurement/" data-demo-for="skill" hidden>Open this skill {ICONS['arrow']}</a>
-      <a href="/workflows/diagnose-to-pilot/" data-demo-for="workflow" hidden>Open this workflow {ICONS['arrow']}</a>
+      <a href="/workflows/from-a-goal-to-a-tested-intervention/" data-demo-for="workflow" hidden>Open this workflow {ICONS['arrow']}</a>
       <button class="demo-replay" type="button" hidden>{ICONS['replay']} Replay</button>
     </span>
   </div>
@@ -1130,7 +1130,7 @@ def build_map() -> None:
     body = f"""
 <div class="page-head map-head">
   <h1>Skill map</h1>
-  <p class="lede">An arrow from one skill to another means the first one produces something the second one uses, as the skills' authors declared it. Follow the arrows to find skills that can run in sequence. They aren't the only order that works.</p>
+  <p class="lede">An arrow from one skill to another means the first one's output can feed the second. The links are suggestions for putting skills together into a workflow, not rules: you can bring any input from your own work, and use any skill on its own.</p>
   <div class="map-tools">
     <label class="search map-search"><span class="sr-only">Find a skill on the map</span>{ICONS['search']}
       <input type="search" id="map-q" placeholder="Find a skill" autocomplete="off" spellcheck="false"></label>
@@ -1985,7 +1985,7 @@ def build_data(skills: List[dict], workflows: List[dict], taxonomy: dict) -> Non
     lite = {
         "stages": [{"id": str(x.get("id")), "label": str(x.get("label")), "description": str(x.get("description") or "")}
                    for x in taxonomy.get("stages", []) if isinstance(x, dict)],
-        "io_types": [{"id": str(x.get("id")), "label": str(x.get("label") or x.get("id")), "user_suppliable": bool(x.get("user_suppliable"))}
+        "io_types": [{"id": str(x.get("id")), "label": str(x.get("label") or x.get("id"))}
                      for x in taxonomy.get("io_types", []) if isinstance(x, dict)],
         "skills": [{k: s[k] for k in ("name", "title", "stage", "type", "what_it_does", "url", "download_url", "consumes", "produces", "version")}
                    for s in skills],

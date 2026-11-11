@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We run a six-month electrical installation course for young people from informal settlements in Wakiso, outside Kampala. Behavior: women trainees attend through the end of month two, when the first practical assessment happens; about 40% of women leave before then, against 15% of men. identify-wise-intervention-target named belonging: in 18 interviews, 13 women said things like 'this is a men's trade, the instructors don't expect us to stay' and 'the first time I failed to wire the board I knew I was in the wrong place'. Structural test cleared fees (covered) and transport (a stipend). Affordance facts: two of the five instructors are women who graduated from the course; there is a women trainees' WhatsApp group run by graduates; no harassment has been reported in the last three intakes, and we asked the women's group directly. We can interview graduates from the last two years, 20 of whom are working as electricians. Delivery: a 90-minute session in week one led by two graduates, in Luganda, with a printed set. We track attendance daily and can compare with the next intake. Draft the belonging story set.",
-      "expected_output": "A full belonging story set following the output template: target behavior, transition moment (week one through the month-two practical), and the women's quotes carried over; the group named as women trainees from informal settlements; an affordance check that records the two women instructors, the graduates' group, and the harassment check with its source, with verdict afforded; a collection plan of 6 to 12 women graduates (a range, not only the best) with the three-question guide, consent, and anonymity; at least four stories, each with a concrete early difficulty (for example the first wiring failure), the doubt it raised, what changed and when, and a sign it was common, with edits marked and written as working copy in the tellers' voice, clearly labeled as the shape of stories to be collected rather than presented as real quotes; a framing paragraph that only claims 'most' if the collection shows it; a saying-is-believing task asking each trainee to write or record advice to a woman joining the next intake, with the advice to be shared; delivery once in week one led by the two graduates; a measurement plan with attendance through the month-two practical as the outcome, the next intake as comparison, pre-registration, and an expected effect that is small and untested here; an evidence statement saying US college only, N = 92 original with the gap roughly halved, 26,911 students at 22 institutions with effects only where belonging was afforded, no LMIC trial found; a pre-test with n and pass criterion. It does not re-ask the Before you start questions, does not invent that stories were collected, and does not draft a growth-mindset lesson.",
+      "name": "Full run",
+      "prompt": "We run a six-month electrical installation course for young people from informal settlements in Wakiso, outside Kampala. Behavior: women trainees attend through the end of month two, when the first practical assessment happens; about 40% of women leave before then, against 15% of men. In 18 interviews, 13 women said things like 'this is a men's trade, the instructors don't expect us to stay' and 'the first time I failed to wire the board I knew I was in the wrong place'. Fees are covered and there is a transport stipend. Two of the five instructors are women who graduated from the course; there is a women trainees' WhatsApp group run by graduates; no harassment has been reported in the last three intakes, and we asked the women's group directly. We can interview graduates from the last two years, 20 of whom are working as electricians, but have not done so yet. Delivery: a 90-minute session in week one led by two graduates, in Luganda, with a printed set. We track attendance daily and can compare with the next intake. Draft the belonging story set.",
+      "expected_output": "A belonging story set in the output template, with the check of the setting filled in, a collection plan, and no invented story presented as real.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Records the women instructors, the graduates' group, and the harassment check as what the setting offers, with a verdict.",
+        "Plans to collect stories from women graduates of the course, with the questions to ask and consent.",
+        "Presents no invented story as real; any story it writes is labeled an illustration, not for delivery.",
+        "Includes the task in which trainees write or record advice to a woman in the next intake.",
+        "Names attendance through the month-two assessment as the outcome.",
+        "Says the trials are from US colleges and promises no effect size."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "New community health nurses keep quitting in their first three months. Write us a belonging story.",
-      "expected_output": "The skill does not write any stories. It asks the Required questions: the target behavior as who, what, when, the transition moment, and the evidence in the nurses' own words that early difficulty is read as 'people like me do not belong' (or points to identify-wise-intervention-target if the question has not been named); who the group is in its own terms and whether older peers of that group who stayed can be interviewed; the affordance facts, including who will include them and any evidence of hostility; and the delivery timing, format, language, and deliverer. It may say in one sentence that the evidence is US college only, but it produces no story text.",
+      "expected_output": "The skill asks for the nurses' own words, what the setting offers them, and whether older peers can be interviewed, and writes nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks for evidence, in the nurses' own words, that they read early difficulty as a sign they do not belong.",
+        "Asks who in the setting includes them, or whether any harassment or exclusion has been reported.",
+        "Asks whether nurses of the same group who stayed can be interviewed.",
+        "Writes no story text."
+      ]
     },
     {
       "id": 3,
-      "prompt": "First-year students from the northern states at our university in Lagos drop out at twice the rate of others. Interviews: 'people like us don't finish here' (most), 'the hostel boys call us names and the warden does nothing' (many), 'a lecturer told the class that northerners are only here on quota' (several). The vice-chancellor wants a belonging story set for orientation week. Please draft it.",
-      "expected_output": "The skill does not deliver a story set for orientation. It runs the affordance gate on the stated facts, records the hostel name-calling, the warden's inaction, and the lecturer's remark as evidence of active hostility, and gives the verdict not afforded, saying plainly that the barrier is structural and that a story set would ask the students to distrust a reading that is correct. It produces what is safe: the quotes carried over, the affordance check with its facts, what would have to change first (a response to the hostel harassment and to the lecturer's conduct), and optionally the collection guide marked 'not to be used until the affordance check passes'. It routes the structural barrier to select-intervention-levers and tells the user to bring in the safeguarding lead and the institution's leadership, with a local qualitative researcher, and mentions audit-intervention-ethics; it lists what to bring: the quotes, the affordance check, and the incident reports. It writes no stories.",
+      "name": "Near the escalation point",
+      "prompt": "First-year students from the northern states at our university in Lagos drop out at twice the rate of others. Interviews: 'people like us don't finish here' (most), 'the hostel boys call us names and the warden does nothing' (many), 'a lecturer told the class that northerners are only here on quota' (several). We can interview final-year students from the north. The vice-chancellor wants a belonging story set for orientation week. Please draft it.",
+      "expected_output": "The skill reports that the setting excludes the group, writes no stories, says what must change first, and tells the user to bring in the safeguarding lead or the institution's leadership.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Records the name-calling, the warden's inaction, or the lecturer's remark as harassment or exclusion.",
+        "Gives the verdict that the setting does not deliver.",
+        "Says what would have to change first.",
+        "Tells the user to consult a safeguarding lead or the institution's leadership.",
+        "Writes no stories."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "Our Grade 9 students in rural Rajasthan say 'I'm just not a maths person' after the first unit test and stop coming to the extra classes. Can you draft belonging stories from older students for them?",
-      "expected_output": "The skill recognizes that the students' words are about fixed ability ('not a maths person'), not about whether people like them belong, and does not draft a story set. It says the request belongs to adapt-growth-mindset-message, or to identify-wise-intervention-target if the team wants the target confirmed first, and writes no stories. It may note in one sentence that a belonging story answers 'do people like me belong here?' and that none of the quotes say that.",
+      "expected_output": "The skill says the students' words are about ability, not belonging, and points to the skill for growth-mindset lessons.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the quotes are about ability, not about whether people like them belong.",
+        "Names adapt-growth-mindset-message or identify-wise-intervention-target.",
+        "Writes no stories."
+      ]
     }
   ]
 }

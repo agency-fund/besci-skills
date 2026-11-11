@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We run a wage digitization program with three garment factories in Gazipur, Bangladesh. About 4,200 workers are paid monthly into bKash wallets. Our barrier diagnosis (60 interviews, then a short survey of 400 workers) found that most workers say they want to put something aside each month but almost none open the free savings pocket in the wallet: they mean to, payday comes, and the money is gone. The lever brief from select-intervention-levers picked 'pre-set a savings contribution' as the technique. Factory HR will accept any default we propose as long as a worker can switch it off. Money in the pocket can be withdrawn any time without a fee. Many workers send money home on payday and some repay a cooperative loan each month. Specify the default.",
-      "expected_output": "A full default option specification following the output template: the target behavior and the inertia barrier carried over with the survey evidence; the decision point named as the payday wallet credit with the current default of 0% to the pocket and HR as the controller; a proposed default contribution with who receives it and who it is not for (workers with cooperative repayments or heavy remittances get an active choice or a lower default, or this is the first open question); the mechanism named as effort and present bias, with the Afghanistan payroll trial as the parallel and an explicit note that endorsement is not assumed; a one-step, free, visible opt-out; a numeric opt-out threshold and a harm check (early withdrawals, HR complaints); an ethics check that sends the specification to audit-intervention-ethics and a financial compliance review because it moves wages; an expected-effect section quoting d = 0.68 with I² and the Afghanistan 40 points, then a discounted planning range well below them with the reasons. It does not write the SMS or payslip wording, does not re-ask questions the prompt answered, and does not present the chosen percentage without saying why.",
+      "name": "Full run",
+      "prompt": "Behavior: workers at our three partner garment factories in Gazipur move part of their monthly wage into the savings pocket of their mobile-money wallet on payday. In a survey of 400 workers, 71% said they want to put money aside each month and 3% have opened the pocket; in interviews they say they mean to and the money is gone by evening. The pocket is free and inside the wallet they already use. Today the whole wage lands in the spending balance, set by HR's payroll file. This would move wages. About 15% of workers repay a cooperative loan monthly. Can we auto-enroll everyone at 5%?",
+      "expected_output": "A default option specification in the output template that does not apply one default to everyone.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Names who could be worse off under the default and gives them an active choice or a different default.",
+        "Names one mechanism: endorsement, endowment, or ease, with a fact from the setting.",
+        "The opt-out is one step with no cost.",
+        "Gives an opt-out rate at which the default is reviewed.",
+        "Names a specialist to review it because it moves wages.",
+        "Promises no effect size for this program."
+      ]
     },
     {
       "id": 2,
-      "prompt": "Nobody enrolls in our savings product. Can we just make it opt-out?",
-      "expected_output": "The skill does not produce a specification. It asks the Required questions: the target behavior and whether field evidence confirmed that the barrier is inertia at one decision point rather than cost, trust, or hassle; where the decision point sits and what the current default is and who controls it; and whether the default would move money, treatment, or legal status. It may say that a savings product default moves money and will need a compliance check, but it stops there.",
+      "name": "Missing context",
+      "prompt": "Enrollment in our health insurance scheme is low. Let's just auto-enroll everyone. What should the default be?",
+      "expected_output": "The skill asks for the evidence that people want the scheme and for the decision point, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks what shows that people want to enroll and are stopped by not acting.",
+        "Asks what happens today to someone who does nothing, or who controls that.",
+        "Does not produce a default specification.",
+        "Does not recommend auto-enrollment."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Our SACCO in Nakuru, Kenya has about 9,000 smallholder members who take an input loan each season. Fewer than 10% buy the crop insurance we offer with the loan, although in member meetings most say they want cover. The board wants to bundle insurance by default: the premium, about 4% of the loan, is added unless the member ticks a box to decline on the loan form they sign at the branch. Specify the default.",
-      "expected_output": "The skill produces what it safely can: the decision point (the loan form at the branch; current default is no cover), a candidate mechanism with the honest note that 'most say they want cover' in a meeting is not a confirmed inertia diagnosis and what check would confirm it, an opt-out design in which the decline box is on the same page as the premium line and costs nothing, a monitoring threshold, and a who-is-worse-off list (members who cannot carry the extra 4%, members already covered). Because the default adds a cost to a loan contract, it states that the specification goes to audit-intervention-ethics and a financial-services compliance or regulatory review before any pilot, names what to bring them, and refuses to treat the board's enrollment target as the reason for the default. The expected-effect section is discounted and does not quote the Afghanistan 40 points as the plan.",
+      "name": "Near the escalation point",
+      "prompt": "At our antenatal clinics in Kisumu, women are offered an HIV test and about 60% accept. In exit interviews most of those who declined said they would have tested if it were 'just part of the visit'. The clinic in-charge controls the visit protocol. We want testing to be the default, with women able to decline. Please specify it.",
+      "expected_output": "The skill specifies the default and says a clinician must review it before any pilot because it sets medical testing.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Specifies how a woman declines, in one step, and where she is told.",
+        "Says who could be worse off under a default test.",
+        "Names a clinician as the specialist who must review it.",
+        "Says what to bring to that specialist.",
+        "Does not present the default as ready to launch without that review."
+      ]
     },
     {
       "id": 4,
-      "prompt": "People start enrolling in our mobile savings scheme but drop out: the sign-up needs a photo of an ID, a nominee's details, and a visit to an agent to verify. Should we make enrollment the default?",
-      "expected_output": "The skill does not produce a default specification. It says the barrier described is friction in the steps of the process (ID photo, nominee details, agent visit), not inaction at one decision point, so a default cannot remove it and would at most enroll people on paper. It points the user to audit-process-friction to walk the process and count the removable steps, and says a default could be reconsidered afterwards if a single decision point with inertia remains.",
+      "name": "Wrong skill",
+      "prompt": "Our scholarship application has 14 fields, needs three documents and a trip to the district office, and most applicants give up halfway. How do we fix it with a default?",
+      "expected_output": "The skill says the barrier is the steps of the process, not inaction at one decision point, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says a default does not remove the steps of a process.",
+        "Names audit-process-friction.",
+        "Does not produce a default specification."
+      ]
     }
   ]
 }

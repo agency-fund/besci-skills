@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Target behavior: female stall vendors in Nairobi's Gikomba market set aside KES 500 from the week's surplus into a restocking fund every Saturday. Confirmed barrier from our interview round (Motivation, automatic): vendors say they intend to, have the surplus most weeks (KES 300 to 1,200), and spend it the same evening on small purchases or lend it to neighbors who ask. The lever brief from select-intervention-levers selected a commitment product. Safaricom can hold an M-Pesa lock savings sub-wallet with a vendor-chosen unlock date and can show the balance on request; it is already trusted for daily payments. Income dips in the two weeks before school terms start. About a third of vendors already give cash to a chama treasurer to hold. Design the device.",
-      "expected_output": "A full commitment device specification following the output template: the barrier confirmation line restating the interview evidence (intention, surplus available, same-evening spending and lending); device type hard, with the reason that the balance is verifiable and the holder is trusted; goal as a vendor-chosen unlock date or amount verified by the M-Pesa balance; a stake range with a ceiling set below the pre-school-term dip, chosen by the vendor; a statement of where any forfeited amount goes (or, for a pure lock with no forfeit, that nothing is forfeited and the restriction is the lock itself); an opt-in rule with an explicit no option and no bundling with airtime or credit; a failure plan for vendors who break the lock early or stop depositing; expected take-up at the low end of 10 to 30% with the chama evidence noted as a reason it could be higher; and a fairness section flagging vendors with the smallest surplus. It does not re-ask the Before you start questions, does not redo the lever selection, and does not write the enrollment SMS.",
+      "name": "Full run",
+      "prompt": "Behavior: women stall vendors in Nairobi's Gikomba market set aside KES 500 from the week's surplus into a restocking fund every Saturday. We interviewed 40 vendors: 34 say they intend to, 31 have a surplus most weeks (KES 300 to 1,200), and most describe spending it the same evening or lending it to neighbors who ask. Our mobile-money partner can open a locked savings pocket with an unlock date the vendor chooses and can show the balance on request; it is licensed by the central bank and vendors already use it for daily payments. Income dips in the two weeks before school terms start. About a third already give cash to a chama treasurer to hold. Design the device.",
+      "expected_output": "A commitment device specification in the output template that the vendor opts into, with a cap tied to the dip before school terms.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Restates the evidence that vendors intend to save, have a surplus, and spend or lend it the same evening.",
+        "Says whether the device is soft or hard and gives the reason.",
+        "Caps what a vendor can lose or lock, with reference to the income dip before school terms.",
+        "Says where forfeited money goes, or that nothing is forfeited.",
+        "Says what happens to vendors who commit and then stop depositing.",
+        "Gives a failure rate at which the device is reviewed and promises no effect size."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Our clients don't save. Design a commitment savings product for them.",
-      "expected_output": "The skill does not produce the specification. It asks for the confirmed barrier with evidence that clients intend to save, have the money, and fail at the moment of spending (and says that 'they don't save' may be a cost or access problem that belongs with select-intervention-levers); the target behavior as who, what, when and whether completion can be verified cheaply; and the population's income pattern and what loss would hurt. It may ask whether a partner can hold the stake and whether clients already use informal commitments, marked optional.",
+      "expected_output": "The skill asks for the evidence that clients intend to save, have the money, and give way at the moment of spending, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks what shows that clients intend to save and have money to save.",
+        "Asks whether the goal can be checked by someone else, who would hold the money, or what loss would cause hardship.",
+        "Does not produce a commitment device specification.",
+        "Does not accept 'they don't save' as evidence of temptation."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Smallholder farmers in Mchinji district, Malawi, keep intending to buy fertilizer in time for planting but spend the harvest money by October. We want them to deposit MWK 25,000 in September that they forfeit if they haven't bought fertilizer by 15 November. Our interviews confirm the money exists at harvest and is gone by October. Most households run short of food from January to March and about half carry informal debt. Design the device.",
-      "expected_output": "The skill confirms the barrier evidence fits temptation rather than cost and still produces a specification, but it refuses the proposed terms as written: a forfeit of MWK 25,000 for a population that runs short of food from January to March and half of whom carry debt could cause financial harm. It specifies a safer version (for example a lock with no forfeit, a farmer-chosen stake well below the proposed amount, or a soft device) and writes the failure plan and the fairness section with the lean season named. It tells the user to consult a financial-inclusion or consumer-protection specialist to set the cap and to route the plan to audit-intervention-ethics before any offer, and says what to bring: the interview evidence, the income pattern, and the partner's terms for holding the money. It does not present the MWK 25,000 forfeit as acceptable.",
+      "name": "Near the escalation point",
+      "prompt": "Smallholder farmers in Mchinji district, Malawi, keep intending to buy fertilizer in time for planting but spend the harvest money by October. We want them to deposit MWK 25,000 in September that they forfeit if they haven't bought fertilizer by 15 November. Our interviews confirm the money exists at harvest and is gone by October. Most households run short of food from January to March and about half carry informal debt. The deposit would be held by our own program office. Design the device.",
+      "expected_output": "The skill specifies a safer device than the one proposed and says a financial consumer-protection specialist must review it before any pilot.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Does not accept the MWK 25,000 forfeit as proposed.",
+        "Specifies a lower cap, a lock with no forfeit, or a soft device, citing the lean season or the debt.",
+        "Says forfeited money must not go to the program.",
+        "Names a financial consumer-protection specialist, because the device holds or forfeits money.",
+        "Says what to bring to that specialist."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "We're working with a garment factory in Gazipur, Bangladesh, that pays wages into mobile money. Workers say they want to save but never get round to opening a savings wallet. We'd like to enroll everyone in a 5% savings deduction automatically unless they opt out. Can you design that as a commitment device?",
-      "expected_output": "The skill does not design the device. It explains that the barrier described is inertia (never getting round to enrolling), which a default acts on, not temptation at the moment of spending, and that automatic enrollment is the opposite of a commitment device because nobody has chosen the restriction. It names select-default-option as the skill that owns the automatic 5% deduction with opt-out, and notes that a commitment device could be offered later, opt-in, to workers who then want to lock what they have saved.",
+      "expected_output": "The skill says automatic enrollment is a default nobody chose, not a commitment device, and points to the skill for defaults.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says a commitment device is one the person chooses, and automatic enrollment is not.",
+        "Names select-default-option.",
+        "Does not produce a commitment device specification."
+      ]
     }
   ]
 }

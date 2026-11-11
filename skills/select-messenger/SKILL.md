@@ -1,155 +1,144 @@
 ---
 name: select-messenger
 description: >-
-  Use when the open question is who should deliver a message: "should the
-  nurse say this or the village elder?", "who do people here actually listen
-  to?", "would a peer land better than our staff?". Also use when a team has
-  defaulted to its own staff as the messenger without checking whether the
-  audience trusts them, or wants to recruit community "ambassadors" and needs
-  a way to pick them. Scores candidates on reach, similarity, authority,
-  trust, and cost, picks one by barrier type, and plans a comparison against
-  a random messenger, drawing on the MINDSPACE Messenger lever and the
-  Haryana immunization trial, where community-nominated information hubs
-  plus SMS were the most cost-effective arm. Do not use when the question is
-  whose opinion the audience weighs for a norm; that is map-reference-network,
-  which this skill takes as input. Not for when or how often to send
-  (design-reminder-schedule), the norm message (write-social-norm-message),
-  or the message text (draft-lever-content).
+  Use when the question is who should deliver a message: "should the nurse
+  say this or the village elder?", "would a peer land better than our staff?".
+  Also use when a program has made its own staff the sender without checking,
+  or wants to pick community ambassadors. Rates candidates on what the
+  audience has said, checks whether the leading one has power over the
+  audience, and writes the messenger's brief. Do not use when the question is
+  whose opinion the audience weighs for a practice; use map-reference-network.
+  Not for the words; use draft-lever-content.
 license: CC-BY-4.0
 metadata:
   title: Choose who delivers the message
   type: atomic
   stage: design
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: likely-generalizes
-  tags: "message-design, social-norms, network"
-  consumes: "intervention-levers, audience-context-brief"
-  produces: ""
+  tested_in: beyond-western-holds
+  tags: "message-design, network"
+  consumes: "barrier-diagnosis"
+  produces: "messenger-choice"
 ---
 
 ## What it does
 
-Picks who should deliver a message to a given audience, with the reasons on paper.
+Chooses who delivers one message to one audience.
 
-The same words land differently depending on who says them: people weight information by the messenger's perceived authority, similarity to themselves, and trustworthiness (the Messenger lever in MINDSPACE), and a message travels further when it starts with people who talk to many others. This skill lists the messengers a program could field, has the community rather than the program name the well-connected ones, rates each candidate on five criteria, weights the criteria by the barrier the message addresses, and plans a comparison so the program learns whether the choice mattered. It does not write the message or set the reminder cadence.
+**What this adds:** stops when the barrier is one no messenger can fix; rates the program's current sender against a person the audience names; rates reach, likeness, expertise, and trust separately and marks unconfirmed ratings "assumed"; matches the messenger to the barrier by a stated rule; checks whether the leading candidate has power over the audience; and writes what the messenger carries and receives.
 
 ## When to use it
 
 ### Use it when
-- A message, script, or outreach is planned and someone asks "who should say this?", "should it come from the clinic or from someone in the village?", or "would a peer be more convincing than our staff?"
-- A program has defaulted to its own staff (the program officer, the community health worker, the SMS sender name) as the messenger without checking whether the audience hears from them or trusts them
-- A program wants to recruit community "ambassadors", "champions", or "mobilizers" and needs a defensible way to pick them rather than taking volunteers or the chief's nominees
-- A lever brief from `select-intervention-levers` names modeling, a credible source, or social support as the technique, where the deliverer is the active ingredient
+- Someone asks "who should say this?" or "would a peer be more convincing than our staff?"
+- A program has made its own staff the sender without checking whether the audience trusts them
+- A program wants community "ambassadors" and needs a way to pick them
 
 ### Do not use it when
-- The question is whose opinion the audience weighs when deciding whether to follow a norm; that is `map-reference-network` (diagnose stage), and its influencers and gatekeepers are candidates here
-- The question is when and how often a reminder goes, or through which channel; `design-reminder-schedule` sets that, and this skill only says who the reminder appears to come from
-- The team needs the norm message or the message text; `write-social-norm-message` and `draft-lever-content` write the words once the messenger is chosen
-- The barrier is supply, cost, or distance rather than information, norms, or trust; no messenger fixes a stock-out. Go back to `select-intervention-levers`
+- The question is whose behavior or approval the audience tracks for a practice; use `map-reference-network`
+- The team needs the words; use `draft-lever-content`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The target behavior (who, what, when) and the confirmed barrier the message addresses, with its type: information (people do not know what, where, or when), norm (people doubt that others do or approve of it), or trust (people doubt the source, the product, or the service). The type decides which messenger property matters most. If the barrier is supply or cost, say so and stop.
-2. **Required.** Who the audience is, which channels already reach them, and who currently talks to them about this topic, from the audience and context brief if `map-audience-context` produced one.
-3. **Required.** The messengers the program could actually field, with a rough cost per contact for each, and whether any of them holds power over the audience (employer, lender, landlord, official, teacher).
-4. Optional. A reference-network map from `map-reference-network`, whose named influencers and gatekeepers become candidates.
-5. Optional. Whether the program covers enough villages, clinics, or groups to run two messenger types side by side, and what outcome it already records.
+1. **Required.** The behavior (who, what, when) and the confirmed barrier the message addresses, with its evidence.
+2. **Required.** The audience, and who talks to them about this topic now.
+3. **Required.** The messengers the program could field, and whether any controls something the audience needs: wages, credit, land, grades, a service.
+4. Optional. Whom the audience says they hear news from, and whose advice on this topic they act on.
+5. Optional. Whether the program covers enough groups to try two messengers side by side.
 
-If 1 is missing, ask and stop. If 2 is missing, ask once; if still thin, proceed and mark the channel and current-contact cells "assumed". If 3 is missing, list the program's own staff plus a community-nominated messenger as the minimum set and say so. If 4 and 5 are missing, assume no map exists and that a comparison at the cluster level is feasible, and flag both.
+If 1, 2, or 3 is missing, ask and stop. If 4 is missing, write the questions to ask and mark every rating "assumed". If 5 is missing, assume it does not.
 
 ## What it draws on
 
-- Dolan, P., Hallsworth, M., Halpern, D., King, D., Metcalfe, R., & Vlaev, I. (2012). Influencing behaviour: The mindspace way. *Journal of Economic Psychology*, 33(1), 264–277. https://doi.org/10.1016/j.joep.2011.10.009
-- Banerjee, A., Chandrasekhar, A. G., Duflo, E., & Jackson, M. O. (2019). Using gossips to spread information: Theory and evidence from two randomized controlled trials. *The Review of Economic Studies*. https://doi.org/10.1093/restud/rdz008 (citation verified; its results are not recorded in the dossier, so none are quoted here)
-- Banerjee, A., Chandrasekhar, A. G., Dalpath, S., Duflo, E., Floretta, J., Jackson, M. O., et al. (2025). Selecting the most effective nudge: Evidence from a large-scale experiment on immunization. *Econometrica*, 93(4), 1183–1223. https://doi.org/10.3982/ECTA19739
-- DellaVigna, S., & Linos, E. (2022). RCTs to scale: Comprehensive evidence from two nudge units. *Econometrica*, 90(1), 81–116. https://doi.org/10.3982/ECTA18709
+- Dolan, P., Hallsworth, M., Halpern, D., King, D., & Vlaev, I. (2010). *MINDSPACE: Influencing behaviour through public policy*. Institute for Government and Cabinet Office. https://www.instituteforgovernment.org.uk/sites/default/files/publications/MINDSPACE.pdf Supports: step 4. People weigh information by the messenger's perceived authority, likeness to themselves, and how they feel about them.
+- BenYishay, A., & Mobarak, A. M. (2019). Social learning and incentives for experimentation and communication. *The Review of Economic Studies*, 86(3), 976–1009. https://doi.org/10.1093/restud/rdy039 Supports: steps 5 and 7. Farmers in Malawi were most convinced by communicators who shared their group identity or farming conditions; communicators' effort depended on incentives.
+- Banerjee, A., Chandrasekhar, A. G., Duflo, E., & Jackson, M. O. (2019). Using gossips to spread information: Theory and evidence from two randomized controlled trials. *The Review of Economic Studies*, 86(6), 2453–2490. https://doi.org/10.1093/restud/rdz008 Supports: step 3. In India, information seeded with people villagers named as good at spreading it traveled further than with people chosen at random.
 
-MINDSPACE (Dolan et al. 2012) lists Messenger first among its nine levers: people weight information by who delivers it, giving more to messengers they see as authoritative, as similar to themselves, or whom they like. The network studies add a second property, reach: a message spreads through conversation, so starting it with people who talk to many others carries it further, and a community can name those people when asked who is good at spreading news (the "gossip" nomination used in Banerjee et al. 2019). In Haryana (Banerjee et al. 2025), information-hub "ambassadors" nominated by community members improved full immunization, and ambassadors paired with SMS reminders were the most cost-effective arm, at +9.1% immunizations per dollar; SMS alone had no impact (J-PAL evaluation page, a secondary source per the dossier). See `references/evidence-notes.md` for the annotated list.
+**Where the evidence comes from:** MINDSPACE was written for the United Kingdom government. Field trials in Malawi, India, Indonesia, and Honduras each found that who carries a message changes how far it spreads or whether people act on it. Check locally whether people named as good at spreading news are also trusted on this topic, and are willing.
 
-Judgment calls this skill adds: the five-criterion table, the rule that barrier type sets the weights (information: reach first; norm: similarity first; trust: authority and trust first), the power test on the leading candidate, and the random-messenger comparison arm, which the dossier recommends but no source specifies. The sources document no backfire for messenger choice; the cautions under "Where it goes wrong" are the authors' practice judgments.
-
-**WEIRD skew:** MINDSPACE was written for the UK government and its Messenger examples are British and American. The trial evidence this skill rests on is Indian, which is why the status is likely-generalizes rather than mixed. What to check locally: whether "who is good at spreading news" names the same people as "who do you trust about this", whether those people are willing, and whether they coincide with the gatekeepers in a reference map. **Non-WEIRD evidence:** India, Haryana (Banerjee et al. 2025): community-nominated information hubs improved full immunization, and hubs plus SMS were the most cost-effective arm at +9.1% immunizations per dollar (secondary source). The Karnataka gossips trials (Banerjee et al. 2019) are citation-verified with results not in the dossier. Indonesia is named in the plan with no citation and is not cited.
-
-**Replication status:** Replicated in India (Haryana plus the gossips trials, per the dossier); single large study for the ambassador-plus-SMS bundle, with the cost-effectiveness figure from a secondary source. Untested elsewhere as far as this skill's sources go. Discount for a field program: nudge-unit trials averaged 1.4 percentage points against 8.7 in academic journals (DellaVigna & Linos 2022); plan for a few points, not a headline.
+**Replication status:** Mixed. No review was found that compares kinds of messenger by their effect on behavior. The rule in step 5 is this skill's own reading of a few field trials, in which the kind of messenger that did best differed.
 
 ## How to do it
 
-1. **Carry over the target behavior, the barrier, and the barrier type verbatim.** If the barrier is supply or cost, stop; a messenger cannot deliver what is not there.
-2. **List at least four candidates the program could field**, always including the current default and a community-nominated messenger. Typical candidates: program staff or community health worker, clinic staff, religious or traditional leader, a peer who already does the behavior, a community-nominated information hub, a public figure, an automated sender (SMS from a named office).
-3. **Write the nomination round rather than guessing reach.** Draft the question ("If we wanted everyone in this village to hear about X, who should we tell first?"), say who to ask (for example ten adults per village, spread across hamlets and sexes), and how to tally (people named by many respondents are hubs). Haryana's hubs came from community nomination; a staff-drawn list is an assumption until the round runs.
-4. **Rate every candidate on five criteria** with a one-clause reason each: reach, perceived similarity, perceived authority, trust, cost per contact. Use high, medium, low, and mark any rating that rests on the team's impression "assumed" until the nomination round or the audience brief confirms it.
-5. **Weight by barrier type.** Information: reach first, then trust. Norm: similarity first, because a norm claim from someone the audience does not count as "one of us" says nothing about "us" (see `write-social-norm-message`). Trust: authority and trust first, with step 6 mandatory.
-6. **Run the power test on the leading candidate.** Does this messenger control something the audience needs (wages, credit, land, permits, grades, clinic access)? If yes, write it down and route to the specialist section; what looks like trust may be compliance, and the behavior may not outlast the messenger's attention.
-7. **Pair the messenger with the channel.** The messenger carries the message in person or by voice; a reminder channel can sit beside it, as SMS did beside the hubs in Haryana. `design-reminder-schedule` sets the cadence; `draft-lever-content` writes the words.
-8. **Plan the comparison.** Where the program covers enough units, give the nominated messenger to some and a randomly chosen or default messenger to others, and name the outcome and who records it. Without a comparison the program cannot tell nomination from attention. If no comparison is possible, say what will be monitored instead.
-9. **Write the messenger brief:** what they are asked to say, to whom, how often, for how long, what they receive, and the ceiling on what they are asked to carry.
-10. **Stop here.** `draft-lever-content` writes the message; `design-reminder-schedule` sets any paired reminder; `plan-evaluation-design` turns the comparison into a test.
+1. **Check that a messenger can address the barrier:** people have not heard something, doubt that people like them do it, or distrust the source. If it is cost, supply, or distance, say so and stop.
+2. **List at least three candidates:** the current sender, a person the audience would name, and others the program can field.
+3. **Get the audience to name people.** Write two questions: "If we wanted everyone here to hear about X, whom should we tell?" (reach) and "Whose advice about X would you act on?" (trust). Ask about ten people per group.
+4. **Rate each candidate separately** on reach (how many of the audience they talk to), likeness (same group and conditions as the audience), expertise or office, trust on this topic, and cost per contact. Keep expertise and trust apart: an audience can obey an official it does not believe.
+5. **Choose by the barrier.** Not heard: reach first. Doubt that people like them do it: likeness first. Distrust of the source: trust on this topic first. Name the runner-up.
+6. **Check for power.** If the leading candidate controls something the audience needs, people may agree without believing or feel unable to refuse. Choose the runner-up, or name the specialist.
+7. **Write the messenger's brief:** what they say, to whom, how often, until when, what they receive, and whether they do the behavior themselves.
+8. **Set the comparison.** Where there are enough groups, give some the chosen messenger and others the current sender, and name the outcome. Otherwise say who will be asked whether they heard the message, and from whom.
+9. **State what the evidence supports.** Promise no effect size.
 
-See `references/worked-example.md` for a complete run on antenatal iron-folate adherence in Malawi.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
 # Messenger choice
 
-**Target behavior:** <who + what + when, carried over verbatim>
-**Barrier the message addresses:** <verbatim, with its evidence> **Type:** <information / norm / trust>
-**Audience and channels:** <from the audience and context brief, or "assumed">
+**Behavior:** <who, what, when>
+**Barrier the message addresses:** <the barrier and its evidence>
+**Kind of barrier:** <not heard / doubt that people like them do it / distrust of the source>
+**Audience, and who talks to them about this now:** <...>
 
-## Candidate messengers
-| Candidate | Reach | Similarity | Authority | Trust | Cost per contact | Basis for the ratings |
+## Candidates
+| Candidate | Reach | Likeness | Expertise or office | Trust on this topic | Cost per contact | Basis |
 |---|---|---|---|---|---|---|
-| <current default> | <high/medium/low: reason> | <...> | <...> | <...> | <...> | <nomination round / brief / assumed> |
-| <community-nominated hub> | <...> | <...> | <...> | <...> | <...> | <...> |
-| <...> | | | | | | |
+| <current sender> | <high / medium / low: why> | <...> | <...> | <...> | <...> | <audience answers / records / assumed> |
+| <person the audience names> | <...> | <...> | <...> | <...> | <...> | <...> |
+| <other candidate> | <...> | <...> | <...> | <...> | <...> | <...> |
 
-## Nomination round
-- **Question:** <the exact wording, in the local language where known>
-- **Who is asked, how many:** <...>
-- **Tally rule:** <...>
-- **Status:** <done, with the roles that emerged / planned; ratings above are assumed until it runs>
+## What the audience was asked
+- **Reach question:** <"If we wanted everyone here to hear about X, whom should we tell?", in local wording>
+- **Trust question:** <"Whose advice about X would you act on?", in local wording>
+- **Who was asked:** <how many, chosen how; or "not yet run: ratings above are assumed">
+- **Who they named:** <roles with counts; or "pending">
 
 ## Choice
-**Chosen messenger:** <role or person type>
-**Why, given the barrier type:** <which criteria were weighted first and how the chosen candidate scored on them>
-**Power test:** <does the messenger control anything the audience needs? no / yes: what, and see the specialist note>
-**Runner-up:** <candidate and why it lost>
+- **Messenger:** <role>
+- **Rule applied:** <not heard: reach first / doubt: likeness first / distrust: trust first>
+- **Runner-up:** <role, and why second>
+- **Power over the audience:** <none / yes: what they control, and what was done about it>
 
-## Pairing and brief
-- **Channel:** <in person, group meeting, voice call, named SMS sender>
-- **Paired reminder:** <none / yes, cadence to be set by design-reminder-schedule>
-- **Messenger brief:** <what they say, to whom, how often, for how long, what they receive, the ceiling on what they are asked to carry>
+## Messenger's brief
+- **Says:** <the point, not the wording>
+- **To whom, how often, until when:** <...>
+- **Receives:** <payment, airtime, recognition, or nothing; and the limit on what else they are asked to carry>
+- **Does the behavior themselves:** <yes / no / not known>
 
-## Comparison plan
-- **Arms:** <nominated messenger vs randomly chosen or default messenger>
-- **Unit and count:** <villages, clinics, groups; n per arm>
-- **Outcome and who records it:** <...>
-- **If no comparison is possible:** <what is monitored instead, and what that cannot show>
+## Comparison
+- **Chosen messenger in:** <which groups>
+- **Current sender in:** <which groups>
+- **Outcome, and who records it:** <...>
+- **If no comparison is possible:** <who is asked whether they heard the message, and from whom>
+
+## Specialist review
+<not needed / <who>, because <the reason>>
+
+## What the evidence supports
+<the direction, and the nearest field evidence with where it was run; no effect size promised>
 
 ## What to check before relying on this
-- <the assumption most likely to be wrong, usually a rating marked "assumed">
+- <the rating marked "assumed" that the choice depends on>
 ```
 
 ## Where it goes wrong
 
-- **Reach read off the org chart.** The program lists its community health worker as the hub because the program employs her, while the community would name a shopkeeper or a church elder. Haryana's hubs were nominated by the community; a staff list is an assumption and must be marked as one.
-- **Authority mistaken for trust.** The district officer has authority; whether the audience trusts him on this topic is a separate question with its own cell. Rating them together hides the case where the audience obeys and disbelieves.
-- **A messenger for a supply barrier.** No messenger fixes a stock-out, a closed clinic, or a price. If the barrier evidence points there, stop rather than pick a persuasive person to deliver news people cannot act on.
-- **A messenger with power over the audience.** A lender telling borrowers to save, an employer telling workers to enroll, a teacher telling pupils' parents to pay: uptake under power is compliance, can reverse when attention lapses, and can expose the audience. The power test is mandatory on the leading candidate.
-- **Declaring the messenger "worked" without a comparison.** A rise after a popular messenger's visits cannot be separated from the visits themselves. The dossier's own guidance is to compare against randomly chosen messengers.
-- **Overloading the hubs.** The same three well-connected people get every program's message. Being a hub is a cost to them, and a tired hub stops spreading; the brief must say what they receive and when it ends. This is a practice judgment, not a documented finding.
+- **Reach read off the staff list.** The program names its own health worker because it employs her; the village would have named a shopkeeper.
+- **The expert by default.** In a United States vaccine trial, lay people like the audience moved the most reluctant more than experts did.
+- **A rise credited to the messenger.** More visits bring more uptake whoever makes them; without the comparison, messenger and attention cannot be told apart.
 
 ## When to bring in a specialist
 
-Tell the user to consult a behavioral scientist, and where noted a safeguarding lead or a local qualitative researcher, when:
-- The leading messenger holds power over the audience (employer, lender, landlord, official, teacher), because trust under power is hard to tell from compliance and the audience may not be free to ignore the message; a safeguarding lead reviews the choice before anything is delivered
-- The topic is stigmatized (HIV, contraception, debt, mental health) or the audience includes children; a central messenger spreads who was asked along with what was said, and a local qualitative researcher should check whether being approached is itself a cost
-- Religious or traditional leaders are the leading candidates in a setting the team does not know well, where an endorsement can arrive with conditions the program did not agree to
-- The comparison will be the program's main evidence claim, where the unit of randomization and the outcome need an evaluation specialist (`plan-evaluation-design`) before the first messenger is briefed
+Tell the user to consult a specialist before anything is delivered when:
+- The only workable messenger has power over the audience (employer, lender, official, teacher): a safeguarding lead reviews whether people can decline
+- The topic is stigmatized (HIV, contraception, debt) or the audience includes children: a local qualitative researcher checks whether being approached by this person exposes anyone
+- A religious or traditional leader leads in a setting the team does not know: someone with local standing advises on what the endorsement commits the program to
 
-Bring them: the candidate table with its basis column, the nomination question and any results, the power test, and the comparison plan.
+Bring them: the candidate table, the questions and answers, and the brief.

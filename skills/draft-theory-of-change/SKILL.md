@@ -1,92 +1,86 @@
 ---
 name: draft-theory-of-change
 description: >-
-  Use when a program needs its logic written down as a causal chain: "write our
-  theory of change", "what's the logic model for this program", "the funder wants
-  to see how activities lead to the outcome", or "we have a goal and activities
-  but nobody has said which behavior sits in between". Also use when a proposal
-  asserts impact without naming the behavior each activity is meant to change, or
-  when an evaluation is about to be planned on a chain nobody has made explicit.
-  Produces a link-by-link table from activities to target behavior to outcome,
-  with the assumption, the evidence, and the strength of evidence behind each
-  link (Mayne's theory of change models; TAF Level 0). Do not use to pick the
-  one behavior to work on; that is define-key-behavior, which takes this chain
-  as input. Not for staging a digital product's user journey (build-user-funnel),
-  and not for finding what research exists on the goal (assess-evidence-base).
+  Use when a program needs its logic written down as a causal chain: "write
+  our theory of change", "draft a logic model", or a proposal that says the
+  activities produce the outcome without naming who must act differently in
+  between. Writes each link from activity to behavior to outcome with its
+  assumption, the evidence supplied, and a strength label. Do not use when the
+  chain exists and the team must choose one behavior to work on; use
+  define-key-behavior. Not for finding research on a link; use
+  assess-evidence-base.
 license: CC-BY-4.0
 metadata:
   title: Write the causal chain from activities to outcome
   type: atomic
   stage: define
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: likely-generalizes
-  tags: "theory-of-change, measurement, evaluation-framework"
+  tested_in: not-applicable
+  tags: "theory-of-change, logic-model, evaluation-framework"
   consumes: "program-goal"
   produces: "theory-of-change"
 ---
 
 ## What it does
 
-Writes a program's theory of change as an explicit chain of links from activities to the target behavior to the outcome, with the assumption behind each link rated by its evidence.
+Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links.
 
-A theory of change is the set of claims a program makes about why doing X leads to Y. Most programs carry one implicitly, in proposal prose. This skill turns each claim into a row that can be challenged, evidenced, or tested, with a named behavior in the middle, since a chain in which nobody acts differently is not a behavioral program. In The Agency Fund's four-level evaluation framework this is Level 0: the chain the later levels test. The skill does not choose the behavior, search for evidence, or design the test.
+**What this adds:** requires at least one link in which a named person does something differently; gives every link an assumption, an evidence cell filled only from what the user supplied, and one of four strength labels; refuses an output as the outcome; and names the weakest link nearest the outcome with the evidence that would raise its label.
 
 ## When to use it
 
 ### Use it when
-- Someone asks "write our theory of change" or "draft a logic model for this program"
-- A proposal narrative or funder report asserts that the activities produce the outcome without naming the behavior in between
-- An evaluation or measurement plan is about to be built and the chain it would test has never been written down
-- Several activities are running and the team cannot say which assumption each one rests on, or which behavior each is meant to change
-- A program is being redesigned and needs to know which links of the old chain had evidence behind them and which were hope
+- Someone asks "write our theory of change" or "draft a logic model"
+- A proposal says the activities produce the outcome without naming who must act differently in between
+- An evaluation is about to be planned on a chain nobody has written down
 
 ### Do not use it when
-- The question is which single behavior to target among the ones the chain depends on; hand the chain to `define-key-behavior`, which states one as who, what, when and scores it
-- The program is a digital or AI product and the need is a staged user journey with a metric per stage; that is `build-user-funnel`, which can consume this chain
-- Nobody has checked what research exists on the behavior or outcome; run `assess-evidence-base` first or alongside, because this skill cites evidence per link but does not search for it
-- The chain exists and the question is how to test it; that is `plan-evaluation-design`
+- The chain exists and the team must choose one behavior to work on; use `define-key-behavior`
+- Nobody has checked what research exists on a link; use `assess-evidence-base`
+- The chain exists and the question is how to test it; use `plan-evaluation-design`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The outcome the program is accountable for: what changes in whose lives, by when if the team has a date. If the user gives a behavior or an activity as the outcome ("more mothers attend antenatal visits"), say so and ask what change in people's lives it serves.
-2. **Required.** The activities as delivered: what the program does, by whom, to whom, how often. A list is enough.
-3. **Required.** The population: who the activities reach and who the outcome is for, where these differ (activities reach health workers; the outcome is for mothers).
-4. Optional. What evidence the team already has for any link: an evidence scan brief from `assess-evidence-base`, monitoring data, a prior evaluation, pilot results. This fills the evidence column.
-5. Optional. The behaviors the team already believes the chain runs through, so they are placed explicitly rather than hidden inside an activity-to-outcome arrow.
+1. **Required.** The outcome: what changes in whose lives, by when.
+2. **Required.** The activities as delivered: what is done, by whom, to whom, how often.
+3. **Required.** Who the activities reach and who the outcome is for, where these differ.
+4. Optional. Evidence for any link: monitoring data, a pilot, an evaluation, a review of studies.
+5. Optional. The behaviors the team believes the chain runs through.
 
-If 1, 2, or 3 is missing, ask and stop. If 4 is missing, ask once; if nothing comes back, proceed and mark every evidence cell "none supplied". If 5 is missing, derive the behaviors from the activities and flag each as "inferred by this skill, team to confirm".
+If 1, 2, or 3 is missing, ask and stop. If the "outcome" is a behavior or an output ("500 workers trained"), ask what change in people's lives it serves. If 4 is missing, write "none supplied" in every evidence cell. If 5 is missing, derive the behaviors and mark each "inferred; team to confirm".
 
 ## What it draws on
 
-- Mayne, J. (2015). Useful theory of change models. *Canadian Journal of Program Evaluation*. https://doi.org/10.3138/cjpe.230
-- W.K. Kellogg Foundation (2004). *Logic Model Development Guide*. https://wkkf.issuelab.org/resource/logic-model-development-guide.html
-- The Agency Fund. Four-level evaluation framework, Level 0: theory of change. https://eval.playbook.org.ai/ (practice guidance, not a publication).
-- Office of Evaluation Sciences (2021). Analysis plan template, July 2021. https://oes.gsa.gov/assets/files/AnalysisPlan.pdf (a practitioner example of a project description feeding testable hypotheses).
+- Mayne, J. (2015). Useful theory of change models. *Canadian Journal of Program Evaluation*, 30(2), 119–142. https://doi.org/10.3138/cjpe.230 Supports: the stages of a chain (reach, capacity change, behavior change, direct benefit), and the rule that a chain becomes a theory of change only when each link states what must occur for it to work.
+- Skivington, K., Matthews, L., Simpson, S. A., et al. (2021). A new framework for developing and evaluating complex interventions: update of Medical Research Council guidance. *BMJ*, 374, n2061. https://doi.org/10.1136/bmj.n2061 Supports: using the theory to find the key uncertainties before an evaluation is planned.
+- Jang, C., Koki, E., Nyaga, R., Okafor, A., Singh, J., Vang, A., & Wendel, S. (2024). *The Busara toolkit: leveraging behavioral science for development*. Busara Groundwork No. 10. https://doi.org/10.62372/WQSB6195 Supports: revising the causal pathways as the project learns.
 
-Mayne's argument is that a theory of change is useful only when it states the assumptions and risks behind each causal link, not just the boxes. The Kellogg guide supplies the logic model's columns (resources, activities, outputs, outcomes, impact) as practical assistance to nonprofits. TAF's framework places the theory of change at Level 0, so everything later evaluated at Levels 1 to 3 is a test of some link written here. OES, eMBeD, and 3ie work from theories of change in practice; the claim that the method is "common in donor M&E" is unverified, author to confirm. The judgment calls this skill adds, none of them published criteria: the chain must pass through at least one named behavior (who does what, when); every link carries an assumption and an evidence cell; and strength uses four labels (tested here, tested elsewhere, plausible mechanism, assumption) so a chain built on hope reads as one.
+**Where the evidence comes from:** This is a drafting procedure and makes no claim about how people behave. Its sources come from Canada, the United Kingdom, and Kenya; in a review of 92 impact evaluations of immunization programs in low- and middle-income countries, only 19 stated any assumptions. What is local is the evidence in each cell.
 
-**WEIRD skew:** The method is procedural, with no effect size and no study population, so the skew is in who wrote the guidance: Mayne from Canadian government evaluation practice, Kellogg from US nonprofit practice. Both assume only that a reader can name a program's activities and outcomes, which holds anywhere. What a user elsewhere should check locally is the evidence cells, not the method: a link whose evidence comes from a different population is at most "tested elsewhere" and should go through `assess-evidence-transferability` before the rating is raised. **Non-WEIRD evidence:** none found in the sources this skill draws on; eMBeD and 3ie apply the method in low- and middle-income country programs, as practice rather than as a study.
-
-**Replication status:** Framework, no effect to replicate; no validation study of the method exists in the sources this skill draws on. The four strength labels and the named-behavior rule are this skill's additions.
+**Replication status:** Not applicable. No source tests whether a chain written this way leads to a better program. The four strength labels are this skill's own.
 
 ## How to do it
 
-1. **Carry the outcome over verbatim** at the top, then check it is an outcome (a change in people's lives), not a behavior or an output. If it is a behavior, keep it as the target behavior row and ask what outcome it serves; do not promote it.
-2. **List the activities as delivered**, one per row, as the left end of the chain. Planned-but-not-running activities get a row marked "planned", because a chain that mixes the two will be tested against activities that never happened.
-3. **Name the behavior each activity runs through**: who must do what, when, as a result of it. If an activity reaches the outcome without any person doing anything differently, it is an output, not a link; say so in the row.
-4. **Write each link** as from, to, and the assumption in the form "if X then Y because Z". Where the link is behavioral, the "because" is the mechanism, in one clause.
-5. **Fill the evidence cell only from what the user supplied.** Write "none supplied" rather than a plausible citation; a theory of change with invented evidence is worse than one with gaps because it stops the team looking. If an evidence scan brief exists, carry its finding and its WEIRD-skew flag into the cell.
-6. **Rate the strength** with the four labels. A finding from a different population is at most "tested elsewhere"; the team's belief is "assumption"; a mechanism argument without data is "plausible mechanism"; "tested here" needs data from this population.
-7. **List the behaviors the chain depends on** in their own section, each tied to its link number and marked confirmed by the team or inferred by this skill, so `define-key-behavior` has a list to choose from.
-8. **Name the weakest links**: the link nearest the outcome with the lowest rating is usually where the program fails. Say which, why, and what evidence would raise its rating.
-9. **Stop here.** Do not choose the behavior (`define-key-behavior`), search for evidence (`assess-evidence-base`), or design the test (`plan-evaluation-design`).
+1. **Carry the outcome over as given.** A behavior or an output offered as the outcome stays a row in the chain.
+2. **List the activities as delivered.** Mark any that are planned and not running.
+3. **Name the behavior each activity runs through:** who must do what, when. Include the people who deliver as well as the people the outcome is for. An activity that reaches the outcome with nobody acting differently is an output; say so in the row.
+4. **Write each link** as from, to, and the assumption: "if X, then Y, because Z". Z names what must hold for the link to work, such as the person reached being the one who decides. Check for a skipped stage: reach, a change in what people can do, a change in what they do, a benefit.
+5. **Fill the evidence cell only from what the user supplied.** Add no citation from memory, because an invented source stops the team looking for a real one.
+6. **Label the strength** by where the data came from:
+   - **tested here:** data on this link from this program's population
+   - **tested elsewhere:** a study or evaluation from another population
+   - **plausible mechanism:** a reasoned argument with no data
+   - **assumption:** the team's belief
+7. **List the behaviors the chain depends on**, each with its link number, marked confirmed or inferred.
+8. **Name the weakest links**, starting with the lowest label nearest the outcome, with the evidence that would raise each label.
+9. **Stop.** Do not choose a target behavior, search for studies, or design a test.
 
-See `references/worked-example.md` for a complete run on a rural immunization program in Rajasthan and `references/evidence-notes.md` for the sources.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
@@ -96,7 +90,7 @@ See `references/worked-example.md` for a complete run on a rural immunization pr
 **Outcome (as given):** <who, what change, by when>
 **Population:** <who the activities reach; who the outcome is for, if different>
 **Activities (as delivered):** <list; mark any that are planned, not running>
-**Evidence supplied:** <evidence scan brief / monitoring data / prior evaluation / none>
+**Evidence supplied:** <monitoring data / pilot / past evaluation / review of studies / none>
 
 ## Causal chain
 
@@ -107,31 +101,28 @@ See `references/worked-example.md` for a complete run on a rural immunization pr
 | 3 | <intermediate outcome>, <outcome> | <...> | <...> | <...> |
 
 ## Behaviors the chain depends on
-- <who does what, when> (link <#>); <confirmed by team / inferred by this skill>
+- <who does what, when> (link <#>); <confirmed by team / inferred; team to confirm>
 
 ## Weakest links
-- Link <#>: <why it is the weakest>; <the evidence that would raise its rating>
+- Link <#>: <why it is the weakest>; <the evidence that would raise its label>
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
-- <any link rated "tested elsewhere" that needs a transferability check>
-- <behaviors inferred by this skill that the team has not confirmed>
+- <any behavior marked inferred>
+- <anything outside the program that could move the outcome>
 ```
 
 ## Where it goes wrong
 
-- **Outputs dressed as outcomes.** "500 mothers trained" or "20,000 messages sent" is an output: something the program did. The chain must continue to what the trained or messaged person does differently, then to what changes because of it. A chain that ends at an output has no outcome row.
-- **Chains with no person in them.** An arrow from "SMS campaign" to "lower stunting" skips the behavior that would have to change. Refuse to write a link nobody has to act on; if the team cannot name the behavior, the row says "behavior unknown" and the strength is "assumption".
-- **Invented evidence.** The evidence cell is where a model is most tempted to be helpful: a plausible citation, a remembered effect size. Only what the user supplied or an evidence scan brief contains goes in; otherwise "none supplied". Never upgrade a rating on evidence recalled from memory.
-- **Rating inflation.** A pilot the team ran but did not measure is not "tested here"; a finding from another country is not "tested here" either, however similar the setting looks. The label asks where the data came from, not how confident the team feels.
-- **One chain for several outcomes.** A program claiming three outcomes gets three chains, or a question about which one matters most; a single chain with three endpoints hides which links are shared and which are unique.
-- **Treating the table as the evaluation.** The chain says what should be tested. It is not evidence that the program works, and a complete-looking table should not be read as one.
+- **One chain for several outcomes.** A program that claims three outcomes gets three chains. One chain with three endpoints hides which links are shared.
+- **Label inflation.** A pilot that measured nothing is not "tested here", and neither is a study from a neighboring country. The label records where the data came from, not how confident the team feels.
+- **The table read as proof.** A complete table lists what to test. It is not evidence that the program works; say so when the chain goes into a proposal.
 
 ## When to bring in a specialist
 
-Tell the user to consult an evaluation specialist or a behavioral scientist when:
-- The chain will justify a funding, scale-up, or policy decision and its critical link is rated "assumption" or "tested elsewhere"; the next step is a test, not a tidier table
-- A link passes through clinical, safety, or child-protection behaviors (medication, violence, reporting), where the assumption cannot be checked by asking and the chain itself needs ethical review
-- The team disagrees about which behavior the chain runs through; that is a design disagreement a table cannot settle, and `define-key-behavior` run twice will not settle it either
+Tell the user to consult a specialist when:
+- The chain will justify a funding, scale-up, or policy decision, and a link near the outcome is labeled "assumption" or "plausible mechanism": an evaluation specialist
+- A link runs through medication, violence, or child protection: a clinician or safeguarding lead, to check the assumption
+- The team disagrees about which behavior the chain runs through: a behavioral scientist
 
-Bring them: the chain table, the evidence supplied for each link, and the weakest-links section.
+Bring them: the chain table, the evidence supplied for each link, and the weakest links.

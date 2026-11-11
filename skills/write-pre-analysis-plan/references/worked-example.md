@@ -1,58 +1,68 @@
-# Worked example: tax compliance letters in Guatemala
+# Worked example: late-payment letters from a tax authority
 
-Illustrative run. The program, numbers, and variables are invented to show the shape of a complete output; none is a finding. Setting: a tax authority and a research partner are about to send one of three letters to taxpayers who declared income but had not paid by the due date. The evaluation design brief came from `plan-evaluation-design`; no outcome data by arm have been seen (confirmed); registration is with the AEA RCT Registry before the letters go out.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Design brief (carried over):** individual randomization of 24,000 late taxpayers, stratified by taxpayer type (individual, firm) and prior-year payment status; arms: no letter (control), standard reminder letter, reminder plus a descriptive-norm sentence; primary outcome: paid any of the declared amount within 60 days of the letter date (administrative payment records); smallest effect worth detecting: 3 percentage points on the payment rate, set by the authority as the gain that would justify a national mailing.
-**Stakes (from the user):** the tax authority wants the norm letter to work and would like to report revenue; the research partner has published on norm messages.
+## The request
+
+"A tax authority and our research team are about to send one of three letters to taxpayers who declared income but had not paid by the due date. Design: individual randomization of 24,000 late taxpayers, stratified by taxpayer type (individual or firm) and whether they paid last year; three arms of equal size: no letter, a standard reminder, and the reminder plus a sentence saying most taxpayers pay on time. Primary outcome: paid any of the declared amount within 60 days of the letter date, from the authority's payment ledger. Smallest change worth detecting: 3 percentage points, set by the authority as the gain that would justify a national mailing. Nobody has seen any payment data by arm. We also care about the share of the liability paid, paying in full, days to first payment, and filing on time next year. The authority wants the norm letter to work and would like to report revenue; our team has published on norm messages before. We'll register on the AEA RCT Registry before the letters go out. Please write the pre-analysis plan."
+
+## The output
 
 ```markdown
-# Pre-analysis plan
+# Pre-analysis plan: late-payment letters
 
-**Trial:** Late-payment letters, Guatemala (illustrative)
+**Date fixed:** 2026-11-11
+**Outcome data by arm seen before this date:** none
 **Registry:** AEA RCT Registry; id to be added on registration
-**Date-stamped:** 2026-10-12, before any outcome data by arm were seen
-**Design carried over from:** plan-evaluation-design brief dated 2026-10-05
 
-## 1. Hypothesis
-Receiving a reminder letter raises the share of late taxpayers who pay any of the declared amount within 60 days, relative to no letter; the norm sentence raises it further relative to the standard letter.
+## 1. Design (carried over)
+Individual randomization of 24,000 late taxpayers; three arms of 8,000 (no letter; standard reminder; reminder plus norm sentence); stratified by taxpayer type and prior-year payment; payment read from the ledger 60 days after the mailing date.
 
-## 2. Design (carried over, not re-decided)
-Individual randomization of 24,000 late taxpayers; three arms (control, standard letter, norm letter), equal allocation; stratified by taxpayer type and prior-year payment status; outcome read from payment records 60 days after the mailing date.
+## 2. Hypotheses
+- **H1 (primary):** A reminder letter raises the share of late taxpayers who pay any of the declared amount within 60 days, compared with no letter; the norm sentence raises it further, compared with the standard reminder.
+- **H2:** The letters raise the amount paid (family A).
+- **H3:** The letters raise on-time filing in the next period (family B).
 
 ## 3. Primary outcome
-Paid any amount against the declared liability within 60 days of the letter date: binary, from the authority's payment ledger matched on taxpayer id. No transformation. A taxpayer with no ledger match is coded as not paid, since the ledger is the universe of payments. Smallest effect worth detecting: 3 percentage points, set by the authority (carried over).
+Paid any amount against the declared liability within 60 days of the letter date: 1 if yes, 0 if no, from the payment ledger matched on taxpayer ID. No transformation. A taxpayer with no ledger match is coded as not paid, because the ledger records every payment. Smallest change worth detecting: 3 percentage points, set by the authority.
 
 ## 4. Secondary outcome families
-| Family | Outcomes | Index or correction (mechanics in adjust-for-multiple-comparisons) | Why this family |
+| Family | Outcomes | How multiple tests are handled | Why grouped |
 |---|---|---|---|
-| Amount | share of declared liability paid within 60 days; paid in full within 60 days | family-level false discovery rate correction | the authority's revenue question |
-| Timing | days from letter to first payment, among payers | reported descriptively, no test | speed matters operationally but is conditional on paying |
-| Next period | filed on time in the following period | single outcome, no correction | the persistence question |
+| A. Amount | Share of the liability paid within 60 days; paid in full within 60 days | False discovery rate correction (Benjamini–Hochberg) across the two | The authority's revenue question |
+| B. Next period | Filed on time in the next period | One outcome; no correction | Whether the effect lasts |
+| Descriptive | Days from letter to first payment, among payers | Reported without a test | Defined only for those who pay, so arms are not comparable |
 
-## 5. Estimator and inference
-Intention-to-treat by assigned arm. Linear probability model of the primary outcome on arm indicators with strata fixed effects and prior-year payment amount as a covariate. Individual randomization, so heteroskedasticity-robust standard errors; no clustering. Attrition: none expected, since the outcome is administrative; any taxpayer deregistered before the mailing is dropped from all arms by the same rule. Exclusions: taxpayers whose letter is returned undelivered stay in the analysis (ITT).
+## 5. Estimator
+- **Effect estimated:** intention to treat, by assigned arm; a returned, undelivered letter stays in its arm
+- **Model:** linear regression of the outcome on arm indicators, the four strata, and last year's amount paid
+- **Standard errors:** heteroskedasticity-robust; individuals were randomized, so no clustering
+- **Exclusions:** taxpayers deregistered before the mailing date, dropped from every arm by the same rule
+- **Drop-out:** none expected, since the outcome comes from the ledger; the share deregistered is compared across arms
 
-## 6. Pre-specified subgroups
-| Subgroup | Variable and cut | Theory-based reason | Status |
+## 6. Subgroups
+| Subgroup | Variable and cut | Why the effect should differ | Status |
 |---|---|---|---|
-| Prior-year payers vs non-payers | paid in prior year, yes/no (stratum) | for prior payers a letter is a reminder; for non-payers it is information or a norm signal, so the norm sentence should matter more for non-payers | confirmatory |
-| Firms vs individuals | taxpayer type (stratum) | firms have accountants who act on reminders regardless of framing, so the norm sentence should matter less | confirmatory |
-| Liability size | above vs below the median declared liability | no theory-based prediction | exploratory |
+| Paid last year or not | Prior-year payment, yes or no (a stratum) | For past payers the letter is a reminder; for others it is new information, so the norm sentence should matter more for them | Confirmatory |
+| Firms or individuals | Taxpayer type (a stratum) | Firms' accountants act on reminders whatever the wording, so the norm sentence should matter less | Confirmatory |
+| Size of liability | Above or below the median declared liability | No prediction | Exploratory |
 
 ## 7. Decision rules
-| Primary result | What the team will do | Who decides | Guardrail results that would override |
-|---|---|---|---|
-| Norm letter beats standard by 3 points or more | adopt the norm letter nationally for late payers | authority's compliance director | a rise in disputes or complaints logged against letter recipients |
-| Standard letter beats control by 3 points but the norm sentence adds under 1 point | adopt the standard letter; do not claim a norm effect | same | same |
-| Neither letter reaches 3 points | no national mailing; results reported in full | same | none |
+| Primary result | What the team will do | Who decides |
+|---|---|---|
+| At or above 3 points for the norm letter over the standard reminder | Send the norm letter nationally to late payers | The authority's compliance director |
+| Standard reminder 3 points or more above no letter; norm sentence adds less than 3 | Send the standard reminder; claim no norm effect | The authority's compliance director |
+| Neither letter reaches 3 points | No national mailing; publish the result in full | The authority's compliance director |
+
+**Would stop adoption whatever the primary shows:** formal complaints or disputes from letter recipients more than double the rate among taxpayers sent no letter.
 
 ## 8. Where this plan is detailed, where it is flexible
-Detailed: the primary outcome, the two confirmatory subgroups (both parties have a stake in the norm result, and prior-payment status is the subgroup most likely to be fished), and the decision rules. Flexible: the exact amount-family index, additional covariates for precision, and any exploratory heterogeneity analysis, all to be labeled exploratory. A populated plan listing every deviation will be posted with the results.
+Detailed: the primary outcome, the two confirmatory subgroups, and the decision rules, because the authority wants the norm letter to work and the research team has published on norm messages. Flexible: further covariates added for precision, and any other subgroup, each to be reported as exploratory beside the pre-specified result. A populated plan reporting every test above and every deviation will be posted on the registry with the results.
 
 ## 9. Registration
-AEA RCT Registry fields filled from this document; plan attached and date-stamped; the research partner holds the payment-ledger extract until the registry confirms the entry; the authority's data team sends no arm-level tabulations before day 60.
+AEA RCT Registry, as the research team's journals expect; no health outcome, so no clinical registry is needed. Registered before the first letter is mailed, with this plan attached and dated, hidden until the trial is complete. The research team holds the ledger extract until the registry confirms the entry; the authority's data team sends no tables by arm before day 60.
 
 ## Open questions
-- Whether the ledger match on taxpayer id is complete for firms with multiple registrations; check at baseline, not endline.
-- Whether returned-undelivered letters are logged; if not, the ITT estimate is diluted by an unknown non-delivery rate.
+- Whether the ledger match on taxpayer ID is complete for firms with more than one registration: check at baseline.
+- Whether returned letters are logged; if not, the effect of being sent a letter is diluted by an unknown non-delivery rate.
 ```

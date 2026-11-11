@@ -1,150 +1,136 @@
 ---
 name: design-pilot-feasibility-study
 description: >-
-  Use when a team is about to run a small first version of an intervention
-  "to see if it works" and needs to decide what the pilot must answer: can
-  we recruit, do people stay, is it delivered as designed, do people accept
-  it, does the outcome data come back usable. Also use when someone says
-  "let's pilot it with 50 people first", asks what a feasibility study is,
-  or is about to size the main trial from a pilot's effect estimate.
-  Produces a pilot design with go, amend, or stop thresholds set before
-  fieldwork, a size chosen for estimating rates rather than for
-  significance, a qualitative component, and a report skeleton, following
-  the CONSORT extension for pilot and feasibility trials (Eldridge et al.
-  2016). Do not use when the question is whether the intervention works
-  and how success will be measured; use plan-evaluation-design instead.
-  Not for household negotiation of practice changes
-  (plan-trials-of-improved-practices) or for monitoring delivery during
-  rollout (design-fidelity-monitoring).
+  Use when a team plans a small first run of a program before a larger trial
+  or a scale-up ("let's pilot it with 50 people first") and must decide what
+  the pilot has to show: whether people can be recruited and kept, the
+  program delivered, and the data collected. Sets go, amend, and stop
+  thresholds before fieldwork. Do not use when a few people from the
+  audience should first react to a draft; use plan-prototype-test. Not for
+  whether the program works; use plan-evaluation-design.
 license: CC-BY-4.0
 metadata:
   title: Design a pilot that tests feasibility, not effect
   type: atomic
   stage: test
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: not-applicable
+  tested_in: not-applicable
   tags: "experimental-design, process-evaluation, implementation-science"
   consumes: "intervention-draft"
-  produces: "evaluation-design"
+  produces: "pilot-plan"
 ---
 
 ## What it does
 
-Designs a pilot whose job is to test feasibility (recruitment, retention, fidelity, acceptability, data completeness) against thresholds fixed before fieldwork, not to estimate the intervention's effect.
+Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works.
 
-A pilot answers "can this be done as planned, with these people, by this team?" Each feasibility question gets a measurable rate, a threshold that says go, amend, or stop, and a planned change to the main design under each outcome. The pilot is sized to estimate those rates with usable precision. It is too small to say whether the intervention works, and its effect estimate must not be used to size the main trial.
+**What this adds:** each feasibility question becomes a rate with go, amend, and stop lines fixed before fieldwork from the main study's needs; the pilot is sized by the computed margin on those rates, not by power; each band names its change to the main study; interviews with dropouts and deliverers; no sizing from the pilot's effect.
 
 ## When to use it
 
 ### Use it when
-- Someone says "let's pilot it with 50 people first" or "we'll do a small test run" with no statement of what the pilot has to show before the main trial goes ahead
-- An intervention draft exists, the main trial is being planned, and the team asks "what should the pilot tell us?" or "what are progression criteria?"
-- A pilot has already run and the team is about to take its effect estimate as the main trial's power input, or to read a promising-looking number as proof of concept
-- A funder or ethics board asks for a feasibility study, progression criteria, or a go/no-go gate before funding the trial
+- Someone says "let's pilot it with 50 people first" without saying what the pilot must show
+- A funder or ethics board asks for a feasibility study or progression criteria
+- A team is about to size a main trial from a pilot's effect
 
 ### Do not use it when
-- The question is whether the intervention works and how success will be measured; that is `plan-evaluation-design`, and the trial's structure is `choose-trial-design`
-- The team wants households to try a new practice for a week and negotiate what they would keep; that is formative, household-level work in `plan-trials-of-improved-practices`
-- The program is already rolling out and the question is whether it is being delivered as designed; `design-fidelity-monitoring`
-- The question is how many people the main trial needs; `estimate-sample-size`, with a benchmark from `estimate-expected-effect`, never from the pilot
+- The team wants a few people from the audience to react to or try a draft before any pilot; use `plan-prototype-test`
+- The question is whether the program works and how the outcome is measured; use `plan-evaluation-design`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The intervention draft: what is delivered, by whom, to whom, how often, through what channel. Paste it from the design skill that produced it.
-2. **Required.** The main design the pilot serves: the unit of randomization, who delivers, how the outcome will be collected, and the planned size. If none exists yet, say so; every threshold will be marked provisional against an assumed main design.
-3. **Required.** The pilot's resources: how many people or sites, over how long, with what staff, and whether anyone can run short interviews.
-4. **Required.** The team's biggest worry: recruitment, dropout, delivery, acceptance, or data. The question whose answer would most change the main design gets the most precision.
-5. Optional. Rates from a prior pilot or a similar program (recruitment, retention, data completeness) to anchor thresholds.
+1. **Required.** The intervention: what is delivered, by whom, to whom, how often, through what channel.
+2. **Required.** What the pilot leads to: a trial (unit of randomization, outcome and how it is collected, planned size, assumed attrition) or a scale-up (where, delivered by whom), or "not designed yet".
+3. **Required.** The pilot's resources: people or sites, duration, staff, and who can run short interviews.
+4. Optional. The team's biggest worry: recruitment, dropout, delivery, acceptance, or data.
 
-If 1 to 3 are missing, ask and stop. If 4 is missing, proceed with the five domains at equal weight and say so. If 5 is missing, derive thresholds from what the main trial needs and mark them provisional.
+If 1, 2, or 3 is missing, ask and stop. If nothing is designed yet, mark every line provisional. If 4 is missing, weight headings equally.
 
 ## What it draws on
 
-- Eldridge, S. M., et al. (2016). CONSORT 2010 statement: Extension to randomised pilot and feasibility trials. *BMJ*, 355, i5239. https://doi.org/10.1136/bmj.i5239
-- Bowen, D. J., et al. (2009). How we design feasibility studies. *American Journal of Preventive Medicine*, 36(5), 452–457. https://doi.org/10.1016/j.amepre.2009.02.002
-- EGAP. *10 things to know about pilot studies*. https://egap.org/resource/10-things-to-know-about-pilot-studies/
+- Skivington, K., Matthews, L., Simpson, S. A., et al. (2021). A new framework for developing and evaluating complex interventions: update of Medical Research Council guidance. *BMJ*, 374, n2061. https://doi.org/10.1136/bmj.n2061 Supports: a feasibility study "designed to assess predefined progression criteria" on the evaluation (recruitment, data collection, retention, outcomes) and the intervention (delivery, acceptability, adherence, capacity of providers).
+- Eldridge, S. M., Chan, C. L., Campbell, M. J., et al. (2016). CONSORT 2010 statement: extension to randomised pilot and feasibility trials. *BMJ*, 355, i5239. https://doi.org/10.1136/bmj.i5239 Supports: criteria to proceed, proceed with amendments, or not proceed; a size "based on the feasibility objectives"; no test of effectiveness, and no reliance on the pilot's effect estimate, which is imprecise.
+- World Health Organization & ExpandNet (2011). *Beginning with the end in mind*. https://www.who.int/publications/i/item/9789241502320 Supports: piloting in the settings and institutions that would scale the program, keeping "externally provided nonreplicable inputs to a minimum".
 
-Eldridge et al. extend the CONSORT reporting standard to randomized pilot and feasibility trials: a pilot's objectives are feasibility objectives, its results are reported against them, and the decision about the main trial follows from them. Bowen et al. set out how to design a feasibility study as a study of whether an intervention can be delivered and accepted, distinct from a study of whether it works. The EGAP guide covers the same ground for social-science field experiments. The dossier this skill draws on records one documented misuse: pilots are often wrongly used to estimate effect sizes for the main trial's power calculation. A pilot is small by construction, so its effect estimate is noisy and, when it is used because it looked promising, selected for being high.
+**Where the evidence comes from:** The method makes no claim about how people behave. The trial guidance comes from clinical and public-health research; the guidance on piloting for scale-up from WHO and ExpandNet, whose tools have been used in Africa, Asia, and Latin America. What varies by setting is the rates, which move with season, site, and who must agree before anyone is approached.
 
-The judgment calls this skill adds: the five feasibility domains (recruitment, retention, fidelity, acceptability, data completeness; the dossier names the first four), the three-way go / amend / stop threshold rather than a binary go / no-go, the rule that every threshold is derived from what the main design needs, the rule that the pilot is sized for the precision of a rate rather than for detecting an effect, and the mandatory qualitative component that asks dropouts and deliverers why.
-
-**WEIRD skew:** The anchor sources are trial-methodology guidance from clinical and public-health research; the method is procedural and does not depend on a population. What a user elsewhere should check locally: how recruitment actually happens (gatekeepers, community entry, consent norms), whether the data system the main trial assumes exists at the pilot sites, and whether the pilot season matches the main trial's (planting, school terms, rains), since feasibility rates move with timing. **Non-WEIRD evidence:** none found in the sources this skill draws on; the household-level cousin, Trials of Improved Practices (`plan-trials-of-improved-practices`), is the LMIC-origin method the dossier points to for formative testing with households.
-
-**Replication status:** Method guidance, not an effect; uncontested that a pilot's purpose is feasibility. The one contested practice, sizing the main trial from the pilot's effect estimate, is what this skill tells the model to refuse.
+**Replication status:** Not applicable; this is method guidance. OECD lists "indicators of what effect size of the intervention to expect" among a pilot's purposes; the trial guidance warns against this, and the skill follows it.
 
 ## How to do it
 
-1. **Carry over the intervention draft and the intended main design** at the top, so every threshold is visibly derived from a main design the pilot serves.
-2. **List the feasibility questions under five domains**, each as a measurable rate or count: recruitment (what share of those approached enroll, at what rate per week), retention (what share reach the pilot's endline), fidelity (what share of planned sessions, messages, or visits happen as designed), acceptability (what share complete it, what participants and deliverers refuse or change), data completeness (what share of enrolled people have a usable outcome measure).
-3. **Set a go / amend / stop threshold for each before fieldwork.** Derive it from the main design: the retention threshold from the attrition the main sample assumes, the recruitment threshold from the enrollment rate the main timeline needs. Write what "amend" means: which part of the design changes if the rate lands there.
-4. **Size the pilot for estimating rates, not for significance.** For the rate that matters most (question 4 of Before you start), state the margin the team can act on and choose the number of people or sites that estimates the rate to that margin; the number needed to estimate a rate to a usable margin is usually far below the number needed to detect an effect. Write the sentence "this pilot's effect estimate will not be used to size the main trial" into the design.
-5. **Plan the qualitative component.** Short interviews with people who dropped out, refused, or delivered the intervention, each with the one question it must answer (why they left, what they changed, what got in the way), who runs them, and when.
-6. **Decide what changes in the main design under each outcome**, as a table: question, result band, design change. A pilot whose results change nothing was not a pilot.
-7. **Write the report skeleton** in the spirit of the CONSORT extension: participant flow (approached, eligible, enrolled, retained, with outcome data), each feasibility question with threshold, observed value with its uncertainty, and decision, the qualitative reasons, the changes to the main design, and any effect-direction observation labeled as not a basis for sizing.
-8. **Stop here.** The main trial's measurement plan is `plan-evaluation-design`, its size is `estimate-sample-size`, and monitoring delivery during rollout is `design-fidelity-monitoring`.
+1. **State what the pilot serves:** the intervention and the trial or scale-up, so each line traces to it.
+2. **Write the feasibility questions as rates or counts** under five headings: recruitment (share of eligible people who enroll; enrollments per week), retention (share still in at endline), delivery (share of planned contacts delivered as designed), acceptability (share who keep using it), and outcome data (share with a usable outcome). Name each denominator: a rate over the wrong group flatters.
+3. **Set go, amend, and stop lines (progression criteria) before fieldwork,** from what the main study needs: retention from the attrition the main sample assumes, recruitment from the enrollment its timeline needs. Each amend band names the change it triggers.
+4. **Size the pilot by its margin of error.** For the rate that matters most, the 95% margin is about 1.96 × √(p(1 − p)/n): with 60 people and a rate near 80%, ±10 points. Choose n so the margin is narrower than the gap between go and stop, and report each site's rate where sites may differ.
+5. **List the main trial's inputs the pilot will measure,** such as take-up, attrition, and the outcome's baseline, and write: "This pilot's effect estimate will not be used to size the main trial."
+6. **Plan short interviews** with refusers, dropouts, and deliverers, each with its one question, interviewer, and timing. A rate never says why.
+7. **Choose typical sites and routine conditions:** the staff, resources, and season of the main study. Say what the chosen sites leave unknown.
+8. **Tabulate what changes in the main study** under each result, and write the report skeleton.
 
-See `references/worked-example.md` for a complete run on an antenatal iron-folate adherence program in Malawi, and `references/evidence-notes.md` for the sources with their verification state.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Pilot feasibility study design
+# Pilot plan: <program>
 
-**Intervention piloted:** <carried over verbatim>
-**Main design it serves:** <unit of randomization, delivery, outcome collection, planned size; or "assumed, not yet designed">
-**What this pilot is not for:** estimating the intervention's effect. Its effect estimate will not be used to size the main trial.
+**Intervention piloted:** <what, by whom, to whom, how often, channel>
+**What it serves:** <the trial: unit, outcome, planned size, assumed attrition; or the scale-up; or "not designed yet: thresholds provisional">
+**What this pilot is not for:** estimating the program's effect. Its effect estimate will not be used to size the main trial.
+**Main-trial inputs it will measure:** <take-up, attrition, baseline, ...>; not measured: <...>
 
 ## Feasibility questions and progression criteria
-| Domain | Question (as a rate or count) | Go | Amend | Stop | Why this threshold |
+| Heading | Question (rate or count, with its denominator) | Go | Amend | Stop | Why this line |
 |---|---|---|---|---|---|
-| Recruitment | <...> | <...> | <...> | <...> | <derived from the main design's ...> |
+| Recruitment | <...> | <...> | <...> | <...> | <derived from the main study's ...> |
 | Retention | <...> | | | | |
-| Fidelity | <...> | | | | |
+| Delivery | <...> | | | | |
 | Acceptability | <...> | | | | |
-| Data completeness | <...> | | | | |
+| Outcome data | <...> | | | | |
 
 ## Pilot size
-<the rate that most needs estimating; the margin the team can act on; the number of people or sites that gives it; duration; why this is not a power calculation>
+<the rate that matters most; n; its 95% margin, with the arithmetic; how that compares with the gap between go and stop; duration>
 
-## Qualitative component
-<who is interviewed (dropouts, refusers, deliverers), the one question each interview must answer, who runs them, when>
+## Sites and conditions
+<which sites and why they are typical; who delivers it, with what resources; season; what these sites leave unknown>
 
-## What changes in the main design
+## Interviews
+| Who | The one question | Asked by | When |
+|---|---|---|---|
+| <refusers / dropouts / deliverers> | <...> | <...> | <...> |
+
+## What changes in the main study
 | Question | If go | If amend | If stop |
 |---|---|---|---|
-| <...> | <no change> | <named design change> | <named stop or redesign> |
+| <...> | <no change> | <named change> | <named stop or redesign> |
 
 ## Report skeleton
 1. Participant flow: approached, eligible, enrolled, retained, with usable outcome data
-2. Each feasibility question: threshold, observed value with its uncertainty, decision
-3. Fidelity and acceptability findings, with the qualitative reasons
-4. Changes to the main design
-5. Any effect-direction observation, labeled "not a basis for sizing the main trial"
+2. Each question: line, observed rate with its margin, decision
+3. Interview reasons
+4. Changes to the main study
+5. Any difference in outcomes, labeled "not a basis for sizing the main trial"
 
-## Open questions
+## What to check before relying on this
 - <the assumption most likely to be wrong>
 ```
 
 ## Where it goes wrong
 
-- **Sizing the main trial from the pilot.** A pilot's effect estimate is noisy and, when chosen because it looked good, inflated. The main trial's power input comes from a benchmark (`estimate-expected-effect`), never from the pilot. Refuse to supply the pilot's effect for that purpose.
-- **Thresholds written after the data.** Without go / amend / stop bands fixed before fieldwork, whatever happened reads as "promising". The thresholds and their derivation are written into the design, dated.
-- **Powering the pilot.** Choosing the pilot size from a power calculation turns it into a small, underpowered trial that answers neither question. Size for the precision of a rate.
-- **Counting without asking.** A retention rate of sixty percent with no interviews says nothing about whether the sixty would be forty in the main trial. The qualitative component is mandatory.
-- **"Amend" that names nothing.** An amend band with no attached design change is a go band in disguise. Every amend cell names the change.
-- **One site standing in for everywhere.** Feasibility at the most cooperative clinic or in the easiest season does not transfer; say which sites and which season the pilot covered and what that leaves unknown.
+- **A good-looking effect becomes the case for the trial.** "The pilot showed a 15-point gain" reaches the funder without its interval, though a pilot's comparison is too noisy to carry it.
+- **A pilot run with help the main study will not have.** Research staff deliver it, a project vehicle carries supplies, the best clinic hosts it; the rates then describe a program that will not exist.
+- **No stop line.** Teams avoid writing one because stopping feels like failure; a pilot that cannot stop the trial is not testing it.
 
 ## When to bring in a specialist
 
-Tell the user to consult a statistician or evaluation methodologist, and an ethics reviewer where relevant, when:
-- The team intends to use the pilot's effect estimate as the main trial's power input; bring the pilot design and route the sizing to `estimate-expected-effect` and `estimate-sample-size` with a statistician
-- The intervention touches clinical risk, medication, or vulnerable participants, so even the pilot needs ethics review and a stopping rule for harm
-- Recruitment or acceptability thresholds are failing in a way that points to coercion, stigma, or community refusal rather than logistics; a local qualitative researcher should read the interviews before any amend decision
-- The main design is clustered or stepped-wedge and the pilot has to test the rollout mechanics themselves
+Tell the user to consult a specialist when:
+- The team wants to size the main trial from the pilot's effect, or persuade a funder with it: an evaluation methodologist
+- The pilot involves medication, clinical care, children, or people who depend on the organization: an ethics reviewer, before the pilot, with a stopping rule for harm
+- Refusals or dropout point to stigma, coercion, or community objection rather than logistics: a local qualitative researcher, before any amend decision
 
-Bring them: the progression-criteria table with its derivations, the pilot size reasoning, the main design, and the interview notes.
+Bring them: the progression criteria, the sizing arithmetic, the main study's design, and interview notes.

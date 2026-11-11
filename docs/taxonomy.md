@@ -48,9 +48,9 @@ The list of verbs a skill name may start with. Verb-first names are the atomicit
 
 ## Input and output types
 
-An optional vocabulary for `metadata.consumes` and `metadata.produces`. Two skills chain when one produces what the other consumes; the site shows the links and the navigator uses them to order steps. Each type says whether a person can supply it directly (`user_suppliable`). Unknown ids are a warning: add the type to the YAML in the same pull request.
+The vocabulary for `metadata.consumes` and `metadata.produces`. `consumes` lists the inputs a skill cannot run without, matching the required questions in its "Before you start"; `produces` names the one thing its output template is. Where one skill produces what another consumes, the site's map draws an arrow and the navigator can suggest an order.
 
-Typed input and output are optional because the atomicity rule is "one sentence without *and*", not "one input, one output". Pipeline-shaped skills chain; lens-shaped skills (a cultural-psychology review, a pre-mortem) stay honest by leaving the fields empty.
+An arrow is a suggestion that two skills fit together, there to help people assemble a workflow. It is not a rule about where an input must come from: a person can bring any input from their own work, and any skill can be used on its own. Unknown ids are a warning: add the type to the YAML in the same pull request.
 
 ## Tags
 

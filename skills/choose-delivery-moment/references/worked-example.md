@@ -1,55 +1,56 @@
-# Worked example: timing a latrine-kit offer in Indonesian CLTS villages
+# Worked example: when to offer a savings wallet to casual workers in Kampala
 
-Setting: an illustrative sanitation program ("Desa Bersih", 40 villages in East Java) that has already run community-led total sanitation (CLTS) triggering. The target behavior came from `define-key-behavior`; the lever from `select-intervention-levers`; the calendar rows from the district field team. All numbers are illustrative, not findings.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Inputs the user gave.** Ask: households without an improved latrine buy a pour-flush pan-and-pipe kit from the local mason cooperative (illustrative price Rp 450,000, about a week of a farm laborer's earnings) and build before the rains. Lever: Enablement, BCT 12.5 Adding objects to the environment (the kit offered at the village meeting with delivery). Confirmed barriers: cash is spent before the dry season ends (present bias confirmed in interviews) and the kit is hard to transport. Natural window: construction needs the dry season. Landmarks named by the field team: the main rice harvest, the second harvest, Lebaran (Eid al-Fitr), the school year start in July, and the Independence Day village clean-up on 17 August.
+## The request
+
+"We run a savings product for casual workers around Kampala: porters, construction laborers, boda riders. The ask is chosen: an agent offers, in person at the work site, to open a named savings wallet and take a first deposit of at least 2,000 shillings. Opening is free and takes ten minutes, any day an agent is there. In interviews with 40 workers nearly all said they want to save for school fees and that they mean to start 'next week'; when our agents visit, mostly on Tuesdays, people say they have nothing on them. Porters and laborers are paid in cash on Friday afternoons; boda riders earn daily. Rent is due at the start of the month. School fees fall in early February, late May, and early September. Christmas is the big spending season. A colleague wants to launch in the first week of January as a 'new year, new start' campaign. When should the agent make the offer?"
+
+## The output
 
 ```markdown
-# Delivery moment plan
+# Delivery moment specification
 
-**The ask:** Households in triggered villages without an improved latrine buy a pour-flush kit from the mason cooperative (Rp 450,000, illustrative) at the village meeting and build it before the rains. Cost at the moment of action: a cash outlay of about one week's laborer earnings, plus a half day of digging.
-**Confirmed barrier:** Cash set aside for the latrine is spent before the dry season ends; present bias is among the confirmed barriers (interviews, 2 villages). Transport of the kit is a second, physical-opportunity barrier the delivery offer addresses.
+**The ask:** Casual workers at Kampala work sites open a named savings wallet with the agent and make a first deposit of at least 2,000 shillings. Cost at that moment: cash in hand, and ten minutes.
+**Confirmed barrier:** Workers want to save and are asked when they hold no cash. In 40 interviews nearly all said they want to save for school fees; on the agents' Tuesday visits they say they have nothing on them. They also put it off: "next week".
+**When the action can be done:** Any day an agent is at the site.
 
-## Income and expense calendar
-| Period | Cash in | Cash out | Net position | Source |
+## Money calendar
+| Period | Money in | Money out | Position | Source |
 |---|---|---|---|---|
-| Jan to Feb | little (rainy season, no harvest) | food purchases, debt | trough | field team |
-| Mar to Apr | main rice harvest sale | repay input credit | flush | field team |
-| May to Jun | wage work, remittances | Lebaran spending (date moves; field team supplies it) | trough in the Lebaran weeks, neutral otherwise | field team; Lebaran date assumed, confirm |
-| Jul | some second-crop sales | school fees, uniforms | trough | field team |
-| Aug to Sep | second harvest sale | village clean-up contributions | flush | field team |
-| Oct to Dec | little | rains begin; construction stops by November | neutral, window closing | field team |
+| Friday afternoon, every week | Cash wages for porters and laborers | None reported | Flush | User report |
+| Monday to Thursday | None for weekly-paid workers | Daily living costs | Short | User report (nothing on them on Tuesdays); costs assumed |
+| Every evening | Boda riders' daily takings | Fuel and bike hire | Neutral | User report; costs assumed |
+| First week of each month | Wages as usual | Rent | Short | User report |
+| Early February, late May, early September | Wages as usual | School fees | Short | User report |
+| December | Wages as usual | Christmas spending | Short | User report |
 
-## Temporal landmarks
-| Landmark | Date(s) | Cash position | Frame it offers | Evidence |
+## Candidate moments
+| Moment | Money in hand? | Attention free? | Action possible then? | Verdict |
 |---|---|---|---|---|
-| Main harvest sale | late Mar to Apr | flush | "the harvest money" | Kenya post-harvest RCT (liquidity), transfers as a mechanism, not a number |
-| Lebaran | lunar date, field team confirms | trough | "a clean start" | fresh-start is US archival only; untested here |
-| School year start | mid-Jul | trough | none useful | n/a |
-| Second harvest sale | Aug to Sep | flush | "before the rains" | liquidity, as above |
-| Independence Day clean-up | 17 Aug | neutral | "the village competition" | untested here; social, not temporal |
-
-## The behavior's natural window
-Dry season, roughly May to October; pits and slabs cannot be built once the rains start in November. Nothing clinical or administrative fixes a date inside the window.
+| Tuesday site visit (the current moment) | No | Yes | Yes | Rejected: no cash in hand |
+| Friday afternoon, just after wages are paid | Yes | Yes, the work week is ending | Yes, if the agent is at the pay point | Chosen, outside rent and fee weeks |
+| Friday in the first week of the month | Partly; rent is due | No | Yes | Rejected: the wage is already spoken for |
+| First week of January, "new year, new start" | No: it follows Christmas spending, rent is due, and February fees are ahead | No | Yes | Rejected: a landmark that falls on a short week; untested here |
+| The weeks school fees fall due | No | No | Yes | Rejected |
 
 ## Chosen moment
-- **When:** The village meeting held within 14 days of the main harvest sale (late April), with a second offer within 14 days of the second harvest sale (early September) for households that missed the first.
-- **Mechanism:** Liquidity first (harvest cash present), with the dry-season window as the reason-now. No salience landmark is claimed; Lebaran is rejected as a frame because it is a cash trough.
-- **Evidence it rests on:** Duflo, Kremer and Robinson (Kenya): a small, time-limited offer right after harvest raised fertilizer use by 14 and 18 points; one field RCT, a different behavior and country, so the direction transfers, not the number.
-- **Rejected moments:** at triggering (whenever the facilitator is scheduled: no cash check); Lebaran (trough); July (fees due); October (window closing, rains risk).
+- **When:** Friday afternoon at the pay point, within an hour of wages being paid, on the second, third, and fourth Fridays of the month, skipping the weeks school fees fall due.
+- **Relies on:** Money in hand.
+- **Why this setting supports it:** Wages are paid in cash at the site on Fridays, and by Tuesday workers report having nothing left.
 
-## Deadline rule
-The cooperative price with free delivery holds for 14 days after each meeting, because present bias is a confirmed barrier and the offer is meant to catch the cash before it goes. After 14 days the kit stays available at the standard price without delivery; the September meeting repeats the offer.
+## Deadline
+A light one, because workers themselves say they put saving off until "next week". The agent takes first deposits only on that Friday afternoon and says so. Nothing is lost by waiting: the same offer returns the following Friday at the same price.
 
-## Equity check
-Landless laborers paid daily have no harvest flush. Fallback: the September offer coincides with peak wage demand for harvest labor, and the cooperative accepts two installments across the two meetings (to be confirmed with the cooperative; a lock-in version would be `design-commitment-device`).
+## Who this moment leaves out
+- **Who:** Boda riders, who have no Friday wage, and workers who are absent or paid by another contractor that week.
+- **Second moment for them:** For riders, the end of the riding day at the stage, on a weekday evening outside the first week of the month. For absent workers, the next Friday.
 
-## What to test
-Villages randomized to the post-harvest meeting offer versus the program's default (the offer made at the triggering meeting, whenever scheduled). Outcome: kits bought within 30 days and latrines verified built before 1 November. Run by the district team with the M&E lead; cadence of follow-up messages goes to `design-reminder-schedule`.
+## What the evidence supports
+That an offer made while people hold cash is taken up more than the same offer made later. Farmers in western Kenya bought fertilizer in response to a small, time-limited offer made just after harvest, and later offers did less. That evidence comes from farmers paid once a season; it has not been tested with weekly wage workers. "New year" as a fresh start is untested here. No effect size is promised.
 
 ## What to check before relying on this
-- The harvest sale dates: they vary by village irrigation status; the calendar uses the district modal dates.
-- Whether 17 August's clean-up has any pull on latrine building; it is in the table as untested and is not used.
+- Whether wages at every site are paid in cash on Friday afternoon, or some by mobile money. If by mobile money, the moment is when the transfer lands.
+- Whether workers will hand cash to an agent in front of workmates. Ask ten before the pilot.
+- The boda riders' row: their daily costs are assumed.
 ```
-
-**Where this run stopped.** It did not write the meeting script or the SMS (that is `draft-lever-content`), did not set how many reminders follow the meeting (`design-reminder-schedule`), and did not design the installment lock (`design-commitment-device`).

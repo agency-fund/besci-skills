@@ -1,30 +1,24 @@
 ---
 name: adapt-survey-for-phone-mode
 description: >-
-  Use when a survey built for face-to-face interviews has to run over the
-  phone ("we can't travel, can we do the endline by phone?", "convert our
-  questionnaire for a call", "set up an IVR survey"), or when a team asks
-  how long a phone survey can be, what to do about showcards, or how to
-  reach people who share a phone. Produces a phone-ready instrument cut to
-  a target call length, visual scales replaced by verbal unfolding scales,
-  audio instructions, a call protocol (attempts, call-backs, airtime
-  incentives, consent), a phone-ownership check on the sampling frame, and
-  a mode-effect comparison plan. Do not use when the items do not exist
-  yet; use draft-survey-items. Not for translation
-  (translate-survey-instrument), pretesting the phone version
-  (draft-cognitive-interview-script), how many numbers to call under
-  attrition (estimate-sample-size), choosing an existing validated measure,
-  or developing or validating a scale; those last two are separate skills.
+  Use when a questionnaire written for face-to-face interviews has to be asked
+  by voice call: "can we do the endline by phone?", "how do we ask the
+  showcard questions on a call?", "how long can a phone survey be?". Cuts the
+  instrument to a call length, rewrites what respondents had to see, and sets
+  the call rules, who the calls will miss, and a check on whether answers
+  differ by phone. Do not use when the questions are not written yet; use
+  draft-survey-items. Not for testing the phone version with respondents; use
+  draft-cognitive-interview-script.
 license: CC-BY-4.0
 metadata:
   title: Move a face-to-face survey to the phone
   type: atomic
   stage: measure
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: likely-generalizes
+  tested_in: beyond-western-differs
   tags: "measurement, survey-design, quantitative"
   consumes: "survey-items"
   produces: "survey-items"
@@ -32,127 +26,122 @@ metadata:
 
 ## What it does
 
-Converts a face-to-face survey instrument into a version that can be administered by voice, over a live call or an interactive voice response (IVR) system.
+Converts a face-to-face questionnaire into a version that can be asked by voice call.
 
-A phone call removes everything the respondent could see, shortens the time they will give, and changes who is reachable: the sample becomes the people who own or answer a phone. This skill rewrites the instrument for those constraints, writes the call protocol around it, checks the sampling frame for who will be missed, and plans a check of whether answers differ by mode. It does not write new items, translate them, or set the sample size.
+**What this adds:** cuts by decision to a stated call length and lists what was dropped; converts every item that relied on something seen; compares who the phone numbers reach with who the survey is about; gates sensitive items on a privacy check; and treats a change from a face-to-face round as possibly caused by the phone until a planned comparison says otherwise.
 
 ## When to use it
 
 ### Use it when
-- A team says "we can't go to the field; can we do the survey by phone?" and has a face-to-face questionnaire in hand
-- A questionnaire uses showcards, ladders, visual analog scales, or pictures, and the team asks how to ask those items over a call
-- A team is planning computer-assisted telephone interviewing (CATI, a live enumerator calling) or IVR (recorded prompts with keypad or voice answers) in a low-income setting and asks how long the call can be, what incentive to pay, or how many times to try a number
-- Someone worries that a phone survey will miss women, poorer households, or people in areas with weak coverage, and wants that checked before fielding
+- A face-to-face questionnaire must be fielded by phone ("can we do the endline by phone?")
+- A questionnaire uses showcards, ladders, or pictures that cannot be shown on a call
+- Someone asks how long a phone survey can be, or whom the calls will miss
 
 ### Do not use it when
-- The items do not exist yet; write them with `draft-survey-items`, then convert
-- The items need to be in another language; `translate-survey-instrument` does that, before or after the mode change
-- The phone version exists and the question is whether respondents understand it over a call; run `draft-cognitive-interview-script` by phone, which this skill hands its output to
-- The question is how many numbers to call so that enough complete interviews survive non-response and attrition; that is `estimate-sample-size`
-- The team wants to pick an existing validated measure or build and validate a scale; choosing an existing measure and developing or validating a new scale are separate skills
+- The questions are not written yet; use `draft-survey-items`
+- The questionnaire has to go into another language; use `translate-survey-instrument`
+- The phone version exists and needs testing with respondents; use `draft-cognitive-interview-script`
+- The question is how many numbers to call; use `estimate-sample-size`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** The face-to-face instrument verbatim, including showcards, visual aids, interviewer instructions, and its current length in minutes.
-2. **Required.** The target mode (live call, IVR, or both) and the reason for phone delivery (cost, access, safety, timing), because the reason sets what can be sacrificed.
-3. **Required.** The sampling frame: where the phone numbers come from, whose numbers they are (the respondent's own, a household head's, a contact's), and what is known about phone ownership and sharing in this population, by gender.
-4. **Required.** Which items are essential to the decision the survey informs. Without a core list, the cut in step 1 is arbitrary.
-5. Optional. Budget for airtime incentives; the languages the enumerator pool covers; whether a face-to-face subsample is feasible; which items the team considers sensitive.
+1. **Required.** The questionnaire as asked face to face, with its showcards, and its length in minutes.
+2. **Required.** A live call (an interviewer phones) or IVR (recorded questions answered on the keypad), and why phone.
+3. **Required.** Where the phone numbers come from, and who owns or shares those phones, by sex.
+4. **Required.** The decision the survey informs, and the items it cannot do without.
+5. Optional. Which items are sensitive; whether some face-to-face interviews are possible.
 
-If 1 to 4 are missing, ask and stop. If 5 is missing, assume a small airtime incentive is affordable, plan the face-to-face subsample and mark its cost as unconfirmed, and flag any item that looks sensitive.
+If 1 to 4 are missing, ask and stop. If 5 is missing, treat items on health, violence, sex, money, and politics as sensitive, and mark the face-to-face comparison "not confirmed".
 
 ## What it draws on
 
-- Hoogeveen, J., Dabalen, A., et al. (2016). *Mobile Phone Panel Surveys in Developing Countries: A Practical Guide for Microdata Collection*. World Bank. https://doi.org/10.1596/978-1-4648-0904-0
-- Gourlay, S., et al. (2021). Viewpoint: High-frequency phone surveys on COVID-19: Good practices, open questions. *Food Policy*, 105, 102153. https://doi.org/10.1016/j.foodpol.2021.102153
-- J-PAL. *Resources for conducting remote surveys*. https://www.povertyactionlab.org/resource/resources-conducting-remote-surveys
-- World Bank LSMS and DIME Wiki pages on phone surveys: unverified, author to confirm (the pages returned 403 in the dossier audit; nothing from them is used).
+- Dabalen, A., Etang, A., Hoogeveen, J., Mushi, E., Schipper, Y., & von Engelhardt, J. (2016). *Mobile Phone Panel Surveys in Developing Countries: A Practical Guide for Microdata Collection*. World Bank. https://doi.org/10.1596/978-1-4648-0904-0 Supports: short questions with few answer categories; the 15 to 30 minute call, as common practice, not evidence.
+- Gibson, M., & Kopper, S. (2021). *Resources for conducting remote surveys*. Abdul Latif Jameel Poverty Action Lab (J-PAL). https://www.povertyactionlab.org/resource/resources-conducting-remote-surveys Supports: the 30-minute ceiling; logging every call attempt.
+- Krosnick, J. A., & Presser, S. (2010). Question and questionnaire design. In P. V. Marsden & J. D. Wright (Eds.), *Handbook of Survey Research* (2nd ed., pp. 263–313). Emerald. https://web.stanford.edu/dept/communication/faculty/krosnick/docs/2010/2010%20Handbook%20of%20Survey%20Research.pdf Supports: asking a scale as two questions when read aloud.
+- Greenleaf, A. R., Diakabana, H., & Lau, C. (2026). Computer-assisted mobile phone interviews in low- and middle-income countries through a total survey error framework. *Public Opinion Quarterly*, 90(3), 878–910. https://doi.org/10.1093/poq/nfag023 Supports: steps 5 and 7.
 
-The World Bank guide is the practitioner manual for running panel surveys by mobile phone in developing countries. Gourlay et al. draw good practices and open questions from the high-frequency phone surveys run during COVID-19. J-PAL's remote-survey page covers survey length, respondent tracking, and call scheduling, and states that surveys should be kept to a 30-minute call at most; it does not cover mode effects or IVR, and the "15 to 20 minutes" figure that circulates for phone surveys is unverified, author to confirm, so this skill plans to the 30-minute ceiling and shorter where the population or IVR demands it. The dossier's boundary conditions for this skill, not attributed to a single source, are: replace showcards with verbal unfolding scales; plan the call protocol (scheduling, recording attempts, replacing respondents, matching surveyors by language) and incentives; and test for mode effects against a face-to-face subsample. Judgment calls this skill adds: the gender check on who answers a shared phone, the privacy check before sensitive items, and the IVR guidance in step 3, which is this skill's practitioner judgment rather than something the cited sources were confirmed to cover. See `references/evidence-notes.md`.
+**Where the evidence comes from:** Almost all from low- and middle-income countries. A review of 36 studies in 21 of them found phone samples most often miss less educated and poorer people, and often women; which ages and places are missed differs by country. Simple yes-or-no questions were answered well, but a consumption module in Ethiopia returned 23% lower spending by phone; check locally who owns each phone.
 
-**WEIRD skew:** None in the usual sense: both anchor sources are written for and from low- and middle-income country phone surveys. The skew that matters is within the population: phone samples skew toward phone owners, who are more often men, better off, and in covered areas. A user should check ownership and sharing by gender and wealth in their own frame before trusting any phone estimate. **Non-WEIRD evidence:** the World Bank guide (developing-country panel surveys) and the LSMS high-frequency COVID-19 phone surveys reviewed by Gourlay et al.; the dossier records no response-rate or effect numbers from either.
-
-**Replication status:** Procedural; the one finding the dossier records consistently is that phone samples skew toward phone owners. Whether answers themselves differ by mode is left as an open question in the sources, which is why this skill plans a mode-effect check rather than asserting comparability.
+**Replication status:** Replicated that less educated and poorer people are missed; mixed for whether answers differ by phone.
 
 ## How to do it
 
-1. **Cut to the core and set the target length.** List every item against the decision it feeds; keep the essential ones, move the rest to "drop" or "later wave". Target at or below J-PAL's 30-minute ceiling for a live call; for IVR set the target from a pilot, since no verified IVR length is in the sources.
-2. **Convert every visual item.** Showcard rating scales become verbal unfolding scales: ask direction first ("better or worse?"), then intensity ("a little or a lot?"). Ladders and numbered scales get both endpoints read aloud in words. Pictures and visual analog scales become short labeled categories. Record the mapping for each item so the face-to-face and phone versions can be compared.
-3. **Rewrite instructions for audio.** Short sentences; options repeated for every item; nothing that depends on something the respondent can see. For IVR: one idea per prompt, a keypad mapping read aloud, a repeat option, and few enough options to hold in memory; pilot the count.
-4. **Write the call protocol**: the spoken consent script; identity check; "is this a good time, and can you speak privately?"; number of attempts spread across times of day and days of the week; call-back scheduling; the rule for replacing a number; language matching of enumerators to respondents; a log entry for every attempt; and the airtime incentive, its amount and when it is sent.
-5. **Check the frame for who you will reach.** Compare phone ownership and sharing in the population, by gender and wealth, against the program's target group. Decide how the intended respondent is asked for on a shared phone, when to call back, and that the log records who actually answered.
-6. **Handle sensitive items.** For each, decide: keep with a privacy check, drop, or escalate. Never ask on speakerphone. If the phone is shared and the item could expose the respondent, the default is drop.
-7. **Plan the mode-effect check.** Draw a random face-to-face subsample that answers the same core items; state which items are compared, and pre-specify what size of difference would change the survey's conclusion. If no subsample is feasible, say what is lost and plan at least a comparison with the previous face-to-face round on the overlapping items.
-8. **Pretest the phone version by phone** with `draft-cognitive-interview-script`, flagging converted items for extra probes.
-9. **Stop here.** How many numbers to call so that enough interviews survive non-response is `estimate-sample-size`'s job; phone attrition is one of its inputs.
+1. **Cut by decision.** Keep the items the decision needs; mark the rest "drop" or "later call". Target 30 minutes or less for a live call, less for IVR. Reading faster is not a cut.
+2. **Convert every item that relied on something seen.** Ask a rating scale in two steps, direction then strength ("satisfied or dissatisfied?", then "very or somewhat?"), because a long scale is hard to hold when read aloud. Describe both ends of a ladder in words. Turn a card list into yes-or-no questions. Record each item's old and new format, and flag it for testing aloud.
+3. **Rewrite instructions for the ear:** short sentences, choices repeated in every question; for IVR, one idea and few choices per prompt.
+4. **Write the call rules:** spoken consent; attempts spread over times and days; call-backs; when a number is retired; the airtime payment; a log of every attempt with day, time, and who answered.
+5. **Compare who the numbers reach with who the survey is about.** State who owns or shares the phones and who will be missing. Ask for the intended respondent by name; never interview whoever answers.
+6. **Gate sensitive items.** Before each, ask whether the respondent is alone and can speak freely; call back if not. On a shared phone, drop an item whose answer could harm the respondent if overheard.
+7. **Plan the mode check.** A change since a face-to-face round may come from the phone. Interview a random subsample face to face on the core items and name the difference that would change the conclusion, or state what cannot be claimed without it.
 
-See `references/worked-example.md` for a complete run on a Bangladesh mobile money enrollment endline.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Phone-mode instrument: <survey name>
+# Phone version: <survey name>
 
-**Mode:** <live call / IVR / both>  **Face-to-face length:** <minutes>  **Target call length:** <minutes, at or below 30 for a live call>
-**Frame:** <source of numbers; whose numbers; ownership and sharing by gender and wealth as known>
+**Mode:** <live call / IVR>  **Face-to-face length:** <minutes>  **Target call length:** <minutes>
 **Why phone:** <cost / access / safety / timing>
+**Decision the survey informs:** <...>
 
-## 1. Core items kept, items dropped
-| Item | Decision it feeds | Keep / drop / later wave | Why |
+## 1. Items kept and dropped
+| Item or module | Decision it feeds | Keep / drop / later call | Why |
 |---|---|---|---|
-| <1> | <...> | <...> | <...> |
+| <...> | <...> | <...> | <...> |
 
 ## 2. Converted items
-| Item | Face-to-face format | Phone format | Spoken wording |
+| Item | Face-to-face format | Phone format | Words as spoken |
 |---|---|---|---|
-| <1> | <showcard, 5 points> | <unfolding: direction, then intensity> | <exact words> |
+| <...> | <showcard, 5 points> | <two steps: direction, then strength> | <exact words> |
 
-## 3. Consent script and audio instructions
-<spoken consent; identity check; privacy check; instructions as read>
+## 3. Consent and spoken instructions
+<consent as read; how the respondent is identified; the instruction that precedes the questions>
 
-## 4. Call protocol
-- Attempts: <n>, spread over <times of day> and <days>
-- Call-back rule: <...>
-- Replacement rule: <...>
-- Enumerator language matching: <...>
-- Incentive: <airtime amount; when sent>
-- Log per attempt: <fields>
+## 4. Call rules
+- **Attempts:** <number, spread over which times and days>
+- **Call-backs:** <rule>
+- **Number retired when:** <rule>
+- **Interviewer language:** <...>
+- **Airtime payment:** <amount; when sent>
+- **Logged for every attempt:** <day, time, outcome, who answered, language>
 
-## 5. Who you will reach
-<ownership and sharing by gender and wealth; how the intended respondent is asked for; what is recorded about who answered; who the frame will miss>
+## 5. Who the calls will reach
+- **Whose phones:** <own / shared / someone else's, by sex and wealth where known>
+- **Who will be missing:** <...>
+- **How the intended respondent is asked for:** <...>
 
 ## 6. Sensitive items
-| Item | Keep with privacy check / drop / escalate | Why |
+| Item | Keep behind the privacy check / drop / refer | Why |
 |---|---|---|
 | <...> | <...> | <...> |
 
-## 7. Mode-effect check
-<subsample size and how drawn; items compared; the difference that would change the conclusion; or what is lost if none is feasible>
+**Privacy check as spoken:** <...>
 
-## 8. Pretest
-<number of phone cognitive interviews; converted items flagged; handed to draft-cognitive-interview-script>
+## 7. Mode check
+<the face-to-face subsample and how it is drawn; items compared; the difference that would change the conclusion; or what cannot be claimed without it>
+
+## 8. Converted items to test aloud
+<items, and what to listen for>
 
 ## What to check before relying on this
-- <the group the frame most likely misses>
-- <the converted item most likely to produce a mode difference>
+- <the group the numbers are most likely to miss>
+- <the converted item most likely to be answered differently by phone>
 ```
 
 ## Where it goes wrong
 
-- **Keeping the whole questionnaire.** The model shortens by trimming words instead of dropping items; a 60-minute face-to-face instrument read faster is still a 60-minute call. The cut is by decision relevance, and the drop list is part of the output.
-- **Reading a showcard scale aloud as it stands.** Five or seven points with labels only at the ends cannot be held in memory over a call; every such item is converted to an unfolding scale or labeled categories, and the mapping is recorded.
-- **Quoting an unverified length or attributing mode-effect rules to J-PAL.** The verified figure is a 30-minute ceiling; "15 to 20 minutes" is unverified, and J-PAL's page does not cover mode effects or IVR. The skill says so rather than inventing a source.
-- **Assuming the number reaches the person.** A number listed for a woman respondent is often a husband's or a neighbor's phone; the protocol asks for the intended respondent, records who answered, and calls back rather than interviewing whoever picked up.
-- **Sensitive items on a shared phone.** HIV status, violence, or income at risk from a listener: the skill must not keep these in a phone instrument without a privacy check, and must escalate when the phone is shared.
-- **Treating phone results as comparable to the face-to-face baseline without a check.** A change between a face-to-face baseline and a phone endline is a mode difference until the mode-effect comparison says otherwise; the output must say this.
+- **Weights offered as the fix.** Reweighting a phone sample to match the population mostly failed to remove the bias in four African countries. Report who is missing anyway.
+- **Long modules moved intact.** A detailed consumption module or a household roster tires people on a call. Collect it face to face or leave it out.
+- **IVR treated as a cheap live call.** In Nigeria the response rate was 3% for IVR against 15% for live calls.
 
 ## When to bring in a specialist
 
-Tell the user to consult a survey methodologist with remote data collection experience, and the ethics board, when:
-- The survey collects sensitive information (HIV status, intimate partner violence, illegal or hidden income, political views) and respondents may share phones or be overheard; the question is whether the item can be asked by phone at all, not how to word it
-- Phone-ownership gaps would exclude the population the program is for (women without their own phone, the poorest households, uncovered areas); a sampling statistician should say whether a phone survey can answer the question or whether a mixed-mode design is needed
-- The plan is IVR with a low-literacy, multilingual population and no pilot has run; someone who has fielded IVR in that setting should review the prompt design before any number is called
+Tell the user to consult, before fielding:
+- An ethics reviewer and a survey methodologist with phone experience, when the survey asks about HIV status, partner violence, or illegal income and phones are shared: they decide whether to ask by phone at all
+- A sampling statistician, when the people the program is for are those least likely to have a phone
+- Someone who has fielded IVR there, when IVR is planned for respondents with little schooling and no pilot has run
 
-Bring them: the sampling frame with what is known about ownership and sharing, the list of sensitive items, the draft call protocol, and the mode-effect plan.
+Bring them: the source of the numbers, who owns the phones, the sensitive items, the call rules, and the mode check.
