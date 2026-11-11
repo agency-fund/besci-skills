@@ -1,49 +1,45 @@
-# Worked example: an ART adherence SMS program moving from NGO clinics to county delivery in Kisumu, Kenya
+# Worked example: HIV treatment text reminders moving from NGO clinics to county delivery in Kisumu, Kenya
 
-The program, the pilot numbers, the costs, and the county's plan are illustrative; none of them is a reported finding. The sources quoted are the ones recorded in the dossier for this skill.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**User's answers to Before you start.** Claim: the Tuko Pamoja program sent weekly SMS adherence reminders to adults on ART at 8 NGO-supported clinics in Kisumu County; a cluster RCT with 1,640 patients found viral suppression at 12 months 9 percentage points higher in the SMS arm (95% CI 3 to 15), pre-registered primary outcome; the NGO's own adherence counselors sent messages from a dashboard, phoned anyone who replied "need help" within 24 hours, and carried caseloads of about 120; cost about USD 4.10 per patient per year. Scale-up: all 71 county ART clinics (about 48,000 patients), run by county staff, messages sent automatically from the national EMR, no dedicated counselor to answer replies, budget USD 1.50 per patient. Decision: a county budget line for the next fiscal year; the county says it can drop it after a year. Subgroup results: effect concentrated in patients enrolled under 12 months; near zero for patients stable on ART more than 3 years. Fidelity data: counselors logged 94% of weekly messages sent and a median reply-to-call time of 6 hours. No earlier scale-up attempt.
+## The request
+
+"We ran a cluster randomized trial of weekly text reminders for adults on HIV treatment at 8 NGO-supported clinics in Kisumu County: 1,640 patients over 12 months. Viral suppression at 12 months was 9 percentage points higher in the text arm than with standard care (95% CI 3 to 15), our pre-registered primary outcome. Our adherence counselors sent the messages from a dashboard and phoned anyone who replied 'need help' within 24 hours; each had about 120 patients. Monitoring logs show 94% of weekly messages went out. It cost about USD 4.10 per patient per year, counselor time included. The effect was concentrated in patients enrolled less than 12 months before; it was near zero in patients stable on treatment for more than 3 years, who we guess are about two-thirds of the county's patients. The county health department wants to roll it out to all 71 county clinics, about 48,000 patients, with messages sent automatically from the national electronic medical record and no one assigned to answer replies, because the budget allows USD 1.50 per patient. It would be a budget line next fiscal year, and the county says it can drop it after a year if it fails. Will this hold at scale?"
+
+## The output
 
 ```markdown
-# Scalability assessment: Tuko Pamoja ART adherence SMS, Kisumu County
+# Scalability assessment: weekly treatment text reminders, Kisumu County
 
-**Claim (one line):** +9 percentage points (95% CI 3 to 15) on viral suppression at 12 months, measured on 1,640 adults on ART at 8 NGO-supported clinics in Kisumu County, delivered by NGO adherence counselors (caseload about 120, replies answered within 24 hours), at about USD 4.10 per patient per year
-**Scale-up on the table:** from 8 clinics and 1,640 patients to 71 clinics and about 48,000 patients, delivered by county staff, messages sent automatically from the national EMR, no reply handling, at USD 1.50 per patient per year
-**Decision this informs:** a county budget line for the next fiscal year; reversible: yes, the county says it can drop it after one year
+**Pilot:** viral suppression at 12 months 9 percentage points higher than standard care (95% CI 3 to 15) on the pre-registered primary outcome; cluster randomized trial, 8 clinics, 1,640 patients; among adults on HIV treatment at NGO-supported clinics in Kisumu County; delivered by NGO adherence counselors, with a phone call within 24 hours to anyone who replied "need help"; at about USD 4.10 per patient per year
+**At scale:** 71 county clinics, about 48,000 patients; delivered by county staff, through automated sends from the national electronic medical record; changes: no one answers replies; budget: USD 1.50 per patient per year
+**Decision this informs:** a county budget line for next fiscal year; reversible: yes, the county says it can drop it after one year
 
-## Threats to the effect
+## Pilot against scale
 
-| Threat | Evidence for the threat (from the pilot) | Evidence against it | Test that would settle it (cost, time) |
-|---|---|---|---|
-| False positive | One study; the lower bound of the CI is 3 points; the published-to-field pattern (academic 8.7 versus unit 1.4 points, DellaVigna and Linos 2022) says a single estimate is an upper bound | Pre-registered primary outcome; cluster design; no multiple-outcome fishing reported | A second measurement in the first 10 scale clinics with a held-out comparison group (low cost if the EMR holds viral loads; 12 months) |
-| Population | The effect sat in patients enrolled under 12 months; stable long-term patients showed near zero; the county caseload is mostly long-term patients (the team estimates two-thirds) | New enrollees are the group the county most wants to retain, so the effect may matter where it exists even if the average shrinks | Compute the share of newly enrolled patients per clinic from the EMR and project the average effect by weighting (no cost; one week) |
-| Situation and implementer | The counselor who answered "need help" replies within 24 hours is removed; sending moves from a counselor's dashboard to automated EMR sends; county staff did not select, train, or supervise the pilot messaging; this is the NGO-to-government move the Kenya contract-teacher case warns about (Bold et al. 2018) | Message content and timing can be copied exactly; the EMR already holds phone numbers | A 6-month trial in 10 county clinics, half with a county reply-handler and half with automated sends only, viral load from the EMR (moderate cost; 6 to 9 months) |
-| Spillovers | Messaging 48,000 patients at once may raise clinic visits in the same weeks, lengthen queues, and strain pharmacy stock; the pilot's 1,640 patients could not show this | Weekly messages are staggered by enrollment date, which spreads visits | Monitor visit volume and stock-outs in the 10 trial clinics against the other 61 (no extra cost; part of the trial above) |
-| Cost at scale | The USD 1.50 budget removes the counselor line, which is the component the pilot's own fidelity data (6-hour median reply time) suggests was active; SMS gateway costs fall per message, supervision costs rise | Automated sending costs almost nothing per patient, so the USD 1.50 version is affordable if it works | Costing of the two trial arms by `estimate-cost-effectiveness` once the trial reports |
-
-## Domain scores (generic set for this library; confirm against the ISAT)
-
-| Domain | Score (1–5) | Evidence behind the score |
-|---|---|---|
-| Strength of the effect evidence | 3 | One pre-registered cluster RCT, CI 3 to 15, no second study |
-| Fit with the scale population | 2 | Effect concentrated in a subgroup that is about one-third of the county caseload |
-| Implementer capacity at scale | 2 | County staff have not delivered reply handling; the automated version drops it |
-| Delivery system readiness | 4 | The national EMR holds phone numbers and viral loads and can send messages |
-| Cost and financing at scale | 3 | A budget line exists at USD 1.50, which funds the automated version only |
-| Risk of harm or backfire at scale | 3 | Unanswered "need help" replies could leave patients worse off than no message; no pilot evidence either way |
+| Row | In the pilot | At scale | Pilot tested the scale version? | Mark |
+|---|---|---|---|---|
+| Strength of the effect | Cluster randomized trial with a standard-care comparison; 8 clinics, 1,640 patients; pre-registered primary outcome; no second study | not applicable | not applicable | +: credible, though one study with eight clusters |
+| Who is reached | All adults on treatment at 8 clinics; the effect sat in patients enrolled under 12 months | All patients at 71 clinics, most of them stable for years (the team estimates two-thirds) | No | –: most patients at scale are in the group where the pilot found near zero |
+| What is delivered | Weekly text plus a counselor's call within 24 hours to "need help" replies | Weekly text only | No | –: the call-back is dropped, and nobody knows how much of the effect it carried |
+| Who delivers and answers for it | NGO counselors with about 120 patients each, supervised by the NGO | County clinic staff with no assigned role; no one named as responsible | No | –: no person is accountable for the messages or the replies |
+| How it reaches people | Counselors sent from a dashboard; 94% of weekly messages went out | Automated sends from the national record system, which holds phone numbers | No | more information needed: how reliably the system sends and whether numbers are current |
+| Cost and funding | USD 4.10 per patient per year, counselor time included | USD 1.50 per patient per year in a county budget line | No | –: the money covers only the version without call-backs |
+| Demand and commitment | The NGO ran it | The county health department asked for it; clinic staff have not been asked | No | more information needed: whether clinic staff will take on any part of it |
 
 ## Verdict
-Scale after these tests, because the USD 1.50 version removes the reply-handling component without evidence that the effect survives its removal, and the scale population is mostly the subgroup in which the pilot found near zero.
+Promising: test first, because the effect is credible but the version the county can fund drops the call-back, gives no one responsibility for delivery, and reaches mostly the patients in whom the pilot found near zero. If the test shows the effect depended on the call-back, the USD 1.50 version does not yet merit scale-up.
+
+## Test first
+What is delivered: in 10 county clinics, assign 5 at random to automated texts only and 5 to automated texts with a county staff member who answers "need help" replies within 24 hours, and compare viral suppression among patients enrolled under 12 months against the 61 clinics not yet reached, using the medical record. Nine months. If automated texts alone show no gain over the comparison clinics, the county should fund the version with replies or none.
 
 ## What must be true for the effect to survive
-1. Automated sends without reply handling still raise suppression in newly enrolled patients; test: the 10-clinic trial; would change the verdict if it failed: yes
-2. The county can staff a reply-handler role in at least the arm that keeps it; test: the trial's staffing log; yes
-3. Weighting the pilot's subgroup effects by the county's caseload mix still gives a worthwhile average; test: the EMR share calculation; yes
-4. Messaging all patients does not raise stock-outs or queue times in trial clinics; test: the trial's monitoring; no, but it changes the roll-out pace
+1. Automated texts without call-backs still raise viral suppression among newly enrolled patients: the 10-clinic test.
+2. County staff can answer replies within 24 hours alongside their other work: the reply log in the test clinics.
+3. Weighted by the county's actual mix of new and long-term patients, the gain is still worth the cost: count patients enrolled under 12 months in the medical record, one week, no cost.
+4. The record system sends texts reliably to current numbers: one month of send and delivery reports.
 
 ## What to check before relying on this
-- The harm cell is "no pilot evidence either way": whether an unanswered "need help" reply does damage is the first thing the trial must watch.
-- The claim line's cost (USD 4.10) includes counselor time; if that figure is wrong, the cost-at-scale row changes.
+- Demand and commitment: the county department asked, but clinic staff, who would answer replies, have not been asked.
+- The two-thirds share of long-term patients is the team's estimate; the record system can give the real figure in a week.
 ```
-
-**What happened next (illustrative).** The county agreed to fund the 10-clinic trial before the full budget line; the "what must be true" list went to `plan-scale-up-strategy` as the conditions the strategy must sequence around, and the trial design went to `plan-evaluation-design`.

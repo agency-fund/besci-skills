@@ -1,47 +1,50 @@
 # Worked example: a peer-distributed HIV self-testing program moving from Lagos to Ekiti State, Nigeria
 
-The program, its theory of change, the state's requests, and the monitoring finding are illustrative; none is a reported finding. The record follows the FRAME fields as this skill uses them and describes the transfer path generically.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**User's answers to Before you start.** Baseline (from the intervention description): the Mo Wa Mo Ri program in Lagos; a trained peer from the same community hands an HIV self-test kit to a man aged 20 to 35, plays a 3-minute demonstration video in Yoruba or Pidgin on a tablet, walks through the result card, and phones him 14 days later to ask about the result and refer anyone positive to a named clinic. Core components from the theory of change: peer hand-over (trust: men accept a kit from someone like them); demonstration video (capability: correct use); result card (capability: reading the result); 14-day call (follow-through: linkage to care for positives). Modifications: Ekiti State wants community pharmacies to distribute instead of peers; the video re-recorded in Ekiti dialect; the result card unchanged; the 14-day call dropped because the state will not fund phone credit, replaced by the pharmacist telling the client to come back if positive. Unplanned, from Lagos monitoring: about a third of peers skipped the video when the tablet battery was low and explained verbally instead. Context transfer: yes, Lagos to Ekiti. Monitoring data: the Lagos fidelity logs.
+## The request
+
+"We tested a peer-distributed HIV self-testing program in Lagos, Mo Wa Mo Ri. Our intervention description (July 2026) says: a trained peer from the same community hands a self-test kit to a man aged 20 to 35, shows a 3-minute demonstration video in Yoruba or Pidgin on a tablet, walks him through the result card, and phones him 14 days later to ask about the result and refer anyone positive to a named clinic. Our theory of change: men accept a kit from someone like them; the video and the card teach correct use and reading of the result; the call links anyone positive to care. We are now taking it to Ekiti State. The state AIDS control agency wants community pharmacies to hand out kits instead of peers, the video re-recorded in Ekiti dialect, the result card unchanged, and the 14-day call dropped because the state will not fund phone credit; the pharmacist would tell the client to come back if positive. Separately, our Lagos monitoring found that about a third of peers skipped the video when the tablet battery was low and explained verbally instead. Please record the adaptations and tell us which ones matter."
+
+## The output
 
 ```markdown
-# Adaptation record: Mo Wa Mo Ri HIV self-testing, version 2026-10-12
+# Adaptation record: Mo Wa Mo Ri HIV self-testing, version 2026-11-11
 
-**Baseline:** peer-distributed HIV self-test kit with a 3-minute demonstration video, a result card walk-through, and a 14-day follow-up call with referral of positives, as delivered in Lagos (intervention description dated 2026-07)
-**Context transfer:** Lagos to Ekiti State; urban to mixed peri-urban and rural; peers to community pharmacies; Yoruba and Pidgin to Ekiti dialect
+**Baseline:** a peer hands a self-test kit to a man aged 20 to 35, shows a 3-minute demonstration video, walks through the result card, and phones 14 days later to refer anyone positive to a named clinic, as delivered in Lagos (intervention description, July 2026)
+**Move to a new context:** Lagos to Ekiti State; urban to mixed peri-urban and rural; peers to community pharmacies; Yoruba and Pidgin to Ekiti dialect
 
-## Core components and the mechanism each carries
-| Component | Mechanism | Status |
-|---|---|---|
-| Peer hand-over by a man from the same community | Trust: the target men accept a kit from someone like them | confirmed |
-| 3-minute demonstration video | Capability: correct use of the kit | confirmed |
-| Result card walk-through | Capability: reading the result correctly | confirmed |
-| 14-day follow-up call with referral | Follow-through: positives are linked to care | confirmed |
+## Core components
+| Component | Job it does for the effect | Assumption behind it | May vary | May not vary | Status |
+|---|---|---|---|---|---|
+| Hand-over by a peer from the same community | Men aged 20 to 35 accept the kit | These men trust someone like them more than a health worker | Venue, day, hour | A hand-over by someone the men do not see as one of them | confirmed: named in the theory of change |
+| 3-minute demonstration video | Correct use of the kit | Men will watch a short video in their own language | Language, dialect, device | Replacing the demonstration with nothing, or with a summary that skips steps | confirmed |
+| Result card walk-through | Reading the result correctly | The card's pictures are read the same way by the new audience | Language | Removing the walk-through | confirmed |
+| Phone call at 14 days with referral | Anyone positive reaches care | Men who test positive will not go to a clinic unprompted | Day of the call; call or visit | No active follow-up of positives | confirmed |
 
-**Adaptable periphery:** language and dialect of the video and card; the device the video plays on; the day and hour of distribution; the venue.
-
-## Modification log
-| # | When | Planned? | Who decided | What was modified | Level | Nature | Goal and reasons | Fidelity-consistent? |
+## Change log
+| # | When | Planned? | Who decided | What changed | Level | Nature | Fidelity | Goal, and what prompted it |
 |---|---|---|---|---|---|---|---|---|
-| 1 | at scale-up | yes | Ekiti State AIDS control agency | context: distribution by community pharmacies instead of peers | program | substituted | reach through an existing network; no peer stipends | no: the theory of change names peer trust as the reason men accept the kit; a pharmacist is not a peer, so acceptance by the target men is no longer predicted |
-| 2 | at scale-up | yes | NGO program team with the state | content: video re-recorded in Ekiti dialect | program | tailored | comprehension | yes: the mechanism (correct use) is unchanged; the dialect is periphery |
-| 3 | at scale-up | yes | Ekiti State AIDS control agency | content: 14-day call removed; pharmacist tells the client to come back if positive | program | removed | cost: no phone credit funded | no: the theory of change names the call as the step that links positives to care; a come-back instruction leaves follow-through to the client |
-| 4 | during delivery (Lagos) | no | frontline peers | content: video skipped, verbal explanation substituted, when tablet battery was low | provider | substituted | logistics: battery | uncertain: a verbal explanation may or may not carry correct use; the Lagos evaluation must say which version about a third of participants received |
+| 1 | at scale-up | planned | State AIDS control agency | delivery, by whom: community pharmacists hand out kits instead of peers | program | substituted | unknown: the theory of change says men accept the kit from someone like them; whether they see a pharmacist that way is not known | reach and cost; no peer stipends, existing pharmacy network |
+| 2 | at scale-up | planned | NGO program team with the agency | content: video re-recorded in Ekiti dialect | program | tailored | consistent: language may vary | comprehension; the new audience's dialect |
+| 3 | at scale-up | planned | State AIDS control agency | content: 14-day call removed; pharmacist tells the client to come back if positive | program | removed | inconsistent: removes the only active follow-up of positives, which may not vary | reduce cost; no phone credit in the state budget |
+| 4 | during delivery, in Lagos | unplanned | Individual peers | content: video skipped and replaced by a verbal explanation | provider | substituted | unknown: whether a verbal explanation teaches correct use was never checked | keep distributing; tablet battery flat |
 
-## Flags: core components removed or weakened
-- **Modification #3:** removes the 14-day follow-up call, which carried follow-through (linkage of positives to care); decided by the state agency; reason cost. The Ekiti version is a different intervention from the one tested until a cheaper form of follow-through is shown to work.
-- **Modification #1:** substitutes a pharmacist for the peer, which carried trust; decided by the state agency; reason reach and cost. Same consequence: the Lagos acceptance result does not apply to pharmacy distribution.
-- **Modification #4:** unplanned, during the Lagos pilot; weakens the demonstration video for about a third of participants; no recorded decision. The Lagos evaluation describes a mixed version, and the monitoring log should be attached to it.
+## Taken together
+The Ekiti version does not do every component's job: change 3 removes the follow-up of positives, and change 1 may remove the trust the hand-over carried. This version is a different intervention from the one tested, and the original evidence does not cover it.
 
-## Transfer plan (only when a context transfer is in progress)
-- **Rationale:** Ekiti has no peer network and a pharmacy network the state already funds; the theory of change says trust and follow-through must stay in some form
-- **Changes planned with stakeholders:** #1, #2, #3 proposed by the state; the NGO and six Ekiti pharmacists and eight men from the target group to be consulted on whether a pharmacist can carry trust and on a cheaper follow-through (an SMS at day 14, or a return visit incentive)
-- **Pilot:** 4 pharmacies for 8 weeks, logging kits handed out, videos played, and positives who reach a clinic, against 2 pharmacies with a peer present on distribution days
-- **Implement and maintain:** the NGO M&E officer keeps this log, updated after every monitoring round; version dated
+## Flags
+- **Change 3:** removes the job of linking positives to care; decided by the State AIDS control agency; reason: cost
+- **Change 1:** may weaken the job of getting men to accept the kit; decided by the State AIDS control agency; reason: reach and cost
+- **Change 4:** may weaken correct use for about a third of Lagos participants; no recorded decision; reason: flat tablet batteries. The Lagos evaluation describes a mixed version.
+
+## Move to a new context (only when one is under way)
+- **Fit:** the jobs depend on men trusting the person who hands over the kit and on someone following up positives; Ekiti has no peer network and an existing pharmacy network the state funds
+- **Adaptations planned, and with whom:** changes 1 to 3, proposed by the agency; to be discussed with six Ekiti pharmacists and eight men from the target group, including whether a text at day 14 or a paid return visit could do the follow-up job
+- **Piloting or evaluation warranted:** 4 pharmacies for 8 weeks, against 2 pharmacies with a peer present on distribution days, counting kits handed out, videos shown, and positives who reach a clinic within 30 days
+- **Who keeps this record:** the NGO monitoring officer, updated after every monitoring round
 
 ## What to check before relying on this
-- Modification #3 matters most: the pilot must count positives who reach a clinic within 30 days under the come-back instruction against any cheaper follow-through tested; if neither links positives, the Ekiti program does not do what the Lagos program did.
-- The peer hand-over's "confirmed" status rests on the Lagos theory of change; if Ekiti men say they would accept a kit from a pharmacist as readily, the component is periphery there, and modification #1 becomes consistent.
+- Change 3 matters most: the pilot must count positives who reach a clinic within 30 days under the come-back instruction and under any cheaper follow-up; if neither links positives to care, the Ekiti program does not do what the Lagos program did.
+- The peer hand-over rests on the Lagos theory of change; if Ekiti men say they would accept a kit from a pharmacist as readily, its "may not vary" line changes, and change 1 becomes consistent.
 ```
-
-**What happened next (illustrative).** The flags went to `plan-scale-up-strategy`, which held the Ekiti innovation package open until the 8-week pilot reported; the log's four entries became the first indicators `design-fidelity-monitoring` built for Ekiti.

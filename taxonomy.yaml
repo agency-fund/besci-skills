@@ -240,6 +240,10 @@ io_types:
     label: Pilot plan
     description: "A plan for a small-scale run of a program that tests whether it can be delivered and evaluated: the questions, the progression criteria fixed in advance, the sites and size, and what changes in the main design."
     user_suppliable: false
+  - id: scale-up-strategy
+    label: Scale-up strategy
+    description: "How a tested program reaches routine delivery: the user organization, the environment, the resource team, the strategic choices, and prioritized actions with an owner and a date."
+    user_suppliable: false
   - id: prototype-test-plan
     label: Prototype test plan
     description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."
