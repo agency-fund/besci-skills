@@ -59,7 +59,7 @@ If 1, 2, or 3 is missing, ask and stop. If 4 is missing, write "not set". If 5 i
 - Gupta, S., & Kopper, S. (2021). *Power calculations*. J-PAL Research Resources. https://www.povertyactionlab.org/resource/power-calculations Supports: diluting the effect by take-up; planning on the smallest gain the implementer would act on.
 - DellaVigna, S., & Linos, E. (2022). RCTs to scale: Comprehensive evidence from two nudge units. *Econometrica*, 90(1), 81–116. https://doi.org/10.3982/ECTA18709 Supports: the low end. Nudge trials (reminders, defaults, and similar changes to how a choice is presented) in journals averaged 8.7 percentage points; all trials of two US government nudge units averaged 1.4.
 
-**Where the evidence comes from:** The one comparison of published with unselected results covers two US nudge units, so the one-sixth ratio is a US figure. A meta-analysis of tax-compliance nudges, a third run in low- and middle-income countries, found selective reporting and suggestive evidence of smaller effects there; a Kenyan teacher-contract program worked under an NGO, not under the government. The gap's size in any one setting is unknown.
+**Where the evidence comes from:** The one comparison of published with unselected results covers two US nudge units, so the one-sixth ratio is a US figure. A meta-analysis of tax-compliance nudges, a third run in low- and middle-income countries, found selective reporting and, tentatively, smaller effects there; a Kenyan teacher-contract program worked under an NGO, not under the government. The gap's size in any one setting is unknown.
 
 **Replication status:** The direction held in every comparison found. The size is contested: corrected nudge averages run from about zero to 0.31 SD, by method.
 
