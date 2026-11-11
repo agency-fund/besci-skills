@@ -8,26 +8,26 @@
       "expected_output": "An ethics review in the output template that classifies the default as unavoidable, finds the route to object too hard, and returns REVISE with specific changes.",
       "files": [],
       "assertions": [
-        "Classifies the default as unavoidable, because it acts on workers who do nothing.",
-        "States the rule for the type and says which of its conditions are met.",
+        "Opens with a few plain sentences that give the verdict and say the decision stays with the team.",
+        "Classifies the default as one workers cannot easily decline, because it acts on workers who do nothing, and says which of the rule's conditions are met.",
         "Rates the way-out check concern or fail, citing the form at the employer's HR office or the 30-day window.",
         "Raises workers who cannot read the notice.",
-        "The verdict is REVISE, not GO, with at least one specific change to how workers opt out.",
-        "Does not rewrite the notice."
+        "The verdict is REVISE, not GO, with at least one specific change to how workers opt out, and the notice is not rewritten.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next."
       ]
     },
     {
       "id": 2,
       "name": "Missing context",
       "prompt": "Is our savings nudge ethical?",
-      "expected_output": "The skill asks what the draft is and how it works, who delivers it to whom, and what the audience is told, and produces nothing else.",
+      "expected_output": "The skill says in a sentence or two what decides whether a nudge is ethical, then asks what the draft is and how it works, who delivers it to whom, and what the audience is told, and produces no review.",
       "files": [],
       "assertions": [
         "Asks what is delivered and how it is meant to work.",
         "Asks who delivers it and what hold they have over the audience.",
         "Asks what the audience will and will not be told.",
-        "Does not rate any check.",
-        "Does not give a verdict."
+        "Does not rate any check or give a verdict.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -16,17 +16,17 @@ Skills in this snapshot: 57
 | assess-evidence-base | Check what research already exists | define | atomic | draft | 0.2.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
 | assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.2.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
 | assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.2.0 | intervention-description | scalability-assessment | Judges whether an effect found in a pilot is likely to survive delivery at scale. |
-| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.2.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
+| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.3.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.2.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
-| besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.2.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
-| besci-navigator | Behavioral science navigator | other | meta | draft | 0.1.2 | program-goal | workflow-draft | Recommends which library skills to run, in what order, for the problem a user describes. |
-| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.2.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
+| besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.3.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
+| besci-navigator | Behavioral science navigator | other | meta | draft | 0.2.0 | program-goal | workflow-draft | Helps a person get from a problem described in plain words to the library skills, if any, that would help. |
+| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.2.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
 | choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.2.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
 | choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.2.0 | experiment-intent | evaluation-design | Chooses the comparison for one test: which randomized design, at which unit. |
-| decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
+| decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
 | define-agency-construct | Define what agency means for a tool's users | define | atomic | draft | 0.2.0 | ai-product-account | agency-definition | Turns what a team means by its users' agency into named constructs (defined, measurable ideas such as self-efficacy) placed on The Agency Fund's 2x2 agency framework. |
 | define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.2.0 | program-goal | target-behavior-brief | Turns a vague program goal into one observable behavior, stated as who does what, when. |
 | design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies a restriction on future choices that a person opts into to keep a plan they have made. |
@@ -266,7 +266,7 @@ Bring them: the two lines, the marked table, and the pilot's evaluation design.
 ### audit-intervention-ethics
 
 **Title:** Check an intervention is ethical before launch  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** ethics, choice-architecture  
 **Consumes:** intervention-draft  
 **Produces:** ethics-review  
@@ -360,7 +360,7 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-eval
 
 **Title:** Behavioral science skill evaluator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** meta, evaluation, regression  
 **Consumes:** skill-draft  
 **Produces:** eval-report  
@@ -397,14 +397,14 @@ Bring them: the report, the two most different outputs for the same case, and th
 ### besci-navigator
 
 **Title:** Behavioral science navigator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.1.2 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** meta, navigation, workflow  
 **Consumes:** program-goal  
 **Produces:** workflow-draft  
 
-**What it does:** Recommends which library skills to run, in what order, for the problem a user describes.
+**What it does:** Helps a person get from a problem described in plain words to the library skills, if any, that would help.
 
-**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "what should I do first", "help me plan this", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Recommends which skills to run, in what order, or drafts a workflow. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
+**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "what should I do first", "help me plan this", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Talks the problem through first, then suggests skills, in what order, or drafts a workflow when the user wants to act. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
 
 **Use it when:**
 - "Mothers stop coming to our nutrition sessions after the third visit. Where do I start?"
@@ -414,28 +414,28 @@ Bring them: the report, the two most different outputs for the same case, and th
 - "What does the library have for designing an evaluation?"
 - "Walk me through planning a behavioral intervention for farmer adoption of X."
 - The user describes a problem with people not doing something and names no framework
+- The user asks how to think about a behavior-change problem and may want to act on it next
 
 **Do not use it when:**
 - The user names a specific method or skill ("run COM-B on this", "draft a cognitive interview script"); that skill should fire directly
-- The user wants to build a new skill; use besci-skill-creator
-- The user wants to test or score a skill; use besci-eval
-- The user wants behavioral-science advice with no intention of using a skill; answer as a thought partner and mention the library only if a skill genuinely fits
+- The user wants to build a new skill; use `besci-skill-creator`
+- The user wants to test or score a skill; use `besci-eval`
 
 **When to bring in a specialist:**
 
-Recommend a behavioral scientist, and say at which step, when:
+Suggest a behavioral scientist, and say at which step, when:
 - The target behavior involves clinical, safety, legal, or child-protection consequences.
-- The user has no one to review the design before it reaches participants and the intervention will reach more than a pilot's worth of people.
-- Two or more recommended skills have escalation points that the situation triggers.
-- The user is adapting a method far outside the contexts its evidence comes from and cannot validate locally.
-- The user asks for a full program design: the workflow can structure the work, but the judgement calls between steps are where expertise matters most.
+- The person has no one to review the design before it reaches participants, and the intervention will reach more than a pilot's worth of people.
+- Two or more suggested skills have escalation points that the situation triggers.
+- The person is adapting a method far outside the contexts its evidence comes from and cannot validate locally.
+- The person asks for a full program design: the workflow can structure the work, but the judgment calls between steps are where expertise matters most.
 
-Bring them: the workflow draft, the catalog entries for the recommended skills, and the answers to the guide-mode questions. For organizations looking for ongoing support, point to Find My BeSci and to hiring guidance from the partnership.
+Bring them: the workflow draft, the catalog entries for the suggested skills, and the answers to the guide-mode questions. For organizations looking for ongoing support, point to Find My BeSci and to hiring guidance from the partnership.
 
 ### besci-skill-creator
 
 **Title:** Behavioral science skill creator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** meta, authoring  
 **Produces:** skill-draft  
 
@@ -595,7 +595,7 @@ Bring them: the constraints and designs tables, unit counts, and the rollout cal
 ### decompose-comb-barriers
 
 **Title:** Find out why people are not doing a behavior  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** com-b, behavior-change-wheel, diagnosis  
 **Consumes:** target-behavior-brief  
 **Produces:** comb-barrier-hypotheses  
@@ -618,7 +618,7 @@ Bring them: the constraints and designs tables, unit counts, and the rollout cal
 **When to bring in a specialist:**
 
 Tell the user to consult a behavioral scientist or an experienced qualitative researcher when:
-- The behavior carries clinical, safety, or legal risk (medication, violence, child protection, sexual health): some questions cannot be asked directly, and the set needs ethical review before fieldwork
+- The behavior carries clinical, safety, or legal risk (medication, violence, child protection, sexual health): some questions cannot be asked directly and need ethical review before fieldwork
 - The hypotheses cluster under social opportunity in a setting the team does not know; a local researcher should shape the questions and say who asks them
 - Field answers support two hypotheses equally; a study designed to separate them comes next
 

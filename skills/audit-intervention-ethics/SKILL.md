@@ -13,7 +13,7 @@ metadata:
   title: Check an intervention is ethical before launch
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -42,7 +42,7 @@ Reviews one drafted intervention against published ethics guidance before launch
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the review. Do not ask anything the user has already answered.
 
 1. **Required.** The draft: what is delivered, to whom, and how it is meant to work (a default, a public pledge, a payment).
 2. **Required.** Who delivers it, what hold they have over the audience (employer, lender, teacher, official), and whether the audience includes children or people in crisis.
@@ -70,49 +70,50 @@ If 1 is missing, or nobody can say how the draft is meant to work, ask and stop.
    - Transparent, unavoidable: also needs an easy route to object.
    - Not transparent, unavoidable: also needs its existence and purpose clearly communicated, and nobody held accountable for the result.
    - Not transparent, avoidable: not acceptable unless it prevents harm to others.
-4. **Rate six checks** pass, concern, fail, or cannot assess, each with a reason.
-   - **Transparency.** Write the plain disclosure the audience could be given. Would the intervention still work if they read it?
-   - **Way out.** How does a person decline: how many steps, at what cost, seen by whom?
-   - **Whose interest.** Who benefits, and by whose judgment? Public approval does not settle it.
-   - **Who bears the cost.** Who is left out, exposed, or made worse off while the average improves?
-   - **Pressure.** Does it rely on shame, fear, or deception?
-   - **Responsibility and data.** Are people held to consequences they did not knowingly choose? What is collected about them, and who sees it?
+4. **Rate the six checks in the template** pass, concern, fail, or cannot assess, each with a reason. For transparency, write the plain disclosure the audience could be given. For whose interest, public approval does not settle it.
 5. **Give the verdict.** Go: every check passes, or each concern has a named mitigation. Revise: a fail, or an unmet condition of the rule, that a named change fixes. Stop: a fail no change fixes.
 6. **List the changes required.** Do not rewrite the draft.
 7. **List the questions for an ethics board**, and say whether it must see the draft before launch.
+8. **Offer next moves:** the two or three that fit the verdict, each with its reason.
+   - `draft-lever-content` when the verdict is revise and the wording must change.
+   - `plan-prototype-test` when a few people from the audience should see the revised draft before launch.
+   - `select-intervention-levers` when the verdict is stop and the team needs another approach.
+   - The ethics board, a safeguarding lead, or people from the audience, for what this review could not assess.
 
 See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Ethics review
+<Two or three plain sentences to the user: the verdict, the one thing that decided it, and that the decision to launch stays with them.>
 
-**Intervention:** <one paragraph: what is delivered, by whom, to whom, and how it is meant to work>
-**Deliverer's hold over the audience:** <the relationship; children or dependents: none / who>
+# Ethics review: <the intervention, in a few words>
 
-## Type
-- **Transparent:** <yes / no: whether people can tell who is influencing them, how, and why>
-- **Avoidable:** <yes / no: whether it works through a conscious choice the least powerful person could decline>
-- **Rule for this type:** <the rule from step 3>
-- **Conditions:** <each condition of the rule: met / not met, with the reason>
+**The intervention:** <one paragraph: what is delivered, by whom, to whom, and how it is meant to work>
+**The deliverer's hold over the audience:** <the relationship; children or dependents: none / who>
 
-## Checks
+## What kind of influence this is
+- **Can people tell they are being influenced, by whom, and why?** <yes / no, and why>
+- **Can the least powerful person in the audience decline it?** <yes / no: whether it works through a choice they could turn down>
+- **What the OECD toolkit asks of this kind of influence:** <the rule from step 3>
+- **Whether the draft meets that:** <each condition: met / not met, with the reason>
+
+## Six checks
 
 | Check | Rating | Reason |
 |---|---|---|
-| Transparency | <pass / concern / fail / cannot assess> | <the plain disclosure; whether the intervention survives it> |
-| Way out | <...> | <how a person declines; steps; cost; who sees it> |
-| Whose interest | <...> | <who benefits, by whose judgment> |
+| Transparency: would it still work if people were told? | <pass / concern / fail / cannot assess> | <the plain disclosure; whether the intervention survives it> |
+| Way out: how easy is it to say no? | <...> | <how a person declines; steps; cost; who sees it> |
+| Whose interest it serves | <...> | <who benefits, by whose judgment> |
 | Who bears the cost | <...> | <who is left out, exposed, or worse off> |
-| Pressure | <...> | <the shame, fear, or deception relied on; or none> |
+| Pressure: shame, fear, or deception | <...> | <what it relies on; or none> |
 | Responsibility and data | <...> | <consequences people did not knowingly choose; what is collected; who sees it> |
 
 ## Verdict: <GO / REVISE / STOP>
 <two to four sentences pointing at the rule and the rows that decided it>
 
-## Changes required before launch
-1. <a specific change; or "None.">
+## What would need to change before launch
+1. <a specific change; or "Nothing.">
 
 ## Questions for an ethics board
 - <a research-ethics question; or "None identified.">
@@ -121,7 +122,23 @@ See `references/worked-example.md` for a complete run.
 
 ## What this review could not assess
 - <the missing fact, and who can supply it>
+
+## Where you could go from here
+<One line saying the review is done.>
+- <A next move that fits this verdict>: <why it would help, and when it fits>
+- <Another next move>: <why, and when>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

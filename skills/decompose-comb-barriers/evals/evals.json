@@ -8,12 +8,12 @@
       "expected_output": "A set of COM-B barrier hypotheses in the output template, ranked, with the first one or two to check labeled provisional.",
       "files": [],
       "assertions": [
-        "Restates the behavior as given.",
-        "Lists at least one hypothesis under each of the six sub-components.",
-        "Every capability hypothesis has a persistence test line with an answer.",
-        "Every hypothesis has a question and a 'discriminates because' line that names a different answer under a rival hypothesis.",
-        "The ranking table gives each hypothesis an evidence rating with its source and a cost of checking.",
-        "Labels the top hypotheses provisional and proposes no intervention."
+        "Opens with a few plain sentences to the user before the list, and restates the behavior as given.",
+        "Lists at least one possible reason under each of the six COM-B parts.",
+        "Every capability reason says whether it would remain with full information, full access, and no social cost.",
+        "Every reason has a question and says what answer it predicts against the answer a named rival predicts.",
+        "Gives each reason an evidence rating with its source and a cost of checking, labels the order provisional, and proposes no intervention.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction such as 'Check first'."
       ]
     },
     {
@@ -23,9 +23,9 @@
       "expected_output": "The skill asks for one behavior stated as who does what, when, and for what is known about the setting, and produces nothing else.",
       "files": [],
       "assertions": [
-        "Says 'saving enough' is an outcome and asks for the behavior as who does what, when.",
+        "Says 'saving enough' is an outcome and asks for the behavior as who does what, when, saying why it needs it.",
         "Asks what is known about the setting or the audience.",
-        "Does not list any hypothesis.",
+        "Does not list any possible reason.",
         "Does not produce a ranking table."
       ]
     },
