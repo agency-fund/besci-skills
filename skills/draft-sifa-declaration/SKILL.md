@@ -69,7 +69,7 @@ The fixed rule for a 2, the roles-not-performed list, and the self-report line a
 
 1. **Write the header:** the work, the people accountable, every AI tool used (name, provider, version) or "none", and the basis line: self-reported by the authors on the date, not an audit.
 2. **Walk all fourteen roles.** A role with any AI use appears, however trivial the team thinks it; a grammar pass is AI use in Writing – review & editing. List roles nobody performed, with the reason, so an omission reads as a decision.
-3. **Name the people in each role, each with a level** (Sole, Lead, Equal, Support): no one beside a Sole, only Support beside a Lead, at least one Lead, Equal, or Sole overall. A tool is never a contributor.
+3. **Name the people in each role, each with a level** (Sole, Lead, Equal, Support): no one beside a Sole, only Support beside a Lead, all Equal if any is Equal, at least one Lead, Equal, or Sole overall. A tool is never a contributor (this skill's rule).
 4. **Record each person's AI use in each role:** the tool; what it did, what the person did with its output, and why; generative (new content) or non-generative (improving existing content); and the audit trail, a link to prompts or chat logs, or "none kept".
 5. **Rate each person's extent:** 0 none, 1 some, 2 extensive. sIfA leaves this to the authors and lists signs of substantial use: AI made decisions affecting results, or generated or analyzed content, data, or images. Fixed rule: a tool that produced the first version of the person's work makes it a 2, however heavily edited.
 6. **Test each entry:** could a skeptical reader tell what the tool produced from what the people produced? "AI was used responsibly" fails.

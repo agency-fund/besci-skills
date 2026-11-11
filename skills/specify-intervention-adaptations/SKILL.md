@@ -74,7 +74,7 @@ If 1 is missing, ask and stop: there is nothing to compare changes against. If 2
 3. **Log each change on the template's eight fields.** Unplanned changes made in the field go in the same log as decisions.
 4. **Judge fidelity** against step 2. Consistent: within what may vary. Inconsistent: removes a component or crosses what may not vary. Unknown: nothing shows whether the change keeps the job, or whether the part is core; say what would settle it. Judge by the job, not the look: a shorter session that keeps the job is consistent; an intact-looking one that lost it is not.
 5. **Judge the changes together**, and flag each change that is inconsistent or leaves a job in doubt. Several consistent changes can still leave a job undone. If they do, or if any change is inconsistent, write that this version is a different intervention, which the original evidence does not cover.
-6. **For a move to a new context**, follow ADAPT: compare the contexts on what the jobs depend on, plan adaptations with the people who will deliver and receive it, pilot or evaluate as far as the uncertainty warrants, and name who keeps the record.
+6. **For a move to a new context**, follow ADAPT: compare the contexts on what the jobs depend on, plan adaptations with the people who will deliver and receive it, pilot or evaluate as far as the uncertainty warrants, and plan how the adapted version will be maintained. Then name who keeps the record.
 
 See `references/worked-example.md` for a complete run.
 

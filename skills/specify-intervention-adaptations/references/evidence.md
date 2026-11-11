@@ -21,9 +21,9 @@ Searched November 2026. The skill is a recording procedure, so this table record
 |---|---|---|---|
 | [Skivington et al. (2021)](https://doi.org/10.1136/bmj.n2061) | Framework paper; full text | United Kingdom | No test of the variation rule is reported |
 | [Wiltsey Stirman, Baumann & Miller (2019)](https://doi.org/10.1186/s13012-019-0898-y) | Framework paper; full text | United States authors; built from 170 articles and 55 interviews | Key aspects of the 2013 version showed high rater agreement; the authors list validating the updated framework's measurement as future research |
-| [Moore et al. (2021)](https://doi.org/10.1136/bmj.n1679) | Consensus guidance from reviews, interviews, and a Delphi exercise; full text | Authors in the United Kingdom, Germany, and Australia; examples include an autism intervention moved from higher-income countries to South Asia by shifting delivery to non-specialists | No test of the guidance is reported |
+| [Moore et al. (2021)](https://doi.org/10.1136/bmj.n1679) | Consensus guidance from reviews, interviews, and a Delphi exercise; full text | Authors in the United Kingdom, Germany, Australia, and Canada; examples include an autism intervention moved from higher-income countries to South Asia by shifting delivery to non-specialists | No test of the guidance is reported |
 | [Walton & Wilson (2018)](https://doi.org/10.1037/rev0000115) | Review; full text | United States, in the example used here | Identity phrasing raised turnout in one context and not in another where its assumption did not hold |
-| [WHO & ExpandNet (2010)](https://www.who.int/publications/i/item/9789241500319), [(2011)](https://www.who.int/publications/i/item/9789241502320) | Practitioner guides; full text | Grew out of health programs in Africa, Asia, and Latin America | No test of the method is reported |
+| [WHO & ExpandNet (2010)](https://www.who.int/publications/i/item/9789241500319), [(2011)](https://www.who.int/publications/i/item/9789241502320) | Practitioner guides; full text | Written for health programs; the 2011 guide gives no country cases | No test of the method is reported |
 
 What depends on the place is which components are core. The reporting framework's own example: a part that teaches basic health literacy may be essential for one population and less needed for another.
 
