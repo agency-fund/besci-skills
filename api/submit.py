@@ -66,11 +66,11 @@ REVIEWER_CHECKLIST = """\
 - [ ] Atomic: one thing a behavioral scientist does, no "and"
 - [ ] Trigger rule (`description` + "When to use it") is precise and names adjacent intents
 - [ ] "Before you start" asks the right questions, or its "Not applicable" reason holds up
-- [ ] Evidence is real, cited correctly, with WEIRD skew and replication status
+- [ ] Evidence is real, cited correctly, with where it has been tested and its replication status
 - [ ] Output template is complete enough to judge a run by
 - [ ] Failure modes are honest and specific
 - [ ] Escalation point is concrete, or its "Not applicable" reason holds up
-- [ ] Evals are realistic prompts, at least three
+- [ ] The four named test cases are realistic prompts with assertions a reviewer can tick
 - [ ] At merge: set `status: published`, fill `reviewed_by`, confirm CHANGELOG entry
 """
 

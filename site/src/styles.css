@@ -213,11 +213,13 @@ dl { margin: 0; }
 
 /* ---------- code rows with copy ---------- */
 .code-row { display: flex; align-items: stretch; border: 1px solid var(--border); border-radius: var(--r-row); background: var(--surface-2); margin: 0.5rem 0; overflow: hidden; }
-.code-row pre { flex: 1; margin: 0; padding: 0.75rem 1rem; background: none; border: 0; border-radius: 0; font-size: 0.875rem; min-width: 0; }
+.code-row pre { flex: 1; margin: 0; padding: 0.75rem 1rem; background: none; border: 0; border-radius: 0; font-size: 0.875rem; min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .code-row .code-label { display: none; }
 .code-row.labeled { flex-wrap: wrap; }
 .code-row.labeled .code-label { display: block; width: 100%; font-size: 0.8125rem; font-weight: 500; color: var(--fg-3); padding: 0.55rem 1rem 0; }
 .code-row.wrap-code pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+/* Templates and prompts wrap inside their box; script source keeps its lines and scrolls. */
+.skill-section pre, .file-body pre:not(.code-file), .case pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .copy { border: 0; border-left: 1px solid var(--border); background: transparent; color: var(--fg-2); padding: 0 0.95rem; cursor: pointer; font: inherit; font-size: 0.8125rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; transition: color var(--t-fast), background var(--t-fast); }
 .copy:hover { color: var(--fg); background: var(--surface-3); }
 .copy svg { width: 15px; height: 15px; }
@@ -693,6 +695,8 @@ body.has-tray { padding-bottom: 92px; }
 .skill-head h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; line-height: 1.06; margin: 0.25rem 0 0.6rem; max-width: 24ch; }
 .skill-name-row { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; font-family: var(--mono); font-size: 0.875rem; color: var(--fg-2); margin: 0; }
 .skill-what { font-size: 1.1875rem; color: var(--fg-2); max-width: 62ch; margin: 1rem 0 0; line-height: 1.55; }
+.skill-adds { font-size: 1rem; color: var(--fg-2); max-width: 62ch; margin: 0.75rem 0 0; line-height: 1.55; }
+.skill-adds b { color: var(--fg); font-weight: 600; }
 .skill-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.5rem; margin-top: 2rem; align-items: start; }
 .skill-main { min-width: 0; }
 .skill-side { position: sticky; top: calc(var(--header-h) + 16px); display: flex; flex-direction: column; gap: 1rem; font-size: 0.9375rem; }

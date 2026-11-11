@@ -62,10 +62,43 @@ MIN_DONT_USE_BULLETS = 2
 
 REQUIRED_METADATA = ["type", "stage", "version", "status", "authors", "org"]
 KNOWN_METADATA = set(REQUIRED_METADATA) | {
-    "title", "weird", "tags", "consumes", "produces", "reviewed_by",
+    "title", "tested_in", "weird", "tags", "consumes", "produces", "reviewed_by",
     "created", "updated", "catalog_snapshot",
 }
 MIN_EVALS = 3
+
+# --- The November 2026 standard ---------------------------------------------
+# These rules apply to atomic skills. While STRICT_V2 is False a breach is a
+# warning, so skills written to the first standard still pass; the change that
+# finishes rewriting them sets it to True, and the same breaches become errors.
+STRICT_V2 = False
+
+TESTED_IN_IDS = ["beyond-western-holds", "beyond-western-differs", "mainly-western", "not-applicable"]
+# metadata.weird was the earlier name of metadata.tested_in. Old values map to new ones.
+TESTED_IN_LEGACY = {
+    "weird-only": "mainly-western",
+    "untested-outside-weird": "mainly-western",
+    "mixed-evidence": "beyond-western-differs",
+    "likely-generalizes": "beyond-western-holds",
+    "not-applicable": "not-applicable",
+}
+ADDS_LABEL = "**What this adds:**"
+EVIDENCE_LABEL = "**Where the evidence comes from:**"
+REPLICATION_LABEL = "**Replication status:**"
+SOFT_MAX_WORDS = 1000          # SKILL.md body, not counting the output template's code block
+SOFT_MAX_DESCRIPTION = 600     # the hard cap from the Agent Skills spec stays 1024
+REQUIRED_REFERENCES = {
+    "references/worked-example.md": ["The request", "The output"],
+    "references/evidence.md": ["Sources", "Where it has been tested", "Replication", "What to check locally"],
+}
+CASE_ROLES = ["Full run", "Missing context", "Near the escalation point", "Wrong skill"]
+REVIEW_ROLE_PREFIX = "From an expert review"
+MIN_ASSERTIONS, MAX_ASSERTIONS = 3, 6
+SOFT_MAX_EXPECTED_WORDS = 60
+# Notes about how a skill was drafted or checked belong in the changelog or the
+# repository's planning files, not in the text a user or the AI reads.
+PROCESS_TERMS = ["dossier", "verified-crossref", "verified-fetch", "author to confirm", "plan-only citation"]
+SKILL_NAME_IN_TEXT_RE = re.compile(r"`([a-z]+(?:-[a-z0-9]+)+)`")
 MAX_SKILL_MD_LINES = 500
 MAX_FILE_BYTES = 2 * 1024 * 1024
 MAX_FOLDER_BYTES = 10 * 1024 * 1024
@@ -125,6 +158,13 @@ class Skill:
     def warn(self, code: str, message: str, file: str = "SKILL.md") -> None:
         self.findings.append(Finding("warning", code, message, file))
 
+    def v2(self, number: str, message: str, file: str = "SKILL.md") -> None:
+        """A rule from the November 2026 standard: a warning until STRICT_V2 is on, then an error."""
+        if STRICT_V2:
+            self.error("E" + number, message, file)
+        else:
+            self.warn("W" + number, message, file)
+
 
 # ---------------------------------------------------------------------------
 # Taxonomy
@@ -162,7 +202,7 @@ def load_taxonomy(path: Optional[str] = None) -> dict:
         "stages": [{"id": s} for s in ["define", "diagnose", "design", "measure", "test", "analyze", "implement", "other"]],
         "types": ["atomic", "meta"],
         "statuses": ["draft", "published", "deprecated"],
-        "weird_statuses": [{"id": s} for s in ["weird-only", "mixed-evidence", "likely-generalizes", "untested-outside-weird", "not-applicable"]],
+        "tested_in": [{"id": s} for s in TESTED_IN_IDS],
         "verbs": [],
         "io_types": [],
     }
@@ -247,6 +287,53 @@ def split_list(value: Optional[str]) -> List[str]:
     return [v.strip() for v in str(value).split(",") if v.strip()]
 
 
+def strip_fences(text: str) -> str:
+    """The text with fenced code blocks removed."""
+    out, in_fence = [], False
+    for line in text.splitlines():
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+            continue
+        if not in_fence:
+            out.append(line)
+    return "\n".join(out)
+
+
+def word_count(text: str) -> int:
+    return len(text.split())
+
+
+def level2_headings(text: str) -> List[str]:
+    return [ln[3:].strip() for ln in strip_fences(text).splitlines() if ln.startswith("## ")]
+
+
+def read_text(skill: "Skill", rel: str) -> Optional[str]:
+    full = os.path.join(skill.path, rel)
+    if not os.path.exists(full):
+        return None
+    try:
+        with open(full, "r", encoding="utf-8") as fh:
+            return fh.read()
+    except (OSError, UnicodeDecodeError):
+        return None
+
+
+def tested_in_value(metadata: dict) -> str:
+    """metadata.tested_in, or the value the earlier metadata.weird maps to."""
+    t = str(metadata.get("tested_in", "")).strip()
+    if t:
+        return t
+    return TESTED_IN_LEGACY.get(str(metadata.get("weird", "")).strip(), "")
+
+
+def labelled_line(section_text: str, label: str) -> str:
+    """The text that follows a bold label such as '**What this adds:**', up to the next blank line."""
+    if label not in section_text:
+        return ""
+    rest = section_text.split(label, 1)[1]
+    return " ".join(rest.split("\n\n", 1)[0].split()).strip()
+
+
 def parse_skill(folder: str) -> Skill:
     """Read a skill folder into a Skill. Parsing problems are recorded as findings."""
     folder = os.path.abspath(folder.rstrip("/"))
@@ -309,7 +396,7 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     stages = _ids(taxonomy.get("stages"))
     types = _ids(taxonomy.get("types"))
     statuses = _ids(taxonomy.get("statuses"))
-    weird = _ids(taxonomy.get("weird_statuses"))
+    tested = _ids(taxonomy.get("tested_in")) or TESTED_IN_IDS
     verbs = [str(v) for v in taxonomy.get("verbs") or []]
     io_types = _ids(taxonomy.get("io_types"))
 
@@ -334,6 +421,8 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         d = desc.strip()
         if len(d) > 1024:
             skill.error("E006", f"description is {len(d)} characters; the spec caps it at 1024.")
+        elif len(d) > SOFT_MAX_DESCRIPTION and str(md.get("type", "")).strip() == "atomic":
+            skill.warn("W044", f"description is {len(d)} characters. Aim for about 500: the 'use when', the 'do not use when', and no citations. besci-navigator does the routing, so it need not hold every phrasing.")
         if "<" in d or ">" in d:
             skill.error("E006", "description must not contain '<' or '>' characters.")
         low = d.lower()
@@ -376,11 +465,23 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     if status and statuses and status not in statuses:
         skill.error("E015", f"metadata.status '{status}' must be one of {statuses}.")
     if mtype == "atomic":
-        w = str(md.get("weird", "")).strip()
-        if not w:
-            skill.error("E018", "metadata.weird is required for atomic skills: how far the evidence has been tested outside WEIRD samples.")
-        elif weird and w not in weird:
-            skill.error("E018", f"metadata.weird '{w}' must be one of {weird}.")
+        t_in = str(md.get("tested_in", "")).strip()
+        legacy = str(md.get("weird", "")).strip()
+        if t_in:
+            if t_in not in tested:
+                skill.error("E018", f"metadata.tested_in '{t_in}' must be one of {tested}.")
+            if legacy:
+                skill.v2("040", "metadata.weird is the earlier name of metadata.tested_in. Remove it.")
+        elif legacy:
+            if legacy not in TESTED_IN_LEGACY:
+                skill.error("E018", f"metadata.weird '{legacy}' is not a known value. Use metadata.tested_in with one of {tested}.")
+            else:
+                skill.v2("040", f"metadata.weird is now metadata.tested_in. Replace 'weird: {legacy}' with 'tested_in: {TESTED_IN_LEGACY[legacy]}', or the value the skill's evidence scan supports.")
+        else:
+            skill.error("E018", f"metadata.tested_in is required for atomic skills: where the evidence has been tested. One of {tested}.")
+        produces = split_list(md.get("produces"))
+        if len(produces) != 1:
+            skill.v2("049", f"metadata.produces must name exactly one output, the thing the output template is (found {len(produces)}).")
     if mtype == "atomic" and name and verbs:
         first = name.split("-")[0]
         if first not in verbs:
@@ -437,9 +538,13 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     if out and "```" not in out:
         skill.warn("W028", "'## Output template' has no fenced code block. Show the exact shape of the response in a ```markdown block.")
 
+    if mtype == "atomic":
+        _validate_v2_body(skill, verbs)
+        _validate_v2_references(skill)
+
     # --- evals -------------------------------------------------------------
     if skill.evals is None and not any(f.code == "E029" for f in skill.findings):
-        skill.error("E029", "evals/evals.json is missing. Every skill ships at least three realistic test prompts.", file="evals/evals.json")
+        skill.error("E029", "evals/evals.json is missing. Every skill ships realistic test prompts: four named cases for an atomic skill.", file="evals/evals.json")
     elif isinstance(skill.evals, dict):
         if skill.evals.get("skill_name") != name:
             skill.error("E029", f"evals.json 'skill_name' must be '{name}'.", file="evals/evals.json")
@@ -451,6 +556,8 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
                 for k in ("id", "prompt", "expected_output"):
                     if not isinstance(c, dict) or not str(c.get(k, "")).strip():
                         skill.error("E029", f"evals.json case {i} is missing '{k}'.", file="evals/evals.json")
+            if mtype == "atomic":
+                _validate_v2_cases(skill, [c for c in cases if isinstance(c, dict)])
 
     # --- changelog ---------------------------------------------------------
     if skill.changelog is None:
@@ -489,6 +596,83 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     return skill
 
 
+def _validate_v2_body(skill: Skill, verbs: List[str]) -> None:
+    """Rules the November 2026 standard adds to an atomic skill's SKILL.md."""
+    what = skill.sections.get("What it does", "")
+    if what and not labelled_line(what, ADDS_LABEL):
+        skill.v2("041", f"'## What it does' needs a line starting {ADDS_LABEL} that names what the skill makes the AI do that it would not do unprompted: a fixed output, a required check, a decision rule, verified sources, or a search or script call.")
+    draws = skill.sections.get("What it draws on", "")
+    if draws:
+        for label in (EVIDENCE_LABEL, REPLICATION_LABEL):
+            if not labelled_line(draws, label):
+                skill.v2("042", f"'## What it draws on' needs a note starting {label}")
+
+    counted = []
+    for heading, text in skill.sections.items():
+        counted.append(strip_fences(text) if heading == "Output template" else text)
+    words = word_count("\n".join(counted))
+    if words > SOFT_MAX_WORDS:
+        skill.warn("W043", f"SKILL.md is {words} words, not counting the output template. Aim for about {SOFT_MAX_WORDS}: keep a sentence only if deleting it would change what the AI does or what the reader decides, and move evidence detail to references/evidence.md.")
+
+    # Another skill is named only where the reader is told where to go instead.
+    own = skill.name
+    named = set()
+    for heading, text in skill.sections.items():
+        if heading == "When to use it":
+            subs = split_subsections(text)
+            text = "\n".join(v for k, v in subs.items() if k != DONT_USE_WHEN_SUBHEADING)
+        for m in SKILL_NAME_IN_TEXT_RE.findall(strip_fences(text)):
+            if m != own and (not verbs or m.split("-")[0] in verbs):
+                named.add(m)
+    if named:
+        skill.warn("W051", f"Names other skills outside '### {DONT_USE_WHEN_SUBHEADING}': {', '.join(sorted(named))}. Describe an input by what it is, not by which skill made it; people bring inputs from anywhere.")
+
+    _warn_process_terms(skill, "SKILL.md", skill.body)
+
+
+def _warn_process_terms(skill: Skill, rel: str, text: str) -> None:
+    low = text.lower()
+    found = [term for term in PROCESS_TERMS if term in low]
+    if found:
+        skill.warn("W050", f"Mentions how the skill was drafted or checked ({', '.join(found)}). Keep that in CHANGELOG.md; leave out anything that could not be verified.", file=rel)
+
+
+def _validate_v2_references(skill: Skill) -> None:
+    """Every atomic skill carries a worked example and an evidence file with fixed headings."""
+    for rel, headings in REQUIRED_REFERENCES.items():
+        text = read_text(skill, rel)
+        if text is None:
+            skill.v2("045", f"{rel} is missing. Every atomic skill carries a worked example and an evidence file.", file=rel)
+            continue
+        present = level2_headings(text)
+        missing = [h for h in headings if h not in present]
+        if missing:
+            skill.warn("W046", f"{rel} is missing the heading(s): {', '.join('## ' + h for h in missing)}.", file=rel)
+    for rel in skill.files:
+        if rel.startswith("references/") and rel.endswith(".md"):
+            text = read_text(skill, rel)
+            if text:
+                _warn_process_terms(skill, rel, text)
+
+
+def _validate_v2_cases(skill: Skill, cases: List[dict]) -> None:
+    """Four named test cases in a fixed order, each with statements a reviewer can tick."""
+    names = [str(c.get("name", "")).strip() for c in cases]
+    if names[:len(CASE_ROLES)] != CASE_ROLES:
+        skill.v2("047", f"evals.json needs four cases named, in this order: {', '.join(CASE_ROLES)}. Found: {', '.join(n or '(no name)' for n in names[:len(CASE_ROLES)]) or 'none'}.", file="evals/evals.json")
+    for n in names[len(CASE_ROLES):]:
+        if not n.startswith(REVIEW_ROLE_PREFIX):
+            skill.v2("047", f"evals.json: a case after the first four is named '{REVIEW_ROLE_PREFIX} #<issue>' and reproduces what that review reported (found '{n or '(no name)'}').", file="evals/evals.json")
+    for i, c in enumerate(cases):
+        label = names[i] or f"case {i}"
+        asserts = c.get("assertions")
+        ok = isinstance(asserts, list) and all(isinstance(a, str) and a.strip() for a in asserts)
+        if not ok or not (MIN_ASSERTIONS <= len(asserts) <= MAX_ASSERTIONS):
+            skill.v2("048", f"evals.json '{label}': 'assertions' needs {MIN_ASSERTIONS} to {MAX_ASSERTIONS} short statements a reviewer can tick yes or no.", file="evals/evals.json")
+        if word_count(str(c.get("expected_output", ""))) > SOFT_MAX_EXPECTED_WORDS:
+            skill.warn("W052", f"evals.json '{label}': 'expected_output' is over {SOFT_MAX_EXPECTED_WORDS} words. Say it in one sentence and put the separate checks in 'assertions'.", file="evals/evals.json")
+
+
 # ---------------------------------------------------------------------------
 # Helpers other tools import
 # ---------------------------------------------------------------------------
@@ -521,13 +705,14 @@ def catalog_entry(skill: Skill) -> dict:
         "status": str(md.get("status", "")),
         "authors": split_list(md.get("authors")),
         "org": str(md.get("org", "")),
-        "weird": str(md.get("weird", "")),
+        "tested_in": tested_in_value(md),
         "tags": split_list(md.get("tags")),
         "consumes": split_list(md.get("consumes")),
         "produces": split_list(md.get("produces")),
         "reviewed_by": split_list(md.get("reviewed_by")),
         "sections": {k: v for k, v in skill.sections.items()},
         "what_it_does": skill.sections.get("What it does", "").strip().split("\n")[0],
+        "what_this_adds": labelled_line(skill.sections.get("What it does", ""), ADDS_LABEL),
         "use_when": should,
         "do_not_use_when": should_not,
         "eval_count": len(skill.evals.get("evals", [])) if isinstance(skill.evals, dict) else 0,

@@ -5,7 +5,8 @@ run_evals.py — run a library skill's evals through the Claude API and grade th
 Usage:
   python run_evals.py path/to/skill [--models claude-opus-5-5 claude-sonnet-5-5]
                                     [--runs 3] [--judge claude-opus-5-5]
-                                    [--baseline path/to/old-skill] [--catalog path/to/catalog.md]
+                                    [--baseline path/to/old-skill] [--no-skill-baseline]
+                                    [--catalog path/to/catalog.md]
                                     [--skip-trigger] [--skip-output] [--effort medium]
                                     [--out DIR] [--dry-run]
 
@@ -16,14 +17,19 @@ What it does:
      description and the neighbors' descriptions from the catalog snapshot.
   3. Output quality: for each eval case, runs the prompt with SKILL.md as the
      system prompt on each model, N times, then grades each output with the
-     rubric in references/rubric.md using the judge model.
+     rubric in references/rubric.md and against the case's own assertions,
+     using the judge model.
+  4. Comparison (optional): --baseline runs the same cases with an older
+     version of the skill; --no-skill-baseline runs them with no skill at
+     all, which shows what the skill adds over the model alone.
 
 Writes <skill>-workspace/eval-<timestamp>/report.md and results.json.
 
 Requires: pip install anthropic pyyaml. Credentials: ANTHROPIC_API_KEY, or an
 `ant auth login` profile (the SDK picks it up with no env var).
 
-Cost: roughly (cases x models x runs x 2) + (phrases) calls. Use --dry-run to
+Cost: roughly (cases x models x runs x 2) + (phrases) calls, and the same
+again for each comparison. Use --dry-run to
 see the plan and estimated call count without spending anything.
 """
 from __future__ import annotations
@@ -45,6 +51,8 @@ DEFAULT_MODEL = "claude-opus-5-5"
 RUBRIC_PATH = os.path.join(os.path.dirname(HERE), "references", "rubric.md")
 
 CRITERIA = ["asked_first", "template", "evidence", "mechanism", "escalation", "plain_language", "no_invention", "failure_modes"]
+# What the model is told when a case runs with no skill loaded.
+NO_SKILL_SYSTEM = "Answer the user's request."
 
 
 # ---------------------------------------------------------------------------
@@ -172,12 +180,25 @@ GRADER_SYSTEM = (
     "justification. Return JSON only with this shape: {\"scores\": {\"asked_first\": 0-2, \"template\": 0-2, "
     "\"evidence\": 0-2, \"mechanism\": 0-2, \"escalation\": 0-2, \"plain_language\": 0-2, \"no_invention\": 0-2, "
     "\"failure_modes\": 0-2}, \"justifications\": {same keys: one line each}, \"matches_expected\": true|false, "
+    "\"assertions\": [true|false for each numbered assertion, in order], "
     "\"blocking\": [\"...\"], \"excerpt\": \"the single most telling quote\"}"
 )
 
 
+def case_assertions(case: dict) -> List[str]:
+    """The case's assertions as plain strings (older files hold none)."""
+    out = []
+    for a in case.get("assertions") or []:
+        text = (a.get("text") or a.get("description") or "") if isinstance(a, dict) else str(a)
+        if text.strip():
+            out.append(text.strip())
+    return out
+
+
 def check_output(client, models: List[str], runs: int, judge: str, skill: bv.Skill, skill_md: str,
-                 effort: str, dry: bool, label: str = "candidate") -> Dict:
+                 effort: str, dry: bool, label: str = "candidate", use_skill: bool = True) -> Dict:
+    """Run every case and grade it. With use_skill=False the model answers with no skill loaded;
+    the judge still grades against the skill's rubric sections and the case's assertions."""
     rubric = load_rubric()
     cases = (skill.evals or {}).get("evals", [])
     out = {"label": label, "models": {}}
@@ -185,23 +206,29 @@ def check_output(client, models: List[str], runs: int, judge: str, skill: bv.Ski
         per_case = []
         for c in cases:
             run_results = []
+            asserts = case_assertions(c)
             for i in range(runs):
                 if dry:
                     run_results.append({"run": i + 1, "total": None, "scores": {}, "dry": True})
                     continue
-                r = call(client, model, skill_md, c["prompt"], effort)
+                r = call(client, model, skill_md if use_skill else NO_SKILL_SYSTEM, c["prompt"], effort)
                 if r["stop_reason"] == "refusal":
                     run_results.append({"run": i + 1, "total": 0, "scores": {}, "blocking": ["model refused the request"], "output": ""})
                     continue
                 grade_user = (
                     f"RUBRIC:\n{rubric}\n\nSKILL.md (for the sections the rubric refers to):\n{skill_md}\n\n"
                     f"USER PROMPT:\n{c['prompt']}\n\nEXPECTED OUTPUT (shape):\n{c.get('expected_output','')}\n\n"
-                    f"ACTUAL OUTPUT:\n{r['text']}\n\nGrade it. JSON only."
+                    f"ASSERTIONS (answer true or false for each, in order):\n"
+                    + ("\n".join(f"{n}. {a}" for n, a in enumerate(asserts, 1)) or "(none)")
+                    + f"\n\nACTUAL OUTPUT:\n{r['text']}\n\nGrade it. JSON only."
                 )
                 g = call(client, judge, GRADER_SYSTEM, grade_user, effort, max_tokens=4000)
                 j = parse_json(g["text"]) or {}
                 scores = {k: int(j.get("scores", {}).get(k, 0) or 0) for k in CRITERIA}
+                verdicts = j.get("assertions") if isinstance(j.get("assertions"), list) else []
+                verdicts = [bool(v) for v in verdicts[:len(asserts)]] + [False] * max(0, len(asserts) - len(verdicts))
                 run_results.append({
+                    "assertions": verdicts,
                     "run": i + 1,
                     "scores": scores,
                     "total": sum(scores.values()),
@@ -213,8 +240,12 @@ def check_output(client, models: List[str], runs: int, judge: str, skill: bv.Ski
                     "tokens": {"in": r["input_tokens"], "out": r["output_tokens"]},
                 })
             totals = [x["total"] for x in run_results if x.get("total") is not None]
+            passed = [sum(x["assertions"]) for x in run_results if "assertions" in x]
             per_case.append({
                 "id": c.get("id"),
+                "name": c.get("name", ""),
+                "assertions_total": len(asserts),
+                "assertions_passed": statistics.median(passed) if passed and asserts else None,
                 "prompt": c["prompt"][:160],
                 "runs": run_results,
                 "median": statistics.median(totals) if totals else None,
@@ -222,8 +253,11 @@ def check_output(client, models: List[str], runs: int, judge: str, skill: bv.Ski
                 "blocking": sorted({b for x in run_results for b in x.get("blocking", [])}),
             })
         medians = [p["median"] for p in per_case if p["median"] is not None]
+        a_total = sum(p["assertions_total"] for p in per_case if p["assertions_passed"] is not None)
+        a_passed = sum(p["assertions_passed"] for p in per_case if p["assertions_passed"] is not None)
         out["models"][model] = {
             "cases": per_case,
+            "assertions_share": (a_passed / a_total) if a_total else None,
             "median": statistics.median(medians) if medians else None,
             "blocking": sorted({b for p in per_case for b in p["blocking"]}),
         }
@@ -238,8 +272,14 @@ def fmt(x) -> str:
     return "n/a" if x is None else (f"{x:.2f}" if isinstance(x, float) else str(x))
 
 
+def assertions_cell(p: Dict) -> str:
+    if p.get("assertions_passed") is None:
+        return "n/a"
+    return f"{fmt(p['assertions_passed'])}/{p['assertions_total']}"
+
+
 def write_report(path: str, skill: bv.Skill, args, structure: Dict, trigger: Optional[Dict],
-                 output: Optional[Dict], baseline: Optional[Dict]) -> None:
+                 output: Optional[Dict], baseline: Optional[Dict], no_skill: Optional[Dict] = None) -> None:
     version = skill.metadata.get("version", "?")
     lines = [f"# Evaluation: {skill.name} v{version}  ({dt.date.today().isoformat()}, {', '.join(args.models)}, {args.runs} run(s) per case)", ""]
     blocking = []
@@ -267,22 +307,28 @@ def write_report(path: str, skill: bv.Skill, args, structure: Dict, trigger: Opt
     if output:
         lines += ["## 3. Output quality", ""]
         for m, d in output["models"].items():
-            lines += [f"### {m}  (median {fmt(d['median'])}/16)", "", "| Case | " + " | ".join(CRITERIA) + " | Matches expected | Median (range) |", "|---|" + "---|" * (len(CRITERIA) + 2)]
+            lines += [f"### {m}  (median {fmt(d['median'])}/16)", "", "| Case | " + " | ".join(CRITERIA) + " | Matches expected | Assertions passed | Median (range) |", "|---|" + "---|" * (len(CRITERIA) + 3)]
             for p in d["cases"]:
                 first = next((r for r in p["runs"] if r.get("scores")), {})
                 sc = first.get("scores", {})
-                lines.append(f"| {p['id']} | " + " | ".join(str(sc.get(k, '-')) for k in CRITERIA) + f" | {fmt(first.get('matches_expected'))} | {fmt(p['median'])} {p['range'] or ''} |")
+                case_label = f"{p['id']} {p.get('name') or ''}".strip()
+                lines.append(f"| {case_label} | " + " | ".join(str(sc.get(k, '-')) for k in CRITERIA) + f" | {fmt(first.get('matches_expected'))} | {assertions_cell(p)} | {fmt(p['median'])} {p['range'] or ''} |")
             lines += ["", "Blocking findings: " + ("; ".join(d["blocking"]) or "none"), ""]
             ex = next((r.get("excerpt") for p in d["cases"] for r in p["runs"] if r.get("excerpt")), "")
             if ex:
                 lines += [f"Representative excerpt: > {ex[:400]}", ""]
-    if output and len(output["models"]) > 1 or baseline:
-        lines += ["## 4. Model comparison", "", "| Model | Trigger P/R | Quality median | Blocking |", "|---|---|---|---|"]
+    if output and len(output["models"]) > 1 or baseline or no_skill:
+        lines += ["## 4. Comparison", "", "| Run | Trigger P/R | Quality median | Assertions passed | Blocking |", "|---|---|---|---|---|"]
+        share = lambda d: "n/a" if d.get("assertions_share") is None else f"{d['assertions_share']:.0%}"
         for m, d in (output or {}).get("models", {}).items():
-            lines.append(f"| {m} | {fmt(trigger['precision']) if trigger else 'n/a'}/{fmt(trigger['recall']) if trigger else 'n/a'} | {fmt(d['median'])} | {len(d['blocking'])} |")
+            lines.append(f"| {m}, with this skill | {fmt(trigger['precision']) if trigger else 'n/a'}/{fmt(trigger['recall']) if trigger else 'n/a'} | {fmt(d['median'])} | {share(d)} | {len(d['blocking'])} |")
         if baseline:
             for m, d in baseline["models"].items():
-                lines.append(f"| baseline {m} | - | {fmt(d['median'])} | {len(d['blocking'])} |")
+                lines.append(f"| {m}, with the older version | - | {fmt(d['median'])} | {share(d)} | {len(d['blocking'])} |")
+        if no_skill:
+            for m, d in no_skill["models"].items():
+                lines.append(f"| {m}, with no skill | - | {fmt(d['median'])} | {share(d)} | {len(d['blocking'])} |")
+            lines += ["", "The no-skill rows show what the model does on the same requests without the skill. The gap to the first rows is what the skill adds."]
         lines.append("")
     lines += ["## Next actions for the author", ""]
     acts = []
@@ -326,6 +372,7 @@ def main() -> int:
     ap.add_argument("--judge", default=DEFAULT_MODEL)
     ap.add_argument("--runs", type=int, default=3)
     ap.add_argument("--baseline", help="Path to an older version of the skill folder to compare against")
+    ap.add_argument("--no-skill-baseline", action="store_true", help="Also run every case with no skill loaded, to show what the skill adds")
     ap.add_argument("--catalog", help="Path to catalog.md (default: besci-navigator/references/catalog.md if found)")
     ap.add_argument("--effort", default="medium", choices=["low", "medium", "high", "xhigh", "max"])
     ap.add_argument("--skip-trigger", action="store_true")
@@ -355,8 +402,9 @@ def main() -> int:
     n_trigger = 0 if args.skip_trigger else len(trigger_cases(skill))
     n_output = 0 if args.skip_output else n_cases * len(args.models) * args.runs * 2
     n_base = 0 if not args.baseline or args.skip_output else n_cases * len(args.models) * args.runs * 2
+    n_bare = 0 if not args.no_skill_baseline or args.skip_output else n_cases * len(args.models) * args.runs * 2
     print(f"Plan: {skill.name} v{skill.metadata.get('version','?')} | models {args.models} | judge {args.judge} | runs {args.runs}")
-    print(f"Calls: trigger {n_trigger}, output {n_output}, baseline {n_base}, total {n_trigger + n_output + n_base}")
+    print(f"Calls: trigger {n_trigger}, output {n_output}, older version {n_base}, no skill {n_bare}, total {n_trigger + n_output + n_base + n_bare}")
 
     client = None if args.dry_run else get_client()
     trigger = None if args.skip_trigger else check_trigger(client, args.judge, skill, neighbors, args.effort, args.dry_run)
@@ -366,14 +414,17 @@ def main() -> int:
         b = load_skill(args.baseline)
         b_md = open(os.path.join(b.path, "SKILL.md"), encoding="utf-8").read()
         baseline = check_output(client, args.models, args.runs, args.judge, b, b_md, args.effort, args.dry_run, label="baseline")
+    no_skill = None
+    if args.no_skill_baseline and not args.skip_output:
+        no_skill = check_output(client, args.models, args.runs, args.judge, skill, skill_md, args.effort, args.dry_run, label="no skill", use_skill=False)
 
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M")
     out_dir = args.out or os.path.join(os.path.dirname(skill.path), f"{skill.name}-workspace", f"eval-{stamp}")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "results.json"), "w", encoding="utf-8") as fh:
         json.dump({"skill": skill.name, "version": skill.metadata.get("version"), "args": vars(args),
-                   "structure": structure, "trigger": trigger, "output": output, "baseline": baseline}, fh, indent=2, default=str)
-    write_report(os.path.join(out_dir, "report.md"), skill, args, structure, trigger, output, baseline)
+                   "structure": structure, "trigger": trigger, "output": output, "baseline": baseline, "no_skill": no_skill}, fh, indent=2, default=str)
+    write_report(os.path.join(out_dir, "report.md"), skill, args, structure, trigger, output, baseline, no_skill)
     print(f"Wrote {out_dir}/report.md")
     return 0
 

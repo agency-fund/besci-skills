@@ -11,10 +11,10 @@
 - [ ] `description` has a "Use when ..." clause and a "Do not use when ..." clause
 - [ ] All eight sections are present, in order: What it does, When to use it, Before you start, What it draws on, How to do it, Output template, Where it goes wrong, When to bring in a specialist
 - [ ] Any "Not applicable:" section gives a real reason
-- [ ] `evals/evals.json` has at least three realistic prompts with expected output shapes
+- [ ] `evals/evals.json` has the four named test cases, each a realistic prompt with assertions
 - [ ] `CHANGELOG.md` top entry matches `metadata.version`
 - [ ] If this answers an expert review, the CHANGELOG entry cites it ("Addresses expert review #42") and this PR says "Closes #42"
-- [ ] Evidence is cited, with WEIRD skew and replication status stated
+- [ ] Evidence is cited and checked, with where it has been tested and its replication status stated
 - [ ] I have read `DISCLOSURE.md` and understand that skill content may be processed by third-party AI systems when others use it
 
 ## Reviewer checklist (maintainer)
@@ -22,9 +22,9 @@
 - [ ] Atomic: one thing a behavioral scientist does, no "and"
 - [ ] Trigger rule (`description` + "When to use it") is precise and names adjacent intents
 - [ ] "Before you start" asks the right questions, or its "Not applicable" reason holds up
-- [ ] Evidence is real, cited correctly, with WEIRD skew and replication status
+- [ ] Evidence is real, cited correctly, with where it has been tested and its replication status
 - [ ] Output template is complete enough to judge a run by
 - [ ] Failure modes are honest and specific
 - [ ] Escalation point is concrete, or its "Not applicable" reason holds up
-- [ ] Evals are realistic prompts, at least three
+- [ ] The four named test cases are realistic prompts with assertions a reviewer can tick
 - [ ] At merge: set `metadata.status: published`, fill `metadata.reviewed_by`, confirm the CHANGELOG entry names the reviewer

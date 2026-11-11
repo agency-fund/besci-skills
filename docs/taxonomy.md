@@ -8,16 +8,16 @@ Where in a project a skill is normally used. Every skill declares one. The seven
 
 | Stage | Covers | BIT TEST | Busara AUDAS | TAF four-level evaluation |
 |---|---|---|---|---|
-| define | Turn a goal, population, or outcome into something specific enough to work on | Target | Assess | Level 0, theory of change |
+| define | Turn a goal, population, or outcome into something specific enough to work on | Target | Align | Level 0, theory of change |
 | diagnose | Explain why the current behavior pattern exists | Explore | Understand | Level 1, formative research |
 | design | Produce intervention content, levers, messages, strategy | Solution | Design | Level 1, prototype |
 | measure | Choose, adapt, or build instruments | Trial (measurement) | Assess | Level 2, outcome measures |
 | test | Plan a pilot, experiment, or evaluation | Trial | Assess | Level 3, experimental evaluation |
 | analyze | Analyze data from a test and interpret it | Trial (analysis) | Assess | Levels 3 and 4, analysis |
-| implement | Roll out, adapt, scale, and report | Scale | Scale | Level 4, scale and welfare |
+| implement | Roll out, adapt, scale, and report | Scale | Share | Level 4, scale and welfare |
 | other | Fits none of the above | | | |
 
-The crosswalk is a navigation aid. It does not claim the frameworks are equivalent, and a skill is not required to map to any of them. Sources: Behavioural Insights Team, *Test, Learn, Adapt* (2012) and *EAST* (2014); Busara, AUDAS framework (2025); The Agency Fund, four-level evaluation framework (https://eval.playbook.org.ai/).
+The crosswalk is a navigation aid. It does not claim the frameworks are equivalent, and a skill is not required to map to any of them. Sources: Behavioural Insights Team, *Test, Learn, Adapt* (2012) and *EAST* (2014); Busara, *The Busara toolkit* (Groundwork No. 10, 2024, https://doi.org/10.62372/WQSB6195), whose stages are Align, Understand, Design, Assess, Share; The Agency Fund, four-level evaluation framework (https://eval.playbook.org.ai/).
 
 Why one axis rather than two: the stage is what a program designer thinks in ("I'm at the point where I need to measure this"), and it is the axis the navigator walks. A second controlled axis for "what kind of operation" mostly restates the first and doubles maintenance. Finer cuts are tags.
 
@@ -29,9 +29,18 @@ Why one axis rather than two: the stage is what a program designer thinks in ("I
 
 `draft` while in review or when merged without review; `published` once a maintainer has approved it; `deprecated` when retired. Deprecated skills leave the catalog and plugin but stay in history.
 
-## WEIRD status
+## Tested in
 
-How far a skill's evidence base has been tested outside Western, Educated, Industrialized, Rich, Democratic samples: `weird-only`, `mixed-evidence`, `likely-generalizes`, `untested-outside-weird`, or `not-applicable` for procedural and meta skills. Required for atomic skills. The skill's "What it draws on" section says what a user elsewhere should check locally.
+Where the evidence behind a skill has been tested. Required for atomic skills, and set from the evidence scan described in `docs/skill-spec.md`.
+
+| Value | Label | What earns it |
+|---|---|---|
+| `beyond-western-holds` | Tested beyond wealthy Western countries; results hold | A systematic review, or at least two field studies outside wealthy Western countries, point the same way as the original evidence |
+| `beyond-western-differs` | Tested beyond wealthy Western countries; results differ | Studies outside wealthy Western countries exist, and their results differ from the original evidence or from each other |
+| `mainly-western` | Tested mainly in wealthy Western countries | The scan found fewer than two field studies outside wealthy Western countries |
+| `not-applicable` | Not applicable | The skill is a procedure that makes no claim about how people behave |
+
+Researchers call samples from wealthy Western countries WEIRD (Western, Educated, Industrialized, Rich, Democratic). Skills and the site use the plain wording. The field was called `weird` before November 2026.
 
 ## Verbs
 

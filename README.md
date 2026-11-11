@@ -155,11 +155,11 @@ Pick skills on the site to [build your own workflow](https://besci-skills.vercel
 
 A skill is a folder of instructions, scripts, and resources that an AI assistant loads when a task calls for it. Anthropic introduced the format for Claude, and it is now an [open standard](https://agentskills.io) that many other AI tools read. Until your request matches a skill, the assistant sees only its name and a short description. When it matches, the assistant loads the full instructions and follows them.
 
-Our bar is higher than a good prompt. A skill covers one method. It asks about your situation before it produces anything. It names the framework or evidence it is built on, and how far that evidence has been tested outside WEIRD (Western, Educated, Industrialized, Rich, and Democratic) samples. It says when not to use it, how it tends to go wrong, and when to bring in a specialist. Its output follows a fixed template. And it carries a version number and a changelog, so a project can cite exactly what it used.
+Our bar is higher than a good prompt. A skill covers one method. It asks about your situation before it produces anything. It names the framework or evidence it is built on, and how far that evidence has been tested outside wealthy Western countries. It says when not to use it, how it tends to go wrong, and when to bring in a specialist. Its output follows a fixed template. And it carries a version number and a changelog, so a project can cite exactly what it used.
 
 ```
 skills/decompose-comb-barriers/
-├── SKILL.md          trigger rule, stage, version, WEIRD status,
+├── SKILL.md          trigger rule, stage, version, where tested,
 │                     then eight fixed sections, from "What it
 │                     does" to "When to bring in a specialist"
 ├── evals/evals.json  realistic prompts + expected output shape

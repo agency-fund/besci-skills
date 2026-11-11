@@ -3,24 +3,51 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "A realistic request, written the way a program designer or M&E lead would actually type it, with the context they would actually give.",
-      "expected_output": "Which sections of the output template appear, what must be present, what must not be present.",
+      "name": "Full run",
+      "prompt": "A realistic request, written the way a program designer or M&E lead would type it, with the context they would give.",
+      "expected_output": "One sentence on what a good answer is.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "A statement a reviewer can tick yes or no.",
+        "A section or element that must be present.",
+        "Something that must not be present."
+      ]
     },
     {
       "id": 2,
-      "prompt": "A request that is missing a key piece of context, so the skill should ask its 'Before you start' questions instead of guessing.",
-      "expected_output": "The skill asks the required questions and does not produce the full output yet.",
+      "name": "Missing context",
+      "prompt": "A request that lacks a required input.",
+      "expected_output": "The skill asks its required questions and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks for <the missing required input>.",
+        "Does not produce the output template.",
+        "Does not ask for anything the request already gave."
+      ]
     },
     {
       "id": 3,
-      "prompt": "A request that approaches the escalation point.",
-      "expected_output": "The skill produces what it safely can and tells the user to bring in a specialist, naming which kind and why.",
+      "name": "Near the escalation point",
+      "prompt": "A request that meets one of the conditions under 'When to bring in a specialist'.",
+      "expected_output": "The skill produces what it safely can and names the specialist to consult.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Names <the kind of specialist>.",
+        "Says what to bring to them.",
+        "Does not present <the unsafe part> as settled."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wrong skill",
+      "prompt": "A request that belongs to a neighboring skill.",
+      "expected_output": "The skill says where to go instead and does not produce its output.",
+      "files": [],
+      "assertions": [
+        "Names <the neighboring skill>.",
+        "Does not produce the output template.",
+        "Says in one sentence why this request belongs there."
+      ]
     }
   ]
 }

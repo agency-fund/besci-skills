@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2 - 2026-11-10
+Wording only: says where a skill's evidence has been tested in plain words, following the renamed `tested_in` field. Edited with Claude.
+
 ## 0.1.1 - 2026-10-13
 Points the live-catalog fallback at the renamed repository, `agency-fund/besci-skills`. No change to behavior.
 

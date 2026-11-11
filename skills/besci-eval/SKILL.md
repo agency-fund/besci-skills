@@ -17,11 +17,11 @@ metadata:
   title: Behavioral science skill evaluator
   type: meta
   stage: other
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: not-applicable
+  tested_in: not-applicable
   tags: "meta, evaluation, regression"
   consumes: "skill-draft"
   produces: "eval-report"
@@ -63,7 +63,7 @@ Ask these one at a time unless already answered.
 5. Optional. A baseline: compare against the skill's previous version, or against no skill at all? Default: no baseline for a first run; previous version when re-testing after a change.
 6. Optional. Which other skills are installed alongside it? Triggering is judged relative to neighbors, so the catalog snapshot is used by default.
 
-If the skill has fewer than three evals, stop and send the author to besci-skill-creator; there is nothing to grade.
+If the skill lacks the four named test cases (Full run, Missing context, Near the escalation point, Wrong skill), stop and send the author to besci-skill-creator; there is nothing to grade.
 
 ## What it draws on
 
@@ -73,7 +73,7 @@ If the skill has fewer than three evals, stop and send the author to besci-skill
 - The grading rubric in `references/rubric.md`, derived from the eight sections every library skill has.
 - The partnership's intent that skills be re-testable when models change, so that a skill is a versioned artifact whose behavior is known, not a prompt that silently drifts.
 
-**WEIRD skew:** Not applicable to the evaluator. The rubric checks whether a skill surfaces its own WEIRD status when relevant.
+**Where the evidence comes from:** Not applicable to the evaluator. The rubric checks whether a skill says where its evidence has been tested when that is relevant.
 
 **Replication status:** Not applicable; this is a procedure. Single runs of a language model vary, which is why the script repeats each case and reports spread.
 
@@ -85,7 +85,7 @@ If the skill has fewer than three evals, stop and send the author to besci-skill
 
 **Check 3: Output quality.** For each case in `evals.json`, act as a fresh user sending that prompt to a model that has only this skill, produce the full response, then grade it with `references/rubric.md`: eight criteria, each scored 0, 1, or 2, with a one-line justification quoting the output. Compare against the case's `expected_output` and say whether the shape matched. Flag any invented citation, any output produced when the skill should have asked first, and any missed escalation as blocking. Where the script path is available, run each case three times per model and report the median and range; where it is not, run once and say so.
 
-**Script path.** `python scripts/run_evals.py <skill-folder> --models claude-opus-5-5 claude-sonnet-5-5 --runs 3` runs checks 2 and 3 through the Claude API, grades with the rubric using a judge model, and writes `<skill>-workspace/eval-<date>/report.md` and `results.json`. Add `--baseline <path-to-old-skill-folder>` to compare versions. The script needs `ANTHROPIC_API_KEY` or an `ant auth login` profile and the `anthropic` package. Estimate cost before running: cases × models × runs × roughly two calls.
+**Script path.** `python scripts/run_evals.py <skill-folder> --models claude-opus-5-5 claude-sonnet-5-5 --runs 3` runs checks 2 and 3 through the Claude API, grades with the rubric using a judge model, and writes `<skill>-workspace/eval-<date>/report.md` and `results.json`. Add `--baseline <path-to-old-skill-folder>` to compare versions, or `--no-skill-baseline` to run the same cases with no skill loaded, which shows what the skill adds over the model alone. Each output is graded with the rubric and against the case's own `assertions`. The script needs `ANTHROPIC_API_KEY` or an `ant auth login` profile and the `anthropic` package. Estimate cost before running: cases × models × runs × roughly two calls, and the same again for each comparison; `--dry-run` prints the count.
 
 **Reporting.** Fill the output template. Lead with the verdict: ready to submit, fix first, or not gradable. Keep the author's next action to one line per finding.
 

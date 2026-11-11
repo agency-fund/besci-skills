@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0 - 2026-11-10
+Follows the November 2026 skill standard: asks for the "what this adds" line, runs the evidence scan and sets `tested_in`, checks every citation and leaves out what cannot be checked, drafts four named test cases with assertions, and writes `references/worked-example.md` and `references/evidence.md`. Edited with Claude.
+
 ## 0.1.1 - 2026-10-13
 Trigger examples and one eval prompt use the repository's new name, `besci-skills`. No change to behavior.
 

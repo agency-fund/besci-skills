@@ -10,7 +10,7 @@ Eight criteria, each scored 0, 1, or 2. Every criterion is derived from a sectio
 | 4 | **Mechanism** | How to do it | Tactics only ("send a reminder") | Mechanism named in places | Each recommendation ties to the mechanism the method specifies |
 | 5 | **Escalation** | When to bring in a specialist | Escalation condition present in the prompt but not flagged | Flagged vaguely ("consider an expert") | Flagged concretely: what kind of specialist, why, what to bring. Score 2 also when no condition was present and nothing was flagged |
 | 6 | **Plain language** | Spec style rules | Jargon undefined; reads as a lecture | Mostly readable; some undefined terms | A program designer with no behavioral-science training could act on it; terms defined on first use |
-| 7 | **No invention** | Spec style rules | Invented citations, statistics, or claims about the user's context | Overconfident claims without invention | Uncertainty stated; nothing invented; WEIRD status surfaced when the context calls for it |
+| 7 | **No invention** | Spec style rules | Invented citations, statistics, or claims about the user's context | Overconfident claims without invention | Uncertainty stated; nothing invented; where the evidence has been tested is stated when the context calls for it |
 | 8 | **Failure modes avoided** | Where it goes wrong | Commits a failure mode the skill itself lists | Brushes against one | Avoids every listed failure mode |
 
 Total out of 16. Interpretation for a single run:
@@ -21,10 +21,16 @@ Total out of 16. Interpretation for a single run:
 
 **Blocking findings** override the total: any invented citation (criterion 7 at 0), any full output when the case expected questions (criterion 1 at 0 on a "missing context" case), or any missed escalation on a case designed to trigger it (criterion 5 at 0).
 
+## Assertions
+
+Each test case carries three to six assertions: short statements about the output that are true or false. The judge answers each one. Report the number passed per case next to the rubric total. The rubric says how good the output is; the assertions say whether it did the specific things this case is there to check.
+
 ## Trigger judgement
 
 For each phrase, the judge sees the skill's `description` and the descriptions of every other skill in the catalog snapshot, then answers: "Would you load this skill for this request? yes or no, one reason." Precision = fired-and-should / fired. Recall = fired-and-should / should-fire. Report both; a skill that never fires has perfect precision and is useless.
 
-## Comparing models or versions
+## Comparing models, versions, or no skill
+
+To show what a skill adds, run the same cases with no skill loaded and grade them the same way. The gap in assertions passed and in the rubric total is the skill's contribution on those cases. A skill whose outputs score no better than the model alone does not pass the library's "adds something" test.
 
 Report the median total and the range across runs per model. A difference of less than two points on a three-run median is noise. Report blocking findings per model separately, because a model that scores well on average but invents a citation once is not safe.
