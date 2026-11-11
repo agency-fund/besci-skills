@@ -37,6 +37,7 @@ PAIRS = [
     ("skills/besci-skill-creator/references/checklist.md", "skills/besci-eval/references/checklist.md"),
     ("template/shared/citing-sources.md", "skills/assess-evidence-base/references/citing-sources.md"),
     ("template/shared/citing-sources.md", "skills/assess-evidence-transferability/references/citing-sources.md"),
+    ("template/shared/citing-sources.md", "skills/estimate-expected-effect/references/citing-sources.md"),
 ]
 
 

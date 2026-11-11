@@ -236,6 +236,10 @@ io_types:
     label: Ethics review
     description: "A check of a drafted intervention before launch: who it serves, whether people are told and can decline, who could be harmed, and a verdict of go, revise, or stop."
     user_suppliable: false
+  - id: pilot-plan
+    label: Pilot plan
+    description: "A plan for a small-scale run of a program that tests whether it can be delivered and evaluated: the questions, the progression criteria fixed in advance, the sites and size, and what changes in the main design."
+    user_suppliable: false
   - id: prototype-test-plan
     label: Prototype test plan
     description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."

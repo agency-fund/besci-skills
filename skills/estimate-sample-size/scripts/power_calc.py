@@ -23,7 +23,7 @@ Self-test (python power_calc.py --self-test):
   Continuous outcome, d = 0.20, alpha = 0.05 two-sided, power = 0.80,
   individual randomization: 2 * (1.960 + 0.842)^2 / 0.04 = 392.4, so the
   script returns 393 per arm. Textbook tables that use the t distribution
-  give 394; the brief's "about 394 per arm" is the same case.
+  give 394 for the same case.
   Binary outcome, p0 = 0.30, p1 = 0.40, same alpha and power: 356 per arm,
   the standard uncorrected two-proportion result.
   Cluster check: d = 0.20 with m = 40 and icc = 0.10 gives DE = 4.9,
@@ -119,7 +119,11 @@ def mdes_binary(p0: float, n_eff: float, z_a: float, z_b: float, direction: str)
 
 
 def retrodesign(true_effect: float, se: float, z_a: float) -> dict:
-    """Gelman and Carlin (2014): power, Type S, and Type M for a true effect and SE."""
+    """Gelman and Carlin (2014): power, Type S, and Type M for a true effect and SE.
+
+    The quantities are symmetric in the sign of the effect, so a decrease is
+    handled by working with its size."""
+    true_effect = abs(true_effect)
     t = true_effect / se
     p_hi = 1.0 - norm_cdf(z_a - t)
     p_lo = norm_cdf(-z_a - t)
@@ -243,12 +247,15 @@ def run(args) -> int:
         for icc in iccs:
             row = f"{icc:<8.3f}"
             for k in mults:
+                if args.outcome == "binary" and not 0.0 < args.p0 + effect * k < 1.0:
+                    row += "n/a (rate > 1 or < 0)".rjust(22)
+                    continue
                 r = required_sample(args, effect * k, icc, z_a, z_b)
                 row += str(r["clusters_per_arm"] if args.cluster_size > 1 else r["n_per_arm"]).rjust(20)
             print("  " + row)
         if fixed:
             print(f"  MDES for the fixed sample by icc: "
-                  + "; ".join(f"icc {icc:.2f}: {fmt_effect(args, mdes_for(args, fixed, icc, z_a, z_b))}" for icc in iccs))
+                  + "; ".join(f"icc {icc:g}: {fmt_effect(args, mdes_for(args, fixed, icc, z_a, z_b))}" for icc in iccs))
         print()
 
     if args.true_effect is not None:
@@ -281,6 +288,8 @@ def self_test() -> int:
     checks.append(("MDES at 393 per arm -> 0.200 SD", abs(md - 0.20) < 0.001, round(md, 4)))
     rd = retrodesign(0.20, 0.20 / 2.802, z_a)
     checks.append(("retrodesign power ~0.80 when effect = 2.80 SE", abs(rd["power"] - 0.80) < 0.005, round(rd["power"], 3)))
+    neg = retrodesign(-0.20, 0.20 / 2.802, z_a)
+    checks.append(("retrodesign is the same for a decrease", all(abs(neg[k] - rd[k]) < 1e-12 for k in ("power", "type_s", "type_m")), (round(neg["type_s"], 4), round(neg["type_m"], 3))))
     ok = True
     for label, passed, got in checks:
         print(("PASS " if passed else "FAIL ") + label + f" (got {got})")

@@ -1,31 +1,24 @@
 ---
 name: estimate-expected-effect
 description: >-
-  Use when a team needs the effect size to plan a test around and the
-  numbers in hand come from published studies: "the paper found 12 points,
-  what should we expect?", "what effect size goes in the power calculation?",
-  "is d = 0.45 realistic for our SMS program?". Also use when a proposal or
-  power calculation carries a published or meta-analytic effect unchanged, or
-  when a team needs the smallest effect its decision would act on. Discounts
-  published estimates for publication bias, lab-to-field shrinkage,
-  and the academic-versus-practitioner gap (Maier et al. 2022; Ferraro and
-  Tracy 2022; DellaVigna and Linos 2022), keeps the expected effect separate
-  from the smallest effect worth detecting, and returns a planning range in
-  the outcome's units and in standard deviations. Do not use to judge
-  whether one study fits your setting; run assess-evidence-transferability
-  first and bring its verdict here. Not for the sample size
-  (estimate-sample-size), and not for finding what evidence exists
-  (assess-evidence-base).
+  Use when a team needs the effect size to plan a test on and has published
+  estimates in hand: "the paper found 12 points, what should we plan for?",
+  "what effect goes in the power calculation?", "is d = 0.45 realistic for
+  us?". Reads the studies, puts each estimate in the test's units, corrects
+  for selective publication and delivery at scale, and returns a range and
+  one number to plan on. Do not use to judge whether one study applies to
+  your setting; use assess-evidence-transferability. Not for the sample size;
+  use estimate-sample-size.
 license: CC-BY-4.0
 metadata:
   title: Set a realistic effect size to plan for
   type: atomic
   stage: test
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
-  weird: mixed-evidence
+  tested_in: beyond-western-holds
   tags: "evidence-synthesis, experimental-design, quantitative"
   consumes: "evidence-scan-brief"
   produces: "effect-size-benchmark"
@@ -33,73 +26,57 @@ metadata:
 
 ## What it does
 
-Turns the published effect sizes a team is relying on into a discounted planning range for one test.
+Sets the effect size a test should plan on from the published estimates a team supplies.
 
-Published effects are usually larger than the effects the same kinds of interventions produce when a program delivers them: the literature is selectively published, lab effects shrink in the field, and academic trials outperform practitioner trials several times over. This skill applies those discounts in a fixed order, shows the arithmetic, and reports two numbers that are often confused: the effect the team should expect, and the smallest effect its decision would act on. It does not compute a sample size, and it does not judge whether one study transfers; it consumes that judgment.
+**What this adds:** each estimate taken from the study's results and converted with the arithmetic shown; no size carried from lab studies; bias-corrected meta-analytic figures; a low end from unselected results or one sixth of the high end; the smallest effect worth acting on kept separate.
 
 ## When to use it
 
 ### Use it when
-- Someone asks "what effect size should we plan for?", "what goes in the power calculation?", or "is the number from that paper realistic for us?"
-- A proposal, theory of change, or power calculation carries a published or meta-analytic effect size unchanged (Mertens et al.'s d = 0.45, or "the trial found 12 points") as the program's expected effect
-- `assess-evidence-transferability` has returned a verdict and a provisional discount range, and the team needs a planning number from it
-- An evidence scan brief from `assess-evidence-base` lists several effect sizes and the team must pick one number to design around
-- A funder or reviewer asks "what is the smallest effect that would justify this program?" and nobody has separated that from the effect the team hopes for
+- Someone asks "what effect should we plan for?" or "is that paper's number realistic for us?"
+- A proposal or power calculation treats a published effect as the program's expected effect
+- A scan of the evidence turned up several estimates and the team needs one number
 
 ### Do not use it when
-- The question is whether one specific study applies to the user's population; `assess-evidence-transferability` judges fit on five dimensions, and this skill consumes its verdict
-- The team needs the sample size or the minimum detectable effect for a fixed sample; `estimate-sample-size` turns this skill's benchmark into those
-- Nobody has looked for evidence yet; `assess-evidence-base` finds what exists, with effect sizes where reported
-- The team needs the full cost-per-outcome comparison that sets a program's threshold; `estimate-cost-effectiveness` does that arithmetic, and this skill only names the cost inputs it needs
-- The primary outcome, comparison condition, and locked threshold are the question; `plan-evaluation-design` writes that plan and consumes this benchmark
+- The question is whether one study's finding applies to the user's setting; use `assess-evidence-transferability`
+- The team has an effect to plan on and needs the sample size; use `estimate-sample-size`
 
 ## Before you start
 
 Ask these before producing anything. Do not ask anything the user has already answered.
 
-1. **Required.** Every published estimate the team is relying on: citation (or the evidence scan brief entry), the effect with its unit (percentage points, percent change, standard deviations, odds ratio), the outcome measured, the sample size if given, and the source type: lab or online study, academic field trial, nudge-unit or practitioner trial, or meta-analysis, saying whether the meta-analysis reports a bias-corrected figure.
-2. **Required.** The outcome the test will measure, its unit, and its baseline: the control-group rate for a binary outcome, the mean and standard deviation for a continuous one, with the source of the baseline. The conversion between percentage points and standard deviations depends on it.
-3. **Required.** The decision the test informs: a pilot go or no-go, a scale-up, a policy, a funder report. The decision sets the smallest effect worth detecting and how conservative the range should be.
-4. Optional. A transferability verdict from `assess-evidence-transferability`, with its discount range.
-5. Optional. The cost per person of the intervention, or a threshold the program or sponsor has already stated (from `plan-evaluation-design` if it exists).
+1. **Required.** Each study behind the estimate (link, file, or full citation) and the number taken from it.
+2. **Required.** The test's outcome, unit, and baseline: the control-group rate, or the mean and standard deviation (SD).
+3. **Required.** Who will deliver the intervention, to how many people, and the decision it informs.
+4. Optional. The smallest effect the program would act on, or its cost and the outcome's value.
+5. Optional. Take-up: the share offered the intervention who will receive it.
 
-If 1 or 2 is missing, ask and stop. If 3 is missing, ask once; if still unknown, assume a pilot and say so. If 4 is missing, treat the evidence as not yet checked for fit and widen the low end of the range. If 5 is missing, mark the smallest effect worth detecting provisional and hand the cost arithmetic to `estimate-cost-effectiveness`.
+If 1, 2, or 3 is missing, ask and stop. If 4 is missing, write "not set". If 5 is missing, assume the source's take-up and say so.
 
 ## What it draws on
 
-- Mertens, S., Herberz, M., Hahnel, U. J. J., & Brosch, T. (2022). The effectiveness of nudging: A meta-analysis of choice architecture interventions across behavioral domains. *Proceedings of the National Academy of Sciences*, 119(1). https://doi.org/10.1073/pnas.2107346118
-- Maier, M., Bartoš, F., Stanley, T. D., Shanks, D. R., Harris, A. J. L., & Wagenmakers, E.-J. (2022). No evidence for nudging after adjusting for publication bias. *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2200300119
-- Szaszi, B., et al. (2022). No reason to expect large and consistent effects of nudge interventions. *Proceedings of the National Academy of Sciences* (letter). https://doi.org/10.1073/pnas.2200732119
-- DellaVigna, S., & Linos, E. (2022). RCTs to scale: Comprehensive evidence from two nudge units. *Econometrica*, 90(1), 81–116. https://doi.org/10.3982/ECTA18709
-- Ferraro, P. J., & Tracy, J. D. (2022). A reassessment of the potential for loss-framed incentive contracts to increase productivity: A meta-analysis and a real-effort experiment. *Experimental Economics*, 25(5), 1441–1466. https://doi.org/10.1007/s10683-022-09754-x
-- Hummel, D., & Maedche, A. (2019). How effective is nudging? A quantitative review on the effect sizes and limits of empirical nudging studies. *Journal of Behavioral and Experimental Economics*, 80, 47–58. https://doi.org/10.1016/j.socec.2019.03.005
-- Milkman, K. L., et al. (2021). Megastudies improve the impact of applied behavioural science. *Nature*, 600, 478–483. https://doi.org/10.1038/s41586-021-04128-4
-- Bryan, C. J., Tipton, E., & Yeager, D. S. (2021). Behavioural science is unlikely to change the world without a heterogeneity revolution. *Nature Human Behaviour*, 5(8), 980–989. https://doi.org/10.1038/s41562-021-01143-3
-- Kraft, M. A. (2020). Interpreting effect sizes of education interventions. *Educational Researcher*, 49, 241–253. https://doi.org/10.3102/0013189X20912798
-- Brandon, A., et al. (2017). Do the effects of nudges persist? Theory and evidence from 38 natural field experiments. NBER Working Paper 23277 (revised 2022). https://doi.org/10.3386/w23277
-- J-PAL. *Power calculations*. https://www.povertyactionlab.org/resource/power-calculations
+- Kettle, S., & Persian, R. (2022). *Target, Explore, Solution, Trial, Scale: An introduction to running simple behavioural insights projects*. The Behavioural Insights Team. https://www.bi.team/wp-content/uploads/2022/11/BIT-Handbook-How-to-run-simple-BI-projects.pdf Supports: the check on the central value. Communication interventions "often don't bring about a change that is larger than 2-3 percentage points".
+- Gupta, S., & Kopper, S. (2021). *Power calculations*. J-PAL Research Resources. https://www.povertyactionlab.org/resource/power-calculations Supports: diluting the effect by take-up; planning on the smallest gain the implementer would act on.
+- DellaVigna, S., & Linos, E. (2022). RCTs to scale: Comprehensive evidence from two nudge units. *Econometrica*, 90(1), 81–116. https://doi.org/10.3982/ECTA18709 Supports: the low end. Nudge trials (reminders, defaults, and similar changes to how a choice is presented) in journals averaged 8.7 percentage points; all trials of two US government nudge units averaged 1.4.
 
-Three gaps between published and delivered effects are documented. Publication bias: Mertens et al. pool more than 200 studies (more than 450 effect sizes, N ≈ 2.15 million) into d = 0.45 (95% CI 0.39–0.52) with moderate publication bias; Maier et al.'s bias-corrected re-analysis of the same literature gives about d = 0.04, and Szaszi et al. (2022) put the bias-adjusted range at d ≈ 0.03–0.31 and call the average misleading given heterogeneity. Lab-to-field: Ferraro and Tracy's loss-framed contracts pool to 0.16 SD, but 0.33 SD in the lab against 0.02 SD in the field. Academic-to-practitioner: across 126 RCTs and 23 million people, DellaVigna and Linos find academic journal studies average 8.7 percentage points (+33.4%) while nudge-unit trials average 1.4 points (+8.0%), with about 70% of the gap explained by selective publication combined with low power. Milkman et al.'s megastudy (61,293 people, 54 interventions) adds two cautions: only 8% of interventions produced effects that persisted after the program, and expert forecasts failed. Bryan, Tipton and Yeager argue that effects should be expected to vary across people and settings. Kraft supplies benchmarks for interpreting education effects, from US education RCTs; Hummel and Maedche (100 publications, 317 effect sizes) and Brandon et al. (persistence) are context. J-PAL's power-calculation guidance notes that effect sizes are usually set too optimistically. The judgment calls this skill adds, none of them published rules: the fixed order of discounts; the rule that a planning range never exceeds the best field evidence of the same source type; the two-number rule separating the expected effect from the smallest effect worth detecting; and the refusal to use Cohen's small-medium-large labels, which the dossier marks as not a planning benchmark.
+**Where the evidence comes from:** The one comparison of published with unselected results covers two US nudge units, so the one-sixth ratio is a US figure. A meta-analysis of tax-compliance nudges, a third run in low- and middle-income countries, found selective reporting and smaller effects there; a Kenyan teacher-contract program worked under an NGO, not under the government. The gap's size in any one setting is unknown.
 
-**WEIRD skew:** Every quantitative source is from high-income settings: Mertens, Maier and Szaszi pool a mostly Western literature; DellaVigna and Linos cover two US nudge units; Milkman et al. is a US gym; Kraft's benchmarks are US education RCTs. A user elsewhere should treat the discounts as the floor on how much to shrink a published number, not as a calibrated estimate for their setting, and should look for field trials in a comparable setting before fixing the central value. **Non-WEIRD evidence:** none found in the sources this skill draws on; the per-domain LMIC benchmarks the plan asked for are not in the dossier and are left for the author to add.
-
-**Replication status:** Mixed. The shrinkage itself is replicated across three independent comparisons (Mertens against Maier; lab against field in Ferraro and Tracy; academic against nudge-unit in DellaVigna and Linos), so discounting is not in dispute. The size of the discount is: the Mertens versus Maier average is contested, and critics note the average hides heterogeneity by domain and intervention type.
+**Replication status:** The direction held in every comparison found. The size is contested: corrected nudge averages run from about zero to 0.31 SD, by method.
 
 ## How to do it
 
-1. **Tabulate every estimate** with its source type, effect, unit, outcome, sample size, and whether it is already bias-corrected. A single uncorrected headline is the input most runs start with; say so in the table rather than treating it as settled.
-2. **Convert each estimate to the test's outcome unit** and show the arithmetic. For a binary outcome the standard deviation is sqrt(p(1 − p)) at the baseline rate p, so a change of x percentage points is x / (100 × sqrt(p(1 − p))) SD; an odds ratio needs the baseline rate to become percentage points. Do not mix percentage points with percent change: 8.7 points was +33.4% in DellaVigna and Linos.
-3. **Discount 1, publication bias.** If the figure is an uncorrected meta-analytic or journal average, replace it with the bias-corrected figure where the meta-analysis gives one (for choice architecture, d = 0.45 becomes about 0.04, within a range of 0.03–0.31). Where none exists, keep the published figure as the top of the range only.
-4. **Discount 2, lab-to-field.** If the source is a lab or online study, do not carry its size at all; it is evidence of direction. Say why: 0.33 SD in the lab became 0.02 SD in the field for loss framing.
-5. **Discount 3, academic-to-practitioner.** If the source is an academic field trial and the user is a program delivering at scale, state the reference gap (8.7 against 1.4 points, a ratio of about six in that sample), use it to set the low end of the range, and do not apply it as a universal constant. If the source is already a nudge-unit or practitioner trial, skip this step; discounting it again is the most common double count.
-6. **Adjust for fit.** If an `assess-evidence-transferability` verdict exists, apply its discount range here and name the untested differences it listed. If none exists, say the fit has not been checked and widen the low end.
-7. **Note persistence.** If the decision depends on the effect lasting beyond the program, say that only 8% of the 54 megastudy interventions persisted, plan for the during-program effect, and name persistence as unmeasured.
-8. **Write the expected-effect range**: low, central, high, each in the outcome's units and in SD, each naming the discount that produced it. A range is the output; a point estimate is a guess dressed up.
-9. **State the smallest effect worth detecting separately.** It comes from the decision and the cost, not from the literature: the effect at which the program would act (scale, continue, drop). Carry over a locked threshold from `plan-evaluation-design` if one exists; otherwise give a provisional figure and name the cost inputs `estimate-cost-effectiveness` needs to firm it up.
-10. **Name the number to hand on.** Give `estimate-sample-size` the smaller of the central expected effect and the smallest effect worth detecting, and say which it is. If the whole expected range sits below the smallest effect worth detecting, say plainly that the test as conceived is unlikely to find an effect the program would act on, and that the decision is whether to run it at all.
-11. **Stop here.** `estimate-sample-size` turns the benchmark into a sample; `plan-evaluation-design` locks the threshold.
+1. **Read each study** following `references/citing-sources.md`, recording the effect from its results with unit, baseline, population, deliverer, and design.
+2. **Label each estimate:** lab or online; published field trial, including cases picked for a guide; meta-analysis (pooled studies), corrected for publication bias or not; or unselected: every trial an organization ran, whatever it found.
+3. **Put each estimate in the test's units** at its baseline, showing the arithmetic: one SD of a yes-or-no outcome is √(p(1 − p)); odds ratios convert through the baseline odds; percentage points are not percent change.
+4. **Correct**, marking each correction applied or not:
+   - Lab or online: direction only (loss-framed incentives: 0.33 SD in the lab, 0.02 in the field).
+   - Meta-analysis: use the bias-corrected figure if the paper or a re-analysis gives one (a nudge average of 0.43 SD fell to 0.04); otherwise it is a ceiling.
+   - Take-up: multiply by the user's take-up over the source's. Unreported take-up counts as complete.
+   - Delivery: if researchers or an NGO ran the source and a government will run the test, lower the central value: government-run programs show smaller effects.
+5. **Set the range** in the test's units and in SD. High: the largest corrected estimate; a meta-analysis outranks single trials above it. Low: the closest unselected estimate, or else one sixth of the high end, never applied to an unselected or corrected figure. Central: a reasoned judgment between them; for a letter, SMS, or email, above 3 points needs a stated reason.
+6. **Name the effect to plan on:** the smallest effect worth acting on, if set, otherwise the central value. Report the two apart: one comes from the decision and its cost, the other from the studies. If the first is above the high end, say the program is unlikely to reach it, so the question is whether to test at all. Compute no sample size.
 
-See `references/evidence-notes.md` for every number and its verification state, and `references/worked-example.md` for a run on SMS reminders for antenatal iron-folate adherence in Malawi.
+See `references/worked-example.md` for a complete run.
 
 ## Output template
 
@@ -107,56 +84,49 @@ See `references/evidence-notes.md` for every number and its verification state, 
 # Effect-size benchmark: <intervention> on <outcome>
 
 **Decision this informs:** <pilot / scale-up / policy / funder report>
-**Outcome, unit, baseline:** <outcome>; <percentage points or raw unit>; baseline <rate, or mean and SD> from <source>
-**Conversion used:** <e.g. SD of a binary outcome at baseline p = sqrt(p(1 − p)) = ...>
+**Outcome, unit, baseline:** <outcome>; <unit>; baseline <rate, or mean and SD> from <source>
+**Delivered by, at what scale:** <who will deliver it in the test, to how many people>
 
-## Published estimates the team is relying on
-| Source | Source type | Reported effect (unit) | In the test's unit | Already bias-corrected? |
-|---|---|---|---|---|
-| <citation> | <lab / academic field / practitioner / meta-analysis> | <...> | <pp and SD> | <yes / no> |
+## Estimates read
+| Source | How read | Label | Delivered by | Reported effect | In the test's units |
+|---|---|---|---|---|---|
+| <authors, year, link> | <full text / abstract only> | <lab or online / published field trial / meta-analysis, corrected or not / unselected> | <researchers / NGO / government> | <effect, unit, baseline> | <points and SD, with the arithmetic> |
 
-## Discounts, in order
-1. Publication bias: <applied or not, and why> → <figure>
-2. Lab-to-field: <applied or not, and why> → <figure>
-3. Academic-to-practitioner: <applied or not, and why> → <figure>
-4. Fit to this setting: <verdict and range from assess-evidence-transferability, or "not checked; low end widened">
-5. Persistence: <relevant to the decision or not; what is assumed>
+## Corrections
+1. Lab or online study: <applied or not, and why>
+2. Selective publication: <bias-corrected figure used / treated as a ceiling / not needed, because unselected>
+3. Take-up: <ratio applied, or assumed equal to the source's>
+4. Who delivers it: <same kind as the source / smaller effect expected, because ...>
 
-## Expected effect: planning range
-| | Percentage points (or raw unit) | SD | Produced by |
+## Planning range
+| | <Unit> | SD | Where it comes from |
 |---|---|---|---|
-| Low | <...> | <...> | <discount> |
-| Central | <...> | <...> | <discount> |
-| High | <...> | <...> | <discount> |
+| High | <...> | <...> | <the estimate and correction behind it> |
+| Central | <...> | <...> | <the judgment, in one sentence> |
+| Low | <...> | <...> | <the unselected estimate, or one sixth of the high end> |
 
-## Smallest effect worth detecting
-<figure and unit>; set by <decision and cost, or carried from plan-evaluation-design>; <locked / provisional>; cost inputs still needed: <...>
+## Smallest effect worth acting on
+<value and unit, who set it and on what basis; or "Not set: <who must set it>">
 
-## Number to hand to estimate-sample-size
-<figure>, because <it is the smaller of the central expected effect and the smallest effect worth detecting>. <If the expected range sits below the threshold, say so here.>
+## Effect to plan on
+<value, unit, SD>, because <it is the smallest effect worth acting on / the central value>. <What a true effect at the low end would mean for the test.>
 
 ## What to check before relying on this
-- <the untested fit difference that most changes the central value>
-- <the baseline rate or SD, if it came from a guess>
-- <whether any field trial in a comparable setting exists that would replace the discounted number>
+- <the input that would move the range most, and the cheapest way to check it>
 ```
 
 ## Where it goes wrong
 
-- **Carrying the headline.** Quoting d = 0.45 (Mertens) or a trial's 12 points as the expected effect without the corrected figure next to it. The output must never show an uncorrected number alone.
-- **Cohen's labels.** Calling 0.2 "small" and 0.5 "medium" and planning for "medium". Those labels are not benchmarks for field programs; the dossier says not to apply them, and this skill does not cite Cohen.
-- **Discounting twice, or not at all.** A nudge-unit figure is already a practitioner field effect; applying the academic-to-practitioner gap to it again shrinks it to nothing. A lab figure left undiscounted does the opposite.
-- **Averaging across domains.** Benchmarks are domain-specific: structure interventions such as defaults outperform description interventions in Mertens et al., and food is the most responsive domain. A pooled average applied to a savings SMS program is a category error.
-- **Merging the two numbers.** Powering a test for the hoped-for effect when the decision needs a smaller one, or setting the "smallest effect worth detecting" to whatever makes the sample affordable. The threshold comes from the decision and the cost; the expected effect comes from the evidence; they are reported separately.
-- **Unit slips.** Percentage points read as percent change, an odds ratio read as a risk ratio, a lab SD read as a field percentage point. Every conversion is shown in the table.
-- **Forecasts as evidence.** The team's or an expert's intuition about the effect is not a source; expert forecasts failed in the megastudy.
+- **Cohen's labels as a plan.** "Small, 0.2 SD" sounds safe, but the labels come from lab experiments with undergraduates.
+- **A pilot's estimate as the plan.** It is imprecise, and a pilot that persuaded the team to continue was selected for looking good: a published field trial, not unselected.
+- **Correcting twice.** The one-sixth ratio applied to a nudge-unit average or a corrected figure shrinks a realistic number to nearly zero.
+- **One average for every intervention.** Once corrected, information-only nudges showed evidence of no effect, while changes to how options are structured, such as defaults, stayed undecided. Use the kind being tested.
 
 ## When to bring in a specialist
 
-Tell the user to consult a behavioral scientist or an evaluation methodologist when:
-- The decision is a scale-up or a policy and no field evidence exists in a comparable setting; the discounts then rest on high-income benchmarks alone, and a local pilot sized by `estimate-sample-size` is the honest next step
-- The low end of the range is at or near zero while the test's budget or the program's exposure is large; whether to run the test at all is a judgment call about the decision, not about the arithmetic
-- The outcome is clinical or carries financial risk (medication adherence, HIV testing, money locked in savings), so the smallest effect worth detecting has a harm side that cost arithmetic does not capture
-- The meta-analytic evidence the team relies on is itself contested (the Mertens versus Maier dispute is the live example) and the choice of corrected figure changes the verdict
+Tell the user to consult an evaluation methodologist, or a behavioral scientist who knows the setting, when:
+- The decision is a scale-up, a policy, or a large budget, and no estimate comes from delivery like the user's
+- The low end is near zero and the test is expensive
+- The outcome carries clinical or financial risk, so the smallest effect worth acting on has a harm side
 
-Bring them: the source table with conversions, the discount arithmetic, the range, the smallest effect worth detecting with its rationale, and the decision the test informs.
+Bring them: the estimates table, the corrections, the range, and the decision.

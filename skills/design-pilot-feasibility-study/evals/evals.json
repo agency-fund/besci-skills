@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We're a farmer-support NGO in Western Kenya. Our intervention draft: an SMS two weeks before the long rains telling each registered farmer the date to top-dress maize, plus a voucher for the agro-dealer that is only valid that week. Next season we plan a cluster RCT in 60 villages, 15 farmers per village enrolled within 3 weeks, outcome from a follow-up survey at harvest, and our sample size assumes 85% of farmers reached at harvest. We can pilot in 4 villages with 120 farmers over one season, with 2 field officers who can do short interviews. Our biggest worry is whether farmers will redeem the voucher at all. Design the pilot.",
-      "expected_output": "A full pilot feasibility study design following the output template: the intervention and the main design carried over; the sentence that the pilot's effect estimate will not be used to size the main trial; a progression-criteria table with go, amend, and stop bands for recruitment (enrollment per village within 3 weeks), retention (reached at harvest, derived from the 85% assumption), fidelity (SMS delivered on the date; vouchers issued), acceptability (voucher redemption, which gets the most precision because it is the stated worry), and data completeness (harvest survey completed), each with its derivation from the main design; a pilot size argued from the precision of the redemption rate, not from power; a qualitative component interviewing non-redeemers and the agro-dealers; a table of what changes in the main design under each outcome; the report skeleton; open questions including season and village typicality. It does not estimate the intervention's effect, does not run a power calculation for the main trial, and does not re-ask the Before you start questions.",
+      "name": "Full run",
+      "prompt": "We're a farmer-support NGO in Western Kenya. Our intervention: an SMS two weeks before the long rains telling each registered farmer the date to top-dress their maize, plus a voucher for the local agro-dealer that is valid only that week. Next season we plan a cluster-randomized trial in 60 villages, with 15 farmers per village enrolled within 3 weeks and the outcome from a follow-up survey at harvest; our sample size assumes we reach 85% of farmers at harvest. We can pilot in 4 villages with 120 farmers over one season, with 2 field officers who can do short interviews. Our biggest worry is whether farmers will redeem the voucher at all. Design the pilot.",
+      "expected_output": "A pilot plan in the output template with go, amend, and stop lines for each feasibility question, sized by the margin of error on voucher redemption.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Has a table with go, amend, and stop lines for recruitment, retention, delivery, acceptability, and outcome data.",
+        "Derives the retention line from the trial's assumed 85% reached at harvest.",
+        "Sizes the pilot by the margin of error on the redemption rate, with the arithmetic, not by a power calculation.",
+        "Plans interviews with farmers who did not redeem the voucher, or with the agro-dealers.",
+        "States that the pilot's effect estimate will not be used to size the main trial.",
+        "Gives no estimate of the intervention's effect."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "We want to pilot our program before scaling it. What should the pilot look like?",
-      "expected_output": "The skill does not produce the design. It asks for the intervention draft (what is delivered, by whom, to whom, how often, through what channel), the main design the pilot serves (unit of randomization, delivery, outcome collection, planned size) or confirmation that none exists yet, the pilot's resources (people or sites, duration, staff, interview capacity), and the team's biggest worry among recruitment, dropout, delivery, acceptance, and data. It may ask, marked optional, for rates from a prior pilot or similar program.",
+      "expected_output": "The skill asks what the program delivers, what the pilot leads to, and what resources the pilot has, and produces no plan.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks what is delivered, by whom, and to whom.",
+        "Asks whether the pilot leads to a trial or a scale-up, and how that is designed.",
+        "Asks how many people or sites, how long, and what staff the pilot has.",
+        "Does not produce progression criteria."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Our two-clinic pilot in Malawi of a CHW pill-calendar and voice-reminder package for pregnant women found iron-folate adherence went from about 30% to 45% by pill count. We want to design a second, slightly bigger pilot in four clinics, and we'd like to use that 15-point effect to size the main cluster trial. Can you do both?",
-      "expected_output": "The skill designs the second pilot's feasibility criteria for what it safely can (recruitment, retention, fidelity of calls and visits, acceptability of the calendar, pill-count completeness, with go, amend, and stop bands derived from the main design, and interviews with women who dropped out). It refuses to use the 15-point pilot effect as the main trial's power input, explains that a small pilot's effect estimate is noisy and selected for looking good, and routes the sizing to estimate-expected-effect and estimate-sample-size with a statistician. Because the package involves medication in pregnancy, it tells the user that even the pilot needs ethics review and a stopping rule for harm, and says what to bring: the first pilot's participant flow and rates, the criteria table, and the main design.",
+      "name": "Near the escalation point",
+      "prompt": "Our two-clinic pilot in Malawi of a community health worker pill-calendar and voice-reminder package for pregnant women found iron-folate adherence went from about 30% to 45% by pill count. We want to design a second, slightly bigger pilot in four clinics, and we'd like to use that 15-point effect to size the main cluster trial. Can you do both?",
+      "expected_output": "The skill designs the second pilot's feasibility criteria, declines to size the main trial from the 15-point pilot effect, and names an evaluation methodologist and an ethics reviewer.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Produces progression criteria for the second pilot.",
+        "Declines to use the 15-point effect as the main trial's planned effect, saying a pilot's estimate is too imprecise.",
+        "Tells the user to consult an evaluation methodologist or statistician about sizing the main trial.",
+        "Says the pilot needs ethics review and a stopping rule for harm, because it involves medication in pregnancy.",
+        "Says what to bring to the specialist."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "We want 20 mothers in two villages in Indonesia to try adding an egg a day to their child's complementary feeding for a week, then tell us what they would keep doing and what they changed. How should we set that up?",
-      "expected_output": "The skill recognizes household-level negotiation and trial of a practice, which is formative work, not a program pilot with progression criteria. It does not produce a pilot feasibility design. It points the user to plan-trials-of-improved-practices and says that a feasibility pilot comes later, once the practice to be delivered at scale is settled.",
+      "expected_output": "The skill says this is a few households trying a practice before any pilot and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the request is a small trial of a practice with a few households, not a pilot of a program.",
+        "Names plan-prototype-test.",
+        "Does not produce progression criteria."
+      ]
     }
   ]
 }
