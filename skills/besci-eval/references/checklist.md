@@ -34,7 +34,7 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] The template opens with a plain lead-in, uses labels a program designer would use, and ends with a "Where you could go from here" closing: two or three next moves with reasons, and questions the user could ask next. [W054]
 - [ ] No "Next action", "Check first", or "Next steps" line in the template. [W055]
 - [ ] After the template, the "Output template" section carries the shared voice block between the markers, identical to `template/shared/voice.md`. [W053; check_sync]
-- [ ] The last step of "How to do it" lists next moves, each with the condition under which it fits.
+- [ ] The closing's placeholder lists candidate next moves, each with the condition under which it fits, including one step outside the library.
 
 Codes E040 to E049 and E056 are errors, except the warnings W043, W044, and W046; W050 to W055 are warnings too, and W053 to W055 become errors when the library has been revised to the voice standard.
 

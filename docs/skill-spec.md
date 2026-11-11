@@ -118,7 +118,7 @@ The full trigger rule. The `description` is the compressed version that fires th
 - (at least two) adjacent intents that should not, each naming where to go instead
 ```
 
-"Do not use it when" names where to go instead. A skill may also name other skills as next moves at the end of "How to do it" and in its closing (see "Output template"). It never asks for an input by the skill that made it; see "Before you start". The validator fails on a named skill or workflow that does not exist.
+"Do not use it when" names where to go instead. A skill may also name other skills as next moves in its closing (see "Output template"). It never asks for an input by the skill that made it; see "Before you start". The validator fails on a named skill or workflow that does not exist.
 
 ### `## Before you start`
 
@@ -149,8 +149,6 @@ The fuller account goes in `references/evidence.md`. "Common sense" or "general 
 
 The procedure, step by step, in the imperative. Explain why a step matters where it isn't obvious; a model follows a reasoned instruction better than a bare command. Point to `references/` files for detail, one level deep.
 
-The last step lists the next moves the closing can offer, each with the condition under which it fits: other library skills, by name, and at least one step outside the library where one fits (records to check, people to ask). The model offers the two or three that fit what the run found, not the whole list. A next move is a suggestion; the user decides.
-
 ### `## Output template`
 
 The exact shape of the response, in a fenced `markdown` block, with placeholders in angle brackets. A user and a reviewer should be able to tell from this block alone whether a run of the skill did its job.
@@ -159,13 +157,15 @@ Three parts every template has:
 
 - **A plain lead-in.** The template opens with a placeholder for two or three sentences to the user: what this is, and the one thing in it that matters most for them.
 - **Plain labels.** Write labels in words a program designer would use ("How the answer tells them apart", not "Discriminates because"). Keep a method's own term only where the user will need it to read the literature, and gloss it the first time ("Capability (can they do it?)").
-- **The closing.** The template ends with this block, so the user is never left with an order:
+- **The closing.** The template ends with this block, so the user is never left with an order. Its placeholder lists the candidate next moves, each with the condition under which it fits: other library skills, by name, and at least one step outside the library (records to check, people to ask). The model offers the two or three that fit what the run found, not the whole list. A next move is a suggestion; the user decides.
 
 ```markdown
 ## Where you could go from here
-<one line saying the <output> is done>
-- <a next move that fits what this run found>: <why it would help, and when it fits>
-- <another next move>: <why, and when>
+<One line saying the <output> is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `<other-skill>`, when <condition>
+- `<other-skill>`, when <condition>
+- <a step outside the library>, when <condition>>
 Questions you could ask next: "<question>" · "<question>"
 ```
 

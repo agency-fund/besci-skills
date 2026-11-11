@@ -67,10 +67,6 @@ Not applicable: <one real sentence saying why>.
 1. <First step, imperative, with the reason it matters if not obvious.>
 2. <Second step.>
 3. <Produce the output using the template below. Fill every placeholder or say why it is blank.>
-4. **Offer next moves.** Pick the two or three that fit what you found, and give each its reason:
-   - `<other-skill>` when <condition>.
-   - `<other-skill>` when <condition>.
-   - <a step outside the library: records to check, people to ask> when <condition>.
 
 See `references/worked-example.md` for a complete run.
 
@@ -94,8 +90,10 @@ See `references/worked-example.md` for a complete run.
 
 ## Where you could go from here
 <One line saying the <output> is done.>
-- <A next move that fits what this run found>: <why it would help, and when it fits>
-- <Another next move>: <why, and when>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `<other-skill>`, when <condition>
+- `<other-skill>`, when <condition>
+- <a step outside the library: records to check, people to ask>, when <condition>>
 Questions you could ask next: "<question>" · "<question>"
 ```
 

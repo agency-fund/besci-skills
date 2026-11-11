@@ -74,13 +74,6 @@ If 1 is missing, ask and stop. If 2 is missing, ask once; if the answer is still
 5. **Mark team beliefs.** Label a hypothesis that restates the team's own view "team belief"; a belief is not evidence, however it is reworded.
 6. **Rank every hypothesis in one table** on evidence so far, with its source, and cost of checking.
 7. **Say where you would start:** the one or two the table puts first, and why, labeled provisional. Propose no interventions; the diagnosis is made in the field.
-8. **Offer next moves:** the two or three that fit, each with its reason.
-   - `draft-tdf-interview-guide` when the team can interview and wants a guide built on these questions.
-   - `audit-researcher-bias` when the list leads with team beliefs.
-   - `audit-process-friction` when the leading reasons are steps, forms, trips, or waiting.
-   - `diagnose-social-norm` when the leading reason is what others do or expect.
-   - `select-intervention-levers` once fieldwork confirms a reason.
-   - Records the team already holds (logs, attendance) when they could rule a reason out before fieldwork.
 
 See `references/worked-example.md` for a complete run.
 
@@ -139,8 +132,13 @@ See `references/worked-example.md` for a complete run.
 
 ## Where you could go from here
 <One line saying the list of possible reasons is done.>
-- <A next move that fits what this run found>: <why it would help, and when it fits>
-- <Another next move>: <why, and when>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-tdf-interview-guide`, when the team can interview people and wants a guide built on these questions
+- `audit-researcher-bias`, when the list leads with team beliefs, or the team is sure of the answer before asking anyone
+- `audit-process-friction`, when the leading reasons are steps, forms, trips, or waiting
+- `diagnose-social-norm`, when the leading reason is what other people do or expect
+- `select-intervention-levers`, once field answers have confirmed a reason, and not before
+- records the team already holds (usage logs, attendance, ratings), when they could rule a reason out before anyone goes to the field>
 Questions you could ask next: "<question>" · "<question>"
 ```
 

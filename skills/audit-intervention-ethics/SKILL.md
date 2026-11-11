@@ -74,11 +74,6 @@ If 1 is missing, or nobody can say how the draft is meant to work, ask and stop.
 5. **Give the verdict.** Go: every check passes, or each concern has a named mitigation. Revise: a fail, or an unmet condition of the rule, that a named change fixes. Stop: a fail no change fixes.
 6. **List the changes required.** Do not rewrite the draft.
 7. **List the questions for an ethics board**, and say whether it must see the draft before launch.
-8. **Offer next moves:** the two or three that fit the verdict, each with its reason.
-   - `draft-lever-content` when the verdict is revise and the wording must change.
-   - `plan-prototype-test` when a few people from the audience should see the revised draft before launch.
-   - `select-intervention-levers` when the verdict is stop and the team needs another approach.
-   - The ethics board, a safeguarding lead, or people from the audience, for what this review could not assess.
 
 See `references/worked-example.md` for a complete run.
 
@@ -125,8 +120,11 @@ See `references/worked-example.md` for a complete run.
 
 ## Where you could go from here
 <One line saying the review is done.>
-- <A next move that fits this verdict>: <why it would help, and when it fits>
-- <Another next move>: <why, and when>
+<Two or three next moves that fit this verdict, each with why it would help and when it fits. Candidates:
+- `draft-lever-content`, when the verdict is revise and the wording has to change
+- `plan-prototype-test`, when a few people from the audience should see the revised draft before launch, to check they understand what they are agreeing to
+- `select-intervention-levers`, when the verdict is stop and the team needs another way to address the barrier
+- the ethics board, a safeguarding lead, or people from the audience, for what this review could not assess>
 Questions you could ask next: "<question>" · "<question>"
 ```
 
