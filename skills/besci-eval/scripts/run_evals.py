@@ -50,7 +50,7 @@ import besci_validate as bv  # noqa: E402
 DEFAULT_MODEL = "claude-opus-5-5"
 RUBRIC_PATH = os.path.join(os.path.dirname(HERE), "references", "rubric.md")
 
-CRITERIA = ["asked_first", "template", "evidence", "mechanism", "escalation", "plain_language", "no_invention", "failure_modes"]
+CRITERIA = ["asked_first", "template", "evidence", "mechanism", "escalation", "plain_language", "no_invention", "failure_modes", "conversation"]
 # What the model is told when a case runs with no skill loaded.
 NO_SKILL_SYSTEM = "Answer the user's request."
 
@@ -172,14 +172,14 @@ def check_trigger(client, judge: str, skill: bv.Skill, neighbors: List[Dict], ef
 def load_rubric() -> str:
     if os.path.exists(RUBRIC_PATH):
         return open(RUBRIC_PATH, encoding="utf-8").read()
-    return "Score eight criteria 0-2: asked_first, template, evidence, mechanism, escalation, plain_language, no_invention, failure_modes."
+    return "Score nine criteria 0-2: asked_first, template, evidence, mechanism, escalation, plain_language, no_invention, failure_modes, conversation."
 
 
 GRADER_SYSTEM = (
     "You grade one AI output against a skill's own rubric. Be strict and quote the output in each "
     "justification. Return JSON only with this shape: {\"scores\": {\"asked_first\": 0-2, \"template\": 0-2, "
     "\"evidence\": 0-2, \"mechanism\": 0-2, \"escalation\": 0-2, \"plain_language\": 0-2, \"no_invention\": 0-2, "
-    "\"failure_modes\": 0-2}, \"justifications\": {same keys: one line each}, \"matches_expected\": true|false, "
+    "\"failure_modes\": 0-2, \"conversation\": 0-2}, \"justifications\": {same keys: one line each}, \"matches_expected\": true|false, "
     "\"assertions\": [true|false for each numbered assertion, in order], "
     "\"blocking\": [\"...\"], \"excerpt\": \"the single most telling quote\"}"
 )
@@ -290,7 +290,7 @@ def write_report(path: str, skill: bv.Skill, args, structure: Dict, trigger: Opt
         verdict, why = "not gradable", "the validator reports errors; fix structure first"
     elif blocking:
         verdict, why = "fix first", "blocking findings in output quality"
-    elif output and all((d["median"] or 0) >= 14 for d in output["models"].values()) and (trigger is None or ((trigger["recall"] or 0) >= 0.8 and (trigger["precision"] or 0) >= 0.8)):
+    elif output and all((d["median"] or 0) >= 16 for d in output["models"].values()) and (trigger is None or ((trigger["recall"] or 0) >= 0.8 and (trigger["precision"] or 0) >= 0.8)):
         verdict, why = "ready to submit", "structure passes, triggering is precise, outputs match the template"
     elif args.dry_run:
         verdict, why = "dry run", "no calls were made"
@@ -307,7 +307,7 @@ def write_report(path: str, skill: bv.Skill, args, structure: Dict, trigger: Opt
     if output:
         lines += ["## 3. Output quality", ""]
         for m, d in output["models"].items():
-            lines += [f"### {m}  (median {fmt(d['median'])}/16)", "", "| Case | " + " | ".join(CRITERIA) + " | Matches expected | Assertions passed | Median (range) |", "|---|" + "---|" * (len(CRITERIA) + 3)]
+            lines += [f"### {m}  (median {fmt(d['median'])}/18)", "", "| Case | " + " | ".join(CRITERIA) + " | Matches expected | Assertions passed | Median (range) |", "|---|" + "---|" * (len(CRITERIA) + 3)]
             for p in d["cases"]:
                 first = next((r for r in p["runs"] if r.get("scores")), {})
                 sc = first.get("scores", {})

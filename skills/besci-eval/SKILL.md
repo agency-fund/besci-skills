@@ -17,7 +17,7 @@ metadata:
   title: Behavioral science skill evaluator
   type: meta
   stage: other
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -83,7 +83,7 @@ If the skill lacks the four named test cases (Full run, Missing context, Near th
 
 **Check 2: Triggering.** Take every bullet under "Use it when" (should fire) and "Do not use it when" (should not fire) from `SKILL.md`, plus the prompts in `evals.json` (should fire unless the case says otherwise). For each phrasing, judge as a fresh model would: given only this skill's `description` and the descriptions of the other skills in the catalog snapshot, would you load this skill for this request? Record yes or no with a one-line reason. Compute precision and recall. List every miss and every false alarm with the phrase and the clause in the description that caused it. Suggest the smallest edit to the description that fixes the worst miss, but do not apply it; that is the author's call via besci-skill-creator.
 
-**Check 3: Output quality.** For each case in `evals.json`, act as a fresh user sending that prompt to a model that has only this skill, produce the full response, then grade it with `references/rubric.md`: eight criteria, each scored 0, 1, or 2, with a one-line justification quoting the output. Compare against the case's `expected_output` and say whether the shape matched. Flag any invented citation, any output produced when the skill should have asked first, and any missed escalation as blocking. Where the script path is available, run each case three times per model and report the median and range; where it is not, run once and say so.
+**Check 3: Output quality.** For each case in `evals.json`, act as a fresh user sending that prompt to a model that has only this skill, produce the full response, then grade it with `references/rubric.md`: nine criteria, each scored 0, 1, or 2, with a one-line justification quoting the output. Compare against the case's `expected_output` and say whether the shape matched. Flag any invented citation, any output produced when the skill should have asked first, and any missed escalation as blocking. Where the script path is available, run each case three times per model and report the median and range; where it is not, run once and say so.
 
 **Script path.** `python scripts/run_evals.py <skill-folder> --models claude-opus-5-5 claude-sonnet-5-5 --runs 3` runs checks 2 and 3 through the Claude API, grades with the rubric using a judge model, and writes `<skill>-workspace/eval-<date>/report.md` and `results.json`. Add `--baseline <path-to-old-skill-folder>` to compare versions, or `--no-skill-baseline` to run the same cases with no skill loaded, which shows what the skill adds over the model alone. Each output is graded with the rubric and against the case's own `assertions`. The script needs `ANTHROPIC_API_KEY` or an `ant auth login` profile and the `anthropic` package. Estimate cost before running: cases × models × runs × roughly two calls, and the same again for each comparison; `--dry-run` prints the count.
 
@@ -108,8 +108,8 @@ Misses and false alarms: <list, each with the description clause responsible>
 Smallest fix: <proposed description edit, not applied>
 
 ## 3. Output quality
-| Case | Asked first | Template | Evidence | Mechanism | Escalation | Plain language | No invention | Matches expected | Total /16 |
-|---|---|---|---|---|---|---|---|---|---|
+| Case | Asked first | Template | Evidence | Mechanism | Escalation | Plain language | No invention | Failure modes | Conversation | Matches expected | Total /18 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
 Blocking findings: <invented citation, output without asking, missed escalation>
 Representative excerpt: <the single most telling quote from an output>
 

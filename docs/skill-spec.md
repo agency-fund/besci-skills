@@ -118,11 +118,13 @@ The full trigger rule. The `description` is the compressed version that fires th
 - (at least two) adjacent intents that should not, each naming where to go instead
 ```
 
-"Do not use it when" is the one place a skill names another skill.
+"Do not use it when" names where to go instead. A skill may also name other skills as next moves at the end of "How to do it" and in its closing (see "Output template"). It never asks for an input by the skill that made it; see "Before you start". The validator fails on a named skill or workflow that does not exist.
 
 ### `## Before you start`
 
-The questions the skill asks the user before it produces anything. A skill should not produce output on a guess it could have checked with one question. List the questions, say which are required, and say what the skill assumes if an answer is missing.
+The questions the skill asks the user before it produces its output. A skill should not produce output on a guess it could have checked with one question. List the questions, say which are required, and say what the skill assumes if an answer is missing.
+
+These questions come before the output, not before every reply. If the user asked a question rather than asked for the output ("how do I know if this is ethical?"), the skill answers it first in a few plain sentences, then offers the run. The shared voice block says so at run time.
 
 Ask for an input by what it is ("a confirmed barrier, from interviews or any diagnosis"), not by which skill made it. People bring inputs from anywhere.
 
@@ -147,9 +149,27 @@ The fuller account goes in `references/evidence.md`. "Common sense" or "general 
 
 The procedure, step by step, in the imperative. Explain why a step matters where it isn't obvious; a model follows a reasoned instruction better than a bare command. Point to `references/` files for detail, one level deep.
 
+The last step lists the next moves the closing can offer, each with the condition under which it fits: other library skills, by name, and at least one step outside the library where one fits (records to check, people to ask). The model offers the two or three that fit what the run found, not the whole list. A next move is a suggestion; the user decides.
+
 ### `## Output template`
 
 The exact shape of the response, in a fenced `markdown` block, with placeholders in angle brackets. A user and a reviewer should be able to tell from this block alone whether a run of the skill did its job.
+
+Three parts every template has:
+
+- **A plain lead-in.** The template opens with a placeholder for two or three sentences to the user: what this is, and the one thing in it that matters most for them.
+- **Plain labels.** Write labels in words a program designer would use ("How the answer tells them apart", not "Discriminates because"). Keep a method's own term only where the user will need it to read the literature, and gloss it the first time ("Capability (can they do it?)").
+- **The closing.** The template ends with this block, so the user is never left with an order:
+
+```markdown
+## Where you could go from here
+<one line saying the <output> is done>
+- <a next move that fits what this run found>: <why it would help, and when it fits>
+- <another next move>: <why, and when>
+Questions you could ask next: "<question>" · "<question>"
+```
+
+After the fenced template, the section carries the shared voice block between the markers in `template/skill-template/SKILL.md`. Its source is `template/shared/voice.md`; `scripts/check_sync.py --fix` fills it, and CI fails if a copy drifts. Edit the source, never the copy. The block does not count toward the length limit. It tells the model how to talk at run time: answer a question before offering the run, mark when the run starts and finishes, use the user's words, say where each claim comes from, and close with reasoned options rather than an instruction.
 
 ### `## Where it goes wrong`
 
@@ -289,7 +309,7 @@ A skill whose job at run time is to find studies, or to read the studies it is g
 Addresses expert review #42 (Jane Doe): the first run now checks every link before showing it.
 ```
 
-Patch for wording, minor for new behavior, major when the output template changes shape. Name the reviewer in the entry that marks a skill `published`. An entry that answers an expert review cites the issue in the form above; the site uses it to mark the review answered. The changelog is also where a note on how a version was drafted belongs, including any use of AI.
+Patch for wording, minor for new behavior, major when the output template changes shape. Before 1.0, a change of shape bumps the minor version. Name the reviewer in the entry that marks a skill `published`. An entry that answers an expert review cites the issue in the form above; the site uses it to mark the review answered. The changelog is also where a note on how a version was drafted belongs, including any use of AI.
 
 ## 10. Files
 
@@ -300,7 +320,9 @@ Allowed types: markdown, text, JSON, YAML, CSV, Python, R, shell, HTML, CSS, Jav
 - Write for a program designer or M&E lead who has never met a behavioral scientist. Define a term the first time you use it.
 - Use plain words for where evidence comes from: "wealthy Western countries", not the acronym WEIRD.
 - Imperative mood in "How to do it". Explain the why in one clause when a step is not obvious.
-- Ask before producing. A skill that gives a confident answer to an underspecified request is a failure mode, not a feature.
+- Ask before producing the output. A skill that gives a confident answer to an underspecified request is a failure mode, not a feature. A question the user asked is answered first, though; asking comes before the output, not before every reply.
+- Suggest, do not direct. The library offers next moves with reasons and says which it would lean toward; the user decides. No "Next action", "Check first", or "Next steps" lines.
+- Sound like a colleague, not a form. Plain sentences around the structured output, the user's own words for their program, and no praise.
 - Name the mechanism, not just the tactic. "Send a reminder" is a tactic; "reduce the attention cost at the moment of action" is a mechanism.
 - Cite what you draw on, and only what you have verified.
 - Keep notes on how the skill was drafted or checked out of `SKILL.md` and `references/`. They go in `CHANGELOG.md`.
@@ -316,3 +338,5 @@ uv run scripts/besci_validate.py --json             # for tools
 Exit 0 means the structure is right. Content review by a maintainer is still required before merge.
 
 The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.
+
+The voice rules (ADR 0009: the shared voice block, the closing, no directive closing lines) are W053 to W055 while the library is revised to them, behind the switch `STRICT_VOICE`; they become errors E053 to E055 when it is on. A named skill or workflow that does not exist is always an error, E056.

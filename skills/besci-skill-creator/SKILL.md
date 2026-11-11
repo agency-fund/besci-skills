@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -83,7 +83,7 @@ Work through the phases in order. One question per turn. Offer a recommended ans
 
 **Phase 5: Procedure.** Walk the method step by step. For each step ask why it matters and what the model is likely to get wrong. Decide what goes in `SKILL.md` and what moves to `references/` (question banks, long tables, worked examples).
 
-**Phase 6: Output template.** Ask what a finished output looks like. Draft it as a fenced markdown block with angle-bracket placeholders. Check that a reviewer could tell from the template alone whether a run succeeded.
+**Phase 6: Output template.** Ask what a finished output looks like. Draft it as a fenced markdown block with angle-bracket placeholders. Check that a reviewer could tell from the template alone whether a run succeeded. Give it a plain lead-in, plain labels, and the "Where you could go from here" closing, and ask what people do next so the last step of "How to do it" can list next moves with their conditions.
 
 **Phase 7: Failure modes.** Ask "when have you seen this method go wrong in practice?" and "what would a model do with this that an expert would never do?" Get at least three. Add out-of-scope cases.
 
