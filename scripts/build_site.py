@@ -118,12 +118,12 @@ TEASER_CHAIN = ["define-key-behavior", "decompose-comb-barriers", "draft-tdf-int
 # Skills shown on the home page's stage chart; any that no longer exist are
 # skipped and the stage's other skills fill in.
 FEATURED = {
-    "define": ["define-key-behavior", "build-user-funnel", "draft-theory-of-change", "assess-evidence-base"],
-    "diagnose": ["decompose-comb-barriers", "diagnose-funnel-weak-link", "identify-positive-deviants", "diagnose-social-norm"],
+    "define": ["define-key-behavior", "assess-evidence-base", "draft-theory-of-change", "map-audience-context"],
+    "diagnose": ["decompose-comb-barriers", "draft-tdf-interview-guide", "audit-process-friction", "diagnose-social-norm"],
     "design": ["select-intervention-levers", "design-reminder-schedule", "select-default-option", "write-social-norm-message"],
     "measure": ["draft-survey-items", "plan-agency-measurement", "design-list-experiment", "translate-survey-instrument"],
-    "test": ["design-pilot-feasibility-study", "estimate-sample-size", "choose-trial-design", "write-pre-analysis-plan"],
-    "analyze": ["synthesize-interview-findings", "analyze-heterogeneous-effects", "adjust-for-multiple-comparisons", "estimate-cost-effectiveness"],
+    "test": ["design-pilot-feasibility-study", "estimate-sample-size", "choose-trial-design", "choose-ai-eval-level"],
+    "analyze": ["synthesize-interview-findings", "analyze-heterogeneous-effects", "review-prior-intervention", "estimate-cost-effectiveness"],
     "implement": ["plan-scale-up-strategy", "design-fidelity-monitoring", "draft-intervention-description", "assess-scalability"],
 }
 
@@ -773,9 +773,9 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
         <ol class="t-list">
           <li data-row><b>Research:</b> a validated entrepreneurial self-efficacy scale for secondary-school students, with a paste-ready search query</li>
           <li data-row><b>Adapt</b> #2 with {sk("translate-survey-instrument")}; build #1, #3, #5 and #6 from the drafted examples</li>
-          <li data-row><b>Test:</b> cognitive interviews with 8 students ({sk("draft-cognitive-interview-script")}); model codes against two human coders on 150 chat segments ({sk("audit-llm-qualitative-coding")})</li>
+          <li data-row><b>Test:</b> cognitive interviews with 8 students ({sk("draft-cognitive-interview-script")}); check model-coded chat segments against two human coders</li>
           <li data-row><b>Interpret:</b> drop #1 as a proxy if it does not track #2</li>
-          <li data-row><b>Later:</b> {sk("design-evidential-experiment")} for the direct versus questions-first comparison</li>
+          <li data-row><b>Later:</b> {sk("choose-trial-design")} for the direct versus questions-first comparison</li>
         </ol>
       </div>
       <div class="t-ai" data-step="say"><p class="t-ask">Want me to search for published entrepreneurial self-efficacy scales for #2 now? I will quote only items I can open.<small>Suggested: yes, limited to scales tested with secondary-school students.</small></p></div>
