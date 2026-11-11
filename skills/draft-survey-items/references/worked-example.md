@@ -1,90 +1,100 @@
-# Worked example: Western Kenya fertilizer-timing survey block
+# Worked example: fertilizer timing among maize farmers in western Kenya
 
-An illustrative run. The program and the numbers are invented; nothing here is a finding.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Input (from the measurement plan of an illustrative "Kakamega Early Fertilizer" pilot):** four constructs. (A) Timing of last season's fertilizer purchase relative to the agricultural calendar; feeds the decision whether late purchase is common enough to target. (B) Perceived difficulty of putting money aside for fertilizer at harvest; feeds the choice between a savings lever and a price lever. (C) Empirical expectation of what other farmers in the village do; feeds whether a norm message is plausible. (D) Intention to buy before planting next season; the pre-intervention baseline for the primary outcome. Respondents: smallholder maize farmers in Kakamega County, mostly women, primary schooling, interviewed at home by enumerators reading aloud in Kiswahili or Luhya (translation is a later step; items are drafted in English). Block: at most 8 items, about 5 minutes, after the plot roster and before input-cost questions.
+## The request
+
+"We need baseline questions for a pilot that encourages smallholder maize farmers in Kakamega County to buy fertilizer before planting. Four things to measure. (A) Purchase timing: when the farmer bought the fertilizer used at planting in the last long rains. (B) Difficulty of putting money aside: how hard the farmer finds it to hold harvest money for fertilizer. (C) Expectation of others: how many similar farmers in the village the respondent believes buy before planting. (D) Intention: whether the farmer plans to buy before planting next season. Respondents are mostly women with primary schooling. Enumerators read the questions aloud at the farmer's home; translation into Kiswahili and Luhya comes later. We have room for 8 questions. From earlier interviews we know harvest money mostly goes to school fees, food, and relatives who ask for help."
+
+## The output
 
 ```markdown
-# Draft survey items: Kakamega Early Fertilizer baseline, fertilizer-timing block
+# Draft survey questions: Kakamega baseline, fertilizer-timing block
 
-**Respondents:** smallholder maize farmers, Kakamega County; mostly women; primary schooling; Kiswahili or Luhya  **Mode:** enumerator read-aloud, at home
-**Length budget:** 8 items, about 5 minutes  **Position:** after the plot roster; before input-cost questions
-**Constructs:** (A) purchase timing last season; (B) difficulty of putting money aside at harvest; (C) expectation of other farmers; (D) intention for next season
+**Respondents:** smallholder maize farmers in Kakamega County, mostly women, primary schooling; drafted in English for later translation
+**How they answer:** read aloud by an interviewer, at home
+**Length budget:** 8 questions
 
-## Items by construct
-### (A) Purchase timing: when the fertilizer used at planting was bought, relative to the previous harvest and planting
-**Item A.1:** Think about the long rains of this year. When did you buy the fertilizer you used at planting?
+## Questions by construct
+
+### (A) Purchase timing: when the fertilizer used at planting in the last long rains was bought
+**A1.** Think about the long rains of this year. When did you buy the fertilizer you used at planting?
 - Options: before the previous harvest / between the harvest and planting / at planting time / I did not buy fertilizer for the long rains
-- Type: bounded behavior report
-- Intended meaning: the timing of the purchase for the most recent long-rains season only, not what the farmer usually does
-- Design notes: season named rather than "last season"; "usually" avoided; the no-purchase option prevents a forced timing answer
+- A correct reading is: the timing of the purchase for this year's long rains only, not what the farmer usually does
+- Notes: report of what happened; season named; the last option keeps a non-buyer from being forced into a timing
 
-**Item A.2:** (if bought) Did you buy all of it at one time, or in parts?
+**A2.** (If she bought) Did you buy all of it at one time, or in parts?
 - Options: all at one time / in parts
-- Type: bounded behavior report
-- Intended meaning: whether the purchase was split, which changes what "timing" means for the program
-- Design notes: asked only after A.1 to keep A.1 single-idea
+- A correct reading is: whether the purchase for that season was split
+- Notes: report of what happened; asked separately so that A1 holds one idea
 
 ### (B) Difficulty of putting money aside: how hard the farmer finds it to hold harvest money for fertilizer
-**Item B.1:** After the harvest, how hard is it for you to put money aside for the next season's fertilizer?
+**B1.** After the harvest, how hard is it for you to put money aside for the next season's fertilizer?
 - Options: not hard / a little hard / very hard
-- Type: construct-specific rating
-- Intended meaning: the farmer's own assessment of difficulty, whatever the reason
-- Design notes: replaces "I find it hard to save for fertilizer (agree/disagree)"; three labeled points; no midpoint, because "a little hard" is the middle
+- A correct reading is: her own judgment of the difficulty, whatever the reason, and whether the money is kept as cash, mobile money, or grain
+- Notes: rating of the thing itself; replaces "I find it hard to save for fertilizer: agree or disagree"; three options
 
-**Item B.2:** What is the biggest reason it is hard?
-- Options: the money goes to school fees / the money goes to food / other people ask me for the money / the maize price is low at harvest / another reason
-- Type: single-choice reason
-- Intended meaning: the main competing use of harvest money, one reason only
-- Design notes: asked only if B.1 is "a little hard" or "very hard"; options from the diagnose-stage interviews; "another reason" recorded verbatim
+**B2.** (If a little hard or very hard) What is the biggest reason it is hard?
+- Options: the money goes to school fees / the money goes to food / other people ask me for the money / another reason (write it down)
+- A correct reading is: the one main competing use of harvest money
+- Notes: options from the team's earlier interviews; "another reason" recorded word for word
 
-### (C) Expectation of others: how many other farmers the respondent believes buy before planting
-**Item C.1:** Think of ten farmers like you in this village. How many of the ten do you think buy their fertilizer before planting time?
+### (C) Expectation of others: how many similar farmers the respondent believes buy before planting
+**C1.** Think of ten farmers like you in this village. How many of the ten do you think buy their fertilizer before planting time?
 - Options: a number from 0 to 10
-- Type: expectation
-- Intended meaning: the empirical expectation about similar farmers, not approval of early buying
-- Design notes: "farmers like you" sets the reference group; a count out of ten replaces a percentage
+- A correct reading is: what she believes other farmers do, not whether she approves of it
+- Notes: count out of ten in place of a percentage; "farmers like you" sets who to think of
 
 ### (D) Intention: whether the farmer plans to buy before planting next season
-**Item D.1:** For the next long rains, do you plan to buy your fertilizer before planting time?
+**D1.** For the next long rains, do you plan to buy your fertilizer before planting time?
 - Options: no / not sure / yes
-- Type: bounded intention
-- Intended meaning: a plan for the named season, not a general attitude toward early buying
-- Design notes: "not sure" kept because the construct has a real middle
+- A correct reading is: a plan for the named season, not a general view of early buying
+- Notes: season named; "not sure" kept because many farmers have not decided
 
-**Item D.2:** (if yes) When do you plan to buy it?
-- Options: right after this harvest / in the months between harvest and planting / at planting time
-- Type: bounded intention
-- Intended meaning: the planned timing, in the same categories as A.1 so the two can be compared
+**D2.** (If yes) When do you plan to buy it?
+- Options: right after this harvest / between the harvest and planting
+- A correct reading is: the planned timing for the named season
+- Notes: asked only of farmers who plan to buy early; the two periods match A1 so the answers can be set side by side
 
-## Order and context
-| Position | Item | Why here | Earlier item that could shape the answer |
-|---|---|---|---|
-| 1 | A.1 | factual report first, before any evaluative item | none |
-| 2 | A.2 | follows A.1 directly | none |
-| 3 | B.1 | difficulty after the behavior report, so it is anchored to practice | A.1: a farmer who reported buying late may rate difficulty higher to explain it; noted for the pretest |
-| 4 | B.2 | follows B.1 | none |
-| 5 | D.1 | intention after difficulty, before the expectation item | A.1: a late buyer may state an early intention; the pretest judgment probe checks this |
-| 6 | D.2 | follows D.1 | none |
-| 7 | C.1 | last, so the "ten farmers" frame does not prime the intention items | none |
+## Order
+| Position | Question | Earlier question that could shape the answer |
+|---|---|---|
+| 1 | A1 | none |
+| 2 | A2 | none |
+| 3 | B1 | A1: a farmer who reported buying late may rate the difficulty higher to explain it |
+| 4 | B2 | none |
+| 5 | D1 | A1: a late buyer may state an early plan to look better |
+| 6 | D2 | none |
+| 7 | C1 | none; placed last so that thinking about other farmers does not color her own plan |
 
-## Enumerator read-aloud version
-"Now I will ask about the fertilizer you used for the long rains this year. There are no right or wrong answers." (A.1) "When did you buy the fertilizer you used at planting? Was it before the previous harvest, between the harvest and planting, at planting time, or did you not buy fertilizer for the long rains?" (A.2, if bought) "Did you buy all of it at one time, or in parts?" (B.1) "After the harvest, how hard is it for you to put money aside for the next season's fertilizer? Not hard, a little hard, or very hard?" (B.2, if a little or very hard) "What is the biggest reason it is hard? The money goes to school fees, the money goes to food, other people ask you for the money, the maize price is low at harvest, or another reason?" (D.1) "For the next long rains, do you plan to buy your fertilizer before planting time? No, not sure, or yes?" (D.2, if yes) "When do you plan to buy it? Right after this harvest, in the months between harvest and planting, or at planting time?" (C.1) "Now think of ten farmers like you in this village. How many of the ten do you think buy their fertilizer before planting time? Give me a number from zero to ten."
+## Read-aloud script
+"Now I will ask about the fertilizer you used for the long rains this year. There are no right or wrong answers."
+A1. "When did you buy the fertilizer you used at planting? Was it before the previous harvest, between the harvest and planting, at planting time, or did you not buy fertilizer for the long rains?"
+A2. [Ask only if she bought.] "Did you buy all of it at one time, or in parts?"
+B1. "After the harvest, how hard is it for you to put money aside for the next season's fertilizer? Not hard, a little hard, or very hard?"
+B2. [Ask only if a little hard or very hard.] "What is the biggest reason it is hard? The money goes to school fees, the money goes to food, other people ask you for the money, or another reason?" [If another reason, write her words.]
+D1. "For the next long rains, do you plan to buy your fertilizer before planting time? No, not sure, or yes?"
+D2. [Ask only if yes.] "When do you plan to buy it? Right after this harvest, or between the harvest and planting?"
+C1. "Now think of ten farmers like you in this village. How many of the ten do you think buy their fertilizer before planting time? Give me a number from zero to ten."
 
 ## Design check
-| Rule | Pass? | Items to fix |
+| Rule | Pass? | Rewritten or dropped |
 |---|---|---|
-| One idea per item | yes | none (A.2 and B.2 split out from their parents) |
-| No agree/disagree format | yes | none |
-| Every scale point labeled; three to five points when read aloud | yes | none |
-| No reverse-keyed or double-negative items | yes | none |
-| Recall window bounded | yes | none (season named in A.1 and D.1) |
-| Sensitive behaviors routed to an indirect design | yes | none; B.2's "other people ask me for the money" is kept as an option, flagged for the pretest judgment probe |
+| One idea per question | yes | A2 and B2 split from A1 and B1 |
+| Asks about the thing itself, not agreement with a statement | yes | B1 rewritten from an agree/disagree statement |
+| Every option in words; three when read aloud to respondents with little schooling | yes | B1 and D1 have three; A1 and B2 are lists of answers, not ratings |
+| No "not" and no reversed question | yes | none; "did you not buy" in A1 is an answer option, not a negated question |
+| Time period named | yes | A1 and D1 name the season |
+| Plain, neutral words that do not push toward an answer | yes | none |
+| Options cover every answer and do not overlap | yes | "another reason" added to B2 |
+| No direct question on a stigmatized or illegal behavior | yes | none of the four constructs is one |
 
-## Next step
-Items and intended meanings go to draft-cognitive-interview-script; eight interviews with farmers in two villages, before translation into Kiswahili and Luhya with translate-survey-instrument.
+## Not written here
+None.
 
-## What to check before relying on this
-- Whether "put money aside" is heard as formal saving only (bank, M-Pesa) or includes keeping cash or grain back; if the former, B.1 under-reports
-- Whether the "ten farmers like you" frame works for respondents who have not answered a count-of-others question before; C.1 gets extra probes
+## Untested
+These are draft questions. No respondent has yet been asked what they mean.
+- B1: "put money aside" may be heard as saving in a bank or on a phone only, so a farmer who keeps cash or grain back would answer "very hard".
+- C1: a count out of ten of other people is an unfamiliar task for many respondents, and some will answer about what farmers should do.
+- A1 has four spoken options, the most a listener is asked to hold in this block.
 ```

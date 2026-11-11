@@ -3,31 +3,58 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Endline for a savings-group program with peri-urban workers in Wakiso, Uganda. The baseline was 50 minutes face to face: a 5-point satisfaction showcard, a 10-rung ladder for financial security, a card listing eight uses of savings, plus savings balance, deposit frequency, group attendance, and household items. We have the respondents' own numbers from baseline; 85 percent of men and 70 percent of women said they own the phone. Live calls by our enumerators in Luganda and English. Core outcomes: savings balance, deposit frequency in the last month, group attendance, and the ladder. We can afford airtime and can do about 100 face-to-face interviews for comparison. Convert it.",
-      "expected_output": "A full run of the output template: a keep/drop table that cuts the 50-minute instrument to a live call at or below 30 minutes, keeping the four core outcomes and dropping or deferring household items; the satisfaction showcard converted to an unfolding scale and the ladder to a read-aloud scale with both endpoints in words, with the uses-of-savings card turned into a short read list; a spoken consent and privacy script; a call protocol with attempts spread over times and days, call-backs, a replacement rule, Luganda/English matching, and the airtime incentive; a frame section noting the lower ownership among women and how the intended respondent is asked for on a shared phone; a mode-effect plan using the 100 face-to-face interviews with a pre-specified difference on the core items; and a phone pretest hand-off to draft-cognitive-interview-script. It does not compute how many numbers to call, does not quote a 15 to 20 minute rule, and does not re-ask the Before you start questions.",
+      "name": "Full run",
+      "prompt": "Endline for a savings-group program with 900 peri-urban workers in Wakiso, Uganda. The result decides whether we extend the program to 40 more groups. The baseline was 50 minutes face to face: savings balance, deposits in the last month, group attendance, a 10-rung ladder for financial security, a 5-point satisfaction showcard, a card listing eight uses of savings, a 14-item household asset list, and a spending module. Our travel budget was cut, so the endline has to be live calls by our own enumerators in Luganda and English. We have the numbers respondents gave at baseline; 85% of men and 70% of women said the phone was their own. The items we cannot do without are the balance, deposits, attendance, and the ladder. We can pay airtime and can manage about 100 face-to-face interviews for comparison. Convert it.",
+      "expected_output": "A phone version in the output template that cuts the instrument to a stated call length and plans a comparison with the 100 face-to-face interviews.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "States a target call length of 30 minutes or less and lists the items dropped.",
+        "Asks the satisfaction showcard item in two steps, direction then strength.",
+        "Describes both ends of the ladder in words.",
+        "Says women are more likely to be reached through someone else's phone and that the intended respondent is asked for by name.",
+        "Plans a face-to-face comparison on the core items and names the difference that would change the conclusion.",
+        "Does not calculate how many numbers to call."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "Can we just do our endline by phone instead of in person?",
-      "expected_output": "The skill does not produce an instrument or protocol. It asks for the face-to-face questionnaire with its showcards and current length, whether the calls will be live or IVR and why phone, where the numbers come from and what is known about ownership and sharing by gender, and which items are essential to the decision the endline informs. It may ask about incentive budget and whether a face-to-face subsample is possible, marked optional.",
+      "expected_output": "The skill asks for the questionnaire, the kind of call, where the numbers come from, and the decision the survey informs, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks for the face-to-face questionnaire and its length.",
+        "Asks where the phone numbers come from or who owns the phones.",
+        "Asks what decision the survey informs or which items are essential.",
+        "Does not produce a phone version or call rules."
+      ]
     },
     {
       "id": 3,
-      "prompt": "ART adherence SMS program in Kisumu, Kenya. Our 6-month follow-up was supposed to be at the clinic but attendance is low, so we want to call patients instead. The questionnaire has missed doses in the last 7 days, side effects, whether the last viral load result was suppressed, whether they have told their partner their status, and satisfaction with the SMS reminders on a 5-point showcard. Many patients told us at enrollment that they share a phone with a spouse or sibling. Enumerators are clinic counselors who speak Dholuo and Kiswahili. Convert it for calls.",
-      "expected_output": "The skill produces what it safely can: the missed-dose, side-effect, and SMS-satisfaction items converted (satisfaction as an unfolding scale), the consent and privacy script, the call protocol, and the frame section. It marks the viral load and partner-disclosure items, and the fact that the call itself reveals a clinic relationship, as sensitive on a shared phone: it does not keep them in the phone instrument as drafted, sets the privacy check as a gate for the whole call, and tells the user to consult the ethics board and a survey methodologist with remote data collection experience on whether HIV-related items can be asked by phone at all here, listing what to bring (the frame with sharing information, the sensitive-item list, the draft protocol). It still plans the mode-effect check and the phone pretest.",
+      "name": "Near the escalation point",
+      "prompt": "ART adherence SMS program in Kisumu, Kenya. Our 6-month follow-up was meant to be at the clinic but attendance is low, so we want our counselors to call patients instead, in Dholuo and Kiswahili. The 25-minute questionnaire has missed doses in the last 7 days, side effects, whether the last viral load result was suppressed, whether they have told their partner their status, and satisfaction with the SMS reminders on a 5-point showcard. It informs whether we keep the reminders. Numbers were given at enrollment, and many patients told us they share the phone with a spouse or sibling. Convert it for calls.",
+      "expected_output": "The skill converts what it safely can and says an ethics reviewer and a survey methodologist must decide whether the HIV-related items can be asked by phone at all.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Marks the viral load and partner disclosure items as sensitive on a shared phone and does not keep them as drafted.",
+        "Includes a privacy check asked before sensitive items, with a call-back if the respondent is not alone.",
+        "Asks the satisfaction showcard item in two steps, direction then strength.",
+        "Names an ethics reviewer and a survey methodologist with phone experience.",
+        "Says what to bring to them."
+      ]
     },
     {
       "id": 4,
+      "name": "Wrong skill",
       "prompt": "Our phone instrument is ready. We expect about 40 percent of numbers not to pick up and some people to drop out between rounds. How many numbers do we need to call to end up with 800 completed interviews?",
-      "expected_output": "The skill recognizes that the instrument exists and the question is sample size under non-response and attrition. It does not produce an instrument or a call protocol and does not compute the number. It names estimate-sample-size as the skill that owns this and notes that the expected non-response and attrition rates are inputs to it, offering only to confirm the call protocol's attempt and replacement rules if those are still open.",
+      "expected_output": "The skill says the question is sample size under non-response and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the question is how many numbers to call, not how to convert the questionnaire.",
+        "Names estimate-sample-size.",
+        "Does not produce a phone version.",
+        "Does not calculate the number of numbers to call."
+      ]
     }
   ]
 }
