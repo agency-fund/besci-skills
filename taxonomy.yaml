@@ -244,6 +244,18 @@ io_types:
     label: Scale-up strategy
     description: "How a tested program reaches routine delivery: the user organization, the environment, the resource team, the strategic choices, and prioritized actions with an owner and a date."
     user_suppliable: false
+  - id: effect-estimate
+    label: Effect estimate
+    description: "The estimated effect of a program on its outcome, from an evaluation, with its unit, uncertainty, and the sample it came from."
+    user_suppliable: true
+  - id: heterogeneity-report
+    label: Heterogeneity report
+    description: "Who benefited more or less from a program: pre-specified subgroup results with their correction for testing many groups, kept apart from exploratory findings."
+    user_suppliable: false
+  - id: cost-effectiveness-estimate
+    label: Cost-effectiveness estimate
+    description: "The cost per unit of change in the outcome, with the costs counted, the effect used, and how far the ratio moves when the inputs change."
+    user_suppliable: false
   - id: prototype-test-plan
     label: Prototype test plan
     description: "A plan for trying a draft intervention with a few people from the audience before any pilot: what to learn, with whom, how it is shown, what is recorded, and the rule for what is kept, changed, or dropped."

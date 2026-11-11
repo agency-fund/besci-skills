@@ -3,31 +3,57 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We finished 16 interviews with maize farmers in Bungoma and Kakamega using the TDF guide: 8 who top-dressed on time per program records and 8 who did not. Behavior: smallholder maize farmers enrolled in the program apply top-dressing fertilizer when the plants reach knee height, four to six weeks after planting. Hypotheses from decompose-comb-barriers: H1 (Opportunity, physical) cash is short at top-dressing time; H2 (Capability, psychological) farmers time by the calendar, not the plant; H3 (Motivation, reflective) farmers do not believe top-dressing pays; H4 (Capability, psychological) the window coincides with weeding and the task is forgotten. We have full English transcripts for 6 and the field officer's notes plus Kiswahili audio for 10; our Bungoma M&E officer speaks Luhya and Kiswahili and can read with you. We decide in ten days how to supply fertilizer next season. Transcripts and notes follow. [transcripts]",
-      "expected_output": "A full interview synthesis following the output template: header with the behavior, 16 interviews, languages, data form, readers, and the decision and date; a framework matrix with 16 rows, columns for H1 to H4 plus discovery columns for the domains without a hypothesis and an other column, every cell carrying a summary in the farmer's terms, a verbatim anchor with respondent id, and a status; a verdict per hypothesis with counts out of 16, quotes, named disconfirming cases, and the pattern by on-time versus late; a list of what came up that no hypothesis predicted; what was never mentioned though asked; the confirmed barriers with COM-B component and the open hypotheses; a trade-off section stating that 6 were read in full and 10 summarized from notes and audio with the M&E officer, and what a fuller analysis would add; and a what-to-check list. It does not choose levers, does not state percentages of farmers, does not call the result thematic analysis or report a kappa, and does not re-ask for the hypotheses or the deadline.",
+      "name": "Full run",
+      "prompt": "We finished 16 interviews with maize farmers in Bungoma and Kakamega using our TDF guide: 8 who top-dressed on time per program records and 8 who did not. Behavior: smallholder maize farmers enrolled in the program apply top-dressing fertilizer when the plants reach knee height, four to six weeks after planting. Hypotheses: H1 (Opportunity, physical) cash is short at top-dressing time; H2 (Capability, psychological) farmers time by the calendar, not the plant; H3 (Motivation, reflective) farmers do not believe top-dressing pays; H4 (Capability, psychological) the window coincides with weeding and the task is forgotten. We have full English transcripts for 6 and the field officer's notes plus Kiswahili audio for 10; our Bungoma M&E officer speaks Luhya and Kiswahili and can read with you. We decide in ten days how to supply fertilizer next season. Transcripts and notes follow. [transcripts]",
+      "expected_output": "An interview synthesis in the output template that gives each of the four hypotheses a verdict from a 16-row matrix.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Has a matrix with one row per interview, a column for each of H1 to H4, and a column for what no hypothesis predicted.",
+        "Every cell has a status, and every cell other than 'not asked' or 'asked, said nothing' has a quote reference.",
+        "Marks the cells that rest on the field officer's notes or translated audio.",
+        "Gives each hypothesis one of the four verdicts, with counts out of 16 and the interviews that go against it.",
+        "States no percentage of farmers.",
+        "Does not recommend how to supply fertilizer or any other intervention."
+      ]
     },
     {
       "id": 2,
+      "name": "Missing context",
       "prompt": "We did 20 interviews with mothers about the immunization camps. What did we learn?",
-      "expected_output": "The skill does not build a matrix. It asks for the interview data and its form (transcripts, recordings, or notes), language and translation, who interviewed and who the respondents were; for the hypotheses the interviews were meant to test or the guide's domains-to-hypotheses map (pointing to decompose-comb-barriers if none exist); and for the decision the synthesis must inform and its deadline. It may ask, marked optional, about respondent attributes and any prior coding. It produces no verdicts until these arrive.",
+      "expected_output": "The skill asks for the interviews and the hypotheses they were meant to test, and produces nothing else.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Asks for the transcripts, notes, or recordings, or for who interviewed and in what language.",
+        "Asks which hypotheses the interviews were meant to test.",
+        "Does not produce a matrix.",
+        "Gives no verdict on any barrier."
+      ]
     },
     {
       "id": 3,
+      "name": "Near the escalation point",
       "prompt": "Dedza, Malawi: 12 interviews with pregnant women about taking the iron-folate tablet every day. Recorded in Chichewa; our enumerator wrote English notes; nobody on the analysis team speaks Chichewa. In two interviews the women said their husbands beat them for taking 'hospital medicine'. Hypotheses: H1 (Opportunity, social) husbands disapprove; H2 (Motivation, automatic) nausea; H3 (Capability, psychological) forgetting. We decide next week whether to add a husband-engagement session. Synthesize the findings.",
-      "expected_output": "The skill builds the matrix from the English notes with every cell marked as resting on notes and translation rather than transcript, gives provisional verdicts on H1 to H3 with counts out of 12, and names the disconfirming cases. It flags that two interviews disclosed violence, says the safeguarding response and the handling rules for that material come before analysis, and does not file the disclosures merely as evidence for H1. It tells the user that a qualitative researcher who reads Chichewa must check the rows the decision depends on (the H1 cells) before the husband-engagement decision, names the safeguarding lead, and lists what to bring (hypotheses, guide, matrix with anchors, disconfirming cases, trade-off section). It does not refuse to produce the matrix and does not design the session.",
+      "expected_output": "The skill charts the notes and gives provisional verdicts, says the disclosures of violence need a safeguarding response first, and names the specialists.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Gives provisional verdicts on H1 to H3 with counts out of 12.",
+        "Marks the cells as resting on English notes, not transcripts.",
+        "Says the two disclosures of violence need a safeguarding response before analysis.",
+        "Tells the user to consult a qualitative researcher who reads Chichewa before the husband-engagement decision.",
+        "Does not design the husband-engagement session."
+      ]
     },
     {
       "id": 4,
-      "prompt": "Here is our Barrier Analysis tally: 45 Doers and 45 Non-Doers on exclusive breastfeeding, with counts per determinant and response. Which determinants are different between the groups?",
-      "expected_output": "The skill does not build a framework matrix. It says the data are Doer/Non-Doer counts from a Barrier Analysis, which are compared with the 15-point rule in analyze-doer-nondoer-differences, and points the user there with the tally, the group sizes, and the questionnaire.",
+      "name": "Wrong skill",
+      "prompt": "Next month we will interview 15 caregivers in Lilongwe about why they miss the 9-month measles dose. Our hypotheses are distance to the clinic and fear of side effects. What should we ask them?",
+      "expected_output": "The skill says the interviews have not happened and the question is what to ask, and points to the skill for that.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the interviews have not taken place yet.",
+        "Names draft-tdf-interview-guide.",
+        "Does not produce a matrix or verdicts."
+      ]
     }
   ]
 }

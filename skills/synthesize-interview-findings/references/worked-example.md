@@ -1,71 +1,88 @@
-# Worked example: fertilizer top-dressing timing in Western Kenya (interview synthesis)
+# Worked example: fertilizer top-dressing in Western Kenya
 
-Illustrative only. The interviews, counts, and quotes are invented to show one complete run; none of it is a finding.
+A full run of the skill on a realistic case, showing the output it should produce. The case is illustrative, not a real program.
 
-**Setting (illustrative):** the farmer-support program in Bungoma and Kakamega counties described in `draft-tdf-interview-guide`. Sixteen farmers were interviewed with that guide: 8 who top-dressed on time per program records, 8 who did not. Full English transcripts exist for 6; for 10 there are the field officer's notes and Kiswahili audio. The program M&E officer, who speaks Luhya and Kiswahili, read alongside the analyst. The matrix below shows 6 of the 16 rows; the full run has all 16. Counts are of interviews.
+## The request
+
+"We finished 8 interviews with maize farmers in Bungoma and Kakamega using our interview guide: 4 who top-dressed on time according to program records and 4 who did not. Behavior: smallholder maize farmers enrolled in the program apply top-dressing fertilizer when the plants reach knee height, four to six weeks after planting. Hypotheses: H1 (Opportunity, physical) cash is short at top-dressing time; H2 (Capability, psychological) farmers time it by the calendar, not the plant; H3 (Motivation, reflective) farmers do not believe top-dressing pays; H4 (Capability, psychological) the window falls during weeding and the task is forgotten. We have full English transcripts for the 4 Bungoma interviews. For the 4 in Kakamega we have the field officer's English notes and Kiswahili audio; our M&E officer, who speaks Luhya and Kiswahili, checked the quotes against the audio. Our baseline survey says most households pay second-term school fees in the same weeks, and field officers reported two agro-dealers in Kakamega out of stock during the window. We decide in ten days how to supply fertilizer next season. Transcripts and notes follow."
+
+## The output
 
 ```markdown
 # Interview synthesis: top-dressing maize on time
 
-**Target behavior:** Smallholder maize farmers enrolled in the program apply top-dressing fertilizer to their maize when the plants reach knee height, about four to six weeks after planting.
-**Interviews:** 16, enrolled farmers (8 on time, 8 late per program records), Kiswahili with Luhya, 6 full transcripts and 10 notes-plus-audio, interviewed by a program field officer, translated by the M&E officer (notes) and the analyst with the M&E officer (audio)
-**Analyst(s):** program analyst with the Bungoma M&E officer (Luhya and Kiswahili speaker) on every audio row
-**Decision this informs:** how to supply fertilizer next season (cash, voucher, or in kind, and when) by 24 October (illustrative)
-**Frame:** H1 cash short at top-dressing time [Opportunity, physical / Environmental context and resources]; H2 timing by calendar not plant [Capability, psychological / Knowledge]; H3 does not believe it pays [Motivation, reflective / Beliefs about consequences]; H4 weeding window, task forgotten [Capability, psychological / Memory, attention and decision processes]; discovery columns: Social influences, Emotion, Skills; other
+**Behavior:** Smallholder maize farmers enrolled in the program apply top-dressing fertilizer when the plants reach knee height, four to six weeks after planting.
+**Interviews:** 8 with enrolled farmers (4 on time, 4 late, by program records); interviewed by a program field officer; in Kiswahili and Luhya; 4 transcripts (Bungoma), 4 notes with audio (Kakamega); notes written in English by the field officer, quotes checked against the audio by the M&E officer
+**Read by:** the program analyst; the M&E officer charted the four Kakamega rows with the analyst; no second reader on the Bungoma rows
+**Hypotheses:** H1 cash is short at top-dressing time [Opportunity, physical / Environmental context and resources]; H2 timing by the calendar, not the plant [Capability, psychological / Knowledge]; H3 does not believe it pays [Motivation, reflective / Beliefs about consequences]; H4 the window falls during weeding and the task is forgotten [Capability, psychological / Memory, attention and decision processes]
 
-## Framework matrix
-| Respondent | Attributes | H1 cash short | H2 calendar timing | H3 does not pay | H4 weeding, forgotten | Discovery: Social influences | Other |
-|---|---|---|---|---|---|---|---|
-| R01 | Bungoma, male, on time, transcript | Had cash from a dairy payment that week. "The milk money came just at that time." (R01) [contradicts] | Watches the plant. "When the leaves are this high, I know." (R01) [contradicts] | Expects a visible gain. "You see it in the cobs." (R01) [contradicts] | Weeded first, then top-dressed the same week. [contradicts] | Group buys fertilizer in bulk. "Our group orders together." (R01) | none |
-| R02 | Kakamega, female, late, notes + audio | School fees took the cash. "By then the money is gone, fees." (R02) [supports] | Goes by the rains. "After the second rains I apply." (R02) [supports] | Believes it pays. [contradicts] | Was weeding for a neighbor for pay that week. "I was in her shamba." (R02) [supports] | Husband decides on inputs. "He buys when he buys." (R02) | Agro-dealer had no stock. "The shop had none." (R02) |
-| R03 | Bungoma, male, late, transcript | Cash short. "There is no money in that month." (R03) [supports] | Not clear. [mixed] | Doubts it pays on his soil. "On my soil it does nothing." (R03) [supports] | Did not forget; chose not to. [contradicts] | none mentioned [not mentioned] | none |
-| R04 | Kakamega, female, on time, notes + audio | Borrowed from her group. "The chama lent me." (R04) [supports] | Watches the plant. [contradicts] | Expects gain. [contradicts] | Weeded and top-dressed together. [contradicts] | Chama loan made it possible. (R04) | none |
-| R05 | Bungoma, male, late, transcript | Cash was there but spent on a funeral. "We had a burial that week." (R05) [mixed] | Goes by the calendar. "Six weeks, I count." (R05) [supports] | Expects gain. [contradicts] | Forgot in the weeding rush. "By the time I remembered the maize was tasseling." (R05) [supports] | none [asked and denied] | Funeral expense |
-| R06 | Kakamega, female, late, notes + audio | Cash short. [supports] | Not asked (interview cut short). [not asked] | Expects gain. [contradicts] | Was weeding. "The weeds do not wait." (R06) [supports] | Husband away; she could not buy. (R06) | none |
-<... rows R07 to R16 follow the same form ...>
+## Matrix
 
-## Verdict per hypothesis
+| Respondent | Group | H1 cash short | H2 calendar timing | H3 does not pay | H4 weeding, forgotten | Not predicted |
+|---|---|---|---|---|---|---|
+| R01 | Bungoma, man, on time | A milk payment arrived that week. "The milk money came just at that time." (R01, p. 3) [contradicts] | Watches the plant. "When the leaves reach my knee, I know." (R01, p. 4) [contradicts] | Sees the gain. "You see it in the cobs." (R01, p. 5) [contradicts] | Weeds, then top-dresses the next day. "I weed, then the next day I put it." (R01, p. 4) [contradicts] | His group buys fertilizer together. "Our group orders together." (R01, p. 3) |
+| R02 | Kakamega, woman, late | School fees took the cash. "By then the money is gone, fees." (R02, 12:40) [supports] † | Goes by the rains. "After the second rains I apply." (R02, 15:10) [supports] † | Thinks it pays if she can buy it. "It pays, if you have it." (R02, 17:30) [contradicts] † | Was weeding a neighbor's field for pay that week. "I was in her shamba." (R02, 19:05) [supports] † | The shop had no stock, and her husband decides on inputs. "The shop had none." (R02, 13:20); "He buys when he buys." (R02, 14:00) † |
+| R03 | Bungoma, man, late | No money in the window. "There is no money in that month." (R03, p. 2) [supports] | Gives both a count and a look. "Six weeks, or when it looks ready." (R03, p. 3) [mixed] | Doubts it works on his soil, and says so three times. "On my soil it does nothing." (R03, p. 4) [supports] | Did not forget; chose not to. "I did not forget. I decided." (R03, p. 5) [contradicts] | None |
+| R04 | Kakamega, woman, on time | Borrowed from her savings group to buy it. "The chama lent me." (R04, 08:15) [supports] † | Watches the leaves. "I look at the leaves." (R04, 10:30) [contradicts] † | Expects more bags. "More bags." (R04, 12:00) [contradicts] † | Weeds and top-dresses on the same days. "I do them together." (R04, 13:45) [contradicts] † | The group loan is what made it possible. (R04, 08:15) † |
+| R05 | Bungoma, man, late | Had the money, but a funeral took it. "We had a burial that week." (R05, p. 2) [mixed] | Counts the weeks. "Six weeks, I count." (R05, p. 3) [supports] | "Of course it pays." (R05, p. 4) [contradicts] | Forgot in the weeding rush. "By the time I remembered, the maize was tasseling." (R05, p. 4) [supports] | None |
+| R06 | Kakamega, woman, late | No money then. "Money was not there." (R06, 06:50) [supports] † | Interview cut short before this question. [not asked] | Expects a gain. "It helps the maize." (R06, 09:10) [contradicts] † | Weeding came first. "The weeds do not wait." (R06, 10:20) [supports] † | Her husband was away and she could not buy alone. "He was in Nairobi." (R06, 07:30) † |
+| R07 | Bungoma, man, on time | Bought it only because his savings group paid out that week. "The merry-go-round paid me that week." (R07, p. 2) [supports] | Watches the plant. "Knee height." (R07, p. 3) [contradicts] | Expects a gain. "Without it the cobs are small." (R07, p. 3) [contradicts] | His son weeds while he top-dresses. "My son weeds, I do the fertilizer." (R07, p. 4) [contradicts] | Timing of the group payout. (R07, p. 2) |
+| R08 | Kakamega, woman, on time | Her husband sends money each month. "My husband sends money every month." (R08, 05:40) [contradicts] † | Counts four weeks from planting. "I count four weeks." (R08, 07:15) [supports] † | "It pays." (R08, 09:00) [contradicts] † | Asked about weeding; spoke only about the rains. [asked, said nothing] † | None |
+
+† = the cell rests on notes or translation, not a transcript.
+
+## Verdicts
+
 ### H1 cash is short at top-dressing time: supported
-- Counts: 11 support, 3 contradict, 2 mixed, 0 not mentioned, 0 not asked (of 16)
-- Evidence: "By then the money is gone, fees." (R02); "There is no money in that month." (R03); "The chama lent me." (R04)
-- Disconfirming cases: R01 (dairy payment arrived in the window); R04 and R09 had cash only through a group loan, which supports the mechanism while contradicting the outcome
-- Pattern by attribute: supported by 7 of 8 late and 4 of 8 on-time farmers; the on-time supporters all named a loan or a windfall
-### H2 farmers time by the calendar, not the plant: mixed
-- Counts: 7 support, 5 contradict, 2 mixed, 0 not mentioned, 2 not asked (of 16)
-- Evidence: "Six weeks, I count." (R05); "After the second rains I apply." (R02); against: "When the leaves are this high, I know." (R01)
-- Disconfirming cases: R01, R04, R08, R11, R13 watch the plant; three of these were on time
-- Pattern by attribute: calendar or rain timing more common among late farmers (5 of 8) than on-time (2 of 8); two interviews did not reach the question
-### H3 farmers do not believe top-dressing pays: not supported
-- Counts: 2 support, 14 contradict, 0 mixed (of 16)
-- Evidence: "You see it in the cobs." (R01); against: "On my soil it does nothing." (R03)
-- Disconfirming cases: R03 and R12 doubt the return on their soil; both late
-- Pattern by attribute: none beyond the two doubters
-### H4 the window coincides with weeding and the task is forgotten: supported among late farmers
-- Counts: 7 support, 8 contradict, 1 mixed (of 16)
-- Evidence: "By the time I remembered the maize was tasseling." (R05); "The weeds do not wait." (R06); "I was in her shamba." (R02)
-- Disconfirming cases: all 8 on-time farmers weeded and top-dressed in the same week; R03 chose not to rather than forgot
-- Pattern by attribute: 7 of 8 late farmers versus 0 of 8 on time; among the late, four were doing paid weeding for others
+- **Interviews:** 5 support, 2 contradict, 1 mixed, 0 asked and said nothing, 0 not asked (of 8)
+- **By group:** 3 of 4 late farmers support it and the fourth lost the money to a funeral. Two on-time farmers support it too: they bought only through a group loan or payout.
+- **Conflicting accounts:** none; the two who contradict it had income arrive in the window
+- **Held strongly:** R03, "There is no money in that month."
+- **Quotes:** "By then the money is gone, fees." (R02, 12:40); "The chama lent me." (R04, 08:15)
+- **Goes against it:** R01 (a milk payment arrived that week); R08 (her husband's monthly remittance)
 
-## What came up that no hypothesis predicted
-- Agro-dealer stock-outs in the window: 4 of 16 raised it unprompted. "The shop had none." (R02)
-- Group purchase or group loans: 5 of 16 (R01, R04, R09, R11, R14). "Our group orders together." (R01)
-- Husband controls input purchases: 3 of 8 women. "He buys when he buys." (R02)
+### H2 timing by the calendar, not the plant: mixed
+- **Interviews:** 3 support, 3 contradict, 1 mixed, 0 asked and said nothing, 1 not asked (of 8)
+- **By group:** 2 late farmers go by the calendar or the rains; 3 on-time farmers watch the plant
+- **Conflicting accounts:** R08 counts four weeks and was still on time, so counting weeks does not by itself make a farmer late
+- **Held strongly:** none
+- **Quotes:** "Six weeks, I count." (R05, p. 3); "When the leaves reach my knee, I know." (R01, p. 4)
+- **Goes against it:** R01, R04, R07
 
-## Never mentioned, though asked
-- Fear of getting the application wrong (Emotion): asked in 14 interviews, nothing beyond "no"
-- Not knowing how to apply (Skills): asked in 16, nothing
+### H3 does not believe top-dressing pays: not supported
+- **Interviews:** 1 support, 7 contradict, 0 mixed, 0 asked and said nothing, 0 not asked (of 8)
+- **By group:** the one supporter is late
+- **Conflicting accounts:** R03 against everyone else
+- **Held strongly:** R03, three times: "On my soil it does nothing."
+- **Quotes:** "You see it in the cobs." (R01, p. 5); "On my soil it does nothing." (R03, p. 4)
+- **Goes against it:** all but R03
 
-## Confirmed barrier(s)
-- Cash short in the window [Opportunity, physical]: 11 of 16 support; every on-time supporter had a loan or windfall.
-- Weeding, including paid weeding for others, crowds out the task [Capability, psychological, with an Opportunity, physical component for paid work]: 7 of 8 late versus 0 of 8 on-time.
-- Open: H2 (timing by calendar) is mixed and was not reached in two interviews; four short follow-up calls asking "how do you know when" would settle it. Stock-outs are a candidate Opportunity barrier the guide did not test.
+### H4 the window falls during weeding and the task is forgotten: supported
+- **Interviews:** 3 support, 4 contradict, 0 mixed, 1 asked and said nothing, 0 not asked (of 8)
+- **By group:** 3 of 4 late farmers; no on-time farmer, each of whom weeded and top-dressed in the same days or had help
+- **Conflicting accounts:** R03, late, says he decided not to rather than forgot
+- **Held strongly:** none
+- **Quotes:** "By the time I remembered, the maize was tasseling." (R05, p. 4); "The weeds do not wait." (R06, 10:20)
+- **Goes against it:** R03 (chose not to); R01, R04, R07 (managed both)
 
-## Speed-versus-depth trade-off
-- Data form and depth: 6 read in full from transcript; 10 summarized from notes with audio checked for every anchored quote
-- Readers: one analyst; the M&E officer read all 10 audio rows and 2 of the transcript rows; no second coder on the transcript rows
-- What a fuller analysis would add: full transcription of the 10 audio interviews, a second reader on all rows, an inductive pass on the "other" column (stock-outs, group buying, household control of inputs), and a return to the two interviews that did not reach H2
+## Not predicted, and outliers
+- Savings-group loans, payouts, or joint purchase: 3 interviews, all on time (R01, p. 3; R04, 08:15; R07, p. 2)
+- A husband who decides on or must be present for input purchases: 2 of the 4 women (R02, 14:00; R06, 07:30)
+- Agro-dealer out of stock: 1 interview (R02, 13:20)
+- Outlier: R03, the only farmer who doubts top-dressing works and the only one who says he chose not to
+
+## Against other evidence
+- H1: the baseline survey says most households pay second-term school fees in the same weeks; agrees
+- Stock-outs: field officers reported two Kakamega agro-dealers out of stock in the window; agrees with R02
+- H2, H3, H4: none available
+
+## Confirmed barriers
+- Cash is short in the top-dressing window [Opportunity, physical / Environmental context and resources]: 3 of 4 late farmers, and the on-time farmers who were short bought only through a group loan or payout; the baseline survey points the same way.
+- Weeding crowds out top-dressing [Capability, psychological / Memory, attention and decision processes]: 3 of 4 late farmers and no on-time farmer.
+- **Open:** H2: ask the four late farmers how they decide when to apply; one interview did not reach the question.
+- **Open:** stock-outs and husbands' control of purchases came up unprompted; the guide did not ask about either.
 
 ## What to check before relying on this
-- The supply decision rests on H1 and H4; H4 rests on 8 late-farmer interviews, and the paid-weeding pattern comes from 4 of them.
-- Ten rows rest on notes and audio summarized through the M&E officer; the women's rows (R02, R06, R10, R15) are where idiom about household control may have been flattened.
+- The supply decision rests on H1 and H4, and each rests on four late-farmer interviews; three or four more late farmers would show whether the pattern holds.
+- The four Kakamega rows rest on English notes, with quotes checked against the audio; the women's accounts of household control are where meaning is most likely to have been lost.
 ```
