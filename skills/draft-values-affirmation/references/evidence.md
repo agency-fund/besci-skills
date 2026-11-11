@@ -34,7 +34,7 @@ Outside wealthy Western countries the scan found four tests, and they disagree: 
 
 ## Replication
 
-Mixed. An early school study in the United States found that the exercise narrowed a racial achievement gap by 40% (Cohen, Garcia, Apfel, & Master, 2006, https://doi.org/10.1126/science.1128317; abstract only). A replication in the same district, with the same procedures, found nothing, and the moderators proposed in the literature did not explain why. A reanalysis of a 2010 study of the gender gap in science found that its data showed no improvement for women (Serra-Garcia, Hansen, & Gneezy, 2020, https://doi.org/10.1177/0956797620923587; abstract only). The meta-analysis of classroom studies finds a small average benefit for students under threat, with wide variation.
+Mixed. An early school study in the United States found that the exercise narrowed a racial achievement gap by 40% (Cohen, Garcia, Apfel, & Master, 2006, https://doi.org/10.1126/science.1128317; abstract only). A large replication, run with the same procedures in a setting where an earlier large field experiment had found benefits, found nothing, and the moderators proposed in the literature did not explain why (Hanselman et al., 2017). A reanalysis of a 2010 study of the gender gap in science found that its data showed no improvement for women (Serra-Garcia, Hansen, & Gneezy, 2020, https://doi.org/10.1177/0956797620923587; abstract only). The meta-analysis of classroom studies finds a small average benefit for students under threat, with wide variation.
 
 ## What to check locally
 

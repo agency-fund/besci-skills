@@ -270,6 +270,8 @@ The result sets `metadata.tested_in`:
 | `mainly-western` | Tested mainly in wealthy Western countries | The scan found fewer than two field studies outside wealthy Western countries. |
 | `not-applicable` | Not applicable | The skill is a procedure that makes no claim about how people behave. |
 
+When a review pools studies from outside wealthy Western countries, its overall result decides between "holds" and "differs"; record single trials that went the other way in the table.
+
 **Verify every source.** Resolve the DOI or open the page, and confirm author, year, and title, before the source goes into a skill. Leave out anything that cannot be verified; do not flag it and keep it. Never write a citation from memory.
 
 ## 8. Skills that search for or read studies
