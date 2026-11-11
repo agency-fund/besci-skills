@@ -30,7 +30,7 @@ What depends on local conditions is whether the person controls the plan: who de
 
 ## Replication
 
-The direction replicates across hundreds of tests, most of them small (a median of about 30 people per group). Field trials find effects of a few percentage points or none. Results for repeated behaviors are weakest: none for gym visits, little for water chlorination, and a small average effect for physical activity in the meta-analysis. Where the comparison group also received a clear explanation of what to do, as in the South African self-test trial, the prompt added nothing.
+The direction replicates across hundreds of tests, most of them small (a median of about 30 people per group). Field trials find effects of a few percentage points or none. Results for repeated behaviors are weakest: none for gym visits, little for water chlorination, and a small average effect for physical activity in the meta-analysis. The same meta-analysis found no reliable effect on vaccination rates or on voting, although single trials of each have found one. Where the comparison group also received a clear explanation of what to do, as in the South African self-test trial, the prompt added nothing.
 
 ## What to check locally
 

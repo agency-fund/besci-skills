@@ -60,9 +60,9 @@ If any of 1 to 4 is missing, ask and stop. If 5 is missing, make it the first op
 - Milkman, K. L., Beshears, J., Choi, J. J., Laibson, D., & Madrian, B. C. (2011). Using implementation intentions prompts to enhance influenza vaccination rates. *Proceedings of the National Academy of Sciences*, 108(26), 10415–10420. https://doi.org/10.1073/pnas.1103170108 Supports: asking for more than a date.
 - Abel, M., Burger, R., Carranza, E., & Piraino, P. (2019). Bridging the intention-behavior gap? The effect of plan-making prompts on job search and employment. *American Economic Journal: Applied Economics*, 11(2), 284–301. https://doi.org/10.1257/app.20170566 Supports: use outside wealthy Western countries.
 
-**Where the evidence comes from:** Most of the 642 tests were run in the United Kingdom, Germany, and the United States, and the meta-analysis does not compare countries. Elsewhere field results differ: a job-search plan raised employment among unemployed youth in South Africa, while plan prompts made little or no difference to HIV testing in Uganda or to reporting HIV self-test results in South Africa. Check locally whether the time and place are the person's to choose.
+**Where the evidence comes from:** Most of the 642 tests were run in the United Kingdom, Germany, and the United States. Elsewhere field results differ: a job-search plan raised employment among unemployed youth in South Africa, while plan prompts made little or no difference to HIV testing in Uganda or to reporting HIV self-test results in South Africa. Check locally whether the time and place are the person's to choose.
 
-**Replication status:** Replicated in direction, with smaller effects in the field than the lab and substantial publication bias; a field trial for gym visits, a repeated behavior, found none.
+**Replication status:** Replicated in direction, with smaller effects in the field than the lab and substantial publication bias; the meta-analysis found no reliable effect on vaccination or voting, and a field trial for gym visits found none.
 
 ## How to do it
 
