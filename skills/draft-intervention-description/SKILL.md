@@ -59,7 +59,7 @@ If 1 is missing, ask and stop. If 2 stays unclear after one question, write it a
 
 **Where the evidence comes from:** These are reporting standards and practice guidance; they make no claim about how people behave. TIDieR and the taxonomy come from health research. A reader elsewhere most often lacks what the team takes for granted: who delivered it, in which language, with what support.
 
-**Replication status:** Not applicable; these are consensus standards. In six leading medical journals, 39% of 137 trial interventions were adequately described.
+**Replication status:** Not applicable; these are consensus standards. In six leading medical journals, 39% of 137 trial interventions were adequately described (Hoffmann, Erueti & Glasziou, 2013).
 
 ## How to do it
 
