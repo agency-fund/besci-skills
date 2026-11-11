@@ -7,7 +7,7 @@ The method:
 - Wu, Z., Goldberg, B., & Xu, R. (2026, July 1). *Measuring agency in a digital context*. The Agency Fund. https://theagencyfund.substack.com/p/measuring-agency-in-a-digital-context Supports: the whole method. The post gives the working definition, says why agency is hard to measure (it is latent, multidimensional, culturally situated, and context-specific), states the two distinctions (end goal or digital tool; internally experienced or externally expressed), and names Bandura's, Sen's, and Jigsaw's frameworks. It is practitioner guidance, not a study. Read in full.
 - Walsh, J., & Madon, T. (2024, April 3). *How to build human agency*. The Agency Fund. https://theagencyfund.substack.com/p/how-to-build-human-agency Supports: The Agency Fund's program lens in `frameworks.md`. Read in full.
 
-Laying the two distinctions out as a two-by-two grid, the table that matches a team's words to constructs, and the table of erosion signs are this skill's own.
+The two-by-two grid is the post's own: its figure "Measuring agency: data collected on- and off-platform" crosses internally experienced and externally expressed agency with agency toward the end goals and toward the digital tool. The table that matches a team's words to constructs and the table of erosion signs are this skill's own.
 
 Constructs for agency with respect to the end goal:
 
