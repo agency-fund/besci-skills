@@ -339,4 +339,4 @@ Exit 0 means the structure is right. Content review by a maintainer is still req
 
 The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.
 
-The voice rules (ADR 0009: the shared voice block, the closing, no directive closing lines) are W053 to W055 while the library is revised to them, behind the switch `STRICT_VOICE`; they become errors E053 to E055 when it is on. A named skill or workflow that does not exist is always an error, E056.
+The voice rules (ADR 0009: the shared voice block, the closing, no directive closing lines) are errors E053 to E055. They were warnings, behind the switch `STRICT_VOICE`, while the library was revised to them. A named skill or workflow that does not exist is an error, E056.

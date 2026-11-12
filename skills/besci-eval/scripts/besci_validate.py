@@ -101,9 +101,9 @@ PROCESS_TERMS = ["dossier", "verified-crossref", "verified-fetch", "author to co
 SKILL_NAME_IN_TEXT_RE = re.compile(r"`([a-z]+(?:-[a-z0-9]+)+)`")
 # --- The conversational voice (ADR 0009) -------------------------------------
 # Every skill carries the shared voice block in its Output template section and
-# ends its template with a closing that offers next moves. Warnings while the
-# library is revised to it; set STRICT_VOICE to True once every skill passes.
-STRICT_VOICE = False
+# ends its template with a closing that offers next moves. These were warnings
+# while the library was revised to the standard and are errors now.
+STRICT_VOICE = True
 VOICE_START = "<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->"
 VOICE_END = "<!-- /shared -->"
 CLOSING_HEADING = "Where you could go from here"
