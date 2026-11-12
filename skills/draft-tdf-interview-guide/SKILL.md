@@ -14,7 +14,7 @@ metadata:
   title: Write an interview guide that tests barrier hypotheses
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ The Theoretical Domains Framework (TDF) sorts the influences on behavior into 14
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the guide. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior: who does what, when, and where.
 2. **Required.** The hypotheses to test: the reasons the team thinks the behavior is not happening, from a diagnosis or from its own guesses.
@@ -83,6 +83,8 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: how many questions the guide has and how it covers each hypothesis and the domains with none, and the one thing to settle before the first interview, such as a local term, who interviews whom, or the length.>
+
 # Interview guide: <short name of the behavior>
 
 **Behavior:** <who does what, when, where, with or to whom>
@@ -93,7 +95,7 @@ See `references/worked-example.md` for a complete run.
 - **Purpose, in plain words:** "<...>"
 - [CONSENT: insert the team's approved consent script here; do not start without it]
 - **Warm-up:** "<an easy question about the respondent's day or work>"
-- **Reconstruction:** "Think about the last time you <were due to do the behavior>. Tell me what happened that day."
+- **The last time it was due:** "Think about the last time you <were due to do the behavior>. Tell me what happened that day."
 
 ## Questions, in running order
 ### <topic block>
@@ -136,7 +138,28 @@ Outside the framework: question <n>.
 - Pilot with two respondents; drop any question that draws the same answer whichever hypothesis is true.
 - <who should not interview whom>
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the interview guide is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `synthesize-interview-findings`, once the interviews are done and the transcripts or notes are in hand
+- `audit-researcher-bias`, when several hypotheses are the team's own guesses, or the team is sure of the answer before asking
+- `diagnose-social-norm`, when a hypothesis is that people follow what others do or expect, and the team wants to know whether that is a norm
+- `decompose-comb-barriers`, when the hypotheses sit in only one or two parts of COM-B and the team wants rivals before fieldwork
+- the two pilot interviews, and whoever can supply the bracketed local terms, before the full round
+- an ethics review body, when the topic or the respondents need one and no review is planned>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

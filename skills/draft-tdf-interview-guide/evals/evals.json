@@ -8,12 +8,12 @@
       "expected_output": "A complete interview guide in the output template in which H1 to H4 are each tested by at least two open questions.",
       "files": [],
       "assertions": [
-        "Every question is labeled with a domain and with the hypothesis it tests or 'discovery'.",
+        "Every question is labeled with a domain and with the hypothesis it tests or 'discovery', and one open question belongs to no domain.",
         "Each of H1 to H4 is tested by at least two questions, and the map lists all 14 domains.",
         "The opening has a consent placeholder and a question about a specific recent day.",
         "No question is yes-or-no, and no question or probe names the barrier it is looking for.",
-        "Includes one open question that belongs to no domain.",
-        "Flags that mentors interviewing the teachers they coach may shape the answers."
+        "Flags that mentors interviewing the teachers they coach may shape the answers.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the behavior as who does what, when, and where.",
         "Asks what reasons the team thinks are behind it, or says where to get hypotheses if there are none.",
         "Asks who will be interviewed, by whom, in what language, or for how long.",
-        "Does not write any interview question."
+        "Does not write any interview question.",
+        "Says why it needs these answers."
       ]
     },
     {

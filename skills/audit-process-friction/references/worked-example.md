@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Process friction audit
+Getting from the SMS to a reported result takes a man one round trip, a photo ID, four decisions, and about 40 minutes of handling, plus travel, queues, and waiting that nobody has measured. Most men are lost before they reach a pharmacy, and most who collect a kit never report a result. The changes at the top of the list are the program's own: drop the address field, pre-fill phone and age, and stop asking men to type the 12-digit serial number. Every time below is a staff estimate until the field officer's visits next week.
+
+# What it takes to collect a self-test kit and report the result, step by step
 
 **Behavior:** Men aged 18 to 30 in Lagos who receive the program's SMS collect a free HIV self-test kit from a partner pharmacy within two weeks and report the result by USSD.
 **Process audited:** From the first SMS (the collection code) to a result recorded on the USSD line.
@@ -17,7 +19,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ## Step log
 
-| # | Step, from the user's side | Time, with waiting | Money | Documents | Decision or fact demanded | Controlled by | Tag | Reason for the tag | In → out |
+| # | Step, from the user's side | Time, with waiting | Money | Documents | Decision or fact demanded | Controlled by | Keep, remove, move, or check | Why | People in → out |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Read the SMS with the code, then a second SMS listing 25 pharmacies | 2 min (estimate) | None | None | Which pharmacy is nearest and open; the SMS gives no hours | Program | move | The program can name the nearest pharmacy from the area he registered in | 3,000 in; no data out |
 | 2 | Travel to the pharmacy and back | Not known | Transport fare and lost earnings; amounts not known | None | When to go, around working hours | Program, through its choice of partners | move | A distributor nearer to where he lives or works would shorten it; needs new partners | No data |
@@ -56,4 +58,12 @@ That removing steps, or doing them for people, raises completion more than expla
 - Every time is an estimate. Have the field officer time each step at the three pharmacies, and count how many men arrive, are turned away at the ID check, and leave with a kit.
 - Whether the loss after collection is the USSD entry or the test itself. Ask 15 men who collected a kit and did not report.
 - The pharmacies must agree to record serial numbers and to drop the ID check.
+
+## Where you could go from here
+That's the audit.
+- The field officer's visits to the three pharmacies next week: timing each step and counting who is turned away at the ID check would replace the estimates above and show which of the five steps before collection loses the most men.
+- The program's compliance lead, on the photo ID: if no rule requires it, the fifth change can go ahead with the first four.
+- `select-intervention-levers`, once the visits have shown where men are lost: worth it if the loss sits somewhere the program cannot delete or pre-fill, such as the trip.
+I'd lean toward the field visits, because they are already planned and the order above rests on staff description alone.
+Questions you could ask next: "What should the field officer record at each pharmacy so the three visits can be compared?" · "What would we ask the 15 men who collected a kit and never reported?"
 ```

@@ -14,7 +14,7 @@ metadata:
   title: Check your team's assumptions about the audience
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -45,7 +45,7 @@ Flags the weak points in what a team has written about why its audience behaves 
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the audit. Do not ask anything the user has already answered.
 
 1. **Required.** The team's written answers to three prompts, given before it looks at data on the audience:
    a. What do you believe causes the gap between what people do and what the program wants?
@@ -62,7 +62,7 @@ If 1 is missing, give the three prompts and stop. If an answer is only general h
 - Gyani, A., Tindall, K., & Gallagher, R. (2022). *Explore Field Guide*. The Behavioural Insights Team. https://www.bi.team/wp-content/uploads/2022/11/BIT-Explore-Field-Guide.pdf Supports: writing the team's preconceptions down before research, to evaluate them later.
 - Jang, C., Koki, E., Nyaga, R., Okafor, A., Singh, J., Vang, A., & Wendel, S. (2024). *The Busara toolkit: leveraging behavioral science for development*. Busara Groundwork No. 10. https://doi.org/10.62372/WQSB6195 Supports: prompt b and step 5. Its step "Catalog your perspective" asks what knowledge, preconceived notions, and biases the team brings.
 
-**Where the evidence comes from:** This is a procedure and makes no claim about how the audience behaves. Its premise, that professionals misjudge the people they serve, comes from a survey of 1,850 World Bank staff set against poor respondents in Jakarta, Nairobi, and Lima. Every "check locally" line needs an answer from people in or close to the audience.
+**Where the evidence comes from:** This is a procedure and makes no claim about how the audience behaves. Its premise, that professionals misjudge the people they serve, comes from a survey of 1,850 World Bank staff set against poor respondents in Jakarta, Nairobi, and Lima. Every "what would settle it" line needs an answer from people in or close to the audience.
 
 **Replication status:** Not applicable. No source tests whether writing beliefs down changes what a team later concludes.
 
@@ -82,7 +82,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Bias audit report
+<Two or three plain sentences to the user: how many of the team's beliefs drew a flag, the one most likely to steer the research wrong, stated plainly, and that each flag is a question for the field, not a finding about the audience.>
+
+# What the team believes about <the audience, in a few words>, and what to check
 
 **Answers as given:**
 a. <what the team believes is causing the gap, verbatim>
@@ -93,21 +95,42 @@ c. <what would change the team's mind, verbatim; or "none given">
 ## Beliefs that cannot be tested as worded
 - "<belief>" **Why:** <how any observation could be redescribed to fit it>. **Rewrite:** <a version that one obtainable observation could contradict>
 
-## Assumed likeness or difference
-- "<belief>" **Assumes:** <the norm taken from the team's own circumstances, or the mindset given to the audience without asking>. **Check locally:** <the fact that would settle it, and who can supply it>
+## Where a belief assumes the audience is like, or unlike, the team
+- "<belief>" **Assumes:** <the norm taken from the team's own circumstances, or the mindset given to the audience without asking>. **What would settle it:** <the fact, and who can supply it>
 
 ## What would change the team's mind
 - "<belief>" **Answer given:** <verbatim; or "none given">. **Problem:** <vague / needs something unobservable / none>. **Observable version:** <what the team could see or count>
 
-## Carry-over from another population
+## Experience from a different population
 - **Population the team knows:** <as stated>. **Similarity claimed:** <as stated>. **What differs:** <...>. **Question to ask:** <...>
 
-## Seen before
+## Beliefs earlier data did not support
 <a belief that an earlier review already found unsupported; or "No earlier review supplied.">
 
-## Next audit
+## When to repeat this audit
 <the project event that triggers it, and who reads the flags>
+
+## Where you could go from here
+<One line saying the audit is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `decompose-comb-barriers`, when the team is about to list possible reasons for a defined behavior, so the flagged beliefs go in marked as team beliefs rather than as answers
+- `draft-tdf-interview-guide`, when interviews are planned and the "what would settle it" questions can be asked there
+- `map-audience-context`, when the open questions are facts about the setting, such as who decides or how income arrives
+- `review-prior-intervention`, when a belief rests on an earlier attempt that nobody has reviewed
+- a local researcher, a field officer, or a few people from the audience, when nobody on the team can answer the "what would settle it" questions
+- a second reader for the flags, when the author is the only one>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
@@ -118,7 +141,7 @@ c. <what would change the team's mind, verbatim; or "none given">
 ## When to bring in a specialist
 
 Tell the user to consult a local researcher, or a behavioral scientist outside the team, when:
-- Nobody on the team is from or close to the audience, so nobody inside can answer the "check locally" questions
+- Nobody on the team is from or close to the audience, so nobody inside can answer the "what would settle it" questions
 - The beliefs concern stigmatized, clinical, or legal matters (mental health, violence, sexuality, substance use) that the team cannot ethically investigate alone
 - The author is the only reader on a project with a large budget or a rollout decision
 

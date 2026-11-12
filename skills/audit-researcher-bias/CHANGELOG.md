@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The audit opens with a few plain sentences to the user (how many beliefs drew a flag, the one most likely to steer the research wrong, and that a flag is a question for the field), takes a plain title for "Bias audit report", and renames its shorthand labels: "Where a belief assumes the audience is like, or unlike, the team" for "Assumed likeness or difference", "What would settle it" for "Check locally" (also where "What it draws on", the specialist section, and `references/evidence.md` quote it), "Experience from a different population" for "Carry-over from another population", "Beliefs earlier data did not support" for "Seen before", and "When to repeat this audit" for "Next audit". The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard, about 35% shorter. The three prompts, the four checks, and the repeat audit are kept; the check for norms assumed from wealthy Western settings now also covers the opposite error, giving the audience a mindset nobody has asked them about, following chapter 10 of the World Development Report 2015. Sources were replaced with ones that could be read and checked (the World Bank report, BIT's Explore Field Guide, the Busara toolkit), and `tested_in` is now `not-applicable`. Zezhen Wu added as co-author. Rewritten with Claude.
 

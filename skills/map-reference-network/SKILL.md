@@ -14,7 +14,7 @@ metadata:
   title: Find out whose opinion really matters
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ A reference group, or reference network, is the set of people whose actions and 
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the map. Do not ask anything the user has already answered.
 
 1. **Required.** The practice (who does what, when) and why others are thought to matter for it: a norm diagnosis, or interview answers that point to other people.
 2. **Required.** The population: bounded (one village) or open (a city district), its rough size, and how many interviews are possible.
@@ -84,14 +84,16 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Reference network map
+<Two or three plain sentences to the user: whom people say they would follow on this practice, who can block it, and how that compares with whom the program reaches now.>
+
+# Whose opinion matters when <who> decide whether to <the practice, in a few words>
 
 **Practice:** <who does what, when>
 **Why others are thought to matter:** <the diagnosis or the interview evidence>
-**Program reaches now:** <who, through which channel; or "not stated">
+**Who the program reaches now:** <who, through which channel; or "not stated">
 
-## Design
-- **Chosen:** <full network / snowball / egocentric>
+## How the names were collected
+- **Approach:** <full network (everyone in a small group) / snowball (interview the people named, until no new roles appear) / egocentric (people's own contacts only)>
 - **Why, and what it cannot show:** <population size and boundary; number of interviews; the limit>
 - **Who answered:** <how many; who; how chosen; or "pending field answers">
 
@@ -99,18 +101,18 @@ See `references/worked-example.md` for a complete run.
 1. <question, with the practice spelled out>
 **Asked about each role named:** <do they do X; do they approve; can they block or permit; "if they changed their mind, would you?">
 
-## Reference group by role
+## Who they named, by role
 
-| Role, no names | Named by | Influence: would act differently if they did | Gatekeeping: can permit or block | Does X | Approves of X |
+| Role, no names | Named by | Influence: would act differently if they did | Gatekeeping: can permit or block | Does it themselves | Approves of it |
 |---|---|---|---|---|---|
 | <role> | <n of N> | <yes / partly / no: n of those who named them> | <yes: how / no> | <yes / no / mixed / not applicable> | <yes / no / mixed; "as reported" unless that role was interviewed> |
 
-## Three lists
+## Who sways the decision, and who can block it
 - **Influential:** <roles>
 - **Gatekeepers:** <roles, and what they control>
 - **Named often but not influential:** <roles; or "none">
 
-## Reference group against the program's reach
+## Who the program reaches, and who it misses
 <who is in the reference group that the program does not reach; whom the program reaches that nobody named>
 
 ## Checked with respondents
@@ -122,7 +124,28 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the group of respondents with the fewest answers>
 - <the role most likely named out of politeness>
+
+## Where you could go from here
+<One line saying the map is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `map-audience-context`, when the roles that must be reached are ones the program has no channel to yet
+- `select-messenger`, when the roles to reach are clear and the question is who should speak to them
+- `diagnose-social-norm`, when the map started from interview hints and it is still not known whether others' expectations hold the practice in place
+- `write-social-norm-message`, only once the practice is confirmed as a social norm and the message would describe what the people who matter do or approve
+- interviews with the influential roles themselves, each alone, when their views are known only as reported
+- showing the role table to a few respondents, when that has not been done>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

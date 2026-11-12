@@ -14,7 +14,7 @@ metadata:
   title: Find out whether a practice is a social norm
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ The method is Bicchieri's. A social norm is a practice people follow because the
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the diagnosis. Do not ask anything the user has already answered.
 
 1. **Required.** One practice (who does what, when) and the direction the program wants. "Hygiene" is too wide.
 2. **Required.** What the people whose behavior is in question have said (transcripts, notes, survey answers), from how many, chosen how. Or that nothing has been collected.
@@ -85,7 +85,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Social norm diagnosis
+<Two or three plain sentences to the user: the provisional call in plain words, the answers it rests on, and what still has to be asked before anyone builds a program on it.>
+
+# Is <the practice, in a few words> held in place by what people expect of each other?
 
 **Practice:** <who does what, when; the direction the program wants>
 **Answers used:** <how many respondents; who; how chosen; where and when; or "none yet: questions only">
@@ -95,25 +97,25 @@ See `references/worked-example.md` for a complete run.
 
 | Question | Answers, with counts or quotes | What it indicates |
 |---|---|---|
-| 1. Personal belief | <...> | <for / against / split> |
-| 2. Empirical expectation | <...> | <how common they believe it is> |
-| 3. Normative expectation | <...> | <who they believe approves or disapproves> |
-| 4. Consequences | <...> | <the sanction; would stop if others did: yes / no / split> |
+| 1. Personal belief: should someone like them do it? | <...> | <for / against / split> |
+| 2. Empirical expectation: how many do they think do it? | <...> | <how common they believe it is> |
+| 3. Normative expectation: who do they think expects it of them? | <...> | <who they believe approves or disapproves> |
+| 4. Consequences: what happens to someone who doesn't, and would they stop if most others stopped? | <...> | <the sanction; would stop if others did: yes / no / split> |
 
-## Classification
+## What kind of practice this is
 
-**Call (provisional):** <social norm / descriptive norm / custom / moral rule / cannot tell>
+**The call (provisional):** <social norm / descriptive norm / custom / moral rule / cannot tell>, <what that means here, in a few plain words>
 
 - Would people keep the practice whatever others did? <yes / no / split, with the evidence>
 - Is what others do enough to move them? <yes / no / cannot tell, with the evidence>
 - Does what others expect also matter, with sanctions? <yes / no / cannot tell, with the evidence>
 
-**Gap between private belief and perceived expectation:** <people misjudge each other / a real majority holds the view / cannot tell>
+**Do people misjudge what others privately think?** <yes, they misjudge each other / no, a real majority holds the view / cannot tell>
 
 ## Who respondents named
 <roles named under question 3, and how often>
 
-## Sanctions
+## Sanctions: what happens to people who don't follow it
 <what happens, who does it, who is exempt>
 
 ## What else holds the practice in place
@@ -125,7 +127,27 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the group most likely to have given the official answer>
 - <the branch the answers reached least>
+
+## Where you could go from here
+<One line saying the diagnosis is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-norms-vignette`, when the call needs confirming, or what others do and what they approve were never asked about apart
+- `map-reference-network`, when the call is a social norm and the team needs to know whose approval people track
+- `write-social-norm-message`, only once the call is confirmed and people underestimate how many already do what the program wants
+- `decompose-comb-barriers`, when the call is custom, moral rule, or cannot tell, or cost, access, or a belief about facts also holds the practice in place
+- one-to-one interviews with the group that spoke only in public, when theirs may be the official answer>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

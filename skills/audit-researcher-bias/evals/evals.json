@@ -8,12 +8,12 @@
       "expected_output": "A bias audit report in the output template that flags the discipline belief, the assumed norm, the unobservable disconfirming evidence, and the carry-over from tech-sector employees.",
       "files": [],
       "assertions": [
-        "Copies the three answers verbatim at the top.",
-        "Flags the discipline belief as untestable as worded and gives a rewrite that an observation could contradict.",
+        "Copies the three answers verbatim, flags the discipline belief as untestable as worded, and gives a rewrite that an observation could contradict.",
         "Names a norm the beliefs assume, such as individual saving in an account, and a local fact to check, such as saving through a chama.",
         "Says the answer to 'what would change my mind' needs something unobservable and gives an observable version.",
         "Contrasts salaried tech-sector employees with vendors paid daily in cash.",
-        "Sets when the next audit happens and does not say whether vendors lack discipline."
+        "Sets when the audit is repeated and does not say whether vendors lack discipline.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what the team believes is causing the gap.",
         "Asks which population the team has worked with most and how similar it is.",
         "Asks what observation would change the team's mind.",
-        "Does not produce any flag or report."
+        "Does not produce any flag or report.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -10,10 +10,10 @@
       "assertions": [
         "Sorts the mothers' answers under the four questions, with the counts given.",
         "Does not treat the ASHAs' statement or the 46% figure as evidence of a norm.",
-        "Shows each branch of the classification and marks the call provisional.",
+        "Shows each branch of the classification, marks the call provisional, and drafts no message or declaration.",
         "Flags that the mothers-in-law, speaking in groups, may have given the official answer.",
         "Lists the belief about fever as something else holding the practice in place.",
-        "Does not draft a message or plan a declaration."
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks who does what, when, and what the program wants.",
         "Asks what people who follow the practice have said, or whether anything has been collected.",
         "Does not classify the practice.",
-        "Does not invent respondents' answers."
+        "Does not invent respondents' answers.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -20,7 +20,7 @@ Searched November 2026. The skill is a procedure, so this table records where it
 | [Jang et al. (2024)](https://doi.org/10.62372/WQSB6195) | Practitioner toolkit; the step read in full | Published in Nairobi; the step's example is from East Africa | No test of the step is reported |
 | [Lilienfeld, Ammirati & Landfield (2009)](https://doi.org/10.1111/j.1745-6924.2009.01144.x) | Review; abstract only | Not stated in the abstract | Treats the real-world efficacy of debiasing against confirmation bias as an open question |
 
-The procedure does not depend on the audience. The answers do: every "check locally" line is a question that only people from or close to the audience can answer.
+The procedure does not depend on the audience. The answers do: every "what would settle it" line is a question that only people from or close to the audience can answer.
 
 ## Replication
 
@@ -28,6 +28,6 @@ Not applicable. None of the sources tests whether a team that writes its beliefs
 
 ## What to check locally
 
-1. Each fact named under "Check locally" in the report, asked of members of the audience and not of staff.
+1. Each fact named under "What would settle it" in the report, asked of members of the audience and not of staff.
 2. Whether someone from or close to the audience has read the flags.
 3. Whether the beliefs flagged at kickoff are still held after the first field findings.

@@ -13,7 +13,7 @@ metadata:
   title: Find the question a wise intervention must answer
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ The method is Walton and Wilson's. A wise intervention is a short exercise that 
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the analysis. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the evidence that a belief, not a material barrier, is holding it back.
 2. **Required.** How the audience reads the situation, in their words: quotes from interviews, open survey answers, or field notes.
@@ -77,7 +77,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Wise-intervention target
+<Two or three plain sentences to the user: the question the audience is asking, any reading that turned out to be a material barrier instead, and whether the setting can back a new answer.>
+
+# The question <the audience, in a few words> are asking themselves
 
 **Behavior:** <who, what, when>
 **Evidence that a belief is the barrier:** <...>
@@ -85,28 +87,49 @@ See `references/worked-example.md` for a complete run.
 
 ## How the audience reads the situation
 
-| Interpretation, in their words | Said by | Material barrier behind it | If that were fixed, would the behavior follow? | Verdict |
+| Interpretation, in their words | Said by | Material barrier behind it | If that were fixed, would the behavior follow? | Material, meaning, or both |
 |---|---|---|---|---|
 | <quote or close paraphrase> | <n of N> | <cost, access, time, information, process, or none> | <yes / no: why> | <material / meaning / both: which part is which> |
 
 ## The question
-- **Need:** <to understand / self-integrity / to belong>
+- **The need behind it:** <to understand (can I get better at this?) / self-integrity (am I a good and capable person?) / to belong (do people like me belong here?)>
 - **Question, in the audience's words:** "<...>"
 - **Why this one and not the others:** <...>
-- **When it becomes live:** <the transition, failure, evaluation, or comparison>
+- **When people start asking it:** <the transition, failure, evaluation, or comparison>
 
 ## What the setting offers
 - **A new answer would promise:** <...>
 - **The setting provides:** <facts, with their source>
-- **Verdict:** <delivers / does not deliver: what must change first / not verified>
+- **Does the setting deliver?** <delivers / does not deliver: what must change first / not verified>
 
-## The record for this kind of intervention
+## What trials of this kind of intervention found
 <belonging / beliefs about ability / self-affirmation: what trials found and where; no effect size promised>
 
 ## What to check before relying on this
 - <the interpretation that rests on the fewest people>
 - <the fact about the setting most likely to be a hope>
+
+## Where you could go from here
+<One line saying the analysis is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `adapt-growth-mindset-message`, when the need is to understand and the setting has been shown to deliver
+- `draft-belonging-story`, when the need is to belong and the setting has been shown to deliver
+- `draft-values-affirmation`, when the need is self-integrity and the setting has been shown to deliver
+- `select-intervention-levers`, for the readings marked material, or when every reading is
+- the people who run the setting (a school, a clinic, a program office), when the setting check is "not verified" or "does not deliver"
+- a few more interviews with people who stopped, when the primary question rests on few of them>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
