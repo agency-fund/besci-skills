@@ -8,12 +8,12 @@
       "expected_output": "A pre-analysis plan in the output template that carries the design and outcome over, groups the secondary outcomes into families with a stated multiple-testing method, and adds detail where the provider has a stake.",
       "files": [],
       "assertions": [
-        "Carries the design, primary outcome, and 5-point threshold over without changing them.",
-        "States the primary hypothesis with its direction.",
+        "Carries the design, primary outcome, and 5-point threshold over without changing them, and states the primary hypothesis with its direction.",
         "Puts balance amount and deposits in one family and financial stress in another, each with a named way of handling multiple tests.",
         "Specifies intention to treat with the strata as covariates and robust, unclustered standard errors because individuals were randomized.",
         "Gives each subgroup a reason and labels it confirmatory or exploratory.",
-        "Names the provider's stake as a reason for detail and writes a decision rule for each range of the primary result."
+        "Names the provider's stake as a reason for detail and writes a decision rule for each range of the primary result.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the design, such as the comparison, unit of randomization, and arms.",
         "Asks for the primary outcome and how it is measured.",
         "Asks whether anyone has seen outcome data by arm.",
-        "Does not produce the plan."
+        "Does not produce the plan.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -14,7 +14,7 @@ metadata:
   title: Work out how big the sample must be
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Computes the sample a test needs to detect a planned effect, or the smallest eff
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the calculation. Do not ask anything the user has already answered.
 
 1. **Required.** The effect to plan on, with its unit, and whether it is the expected effect or the smallest worth acting on.
 2. **Required.** The outcome's baseline: the control-group rate for a yes-or-no outcome, or the mean and standard deviation (SD), with their source.
@@ -81,7 +81,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Power calculation: <test>
+<Two or three plain sentences to the user: whether the feasible sample can detect the planned effect, the input the answer moves on most, and, if it cannot, the option that would change that most.>
+
+# How big the sample must be: <test>
 
 **Design:** <individual or group randomized; arms; allocation>
 **Effect planned on:** <value, unit>; <expected effect / smallest effect worth acting on>, from <source>
@@ -89,30 +91,30 @@ See `references/worked-example.md` for a complete run.
 ## Inputs
 | Input | Value | Source |
 |---|---|---|
-| Alpha (two-sided) | <0.05> | <convention / protocol> |
-| Power | <0.80> | <convention / protocol> |
+| Alpha, two-sided (the accepted chance of a false alarm) | <0.05> | <convention / protocol> |
+| Power (the chance of detecting a true effect) | <0.80> | <convention / protocol> |
 | Outcome, baseline | <yes-or-no, control rate / measured, mean and SD> | <...> |
 | People per group | <...> | <...> |
-| ICC | <value, or "no local estimate; range used"> | <...> |
+| ICC (how alike people in one group are) | <value, or "no local estimate; range used"> | <...> |
 | Take-up (treatment, control) | <...> | <...> |
-| Attrition | <...> | <...> |
-| Covariate R² | <...> | <...> |
+| Attrition (people lost before measurement) | <...> | <...> |
+| Covariate R² (the share of variation a baseline measure explains) | <...> | <...> |
 
 ## Calculation
 - Script: `python3 scripts/power_calc.py <arguments>`
-- Individual-level sample per arm: <n>
-- Multipliers: design effect <...>; take-up ÷ <...>; attrition ÷ <...>; covariates × <...>
+- Sample per arm before adjustments: <n>
+- Multipliers: design effect for randomizing groups <...>; take-up ÷ <...>; attrition ÷ <...>; covariates × <...>
 - **Required:** <n enrolled per arm>; <groups per arm, if grouped>
 
-## Minimum detectable effect for the feasible sample
+## Smallest effect the feasible sample can detect (minimum detectable effect)
 <feasible sample>: <value, unit> (<SD>), against a planned effect of <...>
 
-## Sensitivity
+## Sensitivity: how the answer moves with the guesses
 | ICC \ effect | <...> | <...> | <...> | <...> |
 |---|---|---|---|---|
 | <...> | <groups or people per arm> | <...> | <...> | <...> |
 
-## Type S and Type M risk (when the expected effect is below the detectable effect)
+## Wrong sign and exaggeration (Type S and Type M risk), when the expected effect is below the detectable effect
 At a true effect of <...>: power <...>; chance a significant result has the wrong sign <...>; exaggeration <...>
 
 ## Verdict
@@ -122,7 +124,28 @@ At a true effect of <...>: power <...>; chance a significant result has the wron
 - <the ICC source, or that none exists>
 - <the baseline or SD source>
 - <the take-up and attrition assumptions>
+
+## Where you could go from here
+<One line saying the calculation is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-expected-effect`, when the effect planned on is a published headline or a guess and the verdict hinges on it
+- `choose-trial-design`, when the verdict is "cannot detect" and a different unit, such as more and smaller groups, is worth weighing
+- `write-pre-analysis-plan`, when the sample is settled and the analysis, including any covariate counted on here, should be fixed before the data arrive
+- `design-pilot-feasibility-study`, when take-up, attrition, or the baseline is a guess that a pilot could measure before the main trial
+- a baseline survey or the program's own records, when there is no local ICC or baseline and the answer moves most on it
+- a statistician, when fewer than 30 groups are feasible, the outcome is rare, or the design is not two equal arms>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

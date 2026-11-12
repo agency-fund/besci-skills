@@ -9,14 +9,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+The pilot's main job is to pin down voucher redemption: with 120 farmers it is known to within about 9 points, enough to tell the go line from the stop line. Every rate has a stop line drawn from what the trial needs, so a poor result changes the trial before it starts. The pilot will not show whether the SMS and voucher raise top-dressing, and its top-dressing figures are not a basis for sizing the trial.
+
 # Pilot plan: top-dressing SMS and fertilizer voucher
 
 **Intervention piloted:** two weeks before the long rains, each registered farmer gets an SMS with the date to top-dress maize and a voucher for the local agro-dealer, valid that week only.
-**What it serves:** a cluster-randomized trial next season: 60 villages, 15 farmers per village enrolled within 3 weeks, top-dressing measured by a harvest survey, sample size assuming 85% of farmers reached at harvest.
+**What it prepares for:** a cluster-randomized trial next season: 60 villages, 15 farmers per village enrolled within 3 weeks, top-dressing measured by a harvest survey, sample size assuming 85% of farmers reached at harvest.
 **What this pilot is not for:** estimating the program's effect. Its effect estimate will not be used to size the main trial.
-**Main-trial inputs it will measure:** share reached at harvest (attrition); voucher redemption (take-up); last season's top-dressing, asked at enrollment (the baseline). Not measured: the intracluster correlation, which four villages cannot estimate.
+**Figures the main trial needs that it will measure:** share reached at harvest (attrition); voucher redemption (take-up); last season's top-dressing, asked at enrollment (the baseline). Not measured: the intracluster correlation (how alike farmers in one village are), which four villages cannot estimate.
 
-## Feasibility questions and progression criteria
+## Feasibility questions and their go, amend, and stop lines (progression criteria)
 | Heading | Question (rate or count, with its denominator) | Go | Amend | Stop | Why this line |
 |---|---|---|---|---|---|
 | Recruitment | Farmers enrolled per village within 3 weeks of starting, out of those eligible | 15 or more | 10 to 14 | Fewer than 10 | The trial needs 15 per village in 3 weeks |
@@ -47,7 +49,7 @@ Four villages chosen to span distance to the nearest agro-dealer, not the four n
 | Acceptability | No change | Extend validity to two weeks or add a nearer dealer, then recompute the trial's sample with the observed rate | Do not run the trial on the voucher; revisit the design with the interview reasons |
 | Outcome data | No change | Add a dealer-record check to the trial's outcome | Change the outcome measure before the trial |
 
-## Report skeleton
+## Outline of the pilot report
 1. Participant flow: eligible, enrolled, sent the SMS and voucher, reached at harvest, with a usable top-dressing answer
 2. Each question: line, observed rate with its margin, decision; redemption also by village
 3. Interview reasons from non-redeemers, dealers, and farmers missed at harvest
@@ -57,4 +59,12 @@ Four villages chosen to span distance to the nearest agro-dealer, not the four n
 ## What to check before relying on this
 - Whether the dealers can stock fertilizer for a whole village redeeming in one week; a stock-out would read as low acceptability.
 - Whether the pilot season's rains are typical, since redemption is tied to the planting date.
+
+## Where you could go from here
+That's the pilot plan.
+- Ask the four agro-dealers whether they can stock fertilizer for a whole village redeeming in one week: a stock-out would read as low acceptability on the very rate you are most worried about.
+- Try the SMS and voucher with a few farmers first, with `plan-prototype-test`: worth it if there is time before the rains, since a handful of farmers trying to redeem could show a problem with the valid week or the dealer's location that would otherwise cost the pilot season.
+- After the pilot, recompute the trial's sample with `estimate-sample-size` from the observed redemption and retention: the acceptability row shows how much a low redemption rate would raise it.
+I'd lean toward the dealer conversations, because they are cheap and they protect the reading of redemption, the rate this pilot exists to measure.
+Questions you could ask next: "What do we do if redemption lands in the amend band?" · "How should we pick the four villages so they span distance to a dealer?"
 ```

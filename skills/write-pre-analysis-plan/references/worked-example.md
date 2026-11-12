@@ -9,10 +9,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+The plan commits to one primary test, paying anything within 60 days, and fixes in advance what each result leads to: the norm letter goes national only if it beats the standard reminder by 3 points or more. It adds detail where the authority and your team have a stake, so a choice made after the data arrive cannot make the norm sentence look like it worked. It needs to be registered, with this plan attached, before the first letter is mailed.
+
 # Pre-analysis plan: late-payment letters
 
 **Date fixed:** 2026-11-11
-**Outcome data by arm seen before this date:** none
+**Outcome data by arm (each group compared) seen before this date:** none
 **Registry:** AEA RCT Registry; id to be added on registration
 
 ## 1. Design (carried over)
@@ -26,17 +28,17 @@ Individual randomization of 24,000 late taxpayers; three arms of 8,000 (no lette
 ## 3. Primary outcome
 Paid any amount against the declared liability within 60 days of the letter date: 1 if yes, 0 if no, from the payment ledger matched on taxpayer ID. No transformation. A taxpayer with no ledger match is coded as not paid, because the ledger records every payment. Smallest change worth detecting: 3 percentage points, set by the authority.
 
-## 4. Secondary outcome families
+## 4. Secondary outcome families: outcomes tested as a group
 | Family | Outcomes | How multiple tests are handled | Why grouped |
 |---|---|---|---|
 | A. Amount | Share of the liability paid within 60 days; paid in full within 60 days | False discovery rate correction (Benjamini–Hochberg) across the two | The authority's revenue question |
 | B. Next period | Filed on time in the next period | One outcome; no correction | Whether the effect lasts |
 | Descriptive | Days from letter to first payment, among payers | Reported without a test | Defined only for those who pay, so arms are not comparable |
 
-## 5. Estimator
+## 5. How the effect is estimated (the estimator)
 - **Effect estimated:** intention to treat, by assigned arm; a returned, undelivered letter stays in its arm
 - **Model:** linear regression of the outcome on arm indicators, the four strata, and last year's amount paid
-- **Standard errors:** heteroskedasticity-robust; individuals were randomized, so no clustering
+- **Standard errors (how uncertainty is computed):** heteroskedasticity-robust; individuals were randomized, so no clustering
 - **Exclusions:** taxpayers deregistered before the mailing date, dropped from every arm by the same rule
 - **Drop-out:** none expected, since the outcome comes from the ledger; the share deregistered is compared across arms
 
@@ -65,4 +67,12 @@ AEA RCT Registry, as the research team's journals expect; no health outcome, so 
 ## Open questions
 - Whether the ledger match on taxpayer ID is complete for firms with more than one registration: check at baseline.
 - Whether returned letters are logged; if not, the effect of being sent a letter is diluted by an unknown non-delivery rate.
+
+## Where you could go from here
+That's the pre-analysis plan.
+- Register on the AEA RCT Registry with this plan attached and hidden until completion, before the first letter is mailed: a plan dated after the first payments come in no longer shows what was decided in advance.
+- Put the two open questions to the authority's data team: whether firms with more than one registration match in the ledger, and whether returned letters are logged, since both affect how cleanly payment can be read by arm.
+- Check with `estimate-sample-size` that 8,000 per arm can detect 3 points between the two letters, if nobody has yet: the national decision turns on that comparison, not on letter against no letter.
+I'd lean toward registering, because the first mailing is a hard deadline; but if nobody has checked the sample, that check belongs before the filing, since a shortfall would change the plan.
+Questions you could ask next: "What do we report if the norm letter helps past non-payers but not past payers?" · "What do we say if the authority asks for an early look at payments by arm?"
 ```

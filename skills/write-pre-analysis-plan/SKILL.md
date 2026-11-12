@@ -13,7 +13,7 @@ metadata:
   title: Write the analysis plan before the data arrive
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -79,10 +79,12 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: what the plan commits to (the primary test and what each result would lead to), where it adds detail because someone has a stake, and that it must be registered before anyone sees outcome data by arm.>
+
 # Pre-analysis plan: <trial>
 
 **Date fixed:** <date>
-**Outcome data by arm seen before this date:** <none / what, by whom, when>
+**Outcome data by arm (each group compared) seen before this date:** <none / what, by whom, when>
 **Registry:** <name; id when issued>
 
 ## 1. Design (carried over)
@@ -95,15 +97,15 @@ See `references/worked-example.md` for a complete run.
 ## 3. Primary outcome
 <carried over: measure, source, window; for analysis: transformation, missing-value rule; smallest change worth detecting and who set it>
 
-## 4. Secondary outcome families
+## 4. Secondary outcome families: outcomes tested as a group
 | Family | Outcomes | How multiple tests are handled | Why grouped |
 |---|---|---|---|
 | <...> | <...> | <summary index / false discovery rate correction / reported without a test> | <...> |
 
-## 5. Estimator
+## 5. How the effect is estimated (the estimator)
 - **Effect estimated:** <intention to treat, by assigned arm>
 - **Model:** <outcome on arm indicators, strata, named baseline covariates>
-- **Standard errors:** <robust / clustered at <unit>, the unit randomized>
+- **Standard errors (how uncertainty is computed):** <robust / clustered at <unit>, the unit randomized>
 - **Exclusions:** <rule, applied to every arm>
 - **Drop-out:** <test for differences between arms>
 
@@ -129,7 +131,28 @@ See `references/worked-example.md` for a complete run.
 
 ## Open questions
 - <...>
+
+## Where you could go from here
+<One line saying the pre-analysis plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-sample-size`, when nobody has checked that the sample can detect the smallest change worth detecting, or a confirmatory subgroup difference
+- `analyze-heterogeneous-effects`, after the outcome data arrive, when the plan names subgroups to test
+- the registry the funder or journal requires, when the entry is not yet filed: it must be dated before the intervention starts, with this plan attached
+- whoever holds the outcome data, when an open question is about how the records are kept, or when they must agree to share no tables by arm until registration is confirmed
+- an independent evaluator to hold the plan, when the implementer, funder, or research team has a stake in the result
+- a statistician, when the design is clustered, stepped-wedge, or adaptive>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

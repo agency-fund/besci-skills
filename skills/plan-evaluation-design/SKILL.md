@@ -14,7 +14,7 @@ metadata:
   title: Plan how you will measure success
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -85,11 +85,13 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Measurement plan
+<Two or three plain sentences to the user: the primary outcome and where its data come from, the smallest change worth detecting and whose number it is, and the open question most likely to undo the plan.>
+
+# How you will know if <the behavior, in a few words> changed
 
 **Target behavior:** <who does what, when; carried over word for word>
 
-## Primary outcome
+## Primary outcome: the one measure that decides whether it worked
 - **Measure:** <one measure>
 - **Defined as:** <what is counted, out of whom, per what period>
 - **Observes the behavior directly:** <yes / proxy: what it stands in for, the gap it leaves, why it should track the behavior>
@@ -102,7 +104,7 @@ See `references/worked-example.md` for a complete run.
 | Records already collected | <...> | <chosen / rejected: why> |
 | Records with a field added | <...> | <...> |
 | Observation or survey | <...> | <...> |
-| Proxy | <...> | <...> |
+| Proxy: a stand-in that should move with the behavior | <...> | <...> |
 
 **Chosen source:** <...>
 
@@ -134,7 +136,28 @@ As of <date>, the primary outcome is <...>, from <source>, measured <window>; th
 
 ## Open questions
 - <each feasibility answer nobody has confirmed, and who can confirm it>
+
+## Where you could go from here
+<One line saying the measurement plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `choose-trial-design`, when the outcome is fixed and what it will be compared against is still open
+- `write-pre-analysis-plan`, when the comparison is chosen and the outcome statement should go into a registered analysis plan
+- `estimate-sample-size`, once the comparison is chosen, to see whether the program can reach enough people to detect the smallest change worth detecting
+- `draft-survey-items`, when the chosen source or an intermediate measure is a survey whose questions are not yet written
+- `design-list-experiment`, when the only feasible measure asks people to admit a behavior they would hide
+- whoever holds the data, when feasibility answers are "not confirmed" and the baseline has to start before launch>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

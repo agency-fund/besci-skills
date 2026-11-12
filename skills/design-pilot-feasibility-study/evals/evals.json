@@ -12,8 +12,8 @@
         "Derives the retention line from the trial's assumed 85% reached at harvest.",
         "Sizes the pilot by the margin of error on the redemption rate, with the arithmetic, not by a power calculation.",
         "Plans interviews with farmers who did not redeem the voucher, or with the agro-dealers.",
-        "States that the pilot's effect estimate will not be used to size the main trial.",
-        "Gives no estimate of the intervention's effect."
+        "States that the pilot's effect estimate will not be used to size the main trial, and gives no estimate of the intervention's effect.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what is delivered, by whom, and to whom.",
         "Asks whether the pilot leads to a trial or a scale-up, and how that is designed.",
         "Asks how many people or sites, how long, and what staff the pilot has.",
-        "Does not produce progression criteria."
+        "Does not produce progression criteria.",
+        "Says why it needs these answers."
       ]
     },
     {

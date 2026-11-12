@@ -14,7 +14,7 @@ metadata:
   title: Choose which AI evaluations to run next
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -80,6 +80,8 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: the evaluation you would run now, the evidence (or the gap) that decided it, and whether the trial or impact evaluation someone has asked for is premature.>
+
 # What to evaluate next: <product>
 
 **Product:** <what it does, for whom, and how far along it is>
@@ -105,7 +107,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What would change this recommendation
 - <the evidence that would move each premature stage to "run now">
+
+## Where you could go from here
+<One line saying the recommendation is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-evaluation-design`, when the evaluation to run now needs one outcome and its data source fixed, such as the change in what users know or do at the user stage
+- `choose-trial-design`, when the evaluation to run now compares versions or groups (an A/B test of the product, or an impact evaluation once its conditions hold) and the team must decide what to randomize
+- `define-agency-construct`, when the outcome the product is meant to improve is users' agency or confidence and nobody has defined it well enough to measure
+- the product's own logs, when a stage reads "none supplied" but usage, retention, or test-set records already exist and could fill it before anything new is run
+- the funder or board, with the table of stages, when they have asked for a trial the table finds premature
+- an independent evaluator (a university partner or an evaluation firm), when the recommendation is an impact evaluation>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

@@ -14,7 +14,7 @@ metadata:
   title: Pick how to randomize the test
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -76,7 +76,7 @@ Ask only what the user has not answered. Each required answer decides a branch: 
    - **Multi-arm:** several versions of one change, and the decision is which. Each arm splits the sample; similar versions need many units to tell apart.
    - **Encouragement:** the program controls only the offer. Randomize the offer; it works only if the offer changes take-up a lot.
 3. **Choose one**, naming the deciding constraints. If nothing can be randomized, not even the order or the offer, write "No randomized design fits" and give the specialist note.
-4. **Specify it**: unit, arms and allocation, timing, and what to stratify on (a variable that predicts the outcome, or a subgroup the decision cares about).
+4. **Specify it**: unit, the groups and how many units each gets, timing, and what to stratify on (a variable that predicts the outcome, or a subgroup the decision cares about).
 5. **Say how assignment is drawn** (software with a recorded seed, or a public lottery where fairness must be seen; by someone with no stake; filed before launch), and who agreed to any delay or withholding, on what grounds.
 6. **Name the runner-up** and the condition that would make it the choice.
 
@@ -85,7 +85,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Trial design choice: <test>
+<Two or three plain sentences to the user: the design you would choose and what it randomizes, the constraint that decided it, and anything still unknown that could change it.>
+
+# How to randomize the test: <test>
 
 **Change tested:** <what, for whom>
 **Outcome:** <as given>
@@ -94,38 +96,59 @@ See `references/worked-example.md` for a complete run.
 ## Constraints
 | Constraint | Answer | Source |
 |---|---|---|
-| Spillovers | <none / within <group> via <channel> / unknown> | <who said so> |
+| Spillovers: can it reach people not assigned it? | <none / within <group> via <channel> / unknown> | <who said so> |
 | Delivered to | <individuals / <group>> | <...> |
 | Rollout | <all at once / <n> units per <period> / unknown> | <...> |
-| Withholding | <some can go without for <period> / all by <date> / none> | <...> |
-| Control | <assigns who receives it / only the offer> | <...> |
+| Can some wait or go without? | <some can go without for <period> / all by <date> / none> | <...> |
+| What the program controls | <assigns who receives it / only the offer> | <...> |
 | Components or versions | <n>; decision needs each one's value: <yes / no> | <...> |
 | Units available | <people, groups at each level, periods / unknown> | <...> |
 
 ## Designs ruled in or out
 | Design | Verdict | Because | What it costs |
 |---|---|---|---|
-| Individual | <in / out> | <constraint> | <...> |
-| Cluster | <...> | <...> | <...> |
-| Stepped-wedge | <...> | <...> | <...> |
-| Factorial | <...> | <...> | <...> |
-| Multi-arm | <...> | <...> | <...> |
-| Encouragement | <...> | <...> | <...> |
+| Individual: randomize people | <in / out> | <constraint> | <...> |
+| Cluster: randomize groups | <...> | <...> | <...> |
+| Stepped-wedge: randomize the order of a phased rollout | <...> | <...> | <...> |
+| Factorial: cross the components | <...> | <...> | <...> |
+| Multi-arm: several versions side by side | <...> | <...> | <...> |
+| Encouragement: randomize the offer | <...> | <...> | <...> |
 
 ## Chosen design: <name, or "No randomized design fits">
-- **Unit of randomization:** <...>
-- **Arms and allocation:** <...>
-- **Stratified by:** <variable: why>
+- **Unit of randomization (what is assigned at random):** <...>
+- **Groups compared, and how many units in each:** <...>
+- **Stratified by (drawn separately within each):** <variable: why>
 - **Timing:** <periods, steps, dates>
 - **How assignment is drawn:** <method, seed or witness, who draws, when filed>
-- **Delay or withholding agreed by:** <name or role; grounds>
+- **Who agreed that some wait or go without:** <name or role; grounds>
 
 ## Runner-up: <name>
 <the condition that would make it the choice>
 
 ## Open questions
 - <each "unknown" constraint and how it could change the design>
+
+## Where you could go from here
+<One line saying the design choice is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-sample-size`, when a design is chosen and the team needs to know whether the units available are enough, or how many each group needs
+- `write-pre-analysis-plan`, when the design is settled and the analysis should be fixed and filed before the draw
+- `plan-evaluation-design`, when the outcome or its data source turned out to be vague while the constraints were filled
+- `design-pilot-feasibility-study`, when it is unknown whether staff will deliver each group's version as assigned, or whether the rollout capacity holds
+- the implementing authority or an ethics board, when a delay or withholding has no named person agreeing to it yet
+- an evaluation methodologist, when no randomized design fits, the unit is a few administrative areas, or a stepped-wedge is chosen>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
