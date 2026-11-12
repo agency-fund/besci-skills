@@ -9,18 +9,20 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Norms vignette: daily iron-folate tablets in pregnancy
+The story asks each woman to predict whether Chikondi, a pregnant woman like her in another district, takes her tablet this morning. Its four versions change only what other pregnant women in Chikondi's village do and what her husband and his mother think she should do. The answers will show what respondents expect of someone like them, not whether they take the tablets themselves.
+
+# Survey story (vignette): daily iron-folate tablets in pregnancy
 
 **Practice and moment of decision:** A pregnant woman given a month's supply of iron-folate tablets at her first antenatal visit decides each morning at home whether to take one.
 **Why expectations are thought to matter:** In 28 interviews most women said the tablets are good for the baby, yet many stop. Most said they would take them if their husband or his mother told them to, and most believe those two are against "hospital medicine" in pregnancy.
-**Reference group:** Empirical cue: other pregnant women in her village. Normative cue: her husband and his mother.
-**Respondents and mode:** About 600 pregnant women aged 18 to 40 at antenatal visits; most with primary schooling; Chichewa; read aloud by a female surveyor to one respondent at a time in a private room.
+**Whose behavior and approval the story names:** Empirical cue: other pregnant women in her village. Normative cue: her husband and his mother.
+**Respondents and how they are surveyed:** About 600 pregnant women aged 18 to 40 at antenatal visits; most with primary schooling; Chichewa; read aloud by a female surveyor to one respondent at a time in a private room.
 **Sensitivity:** None stated. Wording given in full.
 
 ## Base story (the same in every version)
 "Chikondi is 24 years old and four months pregnant with her second child. She lives in a farming village in Kasungu district with her husband and his mother. They grow maize and groundnuts and go to church on Sundays, like most families there. At her first visit to the health center, the nurse gave her a packet of tablets for her blood and told her to take one every morning until the baby is born. The packet is in the house. This morning Chikondi is deciding whether to take a tablet."
 
-## Cues
+## The sentences that change (cues)
 | | Version A | Version B |
 |---|---|---|
 | Empirical: what others do | "Most pregnant women in Chikondi's village take the tablets every day." | "Most pregnant women in Chikondi's village do not take the tablets." |
@@ -45,10 +47,18 @@ One version for each respondent. The tablet computer draws the version from a sc
 - **Outcome:** share answering "take the tablet" to question 1, by version
 - **What others do:** versions 1 and 2 against 3 and 4
 - **What others approve:** versions 1 and 3 against 2 and 4
-- **Reading:** If the share rises only when most pregnant women in the village take the tablets, what other women do is enough to move a woman: a descriptive norm. If it rises when the husband and his mother approve, their expectation matters as well: a social norm. If neither moves it and most respondents say she should take them, something other than expectations is stopping women, such as side effects, supply, or forgetting. If neither moves it and many respondents fail question 4, the cues did not register and the story needs rewriting.
+- **What each result would mean:** If the share rises only when most pregnant women in the village take the tablets, what other women do is enough to move a woman: a descriptive norm. If it rises when the husband and his mother approve, their expectation matters as well: a social norm. If neither moves it and most respondents say she should take them, something other than expectations is stopping women, such as side effects, supply, or forgetting. If neither moves it and many respondents fail question 4, the cues did not register and the story needs rewriting.
 - **Sample:** about 150 respondents per version, so 300 on each side of each comparison. Whether that is enough for the size of shift the team cares about has not been checked.
 
-## What to probe when testing the story
+## What to ask when trying out the story
 - Ask what "most pregnant women do not take the tablets" told the respondent: something about what women do, or something about whether the tablets are safe.
 - Ask "when you answered, were you thinking of Chikondi or of yourself?", and whether Chikondi's home seemed like the respondent's own.
+
+## Where you could go from here
+That's the vignette.
+- Have the Chichewa version made with `translate-survey-instrument`: the four versions must stay identical except for the cue sentences, in Chichewa as in English, and "hospital medicine" and "tablets for her blood" need words these women use.
+- Try the story with a few pregnant women using `draft-cognitive-interview-script`: the riskiest point is "most pregnant women do not take the tablets" being heard as "the tablets are unsafe", which would change what the comparison on what others do means.
+- Check the 150 per version with `estimate-sample-size`: nobody has yet asked whether 300 on each side can detect a shift big enough to change what you design.
+I'd lean toward the Chichewa version and the try-out together, because the try-out is what tells you how the "do not take" cue is heard, and it has to be heard in Chichewa to tell you that.
+Questions you could ask next: "What would we design differently if only the husband-and-mother cue moves the answers?" · "Can we repeat this story after the program to see whether expectations changed?"
 ```

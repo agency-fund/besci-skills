@@ -9,6 +9,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+Both translations are in, and I've proposed a version of each item for the reviewers to accept or change; nothing is agreed until the supervisor from Mchinji and you have met. Item 3, how sure a woman is that she can keep taking the tablet, is the one most likely to shift, because it may be heard as a request to promise the health worker. The Chichewa version stays untested until a few women have been asked what each item means.
+
 # Translation record: iron tablet adherence questions, English to Chichewa (as spoken in Mchinji)
 
 **Respondents:** pregnant women enrolled at four rural clinics in Mchinji District; primary schooling or less; read aloud by community health workers on home visits
@@ -25,9 +27,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 | 4 | Does anyone in your home disagree with you taking the tablets? (yes / no) | Opposition at home | Adapt | "Disagree" is formal; who counts as "in your home" |
 
 **Also translate:** the consent text and the sentence that introduces these questions. Neither was supplied; A and B should each translate them as they did the items.
-**Register:** everyday spoken Chichewa of Mchinji. "Iron" stays in English only if the reviewer says women use the English word.
+**Register (the kind of words to use):** everyday spoken Chichewa of Mchinji. "Iron" stays in English only if the reviewer says women use the English word.
 
-## 2. Translations and reconciliation
+## 2. The two translations and the version agreed
 Shown as English glosses supplied by the team. The Chichewa text stays with the translators.
 
 | Item | Translation A | Translation B | Proposed or agreed version | Decided by, and why |
@@ -37,7 +39,7 @@ Shown as English glosses supplied by the team. The Chichewa text stays with the 
 | 3 | "what certainty do you have that" | "do you see that you can manage to" | B's wording, with three graded answers | Proposal, for the reviewers. The two differ most here, which fits the doubt in the brief. The supervisor should say whether A's noun is used in speech. |
 | 4 | "does anyone in your home disagree" | "is there anyone in your home who does not want you to take these" | B's version | Proposal, for the reviewers. It uses plain spoken words for the same idea. |
 
-## 3. Back-translation
+## 3. Back-translation (translating the result back for comparison)
 **Decision:** not done, because nobody requires it and the supervisor reads both languages. If the M&E lead cannot follow an item when the reviewers meet, have a colleague who has not seen the English back-translate that item only, and treat any mismatch as a question for the meeting.
 
 ## 4. Agreed instrument, as read aloud
@@ -62,4 +64,12 @@ This translation is untested until respondents have been asked what the items me
 ## Open questions
 - Whether "in your home" covers a mother-in-law who lives nearby but not in the house. If it does not, item 4 misses opposition the program cares about; that is a question about the English item as much as the Chichewa one.
 - The team has no trained translator. The reviewer from Mchinji is the main safeguard, so her review should cover every item, not only the four differences above.
+
+## Where you could go from here
+That's the translation record; the agreed version and the decision log wait on the review.
+- Hold the review with the supervisor from Mchinji: it settles the four proposals, the name for the tablet, and whom "in your home" covers, and with no trained translator on the team her review is the main safeguard.
+- Once a version is agreed, script interviews with a few pregnant women using `draft-cognitive-interview-script`: items 3, 1, and 4 are already listed to test, and item 3 is where the meaning is most in doubt.
+- If the review finds that "in your home" should include a mother-in-law living nearby, rewrite the English item with `draft-survey-items` and translate it again: that is a fault in the source, and fixing it only in Chichewa would leave the two versions asking different things.
+I'd lean toward the review meeting first, because every other step waits on what it agrees.
+Questions you could ask next: "What if the supervisor says women call the tablets something other than 'blood tablets'?" · "How many women should we interview to test item 3?"
 ```

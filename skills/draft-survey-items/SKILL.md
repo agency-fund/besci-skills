@@ -14,7 +14,7 @@ metadata:
   title: Write survey questions people can answer
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ Writes survey questions with fixed answer options for defined constructs (a cons
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the questions. Do not ask anything the user has already answered.
 
 1. **Required.** The constructs, each defined in a sentence. "Savings" is a topic; "whether the household put money aside last month" is a construct.
 2. **Required.** The respondents (schooling, language) and how they answer: read aloud by an interviewer, by phone, or on a form.
@@ -85,13 +85,15 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: how many questions you wrote for which constructs, anything left unwritten and why, and that the questions are untested until respondents are asked what they mean.>
+
 # Draft survey questions: <survey or block name>
 
 **Respondents:** <who, schooling, language>
 **How they answer:** <read aloud by an interviewer / phone / self-completed>
 **Length budget:** <questions or minutes; "assumed" if not given>
 
-## Questions by construct
+## Questions, by what each one measures
 
 ### <Construct>: <one-sentence definition>
 **<ID>.** <the question as asked>
@@ -126,7 +128,28 @@ See `references/worked-example.md` for a complete run.
 These are draft questions. No respondent has yet been asked what they mean.
 - <the question most likely to be misread, and why>
 - <the answer scale most likely to fail with these respondents>
+
+## Where you could go from here
+<One line saying the draft questions are done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-cognitive-interview-script`, when the questions, especially those listed as most likely to be misread, are ready to try with a few respondents before fielding
+- `translate-survey-instrument`, when the questions will be asked in a language other than the one they were drafted in
+- `adapt-survey-for-phone-mode`, when the questions will be asked by phone
+- `design-list-experiment`, when a stigmatized or illegal behavior was left unwritten and the sample is more than a few hundred
+- tested questions from earlier surveys of the same population, when none were supplied and a question that has been fielded before could replace a new one
+- a survey methodologist (a clinician for a clinical construct), when questions are to be added into a score that drives a decision, or compared across rounds or languages>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

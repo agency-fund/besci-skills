@@ -12,8 +12,8 @@
         "Gives each focus cell one on-platform and one off-platform measure, each tied to a moment.",
         "Quotes published items only from a source opened in the session; otherwise writes 'not accessed' with the citation and a search query.",
         "Marks any model coding of the logs or voice notes as experimental and plans a check against human coders.",
-        "Says how each instrument should be adapted and tested with Bihar farmers before use.",
-        "Names a psychometrician or survey methodologist for the funder report."
+        "Says how each instrument should be adapted and tested with Bihar farmers before use, and names a psychometrician or survey methodologist for the funder report.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what the score is meant to capture, or what agency means for these users.",
         "Asks one question, not the whole list.",
         "Does not write a scoring prompt, rubric, or codebook.",
-        "Does not produce a measurement plan."
+        "Does not produce a measurement plan.",
+        "Says why it needs this answer."
       ]
     },
     {

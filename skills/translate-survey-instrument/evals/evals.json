@@ -11,9 +11,9 @@
         "Sorts each of the five items as close translation, adapt, or concept in doubt, with something to watch for.",
         "Names two translators working apart for Bemba and says Nyanja has only one fluent speaker available.",
         "States a back-translation decision and the reason for it.",
-        "Does not present Bemba or Nyanja wording of its own as the final translation.",
+        "Does not present Bemba or Nyanja wording of its own as the final translation, reword the English items, or call the result validated.",
         "Lists items to test with respondents and says the translation is untested until then.",
-        "Does not reword the English items or call the result validated."
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks which variety of Swahili, or where the survey will run.",
         "Asks what each item is meant to measure.",
         "Asks who is available to translate or review.",
-        "Does not produce any Swahili text."
+        "Does not produce any Swahili text.",
+        "Says why it needs these answers."
       ]
     },
     {

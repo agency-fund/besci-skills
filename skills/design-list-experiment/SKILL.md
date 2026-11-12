@@ -14,7 +14,7 @@ metadata:
   title: Measure a sensitive behavior without asking directly
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -47,7 +47,7 @@ In a list experiment, half the respondents say how many of a few harmless statem
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the design. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior: who, what, over what period, and why people here would hide it.
 2. **Required.** The respondents (schooling, language) and whether the survey is face to face, by phone, or self-completed.
@@ -82,11 +82,13 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: whether a list experiment is worth it at this sample and why, the likeliest way it could fail here, and that it gives a share for the whole group, never an answer for any one person.>
+
 # List experiment design: <behavior>
 
 **Behavior:** <who, what, over what period>
 **Why people would hide it here:** <...>
-**Respondents and mode:** <who; schooling; language; face to face / phone / self-completed>
+**Respondents and how they are surveyed:** <who; schooling; language; face to face / phone / self-completed>
 **Affordable sample:** <n>  **Estimate needed for:** <everyone / subgroups / comparing groups>
 
 ## Go or no-go
@@ -96,7 +98,7 @@ See `references/worked-example.md` for a complete run.
 
 ## Statements
 **Sensitive statement (long list only):** "<...>"
-**Control statements (both lists):**
+**Control statements, the harmless ones (both lists):**
 1. "<...>" (expected to be true for <few / about half / most>)
 2. "<...>" (<...>)
 3. "<...>" (<...>)
@@ -118,7 +120,7 @@ See `references/worked-example.md` for a complete run.
 
 ## Checks on the data
 - **Short-list group counting none or all:** <the share that raises concern>
-- **Design-effect test:** <how it is run>
+- **Design-effect test (did adding the sensitive statement change answers to the others?):** <how it is run>
 - **List estimate minus direct estimate:** <with its confidence interval>
 
 ## Reporting rule
@@ -130,7 +132,28 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the control statement most likely to be near-universal, rare, or sensitive here>
 - <whether respondents in this mode can keep count>
+
+## Where you could go from here
+<One line saying the list experiment design is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-sample-size`, when the decision is go and the margin of the list estimate, or the sample it needs, has to be confirmed
+- `draft-cognitive-interview-script`, when the counting task and the control statements should be tried with a few respondents before fielding
+- `translate-survey-instrument`, when the statements and the script must be asked in another language
+- `draft-survey-items`, when the decision is no-go and the direct question, asked in private, has to be written well
+- records that show the behavior for some people (refill dates, clinic or payment logs), when a list estimate will need something to be read against
+- an ethics reviewer, when the behavior is illegal or dangerous to disclose, or results will be reported for small areas>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

@@ -14,7 +14,7 @@ metadata:
   title: Move a face-to-face survey to the phone
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -45,7 +45,7 @@ Converts a face-to-face questionnaire into a version that can be asked by voice 
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the phone version. Do not ask anything the user has already answered.
 
 1. **Required.** The questionnaire as asked face to face, with its showcards, and its length in minutes.
 2. **Required.** A live call (an interviewer phones) or IVR (recorded questions answered on the keypad), and why phone.
@@ -71,7 +71,7 @@ If 1 to 4 are missing, ask and stop. If 5 is missing, treat items on health, vio
 1. **Cut by decision.** Keep the items the decision needs; mark the rest "drop" or "later call". Target 30 minutes or less for a live call, less for IVR. Reading faster is not a cut.
 2. **Convert every item that relied on something seen.** Ask a rating scale in two steps, direction then strength ("satisfied or dissatisfied?", then "very or somewhat?"), because a long scale is hard to hold when read aloud. Describe both ends of a ladder in words. Turn a card list into yes-or-no questions. Record each item's old and new format, and flag it for testing aloud.
 3. **Rewrite instructions for the ear:** short sentences, choices repeated in every question; for IVR, one idea and few choices per prompt.
-4. **Write the call rules:** spoken consent; attempts spread over times and days; call-backs; when a number is retired; the airtime payment; a log of every attempt with day, time, and who answered.
+4. **Write the call rules:** spoken consent; attempts spread over times and days; call-backs; when a number is retired; airtime payment; a log of every attempt: day, time, who answered.
 5. **Compare who the numbers reach with who the survey is about.** State who owns or shares the phones and who will be missing. Ask for the intended respondent by name; never interview whoever answers.
 6. **Gate sensitive items.** Before each, ask whether the respondent is alone and can speak freely; call back if not. On a shared phone, drop an item whose answer could harm the respondent if overheard.
 7. **Plan the mode check.** A change since a face-to-face round may come from the phone. Interview a random subsample face to face on the core items and name the difference that would change the conclusion, or state what cannot be claimed without it.
@@ -81,9 +81,11 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: the call length you cut to and what had to go, the group the calls are most likely to miss, and that a change since the face-to-face round may come from the phone until the comparison says otherwise.>
+
 # Phone version: <survey name>
 
-**Mode:** <live call / IVR>  **Face-to-face length:** <minutes>  **Target call length:** <minutes>
+**Call type:** <live call / IVR>  **Face-to-face length:** <minutes>  **Target call length:** <minutes>
 **Why phone:** <cost / access / safety / timing>
 **Decision the survey informs:** <...>
 
@@ -120,7 +122,7 @@ See `references/worked-example.md` for a complete run.
 
 **Privacy check as spoken:** <...>
 
-## 7. Mode check
+## 7. Mode check: does the phone change the answers?
 <the face-to-face subsample and how it is drawn; items compared; the difference that would change the conclusion; or what cannot be claimed without it>
 
 ## 8. Converted items to test aloud
@@ -129,7 +131,27 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the group the numbers are most likely to miss>
 - <the converted item most likely to be answered differently by phone>
+
+## Where you could go from here
+<One line saying the phone version is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-cognitive-interview-script`, when converted items (a ladder, a two-step scale, a card turned into yes-or-no questions) should be heard by a few respondents before fielding
+- `translate-survey-instrument`, when the rewritten wording must be asked in a language it has not yet been translated into
+- `estimate-sample-size`, when the question becomes how many numbers to call, or whether the face-to-face subsample can detect a gap that would change the decision
+- a few days of pilot calls with the attempt log, when it is unclear whether the intended respondents, especially those on someone else's phone, can be reached at all
+- an ethics reviewer and a survey methodologist with phone experience, when sensitive items would be asked on shared phones>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

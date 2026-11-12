@@ -14,7 +14,7 @@ metadata:
   title: Translate a survey into another language
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Carries an existing survey instrument into another language through two independ
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the translation record. Do not ask anything the user has already answered.
 
 1. **Required.** The source items word for word, with answer options and consent text. For a published scale: its name, and whether a tested version in the target language exists (if unknown, tell the user to look first).
 2. **Required.** The target language, the variety spoken where the survey runs, and whether items are read aloud.
@@ -83,12 +83,14 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: where the translation stands, the items or concepts most likely to shift in meaning, and that it is untested until respondents have been asked what the items mean.>
+
 # Translation record: <instrument>, <source language> to <target language and variety>
 
 **Respondents:** <who, region, schooling; read aloud or self-completed>
 **Published scale:** <no / yes: name; existing version in the target language; whether scores must stay comparable>
 **Team:** <translator A; translator B; reviewer who knows the respondents; adjudicator; first language and training of each; roles nobody fills>
-**Status:** <before translation / translations in, review pending / reconciled, not yet tested with respondents>
+**Status:** <before translation / translations in, review pending / agreed by the reviewers, not yet tested with respondents>
 
 ## 1. Brief for the translators
 | Item | Source text | Meant to measure | Approach | Watch for |
@@ -96,14 +98,14 @@ See `references/worked-example.md` for a complete run.
 | <1> | <word for word, with options> | <...> | <close / adapt / concept in doubt> | <term, time period, or scale label likely to shift> |
 
 **Also translate:** <consent text, instructions, transitions, answer options>
-**Register:** <everyday spoken words of <variety>; technical terms that stay in <source language>>
+**Register (the kind of words to use):** <everyday spoken words of <variety>; technical terms that stay in <source language>>
 
-## 2. Translations and reconciliation
+## 2. The two translations and the version agreed
 | Item | Translation A | Translation B | Proposed or agreed version | Decided by, and why |
 |---|---|---|---|---|
 | <1> | <text; or "pending"> | <...> | <...> | <"proposal, for the reviewers" until they decide> |
 
-## 3. Back-translation
+## 3. Back-translation (translating the result back for comparison)
 **Decision:** <not done / done for all items / done for items ...>, because <...>
 <if done: by whom; the mismatches the reviewers discussed; what changed>
 
@@ -121,7 +123,28 @@ This translation is untested until respondents have been asked what the items me
 
 ## Open questions
 - <a concept the reviewers could not place; a comparability concern for a published scale>
+
+## Where you could go from here
+<One line saying the translation record is done, and what in it is still pending.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-cognitive-interview-script`, when a version is agreed and the items listed to test, especially concepts in doubt, need trying with respondents
+- `adapt-survey-for-phone-mode`, when the translated instrument will be asked by phone
+- `draft-survey-items`, when the team found a fault in a source item, so it is fixed in the source and translated again rather than repaired in translation
+- the review meeting, when translations are in and the proposals still need the reviewer and adjudicator
+- a search for a tested version in the target language, when the instrument is a published scale and nobody has looked
+- a psychometrician or a specialist in cross-cultural surveys, when a cut-off decides referral or eligibility, or scores will be compared across languages>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

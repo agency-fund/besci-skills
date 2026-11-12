@@ -10,10 +10,10 @@
       "assertions": [
         "No question asks the respondent to agree or disagree with a statement.",
         "Every rating question has its options in words and comes with a three-option version for mothers who cannot read.",
-        "Time, distance, and permission are asked in three separate questions.",
+        "Asks time, distance, and permission in three separate questions, and the attendance question names last month's camp, not what the mother usually does.",
         "Each question states what a correct reading is.",
-        "The attendance question names last month's camp, not what the mother usually does.",
-        "Says the questions are untested and does not offer to add them into a score."
+        "Says the questions are untested and does not offer to add them into a score.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -25,7 +25,8 @@
       "assertions": [
         "Asks for the constructs, or what exactly about savings the survey must measure.",
         "Asks who the respondents are or how they will answer.",
-        "Does not write any survey question."
+        "Does not write any survey question.",
+        "Says why it needs these answers."
       ]
     },
     {

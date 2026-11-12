@@ -14,7 +14,7 @@ metadata:
   title: Write scenarios that measure what others do and approve
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ The method is Bicchieri's. An empirical expectation is what a person believes ot
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the vignette. Do not ask anything the user has already answered.
 
 1. **Required.** The practice and the moment of decision (who does what, when), with the evidence that others' expectations may matter.
 2. **Required.** Whose behavior and whose approval people track for this practice, as respondents named them.
@@ -82,18 +82,20 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Norms vignette: <practice>
+<Two or three plain sentences to the user: what the story asks respondents to predict, whose behavior and whose approval the versions change (or, for a harmful practice, that the wording waits for review), and that the answers are predictions about a made-up person, not what respondents do.>
+
+# Survey story (vignette): <practice>
 
 **Practice and moment of decision:** <who does what, when>
 **Why expectations are thought to matter:** <the diagnosis or interview evidence>
-**Reference group:** <whose behavior the empirical cue names; whose approval the normative cue names>
-**Respondents and mode:** <who; schooling; language; read aloud or self-read; alone or in a group>
+**Whose behavior and approval the story names:** <whose behavior the empirical cue names; whose approval the normative cue names>
+**Respondents and how they are surveyed:** <who; schooling; language; read aloud or self-read; alone or in a group>
 **Sensitivity:** <none stated / sensitive: wording withheld, and the review required>
 
 ## Base story (the same in every version)
 "<named fictional person; a similar community elsewhere; the details that matter; one moment of decision>"
 
-## Cues
+## The sentences that change (cues)
 | | Version A | Version B |
 |---|---|---|
 | Empirical: what others do | "<Most ... do>" | "<Most ... do not>" |
@@ -118,13 +120,33 @@ See `references/worked-example.md` for a complete run.
 - **Outcome:** share answering "<follows the practice>" to question 1, by version
 - **What others do:** versions 1 and 2 against 3 and 4
 - **What others approve:** versions 1 and 3 against 2 and 4
-- **Reading:** <shift with what others do alone / with what others approve / with neither, and what each would mean here>
+- **What each result would mean:** <shift with what others do alone / with what others approve / with neither, and what each would mean here>
 - **Sample:** <respondents per version; whether that has been checked>
 
-## What to probe when testing the story
+## What to ask when trying out the story
 - <whether the cue is heard as an expectation or as news about the practice>
 - <whether respondents answer for the fictional person or for themselves>
+
+## Where you could go from here
+<One line saying the vignette is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-cognitive-interview-script`, when the story is ready to try with a few respondents, to check the cues are heard as expectations and the person is like them
+- `translate-survey-instrument`, when the story must be asked in another language, since the versions must still match in every word but the cues
+- `estimate-sample-size`, when the respondents per version have not been checked against the smallest shift that would change the program
+- `map-reference-network`, when whose behavior or approval people track is still a guess, or the try-out shows respondents look to someone the cues do not name
+- a local qualitative researcher and an ethics reviewer, when the practice is harmful, illegal, or stigmatized, or respondents are minors>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

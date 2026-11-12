@@ -9,9 +9,11 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+I cut the 50-minute baseline to a 20-minute call: the four items the decision rests on stay, the asset list and the spending module go, and four items are rewritten so they work by ear. The members the calls are most likely to miss are the women who gave a spouse's or relative's number, about 30% of women at baseline. Until the 100 face-to-face interviews are compared with the calls, any change since baseline may come from the phone and not from the program.
+
 # Phone version: savings-group endline, Wakiso
 
-**Mode:** live call  **Face-to-face length:** 50 minutes  **Target call length:** 20 minutes
+**Call type:** live call  **Face-to-face length:** 50 minutes  **Target call length:** 20 minutes
 **Why phone:** cost; the travel budget was cut
 **Decision the survey informs:** whether to extend the program to 40 more groups
 
@@ -62,7 +64,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 **Privacy check as spoken:** "The next questions are about your own money. Are you somewhere you can speak without others hearing? If not, I can call back at a time you choose."
 
-## 7. Mode check
+## 7. Mode check: does the phone change the answers?
 Draw 100 respondents at random from the baseline list and interview them face to face with the phone wording of the four core items; call the rest. Compare the two groups on the share who deposited last month, attendance, and the ladder. With 100 interviews only a large gap, roughly 15 percentage points on a yes-or-no item, can be told apart from chance. A gap that large on deposits means the baseline-to-endline change is not reported as a program result. A smaller gap cannot be ruled out, and the report says so.
 
 ## 8. Converted items to test aloud
@@ -73,4 +75,12 @@ Draw 100 respondents at random from the baseline list and interview them face to
 ## What to check before relying on this
 - Whether the women reached through someone else's phone are reached at all. Compare completed interviews for own-phone and other-phone numbers after the first week.
 - Whether the ladder is answered differently by ear than by picture. It is the core item changed most by the move to the phone.
+
+## Where you could go from here
+That's the phone version.
+- Get the rewritten wording into Luganda with `translate-survey-instrument`: the two-step satisfaction question, the spoken ladder, and the four yes-or-no uses are new wording, so no Luganda version from baseline covers them, and enumerators should not translate them on the call.
+- Test the ladder, the two-step question, and the deposits question aloud with a handful of members using `draft-cognitive-interview-script`: these are the items the phone changed most, and section 8 already says what to listen for.
+- Check the attempt log after the first week of calls: if other-phone numbers complete far less often than own-phone numbers, change the call rules before the rest of the 900 are called.
+I'd lean toward the Luganda wording first, because the test aloud is only worth running on the words enumerators will actually read.
+Questions you could ask next: "What should an enumerator say when a spouse answers and asks what the call is about?" · "What do we write in the report if the face-to-face comparison can't be done?"
 ```
