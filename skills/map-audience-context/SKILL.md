@@ -14,7 +14,7 @@ metadata:
   title: Map your audience and their setting
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -44,7 +44,7 @@ Replaces a broad audience label with a specific group of people at the moment th
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the brief. Do not ask anything the user has already answered.
 
 1. **Required.** The program goal as stated, and whatever is known about the population and setting.
 2. **Required.** Where that knowledge comes from: which sites the team has visited, who told them what, which reports.
@@ -85,7 +85,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Audience and context brief
+<Two or three plain sentences to the user: who the program is really reaching, where and when they decide, and the assumption in the goal most likely to be wrong there.>
+
+# Audience and context brief: <the group, in a few words>
 
 **Program goal (as given):** <the goal, verbatim or lightly cleaned>
 
@@ -109,7 +111,27 @@ See `references/worked-example.md` for a complete run.
 
 ## Open questions
 - <what the brief inferred, which site is unconfirmed, or which claim rests on one visit; and how to check it>
+
+## Where you could go from here
+<One line saying the brief is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `define-key-behavior`, when the group and the decision moment are clear enough to choose the one behavior to work on
+- `assess-evidence-base`, when nobody has checked what research exists for this group and setting
+- `diagnose-social-norm`, when the people who watch or approve at the decision moment look likely to shape what the group does
+- more visits, or short interviews with members of the group away from where they decide, when claims rest on one visit, one informant, or general knowledge
+- a local researcher or social scientist who knows the setting, when who decides is unknown and the behavior touches household money, health, fertility, or gender roles>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

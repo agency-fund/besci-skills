@@ -8,12 +8,12 @@
       "expected_output": "A target behavior brief in the output template that selects one behavior from at least three scored candidates.",
       "files": [],
       "assertions": [
-        "Scores at least three candidate behaviors in one table.",
+        "Opens with a few plain sentences to the user, and scores at least three candidate behaviors in one table.",
         "At least one candidate does not use the wallet the program already built.",
         "Every impact and likelihood score is labeled as data, audience input, or team guess.",
         "The selected behavior names who, what, and when, and its one-sentence form has no 'and' joining two actions.",
-        "Lists the runners-up in rank order with a reason for each.",
-        "Says what would change the choice."
+        "Lists the runners-up in rank order with a reason for each, and says what would change the choice.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks who the program reaches and where.",
         "Asks for the goal as stated or who stated it.",
         "Does not produce a candidate table.",
-        "Does not select a behavior."
+        "Does not select a behavior.",
+        "Says why it needs these answers."
       ]
     },
     {

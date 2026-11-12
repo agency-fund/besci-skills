@@ -8,12 +8,12 @@
       "expected_output": "An evidence scan brief in the output template, built from sources opened in this run.",
       "files": [],
       "assertions": [
-        "States the search route.",
-        "Every row of 'What has been tried' has a source with authors, year, and a link.",
-        "Says for each finding how its population compares with urban Nairobi vendors.",
+        "Opens with a few plain sentences to the user before the summary, and states the search route.",
+        "Every row of 'What has been tried' has a source with authors, year, and a link, and says how its population compares with urban Nairobi vendors.",
         "Has a 'Findings that do not support the goal' section with at least one entry or the words 'None found in this search'.",
         "Has a 'Search coverage' section saying what was searched and what was not reached.",
-        "Does not choose a target behavior or recommend a program design."
+        "Does not choose a target behavior or recommend a program design.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the program goal.",
         "Asks who the population is and where.",
         "Does not produce an evidence scan brief.",
-        "Cites no study."
+        "Cites no study.",
+        "Says why it needs these answers."
       ]
     },
     {

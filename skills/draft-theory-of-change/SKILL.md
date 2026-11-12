@@ -14,7 +14,7 @@ metadata:
   title: Write the causal chain from activities to outcome
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Writes a program's theory of change, the claims it makes about why its activitie
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the theory of change. Do not ask anything the user has already answered.
 
 1. **Required.** The outcome: what changes in whose lives, by when.
 2. **Required.** The activities as delivered: what is done, by whom, to whom, how often.
@@ -85,7 +85,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Theory of change
+<Two or three plain sentences to the user: how many links the chain has and how many are backed by data, the weakest link nearest the outcome, and what evidence would strengthen it.>
+
+# Theory of change: <the program, in a few words>
 
 **Outcome (as given):** <who, what change, by when>
 **Population:** <who the activities reach; who the outcome is for, if different>
@@ -110,7 +112,27 @@ See `references/worked-example.md` for a complete run.
 - <the assumption most likely to be wrong>
 - <any behavior marked inferred>
 - <anything outside the program that could move the outcome>
+
+## Where you could go from here
+<One line saying the theory of change is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `assess-evidence-base`, when a weak link has no evidence supplied and nobody has checked what research exists on it
+- `assess-evidence-transferability`, when the team has one study for a link and needs to know whether it applies to this population
+- `define-key-behavior`, when the chain runs through several behaviors and the team must choose one to work on
+- `plan-evaluation-design`, when the chain is agreed and the team needs to decide what outcome would show a behavior changed
+- the program's own records, or a few interviews with the people in a weak link, when either could raise its label to "tested here" at little cost>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

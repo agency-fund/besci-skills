@@ -13,7 +13,7 @@ metadata:
   title: Turn a vague goal into one clear behavior
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Nikhil Ravichandar, Joe Speed, Zezhen Wu"
   org: IL
@@ -43,7 +43,7 @@ Turns a vague program goal into one observable behavior, stated as who does what
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the choice. Do not ask anything the user has already answered.
 
 1. **Required.** The program goal as stated, and who stated it.
 2. **Required.** A rough population and setting: who the program reaches, where, through what channel, and any fixed constraints (budget, timeline, what is already built).
@@ -82,13 +82,15 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Target behavior brief
+<Two or three plain sentences to the user: the behavior chosen, the score that decided it, and which scores are team guesses that the audience could overturn.>
+
+# The behavior to target for <the goal, in a few words>
 
 **Program goal (as given):** <the goal, verbatim or lightly cleaned>
 
 ## Candidates
 
-| Candidate behavior | Impact (1–5) | Already doing it | Likelihood of change (1–5) | Spillover | Measurable by |
+| Candidate behavior | Impact (1–5) | Already doing it | Likelihood of change (1–5) | Spillover to other behaviors | Measurable by |
 |---|---|---|---|---|---|
 | <who does what> | <score: reason (data: <source> / audience input / team guess)> | <share or band (basis)> | <score: reason (basis)> | <+ / 0 / −: reason> | <how it would be observed> |
 
@@ -101,7 +103,7 @@ See `references/worked-example.md` for a complete run.
 ## Why this one
 <two to four sentences pointing at the scores that decided it; which of them are team guesses>
 
-## APEASE concerns
+## Concerns about the chosen behavior (APEASE)
 <any of affordability, practicability, effectiveness, acceptability, side-effects and safety, or equity that the selected behavior raises; or "None identified.">
 
 ## Runners-up, ranked
@@ -109,7 +111,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What would change this choice
 - <the score resting on the weakest basis, and the cheapest way to check it>
+
+## Where you could go from here
+<One line saying the choice of behavior is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `decompose-comb-barriers`, when the team wants to know why most of the audience is not doing the chosen behavior yet
+- `audit-process-friction`, when the behavior runs through a process with steps, forms, trips, or waiting
+- `diagnose-social-norm`, when whether people do it seems to depend on what others around them do or expect
+- `plan-evaluation-design`, when the team needs to settle now how it will tell whether the behavior changed
+- `assess-evidence-base`, when nobody has checked what has been tried for this behavior or audience
+- a quick round with members of the audience, asking which candidates they would do next week, when the likelihood scores are team guesses>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

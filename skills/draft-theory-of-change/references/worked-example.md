@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Theory of change
+The chain has four links, and only the first (camps held on the day with full stock) is backed by your own data on that link. The weakest is link 3, the lentils bringing caregivers back for later doses: it carries the whole drop from about 60% first doses to about 22% fully immunized, and nothing you supplied supports it. The trial your team remembers, once found and read, would be the first evidence for it.
+
+# Theory of change: mobile immunization camps in two blocks of Udaipur district
 
 **Outcome (as given):** Children under two in the two program blocks of Udaipur district are fully immunized by 24 months; from about 22% to 40% by the end of 2027.
 **Population:** Activities reach caregivers of children under two in 60 villages, through the mobilizer and the camp nurse. The outcome is for those children.
@@ -40,4 +42,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 - Three of the four behaviors are inferred. Confirm that the nurse's and the mobilizer's tasks are written into how the program is delivered.
 - The cold-box problems in link 4 mean "fully immunized" on the register may overstate protection in some months.
 - Outside the program: a government immunization drive or a new clinic in either block would raise coverage without the camps. Ask the district health office what else is planned through 2027.
+
+## Where you could go from here
+That's the theory of change.
+- Search for evidence on link 3 with `assess-evidence-base`: a search on incentives for completing immunization schedules is the way to find the trial your team remembers, and anything that went against it.
+- Interview twenty caregivers who missed the last camp: it is the cheapest check in the chain, and if they name lost work or a husband's permission rather than not knowing the date, link 2 needs a different activity.
+- Decide how you will show the chain working with `plan-evaluation-design`, once it is agreed: the register may overstate protection in cold-box months, so the outcome you report needs thought.
+I'd lean toward the search for link 3, because that link carries most of the gap to your 40% target and has nothing behind it yet; the interviews can run alongside.
+Questions you could ask next: "How could we test link 3 with our own camp records?" · "What would we change if caregivers say they miss camps because of lost work, not the date?"
 ```

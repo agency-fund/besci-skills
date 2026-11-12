@@ -8,12 +8,12 @@
       "expected_output": "An audience and context brief in the output template that narrows the vendors to women with fixed produce stalls and places the decision at the end-of-day cash count.",
       "files": [],
       "assertions": [
-        "Gives the label as named and a narrower group: women with fixed produce stalls, not all vendors.",
+        "Opens with a few plain sentences to the user, and gives the label as named and a narrower group: women with fixed produce stalls, not all vendors.",
         "Places the decision moment at the end-of-day cash count at the stall, with a source label that names the one visit to Gikomba.",
         "Lists only the chama and the M-Pesa kiosk as channels; no new channel is proposed.",
-        "The assumption check names a bank-style account as unconfirmed.",
-        "The assumption check raises who decides, citing the husband who waits for the takings.",
-        "Open questions say that nothing is confirmed for Toi market."
+        "The assumption check names a bank-style account as unconfirmed and raises who decides, citing the husband who waits for the takings.",
+        "Open questions say that nothing is confirmed for Toi market.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks what is known about the farmers and their setting.",
         "Asks where that knowledge comes from: visits, informants, or reports.",
         "Does not produce a brief.",
-        "Does not name a country, crop, or place the user did not give."
+        "Does not name a country, crop, or place the user did not give.",
+        "Says why it needs these answers."
       ]
     },
     {

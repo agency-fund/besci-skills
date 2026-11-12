@@ -13,7 +13,7 @@ metadata:
   title: Check what research already exists
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -43,7 +43,7 @@ Summarizes the existing research on the behavior, audience, or setting named in 
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the summary. Do not ask anything the user has already answered.
 
 1. **Required.** The program goal, and what is known about the population and setting: who, where, reached through what channel.
 2. **Required, with a default.** Which search route to use:
@@ -80,7 +80,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Evidence scan brief
+<Two or three plain sentences to the user: what the research found that bears most on their goal, the strongest finding against it, and how far the search reached, so a thin search is not read as "nothing works".>
+
+# What research already exists on <the goal, in a few words>
 
 **Program goal (as given):** <the goal, verbatim or lightly cleaned>
 **Search route:** <Paperclip / general web search / both / no search tool available>
@@ -102,7 +104,27 @@ See `references/worked-example.md` for a complete run.
 - **Opened:** <n sources: n in full text, n abstract only>
 - **Not reached:** <languages, program reports, databases>
 - **A fuller review would add:** <...>
+
+## Where you could go from here
+<One line saying the evidence summary is done.>
+<Two or three next moves that fit what this search found, each with why it would help and when it fits. Candidates:
+- `assess-evidence-transferability`, when one study looks like the model for the program and the question is whether its result would hold for this population
+- `estimate-expected-effect`, when the team will test a program and needs an effect size to plan on from the estimates found
+- `define-key-behavior`, when the goal is still broad and the team is ready to pick the one behavior to work on
+- `review-prior-intervention`, when the team or a partner has already run something similar and its records exist
+- a research librarian, an evidence-synthesis specialist, or the databases this search could not reach (3ie, J-PAL, program reports, other languages), when the decision is hard to reverse or the gaps sit where the search did not look>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The brief opens with a few plain sentences to the user (who the program really reaches, where and when they decide, and the assumption most likely to be wrong), and its title names the group; the labels were already plain. The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard, at a little over half its earlier length. The sources are now the Busara toolkit, the Designing for Behavior Change field guide, and Henrich, Heine and Norenzayan (2010), each checked; EAST, Contextual Design, and Datta and Mullainathan were dropped because the rewrite could not confirm what the earlier version credited to them. The check for assumptions carried over from wealthy Western settings is kept, in plain words, with "who decides" as its own line. Zezhen Wu added as co-author. Rewritten with Claude.
 

@@ -8,12 +8,12 @@
       "expected_output": "A theory of change in the output template whose chain runs from the agents' activities through named behaviors of agents and couples to fewer unintended pregnancies.",
       "files": [],
       "assertions": [
-        "Carries the outcome over as the user stated it.",
+        "Opens with a few plain sentences to the user, and carries the outcome over as the user stated it.",
         "Every link has an assumption in if-then-because form and one of the four strength labels.",
-        "Evidence cells cite only the sales data or the 2024 review; no other study is cited.",
-        "No link that rests on the 2024 review is labeled above 'tested elsewhere'.",
+        "Evidence cells cite only the sales data or the 2024 review, and no link that rests on the review is labeled above 'tested elsewhere'.",
         "Lists behaviors for both agents and couples, each with a link number and marked confirmed or inferred.",
-        "Names the link from buying condoms to using them as a weak link with no evidence supplied."
+        "Names the link from buying condoms to using them as a weak link with no evidence supplied.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks what the program does, by whom, to whom.",
         "Asks who the activities reach or who the outcome is for.",
         "Does not produce a causal chain table.",
-        "Does not invent a program or fill the template with placeholders."
+        "Does not invent a program or fill the template with placeholders.",
+        "Says why it needs these answers."
       ]
     },
     {
