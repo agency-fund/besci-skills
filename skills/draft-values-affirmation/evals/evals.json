@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We run a financial-literacy program for first-generation college students. Many avoid asking questions in workshops or one-on-one advising sessions because they feel judged or embarrassed discussing money: not knowing how credit scores work, or having to say they can't afford something classmates take for granted. Sessions start with a short welcome, then the content. Students can write on paper or a phone, privately. The program is free and most advisers were first-generation students themselves. We don't have research on what these students value, just advisers' impressions that family and being first in the family to attend matter a lot. Students attend about six sessions a semester. Can you write a values-affirmation exercise for the start of sessions?",
-      "expected_output": "A values-affirmation script in the output template, with the check of the setting filled in and the value list labeled unconfirmed.",
+      "expected_output": "A values-affirmation exercise in the output template, with the check of the setting filled in and the value list labeled unconfirmed.",
       "files": [],
       "assertions": [
         "The value list leaves out money or career success, and is labeled unconfirmed with a recommendation to confirm it with students.",
         "The writing prompt has both parts: why the value matters, and a specific time it mattered.",
         "Places the exercise before the financial content, in private, and introduces it without calling it a way to feel better or more confident.",
         "Does not schedule the exercise at all six sessions.",
-        "Names the cost of college or family financial pressure as something the exercise does not fix.",
-        "States that results in trials are mixed and promises no effect size."
+        "Names the cost of college or family financial pressure as something the exercise does not fix, says trial results are mixed, and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks who the people are and what they feel judged about.",
         "Asks when the judgment is felt, or how the exercise could be given before it.",
         "Asks what people gain once they engage, or whether a practical barrier keeps them away.",
-        "Drafts no value list or prompt."
+        "Drafts no value list or prompt.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -53,7 +54,7 @@
         "Says the barrier is exposure built into where the office is, not a feeling to be eased.",
         "Says the exercise would not change the fact that students are seen walking in.",
         "Names select-intervention-levers.",
-        "Does not produce a values-affirmation script."
+        "Does not produce a values-affirmation exercise."
       ]
     }
   ]

@@ -13,7 +13,7 @@ metadata:
   title: Choose interventions for a confirmed barrier
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -43,7 +43,7 @@ Chooses the kind of intervention that fits one confirmed barrier.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before making the choice. Do not ask anything the user has already answered.
 
 1. **Required.** The one confirmed barrier, with the evidence: who was asked or observed, and what they said or did.
 2. **Required.** The behavior the barrier blocks: who does what, when.
@@ -79,14 +79,16 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Intervention lever brief
+<Two or three plain sentences to the user: the kind of intervention and the technique you would pick, the scores that decided it, and what has to be confirmed (a permission, a cost) before anyone designs it.>
+
+# Choosing an intervention for <the barrier, in a few words>
 
 **Behavior:** <who does what, when>
 **Confirmed barrier:** <the barrier, as the team stated it>
 **Evidence that confirmed it:** <who was asked or observed; what they said or did>
 **Kind of barrier:** <one of the six>, because <the evidence that puts it there>
 
-## Kinds of intervention the table links to this barrier
+## Kinds of intervention the Behaviour Change Wheel's table links to this barrier
 
 | Kind | Form it would take here |
 |---|---|
@@ -94,23 +96,43 @@ See `references/worked-example.md` for a complete run.
 
 **The team's own idea:** <the idea, its kind, and whether that kind is in the row; or "none given">
 
-## Feasibility (APEASE)
+## How feasible each one is here (APEASE)
 
 | Kind | Affordability | Practicability | Effectiveness | Acceptability | Side-effects and safety | Equity |
 |---|---|---|---|---|---|---|
 | <kind> | <+ / 0 / − / ?: reason> | <...> | <...> | <...> | <...> | <...> |
 
-## Selected lever
+## The kind I'd choose, and the technique
 - **Kind:** <one kind>, because <the cells that decided it>
 - **Technique:** <the specific thing that changes; who does it; where and when>
-- **Taxonomy label:** <number and name; or "label to check: <label>">
+- **Label in the behavior change technique taxonomy:** <number and name; or "label to check: <label>">
 
 ## If it fails: the other kinds, ranked
 1. <kind>: <why it lost; what would make it worth trying>
 
-## To confirm before design
+## What to confirm before design starts
 - <a permission, a cost, or a "?" that could change the selection>
+
+## Where you could go from here
+<One line saying the choice is made.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-lever-content`, when the technique needs words (a message, a script, a sign) and what is listed to confirm is in hand
+- a skill made for the chosen technique, such as `select-default-option`, `design-incentive-scheme`, or `design-reminder-schedule`, when the technique is one of those
+- `plan-prototype-test`, when a sketch of the technique could be shown to a few people from the audience before anything is built
+- `draft-tdf-interview-guide`, when the barrier was confirmed only once, at one site, and checking it elsewhere costs less than a pilot
+- the people whose permission, money, or cooperation the choice depends on, when a practicability score is − or ?>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

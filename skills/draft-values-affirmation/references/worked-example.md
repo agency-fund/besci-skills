@@ -9,15 +9,17 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Values-affirmation script
+The setting passes: the program is free and advisers answer students' own questions, so the exercise has something to work with. Students write privately about a value they choose, at the start of the first workshop and again before they show an adviser their budget. The value list comes from advisers' impressions, so a few current students should confirm it before anyone uses it.
 
-**People and threat:** First-generation college students in a financial-literacy program, who avoid asking questions because they feel judged about money: "I should already know how credit scores work"; "I don't want to say I can't afford what everyone else takes for granted".
+# Values affirmation for first-generation students in the financial-literacy program: a short private writing exercise
+
+**Who, and what they feel judged about:** First-generation college students in a financial-literacy program, who avoid asking questions because they feel judged about money: "I should already know how credit scores work"; "I don't want to say I can't afford what everyone else takes for granted".
 **The moment:** The start of a workshop, before any financial content; and the fourth session, when students bring their own budget to an adviser.
 
-## What the setting offers (gate)
+## Does the setting give the exercise something to work with?
 - **Practical barrier:** None to attending: the program is free. The cost of college and pressure from family finances lie behind the embarrassment and are outside the program.
 - **What people gain once they engage:** Answers to their own questions in free one-on-one advising, from advisers who were mostly first-generation students themselves (as described by the team).
-- **Verdict:** Delivers.
+- **Verdict:** Yes.
 
 ## Value list
 Unconfirmed: built from advisers' impressions. Confirm with a few current students before use.
@@ -53,6 +55,14 @@ Unconfirmed: built from advisers' impressions. Confirm with a few current studen
 ## What this exercise does not fix
 The cost of attending college, pressure from family finances, and never having been taught how credit works. The exercise may make it easier to ask a question; whether the workshops answer it, and whether financial aid is enough, have to be judged on their own.
 
-## The record, and what is unconfirmed here
+## What trials found, and what is unconfirmed here
 Across 58 classroom studies, all but nine in the United States, the exercise raised the grades of students under threat slightly (g = 0.15) and did nothing for others (Wu, Spreckelsen & Cohen, 2021). A large replication in schools where it had worked before found no effect (Hanselman et al., 2017). Those studies measured grades among students facing a stereotype about their group. Asking questions in a money workshop has not been tested, and the value list has not been confirmed with students. No effect size is promised.
+
+## Where you could go from here
+That's the exercise.
+- Ask four or five current students to go through the value list: it comes from advisers' impressions, and a value students do not recognize, or one that brings money back in, would work against the exercise.
+- Try the whole exercise with a few students using `plan-prototype-test`: fits if you want to know whether the introduction reads as an ordinary activity or as help for students who struggle, which is the likeliest way it backfires.
+- Plan a small pilot with `design-pilot-feasibility-study`: fits once the list is confirmed, to see whether advisers can run it privately at the start of every first workshop.
+I'd lean toward the students' review of the list first, because the rest of the exercise depends on values they actually hold.
+Questions you could ask next: "What should we say if a student asks why we're doing this?" · "How would we know whether students ask more questions afterward?"
 ```

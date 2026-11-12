@@ -11,11 +11,13 @@ We have drafted a return-date card for the midwife to fill in and the woman to t
 ## The output
 
 ```markdown
-# Prototype test plan
+The plan has women, family members, and all four midwives use the two cards while your field officer watches, in two rounds a week apart. What it most needs to find out is whether a husband or mother-in-law who never heard the midwife can read the date off the card. It will show which card people can use, not whether more women come back; that is for the pilot.
+
+# Trying the return-date card with a few people before the pilot
 
 **Draft under test:** A return-date card filled in by the midwife and taken home by the woman, in two versions: A, a one-month calendar with the date circled; B, a row of market stalls with the market days to wait crossed off. Version shown: printed mock-up.
 **What it must do:** Pregnant women who attend a first antenatal visit return on the date given. The card removes one barrier: the woman, and the person who pays for transport, do not know the date.
-**Decision this test feeds:** Which version, if either, goes into the pilot in six weeks.
+**What the team will decide with it:** Which version, if either, goes into the pilot in six weeks.
 
 ## Learning questions
 | # | Question | Tied to | What will be observed |
@@ -77,4 +79,12 @@ We have drafted a return-date card for the midwife to fill in and the woman to t
 ## What to check before relying on this
 - Whether women tested at the clinic, minutes after the midwife's explanation, are a fair stand-in for a woman reading the card at home three weeks later. If the team can visit five women at home a week after round one, add that.
 - Whether the market-day count holds across both catchment areas; a second market on a different cycle would break version B.
+
+## Where you could go from here
+That's the plan.
+- Do a dry run of the session guide with the field officer and note-taker on two colleagues: worth it before the first clinic day, since the order (ten minutes of talk before "show me") is easy to get wrong and question 1 depends on it.
+- Plan the pilot with `design-pilot-feasibility-study`: fits once round two settles on a version, because whether midwives can fill in a card for every woman on a busy day is something four role plays only touch on.
+- Go back to the barrier with `decompose-comb-barriers`: fits only if question 5 finds that most women knew their date and missed for another reason.
+I'd lean toward the dry run first, because a session run in the wrong order costs a clinic day you cannot get back.
+Questions you could ask next: "How should the note-taker record answers given in Dagbani?" · "What do we do if both versions fail the rule in round one?"
 ```

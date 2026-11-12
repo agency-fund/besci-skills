@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Social norm message
+The message tells farmers that 6 in 10 program farmers in Kimilili top-dressed by week 5 last season and that 8 in 10 say a good farmer does, which corrects their belief that only about 4 in 10 do it. Both figures are rounded down, and a line of thanks keeps farmers who already top-dress from easing off. Whether farmers count all program farmers in the sub-county as their peers is not known yet; the ten-farmer check answers that before the message goes out widely.
+
+# Telling maize farmers in Kimilili what most of their peers do and approve of
 
 **Behavior:** Maize farmers enrolled in the program in Kimilili sub-county apply top-dressing fertilizer between the third and fifth week after planting, each long-rains season.
 **What the audience believes peers do and approve of:** The typical farmer believes about 4 in 10 neighbors top-dress on time; 82% say a farmer who does is doing what a good farmer should (survey of 180 enrolled farmers; interviews in which farmers said they wait to see what neighbors do).
@@ -19,7 +21,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ## Kind of message
 - **Chosen:** Both: what most do, with what most approve of.
-- **Rule applied:** At least half do it (64%), and approval was measured (82%).
+- **Rule for these figures:** At least half do it (64%), and approval was measured (82%).
 
 ## The message
 Hello <name>. Last season 6 out of every 10 program farmers in Kimilili top-dressed their maize by week 5, and 8 out of 10 say that is what a good farmer does. Thank you if you were one of them. You planted on <date>: top-dress by <date plus 35 days>. Your agrovet has stock. <Field officer's name>
@@ -51,4 +53,12 @@ That telling people a true majority figure for a group they belong to moves some
 ## What to check before relying on this
 - Whether farmers count enrolled farmers across the sub-county as their peers, or only the neighbors whose fields they can see. If it is neighbors, compute the share by ward and use it only where it is at least half.
 - Whether the plot records are complete; a field officer who recorded only the farms visited would overstate the 64%.
+
+## Where you could go from here
+That's the message.
+- Ask ten farmers in two wards who "program farmers in Kimilili" are to them: if they mean the neighbors whose fields they can see, the share has to be computed by ward, and in some wards it may fall below half.
+- Check with field officers how the plot records were kept: if only visited farms were recorded, the 64% is too high and the message overstates.
+- Set up the one-in-five comparison with `choose-trial-design`: fits if you want the result to show whether the norm lines, rather than the reminder itself, moved top-dressing.
+I'd lean toward the ten-farmer check first, because if "peers" means neighbors, the figure, and in some wards the message, changes.
+Questions you could ask next: "What do we send in wards where fewer than half top-dressed?" · "Should the message come from the field officer or from the program?"
 ```

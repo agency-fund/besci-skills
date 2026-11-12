@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Default option specification
+I'd have 5% of each wage go to the savings pocket by default, except for the roughly 15% of workers repaying a cooperative loan, who choose their own share with nothing pre-selected. It is fair to the workers who receive it because the money stays theirs, comes out free at once, and one tap stops it. Because it moves wages, a financial-services compliance lead needs to review the opt-out and the notice before the pilot.
+
+# What people get if they do nothing: the payday wage split in Gazipur
 
 **Behavior:** Workers at the three partner factories in Gazipur move part of their monthly wage into the wallet's savings pocket on payday.
 **Confirmed barrier:** People want to save and do not act at payday: 71% of 400 surveyed workers say they want to put money aside, 3% have opened the pocket, and interviewees describe the money being gone by evening. Cost and access are ruled out; the pocket is free and inside the wallet they use.
@@ -20,8 +22,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 - **Who receives it:** Workers at the three factories who have no cooperative loan repayment.
 - **Who it is not for:** The roughly 15% of workers repaying a cooperative loan each month, for whom 5% less on payday could mean a missed repayment. They get an active choice at the next payday: a screen that asks "0%, 2%, or 5% to savings?" with nothing pre-selected.
 
-## Mechanism
-- **Relied on:** Ease. Workers intend to save and do not make the transfer; the default removes the step.
+## Why a default would work here
+- **What it relies on:** Ease. Workers intend to save and do not make the transfer; the default removes the step.
 - **Why this setting supports it:** The intention is measured (71%) and the action is one transfer that people put off. Endorsement is not relied on, because whether workers trust HR with their wages is not known.
 
 ## Opt-out
@@ -31,11 +33,11 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ## Monitoring
 - **Review if opt-outs exceed:** 30% within two paydays; the program lead and an HR representative review the rate and the reasons given.
-- **Harm check:** Count same-day withdrawals of the full pocket balance and ask ten workers a month whether the split left them short. Track missed remittances reported to field staff.
+- **Are people who stayed in worse off?** Count same-day withdrawals of the full pocket balance and ask ten workers a month whether the split left them short. Track missed remittances reported to field staff.
 - **When the default ends:** If the split is switched off, compare pocket deposits in the following two months with the months before it started.
 
 ## Ethics check
-- **Serves the chooser because:** It does what most workers say they want, the money stays theirs, and it can be taken out at once.
+- **Whose interest it serves:** The workers'. It does what most workers say they want, the money stays theirs, and it can be taken out at once.
 - **Told before it applies:** A message one week before the first payday, and a notice read aloud at the line meeting, each stating the 5%, the opt-out, and that withdrawal is free.
 - **Could it read as taking something:** Yes, if announced as an HR decision. The message comes from the wallet provider, shows the pocket balance in the worker's own name, and says "your money".
 - **Specialist review:** A financial-services compliance lead, because the default moves wages. Review the opt-out and the disclosure before the pilot.
@@ -46,4 +48,12 @@ That a savings default from pay raises participation and balances while it is in
 ## What to check before relying on this
 - Whether workers who send their whole wage home on payday will read 5% in a pocket as a loss. Ask 15 of them before the pilot.
 - Whether the 15% with loan repayments can be identified from payroll data without asking workers to disclose debts.
+
+## Where you could go from here
+That's the specification.
+- Ask 15 workers who send their whole wage home how they would read 5% in a pocket: if it looks like money taken, the default could cost trust in the wallet, and nothing in this specification can tell you that.
+- Review it with `audit-intervention-ethics`: fits because it acts on workers who do nothing and moves their wages, and HR's hold over them makes the ease of saying no worth checking on its own.
+- Show the payday message and the opt-out screen to a few workers with `plan-prototype-test`: fits before the compliance review if you want to bring evidence that workers understand what will happen and how to stop it.
+I'd lean toward talking with the 15 workers first, because if they read the split as a deduction, the design changes before anyone reviews it.
+Questions you could ask next: "How do we find the workers with loan repayments without asking about their debts?" · "What should the payday message say, word for word?"
 ```

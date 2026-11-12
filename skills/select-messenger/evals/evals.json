@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We run monthly immunization camps in 36 villages of Udaipur district, Rajasthan. Behavior: mothers of children under two in Kherwara block bring the child to the camp on camp day each month. Field interviews confirmed the barrier is information: most mothers did not know the camp date or that the camp had moved to the anganwadi center; they said they would have come had they known. Mothers are home most mornings, about half of households have a phone held by the husband, the ASHA visits each hamlet roughly monthly, and the sarpanch announces things at the panchayat meeting that few women attend. Messengers we could field: the ASHA (our default), the anganwadi worker, the sarpanch, a mother who vaccinated on time, people the village names, and an SMS from the block office. None of them controls anything mothers need. We cover enough villages to split them. Who should deliver the camp-date message?",
-      "expected_output": "A messenger choice in the output template that puts reach first because the barrier is that mothers have not heard the date.",
+      "expected_output": "A choice of messenger in the output template that puts reach first because the barrier is that mothers have not heard the date.",
       "files": [],
       "assertions": [
         "Classifies the barrier as not heard and applies the reach-first rule.",
         "The candidate table includes the ASHA as current sender and a person the village names.",
-        "Ratings not backed by what mothers said are marked \"assumed\".",
-        "Gives the reach question and the trust question, with who is asked.",
+        "Marks ratings not backed by what mothers said \"assumed\", and gives the reach question and the trust question, with who is asked.",
         "Sets a comparison between villages with the chosen messenger and villages with the ASHA, with the camp register as outcome.",
-        "Does not write the message text and promises no effect size."
+        "Does not write the message text and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks who the audience is and who talks to them about saving now.",
         "Asks which messengers the program could field and whether any has power over the audience.",
         "Does not recommend a messenger.",
-        "Does not fill the candidate table."
+        "Does not fill the candidate table.",
+        "Says why it needs these answers."
       ]
     },
     {

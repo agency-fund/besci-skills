@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Messenger choice
+I'd choose the women's guild leader in each catchment: the barrier is distrust of the source, and 31 of the 48 women you interviewed said they act on her advice about pregnancy. Her reach is assumed, because nobody has asked the reach question yet, and all 48 women were still attending the clinic. Before any leader is briefed, someone with standing in the local church should advise on what the guild's involvement commits you to.
+
+# Who should deliver the message about nausea and iron-folate tablets
 
 **Behavior:** Pregnant women enrolled at the 12 health centers in Mchinji district take one iron-folate tablet daily from the first antenatal visit until delivery.
 **Barrier the message addresses:** Women and their husbands read nausea as a sign that the tablets harm the pregnancy, and nobody they trust has said otherwise (interviews with 48 women). Cost and supply are ruled out: tablets are free and in stock.
@@ -17,7 +19,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 **Audience, and who talks to them about this now:** Pregnant women in the 12 catchments. The HSA raises the tablets on a monthly village visit that reaches about a third of households; the nurse does so at antenatal visits.
 
 ## Candidates
-| Candidate | Reach | Likeness | Expertise or office | Trust on this topic | Cost per contact | Basis |
+| Candidate | Reach | Likeness | Expertise or office | Trust on this topic | Cost per contact | Based on |
 |---|---|---|---|---|---|---|
 | HSA (current sender) | Low: monthly visit, a third of households | Medium: lives nearby, employed by the health service | Medium: trained health worker | Low: named by 5 of 48 | Low: already paid | Reach from program records; trust from audience answers |
 | Women's guild leader | High: most women attend the weekly guild | High: a mother from the same villages | Low: no health training | High: named by 31 of 48 | Low: a short briefing each month | Trust from audience answers; reach and likeness assumed |
@@ -31,9 +33,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 - **Who was asked:** 48 enrolled women, in interviews at the health centers. Women who had stopped attending were not reached.
 - **Who they named:** Guild leader 31; antenatal nurse 12; HSA 5.
 
-## Choice
+## Who I'd choose
 - **Messenger:** The women's guild leader in each catchment.
-- **Rule applied:** Distrust: trust first. She is the person most women say they act on, and she is like them.
+- **Rule for this kind of barrier:** Distrust: trust first. She is the person most women say they act on, and she is like them.
 - **Runner-up:** The antenatal nurse: the expertise the guild leader lacks, and trusted by a quarter of the women, but she sees them only on visit days and husbands never hear her.
 - **Power over the audience:** None for the guild leader. The headman controls land and input coupons, so he is not used.
 
@@ -59,4 +61,12 @@ That people act more readily on a message from someone like themselves whom they
 - The guild leader's reach is assumed. Ask the reach question of ten women per catchment, including women who are not in the guild.
 - The 48 women were interviewed at health centers, so those who trust the clinic least are missing. Ask ten women who have stopped attending whom they act on.
 - Husbands share the belief and do not attend the guild. Ask who would need to tell a husband.
+
+## Where you could go from here
+That's the choice.
+- Ask the reach question of ten women per catchment, including some outside the guild: the choice rests on the guild leader reaching most women, and that is assumed.
+- Set up the six-and-six comparison with `choose-trial-design`: fits because you have 12 catchments, and without a proper comparison more contact and a better messenger cannot be told apart.
+- Write the nurse's briefing and the leader's talking points with `draft-lever-content`: fits once the church adviser has been consulted, since the leader repeats only what the nurse has confirmed in writing.
+I'd lean toward the reach question first, because a trusted messenger helps only the women she reaches, and the answer could change the choice.
+Questions you could ask next: "Who could reach husbands, since they share the belief and don't attend the guild?" · "What should a guild leader do if a woman tells her about a side effect?"
 ```

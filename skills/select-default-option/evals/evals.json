@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "Behavior: workers at our three partner garment factories in Gazipur move part of their monthly wage into the savings pocket of their mobile-money wallet on payday. In a survey of 400 workers, 71% said they want to put money aside each month and 3% have opened the pocket; in interviews they say they mean to and the money is gone by evening. The pocket is free and inside the wallet they already use. Today the whole wage lands in the spending balance, set by HR's payroll file. This would move wages. About 15% of workers repay a cooperative loan monthly. Can we auto-enroll everyone at 5%?",
-      "expected_output": "A default option specification in the output template that does not apply one default to everyone.",
+      "expected_output": "A specification of what workers get by doing nothing, in the output template, that does not apply one default to everyone.",
       "files": [],
       "assertions": [
         "Names who could be worse off under the default and gives them an active choice or a different default.",
         "Names one mechanism: endorsement, endowment, or ease, with a fact from the setting.",
-        "The opt-out is one step with no cost.",
-        "Gives an opt-out rate at which the default is reviewed.",
+        "The opt-out is one step with no cost, and an opt-out rate is given at which the default is reviewed.",
         "Names a specialist to review it because it moves wages.",
-        "Promises no effect size for this program."
+        "Promises no effect size for this program.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what shows that people want to enroll and are stopped by not acting.",
         "Asks what happens today to someone who does nothing, or who controls that.",
         "Does not produce a default specification.",
-        "Does not recommend auto-enrollment."
+        "Does not recommend auto-enrollment.",
+        "Says why it needs these answers."
       ]
     },
     {

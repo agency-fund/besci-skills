@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We've chosen the intervention: a privacy screen and a marked 'quick deposit' position at the mobile-money agent kiosk inside Gikomba and Toi markets, so deposits aren't visible to neighboring stalls. The confirmed barrier is that visible cash-handling at closing invites borrowing requests. The target behavior is women stall vendors depositing the day's surplus cash into their mobile-money savings wallet before leaving the market. We watched vendors on six evenings: they decide at the kiosk at closing time. They are Swahili speakers with mixed literacy; our field coordinator is a native Swahili speaker. We don't have any data on what share of vendors currently deposit. Write the sign and what the agent should say.",
-      "expected_output": "An intervention content draft in the output template, with a short sign and one agent line traced to what a change to the physical setting must contain.",
+      "expected_output": "Draft wording in the output template: a short sign and one agent line, each tied to what a change to the physical setting must contain.",
       "files": [],
       "assertions": [
         "States what the technique must contain before the draft, marked as a paraphrase or as copied from a definition.",
         "The channel is a sign and a spoken line at the kiosk, not a text message.",
-        "Says the English is working copy and that a native Swahili speaker writes the final version.",
-        "Every element of the draft has a row in the trace.",
+        "Says the English is working copy for a native Swahili speaker to rewrite, and sets a test with a number of people and a pass mark, run on the Swahili version.",
+        "Every part of the draft has a row saying what it delivers.",
         "Makes no claim about how many vendors deposit, and says why.",
-        "Sets a test with a number of people and a pass mark, run on the Swahili version."
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks which technique was chosen, with the barrier and the behavior.",
         "Asks how the team knows the audience uses text messages.",
         "Asks for the language or reading level of the final copy.",
-        "Does not draft a message."
+        "Does not draft a message.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -36,7 +37,7 @@
       "expected_output": "The skill drafts the poster in the template and says a clinician must check every health claim before the comprehension test.",
       "files": [],
       "assertions": [
-        "Produces draft copy with a trace.",
+        "Produces draft copy and says what each part of it delivers.",
         "Says the English is working copy and that the nurse-midwife or another native speaker writes the Chichewa version.",
         "Tells the user a clinician must check the health claims before the test.",
         "Says a comprehension test does not check whether a claim is true.",

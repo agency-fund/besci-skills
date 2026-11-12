@@ -14,7 +14,7 @@ metadata:
   title: Choose who delivers the message
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Chooses who delivers one message to one audience.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the choice. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier the message addresses, with its evidence.
 2. **Required.** The audience, and who talks to them about this topic now.
@@ -80,7 +80,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Messenger choice
+<Two or three plain sentences to the user: who you would choose and why, the rating the choice rests on that nobody has confirmed yet, and whether anyone must review it before delivery.>
+
+# Who should deliver <the message, in a few words>
 
 **Behavior:** <who, what, when>
 **Barrier the message addresses:** <the barrier and its evidence>
@@ -88,7 +90,7 @@ See `references/worked-example.md` for a complete run.
 **Audience, and who talks to them about this now:** <...>
 
 ## Candidates
-| Candidate | Reach | Likeness | Expertise or office | Trust on this topic | Cost per contact | Basis |
+| Candidate | Reach | Likeness | Expertise or office | Trust on this topic | Cost per contact | Based on |
 |---|---|---|---|---|---|---|
 | <current sender> | <high / medium / low: why> | <...> | <...> | <...> | <...> | <audience answers / records / assumed> |
 | <person the audience names> | <...> | <...> | <...> | <...> | <...> | <...> |
@@ -100,9 +102,9 @@ See `references/worked-example.md` for a complete run.
 - **Who was asked:** <how many, chosen how; or "not yet run: ratings above are assumed">
 - **Who they named:** <roles with counts; or "pending">
 
-## Choice
+## Who I'd choose
 - **Messenger:** <role>
-- **Rule applied:** <not heard: reach first / doubt: likeness first / distrust: trust first>
+- **Rule for this kind of barrier:** <not heard: reach first / doubt: likeness first / distrust: trust first>
 - **Runner-up:** <role, and why second>
 - **Power over the audience:** <none / yes: what they control, and what was done about it>
 
@@ -126,7 +128,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the rating marked "assumed" that the choice depends on>
+
+## Where you could go from here
+<One line saying the choice is made.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-lever-content`, when the messenger needs words: a script, talking points, or a briefing
+- `map-reference-network`, when the trust ratings rest on guesses about whose opinion the audience weighs on this practice
+- `choose-trial-design`, when there are enough groups to compare the chosen messenger with the current sender and the team wants the comparison set up properly
+- `audit-intervention-ethics`, when the leading messenger has a hold over the audience or the topic is stigmatized
+- `plan-prototype-test`, when a few people from the audience could hear the messenger deliver the point before the pilot
+- the reach and trust questions, asked of about ten people per group, when ratings are marked "assumed">
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

@@ -14,7 +14,7 @@ metadata:
   title: Ask people to plan when and where
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Writes a prompt that asks a person to name the moment they will carry out one ac
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the prompt. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that people intend to act and that cost, access, and trust do not stop them.
 2. **Required.** Whether the action happens once or is repeated.
@@ -75,14 +75,16 @@ If any of 1 to 4 is missing, ask and stop. If 5 is missing, make it the first op
 7. **Have the person say the plan back once.** Rehearsal raised effects in the meta-analysis and writing the plan down lowered them; a card is optional and theirs to keep.
 8. **Say who else sees or hears the plan,** and whether that could expose the person.
 9. **Specify the pretest:** five to ten people answer the prompt cold; it passes if every answer names a day, a time, and a real place.
-10. **State what the evidence supports:** the direction. Do not promise an effect size.
+10. **State what the evidence supports:** the direction, never a promised effect size.
 
 See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Implementation intention prompt
+<Two or three plain sentences to the user: the prompt in one line, what shows that people already intend to act, and that nobody should use it until a few people have answered it cold.>
+
+# A prompt to plan when and where: <the action, in a few words>
 
 **Behavior:** <who, what, when>
 **Confirmed barrier:** <the evidence that people intend to act and do not; how cost, access, and trust were ruled out>
@@ -93,15 +95,15 @@ See `references/worked-example.md` for a complete run.
 <the literal words, with blanks: "If it is <day> at <time> and I am <where>, then I will <action> at <place>.">
 
 ## Why each part is there
-- **If (time and cue):** <...>
+- **If (the time, and where they will be just before):** <...>
 - **Then (action and place):** <...>
 - **Anything added:** <a way to get there or one obstacle, and the evidence for adding it; or "nothing">
 
 ## Delivery
-- **Rides on:** <the existing message, visit, or form>
+- **Added to:** <the existing message, visit, or form>
 - **Asked by:** <who>
 - **When:** <how long before the action, and why>
-- **Said back:** <how the person repeats the plan once>
+- **How the person says it back:** <how they repeat the plan, once>
 - **What the person keeps:** <nothing; or a card or message that stays with them>
 
 ## Who else sees or hears the plan
@@ -115,7 +117,27 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the prompt is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when the cold pretest should become a few sessions with people from the audience, to see how they answer and whether the options fit their week
+- `audit-intervention-ethics`, when someone other than the person will see, hear, or record the plan, or the person who asks has a hold over them
+- `design-pilot-feasibility-study`, when the pretest passes and the question is whether staff can ask it one person at a time during the real contact
+- `draft-intervention-description`, when staff at other sites will deliver the prompt and must do it the same way
+- a few people from the audience asked "which day?", when the evidence that they intend to act rests on a survey yes>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
