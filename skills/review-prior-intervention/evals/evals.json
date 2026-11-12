@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We ran a 3-month SMS reminder program to improve adherence to a daily medication for our enrolled patients. One reminder text per day at 8am. Adherence, measured by pharmacy refill records, barely moved. Our take is that patients just don't care enough about their health to act on a reminder. We're deciding whether to drop reminders altogether. I pulled the SMS gateway's delivery logs for you: about 30% of messages failed silently on two carriers, with no resend. No other changes at the clinics during the period. Can you review it?",
-      "expected_output": "A post-mortem brief in the output template that finds a confirmed delivery failure and classifies the reminder idea as not yet fairly tested.",
+      "expected_output": "A review in the output template that finds a confirmed delivery failure and classifies the reminder idea as not yet fairly tested.",
       "files": [],
       "assertions": [
         "Labels each of fidelity, dose, reach, context, and response as confirmed by the record or inferred.",
         "Says the collected data does not support the team's explanation about motivation.",
         "Names failed delivery as an alternative explanation.",
         "Gives 'cannot yet tell' as the classification, or 'implementation failure', and not 'idea failure'.",
-        "Does not recommend dropping reminders.",
-        "Does not propose a redesigned program."
+        "Does not recommend dropping reminders or propose a redesigned program.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,14 +26,15 @@
         "Asks for a written record of what was planned and what happened.",
         "Asks what data was collected.",
         "Gives no classification.",
-        "Does not advise retrying or dropping reminders."
+        "Does not advise retrying or dropping reminders.",
+        "Says why it needs these answers."
       ]
     },
     {
       "id": 3,
       "name": "Near the escalation point",
       "prompt": "Last year we piloted a combined cash transfer plus monthly nutrition counseling for 300 households in two districts. Our records show 280 households received at least 4 of the 6 transfers; counseling attendance logs exist for one district only, showing about 40% attended three or more sessions. Child weight-for-age improved slightly on average, but in 12 households it worsened and two children were hospitalized for malnutrition during the pilot. The team believes the idea works and counseling was the weak part. Our funder is deciding whether to scale to 3,000 households. Review it.",
-      "expected_output": "The skill produces the brief without settling the idea on thin counseling data, and names an independent evaluator because of the hospitalizations and the scale-up.",
+      "expected_output": "The skill produces the review without settling the idea on thin counseling data, and names an independent evaluator because of the hospitalizations and the scale-up.",
       "files": [],
       "assertions": [
         "Marks counseling reach as confirmed for one district and inferred or unknown for the other.",
@@ -52,7 +53,7 @@
       "assertions": [
         "Says the request is to design the next attempt.",
         "Names select-intervention-levers.",
-        "Does not produce a redesigned program or a new post-mortem brief."
+        "Does not produce a redesigned program or a new review."
       ]
     }
   ]

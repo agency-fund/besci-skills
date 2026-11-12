@@ -12,8 +12,8 @@
         "Every cell has a status, and every cell other than 'not asked' or 'asked, said nothing' has a quote reference.",
         "Marks the cells that rest on the field officer's notes or translated audio.",
         "Gives each hypothesis one of the four verdicts, with counts out of 16 and the interviews that go against it.",
-        "States no percentage of farmers.",
-        "Does not recommend how to supply fertilizer or any other intervention."
+        "States no percentage of farmers, and does not recommend how to supply fertilizer or any other intervention.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the transcripts, notes, or recordings, or for who interviewed and in what language.",
         "Asks which hypotheses the interviews were meant to test.",
         "Does not produce a matrix.",
-        "Gives no verdict on any barrier."
+        "Gives no verdict on any barrier.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -9,29 +9,31 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Heterogeneous effects report
+Of the two subgroups your plan named, one held up after correction: the effect was larger for students who started in the bottom third in math, about 3 points against under 1 for the top third. The machine-learning search also points to girls and rural schools, but those are hypotheses for the next trial, not findings, and nothing here supports running the program only in rural schools.
+
+# Who benefited most from the growth-mindset session in Peru
 
 **Trial:** Growth-mindset session, three regions of Peru; treatment vs control; randomized by school; 90 schools (6,050 students) vs 90 schools (5,950 students)
 **Primary outcome:** End-of-year national math score, points
 **Overall effect:** 1.8 points (95% CI 0.3 to 3.3), from the plan's model, standard errors clustered by school (about 0.15 standard deviations)
 **Sample:** random sample of public secondary schools in three regions; results speak for grade-8 students in public schools in those regions, not private schools or other regions
 **Decision this informs:** describe who benefited; choose what to pre-register next. Running it only in rural schools would be targeting (see the last section).
-**Plan status:** plan registered before baseline names 2 subgroups
+**The analysis plan:** plan registered before baseline names 2 subgroups
 
-## Named subgroups (confirmatory)
+## Subgroups the plan named in advance (confirmatory)
 
-| Subgroup (verbatim from the plan) | Expected direction | Effect in each group (points, 95% CI) | Difference (points, 95% CI) | Uncorrected p | Corrected p (Benjamini-Hochberg, 2 tests) |
+| Subgroup (in the plan's words) | What the plan expected | Effect in each group (points, 95% CI) | Difference (points, 95% CI) | p before correction | p corrected for 2 tests (Benjamini-Hochberg) |
 |---|---|---|---|---|---|
 | Baseline math tercile | Larger for the bottom tercile | Bottom 3.1 (0.8 to 5.4); middle 1.6 (-0.4 to 3.6); top 0.6 (-1.5 to 2.7) | Bottom minus top 2.5 (0.5 to 4.5) | 0.014 | 0.03 |
 | School poverty index above or below the median | Larger in poorer schools | Poorer 2.4 (0.3 to 4.5); less poor 1.1 (-0.9 to 3.1) | 1.3 (-1.6 to 4.2) | 0.38 | 0.38 |
 
 The baseline-tercile difference holds after correction, in the expected direction: the effect is concentrated among students who started in the bottom tercile. The poverty difference is not detectable at this sample; its interval runs from below zero to more than twice the overall effect.
 
-## Exploratory splits (hypotheses only)
+## Other differences the data suggest (exploratory: hypotheses only)
 - **Method and software:** causal forest, grf in R
-- **Sample splitting:** half to fit, half to test, split by school; 100 repeated splits; medians reported
+- **Fit on one half, checked on the other:** split by school; 100 repeated splits; medians reported
 - **Characteristics used:** baseline only: sex, age, baseline math, baseline reading, mother's education, school size, urban or rural, poverty index
-- **Best linear predictor:** heterogeneity coefficient 0.6 (95% CI 0.1 to 1.1); reads as real differences detected, with predicted differences more spread out than the real ones
+- **Did the model find real differences? (best linear predictor):** heterogeneity coefficient 0.6 (95% CI 0.1 to 1.1); reads as real differences detected, with predicted differences more spread out than the real ones
 - **Average effect by fifth of predicted benefit:**
 
   | Group | Effect (points, 95% CI) |
@@ -45,7 +47,7 @@ The baseline-tercile difference holds after correction, in the expected directio
 
 - **Most and least affected compared:** baseline math, 38 vs 61 (-23 points); share girls, 0.58 vs 0.45 (+0.13); mother's education primary or less, 0.47 vs 0.29 (+0.18); rural school, 0.52 vs 0.31 (+0.21). These describe whom the model picked out; they are hypotheses, not confirmed subgroups.
 
-## Power limits
+## What this trial was too small to tell (power)
 The trial was sized for an overall effect of 1.5 points. Neither subgroup was sized for, and a difference between subgroups of that size needs a much larger sample. The poverty result is "not detectable at this sample", not "the same in poorer and less poor schools". Each exploratory fifth is estimated on half the sample, so its interval is wide; the least affected fifth's interval includes the overall effect.
 
 ## What to pre-register next time
@@ -57,4 +59,12 @@ The trial was sized for an overall effect of 1.5 points. Neither subgroup was si
 - These schools were a random sample of public secondary schools in three regions; the results do not speak for private schools or other regions.
 - The findings on girls and rural schools must keep their exploratory label in the funder's summary; only the baseline-tercile result is confirmatory.
 - Running the program only in rural schools would exclude urban students on an exploratory result. Take this report to a statistician before any such decision.
+
+## Where you could go from here
+That's the report.
+- Work out the size of the next trial with `estimate-sample-size`: this trial could not detect the poverty difference, and the next one can only confirm the bottom-tercile, girls, or rural results if it is sized for a difference between groups, not for the overall effect.
+- Write the next trial's plan with `write-pre-analysis-plan`: the three subgroups above go in with their expected direction, which is what the funder asked for.
+- Take the rural-schools question to a statistician before the funder decides: running the program only in rural schools would rest on an exploratory result and would leave out urban students who may benefit.
+I'd lean toward the sample-size work first, because it tells you which of the three subgroups the next trial can afford to test, and the plan follows from that.
+Questions you could ask next: "How do we explain to the funder why the rural result is not enough to go rural-only?" · "How many schools would the next trial need to confirm the girls result?"
 ```

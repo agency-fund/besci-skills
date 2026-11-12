@@ -9,14 +9,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Interview synthesis: top-dressing maize on time
+The interviews back two of your four possible reasons, cash running short in the top-dressing window and weeding crowding the task out, but both rest on four late farmers, two of them heard through notes. Almost everyone thinks top-dressing pays, so that reason does not hold, and the calendar-versus-plant question is split. Two things nobody predicted also came up: stock-outs, and husbands deciding on purchases.
+
+# What the interviews tell us about top-dressing maize on time
 
 **Behavior:** Smallholder maize farmers enrolled in the program apply top-dressing fertilizer when the plants reach knee height, four to six weeks after planting.
 **Interviews:** 8 with enrolled farmers (4 on time, 4 late, by program records); interviewed by a program field officer; in Kiswahili and Luhya; 4 transcripts (Bungoma), 4 notes with audio (Kakamega); notes written in English by the field officer, quotes checked against the audio by the M&E officer
 **Read by:** the program analyst; the M&E officer charted the four Kakamega rows with the analyst; no second reader on the Bungoma rows
-**Hypotheses:** H1 cash is short at top-dressing time [Opportunity, physical / Environmental context and resources]; H2 timing by the calendar, not the plant [Capability, psychological / Knowledge]; H3 does not believe it pays [Motivation, reflective / Beliefs about consequences]; H4 the window falls during weeding and the task is forgotten [Capability, psychological / Memory, attention and decision processes]
+**The possible reasons tested (hypotheses):** H1 cash is short at top-dressing time [Opportunity, physical / Environmental context and resources]; H2 timing by the calendar, not the plant [Capability, psychological / Knowledge]; H3 does not believe it pays [Motivation, reflective / Beliefs about consequences]; H4 the window falls during weeding and the task is forgotten [Capability, psychological / Memory, attention and decision processes]
 
-## Matrix
+## Every interview against every possible reason (the matrix)
 
 | Respondent | Group | H1 cash short | H2 calendar timing | H3 does not pay | H4 weeding, forgotten | Not predicted |
 |---|---|---|---|---|---|---|
@@ -31,7 +33,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 † = the cell rests on notes or translation, not a transcript.
 
-## Verdicts
+## Verdict on each possible reason
 
 ### H1 cash is short at top-dressing time: supported
 - **Interviews:** 5 support, 2 contradict, 1 mixed, 0 asked and said nothing, 0 not asked (of 8)
@@ -65,24 +67,32 @@ A full run of the skill on a realistic case, showing the output it should produc
 - **Quotes:** "By the time I remembered, the maize was tasseling." (R05, p. 4); "The weeds do not wait." (R06, 10:20)
 - **Goes against it:** R03 (chose not to); R01, R04, R07 (managed both)
 
-## Not predicted, and outliers
+## What no one predicted, and the people who don't fit
 - Savings-group loans, payouts, or joint purchase: 3 interviews, all on time (R01, p. 3; R04, 08:15; R07, p. 2)
 - A husband who decides on or must be present for input purchases: 2 of the 4 women (R02, 14:00; R06, 07:30)
 - Agro-dealer out of stock: 1 interview (R02, 13:20)
 - Outlier: R03, the only farmer who doubts top-dressing works and the only one who says he chose not to
 
-## Against other evidence
+## What other evidence says
 - H1: the baseline survey says most households pay second-term school fees in the same weeks; agrees
 - Stock-outs: field officers reported two Kakamega agro-dealers out of stock in the window; agrees with R02
 - H2, H3, H4: none available
 
-## Confirmed barriers
+## Confirmed barriers, and what is still open
 - Cash is short in the top-dressing window [Opportunity, physical / Environmental context and resources]: 3 of 4 late farmers, and the on-time farmers who were short bought only through a group loan or payout; the baseline survey points the same way.
 - Weeding crowds out top-dressing [Capability, psychological / Memory, attention and decision processes]: 3 of 4 late farmers and no on-time farmer.
-- **Open:** H2: ask the four late farmers how they decide when to apply; one interview did not reach the question.
-- **Open:** stock-outs and husbands' control of purchases came up unprompted; the guide did not ask about either.
+- **Still open:** H2: ask the four late farmers how they decide when to apply; one interview did not reach the question.
+- **Still open:** stock-outs and husbands' control of purchases came up unprompted; the guide did not ask about either.
 
 ## What to check before relying on this
 - The supply decision rests on H1 and H4, and each rests on four late-farmer interviews; three or four more late farmers would show whether the pattern holds.
 - The four Kakamega rows rest on English notes, with quotes checked against the audio; the women's accounts of household control are where meaning is most likely to have been lost.
+
+## Where you could go from here
+That's the synthesis.
+- Take the cash barrier to `select-intervention-levers`: it is the best-supported reason, the baseline survey points the same way, and it is the one your supply decision can act on.
+- Plan reminders for the weeding clash with `design-reminder-schedule`: worth it if the team takes on the second barrier too, since the farmers who forgot already meant to top-dress.
+- Interview three or four more late farmers if the ten days allow: both confirmed barriers rest on four late-farmer interviews, and the same round could ask about stock-outs and who decides on purchases, which the guide never asked.
+I'd lean toward the cash barrier first, because the supply decision is ten days away and that is the barrier it can act on; the extra interviews can run alongside.
+Questions you could ask next: "Is three of four late farmers enough to act on?" · "How should we ask about husbands' control of purchases without putting women at risk?"
 ```

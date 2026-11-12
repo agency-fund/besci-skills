@@ -9,15 +9,17 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Cost-effectiveness estimate
+Each additional woman taking her tablets cost about $70 in delivery costs, and anywhere from $44 to $168 across the trial's confidence interval. The largest cost is health-worker time the program did not pay for; with that and the donated rooms at zero, the figure halves to $33.75. Before it goes beside the SMS program, keep in mind that the two measured adherence differently (pill counts here, self-report there), so the comparison is not like for like.
+
+# What health-worker home visits in Malawi cost per additional woman taking her iron-folate tablets
 
 **Program:** Health-worker home visits reminding pregnant women to take daily iron-folate tablets, about 10 visits per woman; 1,600 women at 12 health centers in Mchinji and Dedza, Malawi; 10 months of 2025
 **Effect:** adherence (pill count of 80% or more at 32 weeks), +12 percentage points (95% CI 5 to 19), 43% against 31%; applies to 1,600 women; source: this program's evaluation. Additional adherent women: 0.12 × 1,600 = 192 (80 to 304 at the confidence bounds)
-**Perspective:** implementer, because the ministry's comparison is built from implementer costs; the society perspective is in the sensitivity table
+**Whose costs count (perspective):** implementer, because the ministry's comparison is built from implementer costs; the society perspective is in the sensitivity table
 **Currency and year:** USD, 2025 prices; kwacha converted at the 2025 average market rate; **discount rate:** none, because all costs fall within one year
-**Comparator:** SMS-only reminder program in another district; common unit: additional woman adherent at 32 weeks
+**Compared with:** SMS-only reminder program in another district; common unit: additional woman adherent at 32 weeks
 
-## Ingredients
+## Ingredients: everything the program used, paid or not
 
 | Category | Item | Quantity | Unit price | Cost | Paid / donated / borrowed |
 |---|---|---|---|---|---|
@@ -34,12 +36,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Transfers to participants | None | | | $0 | |
 | Research costs (excluded) | Endline survey and pill counts | | | $9,000 | Paid |
 
-## Ratios
+## Cost per result
 - Delivery cost per person reached: $13,440 / 1,600 = $8.40
 - Cost per additional adherent woman: $13,440 / 192 = $70.00
 - Additional adherent women per $100: 192 / 134.4 = 1.43
 
-## Sensitivity
+## How far the number moves (sensitivity)
 
 | Scenario | Cost used | Effect used | Cost per additional adherent woman | Per $100 |
 |---|---|---|---|---|
@@ -51,7 +53,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Health-worker time at $1.50 an hour | $19,200 | 12 points | $100.00 | 1.00 |
 | Society perspective (adds women's time) | $16,107 | 12 points | $83.89 | 1.19 |
 
-## Comparability limits
+## What limits comparing it with other programs
 - Transfers: neither program made any, so this line does not separate them.
 - Fixed costs: training and bicycles are $3,800, 28% of the delivery total; the cost per woman would fall if the same workers covered more women. The SMS program's fixed-cost share is not known.
 - Wages and prices: health-worker time is priced at $0.75 an hour although the program did not pay it. Pricing it and the donated rooms at zero halves the ratio to $33.75; doubling the wage raises it to $100.
@@ -60,4 +62,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## What to check before relying on this
 - The health workers' hours and wage, from timesheets rather than the plan: this is the largest line and the one most likely to be mispriced.
 - Whether the SMS program priced its staff time and platform fees the same way, before the two ratios go in one table.
+
+## Where you could go from here
+That's the estimate.
+- Ask the SMS program's team for their ingredients list: the ministry wants both programs in one table, and that only works if they priced staff time and platform fees the same way and can say how their self-reported adherence relates to pill counts.
+- Check the health workers' hours against timesheets: that line is $5,760 of the $13,440 delivery total, and it rests on the planned 4 hours a week.
+- Run `assess-scalability` if the ministry is also weighing a wider rollout: training and bicycles are 28% of the cost and would fall per woman, while the health workers' time may not stay free.
+I'd lean toward the SMS team's ingredients list, because without it the ministry's comparison cannot be made fairly, whatever the number here.
+Questions you could ask next: "How do we present this so the $33.75 figure isn't quoted as the cost?" · "What would the cost per woman be if each health worker covered twice as many women?"
 ```

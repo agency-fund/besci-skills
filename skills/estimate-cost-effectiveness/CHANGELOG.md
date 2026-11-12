@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The estimate opens with a few plain sentences (the cost per result, how far it moves, and what most limits comparison) under the title "What <the program> cost per additional <outcome unit>", and its labels are plainer: "Whose costs count (perspective)", "Compared with", "Ingredients: everything the program used, paid or not", "Cost per result" for "Ratios", "How far the number moves (sensitivity)", and "What limits comparing it with other programs". The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard and about 40% shorter; it now produces a cost-effectiveness estimate. Following the Dhaliwal chapter, an effect not distinguishable from zero gets "no significant impact" instead of a ratio, a ratio built on a planning estimate is labeled projected, and the skill no longer requires a discounted effect from elsewhere. Kraft (2020) and the Guatemala tax letters are dropped, the second because it reports revenue per letter, a benefit-cost figure; the MRC framework, the WHO and ExpandNet guidance, and Running Randomized Evaluations are added. Rewritten with Claude.
 

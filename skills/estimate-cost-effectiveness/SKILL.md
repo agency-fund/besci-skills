@@ -14,7 +14,7 @@ metadata:
   title: Estimate the cost per unit of behavior change
   type: atomic
   stage: analyze
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Estimates what a program paid for each unit of behavior change it caused.
 
 ## Before you start
 
-Ask these before producing anything; skip what the user has answered.
+Ask these before producing the estimate; skip what the user has answered.
 
 1. **Required.** The effect: outcome and units, estimate and confidence interval, the people it applies to, the period, and its source (this program's evaluation, or a planning estimate).
 2. **Required.** The costs: an ingredients list with prices, or the budget plus inputs used but not paid for (volunteers, donated space, government staff), and which costs were research.
@@ -79,31 +79,33 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Cost-effectiveness estimate
+<Two or three plain sentences to the user: the cost per additional <outcome unit>, how far it moves across the rows below, and the one thing that most limits comparing it with another program.>
+
+# What <the program, in a few words> cost per additional <outcome unit>
 
 **Program:** <name; what was delivered, to whom, over what period>
 **Effect:** <outcome in units; estimate (95% CI); people it applies to; source: this program's evaluation / planning estimate (every ratio projected)>
-**Perspective:** <implementer / government / society>, because <reason tied to the decision>
+**Whose costs count (perspective):** <implementer / government / society>, because <reason tied to the decision>
 **Currency and year:** <currency, year; exchange rate used>; **discount rate:** <rate, or none and why>
-**Comparator:** <program and the common outcome unit, or none>
+**Compared with:** <program and the common outcome unit, or none>
 
-## Ingredients
+## Ingredients: everything the program used, paid or not
 
 | Category | Item | Quantity | Unit price | Cost | Paid / donated / borrowed |
 |---|---|---|---|---|---|
 | <staff time, materials, transport, equipment, space, training, monitoring> | <item> | <...> | <...> | <...> | <...> |
 | Participants' time (society perspective only) | <...> | <...> | <...> | <...> | Not in the delivery total |
 | **Delivery total** | | | | <...> | |
-| Transfers to participants | <item, or none> | | | <...> | |
+| Transfers to participants (cash or goods) | <item, or none> | | | <...> | |
 | Research costs (excluded) | <item> | | | <...> | |
 
-## Ratios
+## Cost per result
 - Delivery cost per person reached: <...>
 - Cost per additional <outcome unit>: <delivery total> / <additional units> = <...>
 - Additional <outcome units> per $100: <...>
 <or: "No significant impact: <precise / wide> estimate; no ratio reported.">
 
-## Sensitivity
+## How far the number moves (sensitivity)
 
 | Scenario | Cost used | Effect used | Cost per additional <unit> | Per $100 |
 |---|---|---|---|---|
@@ -115,7 +117,7 @@ See `references/worked-example.md` for a complete run.
 | Volunteer time at <higher wage> | <...> | <...> | <...> | <...> |
 | Society perspective | <...> | <...> | <...> | <...> |
 
-## Comparability limits
+## What limits comparing it with other programs
 - <transfers: how this program and the comparator treat them>
 - <fixed-cost share, and what falls per person as the program grows>
 - <wages and prices assumed>
@@ -124,7 +126,28 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the input most likely to be mispriced>
 - <whether the comparator costed its inputs the same way>
+
+## Where you could go from here
+<One line saying the estimate is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `assess-scalability`, when the decision is whether to fund a larger rollout or a new implementer, since set-up costs fall per person and free inputs may stop being free
+- `estimate-sample-size`, when the effect was too imprecise to cost and a larger trial is being considered
+- `review-prior-intervention`, when there was no significant impact and the team must decide whether to retry, change, or drop the program
+- the comparator program's team or its published costing, when the two ratios will sit in one table and the comparator's ingredients are not known
+- timesheets and finance records, when the largest line rests on planned rather than actual hours or prices
+- a health or development economist, when the decision moves money between programs with different outcomes>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
