@@ -9,13 +9,15 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Fidelity monitoring plan: iron-folate counseling package, four rural clinics
+The plan watches three parts most closely: the nurse's three messages, the tick calendar, and the home visit, because each carries part of how the package is meant to work, and the night-with-food message is the one aimed at nausea. Your district monitor's unannounced observations and back-checks with women are the checks that do not rest on the nurses' register or the assistants' visit books. The results serve learning, support, and your evaluation, as your memorandum says, and stay out of appraisal, pay, and discipline.
+
+# How we'll know the iron-folate counseling package is delivered as designed at four rural clinics
 
 **Delivered by:** 8 antenatal nurses (2 per clinic), supervised by each clinic's in-charge; 24 Health Surveillance Assistants (6 per clinic), supervised by the district coordinator
 **Use of the data:** Learning and support, and the evaluation with two comparison clinics. Stated in the memorandum with the District Health Office.
 
 ## Essential parts
-| Part | Mechanism it carries | Essential or adaptable | Why |
+| Part | What it changes for the person receiving it | Essential or adaptable | Why |
 |---|---|---|---|
 | Three-message nurse script | Tells the woman how to take the tablet without nausea and what to do after a missed day | Essential | Nausea was the main barrier; the night-with-food message is the part that addresses it |
 | Tick calendar handed over with the tablets | A daily cue and a record she keeps herself | Essential | Without it there is no daily prompt between visits |
@@ -24,14 +26,14 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Time of day of the home visit | None | Adaptable | Set by the assistant's route |
 
 ## Indicators
-| Part | Dimension | Indicator | Source | Sample and frequency | Collected by |
+| Part | What it checks | Indicator | Source | Sample and frequency | Collected by |
 |---|---|---|---|---|---|
-| Nurse script | Adherence | Each of the three messages said (yes or no per message) | Unannounced observation of a session | 2 sessions per nurse per month | District monitor, not the in-charge |
+| Nurse script | Adherence (delivered as specified) | Each of the three messages said (yes or no per message) | Unannounced observation of a session | 2 sessions per nurse per month | District monitor, not the in-charge |
 | Nurse script | Quality | Woman restates the night-with-food advice correctly when asked at the end of the session | Same observation | Same sessions | District monitor |
-| Tick calendar | Dose | Share of women enrolled that month who received a calendar | Back-check by phone or home visit | 10 women per clinic per month, drawn at random from the register by the monitor | District monitor |
+| Tick calendar | Dose (how many, how often) | Share of women enrolled that month who received a calendar | Back-check by phone or home visit | 10 women per clinic per month, drawn at random from the register by the monitor | District monitor |
 | Home visit | Dose | Share of enrolled women visited within three weeks | Visit books, checked against the back-check ("did an assistant come, and when?") | All entries; the same 10 women per clinic | Coordinator compiles; monitor runs the back-check |
 | Home visit | Adherence | Pills counted and advice repeated (yes or no each) | Monitor accompanies an assistant, unannounced | 2 visits per assistant per quarter | District monitor |
-| Tick calendar | Responsiveness | Days ticked since the last visit | Recorded by the assistant; checked on accompanied visits | All visits; 2 checked per assistant per quarter | Assistant; monitor |
+| Tick calendar | Responsiveness (how women respond) | Days ticked since the last visit | Recorded by the assistant; checked on accompanied visits | All visits; 2 checked per assistant per quarter | Assistant; monitor |
 
 ## Thresholds and actions
 | Indicator | Expected level | Act when | Action | Who acts |
@@ -50,7 +52,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## Change log
 A page at the back of each visit book and a column on the monitor's observation form: date, what changed, who changed it, why, and which part it touches. Collected monthly by the monitor.
 
-## What an evaluation needs caught
+## What an evaluation also needs to track
 - **Assigned but not reached:** enrolled women with no home visit, from the visit books and back-checks
 - **Comparison group reached:** comparison-clinic women who report receiving a tick calendar, from a short question in the comparison clinics' exit interviews
 - **Spillover:** assistants whose routes also cover villages served by the comparison clinics, from the coordinator's route list
@@ -62,4 +64,12 @@ If the script is delivered and calendars and visits are on target but tablets ar
 ## What to check before relying on this
 - Whether nurses fill in the register during the visit; if it is written up at the end of the day, the back-check sample is drawn from a list that may be wrong.
 - Whether the home visit is essential or whether the calendar alone carries the daily cue; the evaluation's process data should settle this before scale-up.
+
+## Where you could go from here
+That's the monitoring plan.
+- Visit two clinics unannounced and see when the register is filled in: the back-check sample is drawn from it, so if it is written up at the end of the day, the sample needs another source before the first round.
+- Write down with `write-pre-analysis-plan` how women never visited, and comparison-clinic women who got a calendar, will be counted: the evaluation needs those rules written before the outcome data arrive.
+- Judge changes with `specify-intervention-adaptations` once the change log fills: worth it if clinics start dropping the song or moving the home visit, so the team can tell an allowed change from one that touches an essential part.
+I'd lean toward the register visit first, because every back-check in the plan depends on that list being right.
+Questions you could ask next: "How should the monitor draw the 10 women at random each month?" · "What should the clinic sheet look like so nurses read it?"
 ```

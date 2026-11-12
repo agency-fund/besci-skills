@@ -8,12 +8,12 @@
       "expected_output": "A fidelity monitoring plan in the output template that covers the script, the price card, and the restock, each with indicators, sources, thresholds, and owners.",
       "files": [],
       "assertions": [
-        "Marks each of the three parts essential or adaptable and names the mechanism it carries.",
+        "Opens with a few plain sentences to the user, and marks each of the three parts essential or adaptable, saying what it changes for the person receiving it.",
         "Gives adherence, dose, and quality as separate indicators.",
-        "Every essential part has at least one source other than the agents' own sales log.",
-        "Uses household back-checks to confirm that visits happened, not to judge what the agent said.",
+        "Every essential part has at least one source other than the agents' own sales log, and household back-checks confirm that visits happened, not what the agent said.",
         "Every threshold names an action and the role that takes it.",
-        "States that the data stay out of appraisal, pay, and discipline."
+        "States that the data stay out of appraisal, pay, and discipline.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what the protocol's parts are and who delivers each.",
         "Asks how many CHWs there are and who supervises them.",
         "Asks what the monitoring data will be used for.",
-        "Does not produce indicators or a plan."
+        "Does not produce indicators or a plan.",
+        "Says why it needs these answers."
       ]
     },
     {

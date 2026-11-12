@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The statement is preceded by a few plain sentences (the roles with the most AI use, that it is self-reported, and where the text to paste begins and ends) and is titled "AI-use statement (sIfA)". The statement's own labels, sIfA's and CRediT's terms, and the verbatim accountability text are unchanged, because the venue reads them. The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard and brought in line with Busara's published Groundwork and the sIfA tool (version 1.4.1): each person in each role now gets a level and a rating, entries say whether the use was generative and link the audit trail, and the closing statement is sIfA's own wording. The source is now cited as Saleh and Schomerus (2026), with CRediT cited to the NISO standard; the rule for a 2, the roles-not-performed list, and the self-report line are kept. Zezhen Wu added as co-author. Rewritten with Claude.
 

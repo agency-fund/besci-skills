@@ -9,6 +9,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+A team at the four new clinics could deliver Tuko Pamoja again from this document, with two gaps: the drive does not mark which Dholuo messages are current, and the cost per patient has not been totaled. Everything here comes from your documents and monitoring data; nothing rests on memory. One thing the county should know before it starts: the monthly back-check calls and the observed enrollments were research-only and will not come with the program unless the county keeps them.
+
 # Intervention description: Tuko Pamoja weekly SMS
 
 **Status:** As delivered, March 2025 to February 2026, two public ART clinics in Kisumu County · **Written for:** hand-off to the county health office
@@ -51,10 +53,10 @@ Enrollment in the ART clinics during routine visits, weekdays 8am to 4pm, in a p
 ## 8. When and how much
 One enrollment contact of about ten minutes; one message a week for 48 weeks; nurse calls when patients replied, a median of one per patient over the period.
 
-## 9. Tailoring
+## 9. Tailoring: variation planned before delivery
 Planned before delivery: language (three options) and time of day, both chosen by the patient at enrollment.
 
-## 10. Modifications
+## 10. Modifications: changes made during delivery
 | What changed | When | Who | Why | Part touched | Source |
 |---|---|---|---|---|---|
 | Two Dholuo messages re-translated | Week 6 | Program officer with a Dholuo-speaking nurse | A back-translation showed they implied a diagnosis to anyone reading the phone | Wording that never names HIV or ART; essential | Change log |
@@ -69,7 +71,7 @@ From the monitoring data, March 2025 to February 2026: 92% of scheduled messages
 ## Delivery system
 Staffing: two nurses per clinic for enrollment and callbacks, about two hours a week each, after a two-hour training; one officer for the gateway, about one day a week. Supervision: the clinic in-charge for the nurses. Logistics: an off-site SMS gateway with a monthly fee; airtime for nurse calls. Information system: the gateway's own records; enrollment forms filed at the clinic. Cost to deliver: not yet totaled. Research-only inputs that will not come with the program unless the county keeps them: the monthly back-check calls and the observed enrollments.
 
-## Rebuild check
+## Rebuild check: could a team elsewhere deliver it again?
 | Item | Complete / partial / missing | What a team elsewhere would still need |
 |---|---|---|
 | 1, 2, 4 to 12 | Complete | |
@@ -81,4 +83,12 @@ Staffing: two nurses per clinic for enrollment and callbacks, about two hours a 
 - Delivery system: the program's finance officer can total the gateway fee, airtime, and staff time.
 - Whether the county will keep the back-check calls; without them, item 12 cannot be repeated at the new clinics.
 - No limit on sharing: the materials contain no patient details.
+
+## Where you could go from here
+That's the description.
+- Ask the program officer to mark the current Dholuo messages and the finance officer to total the cost: two short jobs that close both partial rows of the rebuild check.
+- Plan monitoring the county can run itself with `design-fidelity-monitoring`: worth it if the county will not keep the back-check calls, because without some check item 12 cannot be repeated at the new clinics.
+- Judge the wider callback window with `specify-intervention-adaptations`: it touched an essential part, and the county will want to know whether to start the new clinics at 48 or 72 hours.
+I'd lean toward closing the two partial rows first, because they are quick and the county can then work from a complete document while the monitoring question is settled.
+Questions you could ask next: "What would a monitoring plan the county can run itself look like?" · "Does moving the callback from 48 to 72 hours change what the program is?"
 ```

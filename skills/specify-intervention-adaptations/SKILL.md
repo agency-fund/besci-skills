@@ -14,7 +14,7 @@ metadata:
   title: Track changes to a tested intervention
   type: atomic
   stage: implement
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -48,7 +48,7 @@ A core component does a job the effect depends on; anything else may change to f
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the record. Do not ask anything the user has already answered.
 
 1. **Required.** The intervention as tested: a description, protocol, or manual, and where and with whom it was tested.
 2. **Required.** The changes, proposed or already seen, with who made each, when, and why, as far as known.
@@ -69,11 +69,11 @@ If 1 is missing, ask and stop: there is nothing to compare changes against. If 2
 
 ## How to do it
 
-1. **Write the baseline in one line**, with its source and date, and date the record itself as a version, so an evaluation can say which version its data describe.
+1. **Write the tested version in one line**, with its source and date, and date the record itself as a version, so an evaluation can say which version its data describe.
 2. **List the core components before reading the changes**, so the changes do not shape the list. For each, write its job, the assumption behind it, what may vary (language, timing, venue), and what may not. A component whose job nobody can state is "provisional".
 3. **Log each change on the template's eight fields.** Unplanned changes made in the field go in the same log as decisions.
 4. **Judge fidelity** against step 2. Consistent: within what may vary. Inconsistent: removes a component or crosses what may not vary. Unknown: nothing shows whether the change keeps the job, or whether the part is core; say what would settle it. Judge by the job, not the look: a shorter session that keeps the job is consistent; an intact-looking one that lost it is not.
-5. **Judge the changes together**, and flag each change that is inconsistent or leaves a job in doubt. Several consistent changes can still leave a job undone. If they do, or if any change is inconsistent, write that this version is a different intervention, which the original evidence does not cover.
+5. **Judge the changes together**, and list each change that is inconsistent or leaves a job in doubt. Several consistent changes can still leave a job undone. If they do, or if any change is inconsistent, write that this version is a different intervention, which the original evidence does not cover.
 6. **For a move to a new context**, follow ADAPT: compare the contexts on what the jobs depend on, plan adaptations with the people who will deliver and receive it, pilot or evaluate as far as the uncertainty warrants, and plan how the adapted version will be maintained. Then name who keeps the record.
 
 See `references/worked-example.md` for a complete run.
@@ -81,25 +81,27 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: whether the changed version is still the intervention that was tested, the change that matters most and which part's job it touches, and what would settle any change marked unknown.>
+
 # Adaptation record: <intervention>, version <date>
 
-**Baseline:** <the intervention as tested, in one line; source document and date>
+**As tested:** <the intervention, in one line; source document and date>
 **Move to a new context:** <none / from where to where, and what differs>
 
-## Core components
+## Core components: the parts the effect depends on
 | Component | Job it does for the effect | Assumption behind it | May vary | May not vary | Status |
 |---|---|---|---|---|---|
 | <...> | <...> | <...> | <...> | <...> | <confirmed / provisional> |
 
 ## Change log
-| # | When | Planned? | Who decided | What changed | Level | Nature | Fidelity | Goal, and what prompted it |
+| # | When | Planned? | Who decided | What changed | Applies to | Kind of change | Fits the core components? | Goal, and what prompted it |
 |---|---|---|---|---|---|---|---|---|
 | 1 | <before delivery / during delivery / at scale-up / routine running> | <planned / unplanned> | <role> | <content / delivery: how, where, by whom / training / evaluation: what> | <program / site / provider / group / person> | <added / removed / shortened / substituted / reordered / tailored> | <consistent / inconsistent / unknown: against which component, and why> | <...> |
 
 ## Taken together
 <whether the changed version still does every component's job; if not: "This version is a different intervention from the one tested, and the original evidence does not cover it.">
 
-## Flags
+## Changes that put a job at risk
 - **Change <n>:** <which component's job it removes or weakens>; decided by <role / no recorded decision>; reason: <...>
 
 ## Move to a new context (only when one is under way)
@@ -111,7 +113,27 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the inconsistent or unknown change that matters most, and the monitoring or test that would show whether its job survives>
 - <the provisional component most likely to be mislabeled>
+
+## Where you could go from here
+<One line saying the adaptation record is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when a planned change rests on an untested assumption about the new audience that a few people from it could answer before any pilot
+- `design-fidelity-monitoring`, when changes marked unknown need watching during delivery, or unplanned changes keep turning up
+- `assess-scalability`, when the changes come with a scale-up and the question becomes whether the effect will survive it
+- `draft-intervention-description`, when the changed version is settled and the people delivering it need it written down item by item
+- frontline staff and the monitoring records, when the log holds no unplanned changes; or the original designers, when a component's job is still provisional>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

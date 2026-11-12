@@ -8,12 +8,12 @@
       "expected_output": "An adaptation record in the output template with a core-component table, a change log of at least four entries on all eight fields, and a statement on whether the Ekiti version is still the intervention that was tested.",
       "files": [],
       "assertions": [
-        "Lists the core components with a job, an assumption, and what may and may not vary before the change log.",
+        "Opens with a few plain sentences to the user, and lists the core components with a job, an assumption, and what may and may not vary before the change log.",
         "Logs at least four changes, including the skipped video as an unplanned change made by peers.",
-        "Marks the dropped 14-day call as inconsistent.",
-        "Marks the dialect re-recording as consistent.",
+        "Marks the dropped 14-day call as inconsistent and the dialect re-recording as consistent.",
         "States that the Ekiti version is a different intervention from the one tested.",
-        "Does not design fidelity indicators or rewrite the intervention description."
+        "Does not design fidelity indicators or rewrite the intervention description.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for a written description, protocol, or manual of the intervention as tested.",
         "Asks what was changed, by whom, when, and why.",
         "Does not say whether the changes are acceptable.",
-        "Does not produce a change log."
+        "Does not produce a change log.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -51,7 +52,7 @@
       "expected_output": "The skill says the request is for a description of the intervention as delivered, which the adaptation record starts from, and points to the skill for that.",
       "files": [],
       "assertions": [
-        "Says the request is for the baseline description, not an adaptation record.",
+        "Says the request is for a description of the intervention as delivered, not an adaptation record.",
         "Names draft-intervention-description.",
         "Does not produce a component table or a change log."
       ]

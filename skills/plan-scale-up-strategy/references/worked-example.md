@@ -9,13 +9,15 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+The RHD will own Chitetezo once it is routine, and the plan hangs on test (1), due in month 8: whether HSA counseling still raises adherence without NGO supervision. Wave 2 waits for that result. The date that cannot slip is the April budget submission, because a line missed then waits a year.
+
 # Scale-up strategy: Chitetezo antenatal iron-folate adherence package, Malawi
 
 **Scalability judgment carried over:** promising, test first; open tests: (1) HSA counseling without NGO supervision still raises adherence, due month 8; (2) cards printed and shipped through the government supply chain, due month 5
-**Type of scaling:** vertical first, then horizontal in waves, because HSAs will deliver routinely only once the package is in the antenatal guideline, the HSA job description, and the July budget, and because wave 2 cannot start before test (1) reports
+**Type of scaling:** vertical (into policy, budget, and systems) first, then horizontal (to more sites) in waves, because HSAs will deliver routinely only once the package is in the antenatal guideline, the HSA job description, and the July budget, and because wave 2 cannot start before test (1) reports
 
-## 1. The innovation
-| Part | Hardware or software | Essential? | Judgment tested? |
+## 1. The innovation: the program and its parts
+| Part | Hardware (products, materials) or software (training, supervision, management) | Essential? | Was that tested? |
 |---|---|---|---|
 | 15-minute counseling with a picture card at the first visit | software, with the card as hardware | essential | yes: the pilot's main comparison |
 | Home visit at 4 weeks with a pill count | software | essential | no: the pilot never ran without it |
@@ -25,7 +27,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 **Still appropriate to proceed?** Yes. The package uses an existing cadre and adds about 12 tasks per HSA a month.
 
-## 2. The user organization
+## 2. The user organization: who will run it routinely
 - **Who adopts, who delivers:** the RHD adopts and sets the guideline; district health offices control HSA time; HSAs deliver, observed by HSA supervisors
 - **Perceived need and champion:** yes; the RHD director asked in writing for 28 districts
 - **Capacity gaps:** supervisors covering 40 HSAs cannot observe each one monthly; districts above 1 to 30 move to quarterly observation, on a schedule the RHD writes by month 4
@@ -40,12 +42,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Social and economic context | Not assessed beyond the pilot districts | Ask district officers in wave 2 about travel distances for home visits | NGO training lead |
 | People's needs and rights | Home visits enter women's homes | Keep consent to the visit in the counseling script | RHD antenatal program officer |
 
-## 4. The resource team
+## 4. The resource team: who supports the move, and until when
 - **Members:** the NGO training lead and two supervision officers, including from the user organization: the RHD antenatal program officer
 - **Skills to add:** budget advocacy; the RHD planning officer joins the team
 - **Role ends:** month 16, two months before funding ends; from wave 3 the RHD's regional trainers train
 
-## 5. Vertical scaling: changes needed
+## 5. Vertical scaling: changes to policy, budget, and systems
 | Change | Needed? | Action | Lead |
 |---|---|---|---|
 | Policy | no | none | none |
@@ -61,16 +63,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Workforce | no | none | none |
 | Information materials | yes | Picture card and calendar | RHD logistics officer |
 
-## 6. Horizontal scaling
+## 6. Horizontal scaling: more sites, in waves
 - **Waves:** wave 1, months 1 to 8: the 2 test districts and the 4 pilot districts under district supervision; wave 2, months 12 to 16: 10 districts, waiting on test (1); wave 3, months 17 to 24: the remaining 12, trained by RHD regional trainers
 - **Site differences and adaptations:** card language in the northern region; home-visit day where HSAs cover long distances
 - **Cost per wave and who pays:** wave 1 on NGO funds; wave 2 split between NGO funds and the July budget line; wave 3 on the government line; the RHD planning officer costs each wave by month 3
 - **Monitoring outcomes:** counseling sessions and home visits from the HSA monthly report; quarterly supervisor observations; adherence by pill count in a sample of women each wave
 
-## 7. Diversification
+## 7. Diversification: adding components
 None until wave 3 is routine. The nutrition unit's request to add a dietary module is logged for review at month 24.
 
-## 8. Spontaneous scaling
+## 8. Spontaneous scaling: copies nobody planned
 Not known to occur. If districts outside the waves start using the card, give them the checklist and add them to monitoring.
 
 ## 9. Recommended actions
@@ -83,7 +85,7 @@ Not known to occur. If districts outside the waves start using the card, give th
 | Resource team | RHD planning officer joins; hand supervision to districts by month 16 | medium |
 | Diversification | Review the dietary module at month 24 | low |
 
-## Operational plan
+## Operational plan: who does what, by when
 | Action | Owner (role, organization) | By when | Depends on |
 |---|---|---|---|
 | Start test (1) in 2 new districts | NGO training lead | month 1 | none |
@@ -100,4 +102,12 @@ Not known to occur. If districts outside the waves start using the card, give th
 ## What to check before relying on this
 - Whether the RHD's written request binds district health officers, who control HSA time; if districts can decline, wave 2 needs district-level requests.
 - Test (1): if counseling without NGO supervision does not raise adherence, wave 2 does not start and the scalability judgment is redone.
+
+## Where you could go from here
+That's the strategy.
+- Put two questions to the ministry's legal office and the district health officers now: whether HSA pill counts need authorization, and whether the RHD's written request binds districts. Either answer could move dates that the rest of the plan depends on.
+- Plan the checks district offices will run with `design-fidelity-monitoring`: supervisors covering up to 40 HSAs move to quarterly observation, and quality tends to fall as expansion speeds up, so wave 2 needs indicators the districts can collect without NGO staff.
+- Redo the scalability judgment with `assess-scalability` when test (1) reports in month 8, since wave 2 depends on it.
+I'd lean toward the two questions first, because they cost a meeting and could change the timetable before anyone is trained.
+Questions you could ask next: "What should the joint meeting with the nutrition unit try to agree?" · "What changes in the plan if the election brings a new RHD director?"
 ```

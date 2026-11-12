@@ -13,7 +13,7 @@ metadata:
   title: Write an AI-use disclosure statement
   type: atomic
   stage: implement
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -45,7 +45,7 @@ sIfA (Statement of Intellectual Fellowship and Accountability) is built on CRedi
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the statement. Do not ask anything the user has already answered.
 
 1. **Required.** The work: its title, type, and the people accountable for it.
 2. **Required.** Who did each part, at what level, and which AI tools (name, provider, version) were used where, for what, and why, with any chat logs kept. Ask about grammar passes, debugged code, chart drafts, literature searches, translation.
@@ -81,7 +81,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# sIfA: <work title>
+<Two or three plain sentences to the user: which roles had the most AI use and any rating of 2 that may surprise them, that the statement is self-reported rather than checked, and that it runs from the title to the sIfA citation, ready to paste.>
+
+# AI-use statement (sIfA): <work title>
 
 **People accountable for this work:** <names>
 **AI tools used anywhere in the work:** <name, provider, version; one per line; or "none">
@@ -101,7 +103,27 @@ See `references/worked-example.md` for a complete run.
 After using any tools or services, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.
 
 Contributor roles are based on the Contributor Role Taxonomy (CRediT). More info at https://credit.niso.org. This statement follows the sIfA format: Schomerus, M. (2026). sIfA Tool — Statement of Intellectual Fellowship and Accountability (Version <version>) [Computer software]. Busara. https://doi.org/10.5281/zenodo.20285993
+
+## Where you could go from here
+<One line saying the statement is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- each person named in the table, reading their own rows, when the account came from one member of the team
+- the venue's editor or the organization's research-integrity officer, with the statement and the policy text, when the venue has an AI-use policy or a role is rated 2
+- the chat logs, saved where the audit-trail column points, when any row says "none kept"
+- a running table started on the first day of the next project, when uses had to be pieced together from memory
+- `choose-ai-eval-level`, when the account shows the AI tool is part of a product or program the team runs, and the question becomes whether it works>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

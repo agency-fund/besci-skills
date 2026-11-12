@@ -8,12 +8,12 @@
       "expected_output": "A scalability assessment in the output template that marks all seven rows, gives one of the three verdicts, and names one test to run first under county delivery.",
       "files": [],
       "assertions": [
-        "Fills all seven rows of the pilot-against-scale table, each marked plus, minus, or more information needed.",
-        "Marks the dropped call-back to 'need help' replies as a minus.",
-        "Notes that the effect sat in newly enrolled patients and that the scale population differs.",
+        "Opens with a few plain sentences that give the verdict, and fills all seven rows of the table comparing the pilot with delivery at scale, each marked plus, minus, or more information needed.",
+        "Marks the dropped call-back to 'need help' replies as a minus, and notes that the effect sat in newly enrolled patients while the scale population differs.",
         "Gives 'Promising: test first' or 'Does not yet merit scale-up', not 'Recommended for scale-up'.",
         "Names one first test run by the county under routine conditions, with a comparison group.",
-        "Does not project an at-scale effect size or add up a total score."
+        "Does not project an at-scale effect size or add up a total score.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the pilot's result: the effect, its comparison, and the design.",
         "Asks who delivered the pilot and with what support.",
         "Asks who would deliver at scale and what would change.",
-        "Gives no verdict and no table."
+        "Gives no verdict and no table.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -53,7 +54,7 @@
       "assertions": [
         "Says the request is for how to reach routine delivery, not whether the effect will survive.",
         "Names plan-scale-up-strategy.",
-        "Does not produce a pilot-against-scale table or a roll-out plan."
+        "Does not produce a table comparing the pilot with delivery at scale, or a roll-out plan."
       ]
     }
   ]
