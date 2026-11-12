@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We run a savings product for casual workers around Kampala: porters, construction laborers, boda riders. The ask is chosen: an agent offers, in person at the work site, to open a named savings wallet and take a first deposit. Opening is free, takes ten minutes, and can be done any day an agent is there. In interviews nearly all workers said they want to save for school fees and mean to start 'next week'; when our agents visit, mostly on Tuesdays, people say they have nothing on them. Porters and laborers are paid in cash on Friday afternoons; boda riders earn daily. Rent is due at month start; school fees fall in early February, late May, and early September; Christmas is the big spending season. A colleague wants to launch in the first week of January as a 'new year, new start' campaign. When should the agent make the offer?",
-      "expected_output": "A delivery moment specification in the output template that ties the offer to when wages are paid and does not adopt the new-year launch.",
+      "expected_output": "A choice of moment in the output template that ties the offer to when wages are paid and does not adopt the new-year launch.",
       "files": [],
       "assertions": [
         "Every row of the money calendar comes from what the user said or is marked assumed.",
         "Tests the program's current Tuesday visit and at least two other moments on money, attention, and whether the action can be done.",
-        "Chooses a moment tied to Friday wages and names money in hand as what it relies on.",
+        "Chooses a moment tied to Friday wages, names money in hand as what it relies on, and promises no effect size for this program.",
         "Rejects the first week of January or marks it untested, noting the spending around it.",
         "Names who the chosen moment leaves out, such as riders who earn daily, and gives them a second moment.",
-        "Promises no effect size for this program."
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,8 +26,8 @@
         "Asks what people are being asked to do and what it costs them at that moment.",
         "Asks when money comes in and goes out for these people.",
         "Asks when the action can be done.",
-        "Does not produce a delivery moment specification.",
-        "Does not fill in a calendar from general knowledge of any country."
+        "Does not choose a moment or fill in a calendar from general knowledge of any country.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -53,7 +53,7 @@
       "assertions": [
         "Says the question is how many reminders and how often, not which moment.",
         "Names design-reminder-schedule.",
-        "Does not produce a delivery moment specification."
+        "Does not choose a moment."
       ]
     }
   ]

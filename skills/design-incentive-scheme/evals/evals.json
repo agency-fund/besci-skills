@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We distribute HIV self-test kits through partner pharmacies in Alimosho, Lagos, to adults aged 18 to 35. Behavior: a person who collects a kit returns to the same pharmacy within 7 days and reports the result to the counselor. In exit interviews people say the return trip costs a fare (about NGN 600) and an hour, and they see no reason to come back if the result is negative. Counselors are at every partner pharmacy six days a week. The counselor records each return against the kit's serial number, which takes about 3 minutes. We have NGN 1,500 per return for 2,000 returns in a six-month pilot that ends on a fixed date. A typical day's income is around NGN 7,000. The people rewarded are kit users, not staff. Specify the incentive.",
-      "expected_output": "An incentive scheme specification in the output template that rewards the verified return, not the test result.",
+      "expected_output": "An incentive in the output template that rewards the verified return, not the test result.",
       "files": [],
       "assertions": [
         "Says who verifies the return and how, and that the result itself is not rewarded.",
         "Shows the reward as a multiple of the fare and as a share of a day's income.",
         "Names who the condition excludes and what happens to them.",
         "Gives an end date, how people are told, and a measurement after the end.",
-        "Names a clinician as the specialist, because the behavior is HIV testing.",
-        "Promises no effect size for this program."
+        "Names a clinician as the specialist, because the behavior is HIV testing, and promises no effect size for this program.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -25,8 +25,8 @@
       "assertions": [
         "Asks for the evidence that a cost of attending, not the sessions themselves, is what stops people.",
         "Asks how someone other than the attendee would verify attendance.",
-        "Does not give an amount.",
-        "Does not produce an incentive scheme specification."
+        "Does not give an amount or set out a scheme.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -53,7 +53,7 @@
       "assertions": [
         "Says the stake is the members' own money, chosen by them, not a reward or penalty set by the program.",
         "Names design-commitment-device.",
-        "Does not produce an incentive scheme specification."
+        "Does not set out an incentive scheme."
       ]
     }
   ]

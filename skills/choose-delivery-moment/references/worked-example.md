@@ -9,14 +9,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Delivery moment specification
+I'd make the offer on Friday afternoon at the pay point, within an hour of wages being paid, because that is the only time workers hold cash and the action is possible; your Tuesday visits and the January launch both land when people have nothing. Boda riders have no Friday wage, so they get a second moment at the end of their riding day. The evidence points this way for farmers paid once a season; it hasn't been tested with weekly wage workers, so I haven't promised an effect.
+
+# When to offer casual workers a savings wallet
 
 **The ask:** Casual workers at Kampala work sites open a named savings wallet with the agent and make a first deposit of at least 2,000 shillings. Cost at that moment: cash in hand, and ten minutes.
 **Confirmed barrier:** Workers want to save and are asked when they hold no cash. In 40 interviews nearly all said they want to save for school fees; on the agents' Tuesday visits they say they have nothing on them. They also put it off: "next week".
 **When the action can be done:** Any day an agent is at the site.
 
 ## Money calendar
-| Period | Money in | Money out | Position | Source |
+| Period | Money in | Money out | Flush or short? | Source |
 |---|---|---|---|---|
 | Friday afternoon, every week | Cash wages for porters and laborers | None reported | Flush | User report |
 | Monday to Thursday | None for weekly-paid workers | Daily living costs | Short | User report (nothing on them on Tuesdays); costs assumed |
@@ -53,4 +55,12 @@ That an offer made while people hold cash is taken up more than the same offer m
 - Whether wages at every site are paid in cash on Friday afternoon, or some by mobile money. If by mobile money, the moment is when the transfer lands.
 - Whether workers will hand cash to an agent in front of workmates. Ask ten before the pilot.
 - The boda riders' row: their daily costs are assumed.
+
+## Where you could go from here
+That's the choice of moment.
+- Test the payday offer with `plan-prototype-test` at two sites: the whole choice rests on workers handing cash to an agent in front of workmates, and nobody has seen that yet.
+- Ask the site supervisors how wages are paid at each site: if some pay by mobile money, the moment there moves to when the transfer lands, and that changes where the agent stands.
+- Plan a Friday-morning reminder with `design-reminder-schedule`: worth it if workers who say "next week" still let the Friday window pass once the offer is running.
+I'd lean toward the test at two sites first, because if workers won't deposit at the pay point, the moment has to change before anything else is worth planning.
+Questions you could ask next: "What should the agent say at the pay point?" · "How do we reach boda riders at the end of the day?"
 ```

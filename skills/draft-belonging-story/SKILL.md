@@ -14,7 +14,7 @@ metadata:
   title: Peer stories that make early struggle feel normal
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ The exercise is Walton and Cohen's social-belonging intervention, one of Walton 
 
 ## Before you start
 
-Ask these first, unless already answered.
+Ask these before drafting the stories, unless already answered.
 
 1. **Required.** The behavior (who, what, when), the transition, and, in newcomers' words with counts, evidence that they read early difficulty as "people like me do not belong here".
 2. **Required.** Who in the setting includes the group, and any report of harassment or exclusion, with who was asked. Facts, not plans.
@@ -82,19 +82,21 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Belonging story set
+<Two or three plain sentences to the user: whether the setting includes the group and so whether stories can be delivered, whether the stories come from collected accounts or are still to be gathered, and that the trials are from US colleges, so no effect is promised.>
+
+# Stories from older peers for <the newcomers, in a few words>
 
 **Behavior:** <who, what, when>
 **Transition:** <when the setting is new; when the first setback tends to come>
 **The question newcomers are asking:** "<in their words>" (<n of N; source>)
 **Group:** <in its own terms>
 
-## What the setting offers (gate)
+## Does the setting include them?
 - **Who includes them:** <facts, with their source>
 - **Harassment or exclusion:** <facts, with their source; or "none reported", and who was asked>
 - **Verdict:** <delivers / does not deliver: what must change first, and no stories follow / not verified: collect, do not deliver>
 
-## Collection
+## Collecting the stories
 - **Tellers:** <n older peers of the same group; how chosen; consent>
 - **Questions:** <what was hard; what you thought it meant; what changed, and when>
 - **Who interviews, when:** <...>
@@ -104,7 +106,7 @@ See `references/worked-example.md` for a complete run.
 <the difficulty; the doubt, in the teller's words; what changed and when; the sign that others felt it; [edits marked]>
 <repeat for at least four collected accounts; or one story headed "Illustration, not for delivery">
 
-## Framing line
+## The line that introduces the stories
 <who was asked, and what most of them said; "most" only if the collection shows it>
 
 ## Advice task
@@ -117,18 +119,39 @@ See `references/worked-example.md` for a complete run.
 ## How you will know
 - **Outcome:** <persistence or completion; date>
 - **Judged on:** <the group; the comparison group>
-- **Check on delivery only:** <a belonging item>
+- **Shows only that the stories landed:** <a belonging item>
 
-## The record
+## What trials have found
 <what trials found and where; no effect size promised>
 
-## Pre-test before use
+## A small test before use
 <five to ten newcomers and two older peers read the set; pass if newcomers recognize the difficulties and no story promises what the setting lacks>
 
 ## What to check before relying on this
 - <the fact about the setting most likely to be a hope>
 - <the story whose difficulty least resembles the newcomers'>
+
+## Where you could go from here
+<One line saying the story set is done, or, if the setting check failed, that no stories were written and why.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when stories from collected accounts exist and the small test above needs a full plan: who takes part, what they are asked, and which answers send a story back
+- `audit-intervention-ethics`, before delivery, when the group is defined by a stigmatized status, newcomers are minors, or a teller could be recognized from their story
+- `design-pilot-feasibility-study`, once the small test has passed and a comparison is planned, to find out first whether the session can run as written
+- `identify-wise-intervention-target`, when newcomers' words point to something other than belonging, or too few of them name the question
+- older peers of the same group, when no accounts have been collected yet: nothing can be delivered until their stories exist
+- a safeguarding lead or the institution's leadership, when the check found harassment or exclusion: what must change first is theirs to change>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

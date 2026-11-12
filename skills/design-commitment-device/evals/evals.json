@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "Behavior: women stall vendors in Nairobi's Gikomba market set aside KES 500 from the week's surplus into a restocking fund every Saturday. We interviewed 40 vendors: 34 say they intend to, 31 have a surplus most weeks (KES 300 to 1,200), and most describe spending it the same evening or lending it to neighbors who ask. Our mobile-money partner can open a locked savings pocket with an unlock date the vendor chooses and can show the balance on request; it is licensed by the central bank and vendors already use it for daily payments. Income dips in the two weeks before school terms start. About a third already give cash to a chama treasurer to hold. Design the device.",
-      "expected_output": "A commitment device specification in the output template that the vendor opts into, with a cap tied to the dip before school terms.",
+      "expected_output": "A commitment device in the output template that the vendor opts into, with a cap tied to the dip before school terms.",
       "files": [],
       "assertions": [
         "Restates the evidence that vendors intend to save, have a surplus, and spend or lend it the same evening.",
         "Says whether the device is soft or hard and gives the reason.",
-        "Caps what a vendor can lose or lock, with reference to the income dip before school terms.",
-        "Says where forfeited money goes, or that nothing is forfeited.",
+        "Caps what a vendor can lose or lock, with reference to the income dip before school terms, and says where forfeited money goes, or that nothing is forfeited.",
         "Says what happens to vendors who commit and then stop depositing.",
-        "Gives a failure rate at which the device is reviewed and promises no effect size."
+        "Gives a failure rate at which the device is reviewed and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -25,8 +25,9 @@
       "assertions": [
         "Asks what shows that clients intend to save and have money to save.",
         "Asks whether the goal can be checked by someone else, who would hold the money, or what loss would cause hardship.",
-        "Does not produce a commitment device specification.",
-        "Does not accept 'they don't save' as evidence of temptation."
+        "Does not design a device.",
+        "Does not accept 'they don't save' as evidence of temptation.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -52,7 +53,7 @@
       "assertions": [
         "Says a commitment device is one the person chooses, and automatic enrollment is not.",
         "Names select-default-option.",
-        "Does not produce a commitment device specification."
+        "Does not design a commitment device."
       ]
     }
   ]

@@ -14,7 +14,7 @@ metadata:
   title: Design a performance feedback report
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Specifies what a repeated report tells one person about their own performance on
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the report design. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that people misjudge how they are doing and could change it themselves.
 2. **Required.** What data exist for each person, how often they are collected, and whether people will believe them.
@@ -79,7 +79,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Feedback report specification
+<Two or three plain sentences to the user: the number each person will see and what it is compared with, how people at the top and the bottom are treated differently, who else sees it, and that no effect is promised.>
+
+# A feedback report for <who receives it, in a few words>
 
 **Behavior:** <who, what, when>
 **Confirmed barrier:** <the evidence that people do not know or misjudge how they are doing, and can change it>
@@ -90,27 +92,27 @@ See `references/worked-example.md` for a complete run.
 - **Not shown:** <outcomes that depend on others, and why>
 
 ## Comparison
-- **Type:** <a standard / top peers / own past / peer average for those below it>, because <reason>
-- **Reference:** <the standard or the group, and why the person will recognize it>
+- **Compared with:** <a standard / top peers / own past / peer average for those below it>, because <reason>
+- **Which standard or group:** <the standard or the group, and why the person will recognize it>
 
 ## What each group sees
 - **At or above the comparison:** <own past and the sign of approval; no lower figure>
 - **Below it:** <the comparison and the gap>
 - **Far below:** <the gap to the next step, and one small action>
 
-## Report content
+## What the report says
 <the skeleton for one period: the number, the comparison, the gap, one next action; no rank, label, praise, or blame>
 
 ## Who sees it
 - **The person:** <channel; a short text message if none was given>
 - **Anyone else:** <who, and what they may and may not do with it; or "no one">
 
-## Frequency and end
+## How often, and when it stops
 - **Sent:** <how often, matched to the data cycle>
 - **When reports stop:** <what is expected, and what is checked>
 
 ## Monitoring
-- **Read separately:** <people who started at or above the comparison; people who started far below>
+- **Results read separately for:** <people who started at or above the comparison; people who started far below>
 - **Review if:** <the change in either group, and who reviews>
 
 ## Specialist review
@@ -121,7 +123,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the report design is done, or, if not knowing is not the barrier, why no report was designed.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when nobody has checked that people believe their number or read the wording as intended
+- `audit-intervention-ethics`, when anyone besides the person sees the report, or it could reach appraisal, pay, or discipline
+- `design-fidelity-monitoring`, when the program also needs to check that the reports go out on time and as designed
+- `design-incentive-scheme`, when the team wants a payment or prize tied to the number, which this report does not cover
+- a monitoring and evaluation specialist, when each person's data are thin or disputed
+- a human-resources or labor specialist with program management, when supervisors want the figures for appraisal, pay, or discipline>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

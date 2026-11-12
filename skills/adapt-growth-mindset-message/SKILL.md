@@ -13,7 +13,7 @@ metadata:
   title: Adapt a growth-mindset lesson to a local school
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -45,7 +45,7 @@ The method is Walton and Wilson's: a wise intervention is a short exercise that 
 
 ## Before you start
 
-Ask these first, unless already answered.
+Ask these before producing the lesson, unless already answered.
 
 1. **Required.** The behavior (who, what, when) and, in students' words with counts, evidence that they read a poor result as proof of fixed ability.
 2. **Required.** What the school offers after a poor result: feedback, a second attempt, what teachers and peers say. Facts, not plans.
@@ -80,13 +80,15 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: whether the school gives students a way to improve and so whether a lesson was written, what is still unknown about teachers or peers, and that these lessons have a small, mixed record, so no effect is promised.>
+
 # Growth-mindset lesson, adapted
 
 **Behavior:** <who, what, when>
 **The question students are asking:** "<in their words>" (<n of N; source>)
 **Who receives it:** <grade; lower-achieving students, how defined>
 
-## What the school offers (gate)
+## Does the school give students a way to improve?
 - **After a poor result:** <feedback, retake: facts, with their source>
 - **Teachers:** <what they say and do>
 - **Peers:** <what they say about trying hard>
@@ -108,18 +110,39 @@ See `references/worked-example.md` for a complete run.
 ## How you will know
 - **Outcome:** <grades or scores; date>
 - **Judged on:** <lower-achieving students; the comparison group>
-- **Check on delivery only:** <a belief item>
+- **Shows only that the lesson was received:** <a belief item>
 
-## The record
+## What trials have found
 <what trials found and where; no effect size promised>
 
-## Pre-test before use
+## A small test before use
 <five to ten students restate the three claims; two teachers say whether anything contradicts their classroom; what counts as a pass>
 
 ## What to check before relying on this
 - <the fact about the school most likely to be a hope>
 - <the barrier this lesson does not touch>
+
+## Where you could go from here
+<One line saying the adapted lesson is done, or, if the school check failed, that no lesson was written and why.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when a lesson was written and the small test above needs a full plan: who takes part, what they are asked, and which answers would send the lesson back
+- `audit-intervention-ethics`, when a lesson was written, before it reaches students, especially if the letters will be passed on to other students
+- `design-pilot-feasibility-study`, once the small test has passed and the team plans a comparison across schools, to find out first whether the lesson can be delivered as written
+- `identify-wise-intervention-target`, when students' words point to something other than ability, or too few of them name the question
+- the classroom teachers and a few students, when what teachers or peers say is marked not verified: a few conversations settle it before any lesson runs
+- the school's leaders, when the check found nothing that lets effort pay off: what must change first is theirs to change>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

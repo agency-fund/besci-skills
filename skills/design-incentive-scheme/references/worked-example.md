@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Incentive scheme specification
+I'd pay NGN 1,500 in cash, as transport money, to each person who comes back within 7 days and reports their result to the counselor. That is 2.5 times the fare and about a fifth of a day's income, small enough to refuse, and only the return is rewarded, never the result, so nobody gains by misreporting. The payment ends on a fixed date with a check three months later, and I haven't promised an effect for Alimosho.
+
+# An incentive for returning to report a self-test result
 
 **Behavior:** Adults aged 18 to 35 who collect a self-test kit from a partner pharmacy in Alimosho return to that pharmacy within 7 days and report the result to the counselor.
 **Confirmed barrier:** The return trip costs a fare of about NGN 600 and an hour, for no benefit the person can see after a negative result (exit interviews). Supply works: counselors are present six days a week at every partner pharmacy.
@@ -49,4 +51,12 @@ That a small, certain reward raises a one-off health action while it is paid, wh
 ## What to check before relying on this
 - Whether counselors record every return against a serial number and do not enter phone reports as returns.
 - Whether NGN 600 and NGN 7,000 hold for women as well as men; both figures come from the field team.
+
+## Where you could go from here
+That's the scheme.
+- Take it to a clinician before launch: the behavior is HIV testing, so the referral path and whether paying for returns leads to repeat testing are theirs to judge.
+- Ask a few women collecting kits what the return trip costs them and what they earn in a day: the size rests on two figures from the field team that may describe men.
+- Run it through `audit-intervention-ethics`: worth doing if the program wants a fuller check of who is left out, such as people who report by phone and get nothing.
+I'd lean toward the clinician review first, since it has to happen before launch anyway and it could change the referral path that phone reporters depend on.
+Questions you could ask next: "What should counselors say when someone asks for payment before testing?" · "How do we tell people the transport money is ending without losing returns?"
 ```

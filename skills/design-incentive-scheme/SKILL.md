@@ -13,7 +13,7 @@ metadata:
   title: Design a reward for one verifiable behavior
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -42,7 +42,7 @@ Specifies the terms of a reward or penalty that a program attaches to one verifi
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the scheme. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that a cost of acting stops people and that the service is there when they come.
 2. **Required.** How someone other than the recipient would verify the behavior.
@@ -79,7 +79,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Incentive scheme specification
+<Two or three plain sentences to the user: what is paid for which checked action, how the amount compares with the cost of acting and a day's income, what happens when the payment ends, and that no effect is promised.>
+
+# An incentive for <the behavior, in a few words>
 
 **Behavior:** <who, what, when>
 **Confirmed barrier:** <the cost of acting, with the evidence; and the evidence that supply works>
@@ -118,7 +120,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the scheme is done, or, if supply is unreliable or the behavior cannot be checked, why no scheme was set.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `audit-intervention-ethics`, when the reward is large next to a day's income, the behavior is clinical, or recipients work beside colleagues who are not rewarded
+- `plan-prototype-test`, when nobody has asked people whether the amount reads as fair or whether cash or goods are acceptable
+- `audit-process-friction`, when part of the cost of acting comes from steps the program could remove instead of paying for
+- `design-pilot-feasibility-study`, once the terms are set, to find out whether checking and paying can run as planned before any trial
+- an ethics committee, a clinician, or a human-resources and legal review, when the reward exceeds a day's income, the behavior is clinical, or recipients are staff or volunteers: before any pilot
+- the people who run the service, when it is not confirmed that supply is reliable at every site>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

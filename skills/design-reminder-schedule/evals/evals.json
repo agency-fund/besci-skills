@@ -12,8 +12,8 @@
         "Chooses a voice call or a visit over a Hindi text, citing who holds the phone or who can read.",
         "States the most contacts per month and how a household opts out.",
         "Says who the calls do not reach and what those households get instead.",
-        "Gives the levels of opt-out or response at which the schedule is reviewed.",
-        "Promises no effect size for this program."
+        "Gives the levels of opt-out or response at which the schedule is reviewed, and promises no effect size for this program.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what shows that patients intend to come and forget, rather than being stopped by cost, distance, or distrust.",
         "Asks how appointments are dated and how the program knows each patient's date.",
         "Asks who holds the phone, whether it is shared, or whether the patient reads.",
-        "Does not produce a reminder schedule."
+        "Does not produce a reminder schedule.",
+        "Says why it needs these answers."
       ]
     },
     {

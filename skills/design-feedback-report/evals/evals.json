@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We support 85 primary health facilities in Ekiti State, Nigeria, to keep complete patient records. Behavior: each facility's record officer completes every outpatient record (date, diagnosis, treatment, age, sex) on the day of the visit. We interviewed 30 officers: 24 could not say how complete their own registers were, and most guessed 'about the same as everyone'. Registers and pens are in stock, and officers say time is not the problem. The state health information system gives us, for each facility and month, the share of outpatient visits with a complete record; the data are good except at three facilities with intermittent power. About 20 facilities are above 90%, 30 are between 60 and 75%, and the rest are below 50%. We want to send a monthly text to each record officer. The local government monitoring officer would also like to see the numbers. Design the report.",
-      "expected_output": "A feedback report specification in the output template with one metric, a comparison chosen by the rule, and separate content for facilities at the top and bottom.",
+      "expected_output": "A feedback report design in the output template with one metric, a comparison chosen by the rule, and separate content for facilities at the top and bottom.",
       "files": [],
       "assertions": [
-        "The headline metric is the share of visits with a complete record at the officer's own facility.",
-        "States the comparison and the reason for it, and shows no rank or league table.",
+        "The headline metric is the share of visits with a complete record at the officer's own facility, compared against something chosen for a stated reason, with no rank or league table.",
         "Says separately what facilities above 90% and facilities below 50% see.",
         "Says what the monitoring officer may see or do with the figures.",
         "Deals with the three facilities whose data are unreliable.",
-        "Requires results to be read separately for both ends and promises no effect size."
+        "Requires results to be read separately for both ends and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the behavior and the evidence that not knowing, and not supplies, pay, or skill, is the barrier.",
         "Asks what data exist for each health worker and how reliable they are.",
         "Asks who else would see the report, or whether it could be used in appraisal.",
-        "Does not produce a feedback report specification."
+        "Does not design a report.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -52,7 +53,7 @@
       "assertions": [
         "Says the message carries no information about the farmer's own performance.",
         "Names write-social-norm-message.",
-        "Does not produce a feedback report specification."
+        "Does not design a feedback report."
       ]
     }
   ]

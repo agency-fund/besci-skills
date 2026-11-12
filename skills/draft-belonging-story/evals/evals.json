@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We run a six-month electrical installation course for young people from informal settlements in Wakiso, outside Kampala. Behavior: women trainees attend through the end of month two, when the first practical assessment happens; about 40% of women leave before then, against 15% of men. In 18 interviews, 13 women said things like 'this is a men's trade, the instructors don't expect us to stay' and 'the first time I failed to wire the board I knew I was in the wrong place'. Fees are covered and there is a transport stipend. Two of the five instructors are women who graduated from the course; there is a women trainees' WhatsApp group run by graduates; no harassment has been reported in the last three intakes, and we asked the women's group directly. We can interview graduates from the last two years, 20 of whom are working as electricians, but have not done so yet. Delivery: a 90-minute session in week one led by two graduates, in Luganda, with a printed set. We track attendance daily and can compare with the next intake. Draft the belonging story set.",
-      "expected_output": "A belonging story set in the output template, with the check of the setting filled in, a collection plan, and no invented story presented as real.",
+      "expected_output": "A set of stories from older peers in the output template, with the check of the setting filled in, a collection plan, and no invented story presented as real.",
       "files": [],
       "assertions": [
         "Records the women instructors, the graduates' group, and the harassment check as what the setting offers, with a verdict.",
         "Plans to collect stories from women graduates of the course, with the questions to ask and consent.",
         "Presents no invented story as real; any story it writes is labeled an illustration, not for delivery.",
         "Includes the task in which trainees write or record advice to a woman in the next intake.",
-        "Names attendance through the month-two assessment as the outcome.",
-        "Says the trials are from US colleges and promises no effect size."
+        "Names attendance through the month-two assessment as the outcome, says the trials are from US colleges, and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for evidence, in the nurses' own words, that they read early difficulty as a sign they do not belong.",
         "Asks who in the setting includes them, or whether any harassment or exclusion has been reported.",
         "Asks whether nurses of the same group who stayed can be interviewed.",
-        "Writes no story text."
+        "Writes no story text.",
+        "Says why it needs these answers."
       ]
     },
     {
