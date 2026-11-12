@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). "Before you start" now says the questions come before the exercise, not before any reply. The output opens with a few plain sentences to the user (whether the setting passed the check, when and how people do the exercise, and whether the value list still needs confirming), is titled "Values affirmation for <the people>: a short private writing exercise", and uses plain labels: "Who, and what they feel judged about" for "People and threat", "Does the setting give the exercise something to work with?" for "What the setting offers (gate)", with a yes or no verdict, and "What trials found" for "The record". The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard, at about half its earlier length. The exercise is now drafted only after a check that the barrier is not practical and that the setting offers something to gain; the delivery notes add privacy and the rule that the exercise is never announced as help, and the warning about over-frequent use becomes a rule to repeat only before a later stressful moment, because no source for a reversed effect was found. The evidence was rechecked against each source: the author list of the replication study was corrected, a citation that did not support its sentence was removed, and trials from China, Senegal, and Kenya were added. Zezhen Wu added as co-author. Rewritten with Claude.
 

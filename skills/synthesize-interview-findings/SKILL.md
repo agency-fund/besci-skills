@@ -14,7 +14,7 @@ metadata:
   title: Turn interview transcripts into a barrier diagnosis
   type: atomic
   stage: analyze
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ A barrier hypothesis is a guess about why people are not doing a behavior, often
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the verdicts. Do not ask anything the user has already answered.
 
 1. **Required.** The interviews (transcripts, notes, or recordings), with who was interviewed, by whom, in what language, and who translated.
 2. **Required.** The hypotheses the interviews were meant to test, with their COM-B component or TDF domain if labeled.
@@ -81,14 +81,16 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Interview synthesis: <short name of the behavior>
+<Two or three plain sentences to the user: which possible reasons the interviews back and which they do not, anything that came up that no one predicted, and how much weight the verdicts can bear given how many interviews there were and how they were recorded.>
+
+# What the interviews tell us about <the behavior, in a few words>
 
 **Behavior:** <who does what, when, as given>
 **Interviews:** <n> with <respondents>; interviewed by <who>; in <language>; <n> transcripts, <n> notes, <n> recordings; translated by <who, or not translated>
 **Read by:** <who; whether a second reader charted any rows; whether a reader knows the interview language>
-**Hypotheses:** H1 <hypothesis> [<COM-B component / TDF domain>]; H2 <...>
+**The possible reasons tested (hypotheses):** H1 <hypothesis> [<COM-B component / TDF domain>]; H2 <...>
 
-## Matrix
+## Every interview against every possible reason (the matrix)
 
 | Respondent | Group | H1 <label> | H2 <label> | Not predicted |
 |---|---|---|---|---|
@@ -96,7 +98,7 @@ See `references/worked-example.md` for a complete run.
 
 † = the cell rests on notes or translation, not a transcript.
 
-## Verdicts
+## Verdict on each possible reason
 
 ### H1 <hypothesis>: <supported / not supported / mixed / not tested>
 - **Interviews:** <n> support, <n> contradict, <n> mixed, <n> asked and said nothing, <n> not asked (of <N>)
@@ -106,20 +108,41 @@ See `references/worked-example.md` for a complete run.
 - **Quotes:** "<quote>" (R0x); "<quote>" (R0y)
 - **Goes against it:** <every such respondent and what they said, or "none">
 
-## Not predicted, and outliers
+## What no one predicted, and the people who don't fit
 - <topic or person>: <how many interviews; quote reference>
 
-## Against other evidence
+## What other evidence says
 - <H# or topic>: <the other source>; <agrees / disagrees / none available>
 
-## Confirmed barriers
+## Confirmed barriers, and what is still open
 - <barrier> [<COM-B component / TDF domain>]: <the evidence in one sentence>
-- **Open:** <hypothesis>: <what would settle it>
+- **Still open:** <hypothesis>: <what would settle it>
 
 ## What to check before relying on this
 - <the verdict the decision depends on most, and how thin its evidence is>
 - <the cells most likely to have lost meaning in notes or translation>
+
+## Where you could go from here
+<One line saying the synthesis is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `select-intervention-levers`, when at least one barrier is confirmed and the team is ready to choose what kind of intervention fits it
+- `design-reminder-schedule`, when a confirmed barrier is people forgetting an action they already intend to take
+- `audit-process-friction`, when the confirmed barriers are steps, trips, stock-outs, or waiting
+- `diagnose-social-norm`, when what other people expect or approve came up as a reason, and the team needs to know whether it is a norm
+- `draft-tdf-interview-guide`, when a reason is still open or something unpredicted came up, and a second round of interviews could settle it
+- program records or a short survey, when a verdict rests on a few interviews and the decision needs to know how common the barrier is>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

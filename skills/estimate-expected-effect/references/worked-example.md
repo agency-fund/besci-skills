@@ -9,26 +9,28 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Effect-size benchmark: deterrence SMS on on-time permit renewal
+I'd plan the test on 1 percentage point, the gain the revenue director would act on. The studies put a realistic effect between 0.8 and 4.7 points, with 2 points as the central value. The Mexico trial's 9 points sits well above that range: it was picked for the guide because it was large, and even the pooled tax-nudge figure is only a ceiling, because the meta-analysis found selective reporting.
+
+# What effect to plan for: deterrence SMS on on-time permit renewal
 
 **Decision this informs:** whether to send the SMS to every permit holder each year
 **Outcome, unit, baseline:** permit renewed by 31 March; percentage points; baseline 30% from last year's county records
 **Delivered by, at what scale:** the county revenue office, by SMS, to about 40,000 permit holders
 
-## Estimates read
-| Source | How read | Label | Delivered by | Reported effect | In the test's units |
+## The estimates, as read
+| Source | How read | Kind of estimate | Delivered by | Reported effect | In the test's units |
 |---|---|---|---|---|---|
 | Kettle & Persian (2022), Mexico case study, https://www.bi.team/wp-content/uploads/2022/11/BIT-Handbook-How-to-run-simple-BI-projects.pdf | Full text of the guide; the trial's own paper not read | Published field trial, picked for the guide as an exception to its 2–3 point experience | Government: the Mexican tax authority, with BIT; 748,499 businesses | Deterrence SMS: on-time declarations 24% to 33%, +9 points (+37.5%) | +9 points, kept as points because the meta-analysis below works in points at a similar baseline. At 30%, 1 SD = √(0.30 × 0.70) = 0.458, so 9 points = 0.20 SD |
 | Antinyan & Asatryan (2025), https://doi.org/10.1093/ej/ueae088 | Full text of the authors' July 2024 discussion-paper version | Meta-analysis of tax-nudge experiments, not corrected for publication bias | Tax authorities, usually working with academics or nudge units | From a baseline of about 25%: reminders +2.7 points; deterrence messages +3.2 more, so +5.9 | +5.9 points = 0.13 SD at 30% |
 
 ## Corrections
 1. Lab or online study: not applied; none was supplied.
-2. Selective publication: the meta-analysis found reported results selected for their sign and significance but gives no corrected figure, so 5.9 points is a ceiling. The Mexico trial was picked for the guide because its effect was large, and it sits above the pooled figure, so it does not set the high end.
-3. Take-up: applied. About 80% of permits have a working number; neither source says how many messages arrived, so their take-up counts as complete: × 0.8.
+2. Selective publication (large effects are more often published): the meta-analysis found reported results selected for their sign and significance but gives no corrected figure, so 5.9 points is a ceiling. The Mexico trial was picked for the guide because its effect was large, and it sits above the pooled figure, so it does not set the high end.
+3. Take-up (the share offered it who receive it): applied. About 80% of permits have a working number; neither source says how many messages arrived, so their take-up counts as complete: × 0.8.
 4. Who delivers it: the same kind as the sources, a government tax office. The meta-analysis found smaller effects in low- and middle-income countries, which its authors call suggestive, so the central value sits below the midpoint.
 
 ## Planning range
-| | Percentage points | SD | Where it comes from |
+| | Percentage points | SD (standard deviations) | Where it comes from |
 |---|---|---|---|
 | High | 4.7 | 0.10 | The meta-analysis's deterrence estimate × take-up: 5.9 × 0.8 = 4.72 |
 | Central | 2.0 | 0.04 | The meta-analysis's reminder estimate × take-up (2.7 × 0.8 = 2.2), rounded down for the smaller effects found in low- and middle-income countries; within BIT's 2–3 points for messages |
@@ -45,4 +47,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 - How many of the 40,000 phone numbers are current. Below 80%, every value above falls in proportion.
 - The 30% baseline, which rests on one year of records; compare it with the year before.
 - Whether 40,000 permit holders are enough to detect 1 point; the sample-size calculation comes next.
+
+## Where you could go from here
+That's the range and the effect to plan on.
+- Work out the sample with `estimate-sample-size` for 1 point at the 30% baseline: it answers whether 40,000 permit holders are enough to detect it.
+- Pull the county's records of any reminders sent in earlier years, including those that changed nothing: they are an unselected estimate and would replace the one-sixth low end.
+- Check how many of the phone numbers on file are current, before the test goes out: below 80%, every value in the range falls in proportion.
+I'd lean toward the sample-size calculation, because the effect to plan on is the director's 1 point, and neither of the other two checks is likely to move it.
+Questions you could ask next: "How would the range change if we sent a plain reminder without the enforcement line?" · "What should we plan on if the director had not set a threshold?"
 ```

@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "Makes one recommendation, and it is to evaluate engagement or retention now, not to run the RCT.",
-        "Gives all four stages a verdict, each beside named evidence from the request or 'none supplied'.",
-        "Cites the 88% test-set result for the model stage and the one-question drop-off for the product stage.",
+        "Gives all four stages a verdict beside named evidence or 'none supplied', citing the 88% test-set result for the model stage and the one-question drop-off for the product stage.",
         "Explains why a yield trial now would be hard to interpret, in words the team could give the funder.",
         "Lists at least one thing to build now, such as version tags, a holdout group, or randomized rollout.",
-        "Says what evidence would change the recommendation."
+        "Says what evidence would change the recommendation.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what the product does, for whom, or what outcome it is meant to improve.",
         "Asks what has been tested or measured so far.",
         "Does not produce the table of stages.",
-        "Does not say yes or no to the RCT."
+        "Does not say yes or no to the RCT.",
+        "Says why it needs these answers."
       ]
     },
     {

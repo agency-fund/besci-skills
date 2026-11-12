@@ -14,7 +14,7 @@ metadata:
   title: Plan how a tested program reaches routine delivery
   type: atomic
   stage: implement
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ Vertical scaling makes a program routine through policy and budget changes; hori
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the strategy. Do not ask anything the user has already answered.
 
 1. **Required.** A judgment that the effect is likely to survive scale, with any tests still open. If there is none, stop: that judgment comes first.
 2. **Required.** The program as tested, every part, including materials, training, and supervision.
@@ -82,19 +82,21 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: who will own the program once it is routine, the open test or system change the plan hangs on, and the date that cannot slip.>
+
 # Scale-up strategy: <program>
 
 **Scalability judgment carried over:** <verdict>; open tests: <each, with its due date>
-**Type of scaling:** <vertical / horizontal / both, in what order>, because <reason>
+**Type of scaling:** <vertical (into policy, budget, and systems) / horizontal (to more sites) / both, in what order>, because <reason>
 
-## 1. The innovation
-| Part | Hardware or software | Essential? | Judgment tested? |
+## 1. The innovation: the program and its parts
+| Part | Hardware (products, materials) or software (training, supervision, management) | Essential? | Was that tested? |
 |---|---|---|---|
 | <...> | <...> | <essential / could be simplified / not essential> | <yes: how / no> |
 
 **Still appropriate to proceed?** <yes / no: why>
 
-## 2. The user organization
+## 2. The user organization: who will run it routinely
 - **Who adopts, who delivers:** <decision maker; delivering unit and cadre>
 - **Perceived need and champion:** <has it asked, by whom, in writing / no>
 - **Capacity gaps:** <what, and how each is built>
@@ -105,26 +107,26 @@ See `references/worked-example.md` for a complete run.
 |---|---|---|---|
 | <policy and politics / bureaucracy / other sectors / social and economic context / people's needs and rights> | <...> | <...> | <...> |
 
-## 4. The resource team
+## 4. The resource team: who supports the move, and until when
 - **Members:** <...>, including from the user organization: <who / none>
 - **Skills to add:** <...>
 - **Role ends:** <date or milestone>
 
-## 5. Vertical scaling: changes needed
+## 5. Vertical scaling: changes to policy, budget, and systems
 | Change | Needed? | Action | Lead |
 |---|---|---|---|
 | <policy / political commitment / law / regulations and guidelines / budget / logistics / information systems / supervision / staff appraisal and incentives / training curricula / workforce / information materials> | <yes / no / unknown> | <...> | <...> |
 
-## 6. Horizontal scaling
+## 6. Horizontal scaling: more sites, in waves
 - **Waves:** <sites, in order, each with the open test it waits for>
 - **Site differences and adaptations:** <...>
 - **Cost per wave and who pays:** <...; what replaces project funds, and when>
 - **Monitoring outcomes:** <what is tracked, from what data>
 
-## 7. Diversification
+## 7. Diversification: adding components
 <none until the original is routine / what, when>
 
-## 8. Spontaneous scaling
+## 8. Spontaneous scaling: copies nobody planned
 <not known to occur / where, and whether the essential parts are kept; support, redirect, or leave>
 
 ## 9. Recommended actions
@@ -132,7 +134,7 @@ See `references/worked-example.md` for a complete run.
 |---|---|---|
 | <...> | <...> | <high / medium / low> |
 
-## Operational plan
+## Operational plan: who does what, by when
 | Action | Owner (role, organization) | By when | Depends on |
 |---|---|---|---|
 | <...> | <...> | <...> | <open test or none> |
@@ -142,7 +144,27 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the assumption about the user organization most likely to be wrong>
 - <the open test that could stop the plan>
+
+## Where you could go from here
+<One line saying the strategy is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `design-fidelity-monitoring`, when the waves need checks the user organization can run itself, so quality does not fall as expansion speeds up
+- `specify-intervention-adaptations`, when site differences or the user organization's workload push for changes to the program
+- `assess-scalability`, when an open test reports back, or the plan changes who delivers or what is delivered
+- `draft-intervention-description`, when the parts table rested on memory, or the user organization needs a written account of the program to train from
+- the user organization's planning and legal staff, or the officials who control delivery staff's time, when a change is marked unknown or the request to adopt is not in writing>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

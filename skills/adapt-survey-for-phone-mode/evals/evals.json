@@ -8,12 +8,12 @@
       "expected_output": "A phone version in the output template that cuts the instrument to a stated call length and plans a comparison with the 100 face-to-face interviews.",
       "files": [],
       "assertions": [
-        "States a target call length of 30 minutes or less and lists the items dropped.",
-        "Asks the satisfaction showcard item in two steps, direction then strength.",
-        "Describes both ends of the ladder in words.",
+        "Opens with a few plain sentences to the user, states a target call length of 30 minutes or less, and lists the items dropped.",
+        "Asks the satisfaction showcard item in two steps, direction then strength, and describes both ends of the ladder in words.",
         "Says women are more likely to be reached through someone else's phone and that the intended respondent is asked for by name.",
         "Plans a face-to-face comparison on the core items and names the difference that would change the conclusion.",
-        "Does not calculate how many numbers to call."
+        "Does not calculate how many numbers to call.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the face-to-face questionnaire and its length.",
         "Asks where the phone numbers come from or who owns the phones.",
         "Asks what decision the survey informs or which items are essential.",
-        "Does not produce a phone version or call rules."
+        "Does not produce a phone version or call rules.",
+        "Says why it needs these answers."
       ]
     },
     {

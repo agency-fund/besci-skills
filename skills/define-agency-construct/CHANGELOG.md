@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The definition opens with a few plain sentences to the user (the working definition, the cells it covers and leaves open, and that it stays a hypothesis until users are asked), and its title says in plain words what agency means for the tool's users. "Not agency" becomes "What your usage numbers measure instead", "Erosion would look like" becomes "Signs the tool is wearing agency down", and the "Construct" column is glossed as a defined, measurable idea. The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard, at under half its earlier length; the method, the 2x2 agency framework, and the matching table are kept. Every citation was rechecked against its record and abstract, and claims that could not be confirmed were removed: Jigsaw's fourth dimension is "social", as the source post has it; the rule on shared decisions is now credited to Donald and Hernandez-de-Benito (2021); and Chen et al. (2015) is reported as finding equivalent measurement across four countries. The output now ends with what to check with users, and the test cases are the four named ones. Rewritten with Claude.
 

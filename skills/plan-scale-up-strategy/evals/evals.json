@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We piloted the Chitetezo antenatal iron-folate adherence package in 4 districts of Malawi. At the first antenatal visit a Health Surveillance Assistant (HSA) gives a 15-minute counseling session with a picture card; at 4 weeks the HSA makes one home visit with a pill count and leaves a reminder calendar. Our NGO trained and supervised the HSAs together with the district health offices. The scalability assessment says 'promising, test first': (1) HSA-delivered counseling without NGO supervision still raises adherence, to be tested in 2 new districts over 6 months; (2) the picture cards can be printed and distributed through the government supply chain. The Ministry of Health's Reproductive Health Directorate (RHD) has asked in writing for national roll-out through the HSA cadre across 28 districts. The national budget year starts in July; our donor funds us for 18 more months. HSAs report to district health offices, and HSA supervisors cover 25 to 40 HSAs each. The RHD director is the champion; the nutrition unit is wary because it runs its own IFA supply program. National elections are in 2 years. Please write the scale-up strategy.",
-      "expected_output": "A scale-up strategy in the output template that walks all nine steps and ends in an operational plan whose every line has an owner and a date.",
+      "expected_output": "A scale-up strategy in the output template that walks all nine steps, with an operational plan whose every line has an owner and a date, and ends with next moves.",
       "files": [],
       "assertions": [
-        "Lists the program's parts, including training and supervision, each marked essential or not.",
+        "Opens with a few plain sentences to the user, and lists the program's parts, including training and supervision, each marked essential or not.",
         "Fills the vertical-scaling table with each change marked yes, no, or unknown.",
         "Gates the second wave of districts on the open test of counseling without NGO supervision.",
-        "Gives the resource team's role an end date within the 18 months of funding.",
-        "Every line of the operational plan names a role in an organization as owner and has a date.",
-        "Does not shorten the counseling or drop the pill count."
+        "Gives the resource team's role an end date within the 18 months of funding, and every line of the operational plan names a role in an organization as owner and has a date.",
+        "Does not shorten the counseling or drop the pill count.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks for every part of the program, including training and supervision.",
         "Asks who would run it routinely and whether they have asked for it.",
         "Asks about the budget cycle or the policy environment.",
-        "Does not produce a strategy or an operational plan."
+        "Does not produce a strategy or an operational plan.",
+        "Says why it needs these answers."
       ]
     },
     {

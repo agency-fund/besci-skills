@@ -40,6 +40,8 @@ Relationship values: `start`, `after N`, `parallel with N`, `independent`, `opti
 
 ## How to run it
 
+Mark the run as you go: say when the workflow starts, which step the user is on ("step 2 of 5: barrier hypotheses"), and when it is finished. At each human decision point, lay out the options with their reasons and let the user choose; do not move on for them.
+
 1. <Step-by-step, including what to hand from one skill to the next and when to stop and look at real data.>
 2. <...>
 

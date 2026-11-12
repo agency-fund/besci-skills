@@ -14,7 +14,7 @@ metadata:
   title: Find out who benefited most from a program
   type: atomic
   stage: analyze
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -47,7 +47,7 @@ A subgroup is defined by a characteristic measured before the program began, suc
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the report. Do not ask anything the user has already answered.
 
 1. **Required.** The analysis plan (outcome, model, and the subgroups it names with their expected direction), or a statement that there is none.
 2. **Required.** A description of the data: arms, unit of randomization, sample per arm, baseline characteristics, the outcome's units, and how the sample was drawn.
@@ -81,28 +81,30 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Heterogeneous effects report
+<Two or three plain sentences to the user: which of the planned subgroups showed a different effect after correction, what the exploratory search suggests, and that anything the plan did not name is a hypothesis, not a finding.>
+
+# Who benefited most from <the program, in a few words>
 
 **Trial:** <name; arms; unit of randomization; sample per arm>
 **Primary outcome:** <outcome, in its units>
 **Overall effect:** <estimate in outcome units (95% CI), from the plan's model>
 **Sample:** <random sample of <population> / reached by convenience: <who>>; results speak for <whom>
-**Decision this informs:** <describe / pre-register next / targeting (see the specialist note)>
-**Plan status:** <plan dated <date> names <n> subgroups / no plan: everything below is exploratory>
+**Decision this informs:** <describe / choose what to pre-register next / decide who gets the program (see the specialist note)>
+**The analysis plan:** <plan dated <date> names <n> subgroups / no plan: everything below is exploratory>
 
-## Named subgroups (confirmatory)
+## Subgroups the plan named in advance (confirmatory)
 
-| Subgroup (verbatim from the plan) | Expected direction | Effect in each group (units, 95% CI) | Difference (units, 95% CI) | Uncorrected p | Corrected p (<method>, <n> tests) |
+| Subgroup (in the plan's words) | What the plan expected | Effect in each group (units, 95% CI) | Difference (units, 95% CI) | p before correction | p corrected for <n> tests (<method>) |
 |---|---|---|---|---|---|
 | <subgroup> | <...> | <group A: ...; group B: ...> | <...> | <...> | <...> |
 
 <one or two sentences: which differences hold after correction, in which direction>
 
-## Exploratory splits (hypotheses only)
+## Other differences the data suggest (exploratory: hypotheses only)
 - **Method and software:** <causal forest / generic machine learning; package>
-- **Sample splitting:** <fit half / test half, split by <unit>; <n> repeated splits; medians reported>
+- **Fit on one half, checked on the other:** <split by <unit>; <n> repeated splits; medians reported>
 - **Characteristics used:** <baseline only: list>
-- **Best linear predictor:** heterogeneity coefficient <estimate (95% CI)>; <reads as: real differences detected / not distinguishable from noise>
+- **Did the model find real differences? (best linear predictor):** heterogeneity coefficient <estimate (95% CI)>; <reads as: real differences detected / not distinguishable from noise>
 - **Average effect by fifth of predicted benefit:**
 
   | Group | Effect (units, 95% CI) |
@@ -114,7 +116,7 @@ See `references/worked-example.md` for a complete run.
 
 - **Most and least affected compared:** <characteristic: mean in most affected, mean in least affected, difference; three to six rows>
 
-## Power limits
+## What this trial was too small to tell (power)
 <what the trial was sized for; why a null difference means "not detectable here"; which subgroups, if any, the plan sized for>
 
 ## What to pre-register next time
@@ -124,7 +126,28 @@ See `references/worked-example.md` for a complete run.
 - <who this sample can speak for>
 - <that every exploratory result keeps its label wherever the report is read>
 - <that no rule for who gets the program has been drawn from it>
+
+## Where you could go from here
+<One line saying the report is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `write-pre-analysis-plan`, when a next trial is planned and the subgroups above need writing into its plan with their expected direction
+- `estimate-sample-size`, when a subgroup difference is worth confirming and the next trial must be sized to detect it
+- `assess-scalability`, when the effect is concentrated in a group that wider delivery would reach differently
+- `estimate-cost-effectiveness`, when the overall effect holds and someone asks what it cost per unit of change
+- a statistician or econometrician with trial experience, when anyone wants to use a result to decide who gets the program
+- the delivery records or the staff who ran the program, when one group may have received less of it, which would look like a smaller effect>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

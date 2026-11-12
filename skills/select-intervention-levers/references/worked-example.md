@@ -9,14 +9,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Intervention lever brief
+I'd choose a change to the setting: a screen and a marked deposit spot at each agent's kiosk, so a vendor depositing at closing cannot be seen from the stalls. It is the only option that scores a plus on removing what the interviews named, being seen with cash; your talk on saving is education, which the table does not link to this kind of barrier. Nothing should be designed until each market's management has agreed to the fixture.
+
+# Choosing an intervention for being seen with cash at the kiosk
 
 **Behavior:** Women with produce stalls in Gikomba and Toi markets deposit the day's surplus cash into their mobile-money savings wallet before leaving the market each trading day.
 **Confirmed barrier:** Counting and depositing cash at the agent's kiosk at closing time is seen by neighboring vendors, who then ask to borrow.
 **Evidence that confirmed it:** 20 vendor interviews across both markets; 14 vendors said they change when and where they count cash to avoid being seen.
 **Kind of barrier:** Social opportunity, because what stops the deposit is how the people around the vendor respond to visible cash, not her skill, her wish to save, or the kiosk's hours.
 
-## Kinds of intervention the table links to this barrier
+## Kinds of intervention the Behaviour Change Wheel's table links to this barrier
 
 | Kind | Form it would take here |
 |---|---|
@@ -27,7 +29,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 **The team's own idea:** A short talk on why saving matters. Its kind is education, which is not in the row: a talk does not change who sees the cash.
 
-## Feasibility (APEASE)
+## How feasible each one is here (APEASE)
 
 | Kind | Affordability | Practicability | Effectiveness | Acceptability | Side-effects and safety | Equity |
 |---|---|---|---|---|---|---|
@@ -36,19 +38,27 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Enablement | ?: the cost falls on the provider | −: needs the provider, with whom the program has no relationship | 0: less time in view is still in view (team guess) | +: no reason to object | 0: none identified | 0: none identified |
 | Modeling (later table) | +: no direct cost | 0: the associations can name respected vendors; nobody has asked them | ?: shows that depositing is normal, but the requests continue (team guess) | 0: asks a few vendors to take the requests themselves | −: the models may face more borrowing requests | 0: none identified |
 
-## Selected lever
+## The kind I'd choose, and the technique
 - **Kind:** Environmental restructuring, because it is the only kind with a + on effectiveness, and its one − is a permission the vendor associations are well placed to request. The change that removes the −: written permission from each market's management before design starts.
 - **Technique:** A waist-high screen and a marked deposit position at the agent's kiosk in each market, installed by the program with the agent, so that a vendor handing over cash at closing cannot be seen from the neighboring stalls.
-- **Taxonomy label:** label to check: 12.1 Restructuring the physical environment
+- **Label in the behavior change technique taxonomy:** label to check: 12.1 Restructuring the physical environment
 
 ## If it fails: the other kinds, ranked
 1. Modeling (later table): lost on side-effects and on an unknown effect. Worth trying if vendors avoid the screened position because using it draws attention.
 2. Enablement: lost on practicability. Worth trying if a partnership with the provider develops.
 3. Restriction: lost on practicability, acceptability, and side-effects. Worth trying only if the associations propose it themselves.
 
-## To confirm before design
+## What to confirm before design starts
 - Whether each market's management will permit a fixture at the kiosk. Without it, the selection falls to modeling.
 - Whether agents accept the screen. They were not interviewed.
 - Whether a screened position marks its users as carrying cash. Ask five vendors before building anything.
 - The effectiveness scores are team guesses until a pilot.
+
+## Where you could go from here
+That's the choice.
+- Ask each market's management for written permission for the fixture: without it the choice falls to modeling, and no other open question decides as much.
+- Ask five vendors whether a screened spot would mark them as carrying cash: it is the one side-effect that could undo the screen, and it costs an afternoon.
+- Write the sign and the agent's line with `draft-lever-content`: fits once permission is in hand, since the screen helps only vendors who know where it is and what it is for.
+I'd lean toward the permission request first, because it decides whether the screen happens at all.
+Questions you could ask next: "What would modeling look like if management says no?" · "Should we talk to the agents before we go to management?"
 ```

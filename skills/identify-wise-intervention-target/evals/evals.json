@@ -12,8 +12,8 @@
         "Marks 'I have to help at home' as a material barrier, not a target.",
         "Names exactly one primary question under one of the three needs.",
         "Says what the setting provides, using the retake and the tutors' review.",
-        "States what trials of this kind of intervention found and promises no effect size.",
-        "Does not draft a message, story, or exercise."
+        "States what trials of this kind of intervention found, promises no effect size, and drafts no message, story, or exercise.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the audience's own words: interviews, survey answers, or field notes.",
         "Asks what the setting offers after any message, or what evidence shows a belief is the barrier.",
         "Does not name a question or a kind of intervention.",
-        "Does not accept 'a belonging issue' as established."
+        "Does not accept 'a belonging issue' as established.",
+        "Says why it needs these answers."
       ]
     },
     {

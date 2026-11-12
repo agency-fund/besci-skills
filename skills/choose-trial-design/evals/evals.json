@@ -8,12 +8,12 @@
       "expected_output": "A trial design choice in the output template that randomizes pharmacies in a factorial design covering every pharmacy by month 12, with a named runner-up.",
       "files": [],
       "assertions": [
-        "Rules out randomizing individual customers because of spillovers or a price set at the pharmacy.",
-        "Uses the pharmacy as the unit of randomization.",
+        "Uses the pharmacy as the unit of randomization, ruling out individual customers because of spillovers or a price set at the pharmacy.",
         "Chooses a factorial (or four-arm) design because the decision needs the voucher's value beyond the subsidy.",
         "Treats every pharmacy by month 12 through a waitlist or stepped rollout.",
         "Says how the assignment is drawn and recorded, and who agreed to the delay.",
-        "Names a runner-up and the condition that would make it the choice."
+        "Names a runner-up and the condition that would make it the choice.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks whether everyone must receive it eventually or some can go without.",
         "Asks what decision the result will inform.",
         "Does not produce the constraints table.",
-        "Does not recommend a design."
+        "Does not recommend a design.",
+        "Says why it needs these answers."
       ]
     },
     {

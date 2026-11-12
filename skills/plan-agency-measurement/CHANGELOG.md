@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+Follows the conversational-voice standard (ADR 0009). The plan opens with a few plain sentences to the user (how many focus cells have measures, what should not go ahead as proposed, and how much testing the claim needs), and "In no cell" becomes "Tracked, but not a measure of agency". "What to find out next" stays, as the list of open questions with search queries. The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
+
 ## 0.2.0 - 2026-11-11
 Rewritten to the November 2026 standard, at about half its earlier length, with the method kept: an on- and an off-platform measure for each focus cell of the 2x2 agency framework, items quoted only from an opened source, and testing sized to the claim. Every citation was rechecked against its record and abstract: the playbook is now credited to its authors, the AI dependence scale is reported from university students rather than Peruvian medical students, quoted items and figures that could not be confirmed were removed, and evidence on agency scales in six African countries and on decision-making questions in Ecuador, Uganda, and Yemen was added. The research queries now sit in `measurement-options.md`, the evidence notes became `evidence.md`, and the test cases are the four named ones. Rewritten with Claude.
 

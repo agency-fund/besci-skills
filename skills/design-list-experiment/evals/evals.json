@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "States a go or no-go decision, with the plausible under-reporting and what 1,800 respondents can and cannot show.",
-        "Gives one sensitive statement that keeps the 7-day period and 'two or more days'.",
-        "Gives three or four control statements and says why few respondents will count none or all.",
+        "Gives one sensitive statement that keeps the 7-day period and 'two or more days', and three or four control statements with why few respondents will count none or all.",
         "Includes a practice list and a private way to count.",
         "Keeps a direct question on the same behavior and says the difference from the list estimate will be reported.",
-        "Does not calculate a sample size."
+        "Does not calculate a sample size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks which behavior, over what period, and why people would hide it.",
         "Asks who the respondents are or how they are surveyed.",
         "Asks how many respondents are affordable or whether the estimate is needed for subgroups.",
-        "Does not produce statements or a design."
+        "Does not produce statements or a design.",
+        "Says why it needs these answers."
       ]
     },
     {

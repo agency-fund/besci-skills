@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We work with 2,400 smallholder farmers in Chipata district, Zambia. Each gets a seed-and-fertilizer voucher card, fully paid, to redeem at any of three agro-dealers between 1 and 21 November. In our survey of 300 farmers 88% said they would redeem; dealer records show 54% did. In interviews, those who did not said they meant to go on a market day and the window closed; nobody mentioned cost or distrust, and stock records show no shortages. The dealers are in Chipata town, on the Katete road, and at Chiparamba, open Monday to Saturday, 8am to 5pm; the farmer brings the voucher card and a national registration card. Extension officers hand out the cards at village meetings in the last week of October and spend a few minutes with each farmer, in Chinyanja. Draft the plan prompt.",
-      "expected_output": "An implementation intention prompt in the output template, written as an if-then sentence whose blanks take only the dates, hours, and dealers the user gave.",
+      "expected_output": "A plan prompt in the output template, written as an if-then sentence whose blanks take only the dates, hours, and dealers the user gave.",
       "files": [],
       "assertions": [
         "The prompt is an if-then sentence with blanks for a day, a time, and a place.",
         "The real options listed are the user's: 1 to 21 November, Monday to Saturday, 8am to 5pm, three dealers.",
-        "Has the farmer say the plan back once.",
-        "Says who else sees or hears the plan.",
+        "Has the farmer say the plan back once, and says who else sees or hears the plan.",
         "Specifies a pretest with the number of people and what counts as a pass.",
-        "Promises no effect size for this program."
+        "Promises no effect size for this program.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what shows that people intend to come and are not stopped by cost, access, or trust.",
         "Asks for the dates, hours, and places of the camp, or whether it happens once.",
         "Asks which message the question would be added to or who sends it.",
-        "Does not produce a prompt."
+        "Does not produce a prompt.",
+        "Says why it needs these answers."
       ]
     },
     {

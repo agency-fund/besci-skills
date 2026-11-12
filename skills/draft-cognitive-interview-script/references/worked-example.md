@@ -9,10 +9,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Cognitive interview script: Kakamega baseline, fertilizer-timing questions
+The script covers all four questions, with the most probing on B1 and C1, the two you were worried about. The plan is two rounds of eight interviews of about 20 minutes, run by your two field officers as a pair. The interviews can show where farmers read a question differently from what you meant; they cannot show that the answers they give are true.
+
+# Cognitive interview script: testing whether people understand the Kakamega baseline fertilizer-timing questions
 
 **Respondents:** smallholder maize farmers in Kakamega County, mostly women with primary schooling; interviews in Kiswahili. The script is shown in English; the translators who produced the Kiswahili questions put the probes into Kiswahili.
-**When probes are asked:** after each question, because enumerators will read the survey aloud
+**When the follow-up questions (probes) are asked:** after each question, because enumerators will read the survey aloud
 **Plan:** 2 rounds of 8 interviews of about 20 minutes, in pairs (one asks, one takes notes); recruit women farmers in a neighboring ward that is outside the survey sample, those with the least schooling first; try the script on two farmers before round 1
 **Not tested in this script:** none; four questions at three minutes each fit the interview
 
@@ -78,4 +80,12 @@ Problem codes: unclear word / wrong reading / cannot recall / options do not fit
 ## What this cannot tell you
 - Sixteen interviews can show that a question is misread. They cannot show that every farmer reads it correctly, or that the answers are true: whether farmers who say "yes" to D1 go on to buy early is a question for the survey data.
 - If "put money aside" turns out to mean only bank or phone savings, the fault may lie in the Kiswahili wording or in the idea itself. Someone who reads both languages has to judge which.
+
+## Where you could go from here
+That's the script.
+- Brief the two field officers on reading each question as written and noting, not answering, requests to explain, then run the try-out with two farmers: neither has done this before, and an officer who rephrases B1 to help has tested a different question.
+- If round 1 codes "put money aside" as a translation problem, take B1 back through `translate-survey-instrument`: reviewers who know these farmers can judge whether the Kiswahili or the idea is at fault, which this script cannot.
+- If C1's number out of ten proves hard to give, rewrite its answer options with `draft-survey-items`: what she believes other farmers do can stay; only the way of answering changes.
+I'd lean toward the briefing and try-out, because it is the cheapest way to catch a problem in the script before it costs you a round.
+Questions you could ask next: "What do we do if 'put money aside' turns out to mean only bank or phone savings?" · "How do we fit a third round into the baseline timeline?"
 ```

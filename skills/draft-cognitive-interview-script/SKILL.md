@@ -14,7 +14,7 @@ metadata:
   title: Test whether people understand your survey questions
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Writes the script for cognitive interviews, in which a few respondents answer dr
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the script. Do not ask anything the user has already answered.
 
 1. **Required.** The questions exactly as respondents will hear or read them, with answer options.
 2. **Required.** What each question is meant to measure, a phrase each.
@@ -80,10 +80,12 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Cognitive interview script: <questionnaire name>
+<Two or three plain sentences to the user: how many questions the script covers and which get the most probing, the plan in rounds and interviews, and that the interviews can show a question is misread but not that the answers are true.>
+
+# Cognitive interview script: testing whether people understand <questionnaire name>
 
 **Respondents:** <who, schooling, language of the interview>
-**When probes are asked:** <after each question / after the whole questionnaire, and why>
+**When the follow-up questions (probes) are asked:** <after each question / after the whole questionnaire, and why>
 **Plan:** <rounds> rounds of <n> interviews of about <minutes> minutes, in pairs (one asks, one takes notes); recruit <who and where: the survey's population, outside its sample>
 **Not tested in this script:** <questions left out for time, or "none">
 
@@ -120,13 +122,32 @@ Problem codes: unclear word / wrong reading / cannot recall / options do not fit
 
 ## What this cannot tell you
 - <the limit that matters most for this questionnaire>
+
+## Where you could go from here
+<One line saying the script is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `translate-survey-instrument`, when the questions or probes are not yet in the interview language, or problems coded "translation" cluster after a round
+- `draft-survey-items`, when a round shows a question's answer options do not fit and need rewriting (not when the idea itself does not exist for respondents)
+- a briefing and a try-out with two people, when the interviewers have not run these interviews before, since an interviewer who explains a question tests a different one
+- a psychometrician or survey methodologist, when the questions belong to a validated scale or the answers will decide referral or eligibility>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
-- **A quiz.** Probes that ask for a definition ("what is a balanced diet?") make respondents guess at the right answer. Ask what the words meant to them when they answered.
+- **A quiz.** Probes that ask for a definition ("what is a balanced diet?") make respondents guess the right answer. Ask what the words meant to them when they answered.
 - **Rewording when the fault is the idea.** If respondents cannot restate a question however it is put, as with "consent" in rural India, the idea may not exist for them in that form. Report it; do not offer another wording.
-- **Interviewers who explain.** An interviewer who rephrases a question to help has tested a different question. The script has them read it as written and note the request.
+- **Interviewers who explain.** An interviewer who rephrases a question to help tests a different question. The script has them read it as written and note the request.
 
 ## When to bring in a specialist
 

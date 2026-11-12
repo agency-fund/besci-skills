@@ -9,12 +9,14 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Message frame decision
+Keep the gain wording you already have. Taking the tablet lowers a risk, nothing local favors loss wording, and your manager's version adds a new and much larger claim, that the baby could be born too small or die, which could frighten or shame women who have already missed tablets. Gain and loss wording rarely differ much in effect, so I haven't promised a difference either way.
+
+# Gain or loss wording for the weekly iron tablet SMS
 
 **Behavior:** Pregnant women enrolled at the four Dedza clinics take one iron-folate tablet every day from their first antenatal visit until delivery.
 **Draft received:** "Taking your iron tablet every day keeps your blood strong for you and your baby. Take today's tablet after your evening meal." Weekly SMS from the clinic's number; English working copy, to be sent in Chichewa.
 **Kind of behavior:** Lowers a risk, because the tablet reduces the chance of anemia; it does not show whether a woman has it.
-**Vehicle:** Words only.
+**Words or money:** Words only.
 
 ## Decision
 - **Frame to use:** Gain.
@@ -52,4 +54,12 @@ That the choice between gain and loss wording makes little or no difference to b
 ## What to check before relying on this
 - Whether "keeps your blood strong" carries the intended meaning in Chichewa. Ask the eight women what they think the tablet does.
 - Whether forgetting is still the barrier once the reminder arrives; if women report nausea, wording will not help.
+
+## Where you could go from here
+That's the decision on wording.
+- Plan the session with the eight women using `plan-prototype-test`: the same session can check whether "keeps your blood strong" means what you intend in Chichewa, which matters more than the frame.
+- Ask the nurse aides at the four clinics whether women mention nausea from the tablets: if they do, forgetting isn't the only barrier, and no wording will fix that part.
+- Bring in `audit-intervention-ethics` only if your manager comes back to the loss version that names harm to the baby, since it would reach women who have lost a pregnancy.
+I'd lean toward the session with the eight women, because the translation is the part most likely to go wrong and it is cheap to check.
+Questions you could ask next: "How do I explain to our program manager why we're not using the loss version?" · "What would count as local evidence for loss wording?"
 ```

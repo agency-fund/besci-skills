@@ -52,8 +52,20 @@ Where in a project a skill is normally used: define, diagnose, design, measure, 
 _Avoid_: phase, category, step
 
 **Navigator**:
-The meta-skill that recommends which skills to run and in what order. In route mode it answers a concrete task with at most one question; in guide mode it interviews the user and drafts a workflow.
+The meta-skill that helps a user find their way through the library. In conversation mode, the default, it answers as a thought partner and mentions a skill only when the user wants to do something; in route mode it answers a concrete task with one or two skills; in guide mode it interviews the user and drafts a workflow.
 _Avoid_: router, assistant, orchestrator
+
+**Conversation**:
+Talking with a user outside a run: answering questions as a thought partner that knows the library, saying what comes from the library and what is general knowledge, and offering a skill, with what it would add, when the user wants to do something. The default.
+_Avoid_: chat mode, brainstorm mode
+
+**Run**:
+One use of a skill or workflow, from the line that says it has started to the line that says it is finished. Inside a run, the skill's method, evidence, and output template are in force.
+_Avoid_: session, execution, invocation
+
+**Next move**:
+A step a skill offers in its closing, "Where you could go from here", with the reason it would help and when it fits: another skill, or a step outside the library. A suggestion; the user decides.
+_Avoid_: next action, recommendation, call to action
 
 **Catalog**:
 The machine-readable list of every skill and workflow, generated from the repository. The site renders it; the navigator carries a dated snapshot of it.

@@ -9,13 +9,15 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Target behavior brief
+I'd target vendors moving part of the day's takings into the wallet's savings feature before they leave the market. It has the most room to grow, since 85% of vendors did not use the feature last month, and that is the one score here based on data. Both likelihood scores are team guesses, so what 20 vendors say could still change the choice.
+
+# The behavior to target for savings among Nairobi market vendors
 
 **Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks.
 
 ## Candidates
 
-| Candidate behavior | Impact (1–5) | Already doing it | Likelihood of change (1–5) | Spillover | Measurable by |
+| Candidate behavior | Impact (1–5) | Already doing it | Likelihood of change (1–5) | Spillover to other behaviors | Measurable by |
 |---|---|---|---|---|---|
 | Vendors move part of the day's takings into the wallet's savings feature before leaving the market | 4: small, frequent deposits add up to a buffer (team guess) | 15% used the feature last month (data: program monitoring) | 3: the moment exists every day, but cash is counted in public (team guess) | +: a visible balance may prompt further deposits | Wallet records |
 | Vendors raise their weekly contribution to the savings group they already belong to | 3: adds savings, but group payouts rotate and are often spent on arrival (team guess) | Most belong; contribution levels not known (team guess) | 4: a trusted routine they already keep (team guess) | 0 | Group ledgers, where groups allow |
@@ -30,7 +32,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## Why this one
 It has the highest impact score and the most room to grow: 85% of vendors did not use the feature last month, and that figure is the one score here that rests on data. The savings-group candidate scored higher on likelihood, but both likelihood scores are team guesses, so the gap between them should not be trusted yet.
 
-## APEASE concerns
+## Concerns about the chosen behavior (APEASE)
 Acceptability: counting and setting aside cash in view of other vendors may invite requests for money. Equity: vendors without their own phone are left out.
 
 ## Runners-up, ranked
@@ -40,4 +42,12 @@ Acceptability: counting and setting aside cash in view of other vendors may invi
 ## What would change this choice
 - The two likelihood scores are guesses. Ask 20 vendors which of the three they would do next week, and why not the others.
 - Contribution levels in savings groups are unknown. Field officers can record them at one weekly visit.
+
+## Where you could go from here
+That's the choice of behavior.
+- Ask 20 vendors which of the three they would do next week: the savings group scored higher on likelihood, and if vendors confirm that, the fallback becomes the better target before you build anything around the wallet.
+- Work out why 85% are not using the feature with `decompose-comb-barriers`: the acceptability concern above, cash counted where neighbors can see, is already one possible reason, and there will be others.
+- Settle how you will show the behavior changed with `plan-evaluation-design`, if the funder asks now: wallet records already capture every deposit, so the outcome may be close to settled.
+I'd lean toward asking the 20 vendors first, because field officers can do it in one round of visits and it could change the target before you invest in the rest.
+Questions you could ask next: "What would we do differently if vendors would rather raise their savings-group contribution?" · "Why might so few vendors be using the savings feature?"
 ```

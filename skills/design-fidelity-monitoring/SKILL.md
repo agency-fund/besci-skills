@@ -13,7 +13,7 @@ metadata:
   title: Monitor whether a program is delivered as designed
   type: atomic
   stage: implement
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Plans how a team will check fidelity, the degree to which a running program is d
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the plan. Do not ask anything the user has already answered.
 
 1. **Required.** The program's parts, who delivers each, to whom, how often. If the account is only "health workers counsel mothers", ask what the counseling contains.
 2. **Required.** Who delivers, how many, and who supervises them.
@@ -79,20 +79,22 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Fidelity monitoring plan: <program>
+<Two or three plain sentences to the user: which parts of the program the plan watches most closely and why, the one check that does not rest on the deliverers' own records, and what the data may and may not be used for.>
+
+# How we'll know <the program, in a few words> is delivered as designed
 
 **Delivered by:** <who, how many, supervised by whom>
 **Use of the data:** <support only / also an evaluation / appraisal, pay, or discipline: see the specialist note>; <"assumed; confirm with <organization> before launch" if not stated>
 
 ## Essential parts
-| Part | Mechanism it carries | Essential or adaptable | Why |
+| Part | What it changes for the person receiving it | Essential or adaptable | Why |
 |---|---|---|---|
-| <part> | <what it changes for the person receiving it> | <essential / adaptable> | <dropping it removes the mechanism / it can vary without loss> |
+| <part> | <the mechanism, in plain words> | <essential / adaptable> | <dropping it removes the mechanism / it can vary without loss> |
 
 ## Indicators
-| Part | Dimension | Indicator | Source | Sample and frequency | Collected by |
+| Part | What it checks | Indicator | Source | Sample and frequency | Collected by |
 |---|---|---|---|---|---|
-| <part> | <adherence / dose / quality / responsiveness> | <what two monitors would record alike> | <log / observation / back-check / exit interview> | <n per round, drawn how, how often> | <role; not the person checked> |
+| <part> | <adherence (delivered as specified) / dose (how many, how often, how long) / quality / responsiveness (how people respond)> | <what two monitors would record alike> | <log / observation / back-check / exit interview> | <n per round, drawn how, how often> | <role; not the person checked> |
 
 ## Thresholds and actions
 | Indicator | Expected level | Act when | Action | Who acts |
@@ -108,7 +110,7 @@ See `references/worked-example.md` for a complete run.
 ## Change log
 <where unplanned changes are recorded and by whom: date, what changed, who, why, part touched>
 
-## What an evaluation needs caught
+## What an evaluation also needs to track
 <assigned but not reached, comparison group reached, spillover, dropout: an indicator for each; or "no evaluation planned">
 
 ## How to read the results
@@ -117,7 +119,27 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the assumption most likely to be wrong, such as registers filled in at the visit>
 - <the part the team is least sure is essential>
+
+## Where you could go from here
+<One line saying the monitoring plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-intervention-description`, when nobody could say which parts are essential, or the program's parts have never been written down item by item
+- `specify-intervention-adaptations`, when the change log or the first monitoring rounds show parts being changed or dropped, and the team needs to judge which changes matter
+- `write-pre-analysis-plan`, when the plan feeds an evaluation and the analysis must say how people not reached, or comparison-group people reached, will be handled
+- `assess-scalability`, when the program is a pilot that may scale and the monitoring shows what delivery depended on
+- a few deliverers and their supervisors, or an unannounced look at the registers, when nobody knows whether records are filled in at delivery or whether the checks fit alongside the work>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

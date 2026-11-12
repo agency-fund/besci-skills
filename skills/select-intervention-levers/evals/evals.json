@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "Our vendor interviews in Gikomba and Toi confirmed the barrier: women vendors won't deposit at the mobile-money agent's kiosk at closing time because neighboring stallholders see them counting cash and then ask to borrow money. In 14 of 20 interviews they said they change when and where they count cash to avoid being seen. The behavior is: women with produce stalls deposit the day's surplus cash into their mobile-money savings wallet before leaving the market each trading day. We have a small pilot budget and a relationship with both markets' vendor associations, but no relationship with the mobile-money provider. The agent kiosks are inside the markets. Our idea so far is a short talk on why saving matters. What should we do about this barrier?",
-      "expected_output": "An intervention lever brief in the output template that selects one kind of intervention from the table's row for a social-opportunity barrier and names one technique.",
+      "expected_output": "A choice in the output template that selects one kind of intervention from the table's row for a social-opportunity barrier and names one technique.",
       "files": [],
       "assertions": [
         "Classifies the barrier as social opportunity and gives the evidence for that.",
         "Lists restriction, environmental restructuring, and enablement as eligible kinds, and does not list education or persuasion.",
         "Says the team's talk is education and that education is not linked to this kind of barrier.",
-        "Scores every eligible kind on all six APEASE criteria with a reason in each cell.",
-        "Gives a negative practicability score to any kind that needs the mobile-money provider.",
-        "Names one specific technique (what changes, who does it, where) and ranks the kinds that lost."
+        "Scores every eligible kind on all six APEASE criteria with a reason in each cell, and scores practicability negative for any kind that needs the mobile-money provider.",
+        "Names one specific technique (what changes, who does it, where) and ranks the kinds that lost.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,14 +27,15 @@
         "Asks which barrier evidence has confirmed and what that evidence is.",
         "Asks what the implementer controls, or who the behavior belongs to.",
         "Does not produce a feasibility table.",
-        "Does not recommend an intervention."
+        "Does not recommend an intervention.",
+        "Says why it needs these answers."
       ]
     },
     {
       "id": 3,
       "name": "Near the escalation point",
       "prompt": "Confirmed barrier, from focus groups in all six villages: farmers in our cooperative don't repay their input loans by the harvest deadline because they believe the cooperative never actually enforces it. Behavior: member farmers repay the full input loan within two weeks of their first crop sale. The cooperative board controls repayment rules, next season's seed allocation, and the SMS list. The board is leaning toward fines or withholding seed from late payers. What are our options?",
-      "expected_output": "The skill produces the brief for a reflective-motivation barrier, scores coercion like the other kinds, and tells the user to involve a behavioral scientist and a legal or safeguarding lead before any penalty is piloted.",
+      "expected_output": "The skill produces the choice for a reflective-motivation barrier, scores coercion like the other kinds, and tells the user to involve a behavioral scientist and a legal or safeguarding lead before any penalty is piloted.",
       "files": [],
       "assertions": [
         "Classifies the barrier as reflective motivation.",

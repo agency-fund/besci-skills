@@ -8,12 +8,12 @@
       "expected_output": "A transferability assessment in the output template with one of the five verdicts.",
       "files": [],
       "assertions": [
-        "States how the study was read: full text, abstract only, or the user's summary.",
+        "Opens with a few plain sentences to the user before the assessment, and states how the study was read: full text, abstract only, or the user's summary.",
         "Gives the study's effect with its unit (40 percentage points on participation).",
         "Has a table comparing the study and the Bangladesh setting, with each row marked holds, does not hold, or unknown.",
         "Notes that the study measured participation and the team's outcome is the balance held after six months.",
-        "Gives exactly one of the five verdicts.",
-        "Lists at least two assumptions to test locally, each with a check."
+        "Gives exactly one of the five verdicts, and lists at least two assumptions to test locally, each with a check.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks which study or finding the user means.",
         "Asks about the setting: who, what would be delivered, by whom, or which outcome.",
         "Gives no verdict.",
-        "Does not cite a study the user did not name."
+        "Does not cite a study the user did not name.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We ran a cluster RCT of a one-session growth-mindset program in 180 public secondary schools in three regions of Peru (90 treatment, 90 control, about 12,000 grade-8 students; schools were randomized). Primary outcome: end-of-year national math score, in points. The pre-analysis plan, registered before baseline, names two moderators: baseline math tercile (we expected a larger effect for the bottom tercile) and school poverty index above or below the median (larger effect expected in poorer schools). Overall effect from the pre-specified model: 1.8 points (95% CI 0.3 to 3.3). Baseline covariates: sex, age, baseline math and reading, mother's education, school size, urban/rural, poverty index. Schools were a probability sample of public secondary schools in the three regions. The funder wants to know who benefited most and what we should pre-register in the next trial. We use R.",
-      "expected_output": "A heterogeneous effects report in the output template that keeps the two named subgroups apart from the exploratory splits.",
+      "expected_output": "A report in the output template on who benefited most that keeps the two named subgroups apart from the exploratory splits.",
       "files": [],
       "assertions": [
         "The confirmatory table holds exactly the two subgroups the plan named.",
-        "Reports effects in math score points.",
-        "Shows corrected and uncorrected p-values for the named subgroups.",
+        "Reports effects in math score points, with corrected and uncorrected p-values for the named subgroups.",
         "Says the exploratory model was fit on one part of the sample and checked on another.",
         "Labels every machine-learning result as exploratory or a hypothesis.",
-        "Does not propose running the program only for some schools or students."
+        "Does not propose running the program only for some schools or students.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the analysis plan or which subgroups were named in advance.",
         "Asks for a description of the data, such as the unit of randomization, the sample, or the outcome's units.",
         "Produces no subgroup estimates.",
-        "Does not name any group as having benefited more."
+        "Does not name any group as having benefited more.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -52,7 +53,7 @@
       "assertions": [
         "Says the subgroups are being chosen before the trial.",
         "Names write-pre-analysis-plan.",
-        "Does not produce a heterogeneous effects report."
+        "Does not produce a report on who benefited."
       ]
     }
   ]

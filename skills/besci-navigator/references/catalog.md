@@ -10,70 +10,70 @@ Skills in this snapshot: 57
 
 | Name | Title | Stage | Type | Status | Version | Consumes | Produces | What it does |
 |---|---|---|---|---|---|---|---|---|
-| adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Adapts a short lesson teaching that ability grows with practice to one school setting. |
-| adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.2.0 | survey-items | survey-items | Converts a face-to-face questionnaire into a version that can be asked by voice call. |
-| analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.2.0 | analysis-plan, dataset-description | heterogeneity-report | Estimates how a program's effect differed across the people it reached. |
-| assess-evidence-base | Check what research already exists | define | atomic | draft | 0.2.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
-| assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.2.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
-| assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.2.0 | intervention-description | scalability-assessment | Judges whether an effect found in a pilot is likely to survive delivery at scale. |
-| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.2.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
-| audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
-| audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.2.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
-| besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.2.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
-| besci-navigator | Behavioral science navigator | other | meta | draft | 0.1.2 | program-goal | workflow-draft | Recommends which library skills to run, in what order, for the problem a user describes. |
-| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.2.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
-| choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.2.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
-| choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
-| choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.2.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
-| choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.2.0 | experiment-intent | evaluation-design | Chooses the comparison for one test: which randomized design, at which unit. |
-| decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.2.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
-| define-agency-construct | Define what agency means for a tool's users | define | atomic | draft | 0.2.0 | ai-product-account | agency-definition | Turns what a team means by its users' agency into named constructs (defined, measurable ideas such as self-efficacy) placed on The Agency Fund's 2x2 agency framework. |
-| define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.2.0 | program-goal | target-behavior-brief | Turns a vague program goal into one observable behavior, stated as who does what, when. |
-| design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies a restriction on future choices that a person opts into to keep a plan they have made. |
-| design-feedback-report | Design a performance feedback report | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies what a repeated report tells one person about their own performance on a task. |
-| design-fidelity-monitoring | Monitor whether a program is delivered as designed | implement | atomic | draft | 0.2.0 | intervention-description | fidelity-plan | Plans how a team will check fidelity, the degree to which a running program is delivered as designed. |
-| design-incentive-scheme | Design a reward for one verifiable behavior | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the terms of a reward or penalty that a program attaches to one verifiable behavior. |
-| design-list-experiment | Measure a sensitive behavior without asking directly | measure | atomic | draft | 0.2.0 | measurement-plan | survey-items | Designs a survey question that estimates how common a hidden behavior is without any respondent admitting to it. |
-| design-pilot-feasibility-study | Design a pilot that tests feasibility, not effect | test | atomic | draft | 0.2.0 | intervention-draft | pilot-plan | Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works. |
-| design-reminder-schedule | Plan when and how often to remind | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the reminders a program sends about one action people already intend to take. |
-| diagnose-social-norm | Find out whether a practice is a social norm | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, qualitative-data | social-norm-diagnosis | Decides whether people follow one practice because of what they expect of each other. |
-| draft-belonging-story | Peer stories that make early struggle feel normal | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through. |
-| draft-cognitive-interview-script | Test whether people understand your survey questions | measure | atomic | draft | 0.2.0 | survey-items | interview-guide | Writes the script for cognitive interviews, in which a few respondents answer draft survey questions one at a time while an interviewer asks how they understood each one. |
-| draft-implementation-intention-prompt | Ask people to plan when and where | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take. |
-| draft-intervention-description | Describe an intervention so others can replicate it | implement | atomic | draft | 0.2.0 | intervention-draft | intervention-description | Writes down what an intervention is, item by item, in enough detail for a team elsewhere to deliver it again. |
-| draft-lever-content | Write an intervention's messages and scripts | design | atomic | draft | 0.2.0 | intervention-levers | intervention-draft | Drafts the words for an intervention that has already been chosen. |
-| draft-norms-vignette | Write scenarios that measure what others do and approve | measure | atomic | draft | 0.2.0 | social-norm-diagnosis | survey-items | Writes a short survey story in versions that differ only in what other people are said to do or approve of. |
-| draft-sifa-declaration | Write an AI-use disclosure statement | implement | atomic | draft | 0.2.0 | ai-use-account | sifa-declaration | Turns a team's account of how a piece of work was made into a sIfA, Busara's role-by-role statement of where AI tools took part. |
-| draft-survey-items | Write survey questions people can answer | measure | atomic | draft | 0.2.0 | measurement-plan | survey-items | Writes survey questions with fixed answer options for defined constructs (a construct is the one thing a question is meant to measure). |
-| draft-tdf-interview-guide | Write an interview guide that tests barrier hypotheses | diagnose | atomic | draft | 0.2.0 | target-behavior-brief, comb-barrier-hypotheses | interview-guide | Writes an interview guide of open questions that tests a team's hypotheses about why one behavior is not happening. |
-| draft-theory-of-change | Write the causal chain from activities to outcome | define | atomic | draft | 0.2.0 | program-goal | theory-of-change | Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links. |
-| draft-values-affirmation | Write an exercise to help people feel less judged | design | atomic | draft | 0.2.0 | wise-intervention-target | intervention-draft | Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment. |
-| estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.2.0 | effect-estimate | cost-effectiveness-estimate | Estimates what a program paid for each unit of behavior change it caused. |
-| estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.2.0 | evidence-scan-brief | effect-size-benchmark | Sets the effect size a test should plan on from the published estimates a team supplies. |
-| estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.2.0 | effect-size-benchmark, evaluation-design | power-calculation | Computes the sample a test needs to detect a planned effect, or the smallest effect a fixed sample can detect. |
-| identify-wise-intervention-target | Find the question a wise intervention must answer | diagnose | atomic | draft | 0.2.0 | qualitative-data | wise-intervention-target | Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted. |
-| map-audience-context | Map your audience and their setting | define | atomic | draft | 0.2.0 | program-goal | audience-context-brief | Replaces a broad audience label with a specific group of people at the moment they make the decision the program cares about. |
-| map-reference-network | Find out whose opinion really matters | diagnose | atomic | draft | 0.2.0 | social-norm-diagnosis | reference-network-map | Finds whose behavior or approval people track when they decide whether to follow one practice. |
-| plan-agency-measurement | Plan how to measure agency in a digital tool | measure | atomic | draft | 0.2.0 | agency-definition | measurement-plan | Plans how to measure a defined agency construct for the users of a digital or AI tool. |
-| plan-evaluation-design | Plan how you will measure success | test | atomic | draft | 0.2.0 | target-behavior-brief | measurement-plan | Chooses the one outcome that will show whether a defined behavior changed, with the data source behind it. |
-| plan-prototype-test | Test a draft with a few people before the pilot | design | atomic | draft | 0.1.0 | intervention-draft | prototype-test-plan | Plans a test of a draft intervention with a few people from the audience, before any pilot. |
-| plan-scale-up-strategy | Plan how a tested program reaches routine delivery | implement | atomic | draft | 0.2.0 | scalability-assessment | scale-up-strategy | Plans how a tested program moves into a system that will deliver it routinely. |
-| review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.2.0 | prior-intervention-record | intervention-post-mortem | Judges whether a past program failed because of its idea or because of its delivery. |
-| select-default-option | Choose what people get by default | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-draft | Specifies the option people receive when they take no action at one decision point. |
-| select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.2.0 | barrier-diagnosis | intervention-levers | Chooses the kind of intervention that fits one confirmed barrier. |
-| select-messenger | Choose who delivers the message | design | atomic | draft | 0.2.0 | barrier-diagnosis | messenger-choice | Chooses who delivers one message to one audience. |
-| specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.2.0 | intervention-description | adaptation-record | Records each planned or unplanned change to a tested intervention against the parts that make it work. |
-| synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.2.0 | qualitative-data, comb-barrier-hypotheses | barrier-diagnosis | Gives each barrier hypothesis a verdict from a set of interviews. |
-| translate-survey-instrument | Translate a survey into another language | measure | atomic | draft | 0.2.0 | survey-items | survey-items | Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents. |
-| write-pre-analysis-plan | Write the analysis plan before the data arrive | test | atomic | draft | 0.2.0 | evaluation-design, measurement-plan | analysis-plan | Writes down how a trial's results will be analyzed before anyone sees the outcome data. |
-| write-social-norm-message | Tell people what most of their peers already do | design | atomic | draft | 0.2.0 | social-norm-diagnosis | intervention-draft | Writes one message that tells people what most of their peers do or approve of. |
+| adapt-growth-mindset-message | Adapt a growth-mindset lesson to a local school | design | atomic | draft | 0.3.0 | wise-intervention-target | intervention-draft | Adapts a short lesson teaching that ability grows with practice to one school setting. |
+| adapt-survey-for-phone-mode | Move a face-to-face survey to the phone | measure | atomic | draft | 0.3.0 | survey-items | survey-items | Converts a face-to-face questionnaire into a version that can be asked by voice call. |
+| analyze-heterogeneous-effects | Find out who benefited most from a program | analyze | atomic | draft | 0.3.0 | analysis-plan, dataset-description | heterogeneity-report | Estimates how a program's effect differed across the people it reached. |
+| assess-evidence-base | Check what research already exists | define | atomic | draft | 0.3.0 | program-goal | evidence-scan-brief | Summarizes the existing research on the behavior, audience, or setting named in a program goal. |
+| assess-evidence-transferability | Check whether a study's finding applies in your setting | define | atomic | draft | 0.3.0 | evidence-scan-brief | transferability-assessment | Judges whether one published finding is likely to hold in a named setting. |
+| assess-scalability | Check whether a pilot effect will survive scale-up | implement | atomic | draft | 0.3.0 | intervention-description | scalability-assessment | Judges whether an effect found in a pilot is likely to survive delivery at scale. |
+| audit-intervention-ethics | Check an intervention is ethical before launch | design | atomic | draft | 0.3.0 | intervention-draft | ethics-review | Reviews one drafted intervention against published ethics guidance before launch. |
+| audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
+| audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.3.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
+| besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.3.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
+| besci-navigator | Behavioral science navigator | other | meta | draft | 0.2.0 | program-goal | workflow-draft | Helps a person get from a problem described in plain words to the library skills, if any, that would help. |
+| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.0 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
+| choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.3.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
+| choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
+| choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.3.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
+| choose-trial-design | Pick how to randomize the test | test | atomic | draft | 0.3.0 | experiment-intent | evaluation-design | Chooses the comparison for one test: which randomized design, at which unit. |
+| decompose-comb-barriers | Find out why people are not doing a behavior | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | comb-barrier-hypotheses | Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out. |
+| define-agency-construct | Define what agency means for a tool's users | define | atomic | draft | 0.3.0 | ai-product-account | agency-definition | Turns what a team means by its users' agency into named constructs (defined, measurable ideas such as self-efficacy) placed on The Agency Fund's 2x2 agency framework. |
+| define-key-behavior | Turn a vague goal into one clear behavior | define | atomic | draft | 0.3.0 | program-goal | target-behavior-brief | Turns a vague program goal into one observable behavior, stated as who does what, when. |
+| design-commitment-device | Help people tie their own hands against temptation | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Specifies a restriction on future choices that a person opts into to keep a plan they have made. |
+| design-feedback-report | Design a performance feedback report | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Specifies what a repeated report tells one person about their own performance on a task. |
+| design-fidelity-monitoring | Monitor whether a program is delivered as designed | implement | atomic | draft | 0.3.0 | intervention-description | fidelity-plan | Plans how a team will check fidelity, the degree to which a running program is delivered as designed. |
+| design-incentive-scheme | Design a reward for one verifiable behavior | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Specifies the terms of a reward or penalty that a program attaches to one verifiable behavior. |
+| design-list-experiment | Measure a sensitive behavior without asking directly | measure | atomic | draft | 0.3.0 | measurement-plan | survey-items | Designs a survey question that estimates how common a hidden behavior is without any respondent admitting to it. |
+| design-pilot-feasibility-study | Design a pilot that tests feasibility, not effect | test | atomic | draft | 0.3.0 | intervention-draft | pilot-plan | Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works. |
+| design-reminder-schedule | Plan when and how often to remind | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Specifies the reminders a program sends about one action people already intend to take. |
+| diagnose-social-norm | Find out whether a practice is a social norm | diagnose | atomic | draft | 0.3.0 | target-behavior-brief, qualitative-data | social-norm-diagnosis | Decides whether people follow one practice because of what they expect of each other. |
+| draft-belonging-story | Peer stories that make early struggle feel normal | design | atomic | draft | 0.3.0 | wise-intervention-target | intervention-draft | Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through. |
+| draft-cognitive-interview-script | Test whether people understand your survey questions | measure | atomic | draft | 0.3.0 | survey-items | interview-guide | Writes the script for cognitive interviews, in which a few respondents answer draft survey questions one at a time while an interviewer asks how they understood each one. |
+| draft-implementation-intention-prompt | Ask people to plan when and where | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take. |
+| draft-intervention-description | Describe an intervention so others can replicate it | implement | atomic | draft | 0.3.0 | intervention-draft | intervention-description | Writes down what an intervention is, item by item, in enough detail for a team elsewhere to deliver it again. |
+| draft-lever-content | Write an intervention's messages and scripts | design | atomic | draft | 0.3.0 | intervention-levers | intervention-draft | Drafts the words for an intervention that has already been chosen. |
+| draft-norms-vignette | Write scenarios that measure what others do and approve | measure | atomic | draft | 0.3.0 | social-norm-diagnosis | survey-items | Writes a short survey story in versions that differ only in what other people are said to do or approve of. |
+| draft-sifa-declaration | Write an AI-use disclosure statement | implement | atomic | draft | 0.3.0 | ai-use-account | sifa-declaration | Turns a team's account of how a piece of work was made into a sIfA, Busara's role-by-role statement of where AI tools took part. |
+| draft-survey-items | Write survey questions people can answer | measure | atomic | draft | 0.3.0 | measurement-plan | survey-items | Writes survey questions with fixed answer options for defined constructs (a construct is the one thing a question is meant to measure). |
+| draft-tdf-interview-guide | Write an interview guide that tests barrier hypotheses | diagnose | atomic | draft | 0.3.0 | target-behavior-brief, comb-barrier-hypotheses | interview-guide | Writes an interview guide of open questions that tests a team's hypotheses about why one behavior is not happening. |
+| draft-theory-of-change | Write the causal chain from activities to outcome | define | atomic | draft | 0.3.0 | program-goal | theory-of-change | Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links. |
+| draft-values-affirmation | Write an exercise to help people feel less judged | design | atomic | draft | 0.3.0 | wise-intervention-target | intervention-draft | Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment. |
+| estimate-cost-effectiveness | Estimate the cost per unit of behavior change | analyze | atomic | draft | 0.3.0 | effect-estimate | cost-effectiveness-estimate | Estimates what a program paid for each unit of behavior change it caused. |
+| estimate-expected-effect | Set a realistic effect size to plan for | test | atomic | draft | 0.3.0 | evidence-scan-brief | effect-size-benchmark | Sets the effect size a test should plan on from the published estimates a team supplies. |
+| estimate-sample-size | Work out how big the sample must be | test | atomic | draft | 0.3.0 | effect-size-benchmark, evaluation-design | power-calculation | Computes the sample a test needs to detect a planned effect, or the smallest effect a fixed sample can detect. |
+| identify-wise-intervention-target | Find the question a wise intervention must answer | diagnose | atomic | draft | 0.3.0 | qualitative-data | wise-intervention-target | Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted. |
+| map-audience-context | Map your audience and their setting | define | atomic | draft | 0.3.0 | program-goal | audience-context-brief | Replaces a broad audience label with a specific group of people at the moment they make the decision the program cares about. |
+| map-reference-network | Find out whose opinion really matters | diagnose | atomic | draft | 0.3.0 | social-norm-diagnosis | reference-network-map | Finds whose behavior or approval people track when they decide whether to follow one practice. |
+| plan-agency-measurement | Plan how to measure agency in a digital tool | measure | atomic | draft | 0.3.0 | agency-definition | measurement-plan | Plans how to measure a defined agency construct for the users of a digital or AI tool. |
+| plan-evaluation-design | Plan how you will measure success | test | atomic | draft | 0.3.0 | target-behavior-brief | measurement-plan | Chooses the one outcome that will show whether a defined behavior changed, with the data source behind it. |
+| plan-prototype-test | Test a draft with a few people before the pilot | design | atomic | draft | 0.2.0 | intervention-draft | prototype-test-plan | Plans a test of a draft intervention with a few people from the audience, before any pilot. |
+| plan-scale-up-strategy | Plan how a tested program reaches routine delivery | implement | atomic | draft | 0.3.0 | scalability-assessment | scale-up-strategy | Plans how a tested program moves into a system that will deliver it routinely. |
+| review-prior-intervention | Review a past program: bad idea or bad delivery? | analyze | atomic | draft | 0.3.0 | prior-intervention-record | intervention-post-mortem | Judges whether a past program failed because of its idea or because of its delivery. |
+| select-default-option | Choose what people get by default | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Specifies the option people receive when they take no action at one decision point. |
+| select-intervention-levers | Choose interventions for a confirmed barrier | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-levers | Chooses the kind of intervention that fits one confirmed barrier. |
+| select-messenger | Choose who delivers the message | design | atomic | draft | 0.3.0 | barrier-diagnosis | messenger-choice | Chooses who delivers one message to one audience. |
+| specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.3.0 | intervention-description | adaptation-record | Records each planned or unplanned change to a tested intervention against the parts that make it work. |
+| synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.3.0 | qualitative-data, comb-barrier-hypotheses | barrier-diagnosis | Gives each barrier hypothesis a verdict from a set of interviews. |
+| translate-survey-instrument | Translate a survey into another language | measure | atomic | draft | 0.3.0 | survey-items | survey-items | Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents. |
+| write-pre-analysis-plan | Write the analysis plan before the data arrive | test | atomic | draft | 0.3.0 | evaluation-design, measurement-plan | analysis-plan | Writes down how a trial's results will be analyzed before anyone sees the outcome data. |
+| write-social-norm-message | Tell people what most of their peers already do | design | atomic | draft | 0.3.0 | social-norm-diagnosis | intervention-draft | Writes one message that tells people what most of their peers do or approve of. |
 
 ## Skill details
 
 ### adapt-growth-mindset-message
 
 **Title:** Adapt a growth-mindset lesson to a local school  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** growth-mindset, wise-interventions  
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
@@ -105,7 +105,7 @@ Bring them: the students' words, the check of the school, the lesson, and the re
 ### adapt-survey-for-phone-mode
 
 **Title:** Move a face-to-face survey to the phone  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** measurement, survey-design, quantitative  
 **Consumes:** survey-items  
 **Produces:** survey-items  
@@ -137,7 +137,7 @@ Bring them: the source of the numbers, who owns the phones, the sensitive items,
 ### analyze-heterogeneous-effects
 
 **Title:** Find out who benefited most from a program  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** heterogeneity, quantitative, experimental-design  
 **Consumes:** analysis-plan, dataset-description  
 **Produces:** heterogeneity-report  
@@ -170,7 +170,7 @@ Bring them: the plan, the data description, and this report.
 ### assess-evidence-base
 
 **Title:** Check what research already exists  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** evidence-synthesis, rapid-evidence-assessment  
 **Consumes:** program-goal  
 **Produces:** evidence-scan-brief  
@@ -201,7 +201,7 @@ Bring them: the brief, the search terms, and the list of sources opened.
 ### assess-evidence-transferability
 
 **Title:** Check whether a study's finding applies in your setting  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** evidence-synthesis, generalizability  
 **Consumes:** evidence-scan-brief  
 **Produces:** transferability-assessment  
@@ -232,7 +232,7 @@ Bring them: the assessment, the study, and the list of unknowns.
 ### assess-scalability
 
 **Title:** Check whether a pilot effect will survive scale-up  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** scaling, implementation-science, implementation  
 **Consumes:** intervention-description  
 **Produces:** scalability-assessment  
@@ -266,7 +266,7 @@ Bring them: the two lines, the marked table, and the pilot's evaluation design.
 ### audit-intervention-ethics
 
 **Title:** Check an intervention is ethical before launch  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** ethics, choice-architecture  
 **Consumes:** intervention-draft  
 **Produces:** ethics-review  
@@ -297,7 +297,7 @@ Bring them: the draft and the full review.
 ### audit-process-friction
 
 **Title:** Count the hassle between intention and completion  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** sludge, choice-architecture  
 **Consumes:** target-behavior-brief  
 **Produces:** barrier-diagnosis  
@@ -328,7 +328,7 @@ Bring them: the step log, the ordered changes, and any counts.
 ### audit-researcher-bias
 
 **Title:** Check your team's assumptions about the audience  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** confirmation-bias, researcher-calibration, assumptions  
 **Consumes:** researcher-assumptions  
 **Produces:** bias-audit-report  
@@ -351,7 +351,7 @@ Bring them: the step log, the ordered changes, and any counts.
 **When to bring in a specialist:**
 
 Tell the user to consult a local researcher, or a behavioral scientist outside the team, when:
-- Nobody on the team is from or close to the audience, so nobody inside can answer the "check locally" questions
+- Nobody on the team is from or close to the audience, so nobody inside can answer the "what would settle it" questions
 - The beliefs concern stigmatized, clinical, or legal matters (mental health, violence, sexuality, substance use) that the team cannot ethically investigate alone
 - The author is the only reader on a project with a large budget or a rollout decision
 
@@ -360,7 +360,7 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-eval
 
 **Title:** Behavioral science skill evaluator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** meta, evaluation, regression  
 **Consumes:** skill-draft  
 **Produces:** eval-report  
@@ -397,14 +397,14 @@ Bring them: the report, the two most different outputs for the same case, and th
 ### besci-navigator
 
 **Title:** Behavioral science navigator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.1.2 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** meta, navigation, workflow  
 **Consumes:** program-goal  
 **Produces:** workflow-draft  
 
-**What it does:** Recommends which library skills to run, in what order, for the problem a user describes.
+**What it does:** Helps a person get from a problem described in plain words to the library skills, if any, that would help.
 
-**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "what should I do first", "help me plan this", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Recommends which skills to run, in what order, or drafts a workflow. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
+**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "what should I do first", "help me plan this", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Talks the problem through first, then suggests skills, in what order, or drafts a workflow when the user wants to act. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
 
 **Use it when:**
 - "Mothers stop coming to our nutrition sessions after the third visit. Where do I start?"
@@ -414,28 +414,28 @@ Bring them: the report, the two most different outputs for the same case, and th
 - "What does the library have for designing an evaluation?"
 - "Walk me through planning a behavioral intervention for farmer adoption of X."
 - The user describes a problem with people not doing something and names no framework
+- The user asks how to think about a behavior-change problem and may want to act on it next
 
 **Do not use it when:**
 - The user names a specific method or skill ("run COM-B on this", "draft a cognitive interview script"); that skill should fire directly
-- The user wants to build a new skill; use besci-skill-creator
-- The user wants to test or score a skill; use besci-eval
-- The user wants behavioral-science advice with no intention of using a skill; answer as a thought partner and mention the library only if a skill genuinely fits
+- The user wants to build a new skill; use `besci-skill-creator`
+- The user wants to test or score a skill; use `besci-eval`
 
 **When to bring in a specialist:**
 
-Recommend a behavioral scientist, and say at which step, when:
+Suggest a behavioral scientist, and say at which step, when:
 - The target behavior involves clinical, safety, legal, or child-protection consequences.
-- The user has no one to review the design before it reaches participants and the intervention will reach more than a pilot's worth of people.
-- Two or more recommended skills have escalation points that the situation triggers.
-- The user is adapting a method far outside the contexts its evidence comes from and cannot validate locally.
-- The user asks for a full program design: the workflow can structure the work, but the judgement calls between steps are where expertise matters most.
+- The person has no one to review the design before it reaches participants, and the intervention will reach more than a pilot's worth of people.
+- Two or more suggested skills have escalation points that the situation triggers.
+- The person is adapting a method far outside the contexts its evidence comes from and cannot validate locally.
+- The person asks for a full program design: the workflow can structure the work, but the judgment calls between steps are where expertise matters most.
 
-Bring them: the workflow draft, the catalog entries for the recommended skills, and the answers to the guide-mode questions. For organizations looking for ongoing support, point to Find My BeSci and to hiring guidance from the partnership.
+Bring them: the workflow draft, the catalog entries for the suggested skills, and the answers to the guide-mode questions. For organizations looking for ongoing support, point to Find My BeSci and to hiring guidance from the partnership.
 
 ### besci-skill-creator
 
 **Title:** Behavioral science skill creator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** meta, authoring  
 **Produces:** skill-draft  
 
@@ -470,7 +470,7 @@ Bring them: the one-sentence description, the evidence list, and the "Where it g
 ### choose-ai-eval-level
 
 **Title:** Choose which AI evaluations to run next  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** ai-eval, evaluation-framework  
 **Consumes:** ai-product-account  
 **Produces:** ai-eval-level-recommendation  
@@ -501,7 +501,7 @@ Bring them: the product description, the table of stages, and the list of what i
 ### choose-delivery-moment
 
 **Title:** Pick the moment to deliver an ask  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** choice-architecture, behavior-change-techniques, timing  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -532,7 +532,7 @@ Bring them: the money calendar, the candidate table, and who is left out.
 ### choose-message-frame
 
 **Title:** Choose gain or loss wording for a message  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** framing, message-design  
 **Consumes:** intervention-draft  
 **Produces:** intervention-draft  
@@ -562,7 +562,7 @@ Bring them: both versions, the reason a loss version is wanted, and any pre-test
 ### choose-trial-design
 
 **Title:** Pick how to randomize the test  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** experimental-design, quantitative  
 **Consumes:** experiment-intent  
 **Produces:** evaluation-design  
@@ -595,7 +595,7 @@ Bring them: the constraints and designs tables, unit counts, and the rollout cal
 ### decompose-comb-barriers
 
 **Title:** Find out why people are not doing a behavior  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** com-b, behavior-change-wheel, diagnosis  
 **Consumes:** target-behavior-brief  
 **Produces:** comb-barrier-hypotheses  
@@ -618,7 +618,7 @@ Bring them: the constraints and designs tables, unit counts, and the rollout cal
 **When to bring in a specialist:**
 
 Tell the user to consult a behavioral scientist or an experienced qualitative researcher when:
-- The behavior carries clinical, safety, or legal risk (medication, violence, child protection, sexual health): some questions cannot be asked directly, and the set needs ethical review before fieldwork
+- The behavior carries clinical, safety, or legal risk (medication, violence, child protection, sexual health): some questions cannot be asked directly and need ethical review before fieldwork
 - The hypotheses cluster under social opportunity in a setting the team does not know; a local researcher should shape the questions and say who asks them
 - Field answers support two hypotheses equally; a study designed to separate them comes next
 
@@ -627,7 +627,7 @@ Bring them: the hypotheses, the ranking table, and any field answers so far.
 ### define-agency-construct
 
 **Title:** Define what agency means for a tool's users  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** agency, social-cognitive-theory, self-determination-theory, measurement, ai-eval  
 **Consumes:** ai-product-account  
 **Produces:** agency-definition  
@@ -656,7 +656,7 @@ Bring them: the definition document, the team's own words, and a description of 
 ### define-key-behavior
 
 **Title:** Turn a vague goal into one clear behavior  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** behavior-change-wheel, apease, behavior-definition  
 **Consumes:** program-goal  
 **Produces:** target-behavior-brief  
@@ -687,7 +687,7 @@ Bring them: the candidate table with its bases, the ranked runners-up, and the l
 ### design-commitment-device
 
 **Title:** Help people tie their own hands against temptation  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** commitment-devices, present-bias, savings  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -718,7 +718,7 @@ Bring them: the specification, the cap with the income pattern behind it, and th
 ### design-feedback-report
 
 **Title:** Design a performance feedback report  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** feedback, social-comparison, audit-and-feedback  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -749,7 +749,7 @@ Bring them: the specification, the notes on data quality, and the list of who se
 ### design-fidelity-monitoring
 
 **Title:** Monitor whether a program is delivered as designed  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** implementation-science, process-evaluation, implementation  
 **Consumes:** intervention-description  
 **Produces:** fidelity-plan  
@@ -781,7 +781,7 @@ Bring them: the essential-parts and indicator tables, and the data-use answer.
 ### design-incentive-scheme
 
 **Title:** Design a reward for one verifiable behavior  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** incentives, conditional-cash-transfers  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -811,7 +811,7 @@ Bring them: the specification, the sizing arithmetic, and the plan for the end.
 ### design-list-experiment
 
 **Title:** Measure a sensitive behavior without asking directly  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** list-experiment, survey-design, measurement, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
@@ -842,7 +842,7 @@ Bring them: the statements, the plausible under-reporting, the sample, the mode,
 ### design-pilot-feasibility-study
 
 **Title:** Design a pilot that tests feasibility, not effect  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** experimental-design, process-evaluation, implementation-science  
 **Consumes:** intervention-draft  
 **Produces:** pilot-plan  
@@ -872,7 +872,7 @@ Bring them: the progression criteria, the sizing arithmetic, the main study's de
 ### design-reminder-schedule
 
 **Title:** Plan when and how often to remind  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** reminders, behavior-change-techniques, sms  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -899,12 +899,12 @@ Tell the user to consult a specialist before the first send when:
 - The message could reveal a health condition or a debt on a phone others use: a privacy or safeguarding lead reviews the wording and the channel
 - People have not agreed to be contacted: a data-protection lead confirms the consent required
 
-Bring them: the sends table, the privacy line, and the phone-access facts.
+Bring them: the table of reminders, the privacy line, and the phone-access facts.
 
 ### diagnose-social-norm
 
 **Title:** Find out whether a practice is a social norm  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** social-norms, qualitative  
 **Consumes:** target-behavior-brief, qualitative-data  
 **Produces:** social-norm-diagnosis  
@@ -936,7 +936,7 @@ Bring them: the practice, the questions in local wording, the sampling plan, and
 ### draft-belonging-story
 
 **Title:** Peer stories that make early struggle feel normal  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** belonging, wise-interventions  
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
@@ -968,7 +968,7 @@ Bring them: the newcomers' words, the check of the setting, and the stories.
 ### draft-cognitive-interview-script
 
 **Title:** Test whether people understand your survey questions  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** measurement, qualitative, survey-design  
 **Consumes:** survey-items  
 **Produces:** interview-guide  
@@ -999,7 +999,7 @@ Bring them: the questions with their intended meanings, the tabulated problem co
 ### draft-implementation-intention-prompt
 
 **Title:** Ask people to plan when and where  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** implementation-intentions, behavior-change-techniques, planning-prompts  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -1029,7 +1029,7 @@ Bring them: the prompt, the evidence of intention, the real options, and who see
 ### draft-intervention-description
 
 **Title:** Describe an intervention so others can replicate it  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** implementation-science, behavior-change-techniques, research-transparency, implementation  
 **Consumes:** intervention-draft  
 **Produces:** intervention-description  
@@ -1061,7 +1061,7 @@ Bring them: the draft with its rebuild check, the monitoring data, and the mater
 ### draft-lever-content
 
 **Title:** Write an intervention's messages and scripts  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** behavior-change-techniques, east, message-design  
 **Consumes:** intervention-levers  
 **Produces:** intervention-draft  
@@ -1091,7 +1091,7 @@ Bring them: what the technique must contain, the draft with its trace, and the t
 ### draft-norms-vignette
 
 **Title:** Write scenarios that measure what others do and approve  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** social-norms, survey-design, measurement, experimental-design  
 **Consumes:** social-norm-diagnosis  
 **Produces:** survey-items  
@@ -1121,7 +1121,7 @@ Bring them: the base story, the cues, the questions, and the sampling plan.
 ### draft-sifa-declaration
 
 **Title:** Write an AI-use disclosure statement  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** research-transparency, credit, ai-disclosure  
 **Consumes:** ai-use-account  
 **Produces:** sifa-declaration  
@@ -1152,7 +1152,7 @@ Bring them: the statement, the team's raw account, and the policy text.
 ### draft-survey-items
 
 **Title:** Write survey questions people can answer  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** measurement, survey-design, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
@@ -1186,7 +1186,7 @@ Bring them: the construct definitions, the questions with their intended reading
 ### draft-tdf-interview-guide
 
 **Title:** Write an interview guide that tests barrier hypotheses  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** tdf, com-b, qualitative, diagnosis  
 **Consumes:** target-behavior-brief, comb-barrier-hypotheses  
 **Produces:** interview-guide  
@@ -1217,7 +1217,7 @@ Bring them: the hypotheses, the draft guide, and the plan for who interviews who
 ### draft-theory-of-change
 
 **Title:** Write the causal chain from activities to outcome  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** theory-of-change, logic-model, evaluation-framework  
 **Consumes:** program-goal  
 **Produces:** theory-of-change  
@@ -1248,7 +1248,7 @@ Bring them: the chain table, the evidence supplied for each link, and the weakes
 ### draft-values-affirmation
 
 **Title:** Write an exercise to help people feel less judged  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** self-affirmation, wise-interventions  
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
@@ -1279,7 +1279,7 @@ Bring them: the value list, the prompts, and the delivery notes.
 ### estimate-cost-effectiveness
 
 **Title:** Estimate the cost per unit of behavior change  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** cost-effectiveness, quantitative, scaling  
 **Consumes:** effect-estimate  
 **Produces:** cost-effectiveness-estimate  
@@ -1311,7 +1311,7 @@ Bring them: this estimate, with its ingredients table and sensitivity rows.
 ### estimate-expected-effect
 
 **Title:** Set a realistic effect size to plan for  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** evidence-synthesis, experimental-design, quantitative  
 **Consumes:** evidence-scan-brief  
 **Produces:** effect-size-benchmark  
@@ -1341,7 +1341,7 @@ Bring them: the estimates table, the corrections, the range, and the decision.
 ### estimate-sample-size
 
 **Title:** Work out how big the sample must be  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** experimental-design, quantitative  
 **Consumes:** effect-size-benchmark, evaluation-design  
 **Produces:** power-calculation  
@@ -1372,7 +1372,7 @@ Bring them: the inputs table, the script output, the sensitivity table, and the 
 ### identify-wise-intervention-target
 
 **Title:** Find the question a wise intervention must answer  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** wise-interventions, belonging, growth-mindset, self-affirmation  
 **Consumes:** qualitative-data  
 **Produces:** wise-intervention-target  
@@ -1402,7 +1402,7 @@ Bring them: the table of interpretations with quotes, the check of what the sett
 ### map-audience-context
 
 **Title:** Map your audience and their setting  
-**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Define · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** audience, context, cultural-psychology  
 **Consumes:** program-goal  
 **Produces:** audience-context-brief  
@@ -1433,7 +1433,7 @@ Bring them: the brief with its source labels, the assumption check, and the open
 ### map-reference-network
 
 **Title:** Find out whose opinion really matters  
-**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Diagnose · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** social-norms, qualitative  
 **Consumes:** social-norm-diagnosis  
 **Produces:** reference-network-map  
@@ -1464,7 +1464,7 @@ Bring them: the practice, the design, the questions, and the role table.
 ### plan-agency-measurement
 
 **Title:** Plan how to measure agency in a digital tool  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** agency, measurement, psychometrics, survey-design, ai-eval  
 **Consumes:** agency-definition  
 **Produces:** measurement-plan  
@@ -1496,7 +1496,7 @@ Bring them the definition, this plan, and a description of the users and their c
 ### plan-evaluation-design
 
 **Title:** Plan how you will measure success  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** measurement, experimental-design  
 **Consumes:** target-behavior-brief  
 **Produces:** measurement-plan  
@@ -1528,7 +1528,7 @@ Bring them: this plan with its open questions, any baseline figures, and who hol
 ### plan-prototype-test
 
 **Title:** Test a draft with a few people before the pilot  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
 **Tags:** qualitative, prototyping, user-testing  
 **Consumes:** intervention-draft  
 **Produces:** prototype-test-plan  
@@ -1559,7 +1559,7 @@ Bring them: the plan, the session guide, and the decision rule.
 ### plan-scale-up-strategy
 
 **Title:** Plan how a tested program reaches routine delivery  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** scaling, implementation-science, implementation  
 **Consumes:** scalability-assessment  
 **Produces:** scale-up-strategy  
@@ -1591,7 +1591,7 @@ Bring them: the scalability judgment, the parts table, the system-changes table,
 ### review-prior-intervention
 
 **Title:** Review a past program: bad idea or bad delivery?  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** process-evaluation, implementation, post-mortem  
 **Consumes:** prior-intervention-record  
 **Produces:** intervention-post-mortem  
@@ -1623,7 +1623,7 @@ Bring them: the record, the delivery logs and outcome data, and this brief.
 ### select-default-option
 
 **Title:** Choose what people get by default  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** choice-architecture, defaults  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
@@ -1653,7 +1653,7 @@ Bring them: the specification, the list of who could be worse off, and the opt-o
 ### select-intervention-levers
 
 **Title:** Choose interventions for a confirmed barrier  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** IL  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** IL  
 **Tags:** behavior-change-wheel, behavior-change-techniques, apease  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-levers  
@@ -1684,7 +1684,7 @@ Bring them: the barrier with its evidence, the feasibility table, and the list t
 ### select-messenger
 
 **Title:** Choose who delivers the message  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** message-design, network  
 **Consumes:** barrier-diagnosis  
 **Produces:** messenger-choice  
@@ -1714,7 +1714,7 @@ Bring them: the candidate table, the questions and answers, and the brief.
 ### specify-intervention-adaptations
 
 **Title:** Track changes to a tested intervention  
-**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Implement · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** implementation-science, implementation, process-evaluation  
 **Consumes:** intervention-description  
 **Produces:** adaptation-record  
@@ -1747,7 +1747,7 @@ Bring them: the record and the description it started from.
 ### synthesize-interview-findings
 
 **Title:** Turn interview transcripts into a barrier diagnosis  
-**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Analyze · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** qualitative, tdf, com-b, diagnosis  
 **Consumes:** qualitative-data, comb-barrier-hypotheses  
 **Produces:** barrier-diagnosis  
@@ -1778,7 +1778,7 @@ Bring them: the hypotheses, the guide, and the matrix with its quote references.
 ### translate-survey-instrument
 
 **Title:** Translate a survey into another language  
-**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Measure · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** measurement, survey-design  
 **Consumes:** survey-items  
 **Produces:** survey-items  
@@ -1809,7 +1809,7 @@ Bring them: the decision log, the items the translators disagreed on, and notes 
 ### write-pre-analysis-plan
 
 **Title:** Write the analysis plan before the data arrive  
-**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Test · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** research-transparency, experimental-design, multiple-comparisons  
 **Consumes:** evaluation-design, measurement-plan  
 **Produces:** analysis-plan  
@@ -1840,7 +1840,7 @@ Bring them: the design, the draft plan, and a description of the data.
 ### write-social-norm-message
 
 **Title:** Tell people what most of their peers already do  
-**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.2.0 · **Org:** TAF  
+**Stage:** Design · **Type:** atomic · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
 **Tags:** social-norms, message-design  
 **Consumes:** social-norm-diagnosis  
 **Produces:** intervention-draft  

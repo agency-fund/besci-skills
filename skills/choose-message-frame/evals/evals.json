@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We send SMS to about 9,000 smallholder maize farmers in Bungoma and Kakamega counties in Western Kenya, reminding them to apply top-dressing fertilizer in the three weeks after emergence. Interviews confirmed the barrier: they know the window but miss it. Our working draft, sent in Kiswahili from the county extension office, says: 'Apply your top-dressing this week to protect your harvest. Visit your agrovet by Friday.' Our comms lead wants to change it to 'If you miss top-dressing this week you will lose up to a third of your harvest', because losses hit harder. No money is involved. Messages go per phone number, so we can randomize. Which frame should we use?",
-      "expected_output": "A message frame decision in the output template that keeps the gain version as the default and sets aside \"losses hit harder\" as a reason.",
+      "expected_output": "A decision on gain or loss wording in the output template that keeps the gain version as the default and sets aside \"losses hit harder\" as a reason.",
       "files": [],
       "assertions": [
-        "Records the behavior as one that lowers a risk, with the reason.",
-        "Says \"losses hit harder\" is not a reason to use the loss version.",
+        "Records the behavior as one that lowers a risk, with the reason, and says \"losses hit harder\" is not a reason to use the loss version.",
         "Gives both versions with the same facts, action, sender, and length.",
         "The loss version does not state a harm the gain version does not imply, and \"up to a third of your harvest\" is removed or flagged as an added claim.",
         "Sets a pre-test with five to ten farmers and a rule for dropping the loss version.",
-        "Promises no difference between the two versions."
+        "Promises no difference between the two versions.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -27,7 +27,8 @@
         "Asks whether the behavior lowers a risk or reveals one.",
         "Asks whether a loss version would take back or withhold money.",
         "Does not recommend a frame.",
-        "Does not write any message text."
+        "Does not write any message text.",
+        "Says why it needs these answers."
       ]
     },
     {

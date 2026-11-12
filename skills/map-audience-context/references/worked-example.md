@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Audience and context brief
+So far, the vendors you would reach are women with fixed produce stalls in Gikomba, and the moment that matters is the end-of-day cash count at the stall, in view of neighbors who may ask to borrow. The assumption most likely to be wrong is that the vendor decides alone what to keep, since a husband often waits at home for the takings. All of this rests on one visit to one market, and none of it is confirmed for Toi.
+
+# Audience and context brief: women with produce stalls in Gikomba market
 
 **Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi so they have a buffer against income shocks.
 
@@ -38,4 +40,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 - Everything rests on one visit to Gikomba. Ask ten more vendors on another day whether the end-of-day count is where they decide what to keep.
 - How many vendors hand the takings to a husband or another relative is not known. "Often" is the team's impression from one visit.
 - Whether vendors already hold a balance in mobile money overnight is not known. Ask at the kiosk and ask vendors.
+
+## Where you could go from here
+That's the brief.
+- Go back to Gikomba on another day and make a first visit to Toi: everything above rests on one visit, and Toi may not share the same moment, channels, or pressures.
+- Bring in a local researcher who knows Nairobi's markets for the question of who decides: it is unknown and it touches household money, and how the question is asked, and by whom, will shape the answer.
+- Choose the behavior with `define-key-behavior` once the decision moment holds up on a second visit: the end-of-day count is where a savings behavior would most naturally sit.
+I'd lean toward the second visit first, because a behavior chosen now would rest on a single visit to a single market.
+Questions you could ask next: "How do we ask vendors who decides about the takings without putting them in a difficult spot?" · "What would make us treat Toi vendors as a separate group?"
 ```

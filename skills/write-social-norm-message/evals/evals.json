@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We run monthly immunization camps in 40 villages of Udaipur district, Rajasthan. Behavior: mothers of children aged 9 to 12 months in Kherwara block bring the child to the camp for the measles dose on camp day. Camp registers show 68% of eligible children in the block got the dose last quarter. We interviewed 200 mothers: they believe only about 4 in 10 neighbors bring their child, and most say a mother who vaccinates is doing the right thing. Channel: the ASHA (village health worker) reads a card aloud at the household visit the week before camp day, in Hindi; the card is signed by the block medical officer. We can see from the register which households vaccinated last round. Write the norm message.",
-      "expected_output": "A social norm message in the output template that states the 68% figure for mothers in Kherwara block without rounding it up.",
+      "expected_output": "A norm message in the output template that states the 68% figure for mothers in Kherwara block without rounding it up.",
       "files": [],
       "assertions": [
         "States the belief the message corrects: about 4 in 10 believed against 68% in the registers.",
         "The message gives the share as 6 out of 10, more than 6 out of 10, or 68 of every 100, and not 7 out of 10.",
         "The group named in the message is the group the register figure describes.",
-        "The message contains a line of approval for mothers who already vaccinated.",
-        "No line says how many mothers did not vaccinate.",
-        "Sets a comparison that follows households that vaccinated last round separately, and promises no effect size."
+        "The message contains a line of approval for mothers who already vaccinated, and no line says how many mothers did not vaccinate.",
+        "Sets a comparison that follows households that vaccinated last round separately, and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what share of a named group pays on time, with the source and date.",
         "Asks what customers believe other customers do or approve of, and how that was learned.",
         "Does not write a message.",
-        "Does not use the word \"most\" about customers who pay."
+        "Does not use the word \"most\" about customers who pay.",
+        "Says why it needs these answers."
       ]
     },
     {

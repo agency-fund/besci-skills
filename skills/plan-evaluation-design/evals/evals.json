@@ -11,9 +11,9 @@
         "Names exactly one primary outcome, defined with what is counted and out of whom.",
         "Chooses the provider's transaction logs as the source and says why they rank above a survey.",
         "Every feasibility answer names who confirmed it or appears under open questions.",
-        "Records the 10 percentage point threshold as the sponsor's.",
+        "Records the 10 percentage point threshold as the sponsor's, and does not design the comparison from the phased rollout.",
         "Lists one intermediate measure for each of the two barriers, distinct from the primary outcome.",
-        "Does not design the comparison from the phased rollout."
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the target behavior as who does what, when.",
         "Asks what data exist or could exist and who controls them.",
         "Does not name a primary outcome.",
-        "Does not produce the measurement plan."
+        "Does not produce the measurement plan.",
+        "Says why it needs these answers."
       ]
     },
     {

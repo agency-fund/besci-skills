@@ -9,13 +9,15 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+Each mother gets a voice call in Mewari three days before her village's camp, a word from the ASHA on her round that week, and one call after a missed camp: three contacts a month at most. Calls reach only the 60% of households with a phone, usually through the husband, so the ASHA visits households without one first, and the calls are not enough alone. I haven't promised an effect for Udaipur.
+
 # Reminder schedule
 
 **Behavior:** Mothers of enrolled children under two in the 48 villages bring the child to the monthly camp at the anganwadi center in the month the next dose is due.
 **Confirmed barrier:** Forgetting the camp day. 64% of mothers whose child missed a dose said they did not know the camp was that day or that week (exit interviews at 12 camps, survey of 600 mothers). Supply, cost, and trust are ruled out: stock has been reliable for two years, vaccines are free, and no distrust was reported.
 **Due dates:** Recurring, one fixed camp day a month per village, 9am to 2pm. The action counts only on that day; a missed camp means a month's delay. The register holds each child's due dose and the camp date.
 
-## Sends
+## The reminders
 | # | When, relative to the due date | Channel | Must name | Stops when |
 |---|---|---|---|---|
 | 1 | 3 days before the camp | Voice call in Mewari to the household phone, asking for the mother | The child's name, the dose due, the camp day and date, the anganwadi center, the hours; "all doses by the first birthday" where the mother said so at enrollment | Dose recorded; household opts out; ceiling reached |
@@ -50,4 +52,12 @@ That reminders before a due date raise timely childhood immunization. A review o
 - Whether the call reaches the mother or stops with the husband. Test it with 20 households before the first full month.
 - Whether the register's due-dose data is current; a call about the wrong dose costs more trust than no call.
 - Whether the ASHA's round falls before the camp in every hamlet.
+
+## Where you could go from here
+That's the reminder schedule.
+- Test the call with 20 households using `plan-prototype-test`: whether it reaches the mother or stops with the husband decides whether the calls are worth their cost.
+- Ask 15 mothers on a camp day why their child last missed a dose: if "I didn't know the day" is standing in for distance or a lost day's wage, reminders won't fix it, and `select-intervention-levers` would fit better.
+- Check the register's due-dose data at a few camps before the first call: a call about the wrong dose costs more trust than no call.
+I'd lean toward the 20-household test, because it has to happen before the first full month anyway, and the camp-day conversations can run in the same week.
+Questions you could ask next: "What should the call say if the husband answers?" · "How should the ASHA order her visits to households without a phone?"
 ```

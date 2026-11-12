@@ -9,12 +9,14 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+The Ekiti version is no longer the program you tested in Lagos. Dropping the 14-day call removes the only follow-up of men who test positive, which is the change that matters most; the switch to pharmacists may also lose the trust a peer hand-over carried, and nobody knows yet whether Ekiti men see a pharmacist as someone like them. A small pilot in four pharmacies, counting positives who reach a clinic within 30 days, would settle both.
+
 # Adaptation record: Mo Wa Mo Ri HIV self-testing, version 2026-11-11
 
-**Baseline:** a peer hands a self-test kit to a man aged 20 to 35, shows a 3-minute demonstration video, walks through the result card, and phones 14 days later to refer anyone positive to a named clinic, as delivered in Lagos (intervention description, July 2026)
+**As tested:** a peer hands a self-test kit to a man aged 20 to 35, shows a 3-minute demonstration video, walks through the result card, and phones 14 days later to refer anyone positive to a named clinic, as delivered in Lagos (intervention description, July 2026)
 **Move to a new context:** Lagos to Ekiti State; urban to mixed peri-urban and rural; peers to community pharmacies; Yoruba and Pidgin to Ekiti dialect
 
-## Core components
+## Core components: the parts the effect depends on
 | Component | Job it does for the effect | Assumption behind it | May vary | May not vary | Status |
 |---|---|---|---|---|---|
 | Hand-over by a peer from the same community | Men aged 20 to 35 accept the kit | These men trust someone like them more than a health worker | Venue, day, hour | A hand-over by someone the men do not see as one of them | confirmed: named in the theory of change |
@@ -23,7 +25,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 | Phone call at 14 days with referral | Anyone positive reaches care | Men who test positive will not go to a clinic unprompted | Day of the call; call or visit | No active follow-up of positives | confirmed |
 
 ## Change log
-| # | When | Planned? | Who decided | What changed | Level | Nature | Fidelity | Goal, and what prompted it |
+| # | When | Planned? | Who decided | What changed | Applies to | Kind of change | Fits the core components? | Goal, and what prompted it |
 |---|---|---|---|---|---|---|---|---|
 | 1 | at scale-up | planned | State AIDS control agency | delivery, by whom: community pharmacists hand out kits instead of peers | program | substituted | unknown: the theory of change says men accept the kit from someone like them; whether they see a pharmacist that way is not known | reach and cost; no peer stipends, existing pharmacy network |
 | 2 | at scale-up | planned | NGO program team with the agency | content: video re-recorded in Ekiti dialect | program | tailored | consistent: language may vary | comprehension; the new audience's dialect |
@@ -33,7 +35,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## Taken together
 The Ekiti version does not do every component's job: change 3 removes the follow-up of positives, and change 1 may remove the trust the hand-over carried. This version is a different intervention from the one tested, and the original evidence does not cover it.
 
-## Flags
+## Changes that put a job at risk
 - **Change 3:** removes the job of linking positives to care; decided by the State AIDS control agency; reason: cost
 - **Change 1:** may weaken the job of getting men to accept the kit; decided by the State AIDS control agency; reason: reach and cost
 - **Change 4:** may weaken correct use for about a third of Lagos participants; no recorded decision; reason: flat tablet batteries. The Lagos evaluation describes a mixed version.
@@ -47,4 +49,12 @@ The Ekiti version does not do every component's job: change 3 removes the follow
 ## What to check before relying on this
 - Change 3 matters most: the pilot must count positives who reach a clinic within 30 days under the come-back instruction and under any cheaper follow-up; if neither links positives to care, the Ekiti program does not do what the Lagos program did.
 - The peer hand-over rests on the Lagos theory of change; if Ekiti men say they would accept a kit from a pharmacist as readily, its "may not vary" line changes, and change 1 becomes consistent.
+
+## Where you could go from here
+That's the adaptation record.
+- Ask a few Ekiti men whether they would take a kit from a pharmacist, with `plan-prototype-test`: change 1 turns on that answer, and a handful of conversations could settle it before the eight-week pilot starts.
+- Take change 3 to an implementation researcher and someone who runs HIV linkage to care: it removes a core component for cost, and they can judge whether a text at day 14 or a paid return visit could do the follow-up job.
+- Plan how the Ekiti pilot will watch delivery with `design-fidelity-monitoring`: worth it because the Lagos monitoring already caught peers skipping the video, and pharmacists may cut steps the same way.
+I'd lean toward the specialists on change 3 first, because linking positives to care is the job with the most at stake, and the pilot design depends on what replaces the call.
+Questions you could ask next: "What would a cheaper follow-up need to show in the pilot to count as doing the same job?" · "How should the Lagos evaluation report the version where the video was skipped?"
 ```

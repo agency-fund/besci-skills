@@ -8,12 +8,12 @@
       "expected_output": "An agency definition in the output template that quotes the team's words, matches each part to a construct, and places the constructs on the 2x2 agency framework.",
       "files": [],
       "assertions": [
-        "Quotes the team's own description of agency before naming any theory.",
+        "Opens with a few plain sentences to the user, and quotes the team's own description of agency before naming any theory.",
         "Matches 'feel confident making their own planting and pest decisions' to self-efficacy for those decisions, not to general confidence.",
         "Shows the 2x2 grid with at least one cell under the digital tool marked open, with an example.",
-        "Marks the focus and the erosion signs as proposed, for the team to confirm.",
-        "Erosion signs are things a farmer could be seen doing, and one example of chosen reliance is said not to be erosion.",
-        "Does not name a survey scale or write survey items."
+        "Marks the focus and the signs of the tool wearing agency down as proposed; the signs are things a farmer could be seen doing, and one example of chosen reliance is said not to be one.",
+        "Does not name a survey scale or write survey items.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what the app does or who uses it.",
         "Asks one question, not a list of all the questions.",
         "Does not produce a definition document.",
-        "Does not list scales, frameworks, or survey items."
+        "Does not list scales, frameworks, or survey items.",
+        "Says why it needs the answer."
       ]
     },
     {

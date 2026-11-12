@@ -13,7 +13,7 @@ metadata:
   title: Plan when and how often to remind
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Specifies the reminders a program sends about one action people already intend t
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the schedule. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that people intend to act and forget.
 2. **Required.** The due dates: one date, a window, or a recurring cycle, and how the program knows each person's date.
@@ -82,13 +82,15 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: how many reminders go out, when, and by what channel; who they do not reach; and whether reminders are enough alone. No effect is promised.>
+
 # Reminder schedule
 
 **Behavior:** <who, what, when>
 **Confirmed barrier:** <the evidence that people intend to act and forget; how cost, supply, and trust were ruled out>
 **Due dates:** <one date / a window / recurring; first and last day the action counts; how the program knows each person's date>
 
-## Sends
+## The reminders
 | # | When, relative to the due date | Channel | Must name | Stops when |
 |---|---|---|---|---|
 | 1 | <e.g. 3 days before> | <text / voice call / visit> | <action, date, place, the person's goal> | <action recorded / opt-out / ceiling> |
@@ -118,7 +120,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the schedule is done, or, if forgetting is not the barrier or the dates are unknown, why no schedule was set.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when nobody has checked that a reminder reaches the intended person and is understood, for instance on a shared phone
+- `draft-lever-content`, when the schedule is set and the words of each message are still to be written
+- `select-intervention-levers`, when reminders are not enough alone, or there are signs that forgetting is not the main barrier
+- `audit-intervention-ethics`, when a message could reveal a health condition or a debt, or people have not agreed to be contacted
+- a clinician or pharmacist, a privacy or safeguarding lead, or a data-protection lead, when a message concerns medication, a phone is shared, or consent is unclear: before the first send
+- the program's own register, when it is not certain that each person's due date is current: a reminder on the wrong date costs trust>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
@@ -133,4 +156,4 @@ Tell the user to consult a specialist before the first send when:
 - The message could reveal a health condition or a debt on a phone others use: a privacy or safeguarding lead reviews the wording and the channel
 - People have not agreed to be contacted: a data-protection lead confirms the consent required
 
-Bring them: the sends table, the privacy line, and the phone-access facts.
+Bring them: the table of reminders, the privacy line, and the phone-access facts.

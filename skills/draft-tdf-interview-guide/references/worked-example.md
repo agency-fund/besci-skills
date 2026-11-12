@@ -9,6 +9,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+The guide has 17 questions for 50 minutes. Each of your four hypotheses is tested by at least two of them, and the eight domains with no hypothesis get one open question each, so the interviews can turn up what nobody suspected. Before the first interview, the bracketed terms need the words farmers use in Kiswahili and Luhya, and the two-farmer pilot will show whether all 17 questions fit.
+
 # Interview guide: top-dressing maize on time
 
 **Behavior:** Enrolled smallholder farmers in Bungoma and Kakamega apply top-dressing fertilizer to their maize, on their own plot, when the plants reach knee height in the long rains [timing to confirm with the agronomist].
@@ -19,7 +21,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 - **Purpose, in plain words:** "We want to understand what happens on farms in the weeks after planting, so the program fits how people farm. There are no right or wrong answers."
 - [CONSENT: insert the team's approved consent script here; do not start without it]
 - **Warm-up:** "Tell me about your farm. What did you plant this season?"
-- **Reconstruction:** "Think about this season's maize, from planting until the plants were about [knee-high]. Tell me what you did, week by week."
+- **The last time it was due:** "Think about this season's maize, from planting until the plants were about [knee-high]. Tell me what you did, week by week."
 
 ## Questions, in running order
 ### The weeks after planting
@@ -98,4 +100,12 @@ Outside the framework: question 17.
 - No field officer interviews farmers from the area where he or she delivers fertilizer; answers to questions 6 to 8 would be shaped to please.
 - Seventeen questions is a full 50 minutes. If the pilot runs long, cut questions 9, 10, and 15 first.
 - H4 is a team guess. If it finds no support, do not design for it.
+
+## Where you could go from here
+That's the interview guide.
+- Two pilot interviews, one with a farmer who applied on time and one with a farmer who did not: they would show whether questions 7 and 8 draw the same answer and whether 17 questions fit in 50 minutes, before the other 14 interviews.
+- The field officers, on the bracketed terms: [knee-high] and [top-dress] need the words farmers use, or the questions will sound like the agronomist's.
+- `synthesize-interview-findings`, once the 16 interviews are done: it gives each of H1 to H4 a verdict from what farmers said, with H4 held to the same standard although it began as a team guess.
+I'd lean toward the two pilot interviews, because they are cheap and could change the guide before the full round starts.
+Questions you could ask next: "How should the field officers take notes if farmers don't want to be recorded?" · "How do we pick the 8 late farmers so they don't all come from one area?"
 ```

@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# sIfA: Market-vendor mobile savings study, final report
+Three roles are rated 2, extensive AI use: the literature search, the first versions of Figures 2 and 3, and the background section, which stays a 2 although Amara rewrote it, because the tool wrote its first version. The statement is self-reported, so it shows what you described, not what anyone has checked. It runs from the title to the sIfA citation, ready to paste into the report.
+
+# AI-use statement (sIfA): Market-vendor mobile savings study, final report
 
 **People accountable for this work:** J. Okello, A. Diallo
 **AI tools used anywhere in the work:** Claude Sonnet 4.5 (Anthropic)
@@ -45,4 +47,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 After using any tools or services, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.
 
 Contributor roles are based on the Contributor Role Taxonomy (CRediT). More info at https://credit.niso.org. This statement follows the sIfA format: Schomerus, M. (2026). sIfA Tool — Statement of Intellectual Fellowship and Accountability (Version 1.4.1) [Computer software]. Busara. https://doi.org/10.5281/zenodo.20285993
+
+## Where you could go from here
+That's the statement.
+- Have Amara read her own rows: the account came from you, and two of her entries describe her work through your draft and your grammar pass, so she should agree with how they read.
+- If the report goes to a funder or journal with an AI-use policy, take the statement and the policy text to its editor or your research-integrity officer: three roles are rated 2, and whether that is acceptable is their call, not the statement's.
+- Start the next project's table on its first day: the debugged scripts and the grammar pass are the uses most easily forgotten, and they are easiest to log the day they happen.
+I'd lean toward Amara's read first, because a co-author should agree with her entries before anyone else sees them.
+Questions you could ask next: "Why is the rewritten background still a 2?" · "Does the literature search belong under Investigation?"
 ```

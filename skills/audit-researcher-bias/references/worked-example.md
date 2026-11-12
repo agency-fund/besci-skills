@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Bias audit report
+All three of your answers drew a flag. The one most likely to steer the research wrong is "it's probably a discipline issue": as worded, nothing a vendor says could contradict it, and it gives vendors less self-control than the team would have in their place without anyone having asked them. Each flag below is a question to take to vendors, not a finding about them.
+
+# What the team believes about Nairobi market vendors' saving, and what to check
 
 **Answers as given:**
 a. "They just don't prioritize saving the way we'd expect. People generally know saving is good for them, so if they're not doing it, it's probably a discipline issue more than anything structural."
@@ -21,19 +23,27 @@ c. "Hard evidence they're actively trying to save and failing for reasons outsid
 - "It's probably a discipline issue more than anything structural." **Why:** Any obstacle a vendor names, such as a queue at the agent or neighbors asking to borrow, can be redescribed as weak discipline in the face of that obstacle. **Rewrite:** "Asked about their last good day, most vendors who did not save will describe spending the spare cash on things they had not planned." If most describe trying to set money aside and being stopped, the belief is wrong.
 - "They just don't prioritize saving the way we'd expect." **Why:** "Prioritize" and "the way we'd expect" set no level that an observation could fall short of. **Rewrite:** "Fewer than half of vendors put money aside in any form (savings group, cash at home, mobile wallet) in a typical week."
 
-## Assumed likeness or difference
-- "People generally know saving is good for them, so if they're not doing it..." **Assumes:** Likeness. Saving means one person holding a balance in an account, as a salaried employee does, so a vendor with no balance is not saving. **Check locally:** Whether vendors already save through a savings group, stock, or cash kept at home. Ask vendors, or a field officer who attends group meetings.
-- "It's probably a discipline issue." **Assumes:** Difference. Vendors have less self-control than the team would have in their place. Nobody has asked them. **Check locally:** How vendors themselves describe what happens to spare cash at the end of a good day. Ask ten vendors.
+## Where a belief assumes the audience is like, or unlike, the team
+- "People generally know saving is good for them, so if they're not doing it..." **Assumes:** Likeness. Saving means one person holding a balance in an account, as a salaried employee does, so a vendor with no balance is not saving. **What would settle it:** Whether vendors already save through a savings group, stock, or cash kept at home. Ask vendors, or a field officer who attends group meetings.
+- "It's probably a discipline issue." **Assumes:** Difference. Vendors have less self-control than the team would have in their place. Nobody has asked them. **What would settle it:** How vendors themselves describe what happens to spare cash at the end of a good day. Ask ten vendors.
 
 ## What would change the team's mind
 - "It's probably a discipline issue." **Answer given:** "Hard evidence they're actively trying to save and failing for reasons outside their control." **Problem:** Needs something unobservable ("actively trying"), and "hard evidence" sets no bar. **Observable version:** "At least a third of vendors who did not save, asked about their last good day, name a specific obstacle between the cash count and putting money aside."
 
-## Carry-over from another population
+## Experience from a different population
 - **Population the team knows:** Urban Nairobi tech-sector employees. **Similarity claimed:** "Fairly similar." **What differs:** Income arrives monthly into an account for one group and daily in cash for the other; one group is offered savings products by an employer or a bank, the other saves through a group; one counts money in private, the other in view of neighbors. **Question to ask:** "Which of my beliefs about saving come from people who are paid monthly into an account?"
 
-## Seen before
+## Beliefs earlier data did not support
 No earlier review supplied.
 
-## Next audit
+## When to repeat this audit
 After the first round of vendor interviews and before any intervention is chosen. The author is the only reader of these flags; ask a field officer who works in the markets to read them against the answers above.
+
+## Where you could go from here
+That's the audit.
+- `decompose-comb-barriers`, since diagnosis is the next step: the rewritten discipline belief goes in marked as a team belief, so it is ranked on evidence like every other possible reason instead of being taken as the answer.
+- A field officer who attends savings-group meetings, before any interview: they can answer the first "what would settle it" question (whether vendors already save through a group, stock, or cash at home), and they are the second reader the flags need.
+- `draft-tdf-interview-guide`, once the interviews are planned: the observable versions above become questions about the last good day.
+I'd lean toward listing the possible reasons next, because it is the step you are about to take and entering the discipline belief there keeps it from setting the agenda.
+Questions you could ask next: "How do I ask vendors about their last good day without sounding like I'm checking up on them?" · "What would we change if most vendors already save through a group?"
 ```

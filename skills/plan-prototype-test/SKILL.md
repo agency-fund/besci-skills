@@ -14,7 +14,7 @@ metadata:
   title: Test a draft with a few people before the pilot
   type: atomic
   stage: design
-  version: "0.1.0"
+  version: "0.2.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -45,7 +45,7 @@ Plans a test of a draft intervention with a few people from the audience, before
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the plan. Do not ask anything the user has already answered.
 
 1. **Required.** The draft: what it is, how finished it is, the behavior it should change (who does what, when), and the barrier it should remove.
 2. **Required.** The audience: who the draft is for, which groups may react differently, how many people the team can reach, in which language, and who can run sessions.
@@ -80,11 +80,13 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Prototype test plan
+<Two or three plain sentences to the user: who will try the draft and how, the one thing the test most needs to find out, and that it shows whether people can use the draft, not whether the behavior will change.>
+
+# Trying <the draft, in a few words> with a few people before the pilot
 
 **Draft under test:** <what it is; version shown: idea / sketch / mock-up / working version>
 **What it must do:** <who does what, when; the barrier the draft removes>
-**Decision this test feeds:** <what the team will decide with the result, and by when>
+**What the team will decide with it:** <the decision the result feeds, and by when>
 
 ## Learning questions
 | # | Question | Tied to | What will be observed |
@@ -129,7 +131,27 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `audit-intervention-ethics`, before the first session, when participants will try something at home or the draft touches health, money, or people who depend on the organization
+- `design-pilot-feasibility-study`, once the draft passes the decision rule, when the next question is whether the program can recruit, keep, and serve people at small scale
+- `draft-lever-content`, once the test has run, when the results send the wording back for changes
+- `decompose-comb-barriers`, when the test's check on the barrier finds that most people were stopped by something else
+- a dry run of the session guide with the tester and note-taker, when neither has run sessions like this before>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

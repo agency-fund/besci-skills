@@ -9,6 +9,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+I'd run a product-stage evaluation now: a test of ways to bring farmers back after their first question. What decided it is the drop-off: many farmers ask one question and never return, so a yield RCT today would test a product most of its users have barely used. The RCT is premature, not ruled out; the last section says what would make it the right step.
+
 # What to evaluate next: MaizeMate
 
 **Product:** A WhatsApp AI assistant that answers agronomy questions for smallholder maize farmers in western Kenya. In pilot with about 1,400 farmers through two cooperatives.
@@ -38,4 +40,12 @@ Run a stage 2 evaluation now: an A/B test of ways to bring farmers back after th
 ## What would change this recommendation
 - Stage 3 becomes "run now" when a steady share of farmers return within four weeks of their first question.
 - Stage 4 becomes "run now" when stage 3 shows that users change when they top-dress, a government or funder is considering wider adoption, and the team has the capacity to work with independent researchers.
+
+## Where you could go from here
+That's the recommendation for what to evaluate next.
+- Pull a four-week return rate from the pilot's WhatsApp logs: the product row has your account of the drop-off but no figure, and the A/B test will be judged against one.
+- Plan the return-use test with `choose-trial-design`: with 1,400 farmers in two cooperatives, you will need to decide whether to randomize farmers or cooperatives before the test starts.
+- Take the table of stages to the funder ahead of October: worth doing if the funder is set on an RCT, since "Why the later stages are premature" is written so you can hand it over.
+I'd lean toward the logs first, because they cost nothing and both the test and the board conversation need the number.
+Questions you could ask next: "What should we say to the funder at the October board meeting?" · "Which ways of bringing farmers back are worth testing?"
 ```

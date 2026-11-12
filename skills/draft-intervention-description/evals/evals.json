@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We need to write up our tax-compliance letter program in Guatemala for the funder and for a municipal tax office that wants to copy it. What we have: the design brief (the letters told people that most of their neighbors pay and that neighbors approve of paying, because people believed most of their neighbors didn't pay), the three letter versions in Spanish with notes on which line does what, the mailing contractor's dispatch logs for 12,000 letters sent over two weeks in March, our monitoring plan (a back-check phone survey of 300 recipients on receipt, plus a check of 50 returned envelopes), the back-check results (about 78% said they received a letter), and a change log showing that in week two the contractor switched from the municipal envelope to a plain envelope because the municipal ones ran out. The letters are in our shared drive in Spanish and English. It's not going to a journal.",
-      "expected_output": "A twelve-item intervention description in the output template, written as delivered from the documents provided, ending in a rebuild check.",
+      "expected_output": "A twelve-item intervention description in the output template, written as delivered from the documents provided, with a rebuild check and next moves.",
       "files": [],
       "assertions": [
-        "Fills all twelve items.",
+        "Opens with a few plain sentences to the user, and fills all twelve items, listing the letters with their languages and the shared-drive location.",
         "Describes each active part by what it changes for the recipient and the barrier it addresses, with no technique code that is not in the documents.",
         "Records the envelope switch under modifications, with when, who, and why, and says whether it touched an essential part.",
         "Fills how well: actual only from the back-check and envelope-check results, with sample and period.",
-        "Lists the letters with their languages and the shared-drive location.",
-        "Ends with a rebuild check that gives a status for every item."
+        "Includes a rebuild check that gives a status for every item.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -25,7 +25,8 @@
       "assertions": [
         "Asks for the design documents, or the team's own account if nothing is written.",
         "Asks whether and when the intervention was delivered and what records exist.",
-        "Does not produce a description."
+        "Does not produce a description.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -13,7 +13,7 @@ metadata:
   title: Describe an intervention so others can replicate it
   type: atomic
   stage: implement
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Writes down what an intervention is, item by item, in enough detail for a team e
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the description. Do not ask anything the user has already answered.
 
 1. **Required.** The design documents: scripts, messages, materials, training notes, the reason for each part; or, if nothing is written, the team's own account.
 2. **Required.** Whether and when it was delivered, where, and what records exist: monitoring data, logs, a record of changes.
@@ -78,6 +78,8 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: whether a team elsewhere could deliver it again from this document, the gap that matters most, and which items rest on memory rather than records.>
+
 # Intervention description: <brief name>
 
 **Status:** <as planned / as delivered, <dates>, <where>> · **Written for:** <internal record / funder / implementer / registry / publication>
@@ -113,10 +115,10 @@ See `references/worked-example.md` for a complete run.
 ## 8. When and how much
 <number of contacts, schedule, duration, intensity, period>
 
-## 9. Tailoring
+## 9. Tailoring: variation planned before delivery
 <variation planned before delivery: what, for whom, by what rule; or "none">
 
-## 10. Modifications
+## 10. Modifications: changes made during delivery
 | What changed | When | Who | Why | Part touched | Source |
 |---|---|---|---|---|---|
 | <change; or "none recorded", saying whether a record was kept> | <date> | <role> | <reason> | <part; essential or not> | <record / recollection> |
@@ -130,7 +132,7 @@ See `references/worked-example.md` for a complete run.
 ## Delivery system
 <for a hand-off: staffing and skills, supervision, logistics, information system, cost to deliver; research-only inputs marked; or "not needed for this reader">
 
-## Rebuild check
+## Rebuild check: could a team elsewhere deliver it again?
 | Item | Complete / partial / missing | What a team elsewhere would still need |
 |---|---|---|
 | <1 to 12, one row each or grouped> | <status> | <blank only if complete> |
@@ -138,7 +140,27 @@ See `references/worked-example.md` for a complete run.
 ## Open questions
 - <each partial, missing, or remembered item, and who can close it>
 - <any limit on sharing>
+
+## Where you could go from here
+<One line saying the description is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `design-fidelity-monitoring`, when items 11 or 12 are thin and the program will keep running or move to new sites
+- `specify-intervention-adaptations`, when item 10 lists changes, or a new implementer plans some, and someone must judge them against the essential parts
+- `assess-scalability`, when the description is for a scale-up partner and nobody has judged whether the effect will survive delivery at scale
+- `plan-scale-up-strategy`, when that judgment exists and the hand-off now needs owners, a sequence, and financing
+- the people named under open questions, or someone outside the team reading the draft cold, when items are partial, missing, or rest on recollection>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

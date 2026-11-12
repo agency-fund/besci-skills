@@ -14,7 +14,7 @@ metadata:
   title: Plan how to measure agency in a digital tool
   type: atomic
   stage: measure
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -82,6 +82,8 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: how many focus cells now have a measure on and off the platform, anything that should not go ahead as proposed, and how much testing the claim needs before anyone relies on the scores.>
+
 # Agency measurement plan: <tool>
 
 **Definition:** <the working definition, the constructs, and the focus cells, as the team gave them>
@@ -96,7 +98,7 @@ See `references/worked-example.md` for a complete run.
 | **Externally expressed** (choices and actions) | <...> | <...> |
 
 Data the team already collects is marked "(have)".
-**In no cell:** <each usage, retention, or rating metric the team tracks, and what it measures>
+**Tracked, but not a measure of agency:** <each usage, retention, or rating metric the team tracks, and what it measures>
 
 ## Measure details
 | # | Instrument | Items | Source | Evidence, and what to check here | Use, adapt, or build |
@@ -112,7 +114,28 @@ Data the team already collects is marked "(have)".
 
 ## What to find out next
 - <an open measurement question>: "<a search query ready to paste>"
+
+## Where you could go from here
+<One line saying the measurement plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `draft-cognitive-interview-script`, when a measure is marked "adapt" or "build" and users have not yet said what its items mean
+- `draft-survey-items`, when the off-platform measures include survey questions that have to be written
+- `translate-survey-instrument`, when a scale has to go into the users' language
+- `write-pre-analysis-plan`, when the plan feeds a comparison of versions or a trial and the analysis should be fixed before data arrive
+- the search queries above, when items are marked "not accessed" and the claim will rest on them
+- a psychometrician, an ethics board, or a researcher who has checked model coding against human coders, when the specialist line names one>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

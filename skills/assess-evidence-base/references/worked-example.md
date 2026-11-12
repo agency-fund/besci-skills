@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Evidence scan brief
+The closest results come from rural Kenya and from programs where a payer or employer chose how people were paid; none tested self-employed urban vendors who earn daily. The strongest finding against the idea is that a savings default in India faded as soon as the payment channel went back to cash. I opened three sources and could read only their abstracts, so treat this as a first look, not a review.
+
+# What research already exists on savings among Nairobi market vendors
 
 **Program goal (as given):** Increase long-term savings among informal-sector market vendors in Nairobi, so they have a buffer against income shocks.
 **Search route:** General web search, as asked. Paperclip would add full-text reading for health papers; this topic sits mostly in economics journals, which it does not cover.
@@ -34,4 +36,12 @@ No located study tests a savings intervention with self-employed urban vendors w
 - **Opened:** 3 sources, all abstract only
 - **Not reached:** full texts; mobile-money operators' own evaluations; reports in Swahili; the 3ie and J-PAL evaluation databases
 - **A fuller review would add:** a search of those two databases, the full text of each study for sample sizes and take-up, and any systematic review of savings promotion in sub-Saharan Africa
+
+## Where you could go from here
+That's the evidence summary.
+- Search the 3ie and J-PAL databases and open the full text of the three studies: every number above comes from an abstract, and the behavior you pick should not rest on figures nobody has read in full.
+- Check whether the lockbox result would hold for your vendors with `assess-evidence-transferability`: Dupas & Robinson (2013) is the only study from Kenya and its participants were in savings groups, as most of your vendors are, but they were rural and saving for health costs.
+- Pick the behavior with `define-key-behavior` once you have read enough: the gap above says no tested approach yet fits vendors with no payer, so the behavior you choose will be a bet the research does not settle.
+I'd lean toward the fuller search first, because it is cheap next to choosing a behavior on three abstracts.
+Questions you could ask next: "Which of these studies is closest to our vendors, and would its result hold in Nairobi?" · "Can a mobile-money wallet play the role of the lockbox?"
 ```

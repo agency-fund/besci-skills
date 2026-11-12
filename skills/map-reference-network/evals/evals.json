@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "Names the design as egocentric and says what it cannot show.",
-        "Tabulates every role with its counts, using roles and no names.",
+        "Tabulates every role with its counts, using roles and no names, and marks the views of husbands and mothers-in-law \"as reported\".",
         "Lists husbands and mothers-in-law as both influential and gatekeepers.",
         "Says nurses and HSAs, the program's channel, were named least and are not influential.",
-        "Marks the views of husbands and mothers-in-law \"as reported\".",
-        "Does not choose who should deliver a message."
+        "Does not choose who should deliver a message.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what suggests that others' behavior or approval matters for latrine use.",
         "Asks the size and boundary of the population, or how many interviews are possible.",
         "Asks who the program reaches now.",
-        "Does not name a reference group or write the questions."
+        "Does not name a reference group or write the questions.",
+        "Says why it needs these answers."
       ]
     },
     {

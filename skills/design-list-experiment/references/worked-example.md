@@ -9,11 +9,13 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+A list experiment looks worth running here. With 1,800 respondents and under-reporting that looks well above 10 points, it should give a truer figure than the nurse's question, though a wide one, about 8 or 9 points either way. The likeliest way it fails is patients losing count of five statements read aloud, which is why the go depends on a counting test with a few of them first; and it gives one share for the whole sample, never an answer for any patient or clinic.
+
 # List experiment design: missed ARV doses
 
 **Behavior:** Adults on ARVs at the six clinics; did not take their ARVs on two or more days; past 7 days
 **Why people would hide it here:** Patients are told at every visit that missing doses is dangerous, and they connect any survey about treatment with the clinic that supplies it.
-**Respondents and mode:** Adults, many with primary schooling only; Dholuo or Swahili; face to face with a program enumerator, answers entered on a tablet
+**Respondents and how they are surveyed:** Adults, many with primary schooling only; Dholuo or Swahili; face to face with a program enumerator, answers entered on a tablet
 **Affordable sample:** 1,800  **Estimate needed for:** everyone
 
 ## Go or no-go
@@ -23,7 +25,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 
 ## Statements
 **Sensitive statement (long list only):** "In the past 7 days, there were two or more days when I did not take my ARVs."
-**Control statements (both lists):**
+**Control statements, the harmless ones (both lists):**
 1. "In the past 7 days, I ate fish." (expected to be true for most)
 2. "In the past 7 days, I traveled outside Kisumu County." (few)
 3. "In the past 7 days, I worked for pay on five or more days." (about half)
@@ -46,7 +48,7 @@ Individual respondents, half to each list. The tablet assigns the list from a sc
 
 ## Checks on the data
 - **Short-list group counting none or all:** concern if more than one respondent in ten counts zero or four
-- **Design-effect test:** the test in the R package `list`, run on the counts from the two lists
+- **Design-effect test (did adding the sensitive statement change answers to the others?):** the test in the R package `list`, run on the counts from the two lists
 - **List estimate minus direct estimate:** reported with its confidence interval, which will be wide
 
 ## Reporting rule
@@ -58,4 +60,12 @@ Expected share 20 to 30%, the team's guess from refill records. The spread of th
 ## What to check before relying on this
 - Whether "ate fish" is close to universal near the lake, which would push every count up, and whether "worked for pay" embarrasses respondents without work.
 - Whether respondents with primary schooling can keep marks for five statements read aloud. Test with eight to ten respondents before fielding.
+
+## Where you could go from here
+That's the list experiment design.
+- Try the card, the instruction, and the five statements with eight to ten patients using `draft-cognitive-interview-script`: the go depends on this test, and it would also show whether "ate fish" or "worked for pay" lands differently near the lake.
+- Put the statements and the instruction into Dholuo and Swahili with `translate-survey-instrument`: the control statements were chosen for what is common here, so their translation needs reviewers who know the patients, and the test with patients should use those words.
+- Confirm the margin with `estimate-sample-size` once the test gives the spread of the short-list count: the 8 or 9 points above is a rough figure, and it decides whether the list estimate will be precise enough to act on.
+I'd lean toward the translation and then the test with patients, because the go depends on that test and it only counts in the languages patients will hear.
+Questions you could ask next: "What do we do if more than one in ten count zero or four in the test?" · "How do we explain a list estimate to the clinic staff?"
 ```

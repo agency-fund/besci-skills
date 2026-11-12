@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "Records the daily worked problem and the two level tests as what the school offers, and marks what peers say as not verified.",
-        "The lesson has the three claims, each with an example that is local and not from the United States.",
-        "No wording tells students to work or try harder.",
+        "The lesson has the three claims, each with an example that is local and not from the United States, and no wording tells students to work or try harder.",
         "Includes the task of writing advice to a younger student, with a spoken version for slow readers.",
-        "Names the week-10 level test or attendance as the outcome, and a belief item only as a check on delivery.",
-        "States that the pooled effect is near zero or that the Argentina trial found none, and promises no effect size."
+        "Names the week-10 level test or attendance as the outcome, and a belief item only as a check that the lesson was received.",
+        "States that the pooled effect is near zero or that the Argentina trial found none, and promises no effect size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for evidence, in students' own words, that they read a poor result as proof of fixed ability.",
         "Asks what the school offers after a poor result: feedback, a second attempt, or what teachers and peers say.",
         "Asks who receives the lesson or how it will be delivered.",
-        "Writes no lesson text."
+        "Writes no lesson text.",
+        "Says why it needs these answers."
       ]
     },
     {

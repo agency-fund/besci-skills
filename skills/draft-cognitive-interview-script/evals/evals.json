@@ -12,8 +12,8 @@
         "Every probe is an open question, and none states the item's intended meaning.",
         "Uses scripted probes after each item and does not rely on asking the girls to think aloud.",
         "At least one probe asks how the girl understands the five agree/disagree answer options.",
-        "Says what the interviewer does if a girl is upset or cannot answer.",
-        "States a rule for which items get fixed after a round."
+        "Says what the interviewer does if a girl is upset or cannot answer, and states a rule for which items get fixed after a round.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the survey questions exactly as respondents will hear or read them.",
         "Asks what each question is meant to measure.",
         "Asks who the respondents are.",
-        "Does not write any probe or script."
+        "Does not write any probe or script.",
+        "Says why it needs these answers."
       ]
     },
     {

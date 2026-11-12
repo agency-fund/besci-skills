@@ -14,7 +14,7 @@ metadata:
   title: Set a realistic effect size to plan for
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Sets the effect size a test should plan on from the published estimates a team s
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the range. Do not ask anything the user has already answered.
 
 1. **Required.** Each study behind the estimate (link, file, or full citation) and the number taken from it.
 2. **Required.** The test's outcome, unit, and baseline: the control-group rate, or the mean and standard deviation (SD).
@@ -68,38 +68,40 @@ If 1, 2, or 3 is missing, ask and stop. If 4 is missing, write "not set". If 5 i
 1. **Read each study** following `references/citing-sources.md`, recording the effect from its results with unit, baseline, population, deliverer, and design.
 2. **Label each estimate:** lab or online; published field trial, including cases picked for a guide; meta-analysis (pooled studies), corrected for publication bias or not; or unselected: every trial an organization ran, whatever it found.
 3. **Put each estimate in the test's units** at its baseline, showing the arithmetic: one SD of a yes-or-no outcome is √(p(1 − p)); odds ratios convert through the baseline odds; percentage points are not percent change.
-4. **Correct**, marking each correction applied or not:
+4. **Correct**, marking each applied or not:
    - Lab or online: direction only (loss-framed incentives: 0.33 SD in the lab, 0.02 in the field).
    - Meta-analysis: use the bias-corrected figure if the paper or a re-analysis gives one (a nudge average of 0.43 SD fell to 0.04); otherwise it is a ceiling.
    - Take-up: multiply by the user's take-up over the source's. Unreported take-up counts as complete.
    - Delivery: if researchers or an NGO ran the source and a government will run the test, lower the central value: government-run programs show smaller effects.
 5. **Set the range** in the test's units and in SD. High: the largest corrected estimate; a meta-analysis outranks single trials above it. Low: the closest unselected estimate, or else one sixth of the high end, never applied to an unselected or corrected figure. Central: a reasoned judgment between them; for a letter, SMS, or email, above 3 points needs a stated reason.
-6. **Name the effect to plan on:** the smallest effect worth acting on, if set, otherwise the central value. Report the two apart: one comes from the decision and its cost, the other from the studies. If the first is above the high end, say the program is unlikely to reach it, so the question is whether to test at all. Compute no sample size.
+6. **Name the effect to plan on:** the smallest effect worth acting on, if set, otherwise the central value. Report the two apart: one comes from the decision and its cost, the other from the studies. If the first exceeds the high end, say the program is unlikely to reach it, so the question is whether to test at all. Compute no sample size.
 
 See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Effect-size benchmark: <intervention> on <outcome>
+<Two or three plain sentences to the user: the effect to plan on and the range around it, the correction that moved the numbers most, and how this compares with the published figure the team started from.>
+
+# What effect to plan for: <intervention> on <outcome>
 
 **Decision this informs:** <pilot / scale-up / policy / funder report>
 **Outcome, unit, baseline:** <outcome>; <unit>; baseline <rate, or mean and SD> from <source>
 **Delivered by, at what scale:** <who will deliver it in the test, to how many people>
 
-## Estimates read
-| Source | How read | Label | Delivered by | Reported effect | In the test's units |
+## The estimates, as read
+| Source | How read | Kind of estimate | Delivered by | Reported effect | In the test's units |
 |---|---|---|---|---|---|
 | <authors, year, link> | <full text / abstract only> | <lab or online / published field trial / meta-analysis, corrected or not / unselected> | <researchers / NGO / government> | <effect, unit, baseline> | <points and SD, with the arithmetic> |
 
 ## Corrections
 1. Lab or online study: <applied or not, and why>
-2. Selective publication: <bias-corrected figure used / treated as a ceiling / not needed, because unselected>
-3. Take-up: <ratio applied, or assumed equal to the source's>
+2. Selective publication (large effects are more often published): <bias-corrected figure used / treated as a ceiling / not needed, because unselected>
+3. Take-up (the share offered it who receive it): <ratio applied, or assumed equal to the source's>
 4. Who delivers it: <same kind as the source / smaller effect expected, because ...>
 
 ## Planning range
-| | <Unit> | SD | Where it comes from |
+| | <Unit> | SD (standard deviations) | Where it comes from |
 |---|---|---|---|
 | High | <...> | <...> | <the estimate and correction behind it> |
 | Central | <...> | <...> | <the judgment, in one sentence> |
@@ -113,7 +115,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the input that would move the range most, and the cheapest way to check it>
+
+## Where you could go from here
+<One line saying the range and the effect to plan on are done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-sample-size`, when the effect to plan on is set and the team needs to know whether its sample can detect it
+- `assess-evidence-transferability`, when one study carries most of the range and nobody has checked whether what its effect depended on holds in the user's setting
+- `assess-evidence-base`, when only one or two estimates were supplied, or none from delivery like the user's, and a wider search could find closer or unselected ones
+- the program's own records of every past campaign of this kind and what each did, when they exist: they are an unselected estimate and would replace the one-sixth low end
+- whoever owns the decision and its budget, when the smallest effect worth acting on is "not set"
+- an evaluation methodologist, when the decision is a scale-up or a policy and no estimate comes from delivery like the user's>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

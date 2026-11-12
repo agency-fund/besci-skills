@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We work with two health centers outside Tamale, Ghana. Behavior: pregnant women who come for a first antenatal visit come back on the date the midwife gives them; about half miss it. From 30 interviews, the barrier is that women leave without knowing the date: it is written in English in the record book, most of the women did not go to school, and the husband or mother-in-law who pays for transport never hears it. We drafted a return-date card the midwife fills in and the woman takes home, in two printed versions: A, a one-month calendar with the date circled; B, a row of market stalls with the market days to wait crossed off. Our designer made them and wants to run the sessions. We can reach about ten women per clinic day, the family members who come with them, and all four midwives. Our field officer speaks Dagbani and did not work on the design. The pilot starts in six weeks. Plan how we test the card first.",
-      "expected_output": "A prototype test plan in the output template that has people use the card while a tester who did not design it watches, with a keep, change, or drop rule fixed in advance.",
+      "expected_output": "A plan in the output template that has people use the card while a tester who did not design it watches, with a keep, change, or drop rule fixed in advance.",
       "files": [],
       "assertions": [
         "Every learning question names the barrier or step of use it is tied to and what will be observed.",
         "Participants are asked to read or use the card, or to say back what it asks; no question is only 'do you understand?' or 'do you like it?'.",
-        "Gives a number of people per group and plans at least two rounds.",
-        "The designer does not run the sessions, and participants are not told who made the card.",
+        "Gives a number of people per group and plans at least two rounds, run by someone other than the designer, without telling participants who made the card.",
         "Gives a keep, change, or drop rule in counts for each learning question, set before the first session.",
-        "Says the test cannot show whether return visits rise, and reports no percentage for the audience."
+        "Says the test cannot show whether return visits rise, and reports no percentage for the audience.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what behavior the onboarding flow should change or which barrier it should remove.",
         "Asks who the audience is, or how many people the team can reach and who can run sessions.",
         "Does not produce learning questions or a session guide.",
-        "Does not state a number of participants."
+        "Does not state a number of participants.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -52,7 +53,7 @@
       "assertions": [
         "Says the request is about delivering the program at small scale against thresholds, not about testing a draft with a few people.",
         "Names design-pilot-feasibility-study.",
-        "Does not produce a prototype test plan."
+        "Does not produce a plan for testing a draft with a few people."
       ]
     }
   ]

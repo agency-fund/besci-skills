@@ -28,10 +28,15 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] First sentence of "What it does" has no "and", and the section has a line starting `**What this adds:**`. [W024, E041]
 - [ ] "When to use it" has `### Use it when` with at least three bullets and `### Do not use it when` with at least two. [E025, E026]
 - [ ] "What it draws on" has at least one real citation (year, DOI, or URL), a note starting `**Where the evidence comes from:**`, and a note starting `**Replication status:**`. [W027, E042]
-- [ ] Another skill is named only under "Do not use it when". [W051]
+- [ ] "Before you start" asks for each input by what it is, not by the skill that made it. [W051]
+- [ ] Every skill or workflow named anywhere in SKILL.md exists in the library. [E056]
 - [ ] "Output template" contains a fenced code block. [W028]
+- [ ] The template opens with a plain lead-in, uses labels a program designer would use, and ends with a "Where you could go from here" closing: two or three next moves with reasons, and questions the user could ask next. [E054]
+- [ ] No "Next action", "Check first", or "Next steps" line in the template. [E055]
+- [ ] After the template, the "Output template" section carries the shared voice block between the markers, identical to `template/shared/voice.md`. [E053; check_sync]
+- [ ] The closing's placeholder lists candidate next moves, each with the condition under which it fits, including one step outside the library.
 
-Codes E040 to E049 are errors, except the warnings W043, W044, and W046; W050 to W052 are warnings too.
+Codes E040 to E049 and E053 to E056 are errors, except the warnings W043, W044, and W046; W050 to W052 are warnings too.
 
 ## Evals and changelog
 - [ ] `evals.json` has `skill_name` equal to the name, and each case has id, prompt, expected_output. [E029]

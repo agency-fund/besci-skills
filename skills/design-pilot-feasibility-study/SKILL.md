@@ -13,7 +13,7 @@ metadata:
   title: Design a pilot that tests feasibility, not effect
   type: atomic
   stage: test
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -42,7 +42,7 @@ Designs a pilot that tests whether a planned trial or scale-up can run, not whet
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the pilot plan. Do not ask anything the user has already answered.
 
 1. **Required.** The intervention: what is delivered, by whom, to whom, how often, through what channel.
 2. **Required.** What the pilot leads to: a trial (unit of randomization, outcome and how it is collected, planned size, assumed attrition) or a scale-up (where, delivered by whom), or "not designed yet".
@@ -70,21 +70,23 @@ If 1, 2, or 3 is missing, ask and stop. If nothing is designed yet, mark every l
 5. **List the main trial's inputs the pilot will measure,** such as take-up, attrition, and the outcome's baseline, and write: "This pilot's effect estimate will not be used to size the main trial."
 6. **Plan short interviews** with refusers, dropouts, and deliverers, each with its one question, interviewer, and timing. A rate never says why.
 7. **Choose typical sites and routine conditions:** the staff, resources, and season of the main study. Say what the chosen sites leave unknown.
-8. **Tabulate what changes in the main study** under each result, and write the report skeleton.
+8. **Tabulate what changes in the main study** under each result, and outline the report.
 
 See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
+<Two or three plain sentences to the user: the rate the pilot most needs to pin down and the size that does it, the line that would stop or change the main study, and that the pilot will not show whether the program works.>
+
 # Pilot plan: <program>
 
 **Intervention piloted:** <what, by whom, to whom, how often, channel>
-**What it serves:** <the trial: unit, outcome, planned size, assumed attrition; or the scale-up; or "not designed yet: thresholds provisional">
+**What it prepares for:** <the trial: unit, outcome, planned size, assumed attrition; or the scale-up; or "not designed yet: thresholds provisional">
 **What this pilot is not for:** estimating the program's effect. Its effect estimate will not be used to size the main trial.
-**Main-trial inputs it will measure:** <take-up, attrition, baseline, ...>; not measured: <...>
+**Figures the main trial needs that it will measure:** <take-up, attrition, baseline, ...>; not measured: <...>
 
-## Feasibility questions and progression criteria
+## Feasibility questions and their go, amend, and stop lines (progression criteria)
 | Heading | Question (rate or count, with its denominator) | Go | Amend | Stop | Why this line |
 |---|---|---|---|---|---|
 | Recruitment | <...> | <...> | <...> | <...> | <derived from the main study's ...> |
@@ -109,7 +111,7 @@ See `references/worked-example.md` for a complete run.
 |---|---|---|---|
 | <...> | <no change> | <named change> | <named stop or redesign> |
 
-## Report skeleton
+## Outline of the pilot report
 1. Participant flow: approached, eligible, enrolled, retained, with usable outcome data
 2. Each question: line, observed rate with its margin, decision
 3. Interview reasons
@@ -118,7 +120,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the pilot plan is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `estimate-sample-size`, after the pilot, to recompute the main trial's sample from the observed retention, take-up, or baseline, never from the pilot's effect
+- `choose-trial-design`, when the main study is "not designed yet" and every line is provisional until it is
+- `plan-evaluation-design`, when the main study's outcome or how it will be collected is still open, so the outcome-data line has nothing firm to check
+- `plan-prototype-test`, when acceptability is the biggest worry and nobody from the audience has yet seen the draft
+- the people who would deliver it at scale (health workers, dealers, district staff), when it is unclear whether the pilot's sites and conditions match what the main study will have
+- an ethics reviewer, when the pilot involves medication, clinical care, children, or people who depend on the organization>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

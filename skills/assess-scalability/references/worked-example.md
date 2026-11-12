@@ -9,15 +9,17 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Scalability assessment: weekly treatment text reminders, Kisumu County
+My verdict is promising: test first. The trial result is credible, but the version the county can fund drops the counselor's call-back, names no one responsible for delivery, and would mostly reach long-term patients, in whom the pilot found almost no effect. This says whether the effect is likely to hold at scale, not how large it will be; a nine-month test in 10 county clinics would settle the biggest question, whether the effect needs the call-back.
+
+# Will weekly treatment text reminders in Kisumu County keep their effect at scale?
 
 **Pilot:** viral suppression at 12 months 9 percentage points higher than standard care (95% CI 3 to 15) on the pre-registered primary outcome; cluster randomized trial, 8 clinics, 1,640 patients; among adults on HIV treatment at NGO-supported clinics in Kisumu County; delivered by NGO adherence counselors, with a phone call within 24 hours to anyone who replied "need help"; at about USD 4.10 per patient per year
 **At scale:** 71 county clinics, about 48,000 patients; delivered by county staff, through automated sends from the national electronic medical record; changes: no one answers replies; budget: USD 1.50 per patient per year
 **Decision this informs:** a county budget line for next fiscal year; reversible: yes, the county says it can drop it after one year
 
-## Pilot against scale
+## The pilot compared with delivery at scale
 
-| Row | In the pilot | At scale | Pilot tested the scale version? | Mark |
+| What we compared | In the pilot | At scale | Did the pilot test the scale version? | Mark |
 |---|---|---|---|---|
 | Strength of the effect | Cluster randomized trial with a standard-care comparison; 8 clinics, 1,640 patients; pre-registered primary outcome; no second study | not applicable | not applicable | +: credible, though one study with eight clusters |
 | Who is reached | All adults on treatment at 8 clinics; the effect sat in patients enrolled under 12 months | All patients at 71 clinics, most of them stable for years (the team estimates two-thirds) | No | –: most patients at scale are in the group where the pilot found near zero |
@@ -30,7 +32,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## Verdict
 Promising: test first, because the effect is credible but the version the county can fund drops the call-back, gives no one responsibility for delivery, and reaches mostly the patients in whom the pilot found near zero. If the test shows the effect depended on the call-back, the USD 1.50 version does not yet merit scale-up.
 
-## Test first
+## The test I'd run first
 What is delivered: in 10 county clinics, assign 5 at random to automated texts only and 5 to automated texts with a county staff member who answers "need help" replies within 24 hours, and compare viral suppression among patients enrolled under 12 months against the 61 clinics not yet reached, using the medical record. Nine months. If automated texts alone show no gain over the comparison clinics, the county should fund the version with replies or none.
 
 ## What must be true for the effect to survive
@@ -42,4 +44,12 @@ What is delivered: in 10 county clinics, assign 5 at random to automated texts o
 ## What to check before relying on this
 - Demand and commitment: the county department asked, but clinic staff, who would answer replies, have not been asked.
 - The two-thirds share of long-term patients is the team's estimate; the record system can give the real figure in a week.
+
+## Where you could go from here
+That's the assessment.
+- Ask clinic staff at two or three county clinics whether they could answer "need help" replies within 24 hours: the demand row and the second statement above both turn on their answer, and nobody has asked them yet.
+- Work out the 10-clinic test with `choose-trial-design`: with only 10 clinics in two arms and 61 as the comparison, how clinics are assigned and what they are compared against decide whether the county can trust the result.
+- Record the dropped call-back and the move to automated sends with `specify-intervention-adaptations`: worth doing if the county asks why the cheaper version is not simply the same program, since the call-back is the change most likely to matter.
+I'd lean toward talking to clinic staff first, because the test's reply arm cannot run without them and asking costs little.
+Questions you could ask next: "What result from the test would justify funding the version with replies?" · "How would we count newly enrolled patients in the medical record?"
 ```

@@ -8,12 +8,12 @@
       "expected_output": "A cost-effectiveness estimate in the output template giving the cost per additional adherent woman, with its sensitivity rows.",
       "files": [],
       "assertions": [
-        "Prices the health workers' time at the local wage although the program did not pay it.",
+        "Prices the health workers' time at the local wage although the program did not pay it, and spreads the bicycle cost over its useful life.",
         "Keeps the $9,000 survey and pill-count cost out of the delivery total.",
-        "Spreads the bicycle cost over its useful life.",
         "Divides by about 192 additional adherent women, not by all 1,600 women.",
         "Reruns the ratio at the 5- and 19-point confidence bounds.",
-        "States the perspective, the currency year, and the discount rate."
+        "States the perspective, the currency year, and the discount rate.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the effect estimate with its confidence interval.",
         "Asks for inputs used but not paid for, or which costs were research.",
         "Does not divide the $40,000 by any number.",
-        "Produces no cost per outcome."
+        "Produces no cost per outcome.",
+        "Says why it needs these answers."
       ]
     },
     {

@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "The step log includes the choice of pharmacy, the trip, and the queue as steps.",
-        "Every step has a tag with a written reason.",
+        "Every step has a tag with a written reason, and the pharmacist's explanation is kept for safety.",
         "Counts appear only as 3,000, about 400, and about 90; other steps say \"no data\".",
-        "The pharmacist's explanation is kept, with a safety reason.",
         "Changes the program controls come before changes that need the pharmacies, and clearer information comes last.",
-        "Promises no completion rate."
+        "Promises no completion rate.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks who is registering, and what counts as registered.",
         "Asks for the process from the first moment a person could act to completion.",
         "Asks whether anyone has gone through it as a user or whether staff described it.",
-        "Does not produce a step log or a list of changes."
+        "Does not produce a step log or a list of changes.",
+        "Says why it needs these answers."
       ]
     },
     {

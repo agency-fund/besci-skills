@@ -14,7 +14,7 @@ metadata:
   title: Help people tie their own hands against temptation
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ A commitment device is an arrangement a person chooses that makes a later change
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the design. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and the confirmed barrier, with the evidence that people intend it, have the means, and give way at the moment of action.
 2. **Required.** Whether someone other than the person can check that the goal was met, and who would hold any money.
@@ -82,18 +82,20 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Commitment device specification
+<Two or three plain sentences to the user: the device in a line (soft or hard, and what people put up), the most anyone can lose and why, and that many people will decline it and no effect is promised.>
+
+# A commitment device for <the behavior, in a few words>
 
 **Behavior:** <who, what, when>
 **Confirmed barrier:** <the evidence that people intend it, have the means, and give way at the moment of action>
 **What people already do to bind themselves:** <the informal practice; or "none known">
 
 ## The device
-- **Type:** <soft / hard>, because <whether the goal can be checked and a loss afforded>
+- **Soft or hard:** <soft: failing costs only regret or reputation / hard: it removes access or takes money>, because <whether the goal can be checked and a loss afforded>
 - **Goal:** <the date or amount the person sets>
 - **Checked by:** <who, how, at what cost; or "cannot be checked, so the device is soft">
 - **What the person puts up:** <access, money, or reputation, and the range they choose within>
-- **Cap:** <the most anyone can lose, and the lean-month fact it rests on>
+- **The most anyone can lose:** <the cap, and the lean-month fact it rests on>
 - **Where forfeited money goes:** <not to the program; or "nothing is forfeited">
 - **Emergency release:** <how a person gets out, and what it costs them>
 
@@ -120,7 +122,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the device design is done, or, if the barrier is not giving way at the moment of action, why no device was designed.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `audit-intervention-ethics`, when the device locks or takes money, or a lender, employer, or other party with a hold over the audience would offer it
+- `plan-prototype-test`, when nobody has seen how people react to the offer or the lock, for instance who else can see a locked balance
+- `choose-delivery-moment`, when the offer should reach people at the moment money is in hand and that moment is not yet known
+- `design-pilot-feasibility-study`, once the cap and the offer have been checked, to find out whether the provider can run it before any trial
+- a financial consumer-protection specialist, when the device holds, locks, or forfeits money: required before any pilot
+- a few people from the audience, when the cap rests on a short window of income data: their memory of the leanest weeks can move it>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

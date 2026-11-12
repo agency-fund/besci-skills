@@ -14,7 +14,7 @@ metadata:
   title: Write an exercise to help people feel less judged
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -45,7 +45,7 @@ The exercise is Cohen and Sherman's self-affirmation, one of Walton and Wilson's
 
 ## Before you start
 
-Ask these first, unless already answered.
+Ask these before producing the exercise, unless already answered.
 
 1. **Required.** Who the people are and what they feel judged about, in their words.
 2. **Required.** The moment the judgment is felt, and how the exercise can be given before it: written or spoken, in private or not.
@@ -72,22 +72,24 @@ If 1 or 2 is missing, ask and stop. If 3 is unknown, mark the check "not verifie
 4. **Write the selection prompt:** the value most important to you, not the one you think you should choose.
 5. **Write the two-part prompt:** why this value matters to you, then a specific time it mattered. Add nothing; studies that changed the tested materials found smaller effects. Weak readers tell it to a facilitator in private.
 6. **Write the delivery notes:** before the moment, since an affirmation that follows a defensive reaction comes too late; in private, ungraded, unread by staff; as an ordinary activity, never announced as help, which marks people as needing it; about 15 minutes; repeated only before a later stressful moment.
-7. **Write the two cautions:** what the exercise does not fix, and the record, with no effect size promised.
+7. **Write the two cautions:** what the exercise does not fix, and what trials found, with no effect size promised.
 
 See `references/worked-example.md` for a complete run.
 
 ## Output template
 
 ```markdown
-# Values-affirmation script
+<Two or three plain sentences to the user: whether the setting gives the exercise something to work with; if it does, when and how people do the exercise; and whether someone from the group still has to confirm the value list.>
 
-**People and threat:** <who; what they feel judged about, close to their words>
+# Values affirmation for <the people, in a few words>: a short private writing exercise
+
+**Who, and what they feel judged about:** <who; what they feel judged about, close to their words>
 **The moment:** <when the judgment is felt>
 
-## What the setting offers (gate)
+## Does the setting give the exercise something to work with?
 - **Practical barrier:** <cost, access, exposure by design; or none found>
 - **What people gain once they engage:** <facts, with their source>
-- **Verdict:** <delivers / does not deliver: what must change first, and no exercise follows / not verified: not for use>
+- **Verdict:** <yes / no: what must change first, and no exercise follows / not verified: not for use>
 
 ## Value list
 <confirmed by whom; or "unconfirmed: confirm with someone from the group before use">
@@ -115,9 +117,29 @@ See `references/worked-example.md` for a complete run.
 ## What this exercise does not fix
 <the practical, design, or community barrier, named>
 
-## The record, and what is unconfirmed here
+## What trials found, and what is unconfirmed here
 <what trials found and where; what differs about this group or setting; no effect size promised>
+
+## Where you could go from here
+<One line saying the exercise is done, or that the setting check stopped it.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when the value list and the introduction should be tried with a few people from the group before use
+- `audit-intervention-ethics`, when the person giving the exercise has a hold over the group, or staff could see what people write
+- `select-intervention-levers`, when the setting check found that cost, access, or exposure keeps people away, so the fix lies there
+- `design-pilot-feasibility-study`, when the exercise is ready and the question is whether staff can give it privately, before the moment, at every site
+- a few people from the group, when the value list is unconfirmed>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

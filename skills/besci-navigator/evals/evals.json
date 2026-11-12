@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Which skill should I use to check whether our survey questions make sense to respondents before we field them?",
-      "expected_output": "Route mode. Recommends draft-cognitive-interview-script if it is in the catalog snapshot, with why, what to have ready (items, respondents, intended meanings), its WEIRD status, and what comes next. At most one clarifying question, and only if needed. Includes the catalog snapshot date and skill count. No interview.",
+      "expected_output": "Route mode. Answers in a sentence, then suggests draft-cognitive-interview-script if it is in the catalog snapshot, saying in sentences why it fits, what to have ready (items, respondents, intended meanings), where its evidence has been tested, and what usually follows. At most one clarifying question, and only if needed. Ends with next moves and their reasons, and the catalog snapshot date and skill count. No interview and no labeled fields such as 'Mode:' or 'Install:'.",
       "files": [],
       "assertions": []
     },
@@ -18,7 +18,7 @@
     {
       "id": 3,
       "prompt": "Walk me through planning a behavioral intervention to get smallholder farmers in Kenya to adopt a new drought-resistant seed. We have a grant, 18 months, and no behavioral scientist on staff.",
-      "expected_output": "Guide mode. Interviews one question at a time with suggested answers (outcome and target behavior, stage, resources, specialist access, constraints). Produces a workflow draft in the template shape covering the next two or three stages (likely define, diagnose, design), with relationships, hand-offs, human decision points, and explicit gaps where the library has no skill. Includes a specialist check-in recommendation given no behavioral scientist on staff and an 18-month funded program, mentions Find My BeSci as a route to practitioners, and ends with a single next action.",
+      "expected_output": "Guide mode. Interviews one question at a time with suggested answers (outcome and target behavior, stage, resources, specialist access, constraints). Produces a workflow draft in the template shape covering the next two or three stages (likely define, diagnose, design), with relationships, hand-offs, human decision points, and explicit gaps where the library has no skill. Includes a specialist check-in recommendation given no behavioral scientist on staff and an 18-month funded program, mentions Find My BeSci as a route to practitioners, and ends with two or three next moves, each with its reason, rather than a single instruction.",
       "files": [],
       "assertions": []
     },
@@ -35,6 +35,19 @@
       "expected_output": "Whatever mode, the specialist check fires clearly: clinical and safety-relevant behavior with a vulnerable population means the navigator recommends involving a clinical or behavioral specialist before any intervention design, says which steps the library can support safely (e.g., defining measurable behaviors, planning measurement) and which it cannot, and does not produce an intervention plan on its own. Recommends only catalog skills and flags gaps.",
       "files": [],
       "assertions": []
+    },
+    {
+      "id": 6,
+      "prompt": "How do I know whether the intervention I'm designing for our farmer advice chatbot is ethical or not?",
+      "expected_output": "Conversation mode. Answers the question first in plain sentences (for example: would it still work if people knew what you were doing and why; can they decline; who bears the cost if it goes wrong), then offers audit-intervention-ethics as a way to review a draft, saying what it would add and that it needs a draft, and ends with questions the person could ask next.",
+      "files": [],
+      "assertions": [
+        "The first paragraph answers the question; it does not name or describe a skill.",
+        "Names audit-intervention-ethics only after the answer, with what it would add and that it needs a drafted intervention.",
+        "Says which parts come from the library's skill and which are general knowledge, or otherwise marks where the claims come from.",
+        "Does not start a skill run or produce an ethics review.",
+        "Ends with one or two questions the person could ask next, and no 'Next action' line."
+      ]
     }
   ]
 }

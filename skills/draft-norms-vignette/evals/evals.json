@@ -10,10 +10,10 @@
       "assertions": [
         "The base story is about a named fictional pregnant woman like the respondents and is not set in the respondents' own village.",
         "The empirical cue names pregnant women in her village and the normative cue names her husband and his mother; neither says 'people'.",
-        "Gives four versions that differ only in the cue sentences.",
+        "Gives four versions that differ only in the cue sentences, assigned at random, one per respondent.",
         "Asks what the fictional woman will do and whether the respondent thinks she should.",
-        "Says versions are assigned at random, one per respondent.",
-        "Says in advance what a shift with each cue, or with neither, would mean."
+        "Says in advance what a shift with each cue, or with neither, would mean.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks who does what, when, or for the evidence that others' expectations matter.",
         "Asks whose behavior and whose approval people track for this practice.",
         "Asks who the respondents are or how the survey is delivered.",
-        "Does not write a story or cues."
+        "Does not write a story or cues.",
+        "Says why it needs these answers."
       ]
     },
     {

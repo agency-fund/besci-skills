@@ -9,18 +9,20 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Commitment device specification
+I've designed a locked savings pocket that vendors choose to open: their deposits stay locked until a date they pick, and nobody loses any money if they stop. No unlock date can fall inside the dip before school terms, and there is one free emergency release a term. Expect many vendors to decline; the trials show balances rise among those offered, but I haven't promised an effect for Gikomba.
+
+# A commitment device for vendors' Saturday restocking fund
 
 **Behavior:** Women stall vendors in Gikomba market set aside KES 500 from the week's surplus into a restocking fund every Saturday.
 **Confirmed barrier:** Giving way at the moment the cash is in hand. Of 40 vendors interviewed, 34 intend to set money aside and 31 have a surplus most weeks; most describe spending it the same evening or lending it to neighbors who ask. Cost and access are ruled out for most; nine vendors have no regular surplus and the device is not for them.
 **What people already do to bind themselves:** About a third give cash to a chama treasurer to hold.
 
 ## The device
-- **Type:** Hard, as a lock with nothing forfeited, because the balance can be checked and a lock answers both the evening purchase and the neighbor's request ("it is locked, I cannot send it"), while a forfeit would take money from vendors whose surplus is small.
+- **Soft or hard:** Hard, as a lock with nothing forfeited, because the balance can be checked and a lock answers both the evening purchase and the neighbor's request ("it is locked, I cannot send it"), while a forfeit would take money from vendors whose surplus is small.
 - **Goal:** An unlock date the vendor picks, suggested as the week she restocks, and a weekly amount she picks.
 - **Checked by:** The provider's pocket balance, shown to the vendor on request at no cost.
 - **What the person puts up:** Access to her own deposits until the unlock date. Weekly deposit of KES 100 to 1,000, chosen by the vendor and changeable each month.
-- **Cap:** No money can be lost. No unlock date may fall later than the start of the two-week dip before a school term, so that nothing is locked when income is lowest.
+- **The most anyone can lose:** No money can be lost. No unlock date may fall later than the start of the two-week dip before a school term, so that nothing is locked when income is lowest.
 - **Where forfeited money goes:** Nothing is forfeited.
 - **Emergency release:** One request per term, paid out after 48 hours, free. The delay holds against an evening impulse and not against an illness.
 
@@ -48,4 +50,12 @@ That offering a locked savings account raises balances at the provider among tho
 ## What to check before relying on this
 - Whether the interviews, held in one month, missed weeks with no surplus. Ask ten vendors to recall the last eight Saturdays.
 - Whether a locked balance is visible to a husband or relative who shares the phone.
+
+## Where you could go from here
+That's the device design.
+- Ask ten vendors to recall their last eight Saturdays: the interviews came from one month, and if many weeks had no surplus, the weekly range and the review rate need changing before anyone else sees the design.
+- Take it to a financial consumer-protection specialist before any pilot: the device locks money, so the 48-hour release, the disclosure sheet, and who can see a balance are theirs to check.
+- Try the offer on a few vendors who share a phone with `plan-prototype-test`: if a husband or relative can see the locked balance, some vendors may not want it at all.
+I'd lean toward the eight-Saturday recall first, because it is cheap and could change what the specialist reviews.
+Questions you could ask next: "How should the agent explain the lock so it doesn't sound like a loan?" · "What should we tell a vendor who uses the emergency release?"
 ```

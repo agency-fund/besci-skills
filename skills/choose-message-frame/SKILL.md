@@ -13,7 +13,7 @@ metadata:
   title: Choose gain or loss wording for a message
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -45,7 +45,7 @@ A frame is the side of one fact a message states: "the vaccine protects your chi
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before deciding on the wording. Do not ask anything the user has already answered.
 
 1. **Required.** The draft message or offer in full, with the behavior it asks for (who, what, when), the channel, and the sender.
 2. **Required.** Whether the behavior lowers a risk (a vaccine, saving) or reveals one (an HIV test, a screening).
@@ -68,7 +68,7 @@ If 1, 2, or 3 is missing, ask and stop. If 4 or 5 is missing, assume nothing is 
 ## How to do it
 
 1. **Check that the frame is the open question.** A frame does not remove cost, distance, or distrust. If one of those is the barrier, say so and stop.
-2. **Record the kind of behavior and the vehicle:** lowers a risk or reveals one; words only, or money.
+2. **Record the kind of behavior and whether it is words or money:** lowers a risk or reveals one; words only, or money.
 3. **Make the gain version the default,** because the measured difference is small and the loss version has a known cost, anxiety. Keep a loss version as a candidate only when the behavior reveals a risk or the team has local evidence for it.
 4. **Write both versions** with the same facts, action, sender, and length. The loss version states the benefit forgone and nothing more: no new harm, blame, or worst case.
 5. **Name who the loss version could frighten or shame:** people who cannot act and so hear only the threat, people who already have the condition, people for whom naming the outcome is taboo.
@@ -82,12 +82,14 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Message frame decision
+<Two or three plain sentences to the user: which wording to use and the one fact that decided it, anything taken out of the loss version and why, and that no difference between the versions is promised.>
+
+# Gain or loss wording for <the message, in a few words>
 
 **Behavior:** <who, what, when>
 **Draft received:** <the text or offer; channel; sender>
 **Kind of behavior:** <lowers a risk / reveals a risk>, because <...>
-**Vehicle:** <words only / money: what a loss version would do to it>
+**Words or money:** <words only / money: what a loss version would do to it>
 
 ## Decision
 - **Frame to use:** <gain / both, sent at random / gain; loss version not designed, see specialist review>
@@ -122,7 +124,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the decision on wording is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when the pre-test needs a full plan, or the same few people should also check that the message is understood in translation
+- `choose-trial-design`, when both versions will be sent at random and the team has to settle what is randomized and what is compared
+- `audit-intervention-ethics`, when a loss version is still a candidate, or the sender has power over the audience (an employer, a lender, a clinic)
+- `design-incentive-scheme`, when the offer involves money and its amount, condition, or timing is still open
+- a labor-law or ethics reviewer, when a loss version would take back or withhold money people treat as theirs
+- a local health worker or community member, when nobody has asked whether the bad outcome may be named aloud there>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

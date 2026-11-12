@@ -99,6 +99,19 @@ SOFT_MAX_EXPECTED_WORDS = 60
 # repository's planning files, not in the text a user or the AI reads.
 PROCESS_TERMS = ["dossier", "verified-crossref", "verified-fetch", "author to confirm", "plan-only citation"]
 SKILL_NAME_IN_TEXT_RE = re.compile(r"`([a-z]+(?:-[a-z0-9]+)+)`")
+# --- The conversational voice (ADR 0009) -------------------------------------
+# Every skill carries the shared voice block in its Output template section and
+# ends its template with a closing that offers next moves. These were warnings
+# while the library was revised to the standard and are errors now.
+STRICT_VOICE = True
+VOICE_START = "<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->"
+VOICE_END = "<!-- /shared -->"
+CLOSING_HEADING = "Where you could go from here"
+DIRECTIVE_CLOSING_RE = re.compile(
+    r"(\*\*\s*(next actions?|next steps?|check first|do this next|start with|your next step)\b"
+    r"|^#+\s*(next actions?|next steps?)\b)",
+    re.IGNORECASE | re.MULTILINE,
+)
 MAX_SKILL_MD_LINES = 500
 MAX_FILE_BYTES = 2 * 1024 * 1024
 MAX_FOLDER_BYTES = 10 * 1024 * 1024
@@ -157,6 +170,13 @@ class Skill:
 
     def warn(self, code: str, message: str, file: str = "SKILL.md") -> None:
         self.findings.append(Finding("warning", code, message, file))
+
+    def voice(self, number: str, message: str, file: str = "SKILL.md") -> None:
+        """A rule from the conversational-voice standard: a warning until STRICT_VOICE is on, then an error."""
+        if STRICT_VOICE:
+            self.error("E" + number, message, file)
+        else:
+            self.warn("W" + number, message, file)
 
     def v2(self, number: str, message: str, file: str = "SKILL.md") -> None:
         """A rule from the November 2026 standard: a warning until STRICT_V2 is on, then an error."""
@@ -301,6 +321,29 @@ def strip_fences(text: str) -> str:
 
 def word_count(text: str) -> int:
     return len(text.split())
+
+
+def strip_voice_block(text: str) -> str:
+    """The text with the shared voice block removed; it does not count toward a skill's length."""
+    if VOICE_START not in text:
+        return text
+    head, rest = text.split(VOICE_START, 1)
+    return head + (rest.split(VOICE_END, 1)[1] if VOICE_END in rest else "")
+
+
+def known_names(start: str) -> Optional[set]:
+    """Every skill folder and workflow name in the repository, or None outside a repository."""
+    root = find_repo_root(start)
+    if not root:
+        return None
+    names = set()
+    skills = os.path.join(root, "skills")
+    if os.path.isdir(skills):
+        names |= {d for d in os.listdir(skills) if os.path.exists(os.path.join(skills, d, "SKILL.md"))}
+    flows = os.path.join(root, "workflows")
+    if os.path.isdir(flows):
+        names |= {f[:-3] for f in os.listdir(flows) if f.endswith(".md")}
+    return names or None
 
 
 def level2_headings(text: str) -> List[str]:
@@ -537,6 +580,9 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     out = skill.sections.get("Output template", "")
     if out and "```" not in out:
         skill.warn("W028", "'## Output template' has no fenced code block. Show the exact shape of the response in a ```markdown block.")
+    if out:
+        _validate_voice(skill, out)
+    _validate_named_skills(skill, verbs)
 
     if mtype == "atomic":
         _validate_v2_body(skill, verbs)
@@ -609,25 +655,46 @@ def _validate_v2_body(skill: Skill, verbs: List[str]) -> None:
 
     counted = []
     for heading, text in skill.sections.items():
-        counted.append(strip_fences(text) if heading == "Output template" else text)
+        counted.append(strip_fences(strip_voice_block(text)) if heading == "Output template" else text)
     words = word_count("\n".join(counted))
     if words > SOFT_MAX_WORDS:
         skill.warn("W043", f"SKILL.md is {words} words, not counting the output template. Aim for about {SOFT_MAX_WORDS}: keep a sentence only if deleting it would change what the AI does or what the reader decides, and move evidence detail to references/evidence.md.")
 
-    # Another skill is named only where the reader is told where to go instead.
+    # Inputs are asked for by what they are, not by which skill made them (ADR 0009).
     own = skill.name
     named = set()
-    for heading, text in skill.sections.items():
-        if heading == "When to use it":
-            subs = split_subsections(text)
-            text = "\n".join(v for k, v in subs.items() if k != DONT_USE_WHEN_SUBHEADING)
-        for m in SKILL_NAME_IN_TEXT_RE.findall(strip_fences(text)):
-            if m != own and (not verbs or m.split("-")[0] in verbs):
-                named.add(m)
+    for m in SKILL_NAME_IN_TEXT_RE.findall(strip_fences(skill.sections.get("Before you start", ""))):
+        if m != own and (not verbs or m.split("-")[0] in verbs):
+            named.add(m)
     if named:
-        skill.warn("W051", f"Names other skills outside '### {DONT_USE_WHEN_SUBHEADING}': {', '.join(sorted(named))}. Describe an input by what it is, not by which skill made it; people bring inputs from anywhere.")
+        skill.warn("W051", f"'## Before you start' names other skills: {', '.join(sorted(named))}. Ask for an input by what it is, not by which skill made it; people bring inputs from anywhere.")
 
     _warn_process_terms(skill, "SKILL.md", skill.body)
+
+
+def _validate_voice(skill: Skill, out: str) -> None:
+    """The shared voice block and a closing that offers next moves (ADR 0009)."""
+    if VOICE_START not in out or VOICE_END not in out:
+        skill.voice("053", "'## Output template' needs the shared voice block after the template: the lines between the template/shared/voice.md markers. Copy the markers from template/skill-template/SKILL.md, then run scripts/check_sync.py --fix to fill them.")
+    if not re.search(r"^#+\s*" + re.escape(CLOSING_HEADING), out, flags=re.MULTILINE):
+        skill.voice("054", f"The output template needs a closing headed '{CLOSING_HEADING}': two or three next moves, each with its reason and when it fits, and one or two questions the user could ask next.")
+    found = sorted({m.group(0).strip("*# ").strip() for m in DIRECTIVE_CLOSING_RE.finditer(strip_voice_block(out))})
+    if found:
+        skill.voice("055", f"The output template tells the user what to do ({', '.join(found)}). Offer next moves with reasons under '{CLOSING_HEADING}' instead; the user decides.")
+
+
+def _validate_named_skills(skill: Skill, verbs: List[str]) -> None:
+    """Every skill or workflow a SKILL.md names must exist, so a suggestion never points nowhere."""
+    names = known_names(skill.path)
+    if not names:
+        return
+    missing = set()
+    for m in SKILL_NAME_IN_TEXT_RE.findall(skill.body):
+        looks_like_skill = m.startswith("besci-") or (verbs and m.split("-")[0] in verbs)
+        if looks_like_skill and m not in names:
+            missing.add(m)
+    if missing:
+        skill.error("E056", f"Names {', '.join(sorted(missing))}, which is not a skill or workflow in this library. Use a current name, or describe the step without one.")
 
 
 def _warn_process_terms(skill: Skill, rel: str, text: str) -> None:

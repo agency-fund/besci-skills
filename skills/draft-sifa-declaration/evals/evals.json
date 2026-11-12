@@ -8,12 +8,12 @@
       "expected_output": "A sIfA statement in the output template, with each person's level and AI use in each role they performed, the roles not performed, and the accountability statement.",
       "files": [],
       "assertions": [
-        "The header names both authors, the tool, and the self-report basis line.",
-        "Rates Writing – original draft 2 for the tool-drafted background section, although it was rewritten.",
-        "Rates Visualization 2 for the first versions of the two charts.",
+        "Opens with a few plain sentences to the user, and the header names both authors, the tool, and the self-report basis line.",
+        "Rates Writing – original draft 2 for the tool-drafted background section, although it was rewritten, and Visualization 2 for the first versions of the two charts.",
         "Lists the grammar pass under Writing – review & editing.",
         "Gives each person a level (Sole, Lead, Equal, or Support) in each role they performed.",
-        "Never lists the tool as the person who performed a role."
+        "Never lists the tool as the person who performed a role.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the work's title and the people accountable for it.",
         "Asks who did each part and which AI tools were used where and for what.",
         "Asks about small uses such as grammar passes, debugged code, or chart drafts.",
-        "Does not produce a statement."
+        "Does not produce a statement.",
+        "Says why it needs these answers."
       ]
     },
     {

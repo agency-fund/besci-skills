@@ -9,7 +9,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Transferability assessment: default enrollment in a salary-linked savings account (Afghanistan)
+I can't tell whether the Afghanistan result would hold at your factories, and the 40-point figure should come out of the proposal either way. The study counted how many people took part, not the balance held after six months, and an in-person opt-out at the HR desk is probably not a free choice for your workers. I read the abstract only, so the full paper could settle some of what is unknown.
+
+# Would a savings default from an Afghan firm hold at three garment factories in Gazipur?
 
 **Decision this informs:** a one-factory pilot, and a number quoted in a proposal
 **Finding:** Blumenstock, Callen & Ghani (2018), https://doi.org/10.1257/aer.20171676; default enrollment raised participation by 40 percentage points, the same as a 50% matching incentive; employees of a firm in Afghanistan with a salary-linked savings account
@@ -45,4 +47,12 @@ Cannot tell, because two conditions are unknown, one probably does not hold as d
 
 ## What to check before relying on this
 - The full text of the study, for how opt-out worked and whether balances were tracked. Either could change the verdict.
+
+## Where you could go from here
+That's the assessment.
+- Get the full text, through a library or by writing to the authors: it may say how opt-out worked and whether balances were tracked, and either answer could move the verdict off "cannot tell" at no cost.
+- Try the announcement and the opt-out route with a few workers using `plan-prototype-test`: assumptions 2 and 4 are about how workers read a default from HR, and 10 conversations can show that before the pilot starts.
+- Set a planning number with `estimate-expected-effect` if the proposal still needs one once the 40 points come out: it works from the published estimates you supply rather than from one headline figure.
+I'd lean toward the full text first, because it costs nothing and what it says about opt-out and balances could change the verdict before you spend time with workers.
+Questions you could ask next: "What should the proposal say instead of the 40-point figure?" · "How do we announce the default so workers don't read it as a wage cut?"
 ```

@@ -13,7 +13,7 @@ metadata:
   title: Tell people what most of their peers already do
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Writes one message that tells people what most of their peers do or approve of.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the message. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when), and what the audience believes their peers do and approve of, from a norm diagnosis, a survey, or interviews.
 2. **Required.** What those peers really do: the share, the group it describes, the source, and the date. Where measured, the share who approve.
@@ -83,7 +83,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Social norm message
+<Two or three plain sentences to the user: what the message tells people and the figure it rests on, or why no norm message should be sent; the belief it corrects; and that it goes out widely only after the checks below.>
+
+# Telling <the audience, in a few words> what most of their peers do or approve of
 
 **Behavior:** <who, what, when>
 **What the audience believes peers do and approve of:** <the belief, and how it was learned>
@@ -93,7 +95,7 @@ See `references/worked-example.md` for a complete run.
 
 ## Kind of message
 - **Chosen:** <what most do / what most approve of / both / none>
-- **Rule applied:** <at least half do it / fewer than half do it and a measured majority approves / neither: stopped>
+- **Rule for these figures:** <at least half do it / fewer than half do it and a measured majority approves / neither: stopped>
 
 ## The message
 <the text: the group named, the figure, the line of approval, one action with where and by when>
@@ -124,7 +126,28 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the assumption most likely to be wrong>
+
+## Where you could go from here
+<One line saying the message is done, or that the figures stopped it.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `map-reference-network`, when it is not known whether the audience sees the named group as people like them
+- `audit-intervention-ethics`, before the message is sent, when the figure describes a small group, the behavior is private, or the sender has a hold over the audience
+- `plan-prototype-test`, when the team wants to see what a few recipients do with the message, not only whether they believe the figure
+- `choose-trial-design`, when the comparison should be set up as a randomized test
+- `select-intervention-levers`, when a norm message turned out to be the wrong tool and the confirmed barrier needs another kind of intervention
+- the records behind the figure, when they may be incomplete or cover only people the program registered>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

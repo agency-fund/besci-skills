@@ -9,13 +9,15 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+I wrote seven questions for the four things you want to measure, within your budget of eight, and left nothing out. The weakest point is B1: "put money aside" may be heard as saving in a bank or on a phone only. None of these has been tried with a farmer yet, so they are drafts until people like your respondents have been asked what they mean.
+
 # Draft survey questions: Kakamega baseline, fertilizer-timing block
 
 **Respondents:** smallholder maize farmers in Kakamega County, mostly women, primary schooling; drafted in English for later translation
 **How they answer:** read aloud by an interviewer, at home
 **Length budget:** 8 questions
 
-## Questions by construct
+## Questions, by what each one measures
 
 ### (A) Purchase timing: when the fertilizer used at planting in the last long rains was bought
 **A1.** Think about the long rains of this year. When did you buy the fertilizer you used at planting?
@@ -97,4 +99,12 @@ These are draft questions. No respondent has yet been asked what they mean.
 - B1: "put money aside" may be heard as saving in a bank or on a phone only, so a farmer who keeps cash or grain back would answer "very hard".
 - C1: a count out of ten of other people is an unfamiliar task for many respondents, and some will answer about what farmers should do.
 - B1 has five spoken options, the most a listener is asked to hold in this block; the pretest should check that farmers can tell "a little hard" from "somewhat hard".
+
+## Where you could go from here
+That's the draft block.
+- Have the Kiswahili and Luhya versions made with `translate-survey-instrument`: translation is already in your plan, and "put money aside" and "farmers like you" are the phrases that most need words these farmers use.
+- Try the translated questions with a few farmers using `draft-cognitive-interview-script`: B1's "put money aside" and C1's count out of ten are the two most likely to be misread, and a handful of interviews would show it before every household is asked.
+- Look for fertilizer-timing questions in earlier surveys of farmers in western Kenya: you did not supply any, and a question already fielded with farmers like these could replace a new one.
+I'd lean toward the translation first and the farmer interviews right after, because the questions will be heard in Kiswahili and Luhya, and that is the wording that has to hold.
+Questions you could ask next: "Would a three-option version of B1 work better for farmers who cannot read?" · "Can we add a question on who in the household decides when to buy fertilizer?"
 ```

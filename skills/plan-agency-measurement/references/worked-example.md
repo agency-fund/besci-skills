@@ -9,6 +9,8 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
+Each of your three focus constructs now has a measure inside WhatsApp and one outside it, and two of the six build on things you already collect. One thing should not go ahead yet: comparing the two modes on the model's coding of chats, before two people have coded a sample and the model has been checked against them. The checks for the mode decision are small; a funder report needs more, beginning with a published self-efficacy scale that nobody has opened yet.
+
 # Agency measurement plan: Pitch Partner (AI mentor for student entrepreneurs)
 
 **Definition:** A student's capability to form, defend, and revise a business idea of their own, and to judge when the mentor's input helps. Focus: entrepreneurial self-efficacy (2), revising after feedback (3), appropriate reliance on the mentor (4).
@@ -23,7 +25,7 @@ A full run of the skill on a realistic case, showing the output it should produc
 | **Externally expressed** (choices and actions) | **On-platform:** model coding of chats for setting and revising the idea, weekly; experimental (#3)<br>**Off-platform:** panel's pitch rubric, week 12 (have) (#4) | **On-platform:** share of turns that hand a decision to the mentor against turns that push back on or edit its suggestion, weekly (#5)<br>**Off-platform:** teacher observation of whether a student can explain the idea without the phone, weekly (have; needs a checklist) (#6) |
 
 Data the team already collects is marked "(have)".
-**In no cell:** Messages per student measure use. Thumbs-up on replies measure satisfaction. Students can chat a lot and like the replies while the mentor does the thinking.
+**Tracked, but not a measure of agency:** Messages per student measure use. Thumbs-up on replies measure satisfaction. Students can chat a lot and like the replies while the mentor does the thinking.
 
 ## Measure details
 | # | Instrument | Items | Source | Evidence, and what to check here | Use, adapt, or build |
@@ -49,4 +51,12 @@ Data the team already collects is marked "(have)".
 ## What to find out next
 - A published entrepreneurial self-efficacy scale for secondary-school students: "Validated scales of entrepreneurial self-efficacy for secondary-school students in India or other low- and middle-income countries: items, response format, validation sample, and known limits in Hindi. Cite sources."
 - Whether handing decisions to the mentor relates to what students can do unaided: "Studies linking AI chat behavior (answer-seeking, delegation) to unassisted performance among adolescents. Which behaviors were measured, and how were they validated? Cite sources."
+
+## Where you could go from here
+That's the measurement plan.
+- Run the first search query above: #2 stays "not accessed" until someone opens a published scale, and both the week 1 survey and a funder report would rest on it.
+- Script the interviews with 8 students using `draft-cognitive-interview-script`: they are the first check in the testing table, #1 can be tried now, and #2 joins once a scale is found.
+- Set up the two human coders on 150 chat segments before the model codes anything: until they agree with each other and the model agrees with them, #3 cannot be used to compare the modes.
+I'd lean toward the search first, because #2 is the only measure with nothing behind it yet, and the interviews and the week 1 survey both depend on what it turns up.
+Questions you could ask next: "What do we tell the funder if #5 and #6 point in different directions?" · "Can the teachers fit the checklist into the observation they already do?"
 ```

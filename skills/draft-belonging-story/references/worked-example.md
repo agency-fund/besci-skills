@@ -16,19 +16,21 @@ We plan one 90-minute session in week two, led by two mentors, in Swahili, with 
 ## The output
 
 ```markdown
-# Belonging story set
+The campus does include rural first-years, through mentors and shared hostels, and nobody has reported harassment, so I've edited four of your field officer's interviews into stories; each teller approves the edit before anything is printed. One gap is left: the mentors haven't been asked whether rural first-years are mocked in the hostels. The trials behind this exercise are from US colleges, so this would be a first test here, and I haven't promised an effect.
+
+# Stories from older peers for first-years from rural districts
 
 **Behavior:** First-year students from rural districts register for the second semester by the deadline.
 **Transition:** Arrival in October; the first continuous-assessment marks come back in week six.
 **The question newcomers are asking:** "Students from the villages do not finish here; the town students already know how the university works" (19 of 30 first-years from rural districts; interviews last year)
 **Group:** First-year students from rural districts.
 
-## What the setting offers (gate)
+## Does the setting include them?
 - **Who includes them:** A third-year mentor from a rural district for every rural first-year (student union); hostel rooms allocated by faculty, so rural and town students share (university rule).
 - **Harassment or exclusion:** None reported: no complaint by home region to the dean of students in two years, and none raised in 30 interviews. The mentors have not been asked.
 - **Verdict:** Delivers. One open point: ask the mentors whether rural first-years are mocked in the hostels.
 
-## Collection
+## Collecting the stories
 - **Tellers:** Ten third- and fourth-year students from rural districts, already interviewed, with written consent. Each approves the edited story before it is printed.
 - **Questions:** What was hard in your first weeks here? What did you think it meant about you, or about students like you? What changed, and when?
 - **Who interviews, when:** The field officer, in Swahili; done.
@@ -43,7 +45,7 @@ For two months I did not speak in class because of my accent. I thought the lect
 ### "Juma", third year
 I nearly left in week seven, after I failed an assessment. I talked to my mentor. By the end of the semester it had passed. Now I am a mentor, and the first-years tell me exactly what I thought. [Shortened; the teller asked that the course not be named.]
 
-## Framing line
+## The line that introduces the stories
 "We asked ten students from rural districts who are now in their third and fourth years what their first weeks here were like. Nine described a moment when they thought the university was not for people like them. All ten said it passed during the first year."
 
 ## Advice task
@@ -56,15 +58,23 @@ I nearly left in week seven, after I failed an assessment. I talked to my mentor
 ## How you will know
 - **Outcome:** Registration for the second semester by the deadline, from registration records.
 - **Judged on:** First-years from rural districts on this campus against those on the sister campus, same intake.
-- **Check on delivery only:** One item, "students like me belong at this university", asked in week eight.
+- **Shows only that the stories landed:** One item, "students like me belong at this university", asked in week eight.
 
-## The record
+## What trials have found
 The trials are from colleges in the United States. Among 26,911 students at 22 institutions, the exercise raised the rate of completing the first year full-time only where students' groups had real opportunities to belong (Walton et al., 2023). At one university, 86% of minority and first-generation students stayed enrolled through the second year, against 76% without it (Murphy et al., 2020). No field trial in a low- or middle-income country was found, so this is a first test here. No effect size is promised.
 
-## Pre-test before use
+## A small test before use
 Eight incoming first-years from rural districts and two mentors read the Swahili set. Pass: the first-years recognize at least two of the difficulties as ones they expect or have met, the mentors find no story that promises something the campus does not offer, and all eight can say what the letter asks for.
 
 ## What to check before relying on this
 - "No harassment" rests on complaints and on first-year interviews. Ask the mentors about the hostels before week two.
-- Rehema's story is about accent and speaking in class. Check with the pre-test group that rural first-years here recognize it.
+- Rehema's story is about accent and speaking in class. Check with the small test group that rural first-years here recognize it.
+
+## Where you could go from here
+That's the story set.
+- Ask the mentors whether rural first-years are mocked in the hostels, before week two: "no harassment" rests on complaints and first-year interviews, and if the mentors describe mocking, the stories should wait until that changes.
+- Plan the small test with `plan-prototype-test`: eight incoming first-years and two mentors, with a close look at whether Rehema's story about accent is one they recognize.
+- Run the set past `audit-intervention-ethics`: the tellers come from a small cohort and could be recognized by classmates, and the letters go to next year's first-years.
+I'd lean toward asking the mentors first, because their answer decides whether the stories can be used at all, and it takes one conversation.
+Questions you could ask next: "How should the mentors lead the session so it doesn't feel like a lecture?" · "What do we do if the mentors report mocking in the hostels?"
 ```

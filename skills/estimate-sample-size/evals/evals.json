@@ -9,11 +9,11 @@
       "files": [],
       "assertions": [
         "Shows the power_calc.py command and its output rather than arithmetic done by hand.",
-        "Reports the villages needed per arm at the assumed ICC, with the design effect.",
-        "Reports the minimum detectable effect for 30 villages per arm (about 9.6 points).",
+        "Reports the villages needed per arm at the assumed ICC, with the design effect, and the minimum detectable effect for 30 villages per arm (about 9.6 points).",
         "Includes a sensitivity table over several ICC values, saying no local ICC exists.",
         "Reports Type S or Type M risk for a true effect of 6 points.",
-        "Concludes that 60 villages cannot detect 6 points and does not raise the planned effect to make them enough."
+        "Concludes that 60 villages cannot detect 6 points and does not raise the planned effect to make them enough.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks for the effect to plan on, with its unit.",
         "Asks for the outcome's baseline rate, or its mean and standard deviation.",
         "Asks whether people or groups will be randomized.",
-        "Gives no sample size and no minimum detectable effect."
+        "Gives no sample size and no minimum detectable effect.",
+        "Says why it needs these answers."
       ]
     },
     {

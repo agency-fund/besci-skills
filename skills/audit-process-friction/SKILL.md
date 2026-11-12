@@ -14,7 +14,7 @@ metadata:
   title: Count the hassle between intention and completion
   type: atomic
   stage: diagnose
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ This is often called a sludge audit; sludge is friction that costs people time o
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the audit. Do not ask anything the user has already answered.
 
 1. **Required.** The behavior (who, what, when) and what counts as done.
 2. **Required.** The process as the team believes it runs, from the moment a person first could act to completion.
@@ -87,7 +87,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Process friction audit
+<Two or three plain sentences to the user: what finishing costs one person, where the counts show people being lost, and which change heads the list. Say so if the times are estimates.>
+
+# What it takes to <finish the process, in a few words>, step by step
 
 **Behavior:** <who, what, when>
 **Process audited:** <from the first moment the person could act to the completion point>
@@ -95,7 +97,7 @@ See `references/worked-example.md` for a complete run.
 
 ## Step log
 
-| # | Step, from the user's side | Time, with waiting | Money | Documents | Decision or fact demanded | Controlled by | Tag | Reason for the tag | In → out |
+| # | Step, from the user's side | Time, with waiting | Money | Documents | Decision or fact demanded | Controlled by | Keep, remove, move, or check | Why | People in → out |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | <...> | <observed / estimate> | <...> | <...> | <...> | <program / partner / government> | <keep / remove / move / check> | <...> | <counts, or "no data"> |
 
@@ -117,7 +119,28 @@ See `references/worked-example.md` for a complete run.
 ## What to check before relying on this
 - <the cell most likely to be wrong>
 - <who must agree before a step changes>
+
+## Where you could go from here
+<One line saying the audit is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `select-intervention-levers`, when observation or users' reports have located the losses and the team wants to choose what kind of change fits them
+- `select-default-option`, when most people are lost at one decision point, such as an opt-in, rather than across steps
+- `design-reminder-schedule`, when people are lost between steps days apart that cannot be joined
+- `decompose-comb-barriers`, when people are lost before the first step, so the process is not the main barrier
+- going through the process as a user and timing each step, when the times are staff estimates
+- the person who controls a step tagged "check" (a compliance officer, a partner), when a change waits on their answer>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

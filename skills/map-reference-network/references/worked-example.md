@@ -9,14 +9,16 @@ A full run of the skill on a realistic case, showing the output it should produc
 ## The output
 
 ```markdown
-# Reference network map
+The people pregnant women say they would follow on the tablets are their husbands and mothers-in-law, and both can also block it: husbands hold the transport money, and mothers-in-law see the tablets every day. The program reaches neither; it talks to women through nurses and HSAs, whom women named least and would rarely follow. What husbands and mothers-in-law actually think is so far known only from their wives.
+
+# Whose opinion matters when pregnant women in Mchinji decide whether to take iron-folate tablets
 
 **Practice:** Pregnant women enrolled at four rural health centers in Mchinji district take one iron-folate tablet every day from the first antenatal visit to delivery.
 **Why others are thought to matter:** Earlier interviews: women stop because husbands and mothers-in-law expect them to avoid "hospital medicine" in pregnancy, and a woman is blamed if anything goes wrong.
-**Program reaches now:** Pregnant women, through clinic nurses at antenatal visits and Health Surveillance Assistants (HSAs) at home.
+**Who the program reaches now:** Pregnant women, through clinic nurses at antenatal visits and Health Surveillance Assistants (HSAs) at home.
 
-## Design
-- **Chosen:** Egocentric, as collected.
+## How the names were collected
+- **Approach:** Egocentric (women's own contacts only), as collected.
 - **Why, and what it cannot show:** The four catchments hold about 4,000 households with no boundary to census, and 28 interviews were done. Women described their own contacts and nobody they named was interviewed. So every view attributed to a husband or a mother-in-law is the woman's report, and the map cannot show how the people named are tied to each other.
 - **Who answered:** 28 pregnant women, 7 per health center, every fourth name on the antenatal register, half in a first pregnancy; each interviewed alone.
 
@@ -27,9 +29,9 @@ A full run of the skill on a realistic case, showing the output it should produc
 4. "Who would you ask if you were unsure about the tablets?"
 **Asked about each role named:** "If they told you to take the tablets every day, would you?" Whether they approve and whether they can block or permit were noted where women said so, not asked of every role.
 
-## Reference group by role
+## Who they named, by role
 
-| Role, no names | Named by | Influence: would act differently if they did | Gatekeeping: can permit or block | Does X | Approves of X |
+| Role, no names | Named by | Influence: would act differently if they did | Gatekeeping: can permit or block | Does it themselves | Approves of it |
 |---|---|---|---|---|---|
 | Husband | 22 of 28 | Yes: 20 of 22 | Yes: controls the transport money for clinic visits | Not applicable | Mixed, as reported: 9 of 22 say he is against |
 | Mother-in-law | 19 of 28 | Yes: 16 of 19 | Yes: lives in the compound and sees the tablets | Not asked | No, as reported: 15 of 19 say she is against |
@@ -40,12 +42,12 @@ A full run of the skill on a realistic case, showing the output it should produc
 | HSA | 4 of 28 | No: 1 of 4 | No | Not applicable | Not asked |
 | Clinic nurse | 3 of 28 | No: 1 of 3 | No | Not applicable | Not asked |
 
-## Three lists
+## Who sways the decision, and who can block it
 - **Influential:** Husband; mother-in-law; church women's guild leader, named by few, though five of the six women who named her would follow her.
 - **Gatekeepers:** Husband, through the transport money. Mother-in-law, who is in the compound every day and sees the tablets.
 - **Named often but not influential:** None.
 
-## Reference group against the program's reach
+## Who the program reaches, and who it misses
 The program speaks to pregnant women through nurses and HSAs. Women named nurses and HSAs least, and almost none would take the tablets on their word. Husbands and mothers-in-law, whom most women would follow and who can block the behavior, are not reached at all. The guild leader is outside the program.
 
 ## Checked with respondents
@@ -61,4 +63,12 @@ Six women at one center saw the tally. They said a woman's own mother matters mo
 - What husbands and mothers-in-law think is known only from wives. Interview about ten of each, alone, before designing around their opposition.
 - Seven women per center: the birth attendant's weight at the two remote centers rests on a handful of answers.
 - No role looks named out of politeness. The nurse and the HSA, the likeliest polite answers, were named least.
+
+## Where you could go from here
+That's the map.
+- Interviews with about ten husbands and ten mothers-in-law, each alone: the opposition the program would design around is known only from their wives, and people are often wrong about what others think.
+- `map-audience-context`, for husbands and mothers-in-law: the program has no channel to either, and where and when they could be reached comes before what to say to them.
+- `select-messenger`, once the program knows how to reach them: whether the guild leader, a woman's own mother, or someone else should speak for the program is the decision this map leaves open.
+I'd lean toward the interviews, because the case for reaching husbands and mothers-in-law rests on what their wives believe they think.
+Questions you could ask next: "How would we find husbands to interview when they don't come to the clinic?" · "How do we ask mothers-in-law about 'hospital medicine' without putting them on the defensive?"
 ```

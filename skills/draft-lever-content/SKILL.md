@@ -13,7 +13,7 @@ metadata:
   title: Write an intervention's messages and scripts
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Joe Speed, Zezhen Wu"
   org: IL
@@ -42,7 +42,7 @@ Drafts the words for an intervention that has already been chosen.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the draft. Do not ask anything the user has already answered.
 
 1. **Required.** The chosen intervention: the technique, the barrier it answers, and the behavior (who does what, when).
 2. **Required.** The channel (text message, spoken script, sign, screen) and how the team knows the audience uses it.
@@ -79,7 +79,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Intervention content draft
+<Two or three plain sentences to the user: what the copy asks people to do, the one thing it must contain to deliver the technique, and that it is not ready until people from the audience pass the test in the final language.>
+
+# Draft wording: <the intervention, in a few words>
 
 **Behavior:** <who does what, when>
 **Barrier it answers:** <the confirmed barrier>
@@ -91,18 +93,18 @@ See `references/worked-example.md` for a complete run.
 ## Draft content
 <the literal copy: message text, script lines, sign wording, screen text>
 
-## Trace
+## What each part of the draft delivers
 
-| Element | What it delivers |
+| Part | What it delivers |
 |---|---|
 | "<quoted element>" | <the part of "what it must contain" it delivers; or "scaffolding: <why it stays>"> |
 
 ## Delivery notes
 - **Sender:** <who it appears to come from; why this audience trusts them>
 - **Timing:** <when, relative to the moment of decision>
-- **Frequency ceiling:** <how many times before it is ignored or resented>
+- **How often is too often:** <how many times before it is ignored or resented>
 
-## EAST check
+## EAST check: is it easy, attractive, social, and timely?
 - **Easy:** <the one action; the reading-level check>
 - **Attractive:** <what draws attention at the moment of delivery>
 - **Social:** <the claim about what others do, with its data source; or "none made: <why>">
@@ -113,7 +115,27 @@ See `references/worked-example.md` for a complete run.
 
 ## What this content does not do
 - <what must exist for the content to work; which claims still need checking>
+
+## Where you could go from here
+<One line saying the draft is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when the team wants to see what a few people from the audience do with the draft, not only whether they understand it
+- `audit-intervention-ethics`, before the draft reaches people, and especially when it sets a default, makes a claim about others, or comes from someone with a hold over the audience
+- `select-messenger`, when nobody has checked that the audience trusts the sender
+- `choose-message-frame`, when the copy states a consequence and the team is unsure whether to put it as a gain or a loss
+- a native speaker from the audience, when the copy above is working copy in another language>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

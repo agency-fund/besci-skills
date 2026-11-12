@@ -14,7 +14,7 @@ metadata:
   title: Define what agency means for a tool's users
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -82,15 +82,17 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Agency definition: <tool>
+<Two or three plain sentences to the user: the working definition in plain words, which cells of the grid it covers and which it leaves open, and that it stays a hypothesis until users have been asked.>
+
+# What agency means for <tool>'s users
 
 **Context:** <users, the end goal in their lives, and the tool's role, in one or two sentences>
 **In your words:** "<the team's own description of agency>"
 **Working definition:** <one or two sentences: whose agency, over which decisions or goals, where>
-**Not agency:** <only if usage metrics were offered as evidence: each metric and what it measures>
+**What your usage numbers measure instead:** <only if usage metrics were offered as evidence: each metric and what it measures>
 
 ## Your definition, matched to theory
-| # | What you said | Construct | Theory |
+| # | What you said | Construct (a defined, measurable idea) | Theory |
 |---|---|---|---|
 | 1 | "<their words>" | <construct, defined in one plain line> | <theory or framework; or "local construct: no established match"> |
 
@@ -102,12 +104,32 @@ See `references/worked-example.md` for a complete run.
 
 **Focus:** <the cells the team chose, and why, in their words; or "proposed; confirm">
 **Not covered by this focus:** <what the open cells would catch>
-**Erosion would look like:** <observable signs in the chosen cells; and one example of chosen reliance that is not erosion>
+**Signs the tool is wearing agency down:** <observable signs in the chosen cells; and one example of chosen reliance that is not one>
 
 ## What to check before relying on this
 - <the part of the definition the team was least sure of>
 - <whether users themselves would describe agency this way, and how to ask them>
+
+## Where you could go from here
+<One line saying the definition is done.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-agency-measurement`, once the team has confirmed the focus and wants measures for these constructs
+- `choose-ai-eval-level`, when the team or its funder also needs to know which kind of evaluation of the tool comes next
+- `define-key-behavior`, when the definition comes down to one thing users should do off the platform rather than agency
+- a few users, asked what someone "in charge" of the goal does differently, when the team is unsure users would describe agency this way
+- a psychologist, economist, or anthropologist who knows the setting, when a part found no match in theory or decisions are shared with family>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

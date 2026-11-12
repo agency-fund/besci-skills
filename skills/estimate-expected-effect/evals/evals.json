@@ -5,15 +5,15 @@
       "id": 1,
       "name": "Full run",
       "prompt": "We're the revenue unit of a county government in Kenya. About 40,000 small businesses must renew their single business permit by 31 March; last year 30% renewed on time, from our own records. We want to test an SMS from the county revenue office two weeks before the deadline that states the late-renewal penalty and says enforcement visits follow. About 80% of permits have a working phone number on file. Our proposal quotes the Mexico tax SMS trial in BIT's TESTS guide, where on-time declarations rose from 24% to 33%. We also have Antinyan and Asatryan's meta-analysis of tax nudges, https://doi.org/10.1093/ej/ueae088. The revenue director says she would send the SMS to every permit holder for a gain of 1 percentage point or more; each SMS costs KSh 1. What effect should we plan the test on?",
-      "expected_output": "An effect-size benchmark in the output template with a low, central, and high value and a separate effect to plan on.",
+      "expected_output": "A planning range in the output template with a low, central, and high value and a separate effect to plan on.",
       "files": [],
       "assertions": [
         "States for each source how it was read: full text or abstract only.",
         "Converts the estimates into percentage points and standard deviations at the 30% baseline, showing the arithmetic.",
         "Does not present the 9-point Mexico result or the meta-analysis figure as the expected effect; treats the uncorrected meta-analysis as a ceiling.",
-        "Applies the 80% share of working phone numbers to the estimates.",
-        "Gives low, central, and high values, each with where it comes from.",
-        "Reports the director's 1-point threshold separately from the range and does not compute a sample size."
+        "Applies the 80% share of working phone numbers and gives low, central, and high values, each with where it comes from.",
+        "Reports the director's 1-point threshold separately from the range and does not compute a sample size.",
+        "Ends with two or three next moves, each with its reason, and questions the user could ask next, with no single instruction."
       ]
     },
     {
@@ -26,7 +26,8 @@
         "Asks what outcome the test will measure and its baseline.",
         "Asks who will deliver the intervention, or what decision the test informs.",
         "Gives no planning range or effect to plan on.",
-        "Does not present d = 0.45 as the effect to expect."
+        "Does not present d = 0.45 as the effect to expect.",
+        "Says why it needs these answers."
       ]
     },
     {
@@ -52,7 +53,7 @@
       "assertions": [
         "Says the request is about whether one study fits the user's setting.",
         "Names assess-evidence-transferability.",
-        "Does not produce an effect-size benchmark."
+        "Does not produce a planning range or an effect to plan on."
       ]
     }
   ]

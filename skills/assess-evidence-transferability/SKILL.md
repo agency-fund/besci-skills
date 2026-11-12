@@ -13,7 +13,7 @@ metadata:
   title: Check whether a study's finding applies in your setting
   type: atomic
   stage: define
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -43,7 +43,7 @@ Judges whether one published finding is likely to hold in a named setting.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before producing the assessment. Do not ask anything the user has already answered.
 
 1. **Required.** The finding: one study or review, as a link, a file, or a full citation. A claim with no study behind it cannot be assessed.
 2. **Required.** The user's setting: who the program would reach, where, what would be delivered, by whom, and which outcome matters.
@@ -78,7 +78,9 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Transferability assessment: <short name of the finding>
+<Two or three plain sentences to the user: the verdict, the one condition that decided it, and what that means for the number or plan they had in mind.>
+
+# Would <the finding, in a few words> hold in <their setting, in a few words>?
 
 **Decision this informs:** <pilot / scale-up / proposal number / go or no-go>
 **Finding:** <authors, year, link>; <effect with its unit, from the results>; <where and with whom>
@@ -107,7 +109,27 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the unknown that would change the verdict most>
+
+## Where you could go from here
+<One line saying the assessment is done.>
+<Two or three next moves that fit this verdict, each with why it would help and when it fits. Candidates:
+- `estimate-expected-effect`, when the verdict is likely to hold and the team needs an effect size to plan a test on, since the study's own number is not a forecast
+- `assess-evidence-base`, when the verdict is "no evidence to assess", or the finding has been seen in one setting only and the team wants to know what else has been tried
+- `specify-intervention-adaptations`, when the verdict is likely to hold with changes and the team will change the intervention for its setting
+- `plan-prototype-test`, when an assumption to test is how the audience will read or respond to the draft, which a few people can show before any pilot
+- the full text of the study, its authors, or a researcher who knows the local setting, when the assessment rests on the abstract or the condition in doubt is institutional or legal>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 

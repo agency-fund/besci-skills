@@ -14,7 +14,7 @@ metadata:
   title: Pick the moment to deliver an ask
   type: atomic
   stage: design
-  version: "0.2.0"
+  version: "0.3.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -44,7 +44,7 @@ Picks the moment at which one ask or offer reaches people.
 
 ## Before you start
 
-Ask these before producing anything. Do not ask anything the user has already answered.
+Ask these before choosing the moment. Do not ask anything the user has already answered.
 
 1. **Required.** The ask (who does what) and what it costs the person at that moment: cash, time, thought.
 2. **Required.** The confirmed barrier, with the evidence that people want the thing and that the moment stops them.
@@ -82,14 +82,16 @@ See `references/worked-example.md` for a complete run.
 ## Output template
 
 ```markdown
-# Delivery moment specification
+<Two or three plain sentences to the user: the moment you chose, the one fact about people's money, attention, or chance to act that decided it, who it leaves out, and that the evidence gives a direction, not a promised effect.>
+
+# When to <the ask, in a few words>
 
 **The ask:** <who is asked to do what; what it costs the person at that moment: cash, time, thought>
 **Confirmed barrier:** <the evidence that people want it and that the moment stops them>
 **When the action can be done:** <season, enrollment period, opening hours; or "any time">
 
 ## Money calendar
-| Period | Money in | Money out | Position | Source |
+| Period | Money in | Money out | Flush or short? | Source |
 |---|---|---|---|---|
 | <week, month, or season> | <harvest sale, payday, transfer> | <fees, festival, lean-season food, debt> | <flush / short / neutral> | <user report / assumed> |
 
@@ -115,7 +117,27 @@ See `references/worked-example.md` for a complete run.
 
 ## What to check before relying on this
 - <the calendar row most likely to be wrong>
+
+## Where you could go from here
+<One line saying the choice of moment is done, or, if timing is the wrong tool, why.>
+<Two or three next moves that fit what this run found, each with why it would help and when it fits. Candidates:
+- `plan-prototype-test`, when the moment depends on something nobody has seen yet, such as people handing over cash in front of others, and a few people could show it before a pilot
+- `design-reminder-schedule`, when people intend to act but may let the chosen moment pass, and a reminder just before it would help
+- `design-commitment-device`, when no moment passes all three questions because the money is gone before the action is possible, and people would choose to set some aside when it arrives
+- `audit-intervention-ethics`, when the ask costs money or carries a deadline and is timed to when people hold the most cash
+- a few people from the audience, or whoever pays them, when a calendar row is marked assumed: one conversation can move the moment>
+Questions you could ask next: "<question>" · "<question>"
 ```
+
+<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
+**How to talk with the user**
+
+- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
+- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
+- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
+- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
+- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
+<!-- /shared -->
 
 ## Where it goes wrong
 
