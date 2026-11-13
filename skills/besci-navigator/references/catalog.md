@@ -80,6 +80,8 @@ Workflows in this snapshot: 4
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Adapts a short lesson teaching that ability grows with practice to one school setting.
 
 **Description (trigger rule):** Use when students read a poor result as proof that they lack ability, the school gives them a way to improve, and a team wants a growth-mindset lesson for that setting: "a mindset session for our schools". Writes the lesson with local examples, the task in which students advise a younger student, and the check on what teachers and peers do. Do not use when nobody has established which question students are asking; use identify-wise-intervention-target. Not for doubts about belonging; use draft-belonging-story.
@@ -112,6 +114,8 @@ Bring them: the students' words, the check of the school, the lesson, and the re
 **Consumes:** survey-items  
 **Produces:** survey-items  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Converts a face-to-face questionnaire into a version that can be asked by voice call.
 
 **Description (trigger rule):** Use when a questionnaire written for face-to-face interviews has to be asked by voice call: "can we do the endline by phone?", "how do we ask the showcard questions on a call?", "how long can a phone survey be?". Cuts the instrument to a call length, rewrites what respondents had to see, and sets the call rules, who the calls will miss, and a check on whether answers differ by phone. Do not use when the questions are not written yet; use draft-survey-items. Not for testing the phone version with respondents; use draft-cognitive-interview-script.
@@ -143,6 +147,8 @@ Bring them: the source of the numbers, who owns the phones, the sensitive items,
 **Tags:** heterogeneity, quantitative, experimental-design  
 **Consumes:** analysis-plan, dataset-description  
 **Produces:** heterogeneity-report  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Estimates how a program's effect differed across the people it reached.
 
@@ -177,6 +183,8 @@ Bring them: the plan, the data description, and this report.
 **Consumes:** program-goal  
 **Produces:** evidence-scan-brief  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Summarizes the existing research on the behavior, audience, or setting named in a program goal.
 
 **Description (trigger rule):** Use when a program goal is set and nobody has checked what research already exists, or when someone asks "has this been done before?" or "what does the evidence say works here?". Searches the literature, checks every citation, and reports what worked, what did not, how large the effects were, and where each study was run. Do not use when the question is whether one known study applies to your setting; use assess-evidence-transferability. Not for reviewing your own past program; use review-prior-intervention.
@@ -208,6 +216,8 @@ Bring them: the brief, the search terms, and the list of sources opened.
 **Consumes:** evidence-scan-brief  
 **Produces:** transferability-assessment  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Judges whether one published finding is likely to hold in a named setting.
 
 **Description (trigger rule):** Use when a team has one study in hand and asks "will this work here?", "does this apply to our population?", or "can we expect the same effect?". Also use when a proposal quotes a study's result as what a program will achieve somewhere else. Reads the study, compares what its effect depended on with your setting, and gives a verdict with the assumptions to test locally. Do not use to find what evidence exists; use assess-evidence-base. Not for the effect size to plan a sample on; use estimate-expected-effect.
@@ -238,6 +248,8 @@ Bring them: the assessment, the study, and the list of unknowns.
 **Tags:** scaling, implementation-science, implementation  
 **Consumes:** intervention-description  
 **Produces:** scalability-assessment  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Judges whether an effect found in a pilot is likely to survive delivery at scale.
 
@@ -273,6 +285,8 @@ Bring them: the two lines, the marked table, and the pilot's evaluation design.
 **Consumes:** intervention-draft  
 **Produces:** ethics-review  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Reviews one drafted intervention against published ethics guidance before launch.
 
 **Description (trigger rule):** Use when a behavioral intervention has been drafted (a default, a pledge, an incentive, a message, a reminder) and someone asks "is this ok to do?", "is this manipulative?", or "do we need to tell them?", or a funder wants an ethics check before launch. Classifies the draft by whether people can see it and avoid it, rates six checks, and returns go, revise, or stop. Do not use when no draft exists yet; use select-intervention-levers. Not for the research ethics of a study, which belong to an ethics board.
@@ -304,6 +318,8 @@ Bring them: the draft and the full review.
 **Consumes:** target-behavior-brief  
 **Produces:** barrier-diagnosis  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Counts what each step of a process costs a person, from the first chance to act through completion.
 
 **Description (trigger rule):** Use when people say they want to enroll, apply, register, or collect something and few finish, and the suspect is the process itself: forms, documents, trips, queues, fees, decisions. Also use when the proposed fix is "explain it more clearly". Logs every step from the user's side with its time, money, documents, and decisions, then ranks what the program can remove. Do not use when people do nothing at a single decision point; use select-default-option. Not for a behavior that is still vague; use define-key-behavior.
@@ -334,6 +350,8 @@ Bring them: the step log, the ordered changes, and any counts.
 **Tags:** confirmation-bias, researcher-calibration, assumptions  
 **Consumes:** researcher-assumptions  
 **Produces:** bias-audit-report  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Flags the weak points in what a team has written about why its audience behaves as it does.
 
@@ -473,6 +491,8 @@ Bring them: the one-sentence description, the evidence list, and the "Where it g
 **Consumes:** ai-product-account  
 **Produces:** ai-eval-level-recommendation  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Recommends which stage of evaluation an AI tool, product, or program should run next.
 
 **Description (trigger rule):** Use when a team with an AI tool, product, or program for a social cause must decide what to evaluate next: "are we ready for an RCT?", "our funder wants proof of impact", "what evidence can we honestly show?". Gives one recommendation on which stage of evaluation to run now and which is premature, with the evidence behind each judgment and what to build now so later evaluation stays possible. Do not use when the evaluation is chosen and needs designing; use plan-evaluation-design. Not for programs with no AI model in them.
@@ -503,6 +523,8 @@ Bring them: the product description, the table of stages, and the list of what i
 **Tags:** choice-architecture, behavior-change-techniques, timing  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
 
 **What it does:** Picks the moment at which one ask or offer reaches people.
 
@@ -535,6 +557,8 @@ Bring them: the money calendar, the candidate table, and who is left out.
 **Consumes:** intervention-draft  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Decides whether one message or offer states what people gain by acting or what they lose by not acting.
 
 **Description (trigger rule):** Use when a team is choosing whether a message or offer should say what people gain by acting or what they lose by not acting, or assumes that "losses hit harder". Makes the gain version the default, writes both versions with only the frame changed, names who the loss version could frighten, and sets a pre-test. Do not use when no draft exists yet; use draft-lever-content. Not for the amount, condition, or timing of a payment; use design-incentive-scheme.
@@ -564,6 +588,8 @@ Bring them: both versions, the reason a loss version is wanted, and any pre-test
 **Tags:** experimental-design, quantitative  
 **Consumes:** experiment-intent  
 **Produces:** evaluation-design  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Chooses the comparison for one test: which randomized design, at which unit.
 
@@ -598,6 +624,8 @@ Bring them: the constraints and designs tables, unit counts, and the rollout cal
 **Consumes:** target-behavior-brief  
 **Produces:** comb-barrier-hypotheses  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Lists competing reasons why one defined behavior is not happening, each with a question that could rule it out.
 
 **Description (trigger rule):** Use when one behavior is defined (who does what, when) and the question is why people are not doing it, or when a team is about to pick an intervention ("let's send a reminder") without naming the barrier it addresses. Lists competing capability, opportunity, and motivation hypotheses, each with a question that could rule it out, and ranks them. Do not use when the goal is still vague; use define-key-behavior. Not for choosing what to do about a confirmed barrier; use select-intervention-levers.
@@ -630,6 +658,8 @@ Bring them: the hypotheses, the ranking table, and any field answers so far.
 **Consumes:** ai-product-account  
 **Produces:** agency-definition  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Turns what a team means by its users' agency into named constructs (defined, measurable ideas such as self-efficacy) placed on The Agency Fund's 2x2 agency framework.
 
 **Description (trigger rule):** Use when a team building or evaluating a digital or AI tool wants to measure, claim, or improve its users' agency but has not said what agency means for those users: "how do we measure agency for our app?", "is this empowerment or just engagement?". Turns the team's own meaning into named constructs placed on The Agency Fund's 2x2 agency framework. Do not use when the constructs are named and the question is how to measure them; use plan-agency-measurement. Not for a program that targets one offline behavior; use define-key-behavior.
@@ -658,6 +688,8 @@ Bring them: the definition document, the team's own words, and a description of 
 **Tags:** behavior-change-wheel, apease, behavior-definition  
 **Consumes:** program-goal  
 **Produces:** target-behavior-brief  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Turns a vague program goal into one observable behavior, stated as who does what, when.
 
@@ -690,6 +722,8 @@ Bring them: the candidate table with its bases, the ranked runners-up, and the l
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Specifies a restriction on future choices that a person opts into to keep a plan they have made.
 
 **Description (trigger rule):** Use when people intend a behavior, have the means, and give way at the moment of action ("I meant to save it but it was gone by evening"), and a team wants to offer a restriction people choose for themselves: a locked account, a deposit lost on failure, a public promise. Specifies the device, the cap on what anyone can lose, the offer, and the plan for people who commit and fail. Do not use when people get the option without choosing it; use select-default-option. Not for a reward or penalty the program sets; use design-incentive-scheme.
@@ -721,6 +755,8 @@ Bring them: the specification, the cap with the income pattern behind it, and th
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Specifies what a repeated report tells one person about their own performance on a task.
 
 **Description (trigger rule):** Use when a program wants to tell people regularly how they are doing: health workers' visit counts, teachers' session records, households' water or energy use. Also use when a report is already sent and some people did worse after seeing it. Specifies the metric, the comparison, what people at the top and bottom see, who else sees it, and what to monitor. Do not use when the message only says what most others do; use write-social-norm-message. Not for data the program keeps to check delivery; use design-fidelity-monitoring.
@@ -751,6 +787,8 @@ Bring them: the specification, the notes on data quality, and the list of who se
 **Tags:** implementation-science, process-evaluation, implementation  
 **Consumes:** intervention-description  
 **Produces:** fidelity-plan  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Plans how a team will check fidelity, the degree to which a running program is delivered as designed.
 
@@ -784,6 +822,8 @@ Bring them: the essential-parts and indicator tables, and the data-use answer.
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Specifies the terms of a reward or penalty that a program attaches to one verifiable behavior.
 
 **Description (trigger rule):** Use when a team has decided to reward people for one behavior and needs the terms: "how much should we pay", "cash or food", "conditional or not", "what happens when the money stops". Specifies the verification, the size against the cost of acting, the condition, the end date, and what to monitor. Do not use when the stake is the person's own money, put up by choice; use design-commitment-device. Not for removing the steps that make the behavior costly; use audit-process-friction.
@@ -813,6 +853,8 @@ Bring them: the specification, the sizing arithmetic, and the plan for the end.
 **Tags:** list-experiment, survey-design, measurement, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
 
 **What it does:** Designs a survey question that estimates how common a hidden behavior is without any respondent admitting to it.
 
@@ -845,6 +887,8 @@ Bring them: the statements, the plausible under-reporting, the sample, the mode,
 **Consumes:** intervention-draft  
 **Produces:** pilot-plan  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Designs a pilot that tests whether a planned trial or scale-up can run, not whether the program works.
 
 **Description (trigger rule):** Use when a team plans a small first run of a program before a larger trial or a scale-up ("let's pilot it with 50 people first") and must decide what the pilot has to show: whether people can be recruited and kept, the program delivered, and the data collected. Sets go, amend, and stop thresholds before fieldwork. Do not use when a few people from the audience should first react to a draft; use plan-prototype-test. Not for whether the program works; use plan-evaluation-design.
@@ -874,6 +918,8 @@ Bring them: the progression criteria, the sizing arithmetic, the main study's de
 **Tags:** reminders, behavior-change-techniques, sms  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
 
 **What it does:** Specifies the reminders a program sends about one action people already intend to take.
 
@@ -907,6 +953,8 @@ Bring them: the table of reminders, the privacy line, and the phone-access facts
 **Consumes:** target-behavior-brief, qualitative-data  
 **Produces:** social-norm-diagnosis  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Decides whether people follow one practice because of what they expect of each other.
 
 **Description (trigger rule):** Use when a team suspects people keep a practice (open defecation, early marriage, skipping a clinic visit) because of what others do or expect, or says "everyone here does it", and wants to check before building on it. Classifies the practice from respondents' answers as a social norm, descriptive norm, custom, or moral rule, and reports the gap between private belief and perceived expectation. Do not use when the question is whose approval people track; use map-reference-network. Not for writing a norm message; use write-social-norm-message.
@@ -938,6 +986,8 @@ Bring them: the practice, the questions in local wording, the sampling plan, and
 **Tags:** belonging, wise-interventions  
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
+
+**Where its evidence has been tested:** Tested mainly in wealthy Western countries
 
 **What it does:** Drafts a set of stories from older peers that present early difficulty in a new setting as something most newcomers pass through.
 
@@ -971,6 +1021,8 @@ Bring them: the newcomers' words, the check of the setting, and the stories.
 **Consumes:** survey-items  
 **Produces:** interview-guide  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Writes the script for cognitive interviews, in which a few respondents answer draft survey questions one at a time while an interviewer asks how they understood each one.
 
 **Description (trigger rule):** Use when draft survey questions exist and a team wants to check, before fielding, that respondents understand them as intended ("pretest our survey", "cognitive testing", "do these questions make sense to people"). Writes the interview script: open follow-up questions for each survey question, a note sheet, and a rule for which questions to fix. Do not use when the questions are not written yet; use draft-survey-items. Not for interviews about why people do or do not do something; use draft-tdf-interview-guide.
@@ -1002,6 +1054,8 @@ Bring them: the questions with their intended meanings, the tabulated problem co
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Writes a prompt that asks a person to name the moment they will carry out one action they already intend to take.
 
 **Description (trigger rule):** Use when people say they will do a dated, one-off action (get a vaccine, attend a visit, collect a document, redeem a voucher) and many do not follow through, or when a team wants to add "when and where will you do it?" to a contact that already happens. Writes an if-then prompt in which the person names the time and place they will act, limited to options that exist. Do not use when the program wants to send messages on a schedule; use design-reminder-schedule. Not for choosing when to make an offer; use choose-delivery-moment.
@@ -1031,6 +1085,8 @@ Bring them: the prompt, the evidence of intention, the real options, and who see
 **Tags:** implementation-science, behavior-change-techniques, research-transparency, implementation  
 **Consumes:** intervention-draft  
 **Produces:** intervention-description  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Writes down what an intervention is, item by item, in enough detail for a team elsewhere to deliver it again.
 
@@ -1064,6 +1120,8 @@ Bring them: the draft with its rebuild check, the monitoring data, and the mater
 **Consumes:** intervention-levers  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Drafts the words for an intervention that has already been chosen.
 
 **Description (trigger rule):** Use when an intervention has been chosen and the team needs the words: a text message, a script, a poster, a sign, app wording. Also use to check existing copy against the technique it is meant to deliver. Drafts the content, ties every line to what the technique requires, and sets the comprehension test it must pass before launch. Do not use when the intervention is not yet chosen; use select-intervention-levers. Not for a technique with its own skill, such as write-social-norm-message.
@@ -1093,6 +1151,8 @@ Bring them: what the technique must contain, the draft with its trace, and the t
 **Tags:** social-norms, survey-design, measurement, experimental-design  
 **Consumes:** social-norm-diagnosis  
 **Produces:** survey-items  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
 
 **What it does:** Writes a short survey story in versions that differ only in what other people are said to do or approve of.
 
@@ -1124,6 +1184,8 @@ Bring them: the base story, the cues, the questions, and the sampling plan.
 **Consumes:** ai-use-account  
 **Produces:** sifa-declaration  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Turns a team's account of how a piece of work was made into a sIfA, Busara's role-by-role statement of where AI tools took part.
 
 **Description (trigger rule):** Use when a report, paper, design, or other piece of work is being finished and the team must say how people and AI tools each contributed, or when a journal, funder, or policy asks for an AI-use disclosure and the current answer is "we used ChatGPT a bit". Writes a sIfA statement: for each contributor role, who did the work, which AI tool helped, how, and how much. Do not use to examine the team's beliefs about its audience; use audit-researcher-bias. Not for ruling on whether the AI use is allowed.
@@ -1154,6 +1216,8 @@ Bring them: the statement, the team's raw account, and the policy text.
 **Tags:** measurement, survey-design, quantitative  
 **Consumes:** measurement-plan  
 **Produces:** survey-items  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
 
 **What it does:** Writes survey questions with fixed answer options for defined constructs (a construct is the one thing a question is meant to measure).
 
@@ -1189,6 +1253,8 @@ Bring them: the construct definitions, the questions with their intended reading
 **Consumes:** target-behavior-brief, comb-barrier-hypotheses  
 **Produces:** interview-guide  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Writes an interview guide of open questions that tests a team's hypotheses about why one behavior is not happening.
 
 **Description (trigger rule):** Use when one behavior is defined, the team has hypotheses about why it is not happening, and it needs the questions to ask people in interviews to find out which are real, or when someone says "let's do a few interviews" with no plan for what to ask. Writes a guide of open questions in which each one tests a hypothesis or opens an area the team has not considered. Do not use when no hypotheses exist yet; use decompose-comb-barriers. Not for checking whether survey questions are understood; use draft-cognitive-interview-script.
@@ -1219,6 +1285,8 @@ Bring them: the hypotheses, the draft guide, and the plan for who interviews who
 **Tags:** theory-of-change, logic-model, evaluation-framework  
 **Consumes:** program-goal  
 **Produces:** theory-of-change  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Writes a program's theory of change, the claims it makes about why its activities lead to its outcome, as a chain of links.
 
@@ -1251,6 +1319,8 @@ Bring them: the chain table, the evidence supplied for each link, and the weakes
 **Consumes:** wise-intervention-target  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Drafts a values-affirmation exercise, a short writing task about a personally important value, for one audience facing one moment of judgment.
 
 **Description (trigger rule):** Use when people feel judged at a known moment, about money, school results, or a health condition, and a team wants a short exercise beforehand: "something to help people feel less judged before we ask them to do Y". Drafts a values-affirmation exercise: a local list of values, the choice, the writing prompt, the delivery rules. Do not use when the barrier is cost, access, or a process that exposes people; use select-intervention-levers. Not when nobody has named what people feel judged about; use identify-wise-intervention-target.
@@ -1281,6 +1351,8 @@ Bring them: the value list, the prompts, and the delivery notes.
 **Tags:** cost-effectiveness, quantitative, scaling  
 **Consumes:** effect-estimate  
 **Produces:** cost-effectiveness-estimate  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Estimates what a program paid for each unit of behavior change it caused.
 
@@ -1314,6 +1386,8 @@ Bring them: this estimate, with its ingredients table and sensitivity rows.
 **Consumes:** evidence-scan-brief  
 **Produces:** effect-size-benchmark  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Sets the effect size a test should plan on from the published estimates a team supplies.
 
 **Description (trigger rule):** Use when a team needs the effect size to plan a test on and has published estimates in hand: "the paper found 12 points, what should we plan for?", "what effect goes in the power calculation?", "is d = 0.45 realistic for us?". Reads the studies, puts each estimate in the test's units, corrects for selective publication and delivery at scale, and returns a range and one number to plan on. Do not use to judge whether one study applies to your setting; use assess-evidence-transferability. Not for the sample size; use estimate-sample-size.
@@ -1343,6 +1417,8 @@ Bring them: the estimates table, the corrections, the range, and the decision.
 **Tags:** experimental-design, quantitative  
 **Consumes:** effect-size-benchmark, evaluation-design  
 **Produces:** power-calculation  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Computes the sample a test needs to detect a planned effect, or the smallest effect a fixed sample can detect.
 
@@ -1375,6 +1451,8 @@ Bring them: the inputs table, the script output, the sensitivity table, and the 
 **Consumes:** qualitative-data  
 **Produces:** wise-intervention-target  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Names the question about themselves or their situation that an audience is asking, before any brief psychological exercise is drafted.
 
 **Description (trigger rule):** Use when a team proposes a mindset message, a belonging story, or an affirmation exercise and nobody has said which question the audience is asking itself, or when someone asks "is this a mindset problem or a real barrier?". Names that question from the audience's own words and checks that the setting can deliver what a new answer would promise. Do not use when the barrier is cost, access, or a process; use select-intervention-levers. Not for writing the exercise itself.
@@ -1404,6 +1482,8 @@ Bring them: the table of interpretations with quotes, the check of what the sett
 **Tags:** audience, context, cultural-psychology  
 **Consumes:** program-goal  
 **Produces:** audience-context-brief  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Replaces a broad audience label with a specific group of people at the moment they make the decision the program cares about.
 
@@ -1436,6 +1516,8 @@ Bring them: the brief with its source labels, the assumption check, and the open
 **Consumes:** social-norm-diagnosis  
 **Produces:** reference-network-map  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Finds whose behavior or approval people track when they decide whether to follow one practice.
 
 **Description (trigger rule):** Use when a practice appears to depend on what other people do or approve of and the team needs to know who those people are: "who are they really listening to?", "who do we need in the room?". Also use when a program suspects it is talking to the wrong people. Writes questions that get people to name who matters for one practice, and tabulates the answers by role, separating influence from the power to block. Do not use when it is not yet known whether others' expectations matter; use diagnose-social-norm. Not for choosing a messenger; use select-messenger.
@@ -1466,6 +1548,8 @@ Bring them: the practice, the design, the questions, and the role table.
 **Tags:** agency, measurement, psychometrics, survey-design, ai-eval  
 **Consumes:** agency-definition  
 **Produces:** measurement-plan  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
 
 **What it does:** Plans how to measure a defined agency construct for the users of a digital or AI tool.
 
@@ -1499,6 +1583,8 @@ Bring them the definition, this plan, and a description of the users and their c
 **Consumes:** target-behavior-brief  
 **Produces:** measurement-plan  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Chooses the one outcome that will show whether a defined behavior changed, with the data source behind it.
 
 **Description (trigger rule):** Use when a target behavior is defined but nobody has agreed what will be measured to show it changed, or someone asks "how will we know if this worked?" or "what are our indicators?". Names one primary outcome, where its data will come from, when it is measured, and the smallest change worth detecting, fixed before launch. Do not use when the goal is still vague; use define-key-behavior. Not for choosing the comparison or how to randomize (choose-trial-design), or for fixing the analysis (write-pre-analysis-plan).
@@ -1531,6 +1617,8 @@ Bring them: this plan with its open questions, any baseline figures, and who hol
 **Consumes:** intervention-draft  
 **Produces:** prototype-test-plan  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results differ
+
 **What it does:** Plans a test of a draft intervention with a few people from the audience, before any pilot.
 
 **Description (trigger rule):** Use when a draft of an intervention exists (a message, form, script, product change, or a practice to try at home) and the team wants to try it with a few people from the audience before any pilot: "show it to some users first", "pretest the materials". Plans what to learn, with whom, how, and the rule for what is kept, changed, or dropped. Do not use when the question is whether the program can be delivered at small scale; use design-pilot-feasibility-study. Not for pretesting survey questions; use draft-cognitive-interview-script.
@@ -1561,6 +1649,8 @@ Bring them: the plan, the session guide, and the decision rule.
 **Tags:** scaling, implementation-science, implementation  
 **Consumes:** scalability-assessment  
 **Produces:** scale-up-strategy  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Plans how a tested program moves into a system that will deliver it routinely.
 
@@ -1594,6 +1684,8 @@ Bring them: the scalability judgment, the parts table, the system-changes table,
 **Consumes:** prior-intervention-record  
 **Produces:** intervention-post-mortem  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Judges whether a past program failed because of its idea or because of its delivery.
 
 **Description (trigger rule):** Use when a team has a record of a program it already ran and must decide whether to retry it, change it, or drop the idea, or when someone says "we tried that and it didn't work" as if that settles it. Compares what was planned with what was delivered, checks the team's explanation against the data it collected, and judges whether the idea or its delivery failed, or whether the record cannot tell. Do not use to design the next attempt; use select-intervention-levers. Not for what others have tried elsewhere; use assess-evidence-base.
@@ -1626,6 +1718,8 @@ Bring them: the record, the delivery logs and outcome data, and this brief.
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-draft  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Specifies the option people receive when they take no action at one decision point.
 
 **Description (trigger rule):** Use when people say they want something, it is available, and doing nothing leaves them without it: "nobody enrolls", "the form sits unsigned". Also use when a team wants to switch from opt-in to opt-out ("let's auto-enroll everyone"). Specifies the default, who it is for, how to opt out, and what to monitor. Do not use when the hassle is in the steps of a process; use audit-process-friction. Not for a restriction people choose for themselves; use design-commitment-device.
@@ -1655,6 +1749,8 @@ Bring them: the specification, the list of who could be worse off, and the opt-o
 **Tags:** behavior-change-wheel, behavior-change-techniques, apease  
 **Consumes:** barrier-diagnosis  
 **Produces:** intervention-levers  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Chooses the kind of intervention that fits one confirmed barrier.
 
@@ -1687,6 +1783,8 @@ Bring them: the barrier with its evidence, the feasibility table, and the list t
 **Consumes:** barrier-diagnosis  
 **Produces:** messenger-choice  
 
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
+
 **What it does:** Chooses who delivers one message to one audience.
 
 **Description (trigger rule):** Use when the question is who should deliver a message: "should the nurse say this or the village elder?", "would a peer land better than our staff?". Also use when a program has made its own staff the sender without checking, or wants to pick community ambassadors. Rates candidates on what the audience has said, checks whether the leading one has power over the audience, and writes the messenger's brief. Do not use when the question is whose opinion the audience weighs for a practice; use map-reference-network. Not for the words; use draft-lever-content.
@@ -1716,6 +1814,8 @@ Bring them: the candidate table, the questions and answers, and the brief.
 **Tags:** implementation-science, implementation, process-evaluation  
 **Consumes:** intervention-description  
 **Produces:** adaptation-record  
+
+**Where its evidence has been tested:** Not applicable
 
 **What it does:** Records each planned or unplanned change to a tested intervention against the parts that make it work.
 
@@ -1750,6 +1850,8 @@ Bring them: the record and the description it started from.
 **Consumes:** qualitative-data, comb-barrier-hypotheses  
 **Produces:** barrier-diagnosis  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Gives each barrier hypothesis a verdict from a set of interviews.
 
 **Description (trigger rule):** Use when interviews or field notes are in and the team needs to know which of its barrier hypotheses they support, or when someone asks "we have 15 transcripts, what did we learn?" or wants interviews coded against COM-B or the TDF. Charts every interview against every hypothesis and gives each a verdict, with quotes and the interviews that go against it. Do not use before the interviews, to decide what to ask; use draft-tdf-interview-guide. Not for choosing what to do about a confirmed barrier; use select-intervention-levers.
@@ -1780,6 +1882,8 @@ Bring them: the hypotheses, the guide, and the matrix with its quote references.
 **Tags:** measurement, survey-design  
 **Consumes:** survey-items  
 **Produces:** survey-items  
+
+**Where its evidence has been tested:** Tested mainly in wealthy Western countries
 
 **What it does:** Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents.
 
@@ -1812,6 +1916,8 @@ Bring them: the decision log, the items the translators disagreed on, and notes 
 **Consumes:** evaluation-design, measurement-plan  
 **Produces:** analysis-plan  
 
+**Where its evidence has been tested:** Not applicable
+
 **What it does:** Writes down how a trial's results will be analyzed before anyone sees the outcome data.
 
 **Description (trigger rule):** Use when a trial's design and primary outcome are set and the team must fix, before any outcome data arrive, how results will be analyzed: "write our pre-analysis plan", "PAP", "what do we put in the AEA registry?", "how much do we pre-specify?". Writes the hypotheses, estimator, outcome families, subgroups, decision rules, and registration. Do not use when the primary outcome or smallest change worth detecting is open (plan-evaluation-design) or the comparison is open (choose-trial-design).
@@ -1842,6 +1948,8 @@ Bring them: the design, the draft plan, and a description of the data.
 **Tags:** social-norms, message-design  
 **Consumes:** social-norm-diagnosis  
 **Produces:** intervention-draft  
+
+**Where its evidence has been tested:** Tested beyond wealthy Western countries; results hold
 
 **What it does:** Writes one message that tells people what most of their peers do or approve of.
 

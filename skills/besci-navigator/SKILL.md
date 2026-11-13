@@ -74,13 +74,13 @@ The person can switch at any point: "wrap up" ends an interview and compiles wha
 **Interview**
 
 1. **Interview relentlessly.** Mark the start in one line. Ask about the program until you and the person can both say the problem back in two sentences. Walk down each branch, settling it before the next: the outcome, the people, the one behavior that would move the outcome, what is known about why it is not happening, what has been tried, what they can change and measure, what limits them. Follow what the person says rather than the list, and push on any answer that is vague or contradicts an earlier one.
-2. **One question per turn.** Say back in a clause what you took from the last answer, then ask. On a judgment call, such as which behavior to target, give the answer you would lean toward and why, so they have something to push against. Facts about their program are theirs: ask, do not guess, and read a shared document instead of asking. Every five questions or so, add two lines on what is settled and what is still open.
+2. **One question per turn, in a few sentences.** Say back in a clause what you took from the last answer, then ask. When the question is a decision the person has to make, such as which behavior to target, give the answer you would lean toward and why, so they have something to push against. When it is a fact about their program, ask and do not guess; read a shared document instead of asking. On every fifth question or so, add the two-line tally.
 3. **Compile.** Do not read the catalog or name a skill until the branches are settled or the person says "wrap up". Then write the brief, say the interview is finished, and recommend, tying each suggestion to a line of the brief.
 
 **Recommend**
 
 4. **Read the snapshot.** Read `references/catalog.md`, noting its date and skill count, and suggest nothing that is not in it. `references/stages.md` helps place the problem on the stage model. If the snapshot is older than ninety days and web access is available, offer to fetch the live version from https://raw.githubusercontent.com/agency-fund/besci-skills/main/skills/besci-navigator/references/catalog.md.
-5. **Pick.** Match the request or the brief against each skill's "use it when" and "do not use it when" lines. For one task, suggest one skill, or two when a condition separates them. For a problem that spans stages, suggest a workflow from the snapshot if one fits, with the step they would start at; otherwise up to three skills in order. Start from where the person is, not from "define".
+5. **Pick.** Match the request or the brief against each skill's "use it when" and "do not use it when" lines. For one task, suggest one skill, or two when a condition separates them. For a problem that spans stages, suggest one workflow from the snapshot if it fits, with the step they would start at; otherwise up to three skills in order. One or the other, and no further skills "worth a look": a long list hands the choosing back to the person. Start from where the person is, not from "define". For each skill you suggest, say where its evidence has been tested, as the catalog records it.
 6. **Name the gaps and the risks.** If the library has no skill for a step, say so, with the nearest route outside the library and the "Propose a skill" form on the library site. If a specialist trigger applies, say which steps the library can support and which need a specialist first.
 7. **Only when needed.** Give the one-line install for a skill the person does not have: the plugin for Claude Code, `npx skills add` for other agents, the download page for Claude Desktop. Draft a workflow file, in the shape of `references/workflow-template.md`, only if they ask to save the plan.
 
@@ -89,7 +89,7 @@ The person can switch at any point: "wrap up" ends an interview and compiles wha
 The opening, when the person described a problem:
 
 ```markdown
-Welcome. <One sentence that says back what they told you, in their words.> This library holds skills built on published behavioral-science methods, and there are two ways we could start:
+Welcome. <One sentence that says back what they told you, in their words and addressed to them: "You run ...".> This library holds skills built on published behavioral-science methods, and there are two ways we could start:
 
 1. **Think it through together.** I ask about your program one question at a time and give my own guess with each, so you have something to push against. It can run to fifteen questions or more. Say "wrap up" whenever you like, and I will pull together what we have and suggest where the library can help.
 2. **Go straight to suggestions.** I point to the skills or workflow that fit what you have told me so far.
@@ -97,13 +97,17 @@ Welcome. <One sentence that says back what they told you, in their words.> This 
 Which would you like?
 ```
 
-An interview turn, and the tally every five questions or so:
+An interview turn:
 
 ```markdown
 <A clause that says back what you took from their last answer.> <One question.>
 
-<For a judgment call: "I'd lean toward <answer>, because <reason>." For a fact about their program: why you ask.>
+<For a decision that is theirs to make: "I'd lean toward <answer>, because <reason>." For a fact about their program: one clause on why you ask, and no guess.>
+```
 
+The tally, added to every fifth turn or so:
+
+```markdown
 **Settled so far:** <one line>
 **Still open:** <one line>
 ```
@@ -124,14 +128,14 @@ The brief, when an interview ends. Keep it under about 200 words:
 - <A question the interview could not settle>: <what would settle it>
 ```
 
-The recommendation, in both modes:
+The recommendation, in both modes. Keep it under about 250 words; the person can ask for more:
 
 ```markdown
 <Recommend mode only: one or two sentences that answer what the person asked, in their words.>
 
 I'd suggest `<skill-name>`, <its title in plain words>. <Why it fits, tied to their situation or to a line of the brief.> To run it you'll want <its required inputs, in plain words, and which of them they already have>. Its evidence <where it has been tested, in plain words>.
 
-<Only if more fits: a second or third skill, with what the first passes to it or the condition under which to use it instead. Or a workflow: its title and `<workflow-name>`, what it is for, and the step they would start at.>
+<Only if a second or third skill fits: what the first passes to it, or the condition under which to use it instead. Or, in place of separate skills, one workflow: its title and `<workflow-name>`, what it is for, the step they would start at, and the two or three steps that follow.>
 
 <Only if needed: a step the library has no skill for, with the nearest route outside it. A specialist trigger, with which steps need the specialist first.>
 
@@ -158,9 +162,10 @@ Questions you could ask next: "<question>" · "<question>"
 
 - **Two questions in one turn.** A stacked question gets half an answer.
 - **Going soft.** Relentless means following up a vague answer instead of accepting it. It does not mean cold.
-- **Supplying the diagnosis.** Telling the person why their participants behave as they do, before they have said what they know, anchors them on your guess.
+- **Guessing facts.** A lean is for decisions. "I'd guess most drop-offs come from one sign-up route" is a guess about their program, and it anchors them before they have said what they know.
 - **Bending the interview toward the library.** Naming a skill, or asking what one would need, turns thinking into intake.
 - **Suggesting a skill that does not exist.** Only the snapshot is real. A plausible name is not a skill.
+- **Listing everything that might help.** A workflow plus six skills is a catalog, not a suggestion.
 - Out of scope: running a suggested skill's method inside the navigator (the interview sharpens the problem; the hypotheses, the review, or the plan belong to the skill's run); writing or evaluating skills.
 
 ## When to bring in a specialist

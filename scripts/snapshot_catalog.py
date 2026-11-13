@@ -95,6 +95,7 @@ def build(date: str) -> str:
     workflows = load_workflows()
     stage_labels = labels(taxonomy.get("stages"))
     io_labels = labels(taxonomy.get("io_types"))
+    tested_labels = labels(taxonomy.get("tested_in"))
 
     lines: List[str] = []
     lines.append("# Catalog snapshot")
@@ -138,6 +139,9 @@ def build(date: str) -> str:
         if e["produces"]:
             lines.append(f"**Produces:** {', '.join(e['produces'])}  ")
         lines.append("")
+        if e["type"] == "atomic" and e["tested_in"]:
+            lines.append(f"**Where its evidence has been tested:** {tested_labels.get(e['tested_in'], e['tested_in'])}")
+            lines.append("")
         lines.append(f"**What it does:** {e['what_it_does']}")
         lines.append("")
         lines.append(f"**Description (trigger rule):** {e['description']}")
