@@ -54,21 +54,25 @@ In the social sector, having a behavioral scientist in the room is a luxury, and
 
 ## What it looks like
 
-You describe your problem. The navigator asks what it needs to know, then recommends skills in order.
+You describe your problem. The navigator offers two ways to start: think it through together, one question at a time, or go straight to suggestions.
 
-> **You:** How do I measure agency in my program?
+> **You:** We run a voice advisory line for smallholder farmers in Ethiopia. We want it to build their agency, not only their yields. Where do I start?
 >
-> **`besci-navigator`:** Your goal is still open, so I'm in guide mode: a few questions first, one at a time. What does the program do, for whom, and what would more agency look like?
+> **`besci-navigator`:** Welcome. You want the advisory line to build farmers' agency, not only their yields, and you are deciding where to begin. There are two ways we could start. (1) Think it through together: I ask one question at a time and give my own guess with each. (2) Go straight to suggestions. Which would you like?
 >
-> **You:** We run a voice advisory line for smallholder farmers in Ethiopia. We want farmers to make their own planting decisions with confidence, not just follow the advice.
+> **You:** Let's think it through.
 >
-> **`besci-navigator`:** Has your team written down what agency means for these farmers, and what data do you collect now?
+> **`besci-navigator`:** Starting the interview. What would a farmer with more agency do differently next season? I'd lean toward one decision they make on their own, such as when to plant, because one decision is something you can observe.
 >
-> **You:** No definition yet. We have call logs, and a household survey at baseline in March.
+> **You:** Make their own planting decisions with confidence, not just follow the advice.
 >
-> **`besci-navigator`:** That is enough to recommend skills. Switching to route mode: three skills, in this order:
+> **`besci-navigator`:** So it is the planting decision, and confidence counts as much as the choice. Has your team written down what agency means for these farmers?
 >
-> 1. **Define:** [`define-agency-construct`](https://besci-skills.vercel.app/skills/define-agency-construct/). Nobody has written down what agency means for these farmers, and measures chosen before that measure "agency" in name only.
+> **You:** No definition yet. We have call logs, and a household survey at baseline in March. Wrap up.
+>
+> **`besci-navigator`:** **Settled:** farmers make their own planting decisions with confidence; you have call logs and a March baseline survey. **Still open:** what agency means for these farmers. Your problem matches the workflow [Define and measure agency](https://besci-skills.vercel.app/workflows/define-and-measure-agency/), starting at step 1:
+>
+> 1. **Define:** [`define-agency-construct`](https://besci-skills.vercel.app/skills/define-agency-construct/). Measures chosen before a definition measure "agency" in name only.
 > 2. **Measure:** [`plan-agency-measurement`](https://besci-skills.vercel.app/skills/plan-agency-measurement/). Turns the definition into measures in the calls and outside them. Your call logs already count as data.
 > 3. **Measure:** [`draft-survey-items`](https://besci-skills.vercel.app/skills/draft-survey-items/). Writes the baseline questions so farmers with little schooling can answer them when an enumerator reads them aloud.
 

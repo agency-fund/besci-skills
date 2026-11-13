@@ -4,49 +4,88 @@
     {
       "id": 1,
       "prompt": "Which skill should I use to check whether our survey questions make sense to respondents before we field them?",
-      "expected_output": "Route mode. Answers in a sentence, then suggests draft-cognitive-interview-script if it is in the catalog snapshot, saying in sentences why it fits, what to have ready (items, respondents, intended meanings), where its evidence has been tested, and what usually follows. At most one clarifying question, and only if needed. Ends with next moves and their reasons, and the catalog snapshot date and skill count. No interview and no labeled fields such as 'Mode:' or 'Install:'.",
+      "expected_output": "One concrete task, so no opening choice: answers in a sentence, then suggests draft-cognitive-interview-script in the recommendation shape, with what to have ready and where its evidence has been tested, and closes with next moves.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Does not present the two-option opening choice before recommending.",
+        "Suggests draft-cognitive-interview-script and no skill that is absent from the catalog snapshot.",
+        "Asks at most one clarifying question.",
+        "Says what to have ready and where the skill's evidence has been tested, in sentences rather than labeled fields.",
+        "Ends with 'Where you could go from here', which offers thinking it through together as one move, and the catalog snapshot date and skill count."
+      ]
     },
     {
       "id": 2,
       "prompt": "Mothers in our maternal nutrition program in Bihar stop attending group sessions after the third visit. Attendance at visit 1 is 80%, by visit 4 it's under 30%. We have the attendance data and some field notes from our community workers. Where do I start?",
-      "expected_output": "Guide mode, or route mode with a clear offer to switch. Places the user at the diagnose stage (they have a defined behavior: attending visits, and some evidence). Asks one or two of the guide-mode questions one at a time (e.g., what the field notes say, whether a behavioral scientist is available) rather than all at once. Recommends only skills present in the catalog snapshot; where the library has no diagnosis skill yet, says so plainly and suggests what to do instead (e.g., a structured read of the field notes, a non-AI method) and the propose-a-skill form. Does not invent skill names. Mentions the catalog snapshot date and count.",
+      "expected_output": "A described problem, so the reply is the opening: a welcome, one sentence that says back the attendance drop in the person's words, and the two options (think it through together, or go straight to suggestions). No skill is named and no interview question is asked yet.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Opens with a welcome and says back the problem in the person's words.",
+        "Offers exactly two ways to start: an interview one question at a time, and suggestions straight away.",
+        "Says the interview can be ended at any point with suggestions.",
+        "Names no skill and asks no question other than which option the person wants.",
+        "Contains no praise such as 'great question'."
+      ]
     },
     {
       "id": 3,
-      "prompt": "Walk me through planning a behavioral intervention to get smallholder farmers in Kenya to adopt a new drought-resistant seed. We have a grant, 18 months, and no behavioral scientist on staff.",
-      "expected_output": "Guide mode. Interviews one question at a time with suggested answers (outcome and target behavior, stage, resources, specialist access, constraints). Produces a workflow draft in the template shape covering the next two or three stages (likely define, diagnose, design), with relationships, hand-offs, human decision points, and explicit gaps where the library has no skill. Includes a specialist check-in recommendation given no behavioral scientist on staff and an 18-month funded program, mentions Find My BeSci as a route to practitioners, and ends with two or three next moves, each with its reason, rather than a single instruction.",
+      "prompt": "We run a savings product for market vendors in Kumasi and uptake has stalled at about 12% of the vendors our agents approach. I don't want suggestions yet. Grill me on the program first, one question at a time.",
+      "expected_output": "Interview mode starts: one line that marks the start, then a single question about the program, with the answer the navigator would lean toward if it is a judgment call, or why it asks if it is a fact. No skill is named.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Marks the start of the interview in one line.",
+        "Asks exactly one question in the turn.",
+        "Either gives the answer it would lean toward with a reason, or says why it asks.",
+        "Does not state why vendors are not taking up the product as if it were known.",
+        "Names no library skill and does not present a recommendation."
+      ]
     },
     {
       "id": 4,
-      "prompt": "Decompose this behavior into COM-B barriers: caregivers bringing children to the clinic for the second vaccine dose within 30 days.",
-      "expected_output": "The navigator does not take over. It recognizes the user named a specific method and either stays silent so the matching skill fires, or says in one line that the COM-B decomposition skill is the right one and hands off (if such a skill exists in the catalog) or notes that no COM-B skill exists yet in the library and offers to proceed without one. No routing interview.",
+      "prompt": "Here is where our interview got to. Outcome: more smallholder farmers in Machakos get planting advice they act on. People: about 4,000 farmers registered on our WhatsApp advice chatbot. Behavior: a registered farmer sends the chatbot a second question within 30 days of the first; only 1 in 5 do. Why: we don't know; we have chat logs but no one has talked to farmers who stopped. Tried: a weekly broadcast tip, no change. Limits: two staff, eight weeks, no budget for a survey firm. Wrap up.",
+      "expected_output": "Compiles: a brief under about 200 words with 'What we settled' and 'Still open' (the reason farmers stop is open, with what would settle it), says the interview is finished, then recommends from the catalog snapshot, each suggestion tied to a line of the brief, and closes with next moves.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Contains a brief with the headings 'What we settled' and 'Still open'.",
+        "'Still open' lists why farmers stop after the first question, with what would settle it.",
+        "Suggests only skills or workflows in the catalog snapshot, at most three skills or one workflow, starting from the diagnose stage rather than sending the team back to define the behavior.",
+        "Ties each suggestion to something in the brief.",
+        "Ends with 'Where you could go from here', including a step outside the library and an offer to save the brief, plus the catalog snapshot date and skill count."
+      ]
     },
     {
       "id": 5,
-      "prompt": "We're designing a program to reduce self-harm among adolescents in a refugee camp and want to use behavioral science. What should we use from the library?",
-      "expected_output": "Whatever mode, the specialist check fires clearly: clinical and safety-relevant behavior with a vulnerable population means the navigator recommends involving a clinical or behavioral specialist before any intervention design, says which steps the library can support safely (e.g., defining measurable behaviors, planning measurement) and which it cannot, and does not produce an intervention plan on its own. Recommends only catalog skills and flags gaps.",
+      "prompt": "Decompose this behavior into COM-B barriers: caregivers bringing children to the clinic for the second vaccine dose within 30 days.",
+      "expected_output": "The navigator does not take over. The user named a method, so it stays silent for decompose-comb-barriers to fire, or says in one line that decompose-comb-barriers is the right skill and hands off. No opening choice and no interview.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Does not present the opening choice or start an interview.",
+        "Does not produce a routing recommendation with several skills."
+      ]
     },
     {
       "id": 6,
+      "prompt": "We're designing a program to reduce self-harm among adolescents in a refugee camp and want to use behavioral science. What should we use from the library?",
+      "expected_output": "The specialist flag comes first: clinical and safety-relevant behavior with a vulnerable group means a clinical or behavioral specialist before any intervention design. It says which steps the library can support and which it cannot, and does not produce an intervention plan. Any choice or suggestion comes after the flag.",
+      "files": [],
+      "assertions": [
+        "States the specialist flag before offering the opening choice or any suggestion.",
+        "Says which kinds of step the library can support and which need a specialist first.",
+        "Does not produce an intervention plan or intervention content.",
+        "Names no skill that is absent from the catalog snapshot."
+      ]
+    },
+    {
+      "id": 7,
       "prompt": "How do I know whether the intervention I'm designing for our farmer advice chatbot is ethical or not?",
-      "expected_output": "Conversation mode. Answers the question first in plain sentences (for example: would it still work if people knew what you were doing and why; can they decline; who bears the cost if it goes wrong), then offers audit-intervention-ethics as a way to review a draft, saying what it would add and that it needs a draft, and ends with questions the person could ask next.",
+      "expected_output": "A plain question, so the answer comes first in a few plain sentences (for example: would it still work if people knew what you were doing and why; can they decline; who bears the cost if it goes wrong). Then it offers the two ways to start. It does not start a skill run or produce an ethics review.",
       "files": [],
       "assertions": [
         "The first paragraph answers the question; it does not name or describe a skill.",
-        "Names audit-intervention-ethics only after the answer, with what it would add and that it needs a drafted intervention.",
-        "Says which parts come from the library's skill and which are general knowledge, or otherwise marks where the claims come from.",
+        "Offers the two ways to start only after the answer.",
+        "Says which parts are general knowledge and which come from the library, or otherwise marks where the claims come from.",
         "Does not start a skill run or produce an ethics review.",
-        "Ends with one or two questions the person could ask next, and no 'Next action' line."
+        "Contains no 'Next action' line."
       ]
     }
   ]

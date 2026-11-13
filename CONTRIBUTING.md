@@ -70,7 +70,7 @@ New stage, verb, input/output type, or tag: edit `taxonomy.yaml` in the same pul
 
 ## Contributing a workflow
 
-Copy `workflows/WORKFLOW-TEMPLATE.md` to `workflows/<name>.md`. A workflow is an ordered set of existing skills with the relationships between them stated and the human decision points marked. `besci-navigator` can draft one for you in guide mode.
+Copy `workflows/WORKFLOW-TEMPLATE.md` to `workflows/<name>.md`. A workflow is an ordered set of existing skills with the relationships between them stated and the human decision points marked. `besci-navigator` can draft one for you: ask it to save its suggestions as a workflow file.
 
 ## Style
 

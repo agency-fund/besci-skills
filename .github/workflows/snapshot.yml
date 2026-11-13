@@ -1,13 +1,15 @@
 name: Refresh navigator catalog snapshot
 
 # besci-navigator ships a snapshot of the catalog so it works offline and in
-# Claude Desktop. Regenerate it whenever a skill or the taxonomy changes on main.
+# Claude Desktop. Regenerate it whenever a skill, a workflow, or the taxonomy
+# changes on main.
 
 on:
   push:
     branches: [main]
     paths:
       - "skills/**"
+      - "workflows/**"
       - "taxonomy.yaml"
       - "scripts/snapshot_catalog.py"
       - "scripts/besci_validate.py"

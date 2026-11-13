@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1 - 2026-11-13
+Wording only: the pointer for writing a workflow no longer names the navigator's guide mode, which ADR 0010 removed. Edited with Claude.
+
 ## 0.3.0 - 2026-11-11
 Follows the conversational-voice standard (ADR 0009) when drafting a skill: a plain lead-in, plain labels, and a "Where you could go from here" closing in every output template; asks what people do next so the closing lists candidate next moves with their conditions; copies the shared voice-block markers. Its own report now opens with a few plain sentences, calls "Submit" "How to submit it", ends with next moves, and carries the shared voice block. Bundles the updated spec, template, and validator. Edited with Claude.
 

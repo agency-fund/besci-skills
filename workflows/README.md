@@ -13,4 +13,4 @@ Each workflow is a recommended order, not a rule: you can start at any step with
 | Design a wise intervention | `design-a-wise-intervention.md` |
 | From a goal to a tested intervention | `from-a-goal-to-a-tested-intervention.md` |
 
-To add one, copy `WORKFLOW-TEMPLATE.md` to `workflows/<name>.md` and open a pull request. `besci-navigator` drafts a workflow in guide mode whenever a user's goal spans several stages, and the site's [workflow builder](https://besci-skills.vercel.app/workflows/build/) turns a list of skills you pick into a proposal. From 2027, invited expert organizations are asked to contribute the workflows they actually use.
+To add one, copy `WORKFLOW-TEMPLATE.md` to `workflows/<name>.md` and open a pull request. `besci-navigator` recommends these workflows when a user's problem spans several stages, drafts a new one when asked to save a plan, and the site's [workflow builder](https://besci-skills.vercel.app/workflows/build/) turns a list of skills you pick into a proposal. From 2027, invited expert organizations are asked to contribute the workflows they actually use.
