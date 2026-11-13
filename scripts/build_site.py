@@ -730,21 +730,41 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     meta_panel = f"""
   <div class="demo-screen" role="tabpanel" id="demo-p-meta" aria-labelledby="demo-t-meta" data-demo-panel="meta">
     <div class="demo-body" tabindex="0" aria-label="Illustrative conversation using besci-navigator">
-      <div class="t-user" data-step="type"><span class="t-text">How do I measure agency in my program?</span></div>
-      {tool_line("besci-navigator", f"Read the catalog: {len(by_name)} skills", by_name)}
-      <div class="t-ai" data-step="say"><p>Your goal is still open, so I'm in <b>guide mode</b>: a few questions first, one at a time. Say “just tell me which skill” to skip ahead.</p>
-        <p class="t-ask">What does the program do, for whom, and what would more agency look like?<small>Suggested: name one decision you want participants to make more on their own.</small></p></div>
-      <div class="t-user" data-step="type"><span class="t-text">We run a voice advisory line for smallholder farmers in Ethiopia. We want farmers to make their own planting decisions with confidence, not just follow the advice.</span></div>
-      <div class="t-ai" data-step="say"><p class="t-ask">Has your team written down what agency means for these farmers, and what data do you collect now?<small>Suggested: no written definition yet; call logs and a yearly household survey.</small></p></div>
-      <div class="t-user" data-step="type"><span class="t-text">No definition yet. We have call logs, and a household survey at baseline in March.</span></div>
-      <div class="t-ai" data-step="say"><p>That is enough to recommend skills. Switching to <b>route mode</b>: three skills, in this order.</p></div>
+      <div class="t-user" data-step="type"><span class="t-text">We run a voice advisory line for smallholder farmers in Ethiopia. We want it to build their agency, not only their yields. Where do I start?</span></div>
+      {tool_line("besci-navigator", "Loaded skill", by_name)}
+      <div class="t-ai" data-step="say"><p>Welcome. You want the advisory line to build farmers' agency, not only their yields, and you are deciding where to begin. There are two ways we could start.</p></div>
       <div class="t-block" data-step="rows">
-        <div class="t-cap" data-row>Recommended skills</div>
-        <div class="t-hyp" data-row><span class="t-tag">1 · Define</span><span>{sk("define-agency-construct")}: nobody has written down what agency means for these farmers, and measures chosen before that measure “agency” in name only.<small>Have ready: a paragraph on the advisory line and two or three things a confident farmer does differently.</small></span></div>
-        <div class="t-hyp" data-row><span class="t-tag">2 · Measure</span><span>{sk("plan-agency-measurement")}: turns the definition into measures in the calls and outside them. Your call logs already count as data.<small>Have ready: the definition from step 1, and how much room the March survey has.</small></span></div>
-        <div class="t-hyp" data-row><span class="t-tag">3 · Measure</span><span>{sk("draft-survey-items")}: writes the baseline questions so farmers with little schooling can answer them when an enumerator reads them aloud.<small>Have ready: the measurement plan from step 2.</small></span></div>
+        <div class="t-cap" data-row>Two ways to start</div>
+        <div class="t-hyp" data-row><span class="t-tag">1</span><span>Think it through together<small>One question at a time, with my own guess each time. Say “wrap up” whenever you like.</small></span></div>
+        <div class="t-hyp" data-row><span class="t-tag">2</span><span>Go straight to suggestions<small>The skills or workflow that fit what you have told me so far.</small></span></div>
       </div>
-      <div class="t-ai" data-step="say"><p><b>Next action:</b> start {sk("define-agency-construct")}. I can pass it what you have told me so far.</p></div>
+      <div class="t-user" data-step="type"><span class="t-text">Let's think it through.</span></div>
+      <div class="t-ai" data-step="say"><p>Starting the interview. You will have a short brief and suggestions at the end.</p>
+        <p class="t-ask">What would a farmer with more agency do differently next season?<small>I'd lean toward one decision they make on their own, such as when to plant, because one decision is something you can observe.</small></p></div>
+      <div class="t-user" data-step="type"><span class="t-text">Make their own planting decisions with confidence, not just follow the advice.</span></div>
+      <div class="t-ai" data-step="say"><p class="t-ask">So it is the planting decision, and confidence counts as much as the choice. Has your team written down what agency means for these farmers?<small>I ask because measures chosen before a definition tend to measure agency in name only.</small></p></div>
+      <div class="t-user" data-step="type"><span class="t-text">No definition yet. We have call logs, and a household survey at baseline in March. Wrap up.</span></div>
+      <div class="t-block" data-step="rows">
+        <div class="t-cap" data-row>Brief</div>
+        <div class="t-hyp" data-row><span class="t-tag">Settled</span><span>Farmers on the advisory line make their own planting decisions with confidence.<small>Data in hand: call logs, and a household survey at baseline in March.</small></span></div>
+        <div class="t-hyp" data-row><span class="t-tag">Still open</span><span>What agency means for these farmers.<small>What would settle it: a definition the team has written down and agrees on.</small></span></div>
+      </div>
+      {tool_line("besci-navigator", f"Read the catalog: {len(by_name)} skills", by_name)}
+      <div class="t-ai" data-step="say"><p>The interview is finished. Your problem matches the workflow <a href="/workflows/define-and-measure-agency/">Define and measure agency</a>. You would start at step 1, because no definition is written down yet.</p></div>
+      <div class="t-block" data-step="rows">
+        <div class="t-cap" data-row>Suggested skills</div>
+        <div class="t-hyp" data-row><span class="t-tag">1 · Define</span><span>{sk("define-agency-construct")}: measures chosen before a definition measure “agency” in name only.<small>You'll want: a paragraph on the advisory line and two or three things a confident farmer does differently.</small></span></div>
+        <div class="t-hyp" data-row><span class="t-tag">2 · Measure</span><span>{sk("plan-agency-measurement")}: turns the definition into measures in the calls and outside them. Your call logs already count as data.<small>You'll want: the definition from step 1, and how much room the March survey has.</small></span></div>
+        <div class="t-hyp" data-row><span class="t-tag">3 · Measure</span><span>{sk("draft-survey-items")}: writes the baseline questions so farmers with little schooling can answer them when an enumerator reads them aloud.<small>Optional. You'll want: the measurement plan from step 2.</small></span></div>
+      </div>
+      <div class="t-block" data-step="rows">
+        <div class="t-cap" data-row>Where you could go from here</div>
+        <ul class="t-list">
+          <li data-row><b>Run {sk("define-agency-construct")} now:</b> I'd lean toward this, since the survey questions depend on it.</li>
+          <li data-row><b>Ask two field officers</b> what a confident farmer does differently: an hour with them may settle the definition sooner than a workshop.</li>
+          <li data-row><b>Save the brief as a file</b>, so the next skill reads it instead of asking again.</li>
+        </ul>
+      </div>
     </div>
   </div>"""
 
@@ -796,7 +816,7 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
   <div class="demo-screen" role="tabpanel" id="demo-p-workflow" aria-labelledby="demo-t-workflow" data-demo-panel="workflow" hidden>
     <ol class="wf-rail" aria-label="Workflow steps">{rail}</ol>
     <div class="demo-body" tabindex="0" aria-label="Illustrative conversation running the from-a-goal-to-a-tested-intervention workflow">
-      <div class="t-user" data-step="type"><span class="t-text">Rural women in India learn about kangaroo mother care in a hospital health education session, but few report practicing it at home. Why? I want to study this qualitatively with a small sample, then design the most promising intervention.</span></div>
+      <div class="t-user" data-step="type"><span class="t-text">Rural women in India learn about kangaroo mother care in a hospital health education session, but few report practicing it at home. Why? I want to study this qualitatively with a small sample, then design the most promising intervention. Which workflow fits?</span></div>
       {tool_line("besci-navigator", "Matched workflow: from-a-goal-to-a-tested-intervention", by_name)}
       <div class="t-ai" data-step="say"><p>This fits <a href="/workflows/from-a-goal-to-a-tested-intervention/">From a goal to a tested intervention</a>. I will run its first five skills, from the behavior to a chosen lever, and stop wherever you need to decide.</p></div>
       {tool_line("define-key-behavior", "Step 1 of 5", by_name, 0)}

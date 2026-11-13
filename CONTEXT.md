@@ -52,11 +52,15 @@ Where in a project a skill is normally used: define, diagnose, design, measure, 
 _Avoid_: phase, category, step
 
 **Navigator**:
-The meta-skill that helps a user find their way through the library. In conversation mode, the default, it answers as a thought partner and mentions a skill only when the user wants to do something; in route mode it answers a concrete task with one or two skills; in guide mode it interviews the user and drafts a workflow.
+The meta-skill that helps a user find their way through the library. It opens with a choice between two modes. In interview mode it asks about the user's program one question at a time until the problem is sharp, then compiles an interview brief and suggests skills. In recommend mode it suggests skills or a workflow straight away. A request for one concrete task goes straight to a recommendation; a plain question is answered first (ADR 0010).
 _Avoid_: router, assistant, orchestrator
 
+**Interview brief**:
+What the navigator writes when an interview ends: "What we settled" about the user's program, and "Still open", each open question with what would settle it. The recommendation follows it.
+_Avoid_: summary, report, intake form
+
 **Conversation**:
-Talking with a user outside a run: answering questions as a thought partner that knows the library, saying what comes from the library and what is general knowledge, and offering a skill, with what it would add, when the user wants to do something. The default.
+Talking with a user outside a run: answering questions as a thought partner that knows the library, saying what comes from the library and what is general knowledge, and offering a skill, with what it would add, when the user wants to do something. Every skill does this before it offers a run; it is not a mode of the navigator.
 _Avoid_: chat mode, brainstorm mode
 
 **Run**:

@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.3.0"
+  version: "0.3.1"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -46,7 +46,7 @@ The library's spec has eight sections, three or more test cases, and a changelog
 - The skill is not for this library (a PDF tool, a coding workflow); use Anthropic's general skill-creator
 - The author wants to test a finished skill across models or score its outputs; use besci-eval
 - The user wants to know which existing skill fits their problem; use besci-navigator
-- The user wants to write a workflow (an ordered set of skills); use the workflow template in the repo, with besci-navigator's guide mode
+- The user wants to write a workflow (an ordered set of skills); use the workflow template in the repo, or ask besci-navigator to save its suggestions as a workflow file
 
 ## Before you start
 
