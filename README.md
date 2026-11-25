@@ -201,7 +201,7 @@ If you don't know which skill you need, start with the navigator. To examine how
 
 - **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** grills you about your problem in rounds of questions, each with a recommended answer, and points to the library skills and outside resources that fit.
 - **[`besci-eval`](https://besci-skills.vercel.app/skills/besci-eval/)** diagnoses one library skill: its structure, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone.
-- **[`besci-skill-creator`](https://besci-skills.vercel.app/skills/besci-skill-creator/)** interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder.
+- **[`besci-skill-creator`](https://besci-skills.vercel.app/skills/besci-skill-creator/)** interviews an author about a behavioral-science method the way a skeptical colleague would, then drafts a skill folder that meets the library's standard.
 
 ## Principles
 
@@ -219,7 +219,7 @@ We expect a fair question from people with concerns about AI as a medium for kno
 A skill covers one method, narrow enough to describe in a sentence without the word "and". For now, contributions come from staff at The Agency Fund and Irrational Labs while we test the process on our own work; invited experts join in 2027.
 
 1. **Claim or propose.** Check the [catalog](https://besci-skills.vercel.app/skills/) for something that already covers it, then [propose the skill](https://besci-skills.vercel.app/propose/). A maintainer confirms it is atomic before you write it.
-2. **Draft it with `besci-skill-creator`.** Say "I want to create a skill for ...". It interviews you against the spec, drafts the whole folder, runs the validator, and packages a `.skill` file. Or copy [the template](template/skill-template/) and write by hand.
+2. **Draft it with `besci-skill-creator`.** Say "I want to create a skill for ...". It interviews you about your method, drafts the whole folder to the spec, runs the validator, shows you one real output to react to, and packages a `.skill` file. Or copy [the template](template/skill-template/) and write by hand.
 3. **Validate.** The same validator runs in the creator skill, in CI, and on upload:
    ```
    uv run scripts/besci_validate.py skills/<your-skill-name>

@@ -1701,7 +1701,7 @@ def build_contribute() -> None:
 
 <section class="step">
   <h2>Draft it with besci-skill-creator</h2>
-  <p>Install <a href="/skills/besci-skill-creator/"><code>besci-skill-creator</code></a> and say "I want to create a skill for ...". It interviews you against the spec, starting with the atomicity test and the trigger rule, drafts the whole folder (<code>SKILL.md</code>, three test cases, a changelog), runs the validator, does one self-test pass, and packages a <code>.skill</code> file where the environment allows. You can also copy <a href="{GITHUB}/tree/main/template/skill-template" rel="noopener">the template</a> and write by hand.</p>
+  <p>Install <a href="/skills/besci-skill-creator/"><code>besci-skill-creator</code></a> and say "I want to create a skill for ...". It interviews you about your method, starting with whether it is one thing and whether the library already has it, drafts the whole folder to the spec (<code>SKILL.md</code>, four test cases, a changelog, a worked example, an evidence file), runs the validator, shows you one real output to react to, and packages a <code>.skill</code> file where the environment allows. You can also copy <a href="{GITHUB}/tree/main/template/skill-template" rel="noopener">the template</a> and write by hand.</p>
 </section>
 
 <section class="step">

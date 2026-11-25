@@ -14,7 +14,7 @@ Check the [catalog](https://besci-skills.vercel.app/skills/) so you are not dupl
 
 ### 2. Draft
 
-Install `besci-skill-creator` (see the README) and say: *"I want to turn [method] into a skill for the library."* It interviews you one question at a time and writes the whole folder: `SKILL.md` with the eight sections, `evals/evals.json`, `CHANGELOG.md`, and any `references/`. In Claude Code it writes the files; in Claude Desktop it gives you the files and a `.skill` zip.
+Install `besci-skill-creator` (see the README) and say: *"I want to turn [method] into a skill for the library."* It grills you about your method in rounds of numbered questions, each with a recommended answer, reads any source you hand it first, and writes the whole folder: `SKILL.md` with the eight sections, `evals/evals.json`, `CHANGELOG.md`, and any `references/`. In Claude Code it writes the files; in Claude Desktop it gives you the files and a `.skill` zip.
 
 Or draft by hand: copy `template/skill-template/` to `skills/<your-skill-name>/` and follow `docs/skill-spec.md`.
 
@@ -22,7 +22,7 @@ Naming: verb-first kebab-case (`decompose-comb-barriers`, not `comb-barrier-deco
 
 ### 3. Self-test
 
-The creator runs the validator and one pass of your test cases. For a fuller check, run `besci-eval` on the folder: it checks structure, whether the skill fires on the right requests, and whether outputs match your template. Fix what it finds. Its report is worth pasting into your pull request.
+The creator runs the validator and shows you the output of your "Full run" test case, so you can say what an expert would object to. For a fuller check, run `besci-eval` on the folder: it checks structure, whether the skill fires on the right requests, and what the skill changes when the same request is answered with it and without it. Fix what it finds. Its report is worth pasting into your pull request.
 
 By hand, from the repo root:
 

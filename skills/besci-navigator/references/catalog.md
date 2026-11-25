@@ -24,7 +24,7 @@ Workflows in this snapshot: 4
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.3.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.4.0 | skill-draft | eval-report | Diagnoses one library skill: whether its structure is sound, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone. Reports what it found on one screen. |
 | besci-navigator | Behavioral science navigator | other | meta | draft | 0.4.0 | program-goal | — | Grills a person about a behavior-change problem and recommends the library skills that fit. |
-| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.3 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
+| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.4.0 | — | skill-draft | Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.3.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
 | choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.3.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
@@ -438,37 +438,13 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-skill-creator
 
 **Title:** Behavioral science skill creator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.3 · **Org:** TAF  
-**Tags:** meta, authoring  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.4.0 · **Org:** TAF  
+**Tags:** meta, authoring, interview  
 **Produces:** skill-draft  
 
-**What it does:** Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder.
+**What it does:** Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard.
 
-**Description (trigger rule):** Use when someone wants to create a new skill for the Behavioral Science Skills Library, turn a method, framework, paper, playbook, or checklist into a skill, revise an existing library skill, or check a draft skill against the library's spec. Trigger on "create a besci skill", "turn this method into a skill", "write a SKILL.md for the behavioral science library", "contribute a skill", "is my skill atomic", "check my skill draft". Do not use for skills outside this library (Anthropic's skill-creator handles general skills). Not for evaluating a finished skill across models (besci-eval) or for finding which skill to use (besci-navigator).
-
-**Use it when:**
-- "I want to turn the saying-is-believing technique into a skill for the library"
-- "Help me write a SKILL.md for COM-B barrier decomposition"
-- "Here's a playbook chapter; make it a besci skill"
-- "Is this idea atomic enough to be one skill?"
-- "Check my draft skill against the library spec"
-- "Revise my skill; the reviewer said the trigger rule is too vague"
-- "Contribute a skill" or "claim a skill" for the besci-skills repo
-
-**Do not use it when:**
-- The skill is not for this library (a PDF tool, a coding workflow); use Anthropic's general skill-creator
-- The author wants to test a finished skill across models or score its outputs; use besci-eval
-- The user wants to know which existing skill fits their problem; use besci-navigator
-- The user wants to write a workflow (an ordered set of skills); use the workflow template in the repo, or ask besci-navigator to save its suggestions as a workflow file
-
-**When to bring in a specialist:**
-
-Tell the author to bring in a domain expert before submitting when:
-- The method has no published evidence base and the author is not themselves a practitioner of it.
-- The skill touches clinical, safety, legal, or child-protection decisions, where a wrong procedure causes harm.
-- The author cannot say where the evidence has been tested or whether it has replicated, and the skill will be used outside the evidence's context.
-
-Bring them: the one-sentence description, the evidence list, and the "Where it goes wrong" draft. A maintainer from TAF or IL reviews every skill's content before merge regardless.
+**Description (trigger rule):** Use when someone wants to create a new skill for the Behavioral Science Skills Library, turn a method, framework, paper, playbook, or checklist into a skill, revise an existing library skill, or check a draft skill against the library's spec. Trigger on "create a besci skill", "turn this method into a skill", "write a SKILL.md for the behavioral science library", "contribute a skill", "is my skill atomic", "check my skill draft", "revise this skill". Grills the author about the method, then drafts the skill folder to the library's standard. Do not use for skills outside this library (Anthropic's skill-creator handles general skills). Not for evaluating a finished skill (besci-eval) or for finding which skill to use (besci-navigator).
 
 ### choose-ai-eval-level
 

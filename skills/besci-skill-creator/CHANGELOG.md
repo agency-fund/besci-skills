@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0 - 2026-11-25
+Rewritten to follow Matt Pocock's grilling skill (https://github.com/mattpocock/skills, MIT license, copyright Matt Pocock) nearly word for word: the skill is mapped as a design tree rooted in the spec's four gates and grilled in rounds of numbered questions, each with a recommended answer. Facts such as the sources list and the catalog are looked up, not asked. Drafting waits until the author confirms a shared understanding; the drafting, revising, and supporting-skill steps move to the new `references/drafting.md`. The fourteen-phase interview, report template, and voice block are gone. Edited with Claude.
+
 ## 0.3.3 - 2026-11-24
 Wording only: the interview guide and the bundled spec no longer point to decision records that have left the repository. Edited with Claude.
 
