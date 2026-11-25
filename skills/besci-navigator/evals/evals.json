@@ -5,11 +5,12 @@
       "id": 1,
       "name": "A described problem",
       "prompt": "Mothers in our maternal nutrition program in Bihar stop attending group sessions after the third visit. Attendance at visit 1 is 80%, by visit 4 it's under 30%. We have the attendance data and some field notes from our community workers. Where do I start?",
-      "expected_output": "A first round of numbered questions about the attendance drop, each with a recommended answer. No skill list yet.",
+      "expected_output": "One question about the attendance drop, with a recommended answer if it is a decision. No summary of the topic first and no skill list yet.",
       "files": [],
       "assertions": [
-        "Numbers each question and gives a recommended answer under each.",
-        "Asks only questions that do not depend on another question in the same round.",
+        "Asks exactly one question and stops.",
+        "Opens with the question, not with a summary of the topic or a list of skills.",
+        "Gives no recommended answer to a question about facts only the person knows.",
         "Any skill named in a recommendation is in the catalog snapshot.",
         "Does not present a final list of recommended skills."
       ]
@@ -24,7 +25,7 @@
         "Suggests only skills or workflows in the catalog snapshot, starting from diagnosing the behavior and not from defining it again.",
         "Gives each suggestion a reason tied to what the person said, and what to have ready.",
         "Says which suggestion it would start with.",
-        "Asks no further round of questions."
+        "Asks no further interview question."
       ]
     },
     {

@@ -23,8 +23,8 @@ Workflows in this snapshot: 4
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.3.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.4.0 | skill-draft | eval-report | Diagnoses one library skill: whether its structure is sound, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone. Reports what it found on one screen. |
-| besci-navigator | Behavioral science navigator | other | meta | draft | 0.5.0 | program-goal | — | Grills a person about a behavior-change problem and recommends the library skills that fit. |
-| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.4.0 | — | skill-draft | Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard. |
+| besci-navigator | Behavioral science navigator | other | meta | draft | 0.6.0 | program-goal | — | Grills a person about a behavior-change problem and recommends the library skills that fit. |
+| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.5.0 | — | skill-draft | Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.3.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
 | choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.3.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
@@ -427,7 +427,7 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-navigator
 
 **Title:** Behavioral science navigator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.5.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.6.0 · **Org:** TAF  
 **Tags:** meta, navigation, interview, workflow  
 **Consumes:** program-goal  
 
@@ -438,7 +438,7 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-skill-creator
 
 **Title:** Behavioral science skill creator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.4.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.5.0 · **Org:** TAF  
 **Tags:** meta, authoring, interview  
 **Produces:** skill-draft  
 

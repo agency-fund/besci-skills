@@ -56,7 +56,7 @@ A plain skill that is not a behavioral-science method but does a job the outputs
 _Avoid_: utility, helper, general skill
 
 **Navigator**:
-The meta-skill that helps a user find their way through the library. It grills the user about their program in rounds of numbered questions, each with a recommended answer, until the problem is sharp, and names the skills and outside resources that fit in those answers and at the end. A request for one concrete task gets a direct answer; a plain question is answered first.
+The meta-skill that helps a user find their way through the library. It grills the user about their program one question at a time, giving a recommended answer where there is a decision to make, until the problem is sharp, and names the skills and outside resources that fit in those answers and at the end. A request for one concrete task gets a direct answer; a plain question is answered first.
 _Avoid_: router, assistant, orchestrator
 
 **Interview brief**:

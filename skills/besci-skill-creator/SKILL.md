@@ -17,7 +17,7 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.4.0"
+  version: "0.5.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -28,28 +28,20 @@ metadata:
 
 Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard.
 
-Interview the author relentlessly about their method until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it. The root is the four gates in section 1 of `references/skill-spec.md`: the skill does **one thing**, the task is **common**, it **adds something**, and it is **distinct** from every skill in the catalog.
+Interview the author relentlessly about every aspect of their method until you reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one by one. The root is the four gates in section 1 of `references/skill-spec.md`: the skill does **one thing**, the task is **common**, it **adds something**, and it is **distinct** from every skill in the catalog.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+Ask the questions one at a time, waiting for the author's answer to each before asking the next. Asking multiple questions at once is bewildering. A reply holds one question and nothing after it.
 
-Format a round like so:
+Format a question like so:
 
 ```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-
----
-
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+❓ **<question title>**: <question body, including the choices when there are some>
 
 ➡️ <your recommended answer>
 ```
 
-Word each question so "yes" accepts your recommended answer. Ask about the method in the author's terms, not about the spec's sections; `references/interview-guide.md` has questions that work.
+For each question that is a decision, give your recommended answer. A question about the author's own experience of the method (where it goes wrong, what a good result looks like) has no recommended answer: ask it plainly, leave the ➡️ line out, and do not guess. Ask about the method in the author's terms, not about the spec's sections; `references/interview-guide.md` has questions that work.
 
-Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
+If a _fact_ can be found in the environment (the sources list, the catalog, a citation, a file they shared, etc.), look it up rather than asking the author, and say what you found. The _decisions_ are the author's: put each one to them and wait for the answer.
 
-Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (the sources list, the catalog, a citation, a file they shared, etc.), dispatch a sub-agent with a fresh context window to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
-
-The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding. Then follow `references/drafting.md`.
+Do not draft until the author confirms you have reached a shared understanding. Then follow `references/drafting.md`.

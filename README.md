@@ -54,7 +54,7 @@ In the social sector, having a behavioral scientist in the room is a luxury, and
 
 ## What it looks like
 
-You describe your problem. The navigator asks about it in rounds of numbered questions, each with a recommended answer that names the skills that fit, and once you agree on the problem, recommends where to start.
+You describe your problem. The navigator asks about it one question at a time, with a recommended answer that names the skills that fit, and once you agree on the problem, recommends where to start.
 
 > **You:** We run a voice advisory line for smallholder farmers in Ethiopia. We want it to build their agency, not only their yields. Where do I start?
 >
@@ -199,7 +199,7 @@ The full contract is in [the skill spec](docs/skill-spec.md). A validator enforc
 
 If you don't know which skill you need, start with the navigator. To examine how good a particular skill is, use the evaluator. To create a new skill, use the skill creator.
 
-- **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** grills you about your problem in rounds of questions, each with a recommended answer, and points to the library skills and outside resources that fit.
+- **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** grills you about your problem one question at a time, with a recommended answer, and points to the library skills and outside resources that fit.
 - **[`besci-eval`](https://besci-skills.vercel.app/skills/besci-eval/)** diagnoses one library skill: its structure, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone.
 - **[`besci-skill-creator`](https://besci-skills.vercel.app/skills/besci-skill-creator/)** interviews an author about a behavioral-science method the way a skeptical colleague would, then drafts a skill folder that meets the library's standard.
 

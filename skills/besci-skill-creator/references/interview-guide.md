@@ -1,6 +1,6 @@
 # Interview guide
 
-Questions that work when interviewing an author about a method, and how to turn the answers into a library skill. The interview follows the method and the author; this file is a map of the ground, to check against, and not a script to read out. Put these to the author as numbered questions in rounds, each with your recommended answer, asking only those whose prerequisites are settled.
+Questions that work when interviewing an author about a method, and how to turn the answers into a library skill. The interview follows the method and the author; this file is a map of the ground, to check against, and not a script to read out. Put these to the author one at a time, with your recommended answer when the question is a decision, and ask a question only once the ones it depends on are settled.
 
 ## The gates
 

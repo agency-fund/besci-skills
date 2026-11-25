@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0 - 2026-11-25
+Asks one question at a time, as grill-me does, and waits for the answer before the next. Version 0.4.0 told the creator to ask every open question in one round of numbered questions. The rounds wording and the two-question template are gone. Recommended answers are for decisions only: a question about the author's own experience of the method is asked plainly, without a guessed answer. The rule to word each question so "yes" accepts the recommendation is gone. The interview guide, the revising step, and the test cases follow. Edited with Claude.
+
 ## 0.4.0 - 2026-11-25
 Rewritten to follow Matt Pocock's grilling skill (https://github.com/mattpocock/skills, MIT license, copyright Matt Pocock) nearly word for word: the skill is mapped as a design tree rooted in the spec's four gates and grilled in rounds of numbered questions, each with a recommended answer. Facts such as the sources list and the catalog are looked up, not asked. Drafting waits until the author confirms a shared understanding; the drafting, revising, and supporting-skill steps move to the new `references/drafting.md`. The fourteen-phase interview, report template, and voice block are gone. Edited with Claude.
 
