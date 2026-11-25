@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.0 - 2026-11-25
+Asks one question at a time, as grill-me does, and waits for the answer before the next. Version 0.4.0 told the navigator to ask every open question in one round, so a session opened with five numbered questions, some of which depended on the answers to others. The rounds wording and the two-question template are gone. A reply now opens with the first question, not with a summary of the topic or a list of skills. Recommended answers are for decisions only: a question about the person's own situation is asked plainly, without a guessed answer. The rule to word each question so "yes" accepts the recommendation is gone. Edited with Claude.
+
 ## 0.5.0 - 2026-11-25
 When no library skill fits a step, the navigator recommends a guide from `references/resources.md`, the checked list of outside guides and method references, instead of leaving the step without a pointer. Edited with Claude.
 

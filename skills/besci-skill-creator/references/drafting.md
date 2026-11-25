@@ -12,7 +12,7 @@ What to do once the author confirms a shared understanding.
 
 ## Revising a skill
 
-Read the skill's folder, changelog, and any open expert review before the first round, and grill on what should change. Change only what the answers call for. Bump the version and write the changelog entry in the same change. When it answers an expert review, the entry cites it ("Addresses expert review #42 (Jane Doe): ..."), a test case named "From an expert review #42" reproduces it, and the pull request says "Closes #42".
+Read the skill's folder, changelog, and any open expert review before the first question, and grill on what should change. Change only what the answers call for. Bump the version and write the changelog entry in the same change. When it answers an expert review, the entry cites it ("Addresses expert review #42 (Jane Doe): ..."), a test case named "From an expert review #42" reproduces it, and the pull request says "Closes #42".
 
 ## A supporting skill
 

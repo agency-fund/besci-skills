@@ -5,12 +5,12 @@
       "id": 1,
       "name": "A method and no source material",
       "prompt": "I'm a behavioral scientist at Irrational Labs. I want to turn the 'saying-is-believing' technique from Walton & Cohen's belonging work into a skill for the besci-skills library. Users would be NGO program staff designing a storytelling intervention. Can you help me build it? I'm in Claude Code.",
-      "expected_output": "The interview starts and nothing is drafted: a first round of numbered questions on the gates (what the skill does in one sentence, what it adds), each with a recommended answer, and the gates it can check itself (common, distinct) reported as looked up rather than asked.",
+      "expected_output": "The interview starts and nothing is drafted: one question on the first gate (what the skill does in one sentence), with a recommended answer, and the gates it can check itself (common, distinct) reported as looked up rather than asked.",
       "files": [],
       "assertions": [
-        "Numbers each question and gives a recommended answer under each.",
-        "The first round covers the gates and no question that depends on an unsettled gate.",
-        "Questions are about the method, not about sections of the spec.",
+        "Asks exactly one question and stops.",
+        "The question is about a gate and carries a recommended answer.",
+        "The question is about the method, not about sections of the spec.",
         "Does not ask the author which sources name the task or whether a similar skill exists; it looks these up or says it will.",
         "Does not write SKILL.md or any other file yet."
       ]
@@ -32,11 +32,11 @@
       "id": 3,
       "name": "A revision after a review",
       "prompt": "The reviewer said the trigger rule on my skill draft-norms-vignette is too vague and it fires on requests that belong to write-social-norm-message. Can you fix it? The repo is open here.",
-      "expected_output": "The creator reads the skill's folder, changelog, and any open expert review first, then asks a round of numbered questions, each with a recommended answer, about what should change before it edits anything.",
+      "expected_output": "The creator reads the skill's folder, changelog, and any open expert review first, then asks one question, with a recommended answer, about what should change before it edits anything.",
       "files": [],
       "assertions": [
         "Reads, or says it will read, the skill folder and its changelog before proposing a change.",
-        "Asks a question about the intended change before editing a file.",
+        "Asks one question about the intended change before editing a file.",
         "Does not rewrite parts of the skill the request did not mention.",
         "Mentions that the version and the changelog change together, or that the changelog entry cites the review."
       ]
@@ -62,7 +62,7 @@
       "files": [],
       "assertions": [
         "Does not ask the author to restate what the chapter already says.",
-        "Its questions are numbered, carry recommended answers, and cover only what the source does not.",
+        "Asks one question at a time, and only about what the source does not cover.",
         "Raises at least one early gate: one thing, common, adds something, or distinct from existing skills.",
         "Does not write the whole folder in the first reply."
       ]
