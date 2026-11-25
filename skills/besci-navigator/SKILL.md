@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science navigator
   type: meta
   stage: other
-  version: "0.3.0"
+  version: "0.3.1"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -63,7 +63,7 @@ The person can switch at any point: "wrap up" ends an interview and compiles wha
 - The interview form comes from the grill-me skill by Matt Pocock (https://github.com/mattpocock/skills, MIT license), turned from software plans to behavior-change programs.
 - `references/catalog.md`, the catalog snapshot the repository regenerates on every change: each skill's trigger rule, stage, inputs, outputs, and escalation point, and each workflow's purpose and steps.
 - `references/stages.md`, the library's stage model and its crosswalk to BIT's TEST, Busara's AUDAS, and The Agency Fund's four-level evaluation framework (https://eval.playbook.org.ai/). The file lists the sources.
-- The partnership's principles: ask before recommending; skills do not replace experts; say when the question has outgrown the tool; suggest next moves and leave the decision to the user (ADR 0009). The skill exists because of Patricia Andrews Fearon's observation in the MOU comments that knowing which technique to use when is the hardest part of using a library without a scientist in the room.
+- The partnership's principles: ask before recommending; skills do not replace experts; say when the question has outgrown the tool; suggest next moves and leave the decision to the user. The skill exists because of Patricia Andrews Fearon's observation in the MOU comments that knowing which technique to use when is the hardest part of using a library without a scientist in the room.
 
 **Where the evidence comes from:** Not applicable to the navigator itself. It shows, from the catalog, where each suggested skill's evidence has been tested.
 

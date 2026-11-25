@@ -17,7 +17,7 @@
   /* ---------- analytics hook ----------
      Does nothing until an analytics provider is chosen. Its adapter sets
      window.besciAnalytics = function (name, props) { ... }. Event names are
-     listed in docs/analytics.md. */
+     listed in the maintainers' analytics notes. */
   function track(name, props) {
     try { if (typeof window.besciAnalytics === "function") window.besciAnalytics(name, props || {}); } catch (e) { /* ignore */ }
   }

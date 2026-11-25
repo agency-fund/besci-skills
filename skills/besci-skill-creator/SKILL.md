@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.3.2"
+  version: "0.3.3"
   status: draft
   authors: "Zezhen Wu"
   org: TAF

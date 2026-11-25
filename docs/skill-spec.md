@@ -16,7 +16,7 @@ skills/<name>/
 └── assets/                       optional: templates used in output
 ```
 
-No `README.md` inside a skill folder.
+No `README.md` inside a skill folder. Every skill sits directly under `skills/`, with its stage and type in metadata, so reclassifying a skill is a one-line edit and its install link and URL never change.
 
 ## 1. What earns a place
 
@@ -28,7 +28,7 @@ An atomic skill stays in the library if it passes three tests.
 
 The library also carries a few frameworks by choice; `docs/canonical-sources.md` lists them. A skill built on one of them skips the first test only, and says whose method it is.
 
-A supporting skill takes none of the three tests. It is not a behavioral-science method; it does a job the outputs of many skills share, such as writing (ADR 0011). It is a plain skill, and this spec does not apply to it beyond section 13. It earns its place by being listed under "Supporting skills" in `docs/canonical-sources.md`, with the reason the library carries it.
+A supporting skill takes none of the three tests. It is not a behavioral-science method; it does a job the outputs of many skills share, such as writing. It is a plain skill, and this spec does not apply to it beyond section 13. It earns its place by being listed under "Supporting skills" in `docs/canonical-sources.md`, with the reason the library carries it.
 
 ## 2. The name
 
@@ -339,13 +339,11 @@ uv run scripts/besci_validate.py --json             # for tools
 
 Exit 0 means the structure is right. Content review by a maintainer is still required before merge.
 
-The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.
-
-The voice rules (ADR 0009: the shared voice block, the closing, no directive closing lines) are errors E053 to E055. They were warnings, behind the switch `STRICT_VOICE`, while the library was revised to them. A named skill or workflow that does not exist is an error, E056.
+Everything this document marks **required** is an error (codes starting with E), and so is naming a skill or workflow that does not exist. The length limits and a note in `SKILL.md` or `references/` on how the skill was drafted are warnings (codes starting with W). A warning needs a decision, not silence.
 
 ## 13. Supporting skills
 
-A supporting skill (`type: supporting`, `stage: other`) is a plain skill: it meets the [Agent Skills spec](https://agentskills.io/specification) and is otherwise written in whatever shape suits it (ADR 0011). A skill written elsewhere can be carried as it is.
+A supporting skill (`type: supporting`, `stage: other`) is a plain skill: it meets the [Agent Skills spec](https://agentskills.io/specification) and is otherwise written in whatever shape suits it. A skill written elsewhere can be carried as it is.
 
 It needs:
 

@@ -133,7 +133,7 @@ Skills are grouped by the stage of a project where you'd use them. Each stage li
 | Stage | What it covers | For example |
 |---|---|---|
 | [**Define**](https://besci-skills.vercel.app/skills/?stage=define) | Turn a goal, population, or outcome into something specific enough to work on. | [Turn a vague goal into one clear behavior](https://besci-skills.vercel.app/skills/define-key-behavior/)<br>[Write the causal chain from activities to outcome](https://besci-skills.vercel.app/skills/draft-theory-of-change/) |
-| [**Diagnose**](https://besci-skills.vercel.app/skills/?stage=diagnose) | Explain why the current behavior pattern exists: barriers, drivers, context. | [Find out why people are not doing a behavior](https://besci-skills.vercel.app/skills/decompose-comb-barriers/)<br>[Find who already succeeds under the same constraints](https://besci-skills.vercel.app/skills/identify-positive-deviants/) |
+| [**Diagnose**](https://besci-skills.vercel.app/skills/?stage=diagnose) | Explain why the current behavior pattern exists: barriers, drivers, context. | [Find out why people are not doing a behavior](https://besci-skills.vercel.app/skills/decompose-comb-barriers/)<br>[Find out whether a practice is a social norm](https://besci-skills.vercel.app/skills/diagnose-social-norm/) |
 | [**Design**](https://besci-skills.vercel.app/skills/?stage=design) | Produce intervention content, levers, messages, or strategy. | [Choose interventions for a confirmed barrier](https://besci-skills.vercel.app/skills/select-intervention-levers/)<br>[Plan when and how often to remind](https://besci-skills.vercel.app/skills/design-reminder-schedule/) |
 | [**Measure**](https://besci-skills.vercel.app/skills/?stage=measure) | Choose, adapt, or build instruments for a behavior or construct. | [Write survey questions people can answer](https://besci-skills.vercel.app/skills/draft-survey-items/)<br>[Measure a sensitive behavior without asking directly](https://besci-skills.vercel.app/skills/design-list-experiment/) |
 | [**Test**](https://besci-skills.vercel.app/skills/?stage=test) | Plan a pilot, experiment, or evaluation of an intervention. | [Design a pilot that tests feasibility, not effect](https://besci-skills.vercel.app/skills/design-pilot-feasibility-study/)<br>[Work out how big the sample must be](https://besci-skills.vercel.app/skills/estimate-sample-size/) |
@@ -250,7 +250,7 @@ skills/            one folder per skill, atomic and meta
 workflows/         workflow files and the template
 template/          copy to start a new skill by hand
 taxonomy.yaml      stages, verbs, input and output types, tags
-docs/              skill spec, taxonomy, citing, deployment, expert reviews, analytics, adr/
+docs/              skill spec, canonical sources, taxonomy, citing, expert reviews
 scripts/           validator, site builder, catalog snapshot, packager, tests
 site/src/          site assets; scripts/build_site.py builds the site into site/dist/
 api/               the site's server functions on Vercel: upload, sign-in, reviews, ratings
@@ -269,6 +269,6 @@ uv run scripts/build_site.py            # build the site into site/dist/
 uv run scripts/package_skills.py        # build .skill zips into dist/
 ```
 
-Vocabulary is in [CONTEXT.md](CONTEXT.md), decisions in [docs/adr/](docs/adr/), and operations in [docs/deployment.md](docs/deployment.md). AI agents working here should read [AGENTS.md](AGENTS.md) first.
+Vocabulary is in [CONTEXT.md](CONTEXT.md), and the rules every skill meets are in [docs/skill-spec.md](docs/skill-spec.md). AI agents working here should read [AGENTS.md](AGENTS.md) first.
 
 </details>

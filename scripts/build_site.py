@@ -46,7 +46,7 @@ WORKFLOWS_DIR = os.path.join(ROOT, "workflows")
 NON_WORKFLOW_FILES = {"README.md", "WORKFLOW-TEMPLATE.md"}
 # The OAuth client behind the "Sign in with Google" button on skill pages (public, not a secret).
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
-# Vercel Web Analytics counts page views (docs/analytics.md). Its script exists only on
+# Vercel Web Analytics counts page views. Its script exists only on
 # Vercel, so local builds leave it out; BESCI_ANALYTICS=1 forces it in for checking the output.
 ANALYTICS = os.environ.get("VERCEL") == "1" or os.environ.get("BESCI_ANALYTICS") == "1"
 FONTS = "https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap"
@@ -112,7 +112,7 @@ STAGE_ICON_NAMES = {
 
 def group_of(s: dict) -> str:
     """Where a skill sits on the catalog and the map: "meta" for a meta-skill, "other" for a
-    supporting skill (ADR 0011), otherwise its stage. Meta-skills declare the stage `other` too,
+    supporting skill, otherwise its stage. Meta-skills declare the stage `other` too,
     so the type decides."""
     if s.get("type") == "meta":
         return "meta"
@@ -1121,7 +1121,7 @@ def build_catalog(skills: List[dict], taxonomy: dict) -> None:
     counts: Dict[str, int] = {}
     for s in skills:
         counts[group_of(s)] = counts.get(group_of(s), 0) + 1
-    # Supporting skills (ADR 0011) get a chip and a group of their own, after the seven stages.
+    # Supporting skills get a chip and a group of their own, after the seven stages.
     if counts.get("other"):
         stages = stages + [x for x in taxonomy.get("stages", []) if isinstance(x, dict) and x.get("id") == "other"]
 
@@ -1422,7 +1422,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         if s["_evals"]:
             local.add("evals/evals.json")
 
-        plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else (ADR 0011)
+        plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else
         sections_html = []
         if plain and s.get("_preamble"):
             sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(s["_preamble"], name, local)}</section>')
@@ -1490,7 +1490,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
 
         plain_note = ('<p class="muted">A supporting skill: a plain skill that many outputs use. It is not a behavioral-science method, '
                       'so the library\'s spec does not apply to it, and it has no test cases, reference files, or version history. '
-                      f'<a href="{GITHUB}/blob/main/docs/adr/0011-other-category-for-supporting-skills.md" rel="noopener">Why</a>.</p>')
+                      f'<a href="{GITHUB}/blob/main/docs/skill-spec.md#13-supporting-skills" rel="noopener">Why</a>.</p>')
         tested_rows = "" if plain else (
             f"""<dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
       <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>""")

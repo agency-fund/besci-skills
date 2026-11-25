@@ -99,7 +99,7 @@ SOFT_MAX_EXPECTED_WORDS = 60
 # repository's planning files, not in the text a user or the AI reads.
 PROCESS_TERMS = ["dossier", "verified-crossref", "verified-fetch", "author to confirm", "plan-only citation"]
 SKILL_NAME_IN_TEXT_RE = re.compile(r"`([a-z]+(?:-[a-z0-9]+)+)`")
-# --- The conversational voice (ADR 0009) -------------------------------------
+# --- The conversational voice -------------------------------------
 # Every skill carries the shared voice block in its Output template section and
 # ends its template with a closing that offers next moves. These were warnings
 # while the library was revised to the standard and are errors now.
@@ -347,7 +347,7 @@ def known_names(start: str) -> Optional[set]:
 
 
 def supporting_skills(start: str) -> Optional[set]:
-    """Names listed under 'Supporting skills' in docs/canonical-sources.md (ADR 0011), or None when that file cannot be found, as in a bundled copy."""
+    """Names listed under 'Supporting skills' in docs/canonical-sources.md, or None when that file cannot be found, as in a bundled copy."""
     root = find_repo_root(start)
     path = os.path.join(root, "docs", "canonical-sources.md") if root else ""
     if not path or not os.path.exists(path):
@@ -513,11 +513,11 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     if stage and stages and stage not in stages:
         skill.error("E012", f"metadata.stage '{stage}' must be one of {stages}.")
     elif stage == "other" and mtype == "atomic":
-        skill.error("E013", "metadata.stage 'other' is for supporting skills and meta-skills. Pick one of the seven stages, or set type to 'supporting' if this is a plain skill that many outputs use (ADR 0011).")
+        skill.error("E013", "metadata.stage 'other' is for supporting skills and meta-skills. Pick one of the seven stages, or set type to 'supporting' if this is a plain skill that many outputs use.")
     elif mtype == "supporting" and stage and stage != "other":
         skill.error("E013", f"A supporting skill declares stage 'other' (got '{stage}'). If this is a behavioral-science method, set type to 'atomic' and meet the full spec.")
     elif mtype == "supporting" and skill.name not in (supporting_skills(skill.path) or {skill.name}):
-        skill.warn("W013", "This supporting skill is not listed under 'Supporting skills' in docs/canonical-sources.md. Add a row saying why the library carries it (ADR 0011).")
+        skill.warn("W013", "This supporting skill is not listed under 'Supporting skills' in docs/canonical-sources.md. Add a row saying why the library carries it.")
     version = str(md.get("version", "")).strip()
     if version and not SEMVER_RE.match(version):
         skill.error("E014", f"metadata.version '{version}' must be semver like 0.1.0 (quote it in YAML: version: \"0.1.0\").")
@@ -551,7 +551,7 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
             if io_types and t not in io_types:
                 skill.warn("W019", f"metadata.{key} names '{t}', which is not in taxonomy.yaml io_types. Add it there in this PR, or use an existing id, so skills can chain.")
 
-    # A supporting skill is a plain Agent Skill (ADR 0011): frontmatter and files are
+    # A supporting skill is a plain Agent Skill: frontmatter and files are
     # checked, and nothing else in the library's spec applies to it.
     if mtype == "supporting":
         _validate_files(skill)
@@ -687,7 +687,7 @@ def _validate_v2_body(skill: Skill, verbs: List[str]) -> None:
     if words > SOFT_MAX_WORDS:
         skill.warn("W043", f"SKILL.md is {words} words, not counting the output template. Aim for about {SOFT_MAX_WORDS}: keep a sentence only if deleting it would change what the AI does or what the reader decides, and move evidence detail to references/evidence.md.")
 
-    # Inputs are asked for by what they are, not by which skill made them (ADR 0009).
+    # Inputs are asked for by what they are, not by which skill made them.
     own = skill.name
     named = set()
     for m in SKILL_NAME_IN_TEXT_RE.findall(strip_fences(skill.sections.get("Before you start", ""))):
@@ -700,7 +700,7 @@ def _validate_v2_body(skill: Skill, verbs: List[str]) -> None:
 
 
 def _validate_voice(skill: Skill, out: str) -> None:
-    """The shared voice block and a closing that offers next moves (ADR 0009)."""
+    """The shared voice block and a closing that offers next moves."""
     if VOICE_START not in out or VOICE_END not in out:
         skill.voice("053", "'## Output template' needs the shared voice block after the template: the lines between the template/shared/voice.md markers. Copy the markers from template/skill-template/SKILL.md, then run scripts/check_sync.py --fix to fill them.")
     if not re.search(r"^#+\s*" + re.escape(CLOSING_HEADING), out, flags=re.MULTILINE):

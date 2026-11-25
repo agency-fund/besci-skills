@@ -7,7 +7,7 @@ This is the Behavioral Science Skills Library: a content repository of AI skills
 - `CONTEXT.md`: the vocabulary. Use its terms (skill, atomic skill, meta-skill, workflow, trigger rule, escalation point, stage, evidence base, test case) and avoid the terms it lists under "Avoid".
 - `docs/skill-spec.md`: the contract every skill meets. `scripts/besci_validate.py` enforces it.
 - `docs/canonical-sources.md`: the sources a skill's task must appear in to earn a place, and the frameworks the library carries by choice.
-- `docs/adr/`: decisions already made. Do not relitigate them in a change; open an ADR if one needs to change.
+- `GOVERNANCE.md`: who decides what. The spec and the validator record the decisions in force; do not relitigate them inside another change. Propose a change to them in its own pull request.
 
 ## Commands
 
@@ -38,7 +38,8 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 10. **Do not commit** `site/dist/`, `dist/`, `.venv/`, `__pycache__/`, or `*-workspace/`.
 11. **Keep `SKILL.md` under 500 lines.** Move detail to `references/`.
 12. **Taxonomy changes** go in the same pull request as the skill that needs them.
-13. **Answering an expert review**: cite the issue in the new version's CHANGELOG entry ("Addresses expert review #42 (Jane Doe): ...") and put "Closes #42" in the pull request. The site uses the CHANGELOG citation to mark the review answered. See `docs/expert-reviews.md`.
+13. **Supporting skills are the exception.** A skill with `type: supporting` in the stage `other` is a plain skill: rules 4 and 5 do not apply to it, and only its frontmatter and files are checked (`docs/skill-spec.md`, section 13).
+14. **Answering an expert review**: cite the issue in the new version's CHANGELOG entry ("Addresses expert review #42 (Jane Doe): ...") and put "Closes #42" in the pull request. The site uses the CHANGELOG citation to mark the review answered. See `docs/expert-reviews.md`.
 
 ## Where things are
 
@@ -54,7 +55,7 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 | `api/` | the site's server functions on Vercel: upload (`submit.py`), Google sign-in (`auth.py`), expert reviews (`review.py`, `reviews.py`), ratings (`ratings.py`), database check (`health.py`); `_common.py` and `_review_issue.py` are shared code; `schema.sql` is the Supabase schema |
 | `.claude-plugin/` | marketplace and plugin manifests; one plugin, all skills |
 | `.github/` | CI, inbox unpack, snapshot commit, release zips, PR and issue templates |
-| `docs/` | spec, taxonomy, citing, deployment, expert reviews, analytics, ADRs; `docs/plan/` keeps the evidence dossier the October 2026 skills cite |
+| `docs/` | the skill spec, canonical sources, taxonomy, citing, and expert reviews |
 
 ## Adding a skill as an agent
 

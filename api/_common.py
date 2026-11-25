@@ -14,7 +14,7 @@ import this module.
 - GitHub: the REST client (urllib only).
 - JSONHandler: the HTTP base class, with a same-origin check on writes.
 
-Environment variables (docs/deployment.md):
+Environment variables (set in the Vercel project settings):
   SITE_URL             the site's origin; writes from any other origin are refused
   SESSION_SECRET       signs the session cookie (at least 16 characters)
   GOOGLE_CLIENT_ID     the OAuth client behind the sign-in button
