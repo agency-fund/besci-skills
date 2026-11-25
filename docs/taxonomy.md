@@ -23,7 +23,7 @@ Why one axis rather than two: the stage is what a program designer thinks in ("I
 
 ## Type
 
-`atomic` for a skill that does one behavioral-science operation; `meta` for a skill that operates on the library itself (the creator, the navigator, the evaluator); `supporting` for a plain skill in the stage `other` (`docs/skill-spec.md`, section 13).
+`atomic` for a skill that does one behavioral-science operation; `meta` for a skill that operates on the library itself (the creator, the navigator, the evaluator), written in its own shape (`docs/skill-spec.md`, section 14); `supporting` for a plain skill in the stage `other` (`docs/skill-spec.md`, section 13).
 
 ## Status
 

@@ -13,7 +13,7 @@ A skill that does one thing a behavioral scientist does, narrow enough to descri
 _Avoid_: micro-skill, sub-skill
 
 **Meta-skill**:
-A skill whose subject is the library itself rather than a behavioral-science method: creating, navigating, or evaluating skills.
+A skill whose subject is the library itself rather than a behavioral-science method: creating, navigating, or evaluating skills. Its body takes whatever shape serves its job; it keeps a changelog and at least one test case.
 _Avoid_: system skill, utility skill
 
 **Trigger rule**:

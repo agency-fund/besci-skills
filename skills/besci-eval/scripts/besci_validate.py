@@ -66,6 +66,7 @@ KNOWN_METADATA = set(REQUIRED_METADATA) | {
     "created", "updated", "catalog_snapshot",
 }
 MIN_EVALS = 3
+MIN_EVALS_META = 1             # a meta-skill's test cases take any shape; it needs at least one
 
 # --- The November 2026 standard ---------------------------------------------
 # These rules apply to atomic skills. They were warnings while the library was
@@ -389,6 +390,19 @@ def labelled_line(section_text: str, label: str) -> str:
     return " ".join(rest.split("\n\n", 1)[0].split()).strip()
 
 
+def opening_paragraph(body: str) -> str:
+    """The first paragraph of prose in a SKILL.md body, before any level-2 heading. Empty when the body opens with something else."""
+    head = re.split(r"^## ", body, maxsplit=1, flags=re.MULTILINE)[0]
+    for para in re.split(r"\n\s*\n", head.strip()):
+        para = para.strip()
+        if not para or para.startswith(("#", "<!--")):
+            continue
+        if para.startswith(("-", "*", "|", "```", ">")) or re.match(r"\d+\.\s", para):
+            return ""
+        return " ".join(para.split())
+    return ""
+
+
 def parse_skill(folder: str) -> Skill:
     """Read a skill folder into a Skill. Parsing problems are recorded as findings."""
     folder = os.path.abspath(folder.rstrip("/"))
@@ -557,6 +571,16 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         _validate_files(skill)
         return skill
 
+    # A meta-skill is written in whatever shape serves its job: no fixed
+    # sections, no voice block, no named test cases. It keeps the bookkeeping
+    # the site and besci-eval read, which is its test cases and its changelog.
+    if mtype == "meta":
+        _validate_named_skills(skill, verbs)
+        _validate_evals(skill, name, mtype)
+        _validate_changelog(skill, version)
+        _validate_files(skill)
+        return skill
+
     # --- body sections -----------------------------------------------------
     present = list(skill.sections.keys())
     missing = [s for s in REQUIRED_SECTIONS if s not in present]
@@ -611,15 +635,24 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         _validate_v2_body(skill, verbs)
         _validate_v2_references(skill)
 
-    # --- evals -------------------------------------------------------------
+    _validate_evals(skill, name, mtype)
+    _validate_changelog(skill, version)
+    _validate_files(skill)
+    return skill
+
+
+def _validate_evals(skill: Skill, name: str, mtype: str) -> None:
+    """evals/evals.json. An atomic skill carries four named cases; a meta-skill carries at least one, in any shape."""
+    need = MIN_EVALS_META if mtype == "meta" else MIN_EVALS
     if skill.evals is None and not any(f.code == "E029" for f in skill.findings):
-        skill.error("E029", "evals/evals.json is missing. Every skill ships realistic test prompts: four named cases for an atomic skill.", file="evals/evals.json")
+        what = "at least one for a meta-skill" if mtype == "meta" else "four named cases for an atomic skill"
+        skill.error("E029", f"evals/evals.json is missing. Every skill ships realistic test prompts: {what}.", file="evals/evals.json")
     elif isinstance(skill.evals, dict):
         if skill.evals.get("skill_name") != name:
             skill.error("E029", f"evals.json 'skill_name' must be '{name}'.", file="evals/evals.json")
         cases = skill.evals.get("evals")
-        if not isinstance(cases, list) or len(cases) < MIN_EVALS:
-            skill.error("E029", f"evals.json needs at least {MIN_EVALS} cases under 'evals' (found {len(cases) if isinstance(cases, list) else 0}).", file="evals/evals.json")
+        if not isinstance(cases, list) or len(cases) < need:
+            skill.error("E029", f"evals.json needs at least {need} case{'s' if need != 1 else ''} under 'evals' (found {len(cases) if isinstance(cases, list) else 0}).", file="evals/evals.json")
         else:
             for i, c in enumerate(cases):
                 for k in ("id", "prompt", "expected_output"):
@@ -628,18 +661,17 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
             if mtype == "atomic":
                 _validate_v2_cases(skill, [c for c in cases if isinstance(c, dict)])
 
-    # --- changelog ---------------------------------------------------------
+
+def _validate_changelog(skill: Skill, version: str) -> None:
+    """CHANGELOG.md exists and its top entry names the current version."""
     if skill.changelog is None:
         skill.error("E030", "CHANGELOG.md is missing. Add '## 0.1.0 - YYYY-MM-DD' with one line on what this version is.", file="CHANGELOG.md")
-    else:
-        heads = [ln for ln in skill.changelog.splitlines() if ln.startswith("## ")]
-        if not heads:
-            skill.error("E030", "CHANGELOG.md has no '## <version>' entry.", file="CHANGELOG.md")
-        elif version and version not in heads[0]:
-            skill.error("E030", f"CHANGELOG.md top entry '{heads[0]}' does not mention the current version {version}. Bump both together.", file="CHANGELOG.md")
-
-    _validate_files(skill)
-    return skill
+        return
+    heads = [ln for ln in skill.changelog.splitlines() if ln.startswith("## ")]
+    if not heads:
+        skill.error("E030", "CHANGELOG.md has no '## <version>' entry.", file="CHANGELOG.md")
+    elif version and version not in heads[0]:
+        skill.error("E030", f"CHANGELOG.md top entry '{heads[0]}' does not mention the current version {version}. Bump both together.", file="CHANGELOG.md")
 
 
 def _validate_files(skill: Skill) -> None:
@@ -805,8 +837,10 @@ def catalog_entry(skill: Skill) -> dict:
         "produces": split_list(md.get("produces")),
         "reviewed_by": split_list(md.get("reviewed_by")),
         "sections": {k: v for k, v in skill.sections.items()},
-        # a supporting skill has no "What it does" section; its description stands in
+        # With no "What it does" section, a meta-skill's opening paragraph stands in,
+        # and a supporting skill's description does.
         "what_it_does": skill.sections.get("What it does", "").strip().split("\n")[0]
+        or (opening_paragraph(skill.body) if str(md.get("type", "")).strip() == "meta" else "")
         or re.split(r"(?<=[.!?])\s", str(skill.frontmatter.get("description", "")).strip(), maxsplit=1)[0],
         "what_this_adds": labelled_line(skill.sections.get("What it does", ""), ADDS_LABEL),
         "use_when": should,

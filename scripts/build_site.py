@@ -1424,8 +1424,13 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
 
         plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else
         sections_html = []
-        if plain and s.get("_preamble"):
-            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(s["_preamble"], name, local)}</section>')
+        # A supporting skill or a meta-skill is written in its own shape, so text before its first heading is part of it.
+        preamble = s.get("_preamble") or ""
+        if s["type"] == "meta":  # the page header already shows a meta-skill's opening paragraph
+            paras = re.split(r"\n\s*\n", preamble)
+            preamble = "\n\n".join(p for p in paras if " ".join(p.split()) != s["what_it_does"]).strip()
+        if s["type"] in ("supporting", "meta") and preamble:
+            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(preamble, name, local)}</section>')
         for heading, text in s["_sections"].items():
             sid = slugify(heading)
             sections_html.append(f'<section class="skill-section" id="{E(sid)}"><h2>{E(heading)}</h2>\n{md_to_html(text, name, local)}</section>')
