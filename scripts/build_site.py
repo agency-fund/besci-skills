@@ -748,39 +748,21 @@ def hero_demo(by_name: Dict[str, dict]) -> str:
     <div class="demo-body" tabindex="0" aria-label="Illustrative conversation using besci-navigator">
       <div class="t-user" data-step="type"><span class="t-text">We run a voice advisory line for smallholder farmers in Ethiopia. We want it to build their agency, not only their yields. Where do I start?</span></div>
       {tool_line("besci-navigator", "Loaded skill", by_name)}
-      <div class="t-ai" data-step="say"><p>Welcome. You want the advisory line to build farmers' agency, not only their yields, and you are deciding where to begin. There are two ways we could start.</p></div>
-      <div class="t-block" data-step="rows">
-        <div class="t-cap" data-row>Two ways to start</div>
-        <div class="t-hyp" data-row><span class="t-tag">1</span><span>Think it through together<small>One question at a time, with my own guess each time. Say “wrap up” whenever you like.</small></span></div>
-        <div class="t-hyp" data-row><span class="t-tag">2</span><span>Go straight to suggestions<small>The skills or workflow that fit what you have told me so far.</small></span></div>
-      </div>
-      <div class="t-user" data-step="type"><span class="t-text">Let's think it through.</span></div>
-      <div class="t-ai" data-step="say"><p>Starting the interview. You will have a short brief and suggestions at the end.</p>
-        <p class="t-ask">What would a farmer with more agency do differently next season?<small>I'd lean toward one decision they make on their own, such as when to plant, because one decision is something you can observe.</small></p></div>
-      <div class="t-user" data-step="type"><span class="t-text">Make their own planting decisions with confidence, not just follow the advice.</span></div>
-      <div class="t-ai" data-step="say"><p class="t-ask">So it is the planting decision, and confidence counts as much as the choice. Has your team written down what agency means for these farmers?<small>I ask because measures chosen before a definition tend to measure agency in name only.</small></p></div>
-      <div class="t-user" data-step="type"><span class="t-text">No definition yet. We have call logs, and a household survey at baseline in March. Wrap up.</span></div>
-      <div class="t-block" data-step="rows">
-        <div class="t-cap" data-row>Brief</div>
-        <div class="t-hyp" data-row><span class="t-tag">Settled</span><span>Farmers on the advisory line make their own planting decisions with confidence.<small>Data in hand: call logs, and a household survey at baseline in March.</small></span></div>
-        <div class="t-hyp" data-row><span class="t-tag">Still open</span><span>What agency means for these farmers.<small>What would settle it: a definition the team has written down and agrees on.</small></span></div>
-      </div>
       {tool_line("besci-navigator", f"Read the catalog: {len(by_name)} skills", by_name)}
-      <div class="t-ai" data-step="say"><p>The interview is finished. Your problem matches the workflow <a href="/workflows/define-and-measure-agency/">Define and measure agency</a>. You would start at step 1, because no definition is written down yet.</p></div>
+      <div class="t-ai" data-step="say"><p class="t-ask">❓ Q1 · The behavior: What would a farmer with more agency do differently next season?<small>➡️ One decision they make on their own, such as when to plant, because one decision is something you can observe.</small></p>
+        <p class="t-ask">❓ Q2 · The data: Is the data you have on these farmers the call logs from the advisory line?<small>➡️ Yes, call logs to start; a survey can come later.</small></p></div>
+      <div class="t-user" data-step="type"><span class="t-text">Q1 yes, planting decisions made with confidence. Q2: call logs, plus a household survey at baseline in March.</span></div>
+      <div class="t-ai" data-step="say"><p class="t-ask">❓ Q3 · The definition: Should the team write down what agency means for these farmers before choosing any measures?<small>➡️ Yes. Measures chosen before a definition measure agency in name only. {sk("define-agency-construct")} does this.</small></p>
+        <p class="t-ask">❓ Q4 · The survey: Should the March survey carry the agency questions, with the call logs as a second source?<small>➡️ Yes. {sk("plan-agency-measurement")} decides which measures go in the calls and which in the survey.</small></p></div>
+      <div class="t-user" data-step="type"><span class="t-text">Yes to both. That covers it.</span></div>
+      <div class="t-ai" data-step="say"><p>This matches the workflow <a href="/workflows/define-and-measure-agency/">Define and measure agency</a>. In the order to use them:</p></div>
       <div class="t-block" data-step="rows">
-        <div class="t-cap" data-row>Suggested skills</div>
+        <div class="t-cap" data-row>Skills that fit</div>
         <div class="t-hyp" data-row><span class="t-tag">1 · Define</span><span>{sk("define-agency-construct")}: measures chosen before a definition measure “agency” in name only.<small>You'll want: a paragraph on the advisory line and two or three things a confident farmer does differently.</small></span></div>
         <div class="t-hyp" data-row><span class="t-tag">2 · Measure</span><span>{sk("plan-agency-measurement")}: turns the definition into measures in the calls and outside them. Your call logs already count as data.<small>You'll want: the definition from step 1, and how much room the March survey has.</small></span></div>
         <div class="t-hyp" data-row><span class="t-tag">3 · Measure</span><span>{sk("draft-survey-items")}: writes the baseline questions so farmers with little schooling can answer them when an enumerator reads them aloud.<small>Optional. You'll want: the measurement plan from step 2.</small></span></div>
       </div>
-      <div class="t-block" data-step="rows">
-        <div class="t-cap" data-row>Where you could go from here</div>
-        <ul class="t-list">
-          <li data-row><b>Run {sk("define-agency-construct")} now:</b> I'd lean toward this, since the survey questions depend on it.</li>
-          <li data-row><b>Ask two field officers</b> what a confident farmer does differently: an hour with them may settle the definition sooner than a workshop.</li>
-          <li data-row><b>Save the brief as a file</b>, so the next skill reads it instead of asking again.</li>
-        </ul>
-      </div>
+      <div class="t-ai" data-step="say"><p>I'd start with {sk("define-agency-construct")}, since the survey questions depend on it.</p></div>
     </div>
   </div>"""
 
@@ -1424,8 +1406,13 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
 
         plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else
         sections_html = []
-        if plain and s.get("_preamble"):
-            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(s["_preamble"], name, local)}</section>')
+        # A supporting skill or a meta-skill is written in its own shape, so text before its first heading is part of it.
+        preamble = s.get("_preamble") or ""
+        if s["type"] == "meta":  # the page header already shows a meta-skill's opening paragraph
+            paras = re.split(r"\n\s*\n", preamble)
+            preamble = "\n\n".join(p for p in paras if " ".join(p.split()) != s["what_it_does"]).strip()
+        if s["type"] in ("supporting", "meta") and preamble:
+            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(preamble, name, local)}</section>')
         for heading, text in s["_sections"].items():
             sid = slugify(heading)
             sections_html.append(f'<section class="skill-section" id="{E(sid)}"><h2>{E(heading)}</h2>\n{md_to_html(text, name, local)}</section>')
@@ -1714,7 +1701,7 @@ def build_contribute() -> None:
 
 <section class="step">
   <h2>Draft it with besci-skill-creator</h2>
-  <p>Install <a href="/skills/besci-skill-creator/"><code>besci-skill-creator</code></a> and say "I want to create a skill for ...". It interviews you against the spec, starting with the atomicity test and the trigger rule, drafts the whole folder (<code>SKILL.md</code>, three test cases, a changelog), runs the validator, does one self-test pass, and packages a <code>.skill</code> file where the environment allows. You can also copy <a href="{GITHUB}/tree/main/template/skill-template" rel="noopener">the template</a> and write by hand.</p>
+  <p>Install <a href="/skills/besci-skill-creator/"><code>besci-skill-creator</code></a> and say "I want to create a skill for ...". It interviews you about your method, starting with whether it is one thing and whether the library already has it, drafts the whole folder to the spec (<code>SKILL.md</code>, four test cases, a changelog, a worked example, an evidence file), runs the validator, shows you one real output to react to, and packages a <code>.skill</code> file where the environment allows. You can also copy <a href="{GITHUB}/tree/main/template/skill-template" rel="noopener">the template</a> and write by hand.</p>
 </section>
 
 <section class="step">
@@ -1969,7 +1956,7 @@ def build_about(skills: List[dict]) -> None:
   <p class="prose">If you don't know which skill you need, start with the navigator. If you want to examine how good a particular skill is, use the evaluator. IF you want to create a new skill, use the skill creator.</p>
   <div class="two-col">
     {meta_panel("besci-navigator", "Recommends which skills to run, in what order.")}
-    {meta_panel("besci-eval", "Checks a skill's structure, triggering, and output quality.")}
+    {meta_panel("besci-eval", "Checks a skill's structure, its triggering, and what it adds over the AI alone.")}
     {meta_panel("besci-skill-creator", "Interviews an author and drafts the whole skill folder.")}
   </div>
 </section>

@@ -8,6 +8,7 @@ so they work in Claude Desktop / claude.ai, where the repo is not available:
   scripts/besci_validate.py         -> skills/besci-skill-creator/scripts/besci_validate.py
                                     -> skills/besci-eval/scripts/besci_validate.py
   docs/skill-spec.md                -> skills/besci-skill-creator/references/skill-spec.md
+  docs/canonical-sources.md         -> skills/besci-skill-creator/references/canonical-sources.md
   template/skill-template/ (dir)    -> skills/besci-skill-creator/assets/skill-template/
   workflows/WORKFLOW-TEMPLATE.md    -> skills/besci-navigator/references/workflow-template.md
   skills/besci-skill-creator/references/checklist.md -> skills/besci-eval/references/checklist.md
@@ -40,6 +41,7 @@ PAIRS = [
     ("scripts/besci_validate.py", "skills/besci-skill-creator/scripts/besci_validate.py"),
     ("scripts/besci_validate.py", "skills/besci-eval/scripts/besci_validate.py"),
     ("docs/skill-spec.md", "skills/besci-skill-creator/references/skill-spec.md"),
+    ("docs/canonical-sources.md", "skills/besci-skill-creator/references/canonical-sources.md"),
     ("template/skill-template", "skills/besci-skill-creator/assets/skill-template"),
     ("workflows/WORKFLOW-TEMPLATE.md", "skills/besci-navigator/references/workflow-template.md"),
     ("skills/besci-skill-creator/references/checklist.md", "skills/besci-eval/references/checklist.md"),

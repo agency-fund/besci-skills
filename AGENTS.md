@@ -30,7 +30,7 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 2. **Never hand-edit generated files**: `skills/besci-navigator/references/catalog.md`, anything under `site/dist/` or `dist/`, or the bundled copies listed in `scripts/check_sync.py`.
 3. **Frontmatter is spec-compliant.** Only `name`, `description`, `license`, `compatibility`, `allowed-tools`, `metadata`. Everything under `metadata` is a plain string; lists are comma-separated. No nested objects.
 4. **Skill names are verb-first kebab-case** from the verb list in `taxonomy.yaml`; meta-skills use the `besci-` prefix. American spelling everywhere.
-5. **Eight sections, fixed order**, in every `SKILL.md`. "Before you start" and "When to bring in a specialist" may be "Not applicable: <real reason>". Four named test cases, each with assertions. Atomic skills carry `references/worked-example.md` and `references/evidence.md`. Changelog top entry matches `metadata.version`.
+5. **Eight sections, fixed order**, in every atomic skill's `SKILL.md`. "Before you start" and "When to bring in a specialist" may be "Not applicable: <real reason>". Four named test cases, each with assertions. Atomic skills carry `references/worked-example.md` and `references/evidence.md`. Changelog top entry matches `metadata.version`.
 6. **Never invent a citation.** Resolve the DOI or open the page before a source goes into a skill, and leave out anything that cannot be verified.
 7. **Skills do not get a README.** Instructions go in `SKILL.md` or `references/`.
 8. **`skills/` holds skills only.** Workflows go in `workflows/<name>.md`.
@@ -38,7 +38,7 @@ CI runs the validator, the sync check, the site build, packaging, and test_feedb
 10. **Do not commit** `site/dist/`, `dist/`, `.venv/`, `__pycache__/`, or `*-workspace/`.
 11. **Keep `SKILL.md` under 500 lines.** Move detail to `references/`.
 12. **Taxonomy changes** go in the same pull request as the skill that needs them.
-13. **Supporting skills are the exception.** A skill with `type: supporting` in the stage `other` is a plain skill: rules 4 and 5 do not apply to it, and only its frontmatter and files are checked (`docs/skill-spec.md`, section 13).
+13. **Supporting skills and meta-skills are the exception.** A skill with `type: supporting` in the stage `other` is a plain skill: rules 4 and 5 do not apply to it, and only its frontmatter and files are checked (`docs/skill-spec.md`, section 13). A meta-skill's body takes whatever shape serves its job: rule 5 does not apply to it, but it keeps a changelog and at least one test case (section 14).
 14. **Answering an expert review**: cite the issue in the new version's CHANGELOG entry ("Addresses expert review #42 (Jane Doe): ...") and put "Closes #42" in the pull request. The site uses the CHANGELOG citation to mark the review answered. See `docs/expert-reviews.md`.
 
 ## Where things are

@@ -1,23 +1,23 @@
 ---
 name: besci-eval
 description: >-
-  Use when someone wants to check how good a skill in the Behavioral
-  Science Skills Library is: validate its structure, test whether it fires
-  on the right requests and stays quiet on the wrong ones, grade its outputs
-  against its own template, compare it across models, or re-test it after a
-  new model is released. Trigger on "evaluate this skill", "test my skill",
-  "does this skill trigger correctly", "run the evals", "regression test",
-  "compare models on this skill", "is this skill still good on the new
-  model". Do not use for writing or revising a skill's content
-  (besci-skill-creator), for choosing which skill to use (besci-navigator),
-  or for evaluating an AI product or chatbot (that is The Agency Fund's
-  evaluation playbook, a different thing).
+  Use when someone wants to know how good a skill in the Behavioral Science
+  Skills Library is: check its structure, test whether it fires on the right
+  requests and stays quiet on the wrong ones, see what it makes the AI do
+  that the AI would not do alone, compare it across models, or re-test it
+  after a new model is released. Trigger on "evaluate this skill", "test my
+  skill", "diagnose this skill", "does this skill trigger correctly", "run
+  the evals", "is this skill any use", "compare models on this skill". Do
+  not use for writing or revising a skill's content (besci-skill-creator),
+  for choosing which skill to use (besci-navigator), or for evaluating an AI
+  product or chatbot (that is The Agency Fund's evaluation playbook, a
+  different thing).
 license: CC-BY-4.0
 metadata:
   title: Behavioral science skill evaluator
   type: meta
   stage: other
-  version: "0.3.0"
+  version: "0.4.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -27,138 +27,80 @@ metadata:
   produces: "eval-report"
 ---
 
-## What it does
+Diagnoses one library skill: whether its structure is sound, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone. Reports what it found on one screen.
 
-Runs three checks on one library skill: structure, triggering, output quality.
+A skill can meet every rule in the spec and still add nothing. So the main test here is a comparison: the same realistic request answered with the skill and without it. The library's claim for every skill is that it makes the AI do something it would not do unprompted, and this checks that claim.
 
-The result is a report an author or maintainer can act on.
+## Before anything else
 
-The checks are **structure** (does the folder meet the spec), **triggering** (does the description fire on the right requests and not on adjacent ones), and **output quality** (do the skill's own test cases produce outputs that match its template, ask its questions, cite its evidence, and escalate when they should). The rubric comes from the skill's own sections, so every skill in the library is gradable without anyone writing a rubric by hand. In Claude Code the same checks run through the API across several models.
+Find out which skill (a folder, a `.skill` file, or pasted text) and how you can run things here, because that sets how clean the comparison is:
 
-## When to use it
+1. **Fresh agents**, when you can start one. One agent gets a request and the path to the skill's folder, and is told to read its `SKILL.md`, follow it, read `references/` when the skill says to, and leave `evals/` alone. Another gets the same request and is told to answer from its own knowledge, loading no skill and reading no files, because the library may be installed where it runs. Neither sees the other or is told it is a test. Tell both that the user can answer afterwards, so an agent that would ask a question first can ask it. Use this tier whenever it is available.
+2. **The script**, for repeated runs, several models, or a re-test after a model release. It calls the API and costs money, so show the plan first: `python scripts/run_evals.py <skill-folder> --dry-run` prints the number of calls and writes nothing. Run it only on the person's go-ahead. It loads `SKILL.md` alone, without the skill's reference files, so it tests a little less than a fresh agent does.
+3. **In this conversation**, when there are no tools. You cannot un-read a skill, so the order of work below matters most here, and the report says the result is indicative.
 
-### Use it when
-- "Evaluate my skill before I submit it"
-- "Run the evals for decompose-comb-barriers"
-- "Does this skill trigger on the right prompts? I think it over-fires."
-- "A new Claude model came out; which of our skills got worse?"
-- "Compare this skill on Opus and Sonnet"
-- "Grade these three outputs against the skill's template"
-- A maintainer reviewing a pull request wants an independent read of the evals
+**Keep this order, on every tier.** Read only the skill's `description` and the `prompt` of each test case first. In `evals.json` each prompt sits beside its expected output and assertions, so print the prompts alone or have the person paste them. Then write the cold case. Then get the baselines: start the fresh agents, or on the conversation tier write your own answer to each case. Only then read the rest of the skill. The validator can run at any point, since it shows you nothing of the body. A baseline written after reading the skill borrows its ideas and makes the skill look as if it adds less than it does.
 
-### Do not use it when
-- The author wants to change the skill's content, add sections, or rewrite the description; use besci-skill-creator, then come back
-- The user wants to know which skill to use for their problem; use besci-navigator
-- The user wants to evaluate an AI chatbot, product, or program outcome; that is The Agency Fund's four-level evaluation framework at https://eval.playbook.org.ai/, not skill evaluation
-- The skill is not a library skill (no eight sections, no evals.json); run the structural check only and say the rest does not apply
+## Three checks
 
-## Before you start
+**Structure.** Run `python scripts/besci_validate.py <skill-folder>` from this skill's folder, or walk `references/checklist.md` when you cannot. Report errors in plain words. A meta-skill or supporting skill is written in its own shape, so only its frontmatter and files are checked (plus test cases and a changelog for a meta-skill); say so. Structural errors do not stop the other checks unless there is no description to test.
 
-Ask these one at a time unless already answered.
+**Triggering.** Would an AI that sees only descriptions load this skill for the right requests, and leave it alone for the wrong ones?
 
-1. **Required.** Which skill? A path to the folder, an uploaded `.skill` file, or pasted files. The folder must contain `SKILL.md` and `evals/evals.json`.
-2. **Required.** Which checks: structure, triggering, output quality, or all three? Default to all three.
-3. **Required.** Environment. Code execution with a filesystem and an API key means the script path (Claude Code, or a sandbox with `ANTHROPIC_API_KEY`). Otherwise the checks run inside this conversation, qualitatively, on the current model only.
-4. Optional. Models to compare, if the script path is available. Default is the current flagship; add a second model to compare.
-5. Optional. A baseline: compare against the skill's previous version, or against no skill at all? Default: no baseline for a first run; previous version when re-testing after a change.
-6. Optional. Which other skills are installed alongside it? Triggering is judged relative to neighbors, so the catalog snapshot is used by default.
+- Requests it should take: the bullets under "Use it when", the test cases, and the cold case. A bullet that states a condition and not a request gets turned into what a user would type.
+- Requests it should leave: the bullets under "Do not use it when", the "Wrong skill" case, and any case marked `"should_trigger": false`. For a skill with no such lists, write two or three near-misses from the "do not use" clause of its description.
+- Judge each one next to the neighbors: this skill's description among the descriptions of the other skills in the catalog (`skills/besci-navigator/references/catalog.md` in the repository, or the live catalog). A description that fires correctly alone can over-fire next to its neighbors. With a fresh agent, give it the list of descriptions and the requests in shuffled order, do not say which skill is under test, and ask which skill, if any, it would load for each. One agent can take all the requests.
 
-If the skill lacks the four named test cases (Full run, Missing context, Near the escalation point, Wrong skill), stop and send the author to besci-skill-creator; there is nothing to grade.
+**On the job.** Run three cases, each with the skill and without it: the "Full run" case, the "Missing context" case, and one cold case. For a skill without those names, use its first two cases. "All cases" is there if the person asks; a "Wrong skill" case is then judged on whether the skill sends the person to the right place.
 
-## What it draws on
+The cold case is a request you write from the description alone, the way a program officer would type it: plain words, a real-sounding program, none of the method's vocabulary, and enough detail that the skill can produce its full output. The "Missing context" case already tests whether the skill asks, so the cold case should show the whole output on a request the skill has never seen. A skill's own cases were written with the skill open and tend to hand it what it asks for. A skill that does well on its own cases and poorly on the cold one has shown you its most useful finding.
 
-- The library's skill specification (`docs/skill-spec.md` in the repository) and its validator, bundled as `scripts/besci_validate.py`. Structure is whatever the validator says it is.
-- Anthropic's skill-creator evaluation approach: run each test prompt with the skill, optionally against a baseline, and grade with explicit assertions; aggregate across runs because single runs vary.
-- Standard information-retrieval measures for triggering: precision (of the times it fired, how often it should have) and recall (of the times it should have fired, how often it did), computed over the should-fire and should-not-fire phrasings in the skill's "When to use it" section.
-- The grading rubric in `references/rubric.md`, derived from the eight sections every library skill has.
-- The partnership's intent that skills be re-testable when models change, so that a skill is a versioned artifact whose behavior is known, not a prompt that silently drifts.
+For each pair of answers, settle three questions and quote the answers as you do:
 
-**Where the evidence comes from:** Not applicable to the evaluator. The rubric checks whether a skill says where its evidence has been tested when that is relevant.
+1. Did the skill change what the AI did?
+2. Is the change the one the skill promises? An atomic skill states its promise in the "What this adds" line; for another skill, use how it describes itself.
+3. For this job, would a practitioner prefer the answer written with the skill, and why?
 
-**Replication status:** Not applicable; this is a procedure. Single runs of a language model vary, which is why the script repeats each case and reports spread.
+Then mark the case's own assertions against each answer. Three things block a skill whatever else is true: a citation that is not in the skill's sources or was not opened, a full answer to a request that lacked something the skill needs, and a missed handoff to a specialist. `references/judging.md` has the detail, and the script's judge reads the same file.
 
-## How to do it
+## The report
 
-**Check 1: Structure.** With a filesystem, run `python scripts/besci_validate.py <skill-folder>` from this skill's folder and include the report verbatim. Without one, walk `references/checklist.md` and report pass or fail per item. Errors here stop the evaluation; warnings are noted and the evaluation continues.
-
-**Check 2: Triggering.** Take every bullet under "Use it when" (should fire) and "Do not use it when" (should not fire) from `SKILL.md`, plus the prompts in `evals.json` (should fire unless the case says otherwise). For each phrasing, judge as a fresh model would: given only this skill's `description` and the descriptions of the other skills in the catalog snapshot, would you load this skill for this request? Record yes or no with a one-line reason. Compute precision and recall. List every miss and every false alarm with the phrase and the clause in the description that caused it. Suggest the smallest edit to the description that fixes the worst miss, but do not apply it; that is the author's call via besci-skill-creator.
-
-**Check 3: Output quality.** For each case in `evals.json`, act as a fresh user sending that prompt to a model that has only this skill, produce the full response, then grade it with `references/rubric.md`: nine criteria, each scored 0, 1, or 2, with a one-line justification quoting the output. Compare against the case's `expected_output` and say whether the shape matched. Flag any invented citation, any output produced when the skill should have asked first, and any missed escalation as blocking. Where the script path is available, run each case three times per model and report the median and range; where it is not, run once and say so.
-
-**Script path.** `python scripts/run_evals.py <skill-folder> --models claude-opus-5-5 claude-sonnet-5-5 --runs 3` runs checks 2 and 3 through the Claude API, grades with the rubric using a judge model, and writes `<skill>-workspace/eval-<date>/report.md` and `results.json`. Add `--baseline <path-to-old-skill-folder>` to compare versions, or `--no-skill-baseline` to run the same cases with no skill loaded, which shows what the skill adds over the model alone. Each output is graded with the rubric and against the case's own `assertions`. The script needs `ANTHROPIC_API_KEY` or an `ant auth login` profile and the `anthropic` package. Estimate cost before running: cases × models × runs × roughly two calls, and the same again for each comparison; `--dry-run` prints the count.
-
-**Reporting.** Fill the output template. Lead with the verdict: ready to submit, fix first, or not gradable. Keep each suggested change to one line per finding, and leave the choice of what to fix first to the author.
-
-## Output template
+About one screen, in this order every time, so that maintainers can read reports side by side. Lead with the verdict.
 
 ```markdown
-<Two or three plain sentences to the author: the verdict, the one finding that decided it, and whether any finding blocks submission.>
+# Diagnosis: <skill-name> v<version>  (<date>)
 
-# Evaluation: <skill-name> v<version>  (<date>, <model(s)>, <n runs per case>)
+**Verdict:** <ready | fix first | could not test>. <The finding that decided it, in one sentence.>
 
-**Verdict:** <ready to submit / fix first / not gradable>
-**Why:** <one sentence>
+## Structure
+<Passes, or the errors in plain words. One line when clean.>
 
-## 1. Structure
-<validator report or checklist result>
+## Triggering
+<Counts in words: "It fired on 5 of 6 requests it should take, and on 1 of 4 it should leave.">
+<Each miss or false alarm: the request, and the clause in the description responsible.>
 
-## 2. Triggering
-Precision <p> (n fired correctly / n fired), recall <r> (n fired / n should fire)
-| Phrase | Should fire | Fired | Reason |
-|---|---|---|---|
-Misses and false alarms: <list, each with the description clause responsible>
-Smallest fix: <proposed description edit, not applied>
+## On the job
+<Per case, two or three sentences: what the skill changed against the bare model, whether that is what it promises, which answer a practitioner would prefer and why, and assertions passed with and without.>
+<One short side-by-side excerpt from the most telling case.>
 
-## 3. Output quality
-| Case | Asked first | Template | Evidence | Mechanism | Escalation | Plain language | No invention | Failure modes | Conversation | Matches expected | Total /18 |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-Blocking findings: <invented citation, output without asking, missed escalation>
-Representative excerpt: <the single most telling quote from an output>
+## What to fix
+<Up to three findings, most important first, each with the smallest change that would address it.>
 
-## 4. Model comparison  (script path only)
-| Model | Trigger P/R | Quality median (range) | Notes |
-|---|---|---|---|
-
-## What would raise the score
-1. <one line: the change, and the criterion or test it would fix>
-2. <one line>
-
-## Where you could go from here
-<One line saying the evaluation is done.>
-<Two or three next moves that fit these results, each with why it would help and when it fits. Candidates:
-- `besci-skill-creator`, when a fix changes the method, the template, or a test case and the author wants help revising
-- rerun with `--baseline` on the old version, when the author has made a fix and wants to see whether it helped
-- rerun with `--no-skill-baseline`, when it is unclear what the skill adds over the model alone
-- ask an expert reviewer to read the outputs, when the scores are fine but the method itself is in question>
-Questions you could ask next: "<question>" · "<question>"
+## How this was run
+<Two or three lines: fresh agents, script, or in conversation; the model; runs per case; what was not run; and that which answer is better is a model's judgment, not a practitioner's.>
 ```
 
-<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
-**How to talk with the user**
+- **Ready** means ready for a maintainer's content review. **Fix first** is where most first drafts land: a validator error, a blocking finding, a description that fires on the wrong requests, or answers that are no better with the skill on most of the cases. **Could not test** means there was nothing to run. When the verdict is "ready" and the evidence is thin, the sentence after it says so.
+- Give counts in words. Precision and recall to two decimals on ten requests claim an accuracy that is not there.
+- You propose and the author decides. Never edit the skill; `besci-skill-creator` helps with the revision.
+- With a filesystem, save the full answers and the per-request detail to a folder named `<skill>-workspace` beside the skill's folder, so the report can stay short. The repository ignores those folders, and the script writes there itself. Model comparison appears only when more than one model ran.
 
-- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
-- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
-- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
-- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
-- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
-<!-- /shared -->
+## What this cannot tell you
 
-## Where it goes wrong
+Whether the method is right. You can see that two answers differ and which one does the job as described; you cannot settle which advice a practitioner would stand behind. Say so when two runs give different method advice, when a source cannot be checked, or when the skill touches clinical, safety, or child-protection decisions, and point to the skill's expert reviews on the library site. One run is one draw from a model that varies, so without repeats call the findings indicative.
 
-- **Grading the skill's own vocabulary.** Evals written in the skill's language pass trivially. Note when `evals.json` prompts read like the skill rather than like users, and suggest rewriting them.
-- **One run as truth.** Model outputs vary. Without repetition, report findings as indicative and say so.
-- **Judging triggering in a vacuum.** A description that fires correctly alone can over-fire next to neighbors. Always judge against the catalog's other descriptions.
-- **Rewriting the skill.** The evaluator reports; the author decides. Proposed edits are proposals.
-- **Treating "fix first" as failure.** Most first drafts land there. Say what to fix, in order.
-- **Confusing skill evaluation with program evaluation.** Nothing here measures whether an intervention worked.
-- Out of scope: evaluating workflows, evaluating non-library skills beyond structure, expert ratings (planned for a later phase).
+Nothing here measures whether a program or an AI product works. That is The Agency Fund's evaluation playbook, https://eval.playbook.org.ai/.
 
-## When to bring in a specialist
+## Manner
 
-Tell the author or maintainer to involve a domain specialist when:
-- Output-quality grading finds that two runs give substantively different method advice, since the evaluator can judge shape but not which advice is right.
-- The skill's evidence base cannot be verified from the cited sources during grading.
-- The skill touches clinical, safety, or child-protection content; the rubric's escalation criterion is necessary but not sufficient there.
-- A model comparison shows a quality drop on the new model and the author cannot tell whether the skill or the model is at fault.
-
-Bring them: the report, the two most different outputs for the same case, and the skill's "What it draws on" section.
+Plain and direct. Say what you found and what you could not test. Quote the answers rather than describe them. No praise, and no softening a "fix first" into something vaguer.

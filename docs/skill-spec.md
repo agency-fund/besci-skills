@@ -1,6 +1,6 @@
 # Skill specification
 
-This is the authoring guideline for every skill in the Behavioral Science Skills Library. The validator in `scripts/besci_validate.py` enforces everything marked **required**. `besci-skill-creator` interviews you against this spec; you can also write a skill by hand with `template/skill-template/`.
+This is the authoring guideline for the skills in the Behavioral Science Skills Library. Sections 1 to 12 describe an atomic skill; supporting skills (section 13) and meta-skills (section 14) are written in their own shape. The validator in `scripts/besci_validate.py` enforces everything marked **required**. `besci-skill-creator` interviews you against this spec; you can also write a skill by hand with `template/skill-template/`.
 
 A skill is a folder:
 
@@ -79,8 +79,8 @@ metadata:
 | `description` | yes | The compressed trigger rule. It must contain a "Use when ..." clause and a "Do not use when ..." clause naming the nearest adjacent intent, and no `<` or `>`. This is the only text the AI reads before deciding to load the skill. Aim for about 500 characters and leave citations out; `besci-navigator` does the routing, so the description need not hold every phrasing. The validator warns above 600 characters and fails above 1024. |
 | `license` | yes | `CC-BY-4.0` for skill content. `MIT` only for a skill that is code with no method content. |
 | `metadata.title` | no | Human-readable name for the catalog. Defaults to the name. |
-| `metadata.type` | yes | `atomic`, `meta`, or `supporting` (section 13). |
-| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations. `other` is for supporting skills (section 13) and for meta-skills; an atomic skill in `other` is an error (E013). See the crosswalk in `docs/taxonomy.md`. |
+| `metadata.type` | yes | `atomic`, `meta` (section 14), or `supporting` (section 13). |
+| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations. `other` is for supporting skills (section 13) and for meta-skills (section 14); an atomic skill in `other` is an error (E013). See the crosswalk in `docs/taxonomy.md`. |
 | `metadata.version` | yes | Semver, quoted: `"0.2.0"`. Bump in the same change as the CHANGELOG entry. |
 | `metadata.status` | yes | `draft`, `published`, or `deprecated`. Submit as `draft`; a maintainer sets `published` on merge. |
 | `metadata.authors` | yes | Names or GitHub handles, comma-separated. |
@@ -215,7 +215,7 @@ The escalation point: the conditions under which the skill tells the user the qu
 ```
 
 - `expected_output` is one sentence.
-- `assertions` holds three to six short statements, each one check. `besci-eval` grades a run against them.
+- `assertions` holds three to six short statements, each one check. `besci-eval` marks them against the answer written with the skill and the answer written without it.
 - Write prompts the way your users talk, not the way the skill talks.
 
 **A fifth case where a review reported a failure.** When an expert review reports that the skill got something wrong, the version that answers it adds a case that reproduces the failure, named `From an expert review #<issue number>`.
@@ -354,3 +354,17 @@ It needs:
 Nothing else in this document applies: no eight sections, no "Use when" clause, no verb-first name, no test cases, no reference files, no evidence scan, no `tested_in` or `produces`, no voice block, no changelog. The site shows the skill's text and its reviews, and no other tabs.
 
 A skill that names a supporting skill says what to do when it is not installed, so that it still works alone.
+
+## 14. Meta-skills
+
+A meta-skill (`type: meta`, `stage: other`) works on the library itself: `besci-navigator`, `besci-skill-creator`, `besci-eval`. Its body is written in whatever shape serves its job. A fixed set of sections made these skills longer and stiffer than their jobs needed, so sections 4 to 8 do not apply: no eight sections, no shared voice block, no named test cases, no worked example or evidence file, no `tested_in`.
+
+It needs:
+
+- The frontmatter of section 3. The `description` still carries a "Use when" clause and a "Do not use when" clause, because the AI reads it to decide between the meta-skill and the skill a user named.
+- An opening paragraph that says what the skill does. The catalog and the site show it.
+- `evals/evals.json` with `skill_name` and at least one case. Each case has `id`, `prompt`, and `expected_output`; `name` and `assertions` are optional and their wording is free. A case the skill should leave alone carries `"should_trigger": false`, and `besci-eval` uses it as a triggering test.
+- `CHANGELOG.md`, as in section 9.
+- Files within the limits of section 10, and every skill or workflow it names must exist.
+
+The style rules of section 11 still describe how a meta-skill talks to people. Each one states the manner it needs in its own words.

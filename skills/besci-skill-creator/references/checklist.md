@@ -1,6 +1,6 @@
 # Manual validation checklist
 
-Use when the validator script cannot run. Each line mirrors a rule in `scripts/besci_validate.py`; the code in brackets is what the script would report.
+Use when the validator script cannot run. Each line mirrors a rule in `scripts/besci_validate.py`; the code in brackets is what the script would report. The list is for an atomic skill. A supporting skill is checked on "Frontmatter" and the file limits only, and a meta-skill on those plus "Meta-skills" at the end.
 
 ## Folder and files
 - [ ] Folder name is kebab-case, 1 to 64 characters, no leading, trailing, or double hyphens, and equals `name` in the frontmatter. [E003, E004]
@@ -17,7 +17,7 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] `description` is 1 to 1024 characters (aim for about 500, no citations), has no `<` or `>`, contains a "use when" clause and a "do not use when" clause. [E006, E007, E008, W044]
 - [ ] `license` is CC-BY-4.0 (or MIT for code-only skills). [E009]
 - [ ] `metadata` has type, stage, version, status, authors, org, all as plain strings. [E010]
-- [ ] type is atomic or meta; stage is one of the seven (other is for meta-skills and for supporting skills, which are plain skills this checklist does not cover); version is quoted semver; status is draft, published, or deprecated. [E011, E012, E013, E014, E015]
+- [ ] type is atomic, meta, or supporting; an atomic skill's stage is one of the seven, and a meta-skill or supporting skill declares `other`; version is quoted semver; status is draft, published, or deprecated. [E011, E012, E013, E014, E015]
 - [ ] Atomic skills have `tested_in` set to one of: beyond-western-holds, beyond-western-differs, mainly-western, not-applicable. [E018, E040]
 - [ ] `consumes` and `produces` use ids from the taxonomy's io types. Atomic skills name exactly one `produces`; `consumes` lists only the inputs the skill cannot run without. [W019, E049]
 
@@ -43,3 +43,10 @@ Codes E040 to E049 and E053 to E056 are errors, except the warnings W043, W044, 
 - [ ] Atomic skills have four cases named, in order, Full run, Missing context, Near the escalation point, Wrong skill; any later case is named "From an expert review #<issue>". [E047]
 - [ ] Each case has three to six assertions and a one-sentence expected_output. [E048, W052]
 - [ ] `CHANGELOG.md` top entry is `## <version> - <date>` matching `metadata.version`. [E030]
+
+## Meta-skills
+A meta-skill's body takes any shape, so "Body" above does not apply to it, and neither do the four named cases, the reference files, or `tested_in`.
+- [ ] The body opens with a paragraph that says what the skill does.
+- [ ] `evals.json` has `skill_name` equal to the name and at least one case with id, prompt, expected_output. [E029]
+- [ ] `CHANGELOG.md` top entry matches `metadata.version`. [E030]
+- [ ] Every skill or workflow named in SKILL.md exists in the library. [E056]

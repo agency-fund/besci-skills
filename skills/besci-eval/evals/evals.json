@@ -3,38 +3,71 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "I'm in Claude Code with an API key set. Evaluate skills/draft-cognitive-interview-script before I open the PR. All three checks, compare Opus and Sonnet.",
-      "expected_output": "The skill confirms the three checks and the two models, estimates the number of API calls and says it costs money, runs the validator first, then runs scripts/run_evals.py with both models (or explains the exact command and runs it), and reports in the output template: verdict first, structure report, trigger precision/recall with misses, per-case rubric scores with any blocking findings, a model comparison table, and one-line next actions. It does not rewrite the skill.",
+      "name": "A full diagnosis in Claude Code",
+      "prompt": "I'm in Claude Code. Evaluate skills/draft-cognitive-interview-script before I open the PR.",
+      "expected_output": "The evaluator reads only the description and the case prompts first and writes a cold case, then runs the validator, judges triggering next to the catalog's other descriptions, and runs three cases with and without the skill using fresh agents. It ends with the one-screen report, verdict first.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Writes a cold case, or says it will, before reading the body of the skill.",
+        "Runs or plans each case twice: with the skill and with no skill.",
+        "Does not run the API script without showing the number of calls and asking first.",
+        "The report opens with a verdict that is one of: ready, fix first, could not test.",
+        "The report has the parts Structure, Triggering, On the job, What to fix, and How this was run.",
+        "Does not edit the skill."
+      ]
     },
     {
       "id": 2,
-      "prompt": "I'm on Claude Desktop, no code execution. Here is my skill folder as pasted text: SKILL.md and evals/evals.json for decompose-comb-barriers. Does it trigger on the right things?",
-      "expected_output": "The skill says it will run the triggering check qualitatively in-conversation on the current model only, extracts the use-it-when and do-not-use-it-when phrasings plus the eval prompts, judges each as a fresh model would (relative to the catalog snapshot's other descriptions, noting that the snapshot may be stale), reports precision and recall with a table of misses and false alarms, and proposes the smallest description edit without applying it. It offers to run output quality next.",
+      "name": "No tools",
+      "prompt": "I'm on Claude Desktop, no code execution. Here is my skill as pasted text: the SKILL.md and evals/evals.json for decompose-comb-barriers. Is it any good?\n\n---\nname: decompose-comb-barriers\ndescription: Use when one behavior is defined (who does what, when) and the question is why people are not doing it, or when a team is about to pick an intervention without naming the barrier it addresses. Lists competing capability, opportunity, and motivation hypotheses, each with a question that could rule it out, and ranks them. Do not use when the goal is still vague; use define-key-behavior. Not for choosing what to do about a confirmed barrier; use select-intervention-levers.\n---\n[the rest of SKILL.md and the four test cases follow]",
+      "expected_output": "The evaluator works in the conversation and keeps the order: from the description and the case prompts alone it writes a cold case and its own bare answers before using the skill's body. It walks the checklist in place of the validator, and its report says the result is indicative and was run in conversation on one model.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Writes its answer to at least one case without the skill before producing the answer with the skill.",
+        "Says the comparison is indicative because it was run in one conversation.",
+        "Uses the checklist, or says the validator could not be run.",
+        "Gives triggering as counts in words, not as precision and recall decimals.",
+        "The report's last part says how it was run and that the preference is a model's judgment."
+      ]
     },
     {
       "id": 3,
+      "name": "Not skill evaluation",
+      "should_trigger": false,
       "prompt": "Can you evaluate our maternal health chatbot? We want to know if it's improving outcomes.",
-      "expected_output": "The skill says this is program or product evaluation, not skill evaluation, and points to The Agency Fund's four-level evaluation framework (https://eval.playbook.org.ai/) and, if appropriate, to besci-navigator for finding library skills about evaluation design. It does not run its checks.",
+      "expected_output": "The evaluator says this is evaluation of an AI product and a program outcome, which it does not do, and points to The Agency Fund's evaluation playbook. It runs no checks.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says it evaluates library skills and not AI products or program outcomes.",
+        "Points to The Agency Fund's evaluation playbook.",
+        "Runs no checks and produces no diagnosis."
+      ]
     },
     {
       "id": 4,
-      "prompt": "Here's a skill with only one eval case. Run the full evaluation.",
-      "expected_output": "The skill stops at the pre-check: fewer than three evals means there is nothing to grade reliably. It runs the structural check (which will report the evals error), explains why one case is not enough, and sends the author to besci-skill-creator to add realistic cases, suggesting the three standard shapes (complete, missing-context, escalation).",
+      "name": "A meta-skill",
+      "prompt": "Run the evaluator on besci-navigator. I changed how it opens and want to know if it still does its job.",
+      "expected_output": "The evaluator says a meta-skill is checked on frontmatter, files, test cases, and changelog only, takes triggering requests from its test cases and near-misses it writes, and judges the first turn of the interview against the bare model.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Says the eight-section rules do not apply to a meta-skill.",
+        "Compares the skill's answers with answers written with no skill.",
+        "Judges a single turn of the interview and does not expect a full output.",
+        "The report opens with a verdict."
+      ]
     },
     {
       "id": 5,
-      "prompt": "A new Claude model was released this week. Which of our published skills got worse? We have twelve skills in the repo and the previous eval reports in each skill's workspace folder.",
-      "expected_output": "The skill proposes a regression plan rather than guessing: run scripts/run_evals.py for each published skill on the new model with the same runs setting as the previous reports, compare median rubric totals and blocking findings against the previous results.json files, and flag any skill whose median dropped by two or more points or gained a blocking finding. It estimates the total call count and cost before running and asks for confirmation. If run, it reports a table of skills with old median, new median, delta, and blocking findings, and a short list of skills to re-check with their authors.",
+      "name": "After a model release",
+      "prompt": "A new Claude model was released this week. Which of our published skills got worse? We have twelve skills in the repo.",
+      "expected_output": "The evaluator proposes the script for this, since it needs repeated runs on two models across twelve skills, shows how to get the call count with --dry-run, and asks for the go-ahead before spending. It does not start the runs.",
       "files": [],
-      "assertions": []
+      "assertions": [
+        "Recommends the script and names the two models to compare.",
+        "Shows or offers the dry run and its call count before any API call.",
+        "Asks for the go-ahead before spending.",
+        "Says results per skill will be reported separately for each model."
+      ]
     }
   ]
 }

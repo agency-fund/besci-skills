@@ -7,168 +7,49 @@ description: >-
   against the library's spec. Trigger on "create a besci skill", "turn this
   method into a skill", "write a SKILL.md for the behavioral science
   library", "contribute a skill", "is my skill atomic", "check my skill
-  draft". Do not use for skills outside this library (Anthropic's
-  skill-creator handles general skills). Not for evaluating a finished
-  skill across models (besci-eval) or for finding which skill to use
-  (besci-navigator).
+  draft", "revise this skill". Grills the author about the method, then
+  drafts the skill folder to the library's standard. Do not use for skills
+  outside this library (Anthropic's skill-creator handles general skills).
+  Not for evaluating a finished skill (besci-eval) or for finding which
+  skill to use (besci-navigator).
 license: CC-BY-4.0
 metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.3.3"
+  version: "0.4.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
   tested_in: not-applicable
-  tags: "meta, authoring"
+  tags: "meta, authoring, interview"
   produces: "skill-draft"
 ---
 
-## What it does
+Grills an author about a behavioral-science method, then drafts a skill folder that meets the library's standard.
 
-Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder.
+Interview the author relentlessly about their method until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it. The root is the four gates in section 1 of `references/skill-spec.md`: the skill does **one thing**, the task is **common**, it **adds something**, and it is **distinct** from every skill in the catalog.
 
-The library's spec has eight sections, three or more test cases, and a changelog. Most authors know their method well and the spec poorly, so the interview does the translating: it asks the questions a careful reviewer would ask, one at a time, with a recommended answer each time, and only writes files once the answers hold up.
+Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
 
-## When to use it
+Format a round like so:
 
-### Use it when
-- "I want to turn the saying-is-believing technique into a skill for the library"
-- "Help me write a SKILL.md for COM-B barrier decomposition"
-- "Here's a playbook chapter; make it a besci skill"
-- "Is this idea atomic enough to be one skill?"
-- "Check my draft skill against the library spec"
-- "Revise my skill; the reviewer said the trigger rule is too vague"
-- "Contribute a skill" or "claim a skill" for the besci-skills repo
+```
+❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
 
-### Do not use it when
-- The skill is not for this library (a PDF tool, a coding workflow); use Anthropic's general skill-creator
-- The author wants to test a finished skill across models or score its outputs; use besci-eval
-- The user wants to know which existing skill fits their problem; use besci-navigator
-- The user wants to write a workflow (an ordered set of skills); use the workflow template in the repo, or ask besci-navigator to save its suggestions as a workflow file
+➡️ <your recommended answer>
 
-## Before you start
+---
 
-Ask these first, one at a time, unless already answered.
+❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
 
-1. **Required.** In one sentence, what does the skill do? Watch for "and": if the sentence needs one, there are probably two skills. Do not write anything until this sentence is clean.
-2. **Required.** Who are you (name, organization) and who is the skill for? The library's default user is a program designer or M&E lead at an NGO with no behavioral scientist in the room.
-3. **Required.** Where are we working? If files can be written (Claude Code or a sandbox with a filesystem), the skill folder is created directly and the validator runs. If not (Claude Desktop, claude.ai without code execution), the files are produced as text blocks plus a downloadable zip where possible, and the checklist in `references/checklist.md` replaces the validator.
-4. Optional. Is there source material: a paper, a playbook, an existing prompt, notes from practice? Ask for it now; it anchors the evidence base and the procedure.
-5. Optional. Is this a revision of an existing skill? If so, read the current folder before asking anything else, and interview only about what is changing.
-
-## What it draws on
-
-- The library's skill specification, bundled as `references/skill-spec.md` (source: `docs/skill-spec.md` in the repo). It is the contract the validator enforces.
-- The Agent Skills specification (https://agentskills.io/specification) for frontmatter and folder rules, and Anthropic's skill-creator guidance on progressive disclosure, pushy descriptions, and realistic test prompts.
-- The interview discipline of the grill-me pattern: one question at a time, a recommended answer with each, walk every branch, do not write until the branch is resolved.
-- The partnership's principles: skills are Socratic (they ask before they answer), they cite what they draw on, they say where they stop and a specialist starts, and their content may be processed by third-party AI systems when others use them, which the author must know before contributing.
-
-**Where the evidence comes from:** Not a concern for this skill itself. It does require every atomic skill it drafts to say where its evidence has been tested and whether it has replicated.
-
-**Replication status:** Not applicable; this is a procedure, not an empirical claim.
-
-## How to do it
-
-Work through the phases in order. One question per turn. Offer a recommended answer with every question so the author can say "yes" instead of composing from scratch. Keep the author's wording where it is good. Never invent a citation; if a reference cannot be confirmed, mark it "unverified, author to confirm" in the draft. The detailed question bank with good and bad examples is in `references/interview-guide.md`; read it before the first question.
-
-**Phase 1: Atomicity gate.** Get the one-sentence "What it does". Test it: one verb, no "and", one input, one output. If it fails, propose the split (two or three skills) and ask which one to build now. Record the others as future skills.
-
-**Phase 2: Name and trigger rule.** Propose a verb-first kebab-case name from the taxonomy's verb list (`define-`, `decompose-`, `draft-`, `design-`, `measure-`...). Then collect the trigger rule: at least three phrasings a real user would type that should fire the skill, and at least two adjacent intents that should not, each with where to send them instead. Draft the `description` from these: a "Use when" clause, the phrasings, and a "Do not use when" clause, under 1024 characters, a little pushy.
-
-**Phase 3: Before you start.** Ask what the skill must know before it can produce a good output, and what it should assume if an answer is missing. Three to six questions is typical. If the author says it needs nothing, push once: "What is the most common way a user gives too little context, and what goes wrong?" Accept "Not applicable" only with a real reason, which goes into the section verbatim.
-
-**Phase 4: Evidence base.** Ask what the method rests on: framework, paper, playbook, or the author's own practice. Get full citations and check each one: resolve the DOI or open the page, and confirm author, year, and title. Leave out any source that cannot be checked. Then run the evidence scan in `references/skill-spec.md` section 7 (reviews first, then the strongest studies outside wealthy Western countries, then an explicit "none found") and ask whether the method has replicated. The scan sets `tested_in` and fills the new skill's evidence file. If the author does not know, say so in the draft rather than guessing.
-
-**Phase 5: Procedure.** Walk the method step by step. For each step ask why it matters and what the model is likely to get wrong. Decide what goes in `SKILL.md` and what moves to `references/` (question banks, long tables, worked examples).
-
-**Phase 6: Output template.** Ask what a finished output looks like. Draft it as a fenced markdown block with angle-bracket placeholders. Check that a reviewer could tell from the template alone whether a run succeeded. Give it a plain lead-in, plain labels, and the "Where you could go from here" closing, and ask what people do next so the closing can list candidate next moves with their conditions.
-
-**Phase 7: Failure modes.** Ask "when have you seen this method go wrong in practice?" and "what would a model do with this that an expert would never do?" Get at least three. Add out-of-scope cases.
-
-**Phase 8: Escalation point.** Ask when a user should stop and bring in a specialist, what kind, and what to bring them. Push on "Not applicable" the same way as in Phase 3.
-
-**Phase 9: Test cases.** Draft four evals in the user's voice, named and in this order: "Full run" (a complete request that should produce the full output), "Missing context" (the skill should ask and stop), "Near the escalation point", and "Wrong skill" (a request that belongs to a neighboring skill). Each has a one-sentence `expected_output` and three to six `assertions`, short statements a reviewer can tick yes or no. Show them to the author and adjust.
-
-**Phase 10: Metadata.** Confirm stage (recommend from the seven; `other` is for meta-skills and for supporting skills, which are plain skills this interview does not cover), tags, `consumes` (only the inputs the skill cannot run without) and `produces` (exactly one, the thing the output template is) from the taxonomy's io types, authors, org, `tested_in` from the evidence scan, version `0.1.0`, status `draft`, license `CC-BY-4.0`.
-
-**Phase 11: Draft the folder.** Write `SKILL.md`, `evals/evals.json`, `CHANGELOG.md`, and any `references/` files, using `assets/skill-template/` as the skeleton. Keep `SKILL.md` under 500 lines.
-
-**Phase 12: Validate.** With a filesystem: run `python scripts/besci_validate.py <skill-folder>` from this skill's folder and fix every error; warnings need a decision, not silence. Without a filesystem: walk `references/checklist.md` against the draft and report what passes and what does not.
-
-**Phase 13: Self-test.** For each eval, act as a fresh user sending that prompt to a model that has only the drafted skill, produce the response, and compare it with `expected_output`. Show the author the three outputs side by side with one line each on what matched and what did not. Offer one revision pass. Do not loop more than twice; deeper testing belongs to besci-eval.
-
-**Phase 14: Package and hand off.** With a filesystem: run `python scripts/package_skill.py <skill-folder>` to produce `<name>.skill`. Then tell the author the three ways to submit (hand the file to a maintainer; upload it into `inbox/` on GitHub with "Create a new branch and start a pull request"; or clone and open a pull request), and remind them that a maintainer reviews content, not just structure. Point them to besci-eval for cross-model testing.
-
-## Output template
-
-The deliverable is the skill folder. Report it like this:
-
-```markdown
-<Two or three plain sentences to the author: what the skill now does, whether the validator passed, and the one open item that matters most.>
-
-# Skill drafted: <name> (v0.1.0, draft)
-
-**What it does:** <the one sentence>
-**Stage:** <stage>  **Evidence:** <frameworks, n citations checked, k left out as uncheckable>
-
-## Files
-skills/<name>/
-├── SKILL.md            (<n> lines)
-├── evals/evals.json    (<n> cases)
-├── CHANGELOG.md
-└── references/<file>.md
-
-## Validator
-<PASS / FAIL with the report, or the checklist result>
-
-## Self-test
-| Eval | Matched expected shape | Gap |
-|---|---|---|
-| 1 | yes / partly / no | <one line> |
-
-## Open items for the author
-- <a source left out because it could not be checked, undecided split, a "Not applicable" to reconsider>
-
-## How to submit it
-<the path that fits this author, in two lines>
-
-## Where you could go from here
-<One line saying the draft is done.>
-<Two or three next moves that fit this draft, each with why it would help and when it fits. Candidates:
-- `besci-eval`, when the author wants to see how the skill triggers and how its test cases score before submitting
-- revise one section with me, when an open item above changes what the skill does
-- ask a practitioner who uses the method to read the worked example, when the evidence base is thin or the method is the author's own>
-Questions you could ask next: "<question>" · "<question>"
+➡️ <your recommended answer>
 ```
 
-<!-- shared: template/shared/voice.md. Edit it there, then run scripts/check_sync.py --fix. -->
-**How to talk with the user**
+Word each question so "yes" accepts your recommended answer. Ask about the method in the author's terms, not about the spec's sections; `references/interview-guide.md` has questions that work.
 
-- If the user asked a question rather than asked for this skill's output, answer the question first, in a few plain sentences. Then offer the run and say what it would add.
-- Mark the run. When it starts, say so in one line: the skill, and what it will produce. When the output is done, say the run is finished. The user should always know when the library's method is in force.
-- Talk with the person, not at them. Use their words for their program and the people in it, say why you ask each question, and say what you are unsure of. No praise, no filler.
-- Say where each claim comes from: this skill's sources, your general knowledge, or nothing in the library. A number the sources do not give, such as how many interviews to run, is your judgment; say so, and why you chose it.
-- End with the template's closing: two or three next moves that fit what this run found, each with its reason and when it fits, and one or two questions the user could ask next. Say which move you would lean toward and why; the user decides.
-<!-- /shared -->
+Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
 
-## Where it goes wrong
+Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (the sources list, the catalog, a citation, a file they shared, etc.), dispatch a sub-agent with a fresh context window to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
 
-- **Accepting a skill that is a workflow.** "Design a behavior change program" is five skills. The atomicity gate exists to catch this; do not skip it to be agreeable.
-- **Writing the description as a summary.** "This skill helps teams decompose barriers" fires on nothing. The description is intents and phrasings, with a "do not use when".
-- **Inventing citations.** A plausible-looking reference that does not exist is the worst failure this skill can have. Mark anything unconfirmed.
-- **Asking everything at once.** A wall of twelve questions gets twelve thin answers. One question, one recommendation, one turn.
-- **Letting "Not applicable" through without a reason.** Both optional sections need a sentence that would satisfy a reviewer.
-- **Leading test prompts.** Evals written in the skill's vocabulary pass trivially. Write them the way a tired program officer types at 11pm.
-- **Over-long SKILL.md.** Reference material belongs in `references/`; the body should fit in one read.
-- Out of scope: evaluating skills at scale, writing workflows, general-purpose skills.
-
-## When to bring in a specialist
-
-Tell the author to bring in a domain expert before submitting when:
-- The method has no published evidence base and the author is not themselves a practitioner of it.
-- The skill touches clinical, safety, legal, or child-protection decisions, where a wrong procedure causes harm.
-- The author cannot say where the evidence has been tested or whether it has replicated, and the skill will be used outside the evidence's context.
-
-Bring them: the one-sentence description, the evidence list, and the "Where it goes wrong" draft. A maintainer from TAF or IL reviews every skill's content before merge regardless.
+The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding. Then follow `references/drafting.md`.
