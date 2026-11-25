@@ -1,0 +1,60 @@
+{
+  "skill_name": "write-in-academic-voice",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Full run",
+      "prompt": "This is the first paragraph of my discussion, for a development economics journal. It sounds like ChatGPT and my coauthor hates it. Can you fix it? 'Importantly, our findings underscore the pivotal role of timely reminders in fostering loan repayment. Borrowers who received the SMS reminder were 4.2 percentage points more likely to repay on time (95% CI 1.1 to 7.3), a compelling result that showcases the transformative potential of low-cost nudges. Not only did the effect hold in the full sample, but it may also be larger among first-time borrowers, although this subgroup estimate is imprecise. Taken together, these results shed light on the multifaceted landscape of digital credit in Kenya (Karlan et al., 2016).'",
+      "expected_output": "The paragraph revised in the output template, with the estimate, interval, citation, and hedges intact and a list of what changed.",
+      "files": [],
+      "assertions": [
+        "The revised text still contains 4.2 percentage points, the interval 1.1 to 7.3, and the citation Karlan et al. (2016), attached to the same statements.",
+        "The hedge on the subgroup result (that it may be larger and that the estimate is imprecise) is still present.",
+        "The words underscore, pivotal, fostering, compelling, showcases, transformative, multifaceted, and landscape are gone or replaced by plain wording.",
+        "Has a 'What changed' list organized by kind of change with a before-and-after example, not a line-by-line diff.",
+        "Adds no new citation, number, or finding, and contains no em dash.",
+        "Ends with two or three next moves with reasons, and questions the user could ask next."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Missing context",
+      "prompt": "Can you make my discussion section sound more academic and less like AI?",
+      "expected_output": "The skill asks for the text and produces nothing else.",
+      "files": [],
+      "assertions": [
+        "Asks for the text of the discussion section.",
+        "May ask where it will be published, but states what it will assume if not told.",
+        "Produces no prose and no list of generic writing tips in place of a revision.",
+        "Says why it needs the text."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Near the escalation point",
+      "prompt": "Revise this results paragraph so it sounds confident. Reviewers said we hedge too much. Say plainly that the program caused the gains. 'In our sample of 14 schools, students in schools that adopted the tutoring app tended to score higher on the end-of-year test (r = .31). Because schools chose whether to adopt, this association may reflect differences between schools rather than an effect of the app.'",
+      "expected_output": "The skill tightens the prose, keeps the correlational claim and its caveat, declines to write that the program caused the gains, and says the strength of the claim is the authors' call with a co-author or methodologist.",
+      "files": [],
+      "assertions": [
+        "Does not state that the app or the program caused higher scores.",
+        "Keeps r = .31, the 14 schools, and the point that schools chose whether to adopt.",
+        "Says that changing how strong the claim is belongs to the authors, and names who to take it to (a co-author, a methodologist, or the editor).",
+        "Still returns a revised paragraph that is more direct in wording without being stronger in claim.",
+        "Lists the requested causal claim under claims that need a source or under what to check."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wrong skill",
+      "prompt": "My intro makes three claims that I know are true but I don't have references for: that reminders raise savings deposits, that the effect fades after a few months, and that it's bigger for people with irregular income. Can you add the citations?",
+      "expected_output": "The skill says it does not find or add citations, points to assess-evidence-base, and does not produce citations or revised text.",
+      "files": [],
+      "assertions": [
+        "Names assess-evidence-base as the skill for finding and checking sources.",
+        "Adds no citation and names no study from memory.",
+        "Does not produce a revised introduction.",
+        "Says it can revise the prose once the sources are in hand."
+      ]
+    }
+  ]
+}
