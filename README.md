@@ -186,7 +186,7 @@ The full contract is in [the skill spec](docs/skill-spec.md). A validator enforc
 If you don't know which skill you need, start with the navigator. To examine how good a particular skill is, use the evaluator. To create a new skill, use the skill creator.
 
 - **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** recommends which library skills to run, in what order, for the problem a user describes.
-- **[`besci-eval`](https://besci-skills.vercel.app/skills/besci-eval/)** runs three checks on one library skill: structure, triggering, output quality.
+- **[`besci-eval`](https://besci-skills.vercel.app/skills/besci-eval/)** diagnoses one library skill: its structure, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone.
 - **[`besci-skill-creator`](https://besci-skills.vercel.app/skills/besci-skill-creator/)** interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder.
 
 ## Principles

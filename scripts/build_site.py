@@ -1974,7 +1974,7 @@ def build_about(skills: List[dict]) -> None:
   <p class="prose">If you don't know which skill you need, start with the navigator. If you want to examine how good a particular skill is, use the evaluator. IF you want to create a new skill, use the skill creator.</p>
   <div class="two-col">
     {meta_panel("besci-navigator", "Recommends which skills to run, in what order.")}
-    {meta_panel("besci-eval", "Checks a skill's structure, triggering, and output quality.")}
+    {meta_panel("besci-eval", "Checks a skill's structure, its triggering, and what it adds over the AI alone.")}
     {meta_panel("besci-skill-creator", "Interviews an author and drafts the whole skill folder.")}
   </div>
 </section>

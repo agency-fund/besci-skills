@@ -215,7 +215,7 @@ The escalation point: the conditions under which the skill tells the user the qu
 ```
 
 - `expected_output` is one sentence.
-- `assertions` holds three to six short statements, each one check. `besci-eval` grades a run against them.
+- `assertions` holds three to six short statements, each one check. `besci-eval` marks them against the answer written with the skill and the answer written without it.
 - Write prompts the way your users talk, not the way the skill talks.
 
 **A fifth case where a review reported a failure.** When an expert review reports that the skill got something wrong, the version that answers it adds a case that reproduces the failure, named `From an expert review #<issue number>`.
@@ -363,7 +363,7 @@ It needs:
 
 - The frontmatter of section 3. The `description` still carries a "Use when" clause and a "Do not use when" clause, because the AI reads it to decide between the meta-skill and the skill a user named.
 - An opening paragraph that says what the skill does. The catalog and the site show it.
-- `evals/evals.json` with `skill_name` and at least one case. Each case has `id`, `prompt`, and `expected_output`; `name` and `assertions` are optional and their wording is free.
+- `evals/evals.json` with `skill_name` and at least one case. Each case has `id`, `prompt`, and `expected_output`; `name` and `assertions` are optional and their wording is free. A case the skill should leave alone carries `"should_trigger": false`, and `besci-eval` uses it as a triggering test.
 - `CHANGELOG.md`, as in section 9.
 - Files within the limits of section 10, and every skill or workflow it names must exist.
 
