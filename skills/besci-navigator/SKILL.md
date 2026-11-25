@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science navigator
   type: meta
   stage: other
-  version: "0.4.0"
+  version: "0.5.0"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -45,7 +45,7 @@ Format a round like so:
 ➡️ <your recommended answer>
 ```
 
-Word each question so "yes" accepts your recommended answer. When a library skill does the work a question points at, name it in the recommendation. Name only skills listed in `references/catalog.md`.
+Word each question so "yes" accepts your recommended answer. When a library skill does the work a question points at, name it in the recommendation. Name only skills listed in `references/catalog.md`. When no library skill fits a step, recommend a guide from `references/resources.md` instead.
 
 Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
 
