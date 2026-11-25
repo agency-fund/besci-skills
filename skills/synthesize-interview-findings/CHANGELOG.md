@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1 - 2026-11-24
+"Do not use it when" now sends an open question with no hypotheses to `analyze-qualitative-themes`. Edited with Claude.
+
 ## 0.3.0 - 2026-11-11
 Follows the conversational-voice standard (ADR 0009). The synthesis opens with a few plain sentences (which reasons the interviews back, what nobody predicted, and how much weight the verdicts bear) under the title "What the interviews tell us about <the behavior>", and its labels are plainer: "The possible reasons tested (hypotheses)", "Every interview against every possible reason (the matrix)", "What no one predicted, and the people who don't fit", "What other evidence says", and "Confirmed barriers, and what is still open". The output ends with next moves and their reasons, chosen from candidates listed in the closing, and the skill carries the shared voice block. The method is unchanged. Edited with Claude.
 

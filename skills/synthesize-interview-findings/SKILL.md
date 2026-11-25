@@ -14,7 +14,7 @@ metadata:
   title: Turn interview transcripts into a barrier diagnosis
   type: atomic
   stage: analyze
-  version: "0.3.0"
+  version: "0.3.1"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -42,6 +42,7 @@ A barrier hypothesis is a guess about why people are not doing a behavior, often
 ### Do not use it when
 - The interviews have not happened and the question is what to ask; use `draft-tdf-interview-guide`
 - There are no hypotheses yet; to list them, use `decompose-comb-barriers`
+- The question is open ("what are the themes?"); use `analyze-qualitative-themes`
 - The barrier is confirmed and the question is what to do about it; use `select-intervention-levers`
 
 ## Before you start
