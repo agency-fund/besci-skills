@@ -16,7 +16,7 @@ metadata:
   title: Behavioral science skill creator
   type: meta
   stage: other
-  version: "0.3.1"
+  version: "0.3.2"
   status: draft
   authors: "Zezhen Wu"
   org: TAF
@@ -91,7 +91,7 @@ Work through the phases in order. One question per turn. Offer a recommended ans
 
 **Phase 9: Test cases.** Draft four evals in the user's voice, named and in this order: "Full run" (a complete request that should produce the full output), "Missing context" (the skill should ask and stop), "Near the escalation point", and "Wrong skill" (a request that belongs to a neighboring skill). Each has a one-sentence `expected_output` and three to six `assertions`, short statements a reviewer can tick yes or no. Show them to the author and adjust.
 
-**Phase 10: Metadata.** Confirm stage (recommend from the seven; `other` is allowed), tags, `consumes` (only the inputs the skill cannot run without) and `produces` (exactly one, the thing the output template is) from the taxonomy's io types, authors, org, `tested_in` from the evidence scan, version `0.1.0`, status `draft`, license `CC-BY-4.0`.
+**Phase 10: Metadata.** Confirm stage (recommend from the seven; `other` is for a supporting skill, such as a writing skill, that `docs/canonical-sources.md` lists), tags, `consumes` (only the inputs the skill cannot run without) and `produces` (exactly one, the thing the output template is) from the taxonomy's io types, authors, org, `tested_in` from the evidence scan, version `0.1.0`, status `draft`, license `CC-BY-4.0`.
 
 **Phase 11: Draft the folder.** Write `SKILL.md`, `evals/evals.json`, `CHANGELOG.md`, and any `references/` files, using `assets/skill-template/` as the skeleton. Keep `SKILL.md` under 500 lines.
 

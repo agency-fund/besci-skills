@@ -1,5 +1,5 @@
 /* Behavioral Science Skills: the skill map (/map/). No dependencies.
-   Columns are the meta-skills, then the seven stages. An arrow from A to B means
+   Columns are the meta-skills, then the seven stages, then the supporting skills ("Other"). An arrow from A to B means
    A's output can feed B (A produces what B consumes). Links are suggestions.
    Hover previews a skill's links. Click pins it: the highlight stays put, a panel
    lists what it feeds and what feeds it, and ?skill=<name> makes it linkable.
@@ -28,7 +28,7 @@
     data.skills.forEach(function (s) { byName[s.name] = s; });
     data.stages.forEach(function (s) { stageLabel[s.id] = s.label; });
     data.io_types.forEach(function (t) { io[t.id] = t; });
-    var colOf = function (s) { return s.type === "meta" || !s.stage || s.stage === "other" ? "other" : s.stage; };
+    var colOf = function (s) { return s.type === "meta" ? "meta" : s.stage || "other"; };
     var ioLabel = function (t) { return io[t] ? io[t].label : t.replace(/-/g, " "); };
 
     // Edges: producer -> consumer, one per pair, remembering the artifacts passed.
@@ -48,9 +48,11 @@
     var outOf = {}, inTo = {};
     edges.forEach(function (e) { (outOf[e.from] = outOf[e.from] || []).push(e); (inTo[e.to] = inTo[e.to] || []).push(e); });
 
-    // Columns: the meta-skills first, then the stages in project order.
+    // Columns: the meta-skills first, then the stages in project order, then the supporting
+    // skills under "Other". A column with no skills is not drawn.
     var cols = data.stages.filter(function (s) { return s.id !== "other"; }).map(function (s) { return { id: s.id, label: s.label }; });
-    cols.unshift({ id: "other", label: "Meta-skills" });
+    cols.unshift({ id: "meta", label: "Meta-skills" });
+    cols.push({ id: "other", label: stageLabel.other || "Other" });
     var inner = document.createElement("div");
     inner.className = "map-inner";
     var svg = document.createElementNS(svgNS, "svg");
@@ -219,7 +221,7 @@
       ins.forEach(function (e) { e.via.forEach(function (t) { produced[t] = true; }); });
       var supply = s.consumes.filter(function (t) { return !produced[t]; });
       var html =
-        '<div class="mp-top"><span class="mp-stage" data-stage="' + esc(st) + '">' + ic("st-" + st, "stage-ic") + esc(st === "other" ? "Meta-skill" : stageLabel[st] || st) + "</span>" +
+        '<div class="mp-top"><span class="mp-stage" data-stage="' + esc(st) + '">' + ic("st-" + st, "stage-ic") + esc(st === "meta" ? "Meta-skill" : stageLabel[st] || st) + "</span>" +
         '<button class="mp-close" type="button">' + ic("x") + "Show full map</button></div>" +
         '<h2 id="mp-title">' + esc(s.title) + '</h2><p class="mp-name">' + esc(s.name) + "</p>" +
         '<p class="mp-what">' + esc(s.what_it_does) + "</p>" +

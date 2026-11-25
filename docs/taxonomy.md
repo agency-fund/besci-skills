@@ -4,7 +4,7 @@ The controlled vocabularies live in `taxonomy.yaml` at the repository root. This
 
 ## Stage
 
-Where in a project a skill is normally used. Every skill declares one. The seven stages are strong recommendations rather than rules: a skill that fits none uses `other`, which the validator accepts with a warning so maintainers notice recurring gaps.
+Where in a project a skill is normally used. Every skill declares one. The seven project stages are strong recommendations rather than rules. `other` is the stage for supporting skills: skills that are not behavioral-science methods but do a job the outputs of many skills share, such as writing (ADR 0011). Each one is listed under "Supporting skills" in `docs/canonical-sources.md`, and the validator warns on an atomic skill in `other` that is not listed there. Meta-skills also declare `other`.
 
 | Stage | Covers | BIT TEST | Busara AUDAS | TAF four-level evaluation |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ Where in a project a skill is normally used. Every skill declares one. The seven
 | test | Plan a pilot, experiment, or evaluation | Trial | Assess | Level 3, experimental evaluation |
 | analyze | Analyze data from a test and interpret it | Trial (analysis) | Assess | Levels 3 and 4, analysis |
 | implement | Roll out, adapt, scale, and report | Scale | Share | Level 4, scale and welfare |
-| other | Fits none of the above | | | |
+| other | Supporting skills that many outputs use, such as writing; also the meta-skills | | | |
 
 The crosswalk is a navigation aid. It does not claim the frameworks are equivalent, and a skill is not required to map to any of them. Sources: Behavioural Insights Team, *Test, Learn, Adapt* (2012) and *EAST* (2014); Busara, *The Busara toolkit* (Groundwork No. 10, 2024, https://doi.org/10.62372/WQSB6195), whose stages are Align, Understand, Design, Assess, Share; The Agency Fund, four-level evaluation framework (https://eval.playbook.org.ai/).
 

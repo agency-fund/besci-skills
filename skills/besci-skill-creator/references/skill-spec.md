@@ -28,6 +28,8 @@ An atomic skill stays in the library if it passes three tests.
 
 The library also carries a few frameworks by choice; `docs/canonical-sources.md` lists them. A skill built on one of them skips the first test only, and says whose method it is.
 
+A supporting skill also skips the first test only. It is not a behavioral-science method; it does a job the outputs of many skills share, such as writing (ADR 0011). It declares `stage: other`, is listed under "Supporting skills" in `docs/canonical-sources.md` with the reason the library carries it, and says whose practice it encodes. Everything else in this spec applies to it.
+
 ## 2. The name
 
 **Required.** Kebab-case, 1 to 64 characters, matches the folder name, and starts with a verb from the `verbs` list in `taxonomy.yaml`. Meta-skills (`besci-*`) are exempt from the verb rule.
@@ -78,7 +80,7 @@ metadata:
 | `license` | yes | `CC-BY-4.0` for skill content. `MIT` only for a skill that is code with no method content. |
 | `metadata.title` | no | Human-readable name for the catalog. Defaults to the name. |
 | `metadata.type` | yes | `atomic` or `meta`. |
-| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations; `other` is accepted with a warning. See the crosswalk in `docs/taxonomy.md`. |
+| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations. `other` is for supporting skills (section 1) and for meta-skills; the validator warns on an atomic skill in `other` that `docs/canonical-sources.md` does not list. See the crosswalk in `docs/taxonomy.md`. |
 | `metadata.version` | yes | Semver, quoted: `"0.2.0"`. Bump in the same change as the CHANGELOG entry. |
 | `metadata.status` | yes | `draft`, `published`, or `deprecated`. Submit as `draft`; a maintainer sets `published` on merge. |
 | `metadata.authors` | yes | Names or GitHub handles, comma-separated. |

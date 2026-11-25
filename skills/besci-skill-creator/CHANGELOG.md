@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.2 - 2026-11-24
+Wording only: the metadata phase and the checklist say that the stage `other` is for supporting skills listed in `docs/canonical-sources.md` (ADR 0011). Edited with Claude.
+
 ## 0.3.1 - 2026-11-13
 Wording only: the pointer for writing a workflow no longer names the navigator's guide mode, which ADR 0010 removed. Edited with Claude.
 

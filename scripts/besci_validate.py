@@ -346,6 +346,18 @@ def known_names(start: str) -> Optional[set]:
     return names or None
 
 
+def supporting_skills(start: str) -> Optional[set]:
+    """Names listed under 'Supporting skills' in docs/canonical-sources.md (ADR 0011), or None when that file cannot be found, as in a bundled copy."""
+    root = find_repo_root(start)
+    path = os.path.join(root, "docs", "canonical-sources.md") if root else ""
+    if not path or not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as fh:
+        text = fh.read()
+    m = re.search(r"^## Supporting skills\s*$(.*?)(?=^## |\Z)", text, flags=re.MULTILINE | re.DOTALL)
+    return set(re.findall(r"`([a-z0-9-]+)`", m.group(1))) if m else set()
+
+
 def level2_headings(text: str) -> List[str]:
     return [ln[3:].strip() for ln in strip_fences(text).splitlines() if ln.startswith("## ")]
 
@@ -499,8 +511,8 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     stage = str(md.get("stage", "")).strip()
     if stage and stages and stage not in stages:
         skill.error("E012", f"metadata.stage '{stage}' must be one of {stages}.")
-    elif stage == "other" and mtype == "atomic":
-        skill.warn("W013", "metadata.stage is 'other'. Fine if nothing fits; a maintainer will look at whether the stage list needs extending.")
+    elif stage == "other" and mtype == "atomic" and skill.name not in (supporting_skills(skill.path) or {skill.name}):
+        skill.warn("W013", "metadata.stage is 'other', the stage for supporting skills, but this skill is not listed under 'Supporting skills' in docs/canonical-sources.md. Add a row saying why the library carries it (ADR 0011), or pick one of the seven stages.")
     version = str(md.get("version", "")).strip()
     if version and not SEMVER_RE.match(version):
         skill.error("E014", f"metadata.version '{version}' must be semver like 0.1.0 (quote it in YAML: version: \"0.1.0\").")

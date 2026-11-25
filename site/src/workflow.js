@@ -295,7 +295,7 @@
     var name = workflowName(), n = list.length;
     var steps = list.map(function (x, i) {
       var s = byName[x], h = i ? handoff(i) : null;
-      var stage = s ? (s.type === "meta" ? "other" : s.stage || "other") : "other";
+      var stage = s ? (s.type === "meta" ? "meta" : s.stage || "other") : "other";
       var meta = s ? '<span class="b-meta" data-stage="' + esc(stage) + '"><svg class="stage-ic" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><use href="#i-st-' + esc(stage) + '"></use></svg>' +
         esc(s.type === "meta" ? "Meta-skill" : (stageLabel[s.stage] || s.stage)) + "</span>" : "";
       return '<li data-name="' + esc(x) + '">' +
