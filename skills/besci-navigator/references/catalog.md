@@ -23,8 +23,8 @@ Workflows in this snapshot: 4
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.3.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.3.0 | skill-draft | eval-report | Runs three checks on one library skill: structure, triggering, output quality. |
-| besci-navigator | Behavioral science navigator | other | meta | draft | 0.3.0 | program-goal | — | Helps a person get from a problem described in plain words to the library skills that would help. |
-| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.2 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
+| besci-navigator | Behavioral science navigator | other | meta | draft | 0.3.1 | program-goal | — | Helps a person get from a problem described in plain words to the library skills that would help. |
+| besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.3 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.3.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
 | choose-message-frame | Choose gain or loss wording for a message | design | atomic | draft | 0.3.0 | intervention-draft | intervention-draft | Decides whether one message or offer states what people gain by acting or what they lose by not acting. |
@@ -452,7 +452,7 @@ Bring them: the report, the two most different outputs for the same case, and th
 ### besci-navigator
 
 **Title:** Behavioral science navigator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.0 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.1 · **Org:** TAF  
 **Tags:** meta, navigation, interview, workflow  
 **Consumes:** program-goal  
 
@@ -486,7 +486,7 @@ In an interview, say so when the trigger comes up and keep going. Bring the spec
 ### besci-skill-creator
 
 **Title:** Behavioral science skill creator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.2 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.3 · **Org:** TAF  
 **Tags:** meta, authoring  
 **Produces:** skill-draft  
 

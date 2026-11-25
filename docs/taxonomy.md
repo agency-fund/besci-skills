@@ -4,7 +4,7 @@ The controlled vocabularies live in `taxonomy.yaml` at the repository root. This
 
 ## Stage
 
-Where in a project a skill is normally used. Every skill declares one. The seven project stages are strong recommendations rather than rules. `other` is the stage for supporting skills (`type: supporting`): plain skills that are not behavioral-science methods but do a job the outputs of many skills share, such as writing (ADR 0011). Each one is listed under "Supporting skills" in `docs/canonical-sources.md`. Meta-skills also declare `other`; an atomic skill never does.
+Where in a project a skill is normally used. Every skill declares one. The seven project stages are strong recommendations rather than rules. `other` is the stage for supporting skills (`type: supporting`): plain skills that are not behavioral-science methods but do a job the outputs of many skills share, such as writing. Each one is listed under "Supporting skills" in `docs/canonical-sources.md`. Meta-skills also declare `other`; an atomic skill never does.
 
 | Stage | Covers | BIT TEST | Busara AUDAS | TAF four-level evaluation |
 |---|---|---|---|---|
@@ -23,7 +23,7 @@ Why one axis rather than two: the stage is what a program designer thinks in ("I
 
 ## Type
 
-`atomic` for a skill that does one behavioral-science operation; `meta` for a skill that operates on the library itself (the creator, the navigator, the evaluator).
+`atomic` for a skill that does one behavioral-science operation; `meta` for a skill that operates on the library itself (the creator, the navigator, the evaluator); `supporting` for a plain skill in the stage `other` (`docs/skill-spec.md`, section 13).
 
 ## Status
 
@@ -31,7 +31,7 @@ Why one axis rather than two: the stage is what a program designer thinks in ("I
 
 ## Tested in
 
-Where the evidence behind a skill has been tested. Required for atomic skills, and set from the evidence scan described in `docs/skill-spec.md`.
+Where the evidence behind a skill has been tested. Required for atomic skills, and set from the evidence scan described in `docs/skill-spec.md`, section 7.
 
 | Value | Label | What earns it |
 |---|---|---|
@@ -40,7 +40,7 @@ Where the evidence behind a skill has been tested. Required for atomic skills, a
 | `mainly-western` | Tested mainly in wealthy Western countries | The scan found fewer than two field studies outside wealthy Western countries |
 | `not-applicable` | Not applicable | The skill is a procedure that makes no claim about how people behave |
 
-Researchers call samples from wealthy Western countries WEIRD (Western, Educated, Industrialized, Rich, Democratic). Skills and the site use the plain wording. The field was called `weird` before November 2026.
+Researchers call samples from wealthy Western countries WEIRD (Western, Educated, Industrialized, Rich, Democratic). Skills and the site use the plain wording.
 
 ## Verbs
 

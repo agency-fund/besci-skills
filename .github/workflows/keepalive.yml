@@ -3,7 +3,7 @@ name: Keep the database awake
 # Supabase pauses free-plan projects after about a week without requests, which
 # would break sign-in records and ratings until someone restores the project by
 # hand. /api/health makes one small database read. If the site moves to a custom
-# domain, change SITE below (docs/deployment.md, section 6).
+# domain, change SITE below.
 
 on:
   schedule:

@@ -10,7 +10,7 @@ Flow:
      fine-grained token with Contents + Pull requests write on the repo.
   5. Return JSON the form can show: the PR link or the plain-language report.
 
-Environment variables (set in Vercel project settings, see docs/deployment.md):
+Environment variables (set in the Vercel project settings):
   CONTRIBUTOR_KEY   shared secret handed to TAF and IL staff
   GITHUB_TOKEN      fine-grained PAT (or GitHub App installation token)
   GITHUB_REPO       default "agency-fund/besci-skills"

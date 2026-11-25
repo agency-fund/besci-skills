@@ -6,8 +6,8 @@
 # Where in a project a skill is normally used. One per skill. The seven
 # project stages are strong recommendations, not rules. `other` is the stage
 # for supporting skills (type `supporting`): plain skills that are not
-# behavioral-science methods but that many outputs use, such as writing
-# (ADR 0011). Each one is listed in docs/canonical-sources.md. Meta-skills
+# behavioral-science methods but that many outputs use, such as writing.
+# Each one is listed in docs/canonical-sources.md. Meta-skills
 # also use `other`. An atomic skill never does.
 stages:
   - id: define

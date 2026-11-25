@@ -47,13 +47,13 @@ Staff of either organization can file an expert review from any skill's page; it
 
 - Changes to the skill specification (`docs/skill-spec.md`) and the validator require agreement from maintainers of both organizations, recorded in the pull request.
 - Changes to `taxonomy.yaml` (new stages, verbs, io types) may be made by any maintainer in the same pull request as the skill that needs them.
-- Architectural decisions are recorded in `docs/adr/`.
+- A decision that changes the spec, the validator, or what the library carries is made in its own pull request, and the pull request's description records the reasons.
 
 ## Deprecation
 
 A skill is deprecated, not deleted. Set `metadata.status: deprecated`, add a changelog entry saying why and what replaces it, and merge. Deprecated skills leave the catalog and the plugin but stay in git history so that projects which cited a version can still find it.
 
-This rule applies from the v1 launch. Before launch, a draft that no project could have cited may be removed outright; `docs/plan/` records which drafts were removed and why.
+This rule applies from the v1 launch. Before launch, a draft that no project could have cited may be removed outright.
 
 ## Meetings and reviews
 

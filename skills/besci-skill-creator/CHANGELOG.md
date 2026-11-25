@@ -1,13 +1,16 @@
 # Changelog
 
+## 0.3.3 - 2026-11-24
+Wording only: the interview guide and the bundled spec no longer point to decision records that have left the repository. Edited with Claude.
+
 ## 0.3.2 - 2026-11-24
-Wording only: the metadata phase and the checklist say that the stage `other` is for meta-skills and for supporting skills, which are plain skills the interview and the checklist do not cover (ADR 0011). Edited with Claude.
+Wording only: the metadata phase and the checklist say that the stage `other` is for meta-skills and for supporting skills, which are plain skills the interview and the checklist do not cover. Edited with Claude.
 
 ## 0.3.1 - 2026-11-13
-Wording only: the pointer for writing a workflow no longer names the navigator's guide mode, which ADR 0010 removed. Edited with Claude.
+Wording only: the pointer for writing a workflow no longer names the navigator's guide mode, which the navigator no longer has. Edited with Claude.
 
 ## 0.3.0 - 2026-11-11
-Follows the conversational-voice standard (ADR 0009) when drafting a skill: a plain lead-in, plain labels, and a "Where you could go from here" closing in every output template; asks what people do next so the closing lists candidate next moves with their conditions; copies the shared voice-block markers. Its own report now opens with a few plain sentences, calls "Submit" "How to submit it", ends with next moves, and carries the shared voice block. Bundles the updated spec, template, and validator. Edited with Claude.
+Follows the conversational-voice standard when drafting a skill: a plain lead-in, plain labels, and a "Where you could go from here" closing in every output template; asks what people do next so the closing lists candidate next moves with their conditions; copies the shared voice-block markers. Its own report now opens with a few plain sentences, calls "Submit" "How to submit it", ends with next moves, and carries the shared voice block. Bundles the updated spec, template, and validator. Edited with Claude.
 
 ## 0.2.0 - 2026-11-10
 Follows the November 2026 skill standard: asks for the "what this adds" line, runs the evidence scan and sets `tested_in`, checks every citation and leaves out what cannot be checked, drafts four named test cases with assertions, and writes `references/worked-example.md` and `references/evidence.md`. Edited with Claude.
