@@ -75,7 +75,7 @@ Read `references/phases.md` first: roles, the brief for sub-agents, the working 
 4. **Build candidate themes (phase 3).** Group codes by the idea that holds them together, discard nothing, and draw the candidate map with `scripts/draw_map.py`. Checkpoint 2.
 5. **Review (phase 4)** against the extracts under each theme, then the whole data set, with a challenger looking for what does not fit. Stop when a round only fine-tunes.
 6. **Define, then name (phase 5).** Give each theme its central idea and its scope in two or three sentences; if that cannot be written, return to step 5. Checkpoint 3.
-7. **Write the report (phase 6)** as in `references/report-guide.md`, in the voice of `references/academic-voice.md`, after answering `references/quality-check.md`.
+7. **Write the report (phase 6)** as in `references/report-guide.md`, in the voice of `write-in-academic-voice` if installed, after answering `references/quality-check.md`.
 8. **Build the map and the Word file** with `scripts/draw_map.py` and `scripts/build_report.py`, or give the report in the conversation with a Mermaid map where no code runs.
 
 `references/worked-example.md` shows a complete run.

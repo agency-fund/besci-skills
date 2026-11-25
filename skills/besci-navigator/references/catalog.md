@@ -68,7 +68,7 @@ Workflows in this snapshot: 4
 | specify-intervention-adaptations | Track changes to a tested intervention | implement | atomic | draft | 0.3.0 | intervention-description | adaptation-record | Records each planned or unplanned change to a tested intervention against the parts that make it work. |
 | synthesize-interview-findings | Turn interview transcripts into a barrier diagnosis | analyze | atomic | draft | 0.3.1 | qualitative-data, comb-barrier-hypotheses | barrier-diagnosis | Gives each barrier hypothesis a verdict from a set of interviews. |
 | translate-survey-instrument | Translate a survey into another language | measure | atomic | draft | 0.3.0 | survey-items | survey-items | Carries an existing survey instrument into another language through two independent translations reviewed by people who know the respondents. |
-| write-in-academic-voice | Write or revise research prose in a natural academic voice | other | atomic | draft | 0.1.0 | — | academic-prose | Drafts or revises research prose so it reads as a researcher's own argument. |
+| write-in-academic-voice | Write or revise research prose in a natural academic voice | other | supporting | draft | 0.1.0 | — | — | Draft or revise scholarly manuscripts, review articles, and research prose in the author’s academic voice while preserving evidence, disciplinary terminology, and uncertainty. |
 | write-pre-analysis-plan | Write the analysis plan before the data arrive | test | atomic | draft | 0.3.0 | evaluation-design, measurement-plan | analysis-plan | Writes down how a trial's results will be analyzed before anyone sees the outcome data. |
 | write-social-norm-message | Tell people what most of their peers already do | design | atomic | draft | 0.3.0 | social-norm-diagnosis | intervention-draft | Writes one message that tells people what most of their peers do or approve of. |
 
@@ -1947,36 +1947,12 @@ Bring them: the decision log, the items the translators disagreed on, and notes 
 ### write-in-academic-voice
 
 **Title:** Write or revise research prose in a natural academic voice  
-**Stage:** Other · **Type:** atomic · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
+**Stage:** Other · **Type:** supporting · **Status:** draft · **Version:** 0.1.0 · **Org:** TAF  
 **Tags:** academic-writing  
-**Produces:** academic-prose  
 
-**Where its evidence has been tested:** Not applicable
+**What it does:** Draft or revise scholarly manuscripts, review articles, and research prose in the author’s academic voice while preserving evidence, disciplinary terminology, and uncertainty.
 
-**What it does:** Drafts or revises research prose so it reads as a researcher's own argument.
-
-**Description (trigger rule):** Use when someone asks to draft or revise research prose, says "make this sound less like AI" or "tighten my discussion section", or wants a report from another skill written up for a journal or a funder. Applies a fixed set of voice rules, keeps every citation, number, and hedge in place, and lists what changed and which claims still lack a source. Do not use when the claims themselves need sources found or checked; use assess-evidence-base. Not for messages to program participants; use draft-lever-content.
-
-**Use it when:**
-- "Revise this section so it doesn't read like AI wrote it"
-- "Tighten my discussion" or "this draft is too wordy and inflated"
-- Someone has findings, notes, or an outline and asks for a manuscript or report section drafted from them
-- A report from another skill is headed for a journal or a funder and its prose needs another pass
-
-**Do not use it when:**
-- The claims need sources found or checked; use `assess-evidence-base`
-- The text is a message, script, or exercise for program participants; use `draft-lever-content`
-- The task is to describe an intervention so another team can repeat it; use `draft-intervention-description`
-
-**When to bring in a specialist:**
-
-Tell the user to go to a co-author, a subject expert, or the journal's editor when:
-- A good revision would need to change what a claim says or how strong it is; that is the authors' call
-- The section falls under a reporting guideline or a journal's house style that fixes its wording or order
-- The text gives clinical, legal, or safety guidance, where a change of wording changes what people do
-- The text is not in English, or belongs to a tradition (legal writing, some humanities) these rules were not written for
-
-Bring them: the original, the revision, and the lists of changes and unsourced claims.
+**Description (trigger rule):** Draft or revise scholarly manuscripts, review articles, and research prose in the author’s academic voice while preserving evidence, disciplinary terminology, and uncertainty.
 
 ### write-pre-analysis-plan
 
@@ -2302,5 +2278,5 @@ Recommended sets of skills for a task too big for one skill. Each is a recommend
 - **test** — Test: Plan a pilot, experiment, or evaluation of an intervention. (bit_test: Trial; busara_audas: Assess; taf_eval: Level 3: experimental evaluation)
 - **analyze** — Analyze: Analyze data from a test or evaluation and interpret the result. (bit_test: Trial (analysis); busara_audas: Assess; taf_eval: Level 3 and 4: analysis)
 - **implement** — Implement: Roll out, adapt, or scale what worked, and report what was done. (bit_test: Scale; busara_audas: Share; taf_eval: Level 4: scale and welfare)
-- **other** — Other: Supporting skills that many outputs use, such as writing. Not tied to one stage of a project.
+- **other** — Other: Supporting skills that many outputs use, such as writing. Plain skills, not tied to one stage of a project.
 

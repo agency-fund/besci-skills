@@ -28,7 +28,7 @@ An atomic skill stays in the library if it passes three tests.
 
 The library also carries a few frameworks by choice; `docs/canonical-sources.md` lists them. A skill built on one of them skips the first test only, and says whose method it is.
 
-A supporting skill also skips the first test only. It is not a behavioral-science method; it does a job the outputs of many skills share, such as writing (ADR 0011). It declares `stage: other`, is listed under "Supporting skills" in `docs/canonical-sources.md` with the reason the library carries it, and says whose practice it encodes. Everything else in this spec applies to it.
+A supporting skill takes none of the three tests. It is not a behavioral-science method; it does a job the outputs of many skills share, such as writing (ADR 0011). It is a plain skill, and this spec does not apply to it beyond section 13. It earns its place by being listed under "Supporting skills" in `docs/canonical-sources.md`, with the reason the library carries it.
 
 ## 2. The name
 
@@ -79,8 +79,8 @@ metadata:
 | `description` | yes | The compressed trigger rule. It must contain a "Use when ..." clause and a "Do not use when ..." clause naming the nearest adjacent intent, and no `<` or `>`. This is the only text the AI reads before deciding to load the skill. Aim for about 500 characters and leave citations out; `besci-navigator` does the routing, so the description need not hold every phrasing. The validator warns above 600 characters and fails above 1024. |
 | `license` | yes | `CC-BY-4.0` for skill content. `MIT` only for a skill that is code with no method content. |
 | `metadata.title` | no | Human-readable name for the catalog. Defaults to the name. |
-| `metadata.type` | yes | `atomic` or `meta`. |
-| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations. `other` is for supporting skills (section 1) and for meta-skills; the validator warns on an atomic skill in `other` that `docs/canonical-sources.md` does not list. See the crosswalk in `docs/taxonomy.md`. |
+| `metadata.type` | yes | `atomic`, `meta`, or `supporting` (section 13). |
+| `metadata.stage` | yes | One of `define`, `diagnose`, `design`, `measure`, `test`, `analyze`, `implement`, or `other`. The seven are strong recommendations. `other` is for supporting skills (section 13) and for meta-skills; an atomic skill in `other` is an error (E013). See the crosswalk in `docs/taxonomy.md`. |
 | `metadata.version` | yes | Semver, quoted: `"0.2.0"`. Bump in the same change as the CHANGELOG entry. |
 | `metadata.status` | yes | `draft`, `published`, or `deprecated`. Submit as `draft`; a maintainer sets `published` on merge. |
 | `metadata.authors` | yes | Names or GitHub handles, comma-separated. |
@@ -342,3 +342,17 @@ Exit 0 means the structure is right. Content review by a maintainer is still req
 The rules added in November 2026 (the "what this adds" line, the two labeled evidence notes, `tested_in`, the two reference files, the four named test cases with assertions, one `produces`) are errors, E040 to E049. The length limits and the note on drafting language are warnings.
 
 The voice rules (ADR 0009: the shared voice block, the closing, no directive closing lines) are errors E053 to E055. They were warnings, behind the switch `STRICT_VOICE`, while the library was revised to them. A named skill or workflow that does not exist is an error, E056.
+
+## 13. Supporting skills
+
+A supporting skill (`type: supporting`, `stage: other`) is a plain skill: it meets the [Agent Skills spec](https://agentskills.io/specification) and is otherwise written in whatever shape suits it (ADR 0011). A skill written elsewhere can be carried as it is.
+
+It needs:
+
+- `SKILL.md` with a `name` that matches the folder, a `description`, a `license`, and the six required `metadata` fields: `type`, `stage`, `version`, `status`, `authors`, `org`.
+- A row under "Supporting skills" in `docs/canonical-sources.md`. The validator warns without one (W013).
+- Files within the limits of section 10.
+
+Nothing else in this document applies: no eight sections, no "Use when" clause, no verb-first name, no test cases, no reference files, no evidence scan, no `tested_in` or `produces`, no voice block, no changelog. The site shows the skill's text and its reviews, and no other tabs.
+
+A skill that names a supporting skill says what to do when it is not installed, so that it still works alone.

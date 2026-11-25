@@ -52,7 +52,7 @@ Where in a project a skill is normally used: define, diagnose, design, measure, 
 _Avoid_: phase, category, step
 
 **Supporting skill**:
-An atomic skill that is not a behavioral-science method but does a job the outputs of many skills share, such as writing. It declares the stage `other`, skips the "common" inclusion test only, and is listed in `docs/canonical-sources.md` with the reason the library carries it (ADR 0011).
+A plain skill that is not a behavioral-science method but does a job the outputs of many skills share, such as writing. It declares `type: supporting` and the stage `other`, is exempt from the skill spec apart from its frontmatter and file limits, and is listed in `docs/canonical-sources.md` with the reason the library carries it (ADR 0011).
 _Avoid_: utility, helper, general skill
 
 **Navigator**:

@@ -326,6 +326,8 @@ def load_skills(taxonomy: dict) -> List[dict]:
         entry["first_date"] = dates[-1] if dates else ""
         entry["_changelog"] = sk.changelog or ""
         entry["_sections"] = sk.sections
+        # Text before the first level-2 heading. A supporting skill is a plain skill and may open with some.
+        entry["_preamble"] = re.split(r"^## ", sk.body, maxsplit=1, flags=re.MULTILINE)[0].strip()
         cases = sk.evals.get("evals") if isinstance(sk.evals, dict) else None
         entry["_evals"] = [c for c in cases if isinstance(c, dict)] if isinstance(cases, list) else []
         for sub in ("references", "scripts", "assets"):
@@ -709,7 +711,7 @@ def filters_html(skills: List[dict], taxonomy: dict) -> str:
   <details class="more-filters">
     <summary>More filters</summary>
     <div class="more-filters-body">
-      <label><span class="sr-only">Type</span><select class="select" id="f-type" name="type">{opts([('atomic', 'Atomic'), ('meta', 'Meta')], 'Atomic and meta')}</select></label>
+      <label><span class="sr-only">Type</span><select class="select" id="f-type" name="type">{opts([('atomic', 'Atomic'), ('meta', 'Meta'), ('supporting', 'Supporting')], 'All types')}</select></label>
       <label><span class="sr-only">Organization</span><select class="select" id="f-org" name="org">{opts(org_opts, 'All orgs')}</select></label>
       <label><span class="sr-only">Status</span><select class="select" id="f-status" name="status">{opts([('published', 'Published'), ('draft', 'Draft'), ('deprecated', 'Deprecated')], 'All statuses')}</select></label>
       <label><span class="sr-only">Tag</span><select class="select" id="f-tag" name="tag">{opts(tags, 'All tags')}</select></label>
@@ -1420,7 +1422,10 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         if s["_evals"]:
             local.add("evals/evals.json")
 
+        plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else (ADR 0011)
         sections_html = []
+        if plain and s.get("_preamble"):
+            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(s["_preamble"], name, local)}</section>')
         for heading, text in s["_sections"].items():
             sid = slugify(heading)
             sections_html.append(f'<section class="skill-section" id="{E(sid)}"><h2>{E(heading)}</h2>\n{md_to_html(text, name, local)}</section>')
@@ -1432,8 +1437,10 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         changelog_html, changelog_toc = render_changelog(s, local)
 
         # (key, tab label, count, panel html, toc entries)
-        tabs = [("test-cases", "Test cases", str(len(s["_evals"])),
-                 tab_intro("test-cases", "Test cases", s, "evals/evals.json") + evals_html, evals_toc)]
+        tabs = []
+        if not plain:
+            tabs.append(("test-cases", "Test cases", str(len(s["_evals"])),
+                         tab_intro("test-cases", "Test cases", s, "evals/evals.json") + evals_html, evals_toc))
         if s["_references"]:
             tabs.append(("references", "References", str(len(s["_references"])),
                          tab_intro("references", "References", s, "references/") + refs_html, refs_toc))
@@ -1443,8 +1450,9 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         if s["_assets"]:
             tabs.append(("assets", "Assets", str(len(s["_assets"])),
                          tab_intro("assets", "Assets", s, "assets/") + render_assets(s), [("assets", "Files")]))
-        tabs.append(("version-history", "Version history", "",
-                     tab_intro("version-history", "Version history", s, "CHANGELOG.md") + changelog_html, changelog_toc))
+        if not plain or s["_changelog"]:
+            tabs.append(("version-history", "Version history", "",
+                         tab_intro("version-history", "Version history", s, "CHANGELOG.md") + changelog_html, changelog_toc))
 
         # Reviews: feedback.js fills the list from /api/reviews; the GitHub link works without it.
         gh_reviews = f"{GITHUB}/issues?q=" + quote(f'is:issue label:expert-review in:title "{name}"')
@@ -1480,6 +1488,12 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         elif status == "deprecated":
             banner = '<div class="banner banner-deprecated"><span>Deprecated. This skill is retired; its version history says what replaced it.</span></div>'
 
+        plain_note = ('<p class="muted">A supporting skill: a plain skill that many outputs use. It is not a behavioral-science method, '
+                      'so the library\'s spec does not apply to it, and it has no test cases, reference files, or version history. '
+                      f'<a href="{GITHUB}/blob/main/docs/adr/0011-other-category-for-supporting-skills.md" rel="noopener">Why</a>.</p>')
+        tested_rows = "" if plain else (
+            f"""<dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
+      <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>""")
         adds_html = f'\n  <p class="skill-adds"><b>What this adds:</b> {E(s["what_this_adds"])}</p>' if s.get("what_this_adds") else ""
 
         skill_panel = f"""{tab_intro("skill", "Skill", s, "SKILL.md")}
@@ -1488,7 +1502,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
     <p>{E(s['description'])}</p>
   </aside>
 
-  {chain}
+  {plain_note if plain else chain}
 
   <section class="skill-section" id="install" aria-labelledby="install-h">
     <h2 id="install-h">Install</h2>
@@ -1525,7 +1539,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
   <p class="skill-name-row"><code>{E(name)}</code></p>
   <div class="badges">{pill(group_label(s, stage_labels), 'stage', stage)}{pill('v' + s['version'], 'version')}{pill(s['type'] or 'atomic', 'meta' if s['type'] == 'meta' else 'type')}{pill(status, status)}{pill(org, 'org') if org else ''}</div>
   {banner}
-  <p class="skill-what">{E(s['what_it_does'])}</p>{adds_html}
+  {'' if plain else f'<p class="skill-what">{E(s["what_it_does"])}</p>'}{adds_html}
   <div class="skill-actions">
     <button class="btn" type="button" data-panel-open="review" aria-controls="fb-panel">{ICONS['pencil']} Review this skill</button>
     <button class="btn-secondary" type="button" data-panel-open="rate" aria-controls="fb-panel">{ICONS['star']} Rate this skill</button>
@@ -1554,8 +1568,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
       <dt>Version</dt><dd>{E(s['version'])}</dd>
       <dt>Status</dt><dd>{E(status)}</dd>
       <dt>Stage</dt><dd><a href="/skills/?stage={E(stage)}">{E(group_label(s, stage_labels))}</a></dd>
-      <dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
-      <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>
+      {tested_rows}
       <dt>License</dt><dd>{E(s['license'])}</dd>
       <dt>Source</dt><dd><a href="{E(s['source_url'])}" rel="noopener">skills/{E(name)}</a></dd>
       <dt>Changed</dt><dd>{E(s['latest_date']) or '<span class="muted">Not stated</span>'}</dd>

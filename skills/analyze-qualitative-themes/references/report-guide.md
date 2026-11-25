@@ -70,7 +70,7 @@ In the autonomous mode, "What to check before relying on this" always includes: 
 
 ## Voice
 
-Follow `academic-voice.md`. Two things matter most in a findings section: claims no stronger than the extracts support, and one term for one theme throughout. Use American spelling in the report's own prose and leave participants' words as they are.
+Write the prose by the rules of the library's `write-in-academic-voice` skill when it is installed. When it is not, write as a researcher explaining an argument to others in the field: plain verbs, no inflated or promotional words, no signposting, and qualification that matches the evidence. Either way, two things matter most in a findings section: claims no stronger than the extracts support, and one term for one theme throughout. Use American spelling in the report's own prose and leave participants' words as they are.
 
 ## The map and the Word file
 

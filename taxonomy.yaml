@@ -5,11 +5,10 @@
 
 # Where in a project a skill is normally used. One per skill. The seven
 # project stages are strong recommendations, not rules. `other` is the stage
-# for supporting skills: skills that are not behavioral-science methods but
-# do a job the outputs of many skills share, such as writing (ADR 0011). Each
-# supporting skill is listed in docs/canonical-sources.md; the validator
-# warns on an atomic skill in `other` that is not listed there. Meta-skills
-# also use `other`.
+# for supporting skills (type `supporting`): plain skills that are not
+# behavioral-science methods but that many outputs use, such as writing
+# (ADR 0011). Each one is listed in docs/canonical-sources.md. Meta-skills
+# also use `other`. An atomic skill never does.
 stages:
   - id: define
     label: Define
@@ -62,13 +61,16 @@ stages:
       taf_eval: "Level 4: scale and welfare"
   - id: other
     label: Other
-    description: Supporting skills that many outputs use, such as writing. Not tied to one stage of a project.
+    description: Supporting skills that many outputs use, such as writing. Plain skills, not tied to one stage of a project.
 
 # Skill types. Atomic skills do one behavioral-science operation. Meta-skills
 # operate on the library itself.
+# Supporting skills are plain skills in the stage `other`: only their
+# frontmatter and files are checked.
 types:
   - atomic
   - meta
+  - supporting
 
 # Review status. `draft` while in review or when merged without review;
 # `published` once a maintainer approved it; `deprecated` when retired.
@@ -293,9 +295,6 @@ io_types:
   - id: thematic-analysis-report
     label: Thematic analysis report
     description: "A thematic analysis of a qualitative data set: the analytic choices made, the themes with definitions and supporting extracts, a thematic map, and how the analysis was produced."
-  - id: academic-prose
-    label: Academic prose
-    description: "Research prose drafted or revised in a natural academic voice, with what was changed and the claims that still need a source."
 
 # Suggested free-form tags. Any tag is allowed; these keep spelling consistent.
 suggested_tags:

@@ -48,11 +48,11 @@ A skill built on one of these skips the "common" test only. It still has to stat
 
 ## Supporting skills
 
-A supporting skill is not a behavioral-science method. It does a job the outputs of many skills share, and it declares the stage `other` (ADR 0011). It skips the "common" test only: it still has to state what it adds and be distinct, and it says whose practice it encodes. A skill belongs here only if several skills' outputs would use it. The validator warns on an atomic skill in `other` that this table does not name.
+A supporting skill is not a behavioral-science method. It does a job the outputs of many skills share, and it declares `type: supporting` and the stage `other` (ADR 0011). It is a plain skill: the spec's sections, test cases, reference files, and inclusion tests do not apply to it, so this table is the only gate. A skill belongs here only if several skills' outputs would use it. The validator warns on a supporting skill that this table does not name.
 
 | Skill | Why the library carries it | Whose practice |
 |---|---|---|
-| `write-in-academic-voice` | Several skills end in a written report. One writing skill gives those reports the same register, and report-producing skills name it. | Zezhen Wu's revision rules for research prose, adapted for the library. |
+| `write-in-academic-voice` | Several skills end in a written report. One writing skill gives those reports the same register, and report-producing skills name it. | Zezhen Wu's revision rules for research prose, carried as he wrote them. |
 
 ## Two limits of this list
 

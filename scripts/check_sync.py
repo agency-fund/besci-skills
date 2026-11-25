@@ -13,8 +13,6 @@ so they work in Claude Desktop / claude.ai, where the repo is not available:
   skills/besci-skill-creator/references/checklist.md -> skills/besci-eval/references/checklist.md
   template/shared/citing-sources.md -> references/citing-sources.md in each skill that searches
                                        for studies or reads the studies it is given
-  template/shared/academic-voice.md -> references/academic-voice.md in write-in-academic-voice
-                                       and in each skill that writes a report in that voice
 
 Some text is shared as a block inside files rather than as a whole file:
 
@@ -48,8 +46,6 @@ PAIRS = [
     ("template/shared/citing-sources.md", "skills/assess-evidence-base/references/citing-sources.md"),
     ("template/shared/citing-sources.md", "skills/assess-evidence-transferability/references/citing-sources.md"),
     ("template/shared/citing-sources.md", "skills/estimate-expected-effect/references/citing-sources.md"),
-    ("template/shared/academic-voice.md", "skills/write-in-academic-voice/references/academic-voice.md"),
-    ("template/shared/academic-voice.md", "skills/analyze-qualitative-themes/references/academic-voice.md"),
 ]
 
 # Shared blocks: (source file, start marker, end marker). The markers must match the

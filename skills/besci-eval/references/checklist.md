@@ -17,7 +17,7 @@ Use when the validator script cannot run. Each line mirrors a rule in `scripts/b
 - [ ] `description` is 1 to 1024 characters (aim for about 500, no citations), has no `<` or `>`, contains a "use when" clause and a "do not use when" clause. [E006, E007, E008, W044]
 - [ ] `license` is CC-BY-4.0 (or MIT for code-only skills). [E009]
 - [ ] `metadata` has type, stage, version, status, authors, org, all as plain strings. [E010]
-- [ ] type is atomic or meta; stage is one of the seven, or other for a supporting skill listed in `docs/canonical-sources.md` (and for meta-skills); version is quoted semver; status is draft, published, or deprecated. [E011, E012, W013, E014, E015]
+- [ ] type is atomic or meta; stage is one of the seven (other is for meta-skills and for supporting skills, which are plain skills this checklist does not cover); version is quoted semver; status is draft, published, or deprecated. [E011, E012, E013, E014, E015]
 - [ ] Atomic skills have `tested_in` set to one of: beyond-western-holds, beyond-western-differs, mainly-western, not-applicable. [E018, E040]
 - [ ] `consumes` and `produces` use ids from the taxonomy's io types. Atomic skills name exactly one `produces`; `consumes` lists only the inputs the skill cannot run without. [W019, E049]
 

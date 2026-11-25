@@ -4,7 +4,7 @@ The controlled vocabularies live in `taxonomy.yaml` at the repository root. This
 
 ## Stage
 
-Where in a project a skill is normally used. Every skill declares one. The seven project stages are strong recommendations rather than rules. `other` is the stage for supporting skills: skills that are not behavioral-science methods but do a job the outputs of many skills share, such as writing (ADR 0011). Each one is listed under "Supporting skills" in `docs/canonical-sources.md`, and the validator warns on an atomic skill in `other` that is not listed there. Meta-skills also declare `other`.
+Where in a project a skill is normally used. Every skill declares one. The seven project stages are strong recommendations rather than rules. `other` is the stage for supporting skills (`type: supporting`): plain skills that are not behavioral-science methods but do a job the outputs of many skills share, such as writing (ADR 0011). Each one is listed under "Supporting skills" in `docs/canonical-sources.md`. Meta-skills also declare `other`; an atomic skill never does.
 
 | Stage | Covers | BIT TEST | Busara AUDAS | TAF four-level evaluation |
 |---|---|---|---|---|
