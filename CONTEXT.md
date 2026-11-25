@@ -48,8 +48,12 @@ A recommended set of skills for a larger task, with the relationships between th
 _Avoid_: stack, pack, bundle, pipeline
 
 **Stage**:
-Where in a project a skill is normally used: define, diagnose, design, measure, test, analyze, implement, or other. One per skill, strongly recommended rather than dictated.
+Where in a project a skill is normally used: define, diagnose, design, measure, test, analyze, implement, or other. One per skill, strongly recommended rather than dictated. `other` is the stage for supporting skills and meta-skills.
 _Avoid_: phase, category, step
+
+**Supporting skill**:
+A plain skill that is not a behavioral-science method but does a job the outputs of many skills share, such as writing. It declares `type: supporting` and the stage `other`, is exempt from the skill spec apart from its frontmatter and file limits, and is listed in `docs/canonical-sources.md` with the reason the library carries it (ADR 0011).
+_Avoid_: utility, helper, general skill
 
 **Navigator**:
 The meta-skill that helps a user find their way through the library. It opens with a choice between two modes. In interview mode it asks about the user's program one question at a time until the problem is sharp, then compiles an interview brief and suggests skills. In recommend mode it suggests skills or a workflow straight away. A request for one concrete task goes straight to a recommendation; a plain question is answered first (ADR 0010).

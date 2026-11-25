@@ -1,6 +1,6 @@
 # Stages and how to hear them
 
-The library's seven stages, how they map to three common frameworks, and the phrases users say that place them at each stage. `other` exists for skills that fit none.
+The library's seven stages, how they map to three common frameworks, and the phrases users say that place them at each stage. `other` holds supporting skills, such as writing, that many outputs use and that belong to no one stage.
 
 | Stage | What it covers | BIT TEST | Busara AUDAS | TAF four-level eval | Users say |
 |---|---|---|---|---|---|

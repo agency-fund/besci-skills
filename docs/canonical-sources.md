@@ -46,6 +46,14 @@ A skill built on one of these skips the "common" test only. It still has to stat
 | The Agency Fund's AI evaluation playbook | Teams that build AI tools for social programs need a way to decide what to evaluate next. One skill carries the playbook's main idea. | Wu, Z., On, R., Walsh, J., Korley, E., Madon, T., & Wong, L. (2025). *AI Evaluation in the Social Sector: A Living Playbook*. https://eval.playbook.org.ai/ |
 | Busara's SIFA | The library asks users to disclose how people and AI contributed to a piece of work; SIFA is the format it points to. | Busara. Cited in `draft-sifa-declaration`. |
 
+## Supporting skills
+
+A supporting skill is not a behavioral-science method. It does a job the outputs of many skills share, and it declares `type: supporting` and the stage `other` (ADR 0011). It is a plain skill: the spec's sections, test cases, reference files, and inclusion tests do not apply to it, so this table is the only gate. A skill belongs here only if several skills' outputs would use it. The validator warns on a supporting skill that this table does not name.
+
+| Skill | Why the library carries it | Whose practice |
+|---|---|---|
+| `write-in-academic-voice` | Several skills end in a written report. One writing skill gives those reports the same register, and report-producing skills name it. | Zezhen Wu's revision rules for research prose, carried as he wrote them. |
+
 ## Two limits of this list
 
 - **It is thin on analysis.** Only JPAL and MRC say anything about analyzing results. A statistical procedure can fail the two-source test for that reason alone. A later batch of analysis and methods skills should add sources first.

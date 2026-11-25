@@ -3,10 +3,12 @@
 # the catalog that is built from it. Change this file in the same pull
 # request as the first skill that needs the change.
 
-# Where in a project a skill is normally used. One per skill. These seven
-# are strong recommendations, not rules: a skill that genuinely fits none of
-# them uses `other`, which the validator accepts with a warning so that
-# maintainers notice recurring gaps and extend the list.
+# Where in a project a skill is normally used. One per skill. The seven
+# project stages are strong recommendations, not rules. `other` is the stage
+# for supporting skills (type `supporting`): plain skills that are not
+# behavioral-science methods but that many outputs use, such as writing
+# (ADR 0011). Each one is listed in docs/canonical-sources.md. Meta-skills
+# also use `other`. An atomic skill never does.
 stages:
   - id: define
     label: Define
@@ -59,13 +61,16 @@ stages:
       taf_eval: "Level 4: scale and welfare"
   - id: other
     label: Other
-    description: Does not fit the seven stages. The validator warns so maintainers can review the gap.
+    description: Supporting skills that many outputs use, such as writing. Plain skills, not tied to one stage of a project.
 
 # Skill types. Atomic skills do one behavioral-science operation. Meta-skills
 # operate on the library itself.
+# Supporting skills are plain skills in the stage `other`: only their
+# frontmatter and files are checked.
 types:
   - atomic
   - meta
+  - supporting
 
 # Review status. `draft` while in review or when merged without review;
 # `published` once a maintainer approved it; `deprecated` when retired.
@@ -287,6 +292,9 @@ io_types:
   - id: intervention-description
     label: Intervention description
     description: "An item-by-item description of an intervention as delivered, complete enough for another team to replicate it."
+  - id: thematic-analysis-report
+    label: Thematic analysis report
+    description: "A thematic analysis of a qualitative data set: the analytic choices made, the themes with definitions and supporting extracts, a thematic map, and how the analysis was produced."
 
 # Suggested free-form tags. Any tag is allowed; these keep spelling consistent.
 suggested_tags:
@@ -337,3 +345,6 @@ suggested_tags:
   - implementation-science
   - scaling
   - llm-assisted-analysis
+  - thematic-analysis
+  - academic-writing
+  - ai-agents

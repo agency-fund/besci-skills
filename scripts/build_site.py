@@ -105,8 +105,23 @@ STAGE_ICON_NAMES = {
     "test": "flask",
     "analyze": "chart-bar",
     "implement": "plant",
-    "other": "compass",
+    "other": "squares-four",
+    "meta": "compass",
 }
+
+
+def group_of(s: dict) -> str:
+    """Where a skill sits on the catalog and the map: "meta" for a meta-skill, "other" for a
+    supporting skill (ADR 0011), otherwise its stage. Meta-skills declare the stage `other` too,
+    so the type decides."""
+    if s.get("type") == "meta":
+        return "meta"
+    return s.get("stage") or "other"
+
+
+def group_label(s: dict, stage_labels: Dict[str, str]) -> str:
+    g = group_of(s)
+    return "Meta-skill" if g == "meta" else (stage_labels.get(g, g) or "No stage")
 
 # Icons app.js and workflow.js draw at runtime, as <use href="#i-name">.
 SPRITE_ICONS = ["plus", "check", "x", "star", "star-fill", "caret-up", "caret-down", "dots-six-vertical", "arrow-right", "link-simple", "copy", "download-simple"]
@@ -311,6 +326,8 @@ def load_skills(taxonomy: dict) -> List[dict]:
         entry["first_date"] = dates[-1] if dates else ""
         entry["_changelog"] = sk.changelog or ""
         entry["_sections"] = sk.sections
+        # Text before the first level-2 heading. A supporting skill is a plain skill and may open with some.
+        entry["_preamble"] = re.split(r"^## ", sk.body, maxsplit=1, flags=re.MULTILINE)[0].strip()
         cases = sk.evals.get("evals") if isinstance(sk.evals, dict) else None
         entry["_evals"] = [c for c in cases if isinstance(c, dict)] if isinstance(cases, list) else []
         for sub in ("references", "scripts", "assets"):
@@ -663,11 +680,10 @@ def add_button(name: str, title: str, cls: str = "add-btn", label: str = "Add") 
 
 def card(s: dict, stage_labels: Dict[str, str]) -> str:
     status = s["status"] or "draft"
-    stage = s["stage"] or ""
     search = " ".join([s["name"], s["title"], s["description"], s["what_it_does"], " ".join(s["tags"]),
                        " ".join(s.get("use_when") or []), " ".join(s["authors"])]).lower()
-    is_meta = s["type"] == "meta" or stage == "other"
-    stage_label = "Meta-skill" if is_meta else (stage_labels.get(stage, stage) or "No stage")
+    stage = group_of(s)
+    stage_label = group_label(s, stage_labels)
     return f"""<article class="card" data-name="{E(s['name'])}" data-stage="{E(stage)}" data-type="{E(s['type'])}" data-org="{E(s['org'])}" data-status="{E(status)}" data-tags="{E(' '.join(s['tags']))}" data-search="{E(search)}">
   <h3><a href="{E(s['url'])}">{E(s['title'])}</a></h3>
   <p class="card-name">{E(s['name'])}</p>
@@ -695,7 +711,7 @@ def filters_html(skills: List[dict], taxonomy: dict) -> str:
   <details class="more-filters">
     <summary>More filters</summary>
     <div class="more-filters-body">
-      <label><span class="sr-only">Type</span><select class="select" id="f-type" name="type">{opts([('atomic', 'Atomic'), ('meta', 'Meta')], 'Atomic and meta')}</select></label>
+      <label><span class="sr-only">Type</span><select class="select" id="f-type" name="type">{opts([('atomic', 'Atomic'), ('meta', 'Meta'), ('supporting', 'Supporting')], 'All types')}</select></label>
       <label><span class="sr-only">Organization</span><select class="select" id="f-org" name="org">{opts(org_opts, 'All orgs')}</select></label>
       <label><span class="sr-only">Status</span><select class="select" id="f-status" name="status">{opts([('published', 'Published'), ('draft', 'Draft'), ('deprecated', 'Deprecated')], 'All statuses')}</select></label>
       <label><span class="sr-only">Tag</span><select class="select" id="f-tag" name="tag">{opts(tags, 'All tags')}</select></label>
@@ -1028,6 +1044,12 @@ def build_index(skills: List[dict], taxonomy: dict, workflows: List[dict]) -> No
     n_skills = len(skills)
     meta = [s for s in skills if s["type"] == "meta"]
     meta_links = ", ".join(skill_link(s["name"], by_name) for s in meta)
+    supporting = [s for s in skills if group_of(s) == "other"]
+    supporting_note = ""
+    if supporting:
+        one = len(supporting) == 1
+        supporting_note = (f' {"One supporting skill does" if one else "Supporting skills do"} a job many outputs share, such as writing: '
+                           + ", ".join(skill_link(s["name"], by_name) for s in supporting) + ".")
 
     tiles = []
     for w in workflows[:4]:
@@ -1056,7 +1078,7 @@ def build_index(skills: List[dict], taxonomy: dict, workflows: List[dict]) -> No
     <p>Skills are grouped by the stage of a project where you'd use them. Pick one to see what's in it.</p>
   </div>
   {stage_flow(skills, taxonomy, by_name)}
-  <p class="flow-foot">Three meta-skills look after the library itself: {meta_links}.</p>
+  <p class="flow-foot">Three meta-skills look after the library itself: {meta_links}.{supporting_note}</p>
 </section>
 
 <section class="section" aria-labelledby="teaser-h">
@@ -1098,7 +1120,10 @@ def build_catalog(skills: List[dict], taxonomy: dict) -> None:
     stages = [x for x in taxonomy.get("stages", []) if isinstance(x, dict) and x.get("id") != "other"]
     counts: Dict[str, int] = {}
     for s in skills:
-        counts[s["stage"]] = counts.get(s["stage"], 0) + 1
+        counts[group_of(s)] = counts.get(group_of(s), 0) + 1
+    # Supporting skills (ADR 0011) get a chip and a group of their own, after the seven stages.
+    if counts.get("other"):
+        stages = stages + [x for x in taxonomy.get("stages", []) if isinstance(x, dict) and x.get("id") == "other"]
 
     chips = [f'<button class="stage-chip chip-all" type="button" data-stage="" aria-pressed="true">All stages <span>{len(skills)}</span></button>']
     for st in stages:
@@ -1108,12 +1133,11 @@ def build_catalog(skills: List[dict], taxonomy: dict) -> None:
             f'data-desc="{E(stage_descs.get(sid, ""))}" aria-pressed="false">{stage_icon(sid)}{E(str(st.get("label")))} <span>{counts.get(sid, 0)}</span></button>')
     stage_default = "Pick a stage to narrow the list."
 
-    # Cards grouped by stage, meta-skills first, then the stages in flow order. The
-    # group headings hide when a filter or search is on and the grid goes flat.
-    groups = [("other", "Meta-skills", "Skills that help you use the library itself.")]
+    # Cards grouped by stage: meta-skills first, then the stages in flow order, then the
+    # supporting skills under "Other". The group headings hide when a filter or search is on
+    # and the grid goes flat.
+    groups = [("meta", "Meta-skills", "Skills that help you use the library itself.")]
     groups += [(str(st.get("id")), str(st.get("label")), stage_descs.get(str(st.get("id")), "")) for st in stages]
-    def group_of(s: dict) -> str:
-        return "other" if s["type"] == "meta" or s["stage"] in ("", "other") else s["stage"]
 
     blocks = []
     for sid, label, desc in groups:
@@ -1368,7 +1392,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
     for s in skills:
         name = s["name"]
         status = s["status"] or "draft"
-        stage = s["stage"] or ""
+        stage = group_of(s)  # "meta" for a meta-skill, so the page says so and links to the meta-skills
         year = (s["latest_date"] or s["first_date"] or str(dt.date.today()))[:4]
         authors = ", ".join(s["authors"]) or "Unknown author"
         cite = (f"{authors} ({year}). {s['title']} (version {s['version']}) [AI skill]. "
@@ -1398,7 +1422,10 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         if s["_evals"]:
             local.add("evals/evals.json")
 
+        plain = s["type"] == "supporting"  # a plain skill: its text and its reviews, nothing else (ADR 0011)
         sections_html = []
+        if plain and s.get("_preamble"):
+            sections_html.append(f'<section class="skill-section" id="skill-text">\n{md_to_html(s["_preamble"], name, local)}</section>')
         for heading, text in s["_sections"].items():
             sid = slugify(heading)
             sections_html.append(f'<section class="skill-section" id="{E(sid)}"><h2>{E(heading)}</h2>\n{md_to_html(text, name, local)}</section>')
@@ -1410,8 +1437,10 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         changelog_html, changelog_toc = render_changelog(s, local)
 
         # (key, tab label, count, panel html, toc entries)
-        tabs = [("test-cases", "Test cases", str(len(s["_evals"])),
-                 tab_intro("test-cases", "Test cases", s, "evals/evals.json") + evals_html, evals_toc)]
+        tabs = []
+        if not plain:
+            tabs.append(("test-cases", "Test cases", str(len(s["_evals"])),
+                         tab_intro("test-cases", "Test cases", s, "evals/evals.json") + evals_html, evals_toc))
         if s["_references"]:
             tabs.append(("references", "References", str(len(s["_references"])),
                          tab_intro("references", "References", s, "references/") + refs_html, refs_toc))
@@ -1421,8 +1450,9 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         if s["_assets"]:
             tabs.append(("assets", "Assets", str(len(s["_assets"])),
                          tab_intro("assets", "Assets", s, "assets/") + render_assets(s), [("assets", "Files")]))
-        tabs.append(("version-history", "Version history", "",
-                     tab_intro("version-history", "Version history", s, "CHANGELOG.md") + changelog_html, changelog_toc))
+        if not plain or s["_changelog"]:
+            tabs.append(("version-history", "Version history", "",
+                         tab_intro("version-history", "Version history", s, "CHANGELOG.md") + changelog_html, changelog_toc))
 
         # Reviews: feedback.js fills the list from /api/reviews; the GitHub link works without it.
         gh_reviews = f"{GITHUB}/issues?q=" + quote(f'is:issue label:expert-review in:title "{name}"')
@@ -1440,7 +1470,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
 
         # What feedback.js needs: the skill, the build commit, and which version answered which issue.
         page_data = json.dumps({
-            "name": name, "title": s["title"], "version": s["version"], "stage": stage, "repo": REPO,
+            "name": name, "title": s["title"], "version": s["version"], "stage": s["stage"] or "", "repo": REPO,
             "commit": commit, "google_client_id": GOOGLE_CLIENT_ID, "changelog_refs": changelog_refs(s["_changelog"]),
         }, ensure_ascii=False).replace("</", "<\\/")
 
@@ -1458,6 +1488,12 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
         elif status == "deprecated":
             banner = '<div class="banner banner-deprecated"><span>Deprecated. This skill is retired; its version history says what replaced it.</span></div>'
 
+        plain_note = ('<p class="muted">A supporting skill: a plain skill that many outputs use. It is not a behavioral-science method, '
+                      'so the library\'s spec does not apply to it, and it has no test cases, reference files, or version history. '
+                      f'<a href="{GITHUB}/blob/main/docs/adr/0011-other-category-for-supporting-skills.md" rel="noopener">Why</a>.</p>')
+        tested_rows = "" if plain else (
+            f"""<dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
+      <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>""")
         adds_html = f'\n  <p class="skill-adds"><b>What this adds:</b> {E(s["what_this_adds"])}</p>' if s.get("what_this_adds") else ""
 
         skill_panel = f"""{tab_intro("skill", "Skill", s, "SKILL.md")}
@@ -1466,7 +1502,7 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
     <p>{E(s['description'])}</p>
   </aside>
 
-  {chain}
+  {plain_note if plain else chain}
 
   <section class="skill-section" id="install" aria-labelledby="install-h">
     <h2 id="install-h">Install</h2>
@@ -1501,9 +1537,9 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
 <header class="skill-head">
   <h1>{E(s['title'])}</h1>
   <p class="skill-name-row"><code>{E(name)}</code></p>
-  <div class="badges">{pill(stage_labels.get(stage, stage) or 'no stage', 'stage', stage)}{pill('v' + s['version'], 'version')}{pill(s['type'] or 'atomic', 'meta' if s['type'] == 'meta' else 'type')}{pill(status, status)}{pill(org, 'org') if org else ''}</div>
+  <div class="badges">{pill(group_label(s, stage_labels), 'stage', stage)}{pill('v' + s['version'], 'version')}{pill(s['type'] or 'atomic', 'meta' if s['type'] == 'meta' else 'type')}{pill(status, status)}{pill(org, 'org') if org else ''}</div>
   {banner}
-  <p class="skill-what">{E(s['what_it_does'])}</p>{adds_html}
+  {'' if plain else f'<p class="skill-what">{E(s["what_it_does"])}</p>'}{adds_html}
   <div class="skill-actions">
     <button class="btn" type="button" data-panel-open="review" aria-controls="fb-panel">{ICONS['pencil']} Review this skill</button>
     <button class="btn-secondary" type="button" data-panel-open="rate" aria-controls="fb-panel">{ICONS['star']} Rate this skill</button>
@@ -1531,9 +1567,8 @@ def build_skill_pages(skills: List[dict], taxonomy: dict) -> None:
       <dt>Org</dt><dd>{E(org) or '<span class="muted">Not stated</span>'}</dd>
       <dt>Version</dt><dd>{E(s['version'])}</dd>
       <dt>Status</dt><dd>{E(status)}</dd>
-      <dt>Stage</dt><dd><a href="/skills/?stage={E(stage)}">{E(stage_labels.get(stage, stage))}</a></dd>
-      <dt>Tested in</dt><dd>{E(tested_labels.get(s['tested_in'], s['tested_in'])) or '<span class="muted">Not stated</span>'}</dd>
-      <dt>Tests</dt><dd><a href="#test-cases">{s['eval_count']} test cases</a></dd>
+      <dt>Stage</dt><dd><a href="/skills/?stage={E(stage)}">{E(group_label(s, stage_labels))}</a></dd>
+      {tested_rows}
       <dt>License</dt><dd>{E(s['license'])}</dd>
       <dt>Source</dt><dd><a href="{E(s['source_url'])}" rel="noopener">skills/{E(name)}</a></dd>
       <dt>Changed</dt><dd>{E(s['latest_date']) or '<span class="muted">Not stated</span>'}</dd>

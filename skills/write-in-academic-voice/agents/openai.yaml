@@ -1,0 +1,4 @@
+interface:
+  display_name: "Natural Academic Voice"
+  short_description: "Revise scholarly prose with precision and restraint"
+  default_prompt: "Use $write-in-academic-voice to revise this scholarly passage while preserving its argument and citations."

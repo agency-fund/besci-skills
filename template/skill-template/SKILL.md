@@ -11,7 +11,7 @@ license: CC-BY-4.0
 metadata:
   title: Human-readable title for the catalog
   type: atomic                 # atomic | meta
-  stage: diagnose              # define | diagnose | design | measure | test | analyze | implement | other
+  stage: diagnose              # define | diagnose | design | measure | test | analyze | implement
   version: "0.1.0"
   status: draft
   authors: "Your Name"

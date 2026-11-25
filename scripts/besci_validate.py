@@ -346,6 +346,18 @@ def known_names(start: str) -> Optional[set]:
     return names or None
 
 
+def supporting_skills(start: str) -> Optional[set]:
+    """Names listed under 'Supporting skills' in docs/canonical-sources.md (ADR 0011), or None when that file cannot be found, as in a bundled copy."""
+    root = find_repo_root(start)
+    path = os.path.join(root, "docs", "canonical-sources.md") if root else ""
+    if not path or not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as fh:
+        text = fh.read()
+    m = re.search(r"^## Supporting skills\s*$(.*?)(?=^## |\Z)", text, flags=re.MULTILINE | re.DOTALL)
+    return set(re.findall(r"`([a-z0-9-]+)`", m.group(1))) if m else set()
+
+
 def level2_headings(text: str) -> List[str]:
     return [ln[3:].strip() for ln in strip_fences(text).splitlines() if ln.startswith("## ")]
 
@@ -469,9 +481,10 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         if "<" in d or ">" in d:
             skill.error("E006", "description must not contain '<' or '>' characters.")
         low = d.lower()
-        if "use when" not in low and "use it when" not in low and "use this when" not in low:
+        plain = str(md.get("type", "")).strip() == "supporting"
+        if not plain and "use when" not in low and "use it when" not in low and "use this when" not in low:
             skill.error("E007", "description must say when to fire: include a 'Use when ...' clause.")
-        if not re.search(r"(do not use|don't use|not for|do not invoke|not when)", low):
+        if not plain and not re.search(r"(do not use|don't use|not for|do not invoke|not when)", low):
             skill.error("E008", "description must name the nearest adjacent intent it should NOT handle: include a 'Do not use when ...' clause.")
 
     lic = fm.get("license")
@@ -500,7 +513,11 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     if stage and stages and stage not in stages:
         skill.error("E012", f"metadata.stage '{stage}' must be one of {stages}.")
     elif stage == "other" and mtype == "atomic":
-        skill.warn("W013", "metadata.stage is 'other'. Fine if nothing fits; a maintainer will look at whether the stage list needs extending.")
+        skill.error("E013", "metadata.stage 'other' is for supporting skills and meta-skills. Pick one of the seven stages, or set type to 'supporting' if this is a plain skill that many outputs use (ADR 0011).")
+    elif mtype == "supporting" and stage and stage != "other":
+        skill.error("E013", f"A supporting skill declares stage 'other' (got '{stage}'). If this is a behavioral-science method, set type to 'atomic' and meet the full spec.")
+    elif mtype == "supporting" and skill.name not in (supporting_skills(skill.path) or {skill.name}):
+        skill.warn("W013", "This supporting skill is not listed under 'Supporting skills' in docs/canonical-sources.md. Add a row saying why the library carries it (ADR 0011).")
     version = str(md.get("version", "")).strip()
     if version and not SEMVER_RE.match(version):
         skill.error("E014", f"metadata.version '{version}' must be semver like 0.1.0 (quote it in YAML: version: \"0.1.0\").")
@@ -533,6 +550,12 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         for t in split_list(md.get(key)):
             if io_types and t not in io_types:
                 skill.warn("W019", f"metadata.{key} names '{t}', which is not in taxonomy.yaml io_types. Add it there in this PR, or use an existing id, so skills can chain.")
+
+    # A supporting skill is a plain Agent Skill (ADR 0011): frontmatter and files are
+    # checked, and nothing else in the library's spec applies to it.
+    if mtype == "supporting":
+        _validate_files(skill)
+        return skill
 
     # --- body sections -----------------------------------------------------
     present = list(skill.sections.keys())
@@ -615,7 +638,12 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
         elif version and version not in heads[0]:
             skill.error("E030", f"CHANGELOG.md top entry '{heads[0]}' does not mention the current version {version}. Bump both together.", file="CHANGELOG.md")
 
-    # --- files -------------------------------------------------------------
+    _validate_files(skill)
+    return skill
+
+
+def _validate_files(skill: Skill) -> None:
+    """File types, sizes, and paths SKILL.md points to. Applies to every skill."""
     md_lines = skill.body.count("\n") + 1
     if md_lines > MAX_SKILL_MD_LINES:
         skill.warn("W031", f"SKILL.md is {md_lines} lines; keep it under {MAX_SKILL_MD_LINES} and move detail into references/.")
@@ -639,7 +667,6 @@ def validate_skill(skill: Skill, taxonomy: dict) -> Skill:
     for ref in set(re.findall(r"(?:\]\(|`)((?:references|scripts|assets|evals)/[A-Za-z0-9_./-]+)", skill.body)):
         if not os.path.exists(os.path.join(skill.path, ref)):
             skill.error("E032", f"SKILL.md refers to '{ref}' but that file does not exist.")
-    return skill
 
 
 def _validate_v2_body(skill: Skill, verbs: List[str]) -> None:
@@ -778,7 +805,9 @@ def catalog_entry(skill: Skill) -> dict:
         "produces": split_list(md.get("produces")),
         "reviewed_by": split_list(md.get("reviewed_by")),
         "sections": {k: v for k, v in skill.sections.items()},
-        "what_it_does": skill.sections.get("What it does", "").strip().split("\n")[0],
+        # a supporting skill has no "What it does" section; its description stands in
+        "what_it_does": skill.sections.get("What it does", "").strip().split("\n")[0]
+        or re.split(r"(?<=[.!?])\s", str(skill.frontmatter.get("description", "")).strip(), maxsplit=1)[0],
         "what_this_adds": labelled_line(skill.sections.get("What it does", ""), ADDS_LABEL),
         "use_when": should,
         "do_not_use_when": should_not,

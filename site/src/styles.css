@@ -91,7 +91,7 @@
 [data-stage="test"] { --stage: var(--st-test); }
 [data-stage="analyze"] { --stage: var(--st-analyze); }
 [data-stage="implement"] { --stage: var(--st-implement); }
-[data-stage="other"], [data-stage=""] { --stage: var(--st-other); }
+[data-stage="other"], [data-stage="meta"], [data-stage=""] { --stage: var(--st-other); }
 .stage-ic { color: var(--stage, var(--fg-3)); flex-shrink: 0; }
 
 /* ---------- base ---------- */

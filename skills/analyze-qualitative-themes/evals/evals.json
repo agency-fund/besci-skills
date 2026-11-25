@@ -1,0 +1,62 @@
+{
+  "skill_name": "analyze-qualitative-themes",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Full run",
+      "prompt": "I have 9 interview transcripts with women who run small shops in Kumasi and joined our savings group last year. I did the interviews in English and typed them up word for word. No hypotheses, I just want to understand how they think about saving through the group versus keeping money at home. It's for an internal learning brief, nothing published. I don't have time to sit through it, just run the whole thing and I'll read what comes out. Transcripts below. [9 transcripts]",
+      "expected_output": "A thematic analysis report in the output template, produced on its own, with themes, extracts, a map, and a Method section that says no person made the interpretive calls.",
+      "files": [],
+      "assertions": [
+        "Opens by saying that the method's authors reject generative AI for this kind of analysis and that the output is a first reading for a person to check.",
+        "States the analytic choices it used (whole data set or one aspect, data-driven or theory-driven, surface or underlying meaning, how participants' words are treated) as choices, not as givens.",
+        "Each theme has a definition and at least two block-quoted extracts with participant labels, followed by commentary that says more than the extract does.",
+        "The Method section says an AI system produced the analysis, that no person made the interpretive calls, and that Braun and Clarke reject generative AI for reflexive thematic analysis.",
+        "Includes a thematic map (a figure or a Mermaid block) and APA-style references that cite Braun and Clarke (2006); gives counts as numbers of interviews, with no percentage of shop owners or of women.",
+        "Does not say that themes emerged, and ends with two or three next moves with reasons, one of which is a person reading some transcripts against the themes."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Missing context",
+      "prompt": "Can you do a thematic analysis of our farmer interviews?",
+      "expected_output": "The skill opens with the caveat that the method's authors reject AI for this analysis, offers the two ways to run, asks for the data and the question, and produces nothing else.",
+      "files": [],
+      "assertions": [
+        "Asks for the interviews, or for what they are: how many, who, in what language, transcripts or notes.",
+        "Asks what the user wants to understand from them.",
+        "Before asking anything, says that the method's authors (Braun and Clarke) reject generative AI for this kind of analysis, and that what it produces is a first reading for a person to check.",
+        "Offers the two ways to run, on its own or with the user making the calls, and asks which the user wants.",
+        "Produces no themes, codes, or report.",
+        "Says why it asks."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Near the escalation point",
+      "prompt": "Run this on your own, I'm travelling. 14 interviews with adolescent girls in Sindh about why they left school. They were done in Sindhi by our enumerators, who wrote English notes afterwards; nobody on our analysis team speaks Sindhi. I want the deeper stuff, the underlying beliefs about girls and schooling, not just what they said. In two of them the girls mention being hit at home. The findings go into a journal article and into our decision on whether to fund a parents' program. Notes attached. [14 sets of notes]",
+      "expected_output": "The skill says the disclosures need a safeguarding response first, does a provisional surface-level reading of the notes, and names the qualitative researcher and safeguarding lead to bring in before anything is published or decided.",
+      "files": [],
+      "assertions": [
+        "Says the two disclosures of violence need a safeguarding response before the analysis is used, and names the safeguarding lead.",
+        "Says the data are enumerators' notes in translation, not the girls' words, and marks extracts as notes.",
+        "Declines to present an underlying-meaning analysis as reliable when run on its own with no one who knows the setting, and says why.",
+        "Tells the user to bring in an experienced qualitative researcher, ideally one who reads Sindhi, before the article or the funding decision, and says what to bring them.",
+        "Anything it produces is labeled provisional and makes no claim about girls in Sindh in general."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wrong skill",
+      "prompt": "We have 16 interviews with maize farmers and four hypotheses about why they don't top-dress on time: cash is short, they time it by the calendar, they don't think it pays, and they forget during weeding. Can you go through the transcripts and tell us which of the four hold up?",
+      "expected_output": "The skill says this is a test of named hypotheses against interviews, points to synthesize-interview-findings, and does not produce a thematic analysis.",
+      "files": [],
+      "assertions": [
+        "Names synthesize-interview-findings as the skill for this request.",
+        "Says why: the team has hypotheses and wants a verdict on each, which is a different output from themes.",
+        "Does not produce themes, a thematic map, or a report.",
+        "Says when a thematic analysis would fit instead, in one or two sentences."
+      ]
+    }
+  ]
+}
