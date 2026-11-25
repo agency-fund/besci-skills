@@ -56,12 +56,12 @@ A plain skill that is not a behavioral-science method but does a job the outputs
 _Avoid_: utility, helper, general skill
 
 **Navigator**:
-The meta-skill that helps a user find their way through the library. It opens with a choice between two modes. In interview mode it asks about the user's program one question at a time until the problem is sharp, then compiles an interview brief and suggests skills. In recommend mode it suggests skills or a workflow straight away. A request for one concrete task goes straight to a recommendation; a plain question is answered first.
+The meta-skill that helps a user find their way through the library. It grills the user about their program in rounds of numbered questions, each with a recommended answer, until the problem is sharp, and names the skills and outside resources that fit in those answers and at the end. A request for one concrete task gets a direct answer; a plain question is answered first.
 _Avoid_: router, assistant, orchestrator
 
 **Interview brief**:
-What the navigator writes when an interview ends: "What we settled" about the user's program, and "Still open", each open question with what would settle it. The recommendation follows it.
-_Avoid_: summary, report, intake form
+What the navigator leaves the user with when an interview ends: the problem said back, what is still open with what would settle it, and the skills and resources that came up, in the order to use them. It has no fixed shape; the next skill reads it instead of asking again.
+_Avoid_: report, intake form
 
 **Conversation**:
 Talking with a user outside a run: answering questions as a thought partner that knows the library, saying what comes from the library and what is general knowledge, and offering a skill, with what it would add, when the user wants to do something. Every skill does this before it offers a run; it is not a mode of the navigator.

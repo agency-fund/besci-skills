@@ -23,7 +23,7 @@ Workflows in this snapshot: 4
 | audit-process-friction | Count the hassle between intention and completion | diagnose | atomic | draft | 0.3.0 | target-behavior-brief | barrier-diagnosis | Counts what each step of a process costs a person, from the first chance to act through completion. |
 | audit-researcher-bias | Check your team's assumptions about the audience | diagnose | atomic | draft | 0.3.0 | researcher-assumptions | bias-audit-report | Flags the weak points in what a team has written about why its audience behaves as it does. |
 | besci-eval | Behavioral science skill evaluator | other | meta | draft | 0.4.0 | skill-draft | eval-report | Diagnoses one library skill: whether its structure is sound, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone. Reports what it found on one screen. |
-| besci-navigator | Behavioral science navigator | other | meta | draft | 0.3.1 | program-goal | — | Helps a person get from a problem described in plain words to the library skills that would help. |
+| besci-navigator | Behavioral science navigator | other | meta | draft | 0.4.0 | program-goal | — | Grills a person about a behavior-change problem and recommends the library skills that fit. |
 | besci-skill-creator | Behavioral science skill creator | other | meta | draft | 0.3.3 | — | skill-draft | Interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder. |
 | choose-ai-eval-level | Choose which AI evaluations to run next | test | atomic | draft | 0.3.0 | ai-product-account | ai-eval-level-recommendation | Recommends which stage of evaluation an AI tool, product, or program should run next. |
 | choose-delivery-moment | Pick the moment to deliver an ask | design | atomic | draft | 0.3.0 | barrier-diagnosis | intervention-draft | Picks the moment at which one ask or offer reaches people. |
@@ -427,36 +427,13 @@ Bring them: the answers as written and the flags with their rewrites.
 ### besci-navigator
 
 **Title:** Behavioral science navigator  
-**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.3.1 · **Org:** TAF  
+**Stage:** Other · **Type:** meta · **Status:** draft · **Version:** 0.4.0 · **Org:** TAF  
 **Tags:** meta, navigation, interview, workflow  
 **Consumes:** program-goal  
 
-**What it does:** Helps a person get from a problem described in plain words to the library skills that would help.
+**What it does:** Grills a person about a behavior-change problem and recommends the library skills that fit.
 
-**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "help me think this through", "grill me on my program", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Offers a choice: a one-question-at-a-time interview that ends in a brief, or skill and workflow suggestions straight away. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
-
-**Use it when:**
-- "Mothers stop coming to our nutrition sessions after the third visit. Where do I start?"
-- "We want to improve uptake of the new savings product. Help me think it through."
-- "Grill me on our program before we pick a method."
-- "Which skill should I use to pretest our survey?"
-- "What does the library have for designing an evaluation?"
-- The user describes a problem with people not doing something and names no framework
-- The user asks how to think about a behavior-change problem
-
-**Do not use it when:**
-- The user names a specific method or skill ("run COM-B on this", "draft a cognitive interview script"); that skill should fire directly
-- The user wants to build a new skill; use `besci-skill-creator`
-- The user wants to test or score a skill; use `besci-eval`
-
-**When to bring in a specialist:**
-
-Suggest a behavioral scientist, and say at which step, when:
-- The behavior has clinical, safety, legal, or child-protection consequences, or the people are children or another vulnerable group.
-- The work shapes high-stakes decisions about individuals, or will reach more than a pilot's worth of people with no one to review the design.
-- A suggested skill's escalation point, listed in the catalog, fits the situation.
-
-In an interview, say so when the trigger comes up and keep going. Bring the specialist the brief and the catalog entries for the suggested skills. Find My BeSci (https://findmybesci.com) matches organizations with practitioners; skills amplify practitioners rather than replace them.
+**Description (trigger rule):** Use when someone describes a program, product, research, or measurement problem in plain words and does not know which behavioral-science method or library skill to use. Trigger on "where do I start", "which skill should I use", "help me think this through", "grill me on my program", "what does the library have for X", and on any description of uptake, adherence, retention, dropout, or behavior-change problems that names no method. Grills the person about the problem and recommends the library skills that fit. Do not use when the user names a specific method or skill; let that skill fire. Not for creating skills (besci-skill-creator) or evaluating them (besci-eval).
 
 ### besci-skill-creator
 

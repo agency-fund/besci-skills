@@ -54,27 +54,41 @@ In the social sector, having a behavioral scientist in the room is a luxury, and
 
 ## What it looks like
 
-You describe your problem. The navigator offers two ways to start: think it through together, one question at a time, or go straight to suggestions.
+You describe your problem. The navigator asks about it in rounds of numbered questions, each with a recommended answer that names the skills that fit, and once you agree on the problem, recommends where to start.
 
 > **You:** We run a voice advisory line for smallholder farmers in Ethiopia. We want it to build their agency, not only their yields. Where do I start?
 >
-> **`besci-navigator`:** Welcome. You want the advisory line to build farmers' agency, not only their yields, and you are deciding where to begin. There are two ways we could start. (1) Think it through together: I ask one question at a time and give my own guess with each. (2) Go straight to suggestions. Which would you like?
+> **`besci-navigator`:**
 >
-> **You:** Let's think it through.
+> ❓ **Q1** - **The behavior**: What would a farmer with more agency do differently next season?
 >
-> **`besci-navigator`:** Starting the interview. What would a farmer with more agency do differently next season? I'd lean toward one decision they make on their own, such as when to plant, because one decision is something you can observe.
+> ➡️ One decision they make on their own, such as when to plant, because one decision is something you can observe.
 >
-> **You:** Make their own planting decisions with confidence, not just follow the advice.
+> ❓ **Q2** - **The data**: Is the data you have on these farmers the call logs from the advisory line?
 >
-> **`besci-navigator`:** So it is the planting decision, and confidence counts as much as the choice. Has your team written down what agency means for these farmers?
+> ➡️ Yes, call logs to start; a survey can come later.
 >
-> **You:** No definition yet. We have call logs, and a household survey at baseline in March. Wrap up.
+> **You:** Q1 yes, planting decisions made with confidence. Q2: call logs, plus a household survey at baseline in March.
 >
-> **`besci-navigator`:** **Settled:** farmers make their own planting decisions with confidence; you have call logs and a March baseline survey. **Still open:** what agency means for these farmers. Your problem matches the workflow [Define and measure agency](https://besci-skills.vercel.app/workflows/define-and-measure-agency/), starting at step 1:
+> **`besci-navigator`:**
+>
+> ❓ **Q3** - **The definition**: Should the team write down what agency means for these farmers before choosing any measures?
+>
+> ➡️ Yes. Measures chosen before a definition measure agency in name only. `define-agency-construct` does this.
+>
+> ❓ **Q4** - **The survey**: Should the March survey carry the agency questions, with the call logs as a second source?
+>
+> ➡️ Yes. `plan-agency-measurement` decides which measures go in the calls and which in the survey.
+>
+> **You:** Yes to both. That covers it.
+>
+> **`besci-navigator`:** This matches the workflow [Define and measure agency](https://besci-skills.vercel.app/workflows/define-and-measure-agency/). In the order to use them:
 >
 > 1. **Define:** [`define-agency-construct`](https://besci-skills.vercel.app/skills/define-agency-construct/). Measures chosen before a definition measure "agency" in name only.
 > 2. **Measure:** [`plan-agency-measurement`](https://besci-skills.vercel.app/skills/plan-agency-measurement/). Turns the definition into measures in the calls and outside them. Your call logs already count as data.
 > 3. **Measure:** [`draft-survey-items`](https://besci-skills.vercel.app/skills/draft-survey-items/). Writes the baseline questions so farmers with little schooling can answer them when an enumerator reads them aloud.
+>
+> I'd start with `define-agency-construct`, since the survey questions depend on it.
 
 <sub>Example conversation, shortened. The program is made up. The <a href="https://besci-skills.vercel.app">home page</a> plays this and two more.</sub>
 
@@ -185,7 +199,7 @@ The full contract is in [the skill spec](docs/skill-spec.md). A validator enforc
 
 If you don't know which skill you need, start with the navigator. To examine how good a particular skill is, use the evaluator. To create a new skill, use the skill creator.
 
-- **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** recommends which library skills to run, in what order, for the problem a user describes.
+- **[`besci-navigator`](https://besci-skills.vercel.app/skills/besci-navigator/)** grills you about your problem in rounds of questions, each with a recommended answer, and points to the library skills and outside resources that fit.
 - **[`besci-eval`](https://besci-skills.vercel.app/skills/besci-eval/)** diagnoses one library skill: its structure, whether it fires on the right requests, and whether it makes the AI do the job better than the AI does alone.
 - **[`besci-skill-creator`](https://besci-skills.vercel.app/skills/besci-skill-creator/)** interviews an author about one behavioral-science method until every part of a library skill is clear, then drafts the complete skill folder.
 

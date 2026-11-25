@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0 - 2026-11-25
+Rewritten to follow Matt Pocock's grilling skill (https://github.com/mattpocock/skills, MIT license, copyright Matt Pocock) nearly word for word: the problem is mapped as a design tree and grilled in rounds of numbered questions, each with a recommended answer. The one addition is that recommendations name the library skills that do the work, and once the person confirms a shared understanding, the navigator recommends skills in the order to use them. The modes, output templates, voice block, specialist check, and wrap-up are gone. Evals cut to three. Edited with Claude.
+
 ## 0.3.1 - 2026-11-24
 Wording only: "What it draws on" no longer points to a decision record that has left the repository. Edited with Claude.
 
